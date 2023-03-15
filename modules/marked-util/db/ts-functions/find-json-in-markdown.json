@@ -1,0 +1,46 @@
+{
+  "createdAt": 1674033626411,
+  "updatedAt": 1674033626411,
+  "deletedAt": 0,
+  "createdFirstAt": 1674033626411,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/findJsonInMarkdown.ts",
+  "commentsInside": [],
+  "rawText": " <T>(text?: string): T | undefined => {\n  if (!text) return;\n  const trimmed = text.trim();\n\n  const jsonFirstTry = tryParseJson<T>(trimmed);\n\n  if (jsonFirstTry) {\n    return jsonFirstTry;\n  }\n\n  // find first codeblock (```code```)\n  const codeblocks = findCodeblocks(trimmed);\n\n  const firstCodeblock = codeblocks[0]\n    ? trimCodeblock(codeblocks[0])\n    : undefined;\n\n  const secondTryJson = firstCodeblock\n    ? tryParseJson<T>(firstCodeblock)\n    : undefined;\n\n  if (secondTryJson) {\n    return secondTryJson;\n  }\n  // if no codeblocks were found, find codespans\n  const codespans = findCodespans(trimmed);\n\n  const codespan = codespans[0]?.trim().replaceAll(\"&quot;\", '\"');\n  const thirdTryJson = tryParseJson<T>(codespan);\n\n  if (thirdTryJson) {\n    return thirdTryJson;\n  }\n  const jsonRegex = /\\{(?:[^{}]|(?:\\{[^{}]*\\}))*\\}/;\n  const matches = trimmed.match(jsonRegex);\n  const firstMatch = matches?.[0];\n\n  const fourthTryJson = firstMatch ? tryParseJson<T>(firstMatch) : undefined;\n\n  if (fourthTryJson) {\n    return fourthTryJson;\n  }\n\n  return;\n}",
+  "name": "findJsonInMarkdown",
+  "slug": "find-json-in-markdown",
+  "parameters": [
+    {
+      "name": "text",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": false
+    }
+  ],
+  "description": "For good accuracy, try to get a markdown with a single JSON, preferably without any other codespans.",
+  "returnType": {
+    "rawType": "T | undefined",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 1161,
+    "lines": 45,
+    "bytes": 1161,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 45,
+    "numberOfFiles": 1
+  },
+  "id": "ytkuxeiwlzdisuwxuyfvdhyz"
+}

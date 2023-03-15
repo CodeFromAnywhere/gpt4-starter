@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330446966,
+  "updatedAt": 1678330446966,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330446966,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getFileCollectionStatusWithContext",
+  "slug": "get-file-collection-status-with-context",
+  "operationRelativeTypescriptFilePath": "src/getFileCollectionStatusWithContext.ts",
+  "type": {
+    "rawType": "(functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext, projectRelativeFilePath: string) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse & { actionStatus?: import(\"/Users/clarity/os/operations/tools/conventions/filename-conventions/build/ActionStatus\").ActionStatus | null | undefined; queue?: import(\"/Users/clarity/os/operations/tools/ai/queue-types/build/Queue\").Queue[] | undefined; status?: \"busy\" | \"error\" | \"queue\" | \"done\" | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  projectRelativeFilePath: string\n): Promise<\n  StandardResponse & {\n    actionStatus?: ActionStatus | null;\n    queue?: Queue[];\n    status?: ActionStatus[\"status\"] | \"queue\" | \"done\";\n  }\n> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No project root\" };\n  }\n\n  const fileCollectionPaths = await getFileCollectionPathsWithContext(\n    functionContext,\n    projectRelativeFilePath\n  );\n\n  if (!fileCollectionPaths.absoluteFileCollectionPaths) {\n    return { isSuccessful: false, message: \"No file collection\" };\n  }\n\n  const actionStatusPath = fileCollectionPaths.absoluteFileCollectionPaths.find(\n    (x) => x.endsWith(\".ActionStatus.json\")\n  );\n  const actionStatus = actionStatusPath\n    ? await readJsonFile<ActionStatus>(actionStatusPath)\n    : null;\n\n  const allQueue = await db.get(\"Queue\");\n  const queue = allQueue.filter((item) => {\n    const isFileCollectionFile =\n      !!fileCollectionPaths.absoluteFileCollectionPaths\n        ?.map((absolutePath) => makeRelative(absolutePath, projectRoot))\n        .find(\n          (projectRelativePath) =>\n            item.projectRelativePath === projectRelativePath\n        );\n\n    return isFileCollectionFile;\n  });\n  //error, busy, queued, or done\n  const status = actionStatus\n    ? actionStatus.status\n    : queue.length > 0\n    ? \"queue\"\n    : \"done\";\n\n  return {\n    isSuccessful: true,\n    actionStatus,\n    queue: queue.length > 0 ? queue : undefined,\n    status,\n  };\n}",
+  "description": "Separate function because it needs to be refetched more frequently than the filecollection itself.",
+  "id": "qbkasbplvlexmsexxpjamsby"
+}

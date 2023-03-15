@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678505781168,
+  "updatedAt": 1678505781168,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505781168,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getPerson",
+  "slug": "get-person",
+  "operationRelativeTypescriptFilePath": "src/insertPerson.ts",
+  "type": {
+    "rawType": "(key: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/database/chat-message-orm/src/insertPerson\").PersonIndex, value: string) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person | null>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  key: PersonIndex,\n  value: string\n): Promise<Person | null> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return null;\n  }\n\n  // step 1: get the keyValue store for the key if it's not already slug\n  const slug = await getPersonSlug(projectRoot, key, value);\n  if (!slug) {\n    return null;\n  }\n  // step 2: with the gained slug, return the person via the right path\n  const person = await readJsonFile<Person>(getPersonPath(projectRoot, slug));\n\n  return person;\n}",
+  "description": "More performant way to find a person\n\nTODO: if we're going to use this, it's super important to ensure we can replace all current queries with this.",
+  "id": "qqadkbivzmmsobckcgacctbq"
+}

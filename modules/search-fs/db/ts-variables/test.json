@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331590572,
+  "updatedAt": 1678331590572,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331590572,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "test",
+  "slug": "test",
+  "operationRelativeTypescriptFilePath": "src/getExplorableBasePathsWithContext.test.ts",
+  "type": {
+    "rawType": "() => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const testables = await getFsAuthorizationTestables();\n\n  const results = await Promise.all(\n    testables.map(async (testable) => {\n      const { functionContext, groupSlug } = testable;\n      if (!functionContext) return;\n\n      const result = getExplorableBasePathsWithContext(functionContext);\n\n      return { groupSlug, result };\n    })\n  );\n\n  writeToAssets(\n    __filename,\n    results,\n    \"getExplorableBasePathsWithContext.test.json\"\n  );\n}",
+  "description": "",
+  "id": "innqvkbinafwhhkgyvlvxtkg"
+}

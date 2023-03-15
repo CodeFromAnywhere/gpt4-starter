@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041424510,
+  "updatedAt": 1678041424510,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041424510,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "useOnFocus",
+  "slug": "use-on-focus",
+  "operationRelativeTypescriptFilePath": "src/useOnFocus.ts",
+  "type": {
+    "rawType": "() => void",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  const onFocus = async () => {\n    const [customUrl, setCustomUrl, customUrlInfo] = useStore(\"api.customUrl\");\n\n    if (!customUrlInfo.hydrated) {\n      return;\n    }\n    const localUrl = \"http://localhost:42000\";\n    if (customUrl === localUrl) {\n      return;\n    }\n    /*\n        const isAlive = (await apiWithConfig.ping({ apiUrl: localUrl })).result;\n    \n        if (isAlive) {\n          setCustomUrl(localUrl);\n          // NB: Hardcoded?\n          setAuthToken(\"xwjkfycqhakpudymxmysxlei\");\n          alert?.(\n            \"Connected to localhost\",\n            \"It seems your server is running locally, you're now connected. You can now interact with your local file system to apply prompts on your own knowledge base!\",\n            [\n              { text: \"Okay\", style: \"default\", onPress: () => router.reload() },\n              {\n                text: \"Undo\",\n                style: \"destructive\",\n                onPress: () => {\n                  setCustomUrl(null);\n                },\n              },\n            ]\n          );\n        }*/\n  };\n\n  useEffect(() => {\n    window.addEventListener(\"focus\", onFocus);\n    //   window.addEventListener(\"blur\", onBlur);\n    // Calls onFocus when the window first loads\n    onFocus();\n    // Specify how to clean up after this effect:\n    return () => {\n      window.removeEventListener(\"focus\", onFocus);\n      //  window.removeEventListener(\"blur\", onBlur);\n    };\n  }, []);\n}",
+  "description": "",
+  "id": "fryrnpjdzmlxfrtkaqvjghvi"
+}

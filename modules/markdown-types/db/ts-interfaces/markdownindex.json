@@ -1,0 +1,967 @@
+{
+  "createdAt": 1676361302783,
+  "updatedAt": 1676361302783,
+  "deletedAt": 0,
+  "createdFirstAt": 1676361302783,
+  "id": "markdownindex",
+  "name": "MarkdownIndex",
+  "slug": "markdownindex",
+  "operationRelativeTypescriptFilePath": "src/MarkdownIndex.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\n/**\n * Any markdown file should be following this format in its frontmatter, and we should aim to automatically enhance every written text with this.\n *\n * Should be stored as frontmatter as much as possible\n *\n * TODO: migrate from `WebMarkdownFile` etc. to this.\n */\nexport interface MarkdownIndex\n  extends PostableProperties,\n    AuthorizationProperties,\n    UpdatedTimeObject,\n    CreatedTimeObject {\n  /**\n   * Either filled in or detected\n   */\n  language?: Language;\n\n  /**\n   * If true, there are multiple languages in this file, mixed. Needs to be cleaned up.\n   */\n  isLanguageMixed?: boolean;\n\n  /**\n   * Location, as precice as needed, as short as possible, e.g. \"Vries, The Netherlands\"\n   */\n  location?: string;\n  /**\n   * How to get there (can be autofilled)\n   */\n  locationDescription?: string;\n  /**\n   * two numbers separated by comma\n   */\n  latitudeLongitude?: string;\n\n  /**\n   * How this markdown file was generated if it's not the source\n   */\n  source?: string;\n\n  /**\n   * Whether this markdown is the source of truth. Should become true, for example, if you edit it, and there are also other files around with the same name.\n   */\n  isSource?: boolean;\n\n  title?: string;\n\n  seoTitle?: string;\n  keywords?: string[];\n  seoKeywords?: string[];\n\n  /**\n   * summary of the file\n   */\n  summary?: string;\n\n  /**\n   * Statements that are found in the file (can be rephrased)\n   */\n  statements?: string[];\n  /**\n   * Key take-aways that are found in the file (can be rephrased)\n   */\n  takeAways?: string[];\n\n  /**\n   * DEPRECATED: Should do this separately in another place\n   */\n  socialMediaPosts?: string[];\n\n  /**\n   * GPT to get visual descriptions for any markdown file, which in turn can be turned into images. Primary use: suggest images in text editor to be embedded.\n   */\n  imagePromptDescriptions?: string[];\n\n  /**\n   * Using GPT to determine suggested location where this file should go\n   */\n  suggestedProjectRelativeFolderPath?: string;\n\n  /**\n   * Not sure if needed. Eventually, we might as well just use any images attached to the file because it has the same name, by convention.\n   */\n  headerImageRelativePath?: string;\n\n  headerTitle?: string;\n  headerBig?: boolean;\n  headerSubTitle?: string;\n  header_markdownCallToActionSlugs?: Slug[];\n  header_markdownCallToActions?: MarkdownCallToAction[];\n\n  /**\n   * Domainname for this file (or folder if it's applied on a readme).\n   *\n   * On top of this, we can build automation that:\n   *\n   * - Infers social media channel names for the domain and creates them\n   * - Buys the domain and sets the DNS if you don't own it yet\n   * - Connects the domain to a Vercel project with the right environment variables if it's not already\n   *\n   * Furthermore we can:\n   *\n   * - create a feature where domains are suggested for subsets of your content and you can easily choose one of the suggested domains to buy it automatically and set it in the file\n   * - cleans up your domains if it seems you don't use them anymore (or at least detects unused domains, so you can also potentially sell them)\n   * - show domain authority for your domains and possible ways to improve it (this can, again, have a whole lot of automations built on top of it)\n   */\n  domain?: string;\n\n  /**\n   * If you don't know the domain, you can choose a brand instead, and the domain can be inferred.\n   *\n   * Useful because we can deploy our wisdom as different brands and websites.\n   */\n  brand?: string;\n\n  markdownCallToActionSlugs?: Slug[];\n  markdownCallToActions?: MarkdownCallToAction[];\n  /**\n   * Refers to an `Item` from the shop\n   */\n  shop_itemIds?: Id[];\n  //shop_items:Item[];\n\n  /**\n   * Author, reference to persons\n   */\n  author_personSlugs?: Slug[];\n  //author_persons: Person[];\n\n  /**\n   * Labels referring to interests\n   */\n  interestSlugs?: Slug[];\n  //interests: Interest[];\n\n  /**\n   * Price for this file\n   *\n   * NB: in case the file is a 'readme.md' file, the price applies to all files in this folder, recursively, PER FILE.\n   */\n  price?: Price;\n\n  /**\n   * Estimation of the amount of words used by the author in his/her vocabulary\n   */\n  vocabularyWordsUsedAmount?: number;\n}",
+  "extensions": [
+    "PostableProperties",
+    "AuthorizationProperties",
+    "UpdatedTimeObject",
+    "CreatedTimeObject"
+  ],
+  "isOperationIndex": false,
+  "description": "Any markdown file should be following this format in its frontmatter, and we should aim to automatically enhance every written text with this.\n\nShould be stored as frontmatter as much as possible\n\nTODO: migrate from `WebMarkdownFile` etc. to this.",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "type": "number"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "createdTime": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "number"
+        },
+        "updatedDate": {
+          "type": "string"
+        },
+        "updatedTime": {
+          "type": "string"
+        },
+        "isPrivate": {
+          "type": "boolean",
+          "description": "DESCRIPTION: Only accessible to admin"
+        },
+        "isSecret": {
+          "type": "boolean",
+          "description": "DESCRIPTION: Don't show in the file explorer if you don't have access to this file. NB: only works in combination with pricing or `.isPrivate: true`"
+        },
+        "isAnonymous": {
+          "type": "boolean",
+          "description": "Not sure how I should make this possible yet, but the biggest reason for having persona's is because you may want to do things anonymously. If persona's are truly not really needed, just anonymous and non-anonymous, then we can greatly simplify things by removing that model altogether.\n\nAlso you'd have much fine-grained control over what's anonymous and what isn't in this way. I like this a lot."
+        },
+        "isDraft": {
+          "type": "boolean",
+          "description": "DESCRIPTION:If true, will not show up for read-only people"
+        },
+        "isPublic": {
+          "type": "boolean",
+          "description": "DESCRIPTION: If true, this file/folder will be available to the public"
+        },
+        "canRead_groupSlugs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "DESCRIPTION: If set, file content will not be available for people that aren't part of this group."
+        },
+        "canWrite_groupSlugs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "isAvailableFromDateAt": {
+          "type": "number",
+          "description": "DESCRIPTION: If this is a date in the future, the file won't be available until that date"
+        },
+        "isPreset": {
+          "type": "boolean",
+          "description": "A way to store messagepresets in markdown. the headers are the different categories. If the first alinea is bolded, it will be parsed to be the title, and will be removed from the message."
+        },
+        "isPostable": {
+          "type": "boolean",
+          "description": "if `.isPlanned` is set to true, this will be converted into `MediaPost`"
+        },
+        "isCodestory": {
+          "type": "boolean",
+          "description": "If true, this thing should be parsed into a codestory, after which the `.isPostable: true` will be added."
+        },
+        "tsInterfaceIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Id"
+          }
+        },
+        "tsInterfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TsInterface"
+          }
+        },
+        "tsFunctionIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Id"
+          }
+        },
+        "tsFunctions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TsFunction"
+          }
+        },
+        "bundleConfigSlugs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Slug"
+          }
+        },
+        "bundleConfigs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BundleConfig"
+          }
+        },
+        "operationIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Id"
+          }
+        },
+        "operations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Operation"
+          }
+        },
+        "reference_assets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BackendAsset"
+          }
+        },
+        "language": {
+          "$ref": "#/definitions/Language",
+          "description": "Either filled in or detected"
+        },
+        "isLanguageMixed": {
+          "type": "boolean",
+          "description": "If true, there are multiple languages in this file, mixed. Needs to be cleaned up."
+        },
+        "location": {
+          "type": "string",
+          "description": "Location, as precice as needed, as short as possible, e.g. \"Vries, The Netherlands\""
+        },
+        "locationDescription": {
+          "type": "string",
+          "description": "How to get there (can be autofilled)"
+        },
+        "latitudeLongitude": {
+          "type": "string",
+          "description": "two numbers separated by comma"
+        },
+        "source": {
+          "type": "string",
+          "description": "How this markdown file was generated if it's not the source"
+        },
+        "isSource": {
+          "type": "boolean",
+          "description": "Whether this markdown is the source of truth. Should become true, for example, if you edit it, and there are also other files around with the same name."
+        },
+        "title": {
+          "type": "string"
+        },
+        "seoTitle": {
+          "type": "string"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "seoKeywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "summary": {
+          "type": "string",
+          "description": "summary of the file"
+        },
+        "statements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Statements that are found in the file (can be rephrased)"
+        },
+        "takeAways": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Key take-aways that are found in the file (can be rephrased)"
+        },
+        "socialMediaPosts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "DEPRECATED: Should do this separately in another place"
+        },
+        "imagePromptDescriptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "GPT to get visual descriptions for any markdown file, which in turn can be turned into images. Primary use: suggest images in text editor to be embedded."
+        },
+        "suggestedProjectRelativeFolderPath": {
+          "type": "string",
+          "description": "Using GPT to determine suggested location where this file should go"
+        },
+        "headerImageRelativePath": {
+          "type": "string",
+          "description": "Not sure if needed. Eventually, we might as well just use any images attached to the file because it has the same name, by convention."
+        },
+        "headerTitle": {
+          "type": "string"
+        },
+        "headerBig": {
+          "type": "boolean"
+        },
+        "headerSubTitle": {
+          "type": "string"
+        },
+        "header_markdownCallToActionSlugs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Slug"
+          }
+        },
+        "header_markdownCallToActions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MarkdownCallToAction"
+          }
+        },
+        "domain": {
+          "type": "string",
+          "description": "Domainname for this file (or folder if it's applied on a readme).\n\nOn top of this, we can build automation that:\n\n- Infers social media channel names for the domain and creates them\n- Buys the domain and sets the DNS if you don't own it yet\n- Connects the domain to a Vercel project with the right environment variables if it's not already\n\nFurthermore we can:\n\n- create a feature where domains are suggested for subsets of your content and you can easily choose one of the suggested domains to buy it automatically and set it in the file\n- cleans up your domains if it seems you don't use them anymore (or at least detects unused domains, so you can also potentially sell them)\n- show domain authority for your domains and possible ways to improve it (this can, again, have a whole lot of automations built on top of it)"
+        },
+        "brand": {
+          "type": "string",
+          "description": "If you don't know the domain, you can choose a brand instead, and the domain can be inferred.\n\nUseful because we can deploy our wisdom as different brands and websites."
+        },
+        "markdownCallToActionSlugs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Slug"
+          }
+        },
+        "markdownCallToActions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MarkdownCallToAction"
+          }
+        },
+        "shop_itemIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Id"
+          },
+          "description": "Refers to an `Item` from the shop"
+        },
+        "author_personSlugs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Slug"
+          },
+          "description": "Author, reference to persons"
+        },
+        "interestSlugs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Slug"
+          },
+          "description": "Labels referring to interests"
+        },
+        "price": {
+          "$ref": "#/definitions/Price",
+          "description": "Price for this file\n\nNB: in case the file is a 'readme.md' file, the price applies to all files in this folder, recursively, PER FILE."
+        },
+        "vocabularyWordsUsedAmount": {
+          "type": "number",
+          "description": "Estimation of the amount of words used by the author in his/her vocabulary"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "createdAt",
+        "updatedAt"
+      ],
+      "description": "Any markdown file should be following this format in its frontmatter, and we should aim to automatically enhance every written text with this.\n\nShould be stored as frontmatter as much as possible\n\nTODO: migrate from `WebMarkdownFile` etc. to this."
+    },
+    "simplifiedSchema": {
+      "fullComment": "Any markdown file should be following this format in its frontmatter, and we should aim to automatically enhance every written text with this.\n\nShould be stored as frontmatter as much as possible\n\nTODO: migrate from `WebMarkdownFile` etc. to this.",
+      "todo": "migrate from `WebMarkdownFile` etc. to this.",
+      "properties": [
+        {
+          "name": "createdAt",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "createdDate",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "createdTime",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "updatedAt",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "updatedDate",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "updatedTime",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isPrivate",
+          "required": false,
+          "schema": {
+            "fullComment": "DESCRIPTION: Only accessible to admin",
+            "description": "Only accessible to admin",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isSecret",
+          "required": false,
+          "schema": {
+            "fullComment": "DESCRIPTION: Don't show in the file explorer if you don't have access to this file. NB: only works in combination with pricing or `.isPrivate: true`",
+            "description": "Don't show in the file explorer if you don't have access to this file. NB: only works in combination with pricing or `.isPrivate: true`",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isAnonymous",
+          "required": false,
+          "schema": {
+            "fullComment": "Not sure how I should make this possible yet, but the biggest reason for having persona's is because you may want to do things anonymously. If persona's are truly not really needed, just anonymous and non-anonymous, then we can greatly simplify things by removing that model altogether.\n\nAlso you'd have much fine-grained control over what's anonymous and what isn't in this way. I like this a lot.",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isDraft",
+          "required": false,
+          "schema": {
+            "fullComment": "DESCRIPTION:If true, will not show up for read-only people",
+            "description": "If true, will not show up for read-only people",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isPublic",
+          "required": false,
+          "schema": {
+            "fullComment": "DESCRIPTION: If true, this file/folder will be available to the public",
+            "description": "If true, this file/folder will be available to the public",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "canRead_groupSlugs",
+          "required": false,
+          "schema": {
+            "fullComment": "DESCRIPTION: If set, file content will not be available for people that aren't part of this group.",
+            "description": "If set, file content will not be available for people that aren't part of this group.",
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "canWrite_groupSlugs",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "isAvailableFromDateAt",
+          "required": false,
+          "schema": {
+            "fullComment": "DESCRIPTION: If this is a date in the future, the file won't be available until that date",
+            "description": "If this is a date in the future, the file won't be available until that date",
+            "type": "number"
+          }
+        },
+        {
+          "name": "isPreset",
+          "required": false,
+          "schema": {
+            "fullComment": "A way to store messagepresets in markdown. the headers are the different categories. If the first alinea is bolded, it will be parsed to be the title, and will be removed from the message.",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isPostable",
+          "required": false,
+          "schema": {
+            "fullComment": "if `.isPlanned` is set to true, this will be converted into `MediaPost`",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isCodestory",
+          "required": false,
+          "schema": {
+            "fullComment": "If true, this thing should be parsed into a codestory, after which the `.isPostable: true` will be added.",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "tsInterfaceIds",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                  "type": "string"
+                },
+                "name": "Id"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "tsFunctionIds",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                  "type": "string"
+                },
+                "name": "Id"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "bundleConfigSlugs",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "use this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                  "type": "string"
+                },
+                "name": "Slug"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "operationIds",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                  "type": "string"
+                },
+                "name": "Id"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "reference_assets",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "Part of the asset that should be sent to the backend. The rest should frontend-only\n\nSome values are stored, some are not",
+                  "properties": [
+                    {
+                      "name": "alt",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Stored value\n\nAlt text for the asset",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "relativePath",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Stored value\n\nRelative path, relative to the location the asset is defined in.\n\nOnly available if the asset was already processed by a backend. Before backend processing, only `temporaryDestination` is available.\n\nChanging the `relativePath` shouldn't do anything, it can only be changed by backend processing by giving a new `temporaryDestination`, or by changing the `name`.",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "name",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Not stored\n\nNot given by the backend data, but can be SENT to the backend.\n\nShould not be stored, but if you change this value and send it to the backend, it should rename the file and thus the relativePath stored should change.\n\nNB: I'm not sure how to solve having multiple references to a single file. If this occurs, which is hard to prevent if allowing manual editing of data, it may be hard to prevent dead links if someone changes the name of a file that is also refered to in other places. In this case, it would be ideal if all references also would be renamed, but it may be hard to find them. Even if we solve this, it's still possible to get dead links if someone renames the file (or removes it) manually. This should be taken into account, and may not break anything!",
+                        "nb": "I'm not sure how to solve having multiple references to a single file. If this occurs, which is hard to prevent if allowing manual editing of data, it may be hard to prevent dead links if someone changes the name of a file that is also refered to in other places. In this case, it would be ideal if all references also would be renamed, but it may be hard to find them. Even if we solve this, it's still possible to get dead links if someone renames the file (or removes it) manually. This should be taken into account, and may not break anything!",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "temporaryDestination",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Not stored\n\nFilename after uploading in the temporary folder. should still be moved to its final location\n\nOnly available straight after uploading. After the function processes the asset, this is removed and a `relativePath` is created.",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "projectRelativeReferencingFilePath",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Not stored\n\nNeeds to be there before calling `processAsset`. Should be augmented to the backendAsset in the frontend, before sending it to the backend.\n\nLocation of the place where the asset is referenced\n\n- markdown file (or folder where it is located)\n- typescript file (or folder where it is located)\n- database file (or folder where it is located)",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "modelName",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Not stored\n\nNeeds to be there before calling `processAsset`. Should be augmented to the backendAsset in the frontend, before sending it to the backend.\n\nModel that the asset is related to",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "absoluteUrl",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "NOT STORED\n\nCan be available in case it's an asset from an external source URL for example within md.\n\nAlso can be set in case it's a static asset from a next project",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                },
+                "name": "BackendAsset"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "language",
+          "required": false,
+          "schema": {
+            "enum": [
+              "english",
+              "dutch",
+              "nepali",
+              "portuguese",
+              "brazilian",
+              "german",
+              "french",
+              "spanish",
+              "italian",
+              "norwegian",
+              "swedish",
+              "danish",
+              "vietnamese",
+              "indonesian",
+              "southAfrican",
+              "tokiPona",
+              "hindi",
+              "mandarin",
+              "arabic",
+              "bengali",
+              "urdu",
+              "japanese",
+              "swahili"
+            ],
+            "fullComment": "Either filled in or detected\n\nall currently supported languages",
+            "type": "string"
+          }
+        },
+        {
+          "name": "isLanguageMixed",
+          "required": false,
+          "schema": {
+            "fullComment": "If true, there are multiple languages in this file, mixed. Needs to be cleaned up.",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "location",
+          "required": false,
+          "schema": {
+            "fullComment": "Location, as precice as needed, as short as possible, e.g. \"Vries, The Netherlands\"",
+            "type": "string"
+          }
+        },
+        {
+          "name": "locationDescription",
+          "required": false,
+          "schema": {
+            "fullComment": "How to get there (can be autofilled)",
+            "type": "string"
+          }
+        },
+        {
+          "name": "latitudeLongitude",
+          "required": false,
+          "schema": {
+            "fullComment": "two numbers separated by comma",
+            "type": "string"
+          }
+        },
+        {
+          "name": "source",
+          "required": false,
+          "schema": {
+            "fullComment": "How this markdown file was generated if it's not the source",
+            "type": "string"
+          }
+        },
+        {
+          "name": "isSource",
+          "required": false,
+          "schema": {
+            "fullComment": "Whether this markdown is the source of truth. Should become true, for example, if you edit it, and there are also other files around with the same name.",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "title",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "seoTitle",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "keywords",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "seoKeywords",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "summary",
+          "required": false,
+          "schema": {
+            "fullComment": "summary of the file",
+            "type": "string"
+          }
+        },
+        {
+          "name": "statements",
+          "required": false,
+          "schema": {
+            "fullComment": "Statements that are found in the file (can be rephrased)",
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "takeAways",
+          "required": false,
+          "schema": {
+            "fullComment": "Key take-aways that are found in the file (can be rephrased)",
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "socialMediaPosts",
+          "required": false,
+          "schema": {
+            "fullComment": "DEPRECATED: Should do this separately in another place",
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "imagePromptDescriptions",
+          "required": false,
+          "schema": {
+            "fullComment": "GPT to get visual descriptions for any markdown file, which in turn can be turned into images. Primary use: suggest images in text editor to be embedded.",
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "suggestedProjectRelativeFolderPath",
+          "required": false,
+          "schema": {
+            "fullComment": "Using GPT to determine suggested location where this file should go",
+            "type": "string"
+          }
+        },
+        {
+          "name": "headerImageRelativePath",
+          "required": false,
+          "schema": {
+            "fullComment": "Not sure if needed. Eventually, we might as well just use any images attached to the file because it has the same name, by convention.",
+            "type": "string"
+          }
+        },
+        {
+          "name": "headerTitle",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "headerBig",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "headerSubTitle",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "header_markdownCallToActionSlugs",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "use this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                  "type": "string"
+                },
+                "name": "Slug"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "domain",
+          "required": false,
+          "schema": {
+            "fullComment": "Domainname for this file (or folder if it's applied on a readme).\n\nOn top of this, we can build automation that:\n\n- Infers social media channel names for the domain and creates them\n- Buys the domain and sets the DNS if you don't own it yet\n- Connects the domain to a Vercel project with the right environment variables if it's not already\n\nFurthermore we can:\n\n- create a feature where domains are suggested for subsets of your content and you can easily choose one of the suggested domains to buy it automatically and set it in the file\n- cleans up your domains if it seems you don't use them anymore (or at least detects unused domains, so you can also potentially sell them)\n- show domain authority for your domains and possible ways to improve it (this can, again, have a whole lot of automations built on top of it)",
+            "type": "string"
+          }
+        },
+        {
+          "name": "brand",
+          "required": false,
+          "schema": {
+            "fullComment": "If you don't know the domain, you can choose a brand instead, and the domain can be inferred.\n\nUseful because we can deploy our wisdom as different brands and websites.",
+            "type": "string"
+          }
+        },
+        {
+          "name": "markdownCallToActionSlugs",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "use this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                  "type": "string"
+                },
+                "name": "Slug"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "shop_itemIds",
+          "required": false,
+          "schema": {
+            "fullComment": "Refers to an `Item` from the shop",
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                  "type": "string"
+                },
+                "name": "Id"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "author_personSlugs",
+          "required": false,
+          "schema": {
+            "fullComment": "Author, reference to persons",
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "use this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                  "type": "string"
+                },
+                "name": "Slug"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "interestSlugs",
+          "required": false,
+          "schema": {
+            "fullComment": "Labels referring to interests",
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "use this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                  "type": "string"
+                },
+                "name": "Slug"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "price",
+          "required": false,
+          "schema": {
+            "fullComment": "Price for this file\n\nNB: in case the file is a 'readme.md' file, the price applies to all files in this folder, recursively, PER FILE.\n\nTLDR;EUROS\n\nA price is a number indicating the relative cost. Absolute cost is calculated by many other factors\n\nFor now, we're going to keep it simple: 1 `Price` is equal to 1 Eurocent.\n\nLater we can add all kinds of extra conversion:\n\n- currency support\n- king os currency\n- lower cost for poorer people\n\netc...\n\nFirst we need to start making sales before we can add such complexity.\n\n",
+            "nb": "in case the file is a 'readme.md' file, the price applies to all files in this folder, recursively, PER FILE.",
+            "type": "number"
+          }
+        },
+        {
+          "name": "vocabularyWordsUsedAmount",
+          "required": false,
+          "schema": {
+            "fullComment": "Estimation of the amount of words used by the author in his/her vocabulary",
+            "type": "number"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "MarkdownIndex",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

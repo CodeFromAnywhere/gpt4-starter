@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331561327,
+  "updatedAt": 1678331561327,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331561327,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "SettingsPage",
+  "slug": "settings-page",
+  "operationRelativeTypescriptFilePath": "src/SettingsPage.tsx",
+  "type": {
+    "rawType": "() => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  const { isOffline } = usePing();\n  const [authToken] = useStore(\"api.authToken\");\n  const [customUrl, __, { hydrated: apiHydrated }] = useStore(\"api.customUrl\");\n  const [config, _, { hydrated }] = useStore(\"explorer.config\");\n\n  return (\n    <Div className=\"max-lg:mx-4 lg:mx-20\">\n      {hydrated && apiHydrated ? (\n        <Div>\n          {isOffline ? (\n            <P className=\"text-red-500\">\n              The API cannot be found, please set the API to your homeserver if\n              you have it\n            </P>\n          ) : null}\n          <FunctionForm\n            tsFunction={SetConfigIndex}\n            initialValues={[\n              customUrl,\n              config.disableAdmin,\n              config.customProjectRelativeBasePaths,\n            ]}\n            submitFunction={setConfig}\n            withResult={() => {\n              showStandardResponse({ isSuccessful: true, message: \"Updated\" });\n            }}\n          />\n          <P>\n            <ALink href=\"/database/Persona\">\n              Setup your API Keys and other custom settings\n            </ALink>\n          </P>\n\n          <P>\n            Your API key (be careful):\n            <Input className={inputClass} value={`${authToken}`} />\n          </P>\n\n          <P>\n            Current API address (edit above):\n            <Input className={inputClass} value={`${apiUrl}`} />\n          </P>\n\n          <QueueStatusComponent />\n        </Div>\n      ) : (\n        <FancyLoader />\n      )}\n    </Div>\n  );\n}",
+  "description": "",
+  "id": "ebegpvqrxggmkfbbmybjfhqh"
+}

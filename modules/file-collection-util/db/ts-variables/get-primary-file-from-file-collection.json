@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330488132,
+  "updatedAt": 1678330488132,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330488132,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getPrimaryFileFromFileCollection",
+  "slug": "get-primary-file-from-file-collection",
+  "operationRelativeTypescriptFilePath": "src/FileCollection.ts",
+  "type": {
+    "rawType": "(fileCollection: import(\"/Users/clarity/os/operations/tools/control-fs/file-collection-util/src/FileCollection\").FileCollection) => string | undefined",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  fileCollection: FileCollection\n): string | undefined => fileCollection[0]",
+  "description": "For now, the first one is the primary one. May later change.",
+  "id": "hwwypaxwkjcxxgzbxeutybwd"
+}

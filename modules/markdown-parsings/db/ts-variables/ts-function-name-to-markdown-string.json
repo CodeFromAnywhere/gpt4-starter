@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677586455507,
+  "updatedAt": 1677586455507,
+  "deletedAt": 0,
+  "createdFirstAt": 1677586455507,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "tsFunctionNameToMarkdownString",
+  "slug": "ts-function-name-to-markdown-string",
+  "operationRelativeTypescriptFilePath": "src/tsFuntionNameToMarkdownString.ts",
+  "type": {
+    "rawType": "(name: string) => Promise<string | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  name: string\n): Promise<string | undefined> => {\n  const tsFunction = (await db.get(\"TsFunction\"))?.find((x) => x.name === name);\n  if (!tsFunction) return;\n  return tsFunctionToMarkdownString(tsFunction);\n}",
+  "description": "Somewhat redundant, but I didn't want to refactor this whole operation in order to have one function on the frontend. It seems that the ts function to markdown string can be done with pure JS, but it's too time consuming to extrahere the JS parts from this operation. Let's do it after I have more automations.",
+  "id": "ebmrcacnedgqopumginzfile"
+}

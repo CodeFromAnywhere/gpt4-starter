@@ -1,0 +1,51 @@
+{
+  "createdAt": 1678331353021,
+  "updatedAt": 1678331353021,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331353021,
+  "id": "pdftomdresult",
+  "name": "PdfToMdResult",
+  "slug": "pdftomdresult",
+  "operationRelativeTypescriptFilePath": "src/convertPdfToMd.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\nexport type PdfToMdResult = {\n  isSuccessful: boolean;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "isSuccessful": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "isSuccessful"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "isSuccessful",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "PdfToMdResult",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

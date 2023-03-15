@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678332141044,
+  "updatedAt": 1678332141044,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332141044,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/pickRandomArrayItem.ts",
+  "commentsInside": [],
+  "rawText": " <T>(array: T[]) => {\n  return array[Math.floor((array.length - 1) * Math.random())];\n}",
+  "name": "pickRandomArrayItem",
+  "slug": "pick-random-array-item",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 87,
+    "lines": 3,
+    "bytes": 87,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 29,
+    "linesPerFile": 3,
+    "numberOfFiles": 1
+  },
+  "id": "lxxnhcnjxxrfefvjhieqwefr"
+}

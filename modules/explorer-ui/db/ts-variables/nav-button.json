@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331544011,
+  "updatedAt": 1678331544011,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331544011,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "NavButton",
+  "slug": "nav-button",
+  "operationRelativeTypescriptFilePath": "src/NavButton.tsx",
+  "type": {
+    "rawType": "(props: { onClick?: (() => void) | undefined; href?: string | undefined; isActive?: boolean | undefined; title: string; id?: string | undefined; isDisabled?: boolean | undefined; openContextMenuProps?: object | undefined; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: {\n  onClick?: () => void;\n  href?: string;\n  isActive?: boolean;\n  title: string;\n  id?: string;\n  isDisabled?: boolean;\n  openContextMenuProps?: object;\n}) => {\n  const {\n    href,\n    title,\n    onClick,\n    isActive,\n    openContextMenuProps,\n    id,\n    isDisabled,\n  } = props;\n\n  const hoverClassName = isDisabled\n    ? \"\"\n    : \"hover:dark:bg-green-900 hover:bg-green-200\";\n\n  const bgClassName = isActive\n    ? \"bg-green-200 dark:bg-green-900\"\n    : \"dark:bg-black/50\";\n\n  const disabledClassName = isDisabled ? \"text-gray-500\" : \"\";\n\n  const className = `${bgClassName} ${hoverClassName} ${disabledClassName} p-1 cursor-pointer text-xs line-clamp-1 truncate text-ellipsis`;\n\n  if (href) {\n    return (\n      <ALink\n        onClick={() => (isDisabled ? null : onClick?.())}\n        id={id}\n        href={href}\n        className={className}\n      >\n        <div id={id} {...openContextMenuProps}>\n          {title}\n        </div>\n      </ALink>\n    );\n  }\n\n  // TODO: add word-wrap ellipsis\n  return (\n    <P\n      id={id}\n      onClick={() => {\n        if (isDisabled) return;\n\n        onClick?.();\n      }}\n      className={className}\n      {...openContextMenuProps}\n    >\n      {title}\n    </P>\n  );\n}",
+  "description": "",
+  "id": "wpcuobatmjkmqsoliaimwxlr"
+}

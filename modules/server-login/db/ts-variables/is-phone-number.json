@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678332016066,
+  "updatedAt": 1678332016066,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332016066,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "isPhoneNumber",
+  "slug": "is-phone-number",
+  "operationRelativeTypescriptFilePath": "src/validation/isPhoneNumber.ts",
+  "type": {
+    "rawType": "(phoneNumber: string) => boolean",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(phoneNumber: string): boolean => {\n  return phoneNumber.length >= 10 && phoneNumber.startsWith(\"+\");\n}",
+  "description": "TODO: Implement this (for now it must start with + and be at least 10 characters)",
+  "id": "lwtabhprrchnmjkulamkxily"
+}

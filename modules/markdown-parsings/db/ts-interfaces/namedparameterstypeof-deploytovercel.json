@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677586382921,
+  "updatedAt": 1677586382921,
+  "deletedAt": 0,
+  "createdFirstAt": 1677586382921,
+  "id": "namedparameterstypeof-deploytovercel",
+  "name": "NamedParameters<typeof deployToVercel>",
+  "slug": "namedparameterstypeof-deploytovercel",
+  "operationRelativeTypescriptFilePath": "src/expose/deployToVercel.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof deployToVercel>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

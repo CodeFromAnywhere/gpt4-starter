@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678330775588,
+    "updatedAt": 1678330775588,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330775588,
+    "name": "time",
+    "slug": "time",
+    "module": "./time",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/cli.ts",
+    "classification": "internal",
+    "isAbsolute": false,
+    "isModuleFromMonorepo": false,
+    "id": "zizsqqpxwczpywfllousytst"
+  }
+]

@@ -1,0 +1,12 @@
+"use strict";var __awaiter=this&&this.__awaiter||function(e,n,t,r){return new(t||(t=Promise))((function(a,o){function c(e){try{u(r.next(e))}catch(e){o(e)}}function i(e){try{u(r.throw(e))}catch(e){o(e)}}function u(e){var n;e.done?a(e.value):(n=e.value,n instanceof t?n:new t((function(e){e(n)}))).then(c,i)}u((r=r.apply(e,n||[])).next())}))},__generator=this&&this.__generator||function(e,n){var t,r,a,o,c={label:0,sent:function(){if(1&a[0])throw a[1];return a[1]},trys:[],ops:[]};return o={next:i(0),throw:i(1),return:i(2)},"function"==typeof Symbol&&(o[Symbol.iterator]=function(){return this}),o;function i(i){return function(u){return function(i){if(t)throw new TypeError("Generator is already executing.");for(;o&&(o=0,i[0]&&(c=0)),c;)try{if(t=1,r&&(a=2&i[0]?r.return:i[0]?r.throw||((a=r.return)&&a.call(r),0):r.next)&&!(a=a.call(r,i[1])).done)return a;switch(r=0,a&&(i=[2&i[0],a.value]),i[0]){case 0:case 1:a=i;break;case 4:return c.label++,{value:i[1],done:!1};case 5:c.label++,r=i[1],i=[0];continue;case 7:i=c.ops.pop(),c.trys.pop();continue;default:if(!(a=c.trys,(a=a.length>0&&a[a.length-1])||6!==i[0]&&2!==i[0])){c=0;continue}if(3===i[0]&&(!a||i[1]>a[0]&&i[1]<a[3])){c.label=i[1];break}if(6===i[0]&&c.label<a[1]){c.label=a[1],a=i;break}if(a&&c.label<a[2]){c.label=a[2],c.ops.push(i);break}a[2]&&c.ops.pop(),c.trys.pop();continue}i=n.call(e,c)}catch(e){i=[6,e],r=0}finally{t=a=0}if(5&i[0])throw i[1];return{value:i[0]?i[1]:void 0,done:!0}}([i,u])}}};Object.defineProperty(exports,"__esModule",{value:!0}),exports.clickOnSpanTag=void 0;
+/*
+it takes the current page and span text and its click on the text span
+*/
+var clickOnSpanTag=function(e){return __awaiter(void 0,void 0,void 0,(function(){var n,t,r,a;return __generator(this,(function(o){switch(o.label){case 0:
+// getting and clicking on the write something button to post the content
+return n=e.page,t=e.spanText,[4/*yield*/,n.waitForFunction('document.querySelector("body").innerText.includes("'.concat(t,'")'))];case 1:
+// getting and clicking on the write something button to post the content
+return o.sent(),[4/*yield*/,n.$x('//span[contains(text(),"'.concat(t,'")]'))];case 2:return(r=o.sent())[0]?(
+//@ts-ignore
+null===(a=r[0])||void 0===a||a.click(),[2/*return*/]):[2/*return*/,{success:!1,message:"".concat(t," tag not found.")}]}}))}))};exports.clickOnSpanTag=clickOnSpanTag;
+//# sourceMappingURL=clickOnSpanTag.js.map

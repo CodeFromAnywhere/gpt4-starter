@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678043413479,
+  "updatedAt": 1678043413479,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043413479,
+  "id": "namedparameterstypeof-testallcontenteditablerendercomponents",
+  "name": "NamedParameters<typeof testAllContentEditableRenderComponents>",
+  "slug": "namedparameterstypeof-testallcontenteditablerendercomponents",
+  "operationRelativeTypescriptFilePath": "src/editors/testAllContentEditableRenderComponents.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof testAllContentEditableRenderComponents>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

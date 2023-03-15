@@ -1,0 +1,41 @@
+{
+  "createdAt": 1669055922205,
+  "updatedAt": 1669055922205,
+  "deletedAt": 0,
+  "createdFirstAt": 1669055922205,
+  "isApiExposed": true,
+  "isExported": true,
+  "groupAuthorization": {},
+  "explicitTypeName": "PluginComponent<NumberInputType>",
+  "operationRelativeTypescriptFilePath": "src/number/number.tsx",
+  "commentsInside": [],
+  "rawText": " ({\n  extra,\n  onChange,\n  value,\n  ...props\n}) => {\n  const stringifiedValue =\n    value === null || value === undefined ? \"\" : String(value);\n\n  const [numberStringValue, setNumberStringValue] = useState(stringifiedValue);\n\n  const newExtra: NumberInputType[\"extra\"] = { type: \"text\", ...extra };\n\n  return (\n    <TextInput\n      {...props}\n      value={numberStringValue}\n      onChange={(value) => {\n        setNumberStringValue(value);\n\n        if (isNumber(value)) {\n          const casted = castToNumber(value);\n          onChange(casted);\n        }\n      }}\n      extra={newExtra}\n    />\n  );\n}",
+  "name": "NumberInput",
+  "slug": "number-input",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 5,
+  "size": {
+    "characters": 602,
+    "lines": 29,
+    "bytes": 602,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 21,
+    "linesPerFile": 29,
+    "numberOfFiles": 1
+  },
+  "id": "oxhhrlzuwdkgqofbicyiilhp"
+}

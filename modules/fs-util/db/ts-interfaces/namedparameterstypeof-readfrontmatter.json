@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678041960043,
+  "updatedAt": 1678041960043,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041960043,
+  "id": "namedparameterstypeof-readfrontmatter",
+  "name": "NamedParameters<typeof readFrontmatter>",
+  "slug": "namedparameterstypeof-readfrontmatter",
+  "operationRelativeTypescriptFilePath": "src/readFrontmatter.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteFilePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absoluteFilePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof readFrontmatter>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

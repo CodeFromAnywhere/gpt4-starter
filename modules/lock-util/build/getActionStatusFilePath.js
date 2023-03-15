@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getActionStatusFilePath=void 0;var fs_util_1=require("fs-util"),constants_1=require("./constants"),getActionStatusFilePath=function(t){var e=fs_util_1.path.parse(t);return fs_util_1.path.join(e.dir,"".concat(e.name).concat(constants_1.lockfileSuffix))};exports.getActionStatusFilePath=getActionStatusFilePath;
+//# sourceMappingURL=getActionStatusFilePath.js.map

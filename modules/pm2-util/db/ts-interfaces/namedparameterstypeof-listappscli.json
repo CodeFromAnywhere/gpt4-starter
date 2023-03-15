@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330202602,
+  "updatedAt": 1678330202602,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330202602,
+  "id": "namedparameterstypeof-listappscli",
+  "name": "NamedParameters<typeof listAppsCli>",
+  "slug": "namedparameterstypeof-listappscli",
+  "operationRelativeTypescriptFilePath": "src/cli/listApps.cli.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof listAppsCli>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

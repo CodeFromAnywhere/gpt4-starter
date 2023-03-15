@@ -1,0 +1,101 @@
+{
+  "createdAt": 1668328729370,
+  "updatedAt": 1668328729370,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328729370,
+  "id": "MDGCBVVEJDNAZFnc",
+  "dependencies": {
+    "model-types": "0.0.1",
+    "code-types": "0.0.1",
+    "asset-type": "0.0.1",
+    "js-util": "0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "language-types",
+  "language": "english",
+  "slug": "language-types",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/king/King/operations/tools/types/language-types/src/WordCombination.ts. Error: TypeError: Cannot read properties of undefined (reading 'filter')"
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "language-types",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1670923236192,
+    "operationDependenciesIndexed": [
+      "DefaultModelType",
+      "Id",
+      "MarkdownModelType",
+      "Slug",
+      "DefaultModelType",
+      "Language",
+      "Markdown",
+      "Text",
+      "ParameterName",
+      "Id",
+      "KeyValueMarkdownModelType",
+      "MarkdownModelType",
+      "Slug",
+      "SlugModelType",
+      "Slug",
+      "SlugModelType",
+      "BackendAsset",
+      "MappedObject",
+      "DefaultModelType",
+      "Language",
+      "Markdown",
+      "Slug",
+      "SlugModelType"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/types",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 5,
+        "lines": 406,
+        "characters": 11158,
+        "bytes": 11158
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 139,
+        "characters": 4282,
+        "bytes": 4282
+      },
+      "textSize": {
+        "numberOfFiles": 1,
+        "lines": 525,
+        "characters": 12461,
+        "bytes": 12461
+      },
+      "size": {
+        "bytes": 27901,
+        "characters": 27901,
+        "lines": 1070,
+        "numberOfFiles": 8
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

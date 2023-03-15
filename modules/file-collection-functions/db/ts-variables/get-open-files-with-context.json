@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330461706,
+  "updatedAt": 1678330461706,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330461706,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getOpenFilesWithContext",
+  "slug": "get-open-files-with-context",
+  "operationRelativeTypescriptFilePath": "src/getOpenFilesWithContext.ts",
+  "type": {
+    "rawType": "(functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext) => Promise<import(\"/Users/clarity/os/operations/tools/asset/asset-type/build/OpenFile\").OpenFile[]>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext\n): Promise<OpenFile[]> => {\n  const personId = functionContext.device.currentPersonCalculated?.id;\n\n  if (!personId) {\n    return [];\n  }\n\n  const openFiles = await db.get(\"OpenFile\");\n  const myOpenFiles = openFiles\n    // NB: only your files\n    .filter((x) => x.personId === personId)\n    // NB: pinned on top\n    .sort((x) => (x.isPinned ? 1 : -1));\n\n  return myOpenFiles;\n}",
+  "description": "Returns the open files of the user",
+  "id": "djjtrmjkfzvbixpvecgarjjq"
+}

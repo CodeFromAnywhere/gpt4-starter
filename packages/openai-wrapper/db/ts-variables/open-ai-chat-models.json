@@ -1,0 +1,52 @@
+{
+  "createdAt": 1678331097560,
+  "updatedAt": 1678331097560,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331097560,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "openAiChatModels",
+  "slug": "open-ai-chat-models",
+  "operationRelativeTypescriptFilePath": "src/types.ts",
+  "type": {
+    "rawType": "string[]",
+    "typeDefinition": {
+      "optional": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "allOf": [
+          {
+            "transform": [
+              "trim"
+            ]
+          },
+          {
+            "minLength": 1
+          }
+        ]
+      }
+    },
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "items": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "value": "[...openAiChatModelsReadonly]",
+  "description": "",
+  "id": "lysruxnqqeptrbtxlqwaffvd"
+}

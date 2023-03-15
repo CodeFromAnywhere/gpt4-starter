@@ -1,0 +1,87 @@
+{
+  "createdAt": 1677578334561,
+  "updatedAt": 1677578334561,
+  "deletedAt": 0,
+  "createdFirstAt": 1677578334561,
+  "id": "transcribedtext",
+  "name": "TranscribedText",
+  "slug": "transcribedtext",
+  "operationRelativeTypescriptFilePath": "src/TranscribedText.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "/**\n * Type for a single transcription line\n */\nexport type TranscribedText = {\n  startAt: number;\n  endAt: number;\n  text: string;\n  /**Scalar stating token confidence. May need to be on the token level though, not sure if it works like this. Don't know how to find this yet, as it's not output in one of the files. */\n  confidenceLevel?: number;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "Type for a single transcription line",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "startAt": {
+          "type": "number"
+        },
+        "endAt": {
+          "type": "number"
+        },
+        "text": {
+          "type": "string"
+        },
+        "confidenceLevel": {
+          "type": "number",
+          "description": "Scalar stating token confidence. May need to be on the token level though, not sure if it works like this. Don't know how to find this yet, as it's not output in one of the files."
+        }
+      },
+      "required": [
+        "startAt",
+        "endAt",
+        "text"
+      ],
+      "additionalProperties": false,
+      "description": "Type for a single transcription line"
+    },
+    "simplifiedSchema": {
+      "fullComment": "Type for a single transcription line",
+      "properties": [
+        {
+          "name": "startAt",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "endAt",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "text",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "confidenceLevel",
+          "required": false,
+          "schema": {
+            "fullComment": "Scalar stating token confidence. May need to be on the token level though, not sure if it works like this. Don't know how to find this yet, as it's not output in one of the files.",
+            "type": "number"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "TranscribedText",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

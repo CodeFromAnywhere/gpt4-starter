@@ -1,0 +1,91 @@
+{
+  "createdAt": 1678331092115,
+  "updatedAt": 1678331092115,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331092115,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/gpt3.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  input: string,\n\n  config?: {\n    /**\n     * Defaults to the first in the list of text-models\n     */\n    model?: OpenAiTextCompletionModelEnum;\n    isInstant?: boolean;\n  }\n): Promise<{ isSuccessful: boolean; message?: string; result?: string }> => {\n  const tokensAmount = calculateTokenCount(input);\n  // NB: can differ per model!\n  const modelMaxTokens = 2048;\n\n  if (tokensAmount > modelMaxTokens) {\n    const message = `GPT3: Too long: ${tokensAmount} tokens`;\n    console.log(message);\n    return { isSuccessful: false, message };\n  }\n\n  const { openai, isSuccessful, message } = await getOpenaiInstance();\n\n  if (!openai) {\n    return { isSuccessful, message };\n  }\n\n  const maxTokens = 4097 - tokensAmount;\n  // it's hard to estimate the amount of tokens used in the response, but it'd be good to take into account that the response takes some tokens too\n  const expectedTokens = Math.round(tokensAmount * 1.5);\n\n  // By default, create a delay depending on the tokens expected\n  if (!config?.isInstant) {\n    // NB: maybe limit differs per model\n    const tokenLimitPerMinute = 250000;\n    const expectedRoundtripMs = 500;\n    const factorOfMinuteTokens = expectedTokens / tokenLimitPerMinute;\n    // wait the amount to never hit the limit, on average.\n    const msToWait =\n      Math.round(60000 * factorOfMinuteTokens) - expectedRoundtripMs;\n    /*\n    console.log({\n      tokensAmount,\n      expectedTokens,\n      tokenLimitPerMinute,\n      expectedRoundtripMs,\n      factorOfMinuteTokens,\n      msToWait,\n      msExplanation: `Math.round(60000 * factorOfMinuteTokens) - expectedRoundtripMs`,\n    });*/\n    if (msToWait > 0) {\n      await new Promise<void>((resolve) =>\n        setTimeout(() => resolve(), msToWait)\n      );\n    }\n  }\n  const executionId = generateUniqueId();\n  const performance: (PerformanceItem | undefined)[] = [];\n  getNewPerformance(\"start\", executionId, true);\n\n  const response = await openai\n    .createCompletion({\n      model: config?.model || openAiTextCompletionModels[0],\n      prompt: input,\n      max_tokens: maxTokens,\n    })\n    .catch((e) => {\n      // TODO: APPLY EXPONENTIAL BACKOFF HERE\n\n      console.log({\n        status: e.response?.status,\n        statusText: e.response?.statusText,\n        data: e.response?.data,\n      });\n    });\n\n  performance.push(getNewPerformance(\"openai-api\", executionId));\n  cleanupTimer(executionId);\n  console.log({ performance });\n\n  //console.log({ usage: response?.data?.usage });\n  const result = response?.data?.choices?.[0]?.text;\n  return { result, isSuccessful: true };\n}",
+  "name": "gpt3",
+  "slug": "gpt3",
+  "parameters": [
+    {
+      "name": "input",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "config",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "$ref": "#/definitions/OpenAiTextCompletionModelEnum",
+            "description": "Defaults to the first in the list of text-models"
+          },
+          "isInstant": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "model",
+            "required": false,
+            "schema": {
+              "enum": [
+                "text-davinci-003",
+                "text-curie-001",
+                "text-babbage-001",
+                "text-ada-001",
+                "code-davinci-002",
+                "code-cushman-001"
+              ],
+              "fullComment": "Defaults to the first in the list of text-models\n\nWhich model?\n\n# text models\n\n- gpt-3.5-turbo: ChatGPT MODEL! 10x cheaper\n- text-davinci-003: Most capable GPT-3 model. Can do any task the other models can do, often with higher quality, longer output and better instruction-following. Also supports inserting completions within text.\n- text-curie-001: Very capable, but faster and lower cost than Davinci.\n- text-babbage-001: Capable of straightforward tasks, very fast, and lower cost.\n- text-ada-001: Capable of very simple tasks, usually the fastest model in the GPT-3 series, and lowest cost.\n\n# Code models\n\n- code-davinci-002: Most capable Codex model. Particularly good at translating natural language to code. In addition to completing code, also supports inserting completions within code.\n- code-cushman-001: Almost as capable as Davinci Codex, but slightly faster. This speed advantage may make it preferable for real-time applications.",
+              "type": "string"
+            }
+          },
+          {
+            "name": "isInstant",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": false
+    }
+  ],
+  "description": "Simplified api for gpt3 from open AI\n\nRate limit reached for default-text-davinci-003 in organization org-Z2Wq1CTmyzHDI6SApqk5gBLs on tokens per min. Limit: 250000.000000 / min. Current: 275070.000000 / min. Contact support@openai.com if you continue to have issues.\n\nTODO: log all api calls",
+  "returnType": {
+    "rawType": "Promise<{ isSuccessful: boolean; message?: string | undefined; result?: string | undefined; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 2866,
+    "lines": 88,
+    "bytes": 2866,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 33,
+    "linesPerFile": 88,
+    "numberOfFiles": 1
+  },
+  "id": "umpnzqtbypgcijpxkayxdgjr"
+}

@@ -1,0 +1,116 @@
+{
+  "createdAt": 1671114944936,
+  "updatedAt": 1671114944936,
+  "deletedAt": 0,
+  "createdFirstAt": 1671114944936,
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "name": "generative-functions-node",
+  "operation": {
+    "hasGeneratedDependenciesIndexed": false,
+    "buildResultIndexed": {
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/clarity/os/operations/tools/ai/generative-functions-node/src/augmentMarkdown.ts. Error: TypeError: Cannot read properties of undefined (reading 'getId')"
+      ],
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": []
+    },
+    "lastRebuildAt": 1676316813416,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 3,
+        "lines": 528,
+        "characters": 18943,
+        "bytes": 18943
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 180,
+        "characters": 5477,
+        "bytes": 5477
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 154,
+        "characters": 6960,
+        "bytes": 6960
+      },
+      "size": {
+        "bytes": 31380,
+        "characters": 31380,
+        "lines": 862,
+        "numberOfFiles": 7
+      }
+    },
+    "folderNameIndexed": "generative-functions-node",
+    "relativeOperationLocationPathIndexed": "operations/tools/ai",
+    "classificationIndexed": "node-cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [
+      "ContextualPromptResult",
+      "ContextualPromptsObject",
+      "db",
+      "getFileTypeFromPath",
+      "createMappedObject",
+      "destructureOptionalObject",
+      "getSubsetFromObject",
+      "notEmpty",
+      "getAugmentedWordObject",
+      "WordMatrix",
+      "db",
+      "fs",
+      "path",
+      "readJsonFile",
+      "getProjectRoot",
+      "destructureOptionalObject",
+      "omitUndefinedValues",
+      "ContextualPromptResult",
+      "db",
+      "FileType",
+      "fs",
+      "path",
+      "omitUndefinedValues",
+      "getProjectRoot",
+      "tryParseJson",
+      "ContextualPrompt",
+      "ContextualPromptsObject"
+    ],
+    "packageDependenciesIndexed": []
+  },
+  "dependencies": {
+    "ai-types": "0.0.1",
+    "database": "0.0.1",
+    "filename-conventions": "0.0.1",
+    "js-util": "0.0.1",
+    "augmented-word-node": "0.0.1",
+    "language-types": "0.0.1",
+    "fs-util": "1.0.5",
+    "read-json-file": "0.0.1",
+    "get-path": "0.0.1",
+    "try-parse-json": "0.0.1",
+    "fs-util-js": "0.0.1",
+    "matter-types": "0.0.1",
+    "next-types": "0.0.1",
+    "read-markdown-file": "0.0.1",
+    "k-explore": "0.0.2",
+    "next": "*",
+    "ai-functions-node": "0.0.1",
+    "search-fs": "0.0.1",
+    "code-types": "0.0.1",
+    "fs-authorization": "0.0.1",
+    "file-collection-util": "0.0.1"
+  },
+  "slug": "generative-functions-node",
+  "id": "eatosihbotjdxslswtdiybvq"
+}

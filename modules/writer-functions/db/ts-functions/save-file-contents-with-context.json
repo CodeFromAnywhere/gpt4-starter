@@ -1,0 +1,36 @@
+{
+  "createdAt": 1678043332273,
+  "updatedAt": 1678043332273,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043332273,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "FileFunction<string>",
+  "operationRelativeTypescriptFilePath": "src/saveFileContentsWithContext.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  functionContext: FunctionContext,\n  projectRelativeFilePath: string,\n  newContent\n): Promise<{ isSuccessful: boolean; message: string }> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No project root found\" };\n  }\n  if (newContent === undefined) {\n    return { isSuccessful: false, message: \"No new content provided\" };\n  }\n\n  const absolutePath = path.join(projectRoot, projectRelativeFilePath);\n\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"This file does not exist\" };\n  }\n\n  const authorization = await getFsAuthorizationWithContext(\n    functionContext,\n    projectRelativeFilePath\n  );\n  if (!authorization.canWrite) {\n    return { isSuccessful: false, message: \"You're not allowed to do this\" };\n  }\n\n  await fs.writeFile(absolutePath, newContent, { encoding: \"utf8\" });\n\n  return {\n    isSuccessful: true,\n    message: \"Saved\",\n  };\n}",
+  "name": "saveFileContentsWithContext",
+  "slug": "save-file-contents-with-context",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<{ isSuccessful: boolean; message: string; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 954,
+    "lines": 34,
+    "bytes": 954,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 28,
+    "linesPerFile": 34,
+    "numberOfFiles": 1
+  },
+  "id": "okwyzyatjlhytnuxqjjxklpm"
+}

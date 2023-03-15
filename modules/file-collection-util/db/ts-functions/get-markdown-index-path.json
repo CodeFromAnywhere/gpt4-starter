@@ -1,0 +1,73 @@
+{
+  "createdAt": 1678330497299,
+  "updatedAt": 1678330497299,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330497299,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getMarkdownIndexPath.ts",
+  "commentsInside": [],
+  "rawText": " (\n  absoluteFilePath: string,\n  shouldExist?: boolean\n) => {\n  const parsedPath = path.parse(absoluteFilePath);\n  const absoluteFolderPath = parsedPath.dir;\n  const rootName = withoutSubExtensions(parsedPath.base);\n\n  const markdownIndexPath = path.join(\n    absoluteFolderPath,\n    `${rootName}.MarkdownIndex.json`\n  );\n\n  const exists = fs.existsSync(markdownIndexPath);\n\n  if (!exists && shouldExist) {\n    return;\n  }\n\n  return markdownIndexPath;\n}",
+  "name": "getMarkdownIndexPath",
+  "slug": "get-markdown-index-path",
+  "parameters": [
+    {
+      "name": "absoluteFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "shouldExist",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    }
+  ],
+  "description": "Returns the MarkdownIndex filePath related to any file\n\nOnly returns it if it exists if `shouldExist` is true",
+  "returnType": {
+    "rawType": "string | undefined",
+    "typeDefinition": {
+      "optional": true,
+      "type": "string",
+      "allOf": [
+        {
+          "transform": [
+            "trim"
+          ]
+        },
+        {
+          "minLength": 1
+        }
+      ]
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "type": "string"
+    }
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 562,
+    "lines": 23,
+    "bytes": 562,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 24,
+    "linesPerFile": 23,
+    "numberOfFiles": 1
+  },
+  "id": "czjxubshqumfjsbmbxsabqtp"
+}

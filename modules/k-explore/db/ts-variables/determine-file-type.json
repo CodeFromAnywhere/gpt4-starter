@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677579096702,
+  "updatedAt": 1677579096702,
+  "deletedAt": 0,
+  "createdFirstAt": 1677579096702,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "determineFileType",
+  "slug": "determine-file-type",
+  "operationRelativeTypescriptFilePath": "src/explore.ts",
+  "type": {
+    "rawType": "(filePath: string) => import(\"/Users/clarity/os/operations/tools/conventions/filename-conventions/build/extensions\").FileType | null",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(filePath: string): FileType | null => {\n  const extension = path.parse(filePath).ext.substring(1);\n  if (!isSearchContentExtension(extension)) return null;\n  const index = fileTypes.findIndex((fileType) =>\n    extensions[fileType].includes(extension)\n  );\n  const fileType = fileTypes[index];\n  return fileType;\n}",
+  "description": "returns the file type or null if it's unknown",
+  "id": "dapkhsjisymuzmmooimvhhed"
+}

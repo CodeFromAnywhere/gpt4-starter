@@ -1,0 +1,102 @@
+{
+  "createdAt": 1678331552927,
+  "updatedAt": 1678331552927,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331552927,
+  "id": "namedparameterstypeof-searchresultcomponent",
+  "name": "NamedParameters<typeof SearchResultComponent>",
+  "slug": "namedparameterstypeof-searchresultcomponent",
+  "operationRelativeTypescriptFilePath": "src/SearchResultComponent.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "props": {
+          "type": "object",
+          "properties": {
+            "searchResult": {
+              "$ref": "#/definitions/SearchResult"
+            },
+            "index": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "searchResult",
+            "index"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "props"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "props",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "searchResult",
+                "required": true,
+                "schema": {
+                  "fullComment": "",
+                  "properties": [
+                    {
+                      "name": "title",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "description",
+                      "required": false,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "url",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                }
+              },
+              {
+                "name": "index",
+                "required": true,
+                "schema": {
+                  "type": "number"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof SearchResultComponent>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

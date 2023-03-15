@@ -1,0 +1,81 @@
+{
+  "createdAt": 1678330847284,
+  "updatedAt": 1678330847284,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330847284,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "ProjectWatcher",
+  "operationRelativeTypescriptFilePath": "src/watchBadNaming.ts",
+  "commentsInside": [],
+  "rawText": " (eventName, absolutePath) => {\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"File doesn't exist (anymore)\" };\n  }\n  console.log(`Bad naming (${absolutePath}) not implemented yet`);\n  //return renameBadlyNamedFile(absolutePath);\n}",
+  "name": "watchBadNaming",
+  "slug": "watch-bad-naming",
+  "parameters": [],
+  "description": "Watcher for filenames/folders with capitalisation and spaces, to be renamed to the slugified version. ensure there is no overlap by other watchers.\n\nTODO: the other watchers should ignore files if they have capitals or spaces. Maybe this can be fundamental part of the watcher with a prop like \"isPrimary\" which means it should be executed first, and a prop like \"shouldOmitFromOtherWatchers\" which means it will not be included in other watchers if it matches here.",
+  "returnType": {
+    "rawType": "{ isSuccessful: boolean; message: string; } | undefined",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "isSuccessful": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        }
+      },
+      "required": [
+        "isSuccessful",
+        "message"
+      ],
+      "optional": true
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "isSuccessful",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "message",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 732,
+    "lines": 9,
+    "bytes": 732,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 81,
+    "linesPerFile": 9,
+    "numberOfFiles": 1
+  },
+  "id": "kjxtwykqgtwelkkndbogcsgf"
+}

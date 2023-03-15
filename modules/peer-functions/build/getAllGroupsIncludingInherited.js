@@ -1,0 +1,7 @@
+"use strict";var __spreadArray=this&&this.__spreadArray||function(r,e,t){if(t||2===arguments.length)for(var i,n=0,u=e.length;n<u;n++)!i&&n in e||(i||(i=Array.prototype.slice.call(e,0,n)),i[n]=e[n]);return r.concat(i||Array.prototype.slice.call(e))};Object.defineProperty(exports,"__esModule",{value:!0}),exports.getAllGroupsIncludingInheritedRecursive=void 0;var js_util_1=require("js-util"),getAllGroupsIncludingInheritedRecursive=function(r,e){var t=e||[],i=r.filter((function(r){return t.includes(r.slug)})),n=i.map((function(r){return r.inherited_groupSlugs})).filter(js_util_1.notEmpty).filter((function(r){return r.length>0})).flat().filter((function(r){return!t.includes(r)})),u=n.length>0?(0,exports.getAllGroupsIncludingInheritedRecursive)(r,n):[],l=r.find((function(r){return"public"===r.slug}));return __spreadArray(__spreadArray(__spreadArray([],i,!0),u,!0),[l],!1).filter(js_util_1.notEmpty).filter(js_util_1.uniqueSlug)};
+/**
+ * From all `Group`s in the db, takes all groupSlugs, and recursively executes this again for all inherited groupSlugs found on the groups that are shown in the second parameter.
+ *
+ * Also adds the special group `public`
+ */exports.getAllGroupsIncludingInheritedRecursive=getAllGroupsIncludingInheritedRecursive;
+//# sourceMappingURL=getAllGroupsIncludingInherited.js.map

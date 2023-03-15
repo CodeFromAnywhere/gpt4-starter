@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041921768,
+  "updatedAt": 1678041921768,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041921768,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "findClosestAbsolutePath",
+  "slug": "find-closest-absolute-path",
+  "operationRelativeTypescriptFilePath": "src/findClosestAbsolutePath.ts",
+  "type": {
+    "rawType": "(absolutePath: string) => Promise<string | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  absolutePath: string\n): Promise<string | undefined> => {\n  // NB: base-case\n  if (absolutePath === \"\") return;\n  const pathExists = fs.existsSync(absolutePath);\n\n  const stats = pathExists ? await fs.stat(absolutePath) : null;\n  const isFile = stats?.isFile();\n  const isFolder = stats?.isDirectory();\n\n  const isValidPath = pathExists && (isFile || isFolder);\n\n  if (isValidPath) return absolutePath;\n\n  // no valid path\n\n  const folderUpPath = getFolderJs(absolutePath);\n\n  return findClosestAbsolutePath(folderUpPath);\n}",
+  "description": "Looks if the given path is a file or a folder, and goes a folder up in case it doesn't exist, to find a path that does.",
+  "id": "fmynxbitlwrlmzqugowetbwn"
+}

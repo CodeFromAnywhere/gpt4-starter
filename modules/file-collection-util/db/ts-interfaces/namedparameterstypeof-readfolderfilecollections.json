@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678330501461,
+  "updatedAt": 1678330501461,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330501461,
+  "id": "namedparameterstypeof-readfolderfilecollections",
+  "name": "NamedParameters<typeof readFolderFileCollections>",
+  "slug": "namedparameterstypeof-readfolderfilecollections",
+  "operationRelativeTypescriptFilePath": "src/readFolderFileCollections.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteBaseFolderPath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absoluteBaseFolderPath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteBaseFolderPath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof readFolderFileCollections>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

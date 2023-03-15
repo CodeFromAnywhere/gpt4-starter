@@ -1,0 +1,36 @@
+{
+  "createdAt": 1678330801461,
+  "updatedAt": 1678330801461,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330801461,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "ProjectWatcher",
+  "operationRelativeTypescriptFilePath": "src/watchAudioVideoDoc.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  eventName,\n  absolutePath,\n  isStartup\n): Promise<{ isSuccessful: boolean; message?: string }> => {\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"File doesn't exist (anymore)\" };\n  }\n\n  if (isLocked(absolutePath)) {\n    return { isSuccessful: false, message: \"Locked\" };\n  }\n\n  if (absolutePath.endsWith(\".doc\")) {\n    return docToMd(absolutePath, true);\n  }\n\n  if (absolutePath.endsWith(\".docx\")) {\n    return docxToMd(absolutePath, true);\n  }\n\n  if (absolutePath.endsWith(\".pdf\")) {\n    const pathParse = path.parse(absolutePath);\n\n    const mdPathToBe = path.join(pathParse.dir, `${pathParse.name}.md`);\n    if (fs.existsSync(mdPathToBe)) {\n      return {\n        isSuccessful: false,\n        message: \"Markdown already exists, not overwriting from pdf (for now)\",\n      };\n    }\n    if (!absolutePath) {\n      return { isSuccessful: false, message: \"Doesn't exist\" };\n    }\n    const result = await convertPdfToMd({ inputPdfFilePath: absolutePath });\n    return result;\n  }\n\n  const parsedPath = path.parse(absolutePath);\n  const extension = parsedPath.ext;\n\n  const targetFormat = audioFileExtensions.includes(extension)\n    ? \"wav\"\n    : videoFileExtensions.includes(extension)\n    ? \"mp4\"\n    : // : imageFileExtensions.includes(extension)\n      // ? \"png\"\n      undefined;\n\n  if (!targetFormat) {\n    return { isSuccessful: false, message: \"File isn't audio/video/image\" };\n  }\n\n  const result = await compressConvert(absolutePath, {\n    targetFormat,\n    is16bitWav: targetFormat === \"wav\",\n    keepOriginal: false,\n    // NB: 10fps isn't nice to watch for movies. Let's finetune this\n    // fps: targetFormat === \"mp4\" ? 10 : undefined,\n    sizeWidthPx: targetFormat === \"mp4\" ? 768 : undefined, //targetFormat === \"png\" ? 1920 :\n  });\n\n  return { isSuccessful: !!result };\n}",
+  "name": "watchAudioVideoDoc",
+  "slug": "watch-audio-video-doc",
+  "parameters": [],
+  "description": "Watch all video file formats except mp4, and convert them all into a compressed .mp4 (10fps 480p) (remove original)\n\nFind all audiofile formats in project except mp3 and wav, convert into 16 bit wav (remove original)\n\nFind all image file formats in the project except png, convert to png, compress size if it seems to be able to be done without much loss.\n\nWatch all doc formats (docx, rtf, pdf, what else?) and convert them into .md (keeping original)",
+  "returnType": {
+    "rawType": "Promise<{ isSuccessful: boolean; message?: string | undefined; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 2284,
+    "lines": 70,
+    "bytes": 2284,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 33,
+    "linesPerFile": 70,
+    "numberOfFiles": 1
+  },
+  "id": "nurudcpkwkuulgxdqzrglpkc"
+}

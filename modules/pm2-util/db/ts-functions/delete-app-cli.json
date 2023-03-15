@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678330201346,
+  "updatedAt": 1678330201346,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330201346,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/cli/deleteApp.cli.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const [operationName] = process.argv.slice(2);\n  console.log(`going to delete app ${operationName}`);\n  const result = await deleteApp(operationName);\n  console.log({ result });\n}",
+  "name": "deleteAppCli",
+  "slug": "delete-app-cli",
+  "parameters": [],
+  "description": "Arguments\n- Operation Name",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 222,
+    "lines": 7,
+    "bytes": 222,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 32,
+    "linesPerFile": 7,
+    "numberOfFiles": 1
+  },
+  "id": "pzeaydelbxxqnhqmnigbhlog"
+}

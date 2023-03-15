@@ -1,0 +1,36 @@
+{
+  "createdAt": 1677582367662,
+  "updatedAt": 1677582367662,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582367662,
+  "id": "browser",
+  "name": "Browser",
+  "slug": "browser",
+  "operationRelativeTypescriptFilePath": "src/openMultiTabs.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "A Browser is created when Puppeteer connects to a Chromium instance, either through\n{@link  PuppeteerNode.launch }  or  {@link  Puppeteer.connect } .",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {},
+      "description": "A Browser is created when Puppeteer connects to a Chromium instance, either through\n {@link  PuppeteerNode.launch }  or  {@link  Puppeteer.connect } ."
+    },
+    "simplifiedSchema": {
+      "fullComment": "A Browser is created when Puppeteer connects to a Chromium instance, either through\n {@link  PuppeteerNode.launch }  or  {@link  Puppeteer.connect } .",
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "Browser",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

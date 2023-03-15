@@ -1,0 +1,35 @@
+{
+  "createdAt": 1677582371045,
+  "updatedAt": 1677582371045,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582371045,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/openNewBrowser.ts",
+  "commentsInside": [],
+  "rawText": " async (): Promise<Browser | undefined> => {\n  console.log(\"OPEN BROWSER CALLED\");\n  const existingBrowserSession = await db.get(\"BrowserSession\");\n  if (existingBrowserSession[0]) {\n    const { browserSessionId } = existingBrowserSession[0];\n    try {\n      puppeteer.use(\n        RecaptchaPlugin({\n          provider: {\n            id: \"2captcha\",\n            token: \"243f9da05482cc8e9b76203a184943c9\", // REPLACE THIS WITH YOUR OWN 2CAPTCHA API KEY ⚡\n          },\n          visualFeedback: true, // colorize reCAPTCHAs (violet = detected, green = solved)\n        })\n      );\n      const existingBrowser = await puppeteer.connect({\n        browserWSEndpoint: browserSessionId,\n      });\n      const isBrowserConnected = existingBrowser.isConnected();\n      console.log({ isBrowserConnected });\n      return existingBrowser;\n    } catch (e: Error | any) {\n      console.log(\"Error in open browser\", e);\n      await db.clear(\"BrowserSession\");\n      await openNewBrowserOnChildProcess();\n      return;\n    }\n  } else {\n    await db.clear(\"BrowserSession\");\n    await openNewBrowserOnChildProcess();\n    return;\n  }\n}",
+  "name": "openNewBrowser",
+  "slug": "open-new-browser",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/node_modules/puppeteer/lib/types\").Browser | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 6,
+  "size": {
+    "characters": 1116,
+    "lines": 33,
+    "bytes": 1118,
+    "bytesPerCharacter": 1.0017921146953406,
+    "charactersPerLine": 34,
+    "linesPerFile": 33,
+    "numberOfFiles": 1
+  },
+  "id": "tddpxhjyiiftjyfnzuirqihc"
+}

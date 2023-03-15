@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678369297869,
+    "updatedAt": 1678369297869,
+    "deletedAt": 0,
+    "createdFirstAt": 1678369297869,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/Queue.ts",
+    "comment": "Model for a Queue system so you can execute functions when ram/internet is available",
+    "rawStatement": "export interface Queue extends DefaultModelType {\n  functionName: string;\n  parameters: any[];\n  /**\n   * JSON result of the function\n   */\n  result?: any;\n\n  /**\n   * Will be set after the function starts\n   */\n  startedAt?: number;\n\n  /**\n   * If true, queue item will be kept on completion\n   */\n  shouldKeepOnCompleted?: boolean;\n\n  /**\n   * Will be set (if `.shouldKeepOnCompleted: true`.)\n   */\n  completedAt?: number;\n\n  /**\n   * Can be set to show the status of the function to the user, for example, with a conversion, a percentage indicator for completeness\n   */\n  statusMessage?: string;\n\n  /**\n   * if set to high, will go before others\n   */\n  priority?: \"high\";\n\n  /**\n   * notify via email, for now, after n seconds, if the queue item has not been executed before that.\n   */\n  notifyLateAfterSeconds?: number;\n\n  hasNotifiedLate?: boolean;\n  /**\n   * notify via email, for now\n   */\n  shouldNotifyOnResult?: boolean;\n  /**\n   * device authToken of who executed this\n   * not necesarily a `Person` yet, because it may be done unauthenticated.\n   *\n   * IDK what happens if you don't provide this!\n   */\n  executionAuthToken?: string;\n}",
+    "parameters": {},
+    "types": [],
+    "firstLine": 2,
+    "lastLine": 4,
+    "id": "poftlqvbhwpnddsiggjzhygu"
+  }
+]

@@ -1,0 +1,320 @@
+{
+  "createdAt": 1677578336623,
+  "updatedAt": 1677578336623,
+  "deletedAt": 0,
+  "createdFirstAt": 1677578336623,
+  "id": "transcription",
+  "name": "Transcription",
+  "slug": "transcription",
+  "operationRelativeTypescriptFilePath": "src/Transcription.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n/**\n * What a `[filename].transcription.json` file might look like\n */\nexport type Transcription = UpdatedTimeObject & {\n  recordingType?: RecordingType;\n  /**\n   * Later, we can expand this further if there are other, better solutions. We also are going to be using other tools for transcription, like speaker separation and background removal, so we could use something like `usedSpeakerSeparationModelName?:string` and `usedBackgroundRemovalModelName?:string`\n   */\n  usedModelName?: WhisperModelName;\n  words: TranscribedText[];\n  /**\n   * TODO: add some sort of splitter boolean in the sentences to indicate that a new topic starts so it becomes easier to split up the Transcription when doing transformations on it\n   */\n  sentences: TranscribedText[];\n  /**\n   * Text result from translation task (into english)\n   *\n   * (only if detected language of the first result wasn't english)\n   */\n  translationText: string;\n  /**\n   * Text result from the regular transcription task without translation\n   */\n  text: string;\n\n  /**\n   * Interesting standalone snippet finding in bigger video/audio\n   *\n   * TODO: ensure these are found after we have the transcription.\n   */\n  snippets?: { firstLine: string; lastLine: string }[];\n  /**\n   * super useful to have\n   */\n  speakerAmount?: number;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "What a `[filename].transcription.json` file might look like",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "recordingType": {
+          "$ref": "#/definitions/RecordingType"
+        },
+        "usedModelName": {
+          "$ref": "#/definitions/WhisperModelName",
+          "description": "Later, we can expand this further if there are other, better solutions. We also are going to be using other tools for transcription, like speaker separation and background removal, so we could use something like `usedSpeakerSeparationModelName?:string` and `usedBackgroundRemovalModelName?:string`"
+        },
+        "words": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TranscribedText"
+          }
+        },
+        "sentences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TranscribedText"
+          },
+          "description": "TODO: add some sort of splitter boolean in the sentences to indicate that a new topic starts so it becomes easier to split up the Transcription when doing transformations on it"
+        },
+        "translationText": {
+          "type": "string",
+          "description": "Text result from translation task (into english)\n\n(only if detected language of the first result wasn't english)"
+        },
+        "text": {
+          "type": "string",
+          "description": "Text result from the regular transcription task without translation"
+        },
+        "snippets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "firstLine": {
+                "type": "string"
+              },
+              "lastLine": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "firstLine",
+              "lastLine"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Interesting standalone snippet finding in bigger video/audio\n\nTODO: ensure these are found after we have the transcription."
+        },
+        "speakerAmount": {
+          "type": "number",
+          "description": "super useful to have"
+        },
+        "updatedAt": {
+          "type": "number"
+        },
+        "updatedDate": {
+          "type": "string"
+        },
+        "updatedTime": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "sentences",
+        "text",
+        "translationText",
+        "updatedAt",
+        "words"
+      ],
+      "description": "What a `[filename].transcription.json` file might look like"
+    },
+    "simplifiedSchema": {
+      "fullComment": "What a `[filename].transcription.json` file might look like",
+      "properties": [
+        {
+          "name": "recordingType",
+          "required": false,
+          "schema": {
+            "enum": [
+              "audiobook",
+              "music",
+              "conversation",
+              "monologue",
+              "code",
+              "voicemail",
+              "unknown",
+              "other"
+            ],
+            "fullComment": "`RecordingType` specifies the type of recording that was found\n\n`audiobook`: Audio is an audiobook. Probably not easy to detect. Also, it's probably very time consuming. However, we might get a lot of information from the first chunk, and can already see if it's an audiobook based on that one. Stuff like \"this is Audible\" gives away a lot. (single chunk needed)\n\n`music`: Audio is music. probably easy to detect for a classifier. Could be harder for LLM's, unless whisper outputs something like `[Music]` multiple times. (single chunk needed)\n\n`conversation`: At least two speakers. This can be detected based on the thing that was said because usually there are questions and answers and it follows a dynamic pattern typical to conversations. Other AI classifiers could also be used like \"amount of speaker detection\"\n\n`monologue`: Single speaker that says something\n\n`code`: Audio is about code. This probably requires more postprocessing in order to do stuff with it.\n\n`voicemail`: Audio is a text that looks like it is meant for someone or multiple people. This can be detected by a LLM by looking for things like \"you\" or names, etc, especially in the beginning and end.\n\nother: None of the above. Could be nature sounds for example, or silent audio where nothing is said.\n\n`unknown`: If it can't be known for sure after going through the entire transcript. Also happens if api isn't working.",
+            "type": "string"
+          }
+        },
+        {
+          "name": "usedModelName",
+          "required": false,
+          "schema": {
+            "enum": [
+              "tiny",
+              "tiny.en",
+              "base",
+              "base.en",
+              "small",
+              "small.en",
+              "medium",
+              "medium.en",
+              "large-v1",
+              "large"
+            ],
+            "fullComment": "Later, we can expand this further if there are other, better solutions. We also are going to be using other tools for transcription, like speaker separation and background removal, so we could use something like `usedSpeakerSeparationModelName?:string` and `usedBackgroundRemovalModelName?:string`\n\n",
+            "type": "string"
+          }
+        },
+        {
+          "name": "words",
+          "required": true,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "Type for a single transcription line",
+                  "properties": [
+                    {
+                      "name": "startAt",
+                      "required": true,
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "endAt",
+                      "required": true,
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "text",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "confidenceLevel",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Scalar stating token confidence. May need to be on the token level though, not sure if it works like this. Don't know how to find this yet, as it's not output in one of the files.",
+                        "type": "number"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                },
+                "name": "TranscribedText"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "sentences",
+          "required": true,
+          "schema": {
+            "fullComment": "TODO: add some sort of splitter boolean in the sentences to indicate that a new topic starts so it becomes easier to split up the Transcription when doing transformations on it",
+            "todo": "add some sort of splitter boolean in the sentences to indicate that a new topic starts so it becomes easier to split up the Transcription when doing transformations on it",
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "Type for a single transcription line",
+                  "properties": [
+                    {
+                      "name": "startAt",
+                      "required": true,
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "endAt",
+                      "required": true,
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "text",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "confidenceLevel",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Scalar stating token confidence. May need to be on the token level though, not sure if it works like this. Don't know how to find this yet, as it's not output in one of the files.",
+                        "type": "number"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                },
+                "name": "TranscribedText"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "translationText",
+          "required": true,
+          "schema": {
+            "fullComment": "Text result from translation task (into english)\n\n(only if detected language of the first result wasn't english)",
+            "type": "string"
+          }
+        },
+        {
+          "name": "text",
+          "required": true,
+          "schema": {
+            "fullComment": "Text result from the regular transcription task without translation",
+            "type": "string"
+          }
+        },
+        {
+          "name": "snippets",
+          "required": false,
+          "schema": {
+            "fullComment": "Interesting standalone snippet finding in bigger video/audio\n\nTODO: ensure these are found after we have the transcription.",
+            "todo": "ensure these are found after we have the transcription.",
+            "items": [
+              {
+                "schema": {
+                  "properties": [
+                    {
+                      "name": "firstLine",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "lastLine",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "speakerAmount",
+          "required": false,
+          "schema": {
+            "fullComment": "super useful to have",
+            "type": "number"
+          }
+        },
+        {
+          "name": "updatedAt",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "updatedDate",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "updatedTime",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "Transcription",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

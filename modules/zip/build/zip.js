@@ -1,0 +1,3 @@
+#!/usr/bin/env node
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.zip=void 0;var child_process_1=require("child_process"),fs_util_1=require("fs-util"),zip=function(e){var r=e.baseFolderPath,i=e.folderName,o=e.zipName,c=e.debug,s=e.requirePassword,t="".concat(s?"zip -er":"zip -r"," ").concat(o," ").concat(i);return console.log({fullCommand:t,baseFolderPath:r}),(0,child_process_1.execSync)(t,{cwd:r,stdio:c||s?"inherit":"ignore"}),fs_util_1.path.join(r,"".concat(o,".zip"))};exports.zip=zip;
+//# sourceMappingURL=zip.js.map

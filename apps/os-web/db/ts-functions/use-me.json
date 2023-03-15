@@ -1,0 +1,69 @@
+{
+  "createdAt": 1678041764320,
+  "updatedAt": 1678041764320,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041764320,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/util/useMe.ts",
+  "commentsInside": [],
+  "rawText": " () => {\n  const meQuery = queries.useGetMeWithContext();\n  const me = destructureOptionalObject(\n    meQuery.data?.result?.device\n  )?.currentPersonCalculated;\n\n  return { me, isLoading: meQuery.isLoading };\n}",
+  "name": "useMe",
+  "slug": "use-me",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "{ me: any; isLoading: boolean; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "me": {},
+        "isLoading": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "me",
+        "isLoading"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "me",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "isLoading",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 210,
+    "lines": 8,
+    "bytes": 210,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 8,
+    "numberOfFiles": 1
+  },
+  "id": "osaamqqagumcuhjyjhpmsoso"
+}

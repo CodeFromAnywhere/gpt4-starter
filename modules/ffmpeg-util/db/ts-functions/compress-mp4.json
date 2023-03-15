@@ -1,0 +1,46 @@
+{
+  "createdAt": 1677580053607,
+  "updatedAt": 1677580053607,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580053607,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/compressMp4.ts",
+  "commentsInside": [],
+  "rawText": " async (absolutePath: string) => {\n  const result = await compressConvert(absolutePath, {\n    quality: 20,\n    sizeWidthPx: 360,\n    targetFormat: \"mp4\",\n    fps: 4,\n    isDebug: true,\n  });\n  console.log({ result });\n}",
+  "name": "compressMp4",
+  "slug": "compress-mp4",
+  "parameters": [
+    {
+      "name": "absolutePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Compress mp4 to very small",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 245,
+    "lines": 10,
+    "bytes": 245,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 10,
+    "numberOfFiles": 1
+  },
+  "id": "liqfjxjcmgcpzhlbjkmelzvu"
+}

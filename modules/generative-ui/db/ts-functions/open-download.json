@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678041418411,
+  "updatedAt": 1678041418411,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041418411,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/openDownload.ts",
+  "commentsInside": [],
+  "rawText": " async (projectRelativePath: string) => {\n  const download = await api.createDownloadWithContext(projectRelativePath);\n\n  const token = download.result?.downloadId;\n  if (!token) {\n    alert?.(\"Something went wrong\");\n    return;\n  }\n\n  const url = getGetApiUrl(apiUrl, \"downloadGetApi\", { token });\n\n  window.open(url, \"_blank\")?.focus();\n}",
+  "name": "openDownload",
+  "slug": "open-download",
+  "parameters": [
+    {
+      "name": "projectRelativePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Download a file or folder",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 366,
+    "lines": 13,
+    "bytes": 366,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 28,
+    "linesPerFile": 13,
+    "numberOfFiles": 1
+  },
+  "id": "idxckysycvhjgkwsvyikzqeg"
+}

@@ -1,0 +1,67 @@
+{
+  "createdAt": 1678331053164,
+  "updatedAt": 1678331053164,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331053164,
+  "id": "namedparameterstypeof-huggingfacespeakerdiarization",
+  "name": "NamedParameters<typeof huggingfaceSpeakerDiarization>",
+  "slug": "namedparameterstypeof-huggingfacespeakerdiarization",
+  "operationRelativeTypescriptFilePath": "src/huggingfaceSpeakerDiarization.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "absoluteAudioFilePath": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "absoluteAudioFilePath"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "absoluteAudioFilePath",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof huggingfaceSpeakerDiarization>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

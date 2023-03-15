@@ -1,0 +1,180 @@
+{
+  "createdAt": 1678330234224,
+  "updatedAt": 1678330234224,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330234224,
+  "id": "queuestatus",
+  "name": "QueueStatus",
+  "slug": "queuestatus",
+  "operationRelativeTypescriptFilePath": "src/queue/checkQueue.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\nexport type QueueStatus = {\n  updatedAt: number;\n  serverStatus: {\n    isOffline: boolean;\n    isBusy: boolean;\n    isUsingBattery: boolean;\n  };\n  totalQueueCount: number;\n  queueSummary: {\n    isDisabled?: number | undefined;\n    isHeavy?: number | undefined;\n    isInternetRequired?: number | undefined;\n    isBrowserRequired?: number | undefined;\n  };\n  executableQueueCount: number;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "updatedAt": {
+          "type": "number"
+        },
+        "serverStatus": {
+          "type": "object",
+          "properties": {
+            "isOffline": {
+              "type": "boolean"
+            },
+            "isBusy": {
+              "type": "boolean"
+            },
+            "isUsingBattery": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isOffline",
+            "isBusy",
+            "isUsingBattery"
+          ],
+          "additionalProperties": false
+        },
+        "totalQueueCount": {
+          "type": "number"
+        },
+        "queueSummary": {
+          "type": "object",
+          "properties": {
+            "isDisabled": {
+              "type": "number"
+            },
+            "isHeavy": {
+              "type": "number"
+            },
+            "isInternetRequired": {
+              "type": "number"
+            },
+            "isBrowserRequired": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        },
+        "executableQueueCount": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "updatedAt",
+        "serverStatus",
+        "totalQueueCount",
+        "queueSummary",
+        "executableQueueCount"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "updatedAt",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "serverStatus",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isOffline",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isBusy",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isUsingBattery",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        },
+        {
+          "name": "totalQueueCount",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "queueSummary",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isDisabled",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "isHeavy",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "isInternetRequired",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "isBrowserRequired",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        },
+        {
+          "name": "executableQueueCount",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "QueueStatus",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

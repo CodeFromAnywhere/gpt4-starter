@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794234860,
+  "updatedAt": 1673794234860,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794234860,
+  "id": "namedparameterstypeof-readandwritetopackagejsonexample",
+  "name": "NamedParameters<typeof readAndWriteToPackageJsonExample>",
+  "slug": "namedparameterstypeof-readandwritetopackagejsonexample",
+  "operationRelativeTypescriptFilePath": "src/readAndWriteToPackageJsonExample.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof readAndWriteToPackageJsonExample>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

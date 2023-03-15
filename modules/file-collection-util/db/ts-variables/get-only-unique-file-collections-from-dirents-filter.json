@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330500249,
+  "updatedAt": 1678330500249,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330500249,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getOnlyUniqueFileCollectionsFromDirentsFilter",
+  "slug": "get-only-unique-file-collections-from-dirents-filter",
+  "operationRelativeTypescriptFilePath": "src/isFileCollection.ts",
+  "type": {
+    "rawType": "(absoluteFolderPath: string) => (dirent: import(\"fs\").Dirent, index: number, self: import(\"fs\").Dirent[]) => boolean",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(absoluteFolderPath: string) =>\n  (dirent: Dirent, index: number, self: Dirent[]) =>\n    onlyUnique2<Dirent>((a, b) => {\n      // if (a.isDirectory() || b.isDirectory()) {\n      //   // NB: directories are always unique, so should return false for the isEqualFunction\n      // NB: not working! :S\n      //   return false;\n      // }\n\n      return isFileCollection(\n        path.join(absoluteFolderPath, a.name),\n        path.join(absoluteFolderPath, b.name)\n      );\n    })(dirent, index, self)",
+  "description": "Returns a filter function\n\nUsage:\n\n```ts\ndirents.filter(getOnlyUniqueFileCollectionsFromDirentsFilter(absolutePath))\n```",
+  "id": "svwhxxokudfcehgeyghayzxy"
+}

@@ -1,0 +1,49 @@
+{
+  "createdAt": 1677580494176,
+  "updatedAt": 1677580494176,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580494176,
+  "id": "namedparameterstypeof-ispathparameter",
+  "name": "NamedParameters<typeof isPathParameter>",
+  "slug": "namedparameterstypeof-ispathparameter",
+  "operationRelativeTypescriptFilePath": "src/getFileFunctions.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "parameterName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "parameterName"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "parameterName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof isPathParameter>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

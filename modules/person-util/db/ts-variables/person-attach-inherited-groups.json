@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331382919,
+  "updatedAt": 1678331382919,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331382919,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "personAttachInheritedGroups",
+  "slug": "person-attach-inherited-groups",
+  "operationRelativeTypescriptFilePath": "src/personAttachInheritedGroups.ts",
+  "type": {
+    "rawType": "(person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person, groups: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Group\").Group[]) => import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  person: Person,\n  groups: Group[]\n): Person => {\n  const allGroups = getAllGroupsIncludingInheritedRecursive(\n    groups,\n    person.groupSlugs\n  );\n\n  return {\n    ...person,\n    groupSlugs: allGroups.map((x) => x.slug),\n    groups: allGroups,\n  };\n}",
+  "description": "This special map function attaches all groups (including public and inherited) for a person, on top of just the ones that are found int `Person.groupSlugs` (if any)",
+  "id": "aydiwsmamwljdpaxkwwazpzc"
+}

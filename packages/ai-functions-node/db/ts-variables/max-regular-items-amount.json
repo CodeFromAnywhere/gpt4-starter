@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678330236208,
+  "updatedAt": 1678330236208,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330236208,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "MAX_REGULAR_ITEMS_AMOUNT",
+  "slug": "max-regular-items-amount",
+  "operationRelativeTypescriptFilePath": "src/queue/checkQueue.ts",
+  "type": {
+    "rawType": "{}",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "300",
+  "description": "",
+  "id": "qwcjmwmpglreztyspdrcebfb"
+}

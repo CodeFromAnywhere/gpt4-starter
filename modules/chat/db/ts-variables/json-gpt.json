@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678372639350,
+  "updatedAt": 1678372639350,
+  "deletedAt": 0,
+  "createdFirstAt": 1678372639350,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "jsonGpt",
+  "slug": "json-gpt",
+  "operationRelativeTypescriptFilePath": "src/jsonGpt.ts",
+  "type": {
+    "rawType": "<T extends { [key: string]: any; }>(message: string, schema: { [key: string]: { type: string; description?: string | undefined; }; }) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse & { tokensUsed?: number | undefined; chatResponse?: string | undefined; jsonResponse?: T | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async <T extends { [key: string]: any }>(\n  message: string,\n  schema: { [key: string]: { type: string; description?: string } }\n): Promise<\n  StandardResponse & {\n    tokensUsed?: number | undefined;\n    chatResponse?: string | undefined;\n    jsonResponse?: T;\n  }\n> => {\n  const keys = Object.keys(schema);\n\n  const jsonFormat = keys\n    .map((key) => {\n      const value = schema[key];\n      return `${key}: ${value.type}${\n        value.description ? ` (${value.description})` : \"\"\n      }`;\n    })\n    .join(\"\\n\");\n\n  const analysis = await chatCompletion([\n    {\n      role: \"system\",\n      content: `You are JSON-bot, a large language model trained by OpenAI. You always reply with a JSON object. Your purpose is to analyse the users message. Required return format:\n    ---\n    ${jsonFormat}`,\n    },\n    { role: \"user\", content: message },\n  ]);\n\n  return analysis;\n}",
+  "description": "JSON GPT",
+  "id": "mhwimpqulsrlwbuhwevpaico"
+}

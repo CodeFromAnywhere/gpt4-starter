@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330497461,
+  "updatedAt": 1678330497461,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330497461,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getMarkdownIndexPath",
+  "slug": "get-markdown-index-path",
+  "operationRelativeTypescriptFilePath": "src/getMarkdownIndexPath.ts",
+  "type": {
+    "rawType": "(absoluteFilePath: string, shouldExist?: boolean | undefined) => string | undefined",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  absoluteFilePath: string,\n  shouldExist?: boolean\n) => {\n  const parsedPath = path.parse(absoluteFilePath);\n  const absoluteFolderPath = parsedPath.dir;\n  const rootName = withoutSubExtensions(parsedPath.base);\n\n  const markdownIndexPath = path.join(\n    absoluteFolderPath,\n    `${rootName}.MarkdownIndex.json`\n  );\n\n  const exists = fs.existsSync(markdownIndexPath);\n\n  if (!exists && shouldExist) {\n    return;\n  }\n\n  return markdownIndexPath;\n}",
+  "description": "Returns the MarkdownIndex filePath related to any file\n\nOnly returns it if it exists if `shouldExist` is true",
+  "id": "ozezpthlmiaqoxbwwwttizur"
+}

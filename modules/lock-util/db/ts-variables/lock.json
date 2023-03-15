@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331280451,
+  "updatedAt": 1678331280451,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331280451,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "lock",
+  "slug": "lock",
+  "operationRelativeTypescriptFilePath": "src/lock.ts",
+  "type": {
+    "rawType": "(aboluteLockableFilePath: string, message: string, functionName?: string | undefined, parameters?: any[] | undefined) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  aboluteLockableFilePath: string,\n  message: string,\n  functionName?: string,\n  parameters?: any[]\n) => {\n  const parsedPath = path.parse(aboluteLockableFilePath);\n  const lockFilePath = path.join(\n    parsedPath.dir,\n    `${parsedPath.name}${lockfileSuffix}`\n  );\n\n  await writeJsonToFile<ActionStatus>(lockFilePath, {\n    ...getUpdatedTimeObject(),\n    status: \"busy\",\n    functionName: functionName || \"lock\",\n    parameters,\n    message,\n    cleanupAt: Date.now() + maximumLockTime,\n  });\n}",
+  "description": "either creates the lockfile if it didn't exist or it will update it with new updatedAt and status. If status isn't set, status will be removed",
+  "id": "gsinbssavuktuhjafznixldj"
+}

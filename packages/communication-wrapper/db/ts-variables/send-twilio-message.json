@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331027268,
+  "updatedAt": 1678331027268,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331027268,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "sendTwilioMessage",
+  "slug": "send-twilio-message",
+  "operationRelativeTypescriptFilePath": "src/sendTwilioMessage.ts",
+  "type": {
+    "rawType": "(to: string, body: string, config?: { channel?: \"whatsapp\" | \"sms\" | undefined; persona?: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/Persona\").Persona | undefined; } | undefined) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  to: string,\n  body: string,\n  config?: {\n    /**\n     * Defaults to whatsapp\n     */\n    channel?: \"whatsapp\" | \"sms\";\n    persona?: Persona;\n  }\n) => {\n  const persona = config?.persona || (await getPrimaryPersona());\n  if (!persona) {\n    return {\n      isSuccessful: false,\n    };\n  }\n  const {\n    twilioAccountSid,\n    twilioAuthToken,\n    twilioFromPhoneNumber,\n    twilioWhatsappFromPhoneNumber,\n  } = persona;\n  const client = twilio(twilioAccountSid, twilioAuthToken);\n\n  const fromNumber =\n    config?.channel === \"sms\"\n      ? twilioFromPhoneNumber\n      : `whatsapp:${twilioWhatsappFromPhoneNumber}`;\n\n  const toNumber = config?.channel === \"sms\" ? to : `whatsapp:${to}`;\n\n  const result = await client.messages.create({\n    from: fromNumber,\n    body,\n    to: toNumber,\n  });\n\n  console.log({ result });\n  return { isSuccessful: true };\n}",
+  "description": "sends a message with the primary persona (or specified persona) to a whatsapp number with a specific body\n\nTwilio from/to works with or without a \"whatsapp:\" prefix for whatsapp and sms respectively\n\nMust use E.164 formatting, e.g. +[country][phonenumber]",
+  "id": "hodvqgmzpuwcqpgrtjiifjxp"
+}

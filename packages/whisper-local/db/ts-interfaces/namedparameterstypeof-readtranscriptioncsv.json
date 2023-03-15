@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678330953366,
+  "updatedAt": 1678330953366,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330953366,
+  "id": "namedparameterstypeof-readtranscriptioncsv",
+  "name": "NamedParameters<typeof readTranscriptionCsv>",
+  "slug": "namedparameterstypeof-readtranscriptioncsv",
+  "operationRelativeTypescriptFilePath": "src/readTranscriptionCsv.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "csvPath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "csvPath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "csvPath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof readTranscriptionCsv>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

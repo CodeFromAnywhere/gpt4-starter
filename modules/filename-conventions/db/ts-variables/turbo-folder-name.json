@@ -1,0 +1,24 @@
+{
+  "createdAt": 1675690237328,
+  "updatedAt": 1675690237328,
+  "deletedAt": 0,
+  "createdFirstAt": 1675690237328,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "turboFolderName",
+  "slug": "turbo-folder-name",
+  "operationRelativeTypescriptFilePath": "src/filename-conventions.ts",
+  "type": {
+    "rawType": "String",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "\".turbo\"",
+  "description": "",
+  "id": "rinxpvzqjgucljbhnfpanwgq"
+}

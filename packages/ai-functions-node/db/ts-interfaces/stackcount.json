@@ -1,0 +1,37 @@
+{
+  "createdAt": 1678330202778,
+  "updatedAt": 1678330202778,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330202778,
+  "id": "stackcount",
+  "name": "StackCount",
+  "slug": "stackcount",
+  "operationRelativeTypescriptFilePath": "src/getContextualPromptCategories.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\nexport type StackCount = {\n  [stack: string]: number;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "StackCount",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330589674,
+  "updatedAt": 1678330589674,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330589674,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "isSystemUsingBattery",
+  "slug": "is-system-using-battery",
+  "operationRelativeTypescriptFilePath": "src/isSystemUsingBattery.ts",
+  "type": {
+    "rawType": "() => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const result = await isCharging();\n  return !result;\n}",
+  "description": "uses [`is-charging`](https://github.com/gillstrom/is-charging) library for cross OS support",
+  "id": "nuawmthvanlgeyasssyepigz"
+}

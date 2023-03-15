@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678042055723,
+  "updatedAt": 1678042055723,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042055723,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getCommonAncestorMultiple",
+  "slug": "get-common-ancestor-multiple",
+  "operationRelativeTypescriptFilePath": "src/getCommonAncestorMultiple.ts",
+  "type": {
+    "rawType": "(paths: string[]) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (paths: string[]) => {\n  if (paths.length <= 1) {\n    console.log(\"not enough paths, minimum 2\");\n    return;\n  }\n  const firstPath = paths[0];\n  const allFolders = getAllFoldersUntilFolder(firstPath);\n\n  const uncommonIndex = allFolders.findIndex((pathUntilFolder) => {\n    // NB: find a path that doesn't start with a chunk\n    const isUncommon = !!paths.find(\n      (p) =>\n        !p.startsWith(pathUntilFolder === \"/\" ? \"/\" : `${pathUntilFolder}/`)\n    );\n    return isUncommon;\n  });\n\n  console.log({ paths, firstPath, allFolders, uncommonIndex });\n  if (uncommonIndex === -1) {\n    return getFolderPath(firstPath);\n  }\n\n  const commonAncestor = await getFolderPath(allFolders[uncommonIndex]);\n  return commonAncestor;\n}",
+  "description": "",
+  "id": "amzcedabgumijpechuihjobx"
+}

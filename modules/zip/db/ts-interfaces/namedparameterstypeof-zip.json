@@ -1,0 +1,109 @@
+{
+  "createdAt": 1678042843362,
+  "updatedAt": 1678042843362,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042843362,
+  "id": "namedparameterstypeof-zip",
+  "name": "NamedParameters<typeof zip>",
+  "slug": "namedparameterstypeof-zip",
+  "operationRelativeTypescriptFilePath": "src/zip.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "baseFolderPath": {
+              "type": "string"
+            },
+            "folderName": {
+              "type": "string"
+            },
+            "zipName": {
+              "type": "string"
+            },
+            "debug": {
+              "type": "boolean"
+            },
+            "requirePassword": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "baseFolderPath",
+            "folderName",
+            "zipName"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "baseFolderPath",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "folderName",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "zipName",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "debug",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "requirePassword",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof zip>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

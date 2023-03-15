@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678331081102,
+  "updatedAt": 1678331081102,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331081102,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/calculateTokenCount.ts",
+  "commentsInside": [],
+  "rawText": " (\n  text: string,\n  isDavinci?: boolean\n): number => {\n  // NB: documented in openai cookbook, davinci counts with p50k_base, ChatGPT models use cl100k_base.\n\n  const tokenLength = get_encoding(\n    isDavinci ? \"p50k_base\" : \"cl100k_base\"\n  ).encode(text).length;\n\n  //old way (very shit)\n  //  return Math.round(text.split(\" \").length / 0.4) + 100;\n\n  return tokenLength;\n}",
+  "name": "calculateTokenCount",
+  "slug": "calculate-token-count",
+  "parameters": [
+    {
+      "name": "text",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "isDavinci",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    }
+  ],
+  "description": "Both input and output tokens count toward these quantities. For example, if your API call used 10 tokens in the message input and you received 20 tokens in the message output, you would be billed for 30 tokens.\n\nTo see how many tokens are used by an API call, check the usage field in the API response (e.g., response[‘usage’][‘total_tokens’]).\n\nTo see how many tokens are in a text string without making an API call, use OpenAI’s tiktoken Python library. Example code can be found in the OpenAI Cookbook’s guide on how to count tokens with tiktoken.\n\nEach message passed to the API consumes the number of tokens in the content, role, and other fields, plus a few extra for behind-the-scenes formatting. This may change slightly in the future.\n\nIf a conversation has too many tokens to fit within a model’s maximum limit (e.g., more than 4096 tokens for gpt-3.5-turbo), you will have to truncate, omit, or otherwise shrink your text until it fits. Beware that if a message is removed from the messages input, the model will lose all knowledge of it.\n\nNote too that very long conversations are more likely to receive incomplete replies. For example, a gpt-3.5-turbo conversation that is 4090 tokens long will have its reply cut off after just 6 tokens.\n\n\nNB: best way to locally count tokens:\n\n- https://github.com/openai/tiktoken/issues/22#issuecomment-1436005516\n- https://github.com/dqbd/tiktoken\n- https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb",
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 1876,
+    "lines": 32,
+    "bytes": 1890,
+    "bytesPerCharacter": 1.007462686567164,
+    "charactersPerLine": 59,
+    "linesPerFile": 32,
+    "numberOfFiles": 1
+  },
+  "id": "rmfyaeovbuvlfvtevqodagkt"
+}

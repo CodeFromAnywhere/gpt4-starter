@@ -1,0 +1,85 @@
+{
+  "createdAt": 1670825455755,
+  "updatedAt": 1670825455755,
+  "deletedAt": 0,
+  "createdFirstAt": 1670825455755,
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/test.js"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "name": "chatgpt-controller",
+  "operation": {
+    "hasGeneratedDependenciesIndexed": false,
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": []
+    },
+    "lastRebuildAt": 1677582285235,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 4,
+        "lines": 303,
+        "characters": 10450,
+        "bytes": 10450
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 123,
+        "characters": 3772,
+        "bytes": 3772
+      },
+      "textSize": {
+        "numberOfFiles": 3,
+        "lines": 129,
+        "characters": 3875,
+        "bytes": 3875
+      },
+      "size": {
+        "bytes": 18097,
+        "characters": 18097,
+        "lines": 555,
+        "numberOfFiles": 9
+      }
+    },
+    "folderNameIndexed": "chatgpt-controller",
+    "relativeOperationLocationPathIndexed": "operations/niches/bhagya-2023-01-26/control-web",
+    "classificationIndexed": "node-cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [
+      "isCaptchaExist",
+      "solveReptcha",
+      "db",
+      "MediaCredential",
+      "isCaptchaExist",
+      "solveReptcha",
+      "openPage",
+      "setBrowserPageIdle",
+      "ProcessPromptFunctionResult"
+    ],
+    "packageDependenciesIndexed": [
+      "Page",
+      "Page"
+    ]
+  },
+  "dependencies": {
+    "clipboardy": "^3.0.0",
+    "database": "0.0.1",
+    "html-to-md": "^0.8.3",
+    "puppeteer": "*",
+    "puppeteer-utils": "1.0.2",
+    "social-media-types": "0.0.1",
+    "ai-types": "0.0.1"
+  },
+  "slug": "chatgpt-controller",
+  "id": "xwgqotrxkqssqbtgmmwsaxzq"
+}

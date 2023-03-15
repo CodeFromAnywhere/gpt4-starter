@@ -1,0 +1,35 @@
+{
+  "createdAt": 1673794213454,
+  "updatedAt": 1673794213454,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794213454,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getAllPackageNames.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const allPackagesNames = (await db.get(\"Operation\")).map((x) => x.name);\n  return allPackagesNames;\n}",
+  "name": "getAllPackagesNames",
+  "slug": "get-all-packages-names",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 118,
+    "lines": 4,
+    "bytes": 118,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 30,
+    "linesPerFile": 4,
+    "numberOfFiles": 1
+  },
+  "id": "vvlnvqffuhpsqowsnazotaig"
+}

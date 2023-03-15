@@ -1,0 +1,172 @@
+{
+  "createdAt": 1678331565844,
+  "updatedAt": 1678331565844,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331565844,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "explorerInitialValues",
+  "slug": "explorer-initial-values",
+  "operationRelativeTypescriptFilePath": "src/store.ts",
+  "type": {
+    "rawType": "{ \"explorer.searchType\": { label: string; value: string; }; \"explorer.config\": { disableAdmin?: boolean | undefined; customProjectRelativeBasePaths?: string[] | undefined; activeCustomProjectRelativeBasePath?: string | undefined; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "explorer.searchType": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "value": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            }
+          },
+          "required": [
+            "label",
+            "value"
+          ]
+        },
+        "explorer.config": {
+          "type": "object",
+          "properties": {
+            "disableAdmin": {
+              "type": "boolean"
+            },
+            "customProjectRelativeBasePaths": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "transform": [
+                      "trim"
+                    ]
+                  },
+                  {
+                    "minLength": 1
+                  }
+                ]
+              }
+            },
+            "activeCustomProjectRelativeBasePath": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            }
+          }
+        }
+      },
+      "required": [
+        "explorer.searchType",
+        "explorer.config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "explorer.searchType",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "label",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        },
+        {
+          "name": "explorer.config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "disableAdmin",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "customProjectRelativeBasePaths",
+                "required": false,
+                "schema": {
+                  "items": [
+                    {
+                      "schema": {
+                        "type": "string"
+                      },
+                      "name": null
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "activeCustomProjectRelativeBasePath",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "{\n  \"explorer.searchType\": explorerSearchTypes[0],\n  \"explorer.config\": {},\n}",
+  "description": "",
+  "id": "ciglcbhxaekiilzsiwhubukn"
+}

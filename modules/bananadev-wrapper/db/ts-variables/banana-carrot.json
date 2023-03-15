@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330983891,
+  "updatedAt": 1678330983891,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330983891,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "bananaCarrot",
+  "slug": "banana-carrot",
+  "operationRelativeTypescriptFilePath": "src/bananaCarrot.ts",
+  "type": {
+    "rawType": "(modelParameters: { imageUrl: string; text?: string | undefined; similarity?: boolean | undefined; maxLength?: number | undefined; minLength?: number | undefined; }) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (modelParameters: {\n  imageUrl: string;\n\n  /**\n   * text for QA / Similarity*/\n  text?: string;\n  /**\n   * whether to return text-image similarity\n   */\n  similarity?: boolean;\n  /**\n   * max length of the generation\n   */\n  maxLength?: number;\n  /**\n   * min length of the generation\n   */\n  minLength?: number;\n}) => {\n  const persona = await getPrimaryPersona();\n\n  const apiKey = persona.bananadevApiKey;\n\n  if (!apiKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please setup an API Key for Carrot Banana\",\n    };\n  }\n\n  const modelKey = persona.bananadevModelKeys?.carrot;\n\n  if (!modelKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please provide a correct model that you have a model key for\",\n    };\n  }\n\n  const result = await banana.run(apiKey, modelKey, modelParameters);\n\n  console.log({ carrotResult: result });\n  return { isSuccessful: true, message: \"You did it\", result };\n}",
+  "description": "",
+  "id": "wptdxoaibibplbnpkyudedvj"
+}

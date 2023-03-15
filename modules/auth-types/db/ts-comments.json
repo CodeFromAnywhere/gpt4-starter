@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1668751743645,
+    "updatedAt": 1668751743645,
+    "deletedAt": 0,
+    "createdFirstAt": 1668751743645,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/AuthorizationModel.ts",
+    "comment": "Authorization model for indexed authorizations\n\nDon't edit this! If you wish to add authorizations to a group, either edit the code or text-files, or provide custom authorizations to the `Group`.",
+    "rawStatement": "export interface AuthorizationModel extends DefaultModelType, Authorization {}",
+    "parameters": {},
+    "types": [],
+    "firstLine": 4,
+    "lastLine": 8,
+    "id": "jqwfxyocwonrrkjoolhzjfny"
+  }
+]

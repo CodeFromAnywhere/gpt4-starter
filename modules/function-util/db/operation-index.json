@@ -1,0 +1,74 @@
+{
+  "createdAt": 1664526304835,
+  "updatedAt": 1668149205925,
+  "deletedAt": 0,
+  "createdFirstAt": 1664526304835,
+  "folderName": "function-util",
+  "packageName": "function-util",
+  "relativeOperationLocationPath": "operations/tools/interfaces/cli",
+  "classification": "js",
+  "name": "function-util",
+  "slug": "function-util",
+  "coreDependencies": [],
+  "operationDependencies": [
+    "humanCase",
+    "log",
+    "ask",
+    "FunctionParameter",
+    "findSentenceMatches",
+    "oneByOne",
+    "log",
+    "sdk",
+    "db",
+    "TsExport",
+    "TsFunction",
+    "exploreOperationFolders",
+    "getLastFolder",
+    "getPathsWithOperations",
+    "getProjectRoot",
+    "mergeObjectsArray",
+    "TsFunction",
+    "sdk",
+    "db",
+    "path",
+    "getOperationPath",
+    "getSrcRelativeFileId"
+  ],
+  "packageDependencies": [
+    "execSync"
+  ],
+  "size": {
+    "codeSize": {
+      "numberOfFiles": 10,
+      "lines": 0,
+      "characters": 9507,
+      "bytes": 9507
+    },
+    "dataSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 1775,
+      "bytes": 1775
+    },
+    "textSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 10141,
+      "bytes": 10141
+    },
+    "size": {
+      "bytes": 21423,
+      "characters": 21423,
+      "lines": 0,
+      "numberOfFiles": 14
+    }
+  },
+  "buildSucceeded": true,
+  "dependenciesBuildsFailed": false,
+  "indexErrors": [],
+  "indexImportExportError": "",
+  "indexInteracesErrors": [],
+  "lintProblems": [],
+  "id": "bzdqwcfxhnvuytvziemjrake",
+  "language": "en"
+}

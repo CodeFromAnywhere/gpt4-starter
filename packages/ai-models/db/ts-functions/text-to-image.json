@@ -1,0 +1,87 @@
+{
+  "createdAt": 1678369221695,
+  "updatedAt": 1678369221695,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369221695,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/textToImage.ts",
+  "commentsInside": [],
+  "rawText": " async (config: {\n  /**\n   * either provide text or an inputTextFilePath\n   */\n  text?: string;\n  /**\n   * either provide text or an inputTextFilePath\n   */\n  inputTextFilePath?: string;\n  /**\n   * if you don't provide this, it will be stored as [inputTextFilePathFolder]/[inputFileName].png\n   *\n   * needed if you don't provide an inputTextFilePath\n   */\n  outputFilePath?: string;\n}) => {\n  const { text } = config;\n\n  const response = await bananaStableDiffusion({ text });\n  return response;\n}",
+  "name": "textToImage",
+  "slug": "text-to-image",
+  "parameters": [
+    {
+      "name": "config",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "either provide text or an inputTextFilePath"
+          },
+          "inputTextFilePath": {
+            "type": "string",
+            "description": "either provide text or an inputTextFilePath"
+          },
+          "outputFilePath": {
+            "type": "string",
+            "description": "if you don't provide this, it will be stored as [inputTextFilePathFolder]/[inputFileName].png\n\nneeded if you don't provide an inputTextFilePath"
+          }
+        },
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "text",
+            "required": false,
+            "schema": {
+              "fullComment": "either provide text or an inputTextFilePath",
+              "type": "string"
+            }
+          },
+          {
+            "name": "inputTextFilePath",
+            "required": false,
+            "schema": {
+              "fullComment": "either provide text or an inputTextFilePath",
+              "type": "string"
+            }
+          },
+          {
+            "name": "outputFilePath",
+            "required": false,
+            "schema": {
+              "fullComment": "if you don't provide this, it will be stored as [inputTextFilePathFolder]/[inputFileName].png\n\nneeded if you don't provide an inputTextFilePath",
+              "type": "string"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "should use banana.dev Stable Diffusion\npromises an absolute path of the resulting image",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 585,
+    "lines": 22,
+    "bytes": 585,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 27,
+    "linesPerFile": 22,
+    "numberOfFiles": 1
+  },
+  "id": "txleladecllzhdquyvozreks"
+}

@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678331096003,
+  "updatedAt": 1678331096003,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331096003,
+  "id": "openaichatcompletionmodelenum",
+  "name": "OpenAiChatCompletionModelEnum",
+  "slug": "openaichatcompletionmodelenum",
+  "operationRelativeTypescriptFilePath": "src/types.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\n/**\n  Which model?\n  \n  - gpt-3.5-turbo: ChatGPT MODEL! 10x cheaper\n  \n  Ensure it works the same and requires us to provide the chat-history (or not?). If not, history is only needed to determine whether or not we're going to answer in the first place. And also for extra chains of course, in some cases.\n   */\nexport type OpenAiChatCompletionModelEnum = typeof openAiChatModels[number];",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "Which model?\n\n- gpt-3.5-turbo: ChatGPT MODEL! 10x cheaper\n\nEnsure it works the same and requires us to provide the chat-history (or not?). If not, history is only needed to determine whether or not we're going to answer in the first place. And also for extra chains of course, in some cases.",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "string",
+      "description": "Which model?\n\n- gpt-3.5-turbo: ChatGPT MODEL! 10x cheaper\n\nEnsure it works the same and requires us to provide the chat-history (or not?). If not, history is only needed to determine whether or not we're going to answer in the first place. And also for extra chains of course, in some cases."
+    },
+    "simplifiedSchema": {
+      "fullComment": "Which model?\n\n- gpt-3.5-turbo: ChatGPT MODEL! 10x cheaper\n\nEnsure it works the same and requires us to provide the chat-history (or not?). If not, history is only needed to determine whether or not we're going to answer in the first place. And also for extra chains of course, in some cases.",
+      "type": "string"
+    },
+    "typeCoverage": 0,
+    "rawType": "OpenAiChatCompletionModelEnum",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

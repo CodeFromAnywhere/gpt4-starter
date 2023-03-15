@@ -1,0 +1,38 @@
+[
+  {
+    "createdAt": 1677579950857,
+    "updatedAt": 1677579950857,
+    "deletedAt": 0,
+    "createdFirstAt": 1677579950857,
+    "name": "detectFolderLanguage",
+    "slug": "detect-folder-language",
+    "operationRelativeTypescriptFilePath": "src/detectFolderLanguage.ts",
+    "comments": [],
+    "type": "value",
+    "id": "immjrnxdrcjtmixzgovukgfx"
+  },
+  {
+    "createdAt": 1677579950857,
+    "updatedAt": 1677579950857,
+    "deletedAt": 0,
+    "createdFirstAt": 1677579950857,
+    "name": "detectLanguage",
+    "slug": "detect-language",
+    "operationRelativeTypescriptFilePath": "src/detectLanguage.ts",
+    "comments": [],
+    "type": "value",
+    "id": "synhhlybpoztzdjxbvlolwyp"
+  },
+  {
+    "createdAt": 1677579950857,
+    "updatedAt": 1677579950857,
+    "deletedAt": 0,
+    "createdFirstAt": 1677579950857,
+    "name": "detectLanguage",
+    "slug": "detect-language",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "hjhckvdgrjtqpxofvsmxyogk"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1674033626628,
+  "updatedAt": 1674033626628,
+  "deletedAt": 0,
+  "createdFirstAt": 1674033626628,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "trimCodeblock",
+  "slug": "trim-codeblock",
+  "operationRelativeTypescriptFilePath": "src/findJsonInMarkdown.ts",
+  "type": {
+    "rawType": "(codeblock: string) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(codeblock: string) => {\n  codeblock = codeblock.trim();\n  const trimmedQuotes =\n    codeblock.startsWith(\"`\") && codeblock.endsWith(\"`\")\n      ? codeblock.slice(1, codeblock.length - 1)\n      : codeblock;\n  return trimmedQuotes;\n}",
+  "description": "",
+  "id": "hxbqmfepjzynsxmyhcbodjbt"
+}

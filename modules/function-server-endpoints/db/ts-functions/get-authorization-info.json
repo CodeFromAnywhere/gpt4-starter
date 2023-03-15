@@ -1,0 +1,63 @@
+{
+  "createdAt": 1678329830865,
+  "updatedAt": 1678329830865,
+  "deletedAt": 0,
+  "createdFirstAt": 1678329830865,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getAuthorizationInfo.ts",
+  "commentsInside": [],
+  "rawText": " (\n  device: Storing<Device>,\n  fn: { (...parameters: any): any; [key: string]: any }\n): boolean => {\n  const currentPersonGroupSlugs = (\n    device?.currentPersonCalculated?.groupSlugs || []\n  ).concat(\"public\");\n\n  const isAdmin = currentPersonGroupSlugs.includes(\"admin\");\n  if (isAdmin) {\n    // admins can execute everything\n    return true;\n  }\n  /**\n   * Function might have config `StandardFunctionConfig`\n   */\n  const config = fn.config as StandardFunctionConfig | undefined;\n\n  if (config?.isPublic) {\n    // a public function can always be executed\n    return true;\n  }\n  const authorizationString = currentPersonGroupSlugs\n    ?.map((groupSlug) => config?.authorizations?.[groupSlug])\n    .filter(notEmpty)\n    .join(\"\");\n\n  const hasAuthorization = authorizationString.includes(\"x\");\n\n  // console.log({ name: fn.name, config, authorizationString, hasAuthorization });\n\n  return hasAuthorization;\n}",
+  "name": "getAuthorizationInfo",
+  "slug": "get-authorization-info",
+  "parameters": [
+    {
+      "name": "device",
+      "schema": {
+        "$ref": "#/definitions/Storing%3CDevice%3E"
+      },
+      "required": true
+    },
+    {
+      "name": "fn",
+      "schema": {
+        "type": "object"
+      },
+      "simplifiedSchema": {
+        "properties": [],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "returns `AuthorizationInfo` for a device + function",
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 963,
+    "lines": 33,
+    "bytes": 963,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 29,
+    "linesPerFile": 33,
+    "numberOfFiles": 1
+  },
+  "id": "mjwhlrwjmkvnpmeedalrzqjf"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678043858183,
+  "updatedAt": 1678043858183,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043858183,
+  "id": "namedparameterstypeof-header",
+  "name": "NamedParameters<typeof Header>",
+  "slug": "namedparameterstypeof-header",
+  "operationRelativeTypescriptFilePath": "src/Header.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof Header>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

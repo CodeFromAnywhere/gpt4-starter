@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678369262113,
+  "updatedAt": 1678369262113,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369262113,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "useCustomProjectRelativeBaseFolderPath",
+  "slug": "use-custom-project-relative-base-folder-path",
+  "operationRelativeTypescriptFilePath": "src/useCustomProjectRelativeBaseFolderPath.ts",
+  "type": {
+    "rawType": "() => { isLoading: boolean; customProjectRelativeBaseFolderPath: any; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  /**\n   * project relative\n   */\n  const basePath = process.env.NEXT_PUBLIC_BASEPATH;\n  const [config, setConfig, { hydrated }] = useStore(\"explorer.config\");\n  const customProjectRelativeBaseFolderPath =\n    basePath && basePath !== \"\"\n      ? basePath\n      : config.activeCustomProjectRelativeBasePath;\n\n  return { isLoading: !hydrated, customProjectRelativeBaseFolderPath };\n}",
+  "description": "Looks at the NEXT_PUBLIC_BASEPATH or generative-web config to see if there's a custom project relative base folder path...",
+  "id": "fjfveqhiyaucxhvjpfjclqjz"
+}

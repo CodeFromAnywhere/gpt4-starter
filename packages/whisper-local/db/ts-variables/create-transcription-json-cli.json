@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330939854,
+  "updatedAt": 1678330939854,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330939854,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "createTranscriptionJsonCli",
+  "slug": "create-transcription-json-cli",
+  "operationRelativeTypescriptFilePath": "src/cli/createTranscriptionJson.cli.ts",
+  "type": {
+    "rawType": "() => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const [customPath] = process.argv.slice(2);\n\n  const absolutePath =\n    !customPath || customPath === \".\"\n      ? process.cwd()\n      : customPath.startsWith(\".\")\n      ? path.join(process.cwd(), customPath)\n      : customPath;\n\n  const isFile = fs.existsSync(absolutePath)\n    ? (await fs.stat(absolutePath)).isFile()\n    : null;\n\n  if (isFile === null) {\n    console.log(`${absolutePath} not found`);\n    return;\n  }\n  let filePaths: string[] = [];\n\n  if (isFile === true) {\n    if (path.parse(absolutePath).ext === \".wav\") {\n      filePaths.push(absolutePath);\n    }\n  } else if (isFile === false) {\n    filePaths = (\n      await explore({ basePath: absolutePath, extension: \"wav\" })\n    ).map((x) => x.path);\n  }\n\n  if (filePaths.length === 0) {\n    console.log(\"No wav's found here\");\n    return;\n  }\n\n  const results = await oneByOne(filePaths, async (audioFilePath) => {\n    const result = await createTranscriptionJson(audioFilePath);\n    return result;\n  });\n  console.log({ results });\n}",
+  "description": "Run this CLI with a path (or it will use `cwd`) to a file or folder to recursively transcribe all wav's there.",
+  "id": "uhodztshwtmqdjeuewnuuehx"
+}

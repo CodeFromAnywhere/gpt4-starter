@@ -1,0 +1,62 @@
+{
+  "createdAt": 1678369225074,
+  "updatedAt": 1678369225074,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369225074,
+  "id": "texttotextmodelenum",
+  "name": "TextToTextModelEnum",
+  "slug": "texttotextmodelenum",
+  "operationRelativeTypescriptFilePath": "src/textToText.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\nexport type TextToTextModelEnum =\n  | OpenAiTextCompletionModelEnum\n  | \"bananadev/bloom-560m\"\n  | \"bananadev/flan-t5\"\n  | \"chatgpt\"\n  | \"huggingface/gpt2\"\n  | \"local/gpt2\"\n  | \"local/gpt-j-6b\";",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/OpenAiTextCompletionModelEnum"
+        },
+        {
+          "type": "string",
+          "const": "bananadev/bloom-560m"
+        },
+        {
+          "type": "string",
+          "const": "bananadev/flan-t5"
+        },
+        {
+          "type": "string",
+          "const": "chatgpt"
+        },
+        {
+          "type": "string",
+          "const": "huggingface/gpt2"
+        },
+        {
+          "type": "string",
+          "const": "local/gpt2"
+        },
+        {
+          "type": "string",
+          "const": "local/gpt-j-6b"
+        }
+      ]
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "TextToTextModelEnum",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

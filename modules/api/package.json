@@ -1,0 +1,96 @@
+{
+  "createdAt": 1668328699791,
+  "updatedAt": 1668328699791,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328699791,
+  "id": "LKkLDGQFSIHMUXTg",
+  "dependencies": {
+    "js-util": "0.0.1",
+    "server-api-url": "0.0.1",
+    "react-with-native-store": "2.0.40",
+    "api-types": "0.0.1",
+    "convert-case": "0.0.1",
+    "rest-util": "0.0.1",
+    "react-query": "*"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "api",
+  "language": "english",
+  "slug": "api",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [],
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "api",
+    "hasGeneratedDependenciesIndexed": true,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1677677313771,
+    "operationDependenciesIndexed": [
+      "ApiConfig",
+      "ApiTypeWithoutConfig",
+      "ApiTypeWithConfig",
+      "RealApiReturnType",
+      "QueryType",
+      "apiUrl",
+      "getItem",
+      "setItem",
+      "mergeObjectsArray",
+      "functionApiKeys",
+      "QueryType",
+      "camelCase",
+      "mergeObjectsArray",
+      "functionApiKeys"
+    ],
+    "packageDependenciesIndexed": [
+      "useQuery"
+    ],
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/api",
+    "markdown": "Operation that makes the typerepo API exposable on the frontend in a completely typesafe way.\n",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 6,
+        "lines": 279,
+        "characters": 7680,
+        "bytes": 7680
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 135,
+        "characters": 3222,
+        "bytes": 3222
+      },
+      "textSize": {
+        "numberOfFiles": 4,
+        "lines": 98,
+        "characters": 3129,
+        "bytes": 3129
+      },
+      "size": {
+        "bytes": 14031,
+        "characters": 14031,
+        "lines": 512,
+        "numberOfFiles": 12
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

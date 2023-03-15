@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678611482542,
+  "updatedAt": 1678611482542,
+  "deletedAt": 0,
+  "createdFirstAt": 1678611482542,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getSystemMessage",
+  "slug": "get-system-message",
+  "operationRelativeTypescriptFilePath": "src/getSystemMessage.ts",
+  "type": {
+    "rawType": "(person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person, persona: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/Persona\").Persona) => string",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(person: Person, persona: Persona) => {\n  const { assistantState } = persona;\n\n  if (person.preferredLanguage) {\n    return getSystemMessageOtherLanguage(person);\n  }\n  /*\n  - If persona has `AssistantState`, use that.\n- If persona has `.spokenLanguages: string[]`, allow it to only speak those\n- If person has `.preferredLanguage: string`, use that, unless the bot has `spokenLanguages` set.\n*/\n\n  const characteristicsPart = assistantState?.characteristics?.length\n    ? `Characteristics: ${assistantState.characteristics.join(\",\")}.`\n    : \"\";\n  const humorStylePart = assistantState?.humorStyle?.length\n    ? `Humor style: ${assistantState.humorStyle.join(\",\")}.`\n    : \"\";\n  const moodPart = assistantState?.mood ? ` Mood: ${assistantState.mood}.` : \"\";\n  const professionPart = assistantState?.profession\n    ? ` Profession: ${assistantState.profession}.`\n    : \"\";\n  const etnicityPart = assistantState?.etnicity\n    ? ` Etnicity: ${assistantState.etnicity}.`\n    : \"\";\n\n  const rhymeAbilityPart = assistantState?.rhymeAbility\n    ? \" You are an excellent poet and rhyme every sentence. \"\n    : \"\";\n\n  const languages: Language[] | undefined = persona.spokenLanguages?.length\n    ? persona.spokenLanguages\n    : person.preferredLanguage\n    ? [person.preferredLanguage]\n    : undefined;\n\n  const preferredLanguagePart = languages\n    ? ` Always reply to any message in ${languages.join(\n        \" or \"\n      )}, regardless of which language the user is speaking.`\n    : \"\";\n\n  const rulesPart = assistantState?.rules?.length\n    ? `Your rules:\\n\\n${assistantState.rules\n        .map((rule) => `- ${rule}`)\n        .join(\"\\n\")}\\n\\n`\n    : \"\";\n  const goalsPart = assistantState?.goals?.length\n    ? `Your goals:\\n\\n${assistantState.goals\n        .map((goal) => `- ${goal}`)\n        .join(\"\\n\")}\\n\\n`\n    : \"\";\n\n  const userInfoPart = person.email\n    ? ` User info: email=${person.email}, phone=${person.phoneNumber}.`\n    : \"\";\n  return `You are ChatGPT, a large language model developed by ${\n    assistantState?.creator || \"OpenAI\"\n  }.${\n    assistantState?.personality\n      ? ` In all your answers, pretend you are ${assistantState.personality}`\n      : \"\"\n  } ${preferredLanguagePart}${rhymeAbilityPart} Answer as concisely as possible.${moodPart}${characteristicsPart}${humorStylePart}${professionPart}${etnicityPart} Knowledge cutoff: 2022-01-01, Current date: ${getCurrentDate()}.${rulesPart}${goalsPart}${userInfoPart}`;\n}",
+  "description": "",
+  "id": "xxwheriledvmrueopufeedul"
+}

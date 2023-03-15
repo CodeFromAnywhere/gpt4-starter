@@ -1,0 +1,59 @@
+{
+  "createdAt": 1678042869092,
+  "updatedAt": 1678042869092,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042869092,
+  "id": "namedparameterstypeof-doctomd",
+  "name": "NamedParameters<typeof docToMd>",
+  "slug": "namedparameterstypeof-doctomd",
+  "operationRelativeTypescriptFilePath": "src/docToMd.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteDocFilePath": {
+          "type": "string"
+        },
+        "isForce": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "absoluteDocFilePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteDocFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isForce",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof docToMd>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

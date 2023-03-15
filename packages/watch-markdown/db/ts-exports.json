@@ -1,0 +1,98 @@
+[
+  {
+    "createdAt": 1678330859945,
+    "updatedAt": 1678330859945,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330859945,
+    "name": "getBetterLocation",
+    "slug": "get-better-location",
+    "operationRelativeTypescriptFilePath": "src/getBetterLocation.ts",
+    "comments": [],
+    "type": "value",
+    "id": "yklmkviruiqpfhjwxtuscgaw"
+  },
+  {
+    "createdAt": 1678330859945,
+    "updatedAt": 1678330859945,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330859945,
+    "name": "getIsPrivate",
+    "slug": "get-is-private",
+    "operationRelativeTypescriptFilePath": "src/getIsPrivate.ts",
+    "comments": [],
+    "type": "value",
+    "id": "habgamzhctrhremsaycswmfc"
+  },
+  {
+    "createdAt": 1678330859946,
+    "updatedAt": 1678330859946,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330859946,
+    "name": "getBetterLocation",
+    "slug": "get-better-location",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "bqizqkdsmmmwlrtbznygldsx"
+  },
+  {
+    "createdAt": 1678330859946,
+    "updatedAt": 1678330859946,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330859946,
+    "name": "getIsPrivate",
+    "slug": "get-is-private",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "gjgugdgumszwhzxkhmdowghr"
+  },
+  {
+    "createdAt": 1678330859946,
+    "updatedAt": 1678330859946,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330859946,
+    "name": "makeMarkdownIndex",
+    "slug": "make-markdown-index",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "jpxtpquoeadjvhipunqqjqrv"
+  },
+  {
+    "createdAt": 1678330859946,
+    "updatedAt": 1678330859946,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330859946,
+    "name": "watchMarkdown",
+    "slug": "watch-markdown",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "dnwybbikskajlullhvnyoexn"
+  },
+  {
+    "createdAt": 1678330859946,
+    "updatedAt": 1678330859946,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330859946,
+    "name": "makeMarkdownIndex",
+    "slug": "make-markdown-index",
+    "operationRelativeTypescriptFilePath": "src/makeMarkdownIndex.ts",
+    "comments": [],
+    "type": "value",
+    "id": "pqfdckvhxznrbpepbksptmiw"
+  },
+  {
+    "createdAt": 1678330859946,
+    "updatedAt": 1678330859946,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330859946,
+    "name": "watchMarkdown",
+    "slug": "watch-markdown",
+    "operationRelativeTypescriptFilePath": "src/watchMarkdown.ts",
+    "comments": [],
+    "type": "value",
+    "id": "qciznyocuustyssggtewzwqr"
+  }
+]

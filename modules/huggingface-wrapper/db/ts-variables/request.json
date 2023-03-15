@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331052275,
+  "updatedAt": 1678331052275,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331052275,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "request",
+  "slug": "request",
+  "operationRelativeTypescriptFilePath": "src/huggingFaceInference.ts",
+  "type": {
+    "rawType": "(config: import(\"/Users/clarity/os/operations/tools/control-web/huggingface-wrapper/src/huggingFaceInference\").HuggingfaceConfig) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: HuggingfaceConfig) => {\n  const wavPath = config.contentAbsoluteFilePath?.endsWith(\".wav\")\n    ? config.contentAbsoluteFilePath\n    : config.contentAbsoluteFilePath\n    ? // presumably an mp3 or other audiofile, convert to wav first.\n      await compressConvert(config.contentAbsoluteFilePath, {\n        is16bitWav: true,\n        targetFormat: \"wav\",\n      })\n    : undefined;\n\n  const url = `https://api-inference.huggingface.co/models/${config.model}`;\n\n  const data =\n    config.isAudio && wavPath\n      ? String(fs.readFileSync(wavPath))\n      : config.contentAbsoluteFilePath\n      ? String(fs.readFileSync(config.contentAbsoluteFilePath))\n      : config.text;\n\n  const returned = await fetch(url, {\n    method: \"POST\",\n    body: data,\n    headers: { Authorization: `Bearer ${config.apiKey}` },\n  }).catch((err) => {\n    throw err; // Error caused by fetch\n  });\n\n  console.log({ statusText: returned.statusText });\n  try {\n    const obj = await returned.json();\n\n    return obj;\n  } catch (e) {\n    console.log(`parsing response error huggingface`);\n  }\n}",
+  "description": "",
+  "id": "vrmuegzogsjmcxwafpbqaxyn"
+}

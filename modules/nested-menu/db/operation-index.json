@@ -1,0 +1,61 @@
+{
+  "createdAt": 1664526969099,
+  "updatedAt": 1668151939565,
+  "deletedAt": 0,
+  "createdFirstAt": 1664526969099,
+  "indexInteracesErrors": "[\"No schema/definitions found for /Users/king/King/operations/tools/interfaces/vui/vui-elements/nested-menu/src/util/nestedPathObjectToNestedMenu.ts. Error: Error: Unknown type \\\"function\\\"\"]",
+  "buildSucceeded": true,
+  "id": "nolwjcaejfctmnuqsdoyrhuz",
+  "indexImportExportError": "",
+  "lintProblems": [],
+  "folderName": "nested-menu",
+  "packageName": "nested-menu",
+  "relativeOperationLocationPath": "operations/tools/interfaces/vui/vui-elements",
+  "classification": "ui-es5",
+  "name": "nested-menu",
+  "slug": "nested-menu",
+  "coreDependencies": [
+    "useEffect"
+  ],
+  "operationDependencies": [
+    "Div",
+    "Ul",
+    "trimSlashes",
+    "mergeObjectsArray",
+    "notEmpty",
+    "useRouter",
+    "ClickableIcon",
+    "Div",
+    "Span",
+    "useRouter",
+    "ALink",
+    "createStore"
+  ],
+  "packageDependencies": [],
+  "size": {
+    "codeSize": {
+      "numberOfFiles": 10,
+      "lines": 0,
+      "characters": 11040,
+      "bytes": 11040
+    },
+    "dataSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 1702,
+      "bytes": 1702
+    },
+    "textSize": {
+      "numberOfFiles": 1,
+      "lines": 0,
+      "characters": 3421,
+      "bytes": 3421
+    },
+    "size": {
+      "bytes": 16163,
+      "characters": 16163,
+      "lines": 0,
+      "numberOfFiles": 13
+    }
+  }
+}

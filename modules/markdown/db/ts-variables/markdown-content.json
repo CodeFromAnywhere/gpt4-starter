@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677581919300,
+  "updatedAt": 1677581919300,
+  "deletedAt": 0,
+  "createdFirstAt": 1677581919300,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "MarkdownContent",
+  "slug": "markdown-content",
+  "operationRelativeTypescriptFilePath": "src/MarkdownContent.tsx",
+  "type": {
+    "rawType": "(props: { content: string; config: import(\"/Users/clarity/os/operations/tools/user-interfaces/gui/smart/markdown/src/types\").MarkdownParseRenderConfig; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: {\n  content: string;\n  config: MarkdownParseRenderConfig;\n}): JSX.Element => {\n  const { config, content } = props;\n\n  if (!content) return <Div>No content</Div>;\n\n  return <MarkdownContentRender content={content} config={config} />;\n}",
+  "description": "Renders a markdown string (without frontmatter)",
+  "id": "kzyrhohyyqzigjpmbmpzvtiu"
+}

@@ -1,0 +1,78 @@
+{
+  "createdAt": 1668328729983,
+  "updatedAt": 1668328729983,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328729983,
+  "id": "IXDTUWkcNmDrRNZr",
+  "author": "",
+  "dependencies": {
+    "matter-types": "0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "test": "node build/index.js",
+    "dev": "tsc -w",
+    "build": "tsc",
+    "up": "npm version patch -f",
+    "pub": "npm run up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "model-types",
+  "language": "english",
+  "slug": "model-types",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/king/King/operations/tools/types/model-types/src/markdownModelTypeToMarkdownString.ts. Error: TypeError: Cannot read properties of undefined (reading 'filter')"
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "model-types",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1676840898466,
+    "operationDependenciesIndexed": [
+      "Frontmatter",
+      "Frontmatter"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/types",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 12,
+        "lines": 613,
+        "characters": 17682,
+        "bytes": 17682
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 106,
+        "characters": 2643,
+        "bytes": 2643
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 670,
+        "characters": 13344,
+        "bytes": 13344
+      },
+      "size": {
+        "bytes": 33669,
+        "characters": 33669,
+        "lines": 1389,
+        "numberOfFiles": 16
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

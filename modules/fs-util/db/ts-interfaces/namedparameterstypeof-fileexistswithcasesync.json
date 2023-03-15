@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678041912512,
+  "updatedAt": 1678041912512,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041912512,
+  "id": "namedparameterstypeof-fileexistswithcasesync",
+  "name": "NamedParameters<typeof fileExistsWithCaseSync>",
+  "slug": "namedparameterstypeof-fileexistswithcasesync",
+  "operationRelativeTypescriptFilePath": "src/fileExistsWithCaseSync.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "filepath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "filepath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "filepath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof fileExistsWithCaseSync>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

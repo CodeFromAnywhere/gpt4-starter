@@ -1,0 +1,126 @@
+{
+  "createdAt": 1668328728450,
+  "updatedAt": 1668328728450,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328728450,
+  "id": "OPfmHygUKpSTTntc",
+  "author": "",
+  "dependencies": {
+    "pluralize": "0.0.1",
+    "convert-case": "0.0.1",
+    "model-types": "0.0.1",
+    "matter-types": "0.0.1",
+    "fs-util": "1.0.5",
+    "json-schema": "*",
+    "ts-json-schema-generator": "*",
+    "asset-type": "0.0.1",
+    "measure-performance": "0.0.1",
+    "authorization-types": "0.0.1",
+    "types": "0.0.1",
+    "schema-types": "0.0.1",
+    "comment-types": "0.0.1",
+    "function-types": "0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "test": "node build/index.js",
+    "dev": "tsc -w",
+    "build": "tsc",
+    "up": "npm version patch -f",
+    "pub": "npm run up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "code-types",
+  "language": "english",
+  "slug": "code-types",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/king/King/operations/tools/types/code-types/src/Operation.ts. Error: TypeError: Cannot read properties of undefined (reading 'filter')"
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "code-types",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1676840917088,
+    "operationDependenciesIndexed": [
+      "DefaultModelType",
+      "SlugModelType",
+      "Price",
+      "AugmentedAnyModelType",
+      "pluralize",
+      "kebabCase",
+      "DefaultModelType",
+      "Id",
+      "Markdown",
+      "PerformanceItem",
+      "Id",
+      "Markdown",
+      "SlugModelType",
+      "Markdown",
+      "TsIndexModelType",
+      "Frontmatter",
+      "AnyModelType",
+      "Creation",
+      "TsIndexModelType",
+      "Markdown",
+      "Price",
+      "TsIndexModelType",
+      "TsIndexModelType",
+      "Markdown",
+      "TsIndexModelType",
+      "Creation",
+      "TsIndexModelType",
+      "kebabCase",
+      "DefaultModelType",
+      "TsIndexModelType",
+      "DefaultModelType",
+      "DefaultModelType"
+    ],
+    "packageDependenciesIndexed": [
+      "Schema",
+      "JSONSchema7Type",
+      "Schema",
+      "Schema"
+    ],
+    "relativeOperationLocationPathIndexed": "operations/tools/types",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 27,
+        "lines": 1843,
+        "characters": 52076,
+        "bytes": 52076
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 149,
+        "characters": 3570,
+        "bytes": 3570
+      },
+      "textSize": {
+        "numberOfFiles": 3,
+        "lines": 1689,
+        "characters": 44478,
+        "bytes": 44478
+      },
+      "size": {
+        "bytes": 100124,
+        "characters": 100124,
+        "lines": 3681,
+        "numberOfFiles": 32
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677579954969,
+  "updatedAt": 1677579954969,
+  "deletedAt": 0,
+  "createdFirstAt": 1677579954969,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "test",
+  "slug": "test",
+  "operationRelativeTypescriptFilePath": "src/detectFolderLanguage.test.ts",
+  "type": {
+    "rawType": "() => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) return;\n  const purposePath = path.join(projectRoot, \"knowledge\", \"text\", \"purpose\");\n  const diarysPath = path.join(projectRoot, \"knowledge\", \"text\", \"diarys\");\n  const textPath = path.join(projectRoot, \"knowledge\", \"text\");\n  const dictionary = await detectFolderLanguage(textPath);\n}",
+  "description": "",
+  "id": "wsinxxgydzdfiwqoxchwpjwd"
+}

@@ -1,0 +1,1 @@
+Of course this isnt' just for audiobooks, but if we work on the search it's already super useful. Besides, if we work on reducing and summarising, this can be an invaluable resource for studying and analaysing of information.

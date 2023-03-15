@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330947678,
+  "updatedAt": 1678330947678,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330947678,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getTranslationText",
+  "slug": "get-translation-text",
+  "operationRelativeTypescriptFilePath": "src/getTranslationText.ts",
+  "type": {
+    "rawType": "(audioFilePath: string) => Promise<string | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  audioFilePath: string\n): Promise<string | undefined> => {\n  // TODO: Optimise this with `detectLanguage` in case it's already in English\n  const translationWhisperResult = await whisperLocalCpp({\n    audioFilePath,\n    translateToEnglish: true,\n  });\n  if (!translationWhisperResult) {\n    console.log({\n      isSuccessful: false,\n      message: \"TranslationResult couldn't be found\",\n    });\n    return;\n  }\n  const [translationPaths] = translationWhisperResult;\n\n  const translationText = fs.existsSync(translationPaths.txt)\n    ? await fs.readFile(translationPaths.txt, \"utf8\")\n    : undefined;\n\n  return translationText;\n}",
+  "description": "",
+  "id": "dyulfkvyesteofmjwwbzehlv"
+}

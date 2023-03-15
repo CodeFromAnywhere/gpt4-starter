@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041366570,
+  "updatedAt": 1678041366570,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041366570,
+  "id": "namedparameterstypeof-dataset",
+  "name": "NamedParameters<typeof Dataset>",
+  "slug": "namedparameterstypeof-dataset",
+  "operationRelativeTypescriptFilePath": "src/Dataset.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof Dataset>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678332002381,
+  "updatedAt": 1678332002381,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332002381,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "defaultMessage",
+  "slug": "default-message",
+  "operationRelativeTypescriptFilePath": "src/signupBare.ts",
+  "type": {
+    "rawType": "(otpCode: string) => string",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(otpCode: string) =>\n  `Please confirm with this code: \"${otpCode}\"`",
+  "description": "",
+  "id": "slqrtcjkmggslqnurdtkmquj"
+}

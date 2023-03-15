@@ -1,0 +1,175 @@
+{
+  "createdAt": 1671116723622,
+  "updatedAt": 1671116723622,
+  "deletedAt": 0,
+  "createdFirstAt": 1671116723622,
+  "isApiExposed": true,
+  "isExported": false,
+  "groupAuthorization": {},
+  "operationRelativeTypescriptFilePath": "src/general.tsx",
+  "commentsInside": [],
+  "rawText": " (key: string) => contexts[contextKey(key)]",
+  "name": "getContext",
+  "slug": "get-context",
+  "parameters": [
+    {
+      "name": "editorDetails",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "positionIndex": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "text",
+          "positionIndex"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "text",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "positionIndex",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "React.Context<any>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "Provider": {
+          "type": "object",
+          "properties": {
+            "propTypes": {
+              "type": "object",
+              "properties": {}
+            },
+            "$$typeof": {}
+          },
+          "required": [
+            "$$typeof"
+          ]
+        },
+        "Consumer": {
+          "type": "object",
+          "properties": {
+            "$$typeof": {}
+          },
+          "required": [
+            "$$typeof"
+          ]
+        },
+        "displayName": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        }
+      },
+      "required": [
+        "Provider",
+        "Consumer"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "Provider",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "propTypes",
+                "required": false,
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                }
+              },
+              {
+                "name": "$$typeof",
+                "required": true,
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        },
+        {
+          "name": "Consumer",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "$$typeof",
+                "required": true,
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        },
+        {
+          "name": "displayName",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 0,
+  "size": {
+    "characters": 43,
+    "lines": 1,
+    "bytes": 43,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 43,
+    "linesPerFile": 1,
+    "numberOfFiles": 1
+  },
+  "id": "hthzqiwqimijtvgfijhdzzij"
+}

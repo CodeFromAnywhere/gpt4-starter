@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678042089781,
+  "updatedAt": 1678042089781,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042089781,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "test",
+  "slug": "test",
+  "operationRelativeTypescriptFilePath": "src/getSubExtensions.test.ts",
+  "type": {
+    "rawType": "() => void",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  //   getSubExtensions(absolutePath).includes(temporaryConvertedSubextension)   ,\n\n  console.log(\n    getSubExtensions(\n      \"/Users/king/King/assets/recordings/1673244762157.converted.mp3\"\n    )\n  );\n\n  console.log(\n    getSubExtensions(\n      \"/Users/king/King/assets/recordings/1673244762157.transcription.mp3\"\n    )\n  );\n\n  console.log(\n    getSubExtensions(\n      \"/Users/king/King/assets/recordings/1673244762157.Transcription.mp3\"\n    )\n  );\n\n  console.log(\n    getSubExtensions(\n      \"/Users/king/King/assets/recordings/1673244762157.android.ios.mp3\"\n    )\n  );\n\n  console.log(\n    getSubExtensions(\n      \"/Users/king/King/assets/recordings/1673244762157.walla.walla.watch.this.3.mp3\"\n    )\n  );\n}",
+  "description": "",
+  "id": "ogqnkjhwrthgnydysetxyskh"
+}

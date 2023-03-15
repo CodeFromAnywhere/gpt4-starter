@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678330589492,
+  "updatedAt": 1678330589492,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330589492,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/isSystemUsingBattery.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const result = await isCharging();\n  return !result;\n}",
+  "name": "isSystemUsingBattery",
+  "slug": "is-system-using-battery",
+  "parameters": [],
+  "description": "uses [`is-charging`](https://github.com/gillstrom/is-charging) library for cross OS support",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 162,
+    "lines": 4,
+    "bytes": 162,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 41,
+    "linesPerFile": 4,
+    "numberOfFiles": 1
+  },
+  "id": "rcrkxwbmwaurgwbfrvdlgelk"
+}

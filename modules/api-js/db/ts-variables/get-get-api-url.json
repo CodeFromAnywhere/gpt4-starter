@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331877360,
+  "updatedAt": 1678331877360,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331877360,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getGetApiUrl",
+  "slug": "get-get-api-url",
+  "operationRelativeTypescriptFilePath": "src/getGetApiUrl.ts",
+  "type": {
+    "rawType": "(apiUrl: string | undefined, apiFunctionName: string, query: { [name: string]: string | string[] | undefined; }) => string | undefined",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  apiUrl: string | undefined,\n  apiFunctionName: string,\n  query: { [name: string]: string[] | string | undefined }\n): string | undefined => {\n  if (!apiUrl) return;\n  const queryString = Object.keys(query).length > 0 ? toQueryString(query) : \"\";\n  const url = `${apiUrl}/function/${apiFunctionName}${queryString}`;\n  return url;\n}",
+  "description": "gets an api url for a context get api\n\nreturns something like `[apiUrl]/[apiFunctionName][queryString]`",
+  "id": "fsizpbarnczpanrfwbqqpggv"
+}

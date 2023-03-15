@@ -1,0 +1,60 @@
+{
+  "createdAt": 1677580435480,
+  "updatedAt": 1677580435480,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580435480,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/convention/getParentSlug.ts",
+  "commentsInside": [],
+  "rawText": " (\n  item: Storing<KeyValueMarkdownModelType>\n): string | undefined => {\n  const parentSlug: string | undefined =\n    item.categoryStack[item.categoryStack.length - 1];\n  return parentSlug;\n}",
+  "name": "getParentSlug",
+  "slug": "get-parent-slug",
+  "parameters": [
+    {
+      "name": "item",
+      "schema": {
+        "$ref": "#/definitions/Storing%3CKeyValueMarkdownModelType%3E"
+      },
+      "required": true
+    }
+  ],
+  "description": "get a parent slug without the parent_xxxSlug reference (uses the categoryStack)\n\ncan be undefined if the item has no parent",
+  "returnType": {
+    "rawType": "string | undefined",
+    "typeDefinition": {
+      "optional": true,
+      "type": "string",
+      "allOf": [
+        {
+          "transform": [
+            "trim"
+          ]
+        },
+        {
+          "minLength": 1
+        }
+      ]
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "type": "string"
+    }
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 314,
+    "lines": 9,
+    "bytes": 314,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 35,
+    "linesPerFile": 9,
+    "numberOfFiles": 1
+  },
+  "id": "angunohbxvvsbxubfosruqhv"
+}

@@ -1,0 +1,80 @@
+{
+  "createdAt": 1678505775182,
+  "updatedAt": 1678505775182,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505775182,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getChatMessagesPath.ts",
+  "commentsInside": [],
+  "rawText": " (\n  projectRoot: string,\n  personSlug: string,\n  personaSlug: string,\n  dateString: string\n) => {\n  return path.join(\n    projectRoot,\n    \"knowledge\",\n    \"persons\",\n    personSlug,\n    \"chat-messages\",\n    personaSlug,\n    `${dateString}.json`\n  );\n}",
+  "name": "getChatMessagesPath",
+  "slug": "get-chat-messages-path",
+  "parameters": [
+    {
+      "name": "projectRoot",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "personSlug",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "personaSlug",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "dateString",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "String",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/String"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 253,
+    "lines": 16,
+    "bytes": 253,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 16,
+    "linesPerFile": 16,
+    "numberOfFiles": 1
+  },
+  "id": "zucwzupcwvbrcwuvcctwgaxg"
+}

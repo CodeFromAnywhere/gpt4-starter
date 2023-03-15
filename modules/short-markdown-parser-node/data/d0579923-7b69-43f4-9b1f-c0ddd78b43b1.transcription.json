@@ -1,0 +1,419 @@
+{
+  "sentences": [
+    {
+      "startAt": 0,
+      "endAt": 2760,
+      "text": "From that, or submitted at the beginning of the markdown file,"
+    },
+    {
+      "startAt": 2760,
+      "endAt": 5760,
+      "text": "Morty, it's used to set some parameters about the file."
+    },
+    {
+      "startAt": 5760,
+      "endAt": 7260,
+      "text": "But you know what's better than that."
+    },
+    {
+      "startAt": 7260,
+      "endAt": 8460,
+      "text": "It's like the script."
+    },
+    {
+      "startAt": 8460,
+      "endAt": 12760,
+      "text": "In his classes, Morty, you can define a class and create objects from it."
+    },
+    {
+      "startAt": 12760,
+      "endAt": 13980,
+      "text": "But it doesn't have that."
+    },
+    {
+      "startAt": 13980,
+      "endAt": 15640,
+      "text": "But it's for government living sheep."
+    }
+  ],
+  "text": " From that, or submitted at the beginning of the markdown file,\n Morty, it's used to set some parameters about the file.\n But you know what's better than that.\n It's like the script.\n In his classes, Morty, you can define a class and create objects from it.\n But it doesn't have that.\n But it's for government living sheep.\n",
+  "translationText": " From that, or submitted at the beginning of the markdown file,\n Morty, it's used to set some parameters about the file.\n But you know what's better than that.\n It's like the script.\n In his classes, Morty, you can define a class and create objects from it.\n But it doesn't have that.\n But it's for government living sheep.\n",
+  "words": [
+    {
+      "startAt": 0,
+      "endAt": 90,
+      "text": ""
+    },
+    {
+      "startAt": 90,
+      "endAt": 160,
+      "text": "From"
+    },
+    {
+      "startAt": 160,
+      "endAt": 320,
+      "text": "that"
+    },
+    {
+      "startAt": 320,
+      "endAt": 400,
+      "text": ","
+    },
+    {
+      "startAt": 400,
+      "endAt": 560,
+      "text": "or"
+    },
+    {
+      "startAt": 560,
+      "endAt": 860,
+      "text": "submitted"
+    },
+    {
+      "startAt": 860,
+      "endAt": 940,
+      "text": "at"
+    },
+    {
+      "startAt": 940,
+      "endAt": 1080,
+      "text": "the"
+    },
+    {
+      "startAt": 1080,
+      "endAt": 1480,
+      "text": "beginning"
+    },
+    {
+      "startAt": 1480,
+      "endAt": 1610,
+      "text": "of"
+    },
+    {
+      "startAt": 1610,
+      "endAt": 1810,
+      "text": "the"
+    },
+    {
+      "startAt": 1810,
+      "endAt": 2070,
+      "text": "mark"
+    },
+    {
+      "startAt": 2070,
+      "endAt": 2330,
+      "text": "down"
+    },
+    {
+      "startAt": 2330,
+      "endAt": 2590,
+      "text": "file"
+    },
+    {
+      "startAt": 2590,
+      "endAt": 2760,
+      "text": ","
+    },
+    {
+      "startAt": 2760,
+      "endAt": 3420,
+      "text": "Morty"
+    },
+    {
+      "startAt": 3420,
+      "endAt": 3530,
+      "text": ","
+    },
+    {
+      "startAt": 3530,
+      "endAt": 3540,
+      "text": "it"
+    },
+    {
+      "startAt": 3540,
+      "endAt": 3650,
+      "text": "'s"
+    },
+    {
+      "startAt": 3650,
+      "endAt": 3910,
+      "text": "used"
+    },
+    {
+      "startAt": 3910,
+      "endAt": 4010,
+      "text": "to"
+    },
+    {
+      "startAt": 4010,
+      "endAt": 4290,
+      "text": "set"
+    },
+    {
+      "startAt": 4290,
+      "endAt": 4450,
+      "text": "some"
+    },
+    {
+      "startAt": 4450,
+      "endAt": 5020,
+      "text": "parameters"
+    },
+    {
+      "startAt": 5020,
+      "endAt": 5340,
+      "text": "about"
+    },
+    {
+      "startAt": 5340,
+      "endAt": 5490,
+      "text": "the"
+    },
+    {
+      "startAt": 5490,
+      "endAt": 5760,
+      "text": "file"
+    },
+    {
+      "startAt": 5760,
+      "endAt": 5760,
+      "text": "."
+    },
+    {
+      "startAt": 5760,
+      "endAt": 6020,
+      "text": "But"
+    },
+    {
+      "startAt": 6020,
+      "endAt": 6060,
+      "text": "you"
+    },
+    {
+      "startAt": 6060,
+      "endAt": 6260,
+      "text": "know"
+    },
+    {
+      "startAt": 6260,
+      "endAt": 6540,
+      "text": "what"
+    },
+    {
+      "startAt": 6540,
+      "endAt": 6550,
+      "text": "'s"
+    },
+    {
+      "startAt": 6550,
+      "endAt": 6830,
+      "text": "better"
+    },
+    {
+      "startAt": 6830,
+      "endAt": 7260,
+      "text": "than"
+    },
+    {
+      "startAt": 7260,
+      "endAt": 7260,
+      "text": "that"
+    },
+    {
+      "startAt": 7260,
+      "endAt": 7260,
+      "text": "."
+    },
+    {
+      "startAt": 7260,
+      "endAt": 7520,
+      "text": "It"
+    },
+    {
+      "startAt": 7520,
+      "endAt": 7590,
+      "text": "'s"
+    },
+    {
+      "startAt": 7590,
+      "endAt": 7790,
+      "text": "like"
+    },
+    {
+      "startAt": 7790,
+      "endAt": 8020,
+      "text": "the"
+    },
+    {
+      "startAt": 8020,
+      "endAt": 8460,
+      "text": "script"
+    },
+    {
+      "startAt": 8460,
+      "endAt": 8460,
+      "text": "."
+    },
+    {
+      "startAt": 8460,
+      "endAt": 8720,
+      "text": "In"
+    },
+    {
+      "startAt": 8720,
+      "endAt": 8890,
+      "text": "his"
+    },
+    {
+      "startAt": 8890,
+      "endAt": 9490,
+      "text": "classes"
+    },
+    {
+      "startAt": 9490,
+      "endAt": 9820,
+      "text": ","
+    },
+    {
+      "startAt": 9820,
+      "endAt": 10090,
+      "text": "Morty"
+    },
+    {
+      "startAt": 10090,
+      "endAt": 10420,
+      "text": ","
+    },
+    {
+      "startAt": 10420,
+      "endAt": 10440,
+      "text": "you"
+    },
+    {
+      "startAt": 10440,
+      "endAt": 10580,
+      "text": "can"
+    },
+    {
+      "startAt": 10580,
+      "endAt": 10900,
+      "text": "define"
+    },
+    {
+      "startAt": 10900,
+      "endAt": 10950,
+      "text": "a"
+    },
+    {
+      "startAt": 10950,
+      "endAt": 11240,
+      "text": "class"
+    },
+    {
+      "startAt": 11240,
+      "endAt": 11400,
+      "text": "and"
+    },
+    {
+      "startAt": 11400,
+      "endAt": 11830,
+      "text": "create"
+    },
+    {
+      "startAt": 11830,
+      "endAt": 12310,
+      "text": "objects"
+    },
+    {
+      "startAt": 12310,
+      "endAt": 12590,
+      "text": "from"
+    },
+    {
+      "startAt": 12590,
+      "endAt": 12610,
+      "text": "it"
+    },
+    {
+      "startAt": 12610,
+      "endAt": 12760,
+      "text": "."
+    },
+    {
+      "startAt": 12760,
+      "endAt": 12940,
+      "text": "But"
+    },
+    {
+      "startAt": 12940,
+      "endAt": 13010,
+      "text": "it"
+    },
+    {
+      "startAt": 13010,
+      "endAt": 13270,
+      "text": "doesn"
+    },
+    {
+      "startAt": 13270,
+      "endAt": 13430,
+      "text": "'t"
+    },
+    {
+      "startAt": 13430,
+      "endAt": 13610,
+      "text": "have"
+    },
+    {
+      "startAt": 13610,
+      "endAt": 13780,
+      "text": "that"
+    },
+    {
+      "startAt": 13780,
+      "endAt": 13980,
+      "text": "."
+    },
+    {
+      "startAt": 13980,
+      "endAt": 14210,
+      "text": "But"
+    },
+    {
+      "startAt": 14210,
+      "endAt": 14230,
+      "text": "it"
+    },
+    {
+      "startAt": 14230,
+      "endAt": 14300,
+      "text": "'s"
+    },
+    {
+      "startAt": 14300,
+      "endAt": 14520,
+      "text": "for"
+    },
+    {
+      "startAt": 14520,
+      "endAt": 14920,
+      "text": "government"
+    },
+    {
+      "startAt": 14920,
+      "endAt": 15210,
+      "text": "living"
+    },
+    {
+      "startAt": 15210,
+      "endAt": 15450,
+      "text": "sheep"
+    },
+    {
+      "startAt": 15450,
+      "endAt": 15640,
+      "text": "."
+    }
+  ],
+  "usedModelName": "small"
+}

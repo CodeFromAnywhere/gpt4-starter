@@ -1,0 +1,95 @@
+{
+  "createdAt": 1669883780948,
+  "updatedAt": 1669883780948,
+  "deletedAt": 0,
+  "createdFirstAt": 1669883780948,
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "bin": {
+    "compressImages": "build/cli/compressImages.cli.js",
+    "compressMp4s": "build/cli/compressMp4s.cli.js"
+  },
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "name": "ffmpeg-util",
+  "operation": {
+    "hasGeneratedDependenciesIndexed": false,
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": []
+    },
+    "lastRebuildAt": 1677580069236,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 9,
+        "lines": 393,
+        "characters": 10049,
+        "bytes": 10049
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 131,
+        "characters": 3861,
+        "bytes": 3861
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 197,
+        "characters": 3604,
+        "bytes": 3604
+      },
+      "size": {
+        "bytes": 17514,
+        "characters": 17514,
+        "lines": 721,
+        "numberOfFiles": 13
+      }
+    },
+    "folderNameIndexed": "ffmpeg-util",
+    "relativeOperationLocationPathIndexed": "operations/tools/parsing/file-conversion",
+    "classificationIndexed": "node-cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [
+      "fs",
+      "getFirstAvailableFilename",
+      "path",
+      "replaceLastOccurence",
+      "isLocked",
+      "lock",
+      "lockError",
+      "unlock",
+      "isSystemBusy",
+      "explore",
+      "notEmpty",
+      "fs",
+      "path",
+      "log",
+      "oneByOne",
+      "fs",
+      "path",
+      "log",
+      "oneByOne"
+    ],
+    "packageDependenciesIndexed": []
+  },
+  "dependencies": {
+    "fs-util": "1.0.5",
+    "js-util": "0.0.1",
+    "k-explore": "0.0.2",
+    "log": "0.0.1",
+    "one-by-one": "0.0.1",
+    "lock-util": "0.0.1",
+    "is-system-busy": "0.0.1"
+  },
+  "slug": "ffmpeg-util",
+  "id": "ahawlqtlqdfmfhkvnfcgmbph"
+}

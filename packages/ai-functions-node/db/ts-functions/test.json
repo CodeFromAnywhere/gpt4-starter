@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678330188258,
+  "updatedAt": 1678330188258,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330188258,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/generate-sdk/writeContextualPromptSdk.test.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const destinationPath = path.join(__dirname, \"../..\", \"src\", \"prompts.ts\");\n\n  writeStringToFile(destinationPath, await writeContextualPromptSdk());\n}",
+  "name": "test",
+  "slug": "test",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 167,
+    "lines": 5,
+    "bytes": 167,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 33,
+    "linesPerFile": 5,
+    "numberOfFiles": 1
+  },
+  "id": "nzcjbponugbhnzivalsblfwk"
+}

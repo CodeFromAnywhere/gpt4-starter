@@ -1,0 +1,46 @@
+{
+  "createdAt": 1677582042290,
+  "updatedAt": 1677582042290,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582042290,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/card/toBase64.ts",
+  "commentsInside": [],
+  "rawText": " (str: string) =>\n  typeof window === \"undefined\"\n    ? Buffer.from(str).toString(\"base64\")\n    : window.btoa(str)",
+  "name": "toBase64",
+  "slug": "to-base64",
+  "parameters": [
+    {
+      "name": "str",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 114,
+    "lines": 4,
+    "bytes": 114,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 29,
+    "linesPerFile": 4,
+    "numberOfFiles": 1
+  },
+  "id": "lgktsaeognetzrlwgeokifkg"
+}

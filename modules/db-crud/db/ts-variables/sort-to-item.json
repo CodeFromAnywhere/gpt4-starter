@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677582067162,
+  "updatedAt": 1677582067162,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582067162,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "sortToItem",
+  "slug": "sort-to-item",
+  "operationRelativeTypescriptFilePath": "src/crud/sortToItem.ts",
+  "type": {
+    "rawType": "(sort: import(\"/Users/clarity/os/operations/tools/types/code-types/build/Dataset\").DatasetSort) => import(\"/Users/clarity/os/operations/tools/user-interfaces/gui/react-with-native/react-with-native-select/build/types\").Item<import(\"/Users/clarity/os/operations/tools/types/code-types/build/Dataset\").DatasetSort>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(sort: DatasetSort): Item<DatasetSort> => {\n  return {\n    label: `${sort.sortDirection === \"ascending\" ? \"↑\" : \"↓\"} ${humanCase(\n      sort.objectParameterKey\n    )}`,\n    value: `${sort.objectParameterKey},${sort.sortDirection}`,\n    data: sort,\n  };\n}",
+  "description": "",
+  "id": "wbhvescjwdnmqafxvwqxalwi"
+}

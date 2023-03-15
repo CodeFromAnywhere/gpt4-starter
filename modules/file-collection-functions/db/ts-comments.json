@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678330469222,
+    "updatedAt": 1678330469222,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330469222,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/setOpenFileWithContext.ts",
+    "comment": "Apply a state",
+    "rawStatement": "export const setOpenFileWithContext = async (\n  functionContext: FunctionContext,\n  queryPath: string,\n  action: \"pin\" | \"unpin\" | \"open\" | \"close\"\n) => {\n  const personId = functionContext.device.currentPersonCalculated?.id;\n\n  if (!personId) {\n    // NB: must be logged in\n    return;\n  }\n\n  // 1) see if this is allowed\n\n  const queryInfo = await getQueryInfo({ queryPath });\n\n  const projectRelativePath = queryInfo.result?.projectRelativeFilePath;\n\n  if (!projectRelativePath) {\n    //NB: must be a file, for now\n    return;\n  }\n\n  const { canRead } = await getFsAuthorizationWithContext(\n    functionContext,\n    projectRelativePath\n  );\n\n  if (!canRead) {\n    return;\n  }\n\n  const openFiles = await db.get(\"OpenFile\");\n  const already = openFiles.find(\n    (x) =>\n      x.personId === personId &&\n      x.file_projectRelativePath === projectRelativePath\n  );\n  const openedAt =\n    action === \"open\" ? Date.now() : already?.openedAt || Date.now();\n\n  const isPinned =\n    action === \"pin\" ? true : action === \"unpin\" ? false : already?.isPinned;\n\n  const isOpen = [\"open\", \"pin\"].includes(action)\n    ? true\n    : action === \"close\"\n    ? false\n    : already?.isOpen;\n\n  const item: Creation<OpenFile> = {\n    file_projectRelativePath: projectRelativePath,\n    personId,\n    isPinned,\n    isOpen,\n    openedAt,\n  };\n\n  //2) upsert OpenFile\n  const upsertResult = await db.upsert(\"OpenFile\", item);\n\n  return;\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 8,
+    "lastLine": 10,
+    "id": "vvdmirsxibdcwjbpdqlajele"
+  }
+]

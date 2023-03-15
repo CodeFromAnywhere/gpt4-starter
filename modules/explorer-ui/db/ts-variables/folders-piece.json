@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331541552,
+  "updatedAt": 1678331541552,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331541552,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "FoldersPiece",
+  "slug": "folders-piece",
+  "operationRelativeTypescriptFilePath": "src/FoldersPiece.tsx",
+  "type": {
+    "rawType": "(props: { explorableBasePathsActive?: { href: string; isActive: boolean; projectRelativePath: string; name: string; }[] | undefined; isFolder?: boolean | undefined; queryPath: string; filename?: string | undefined; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: {\n  explorableBasePathsActive?: {\n    href: string;\n    isActive: boolean;\n    projectRelativePath: string;\n    name: string;\n  }[];\n\n  isFolder?: boolean;\n  queryPath: string;\n  filename?: string;\n}) => {\n  const { explorableBasePathsActive, isFolder, queryPath, filename } = props;\n\n  const firstActiveProjectRelativePath = explorableBasePathsActive?.find(\n    (x) => x.isActive\n  )?.projectRelativePath;\n  const queryFolderPath = isFolder\n    ? queryPath\n    : (getFolderJs(queryPath) as string | undefined);\n\n  /**\n   * relative path, down from the closest basepath\n   */\n  const closestBasePathFolderPath =\n    queryFolderPath && firstActiveProjectRelativePath !== undefined\n      ? makeRelative(queryFolderPath, firstActiveProjectRelativePath)\n      : undefined;\n\n  const folderChunks = closestBasePathFolderPath\n    ? closestBasePathFolderPath.split(\"/\")\n    : [];\n\n  // console.log({\n  //   explorableBasePathsActive,\n  //   isFolder,\n  //   queryPath,\n  //   filename,\n  //   kdkkdkd: true,\n  //   queryFolderPath,\n  //   firstActiveProjectRelativePath,\n  //   closestBasePathFolderPath,\n  //   folderChunks,\n  // });\n\n  /**\n   * Renders the folders after the basePath we are in, up until the folder we are now\n   */\n  const foldersPiece = folderChunks?.map((folder, index, array) => {\n    const isActive =\n      index === array.length - 1 &&\n      (!filename || filename?.toLowerCase() === \"readme.md\");\n    const pathUntilHere = array.slice(0, index + 1).join(\"/\");\n    return (\n      <NavButton\n        key={`foldersPiece.${folder}`}\n        isActive={isActive}\n        href={`/${pathUntilHere}`}\n        title={`${index === array.length - 1 ? \"‣\" : \"▾\"} ${folder}`}\n      />\n    );\n  });\n\n  return <>{foldersPiece}</>;\n}",
+  "description": "",
+  "id": "zqifqfxkkmjrgudkiufrystk"
+}

@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678330943436,
+  "updatedAt": 1678330943436,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330943436,
+  "id": "namedparameterstypeof-createtranscriptionjson",
+  "name": "NamedParameters<typeof createTranscriptionJson>",
+  "slug": "namedparameterstypeof-createtranscriptionjson",
+  "operationRelativeTypescriptFilePath": "src/createTranscriptionJson.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "audioFilePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "audioFilePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "audioFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof createTranscriptionJson>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

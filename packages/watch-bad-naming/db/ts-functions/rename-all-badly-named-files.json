@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678330842697,
+  "updatedAt": 1678330842697,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330842697,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/renameAllBadlyNamedFiles.ts",
+  "commentsInside": [],
+  "rawText": " async (absoluteFolderPath: string) => {\n  const filePaths = await exploreBadNamingFiles(absoluteFolderPath);\n\n  const result = (\n    await Promise.all(\n      filePaths.map((filePath) => renameBadlyNamedFile(filePath))\n    )\n  ).map((x) => !!x);\n\n  const isSuccessful = isAllTrue(result);\n\n  return { isSuccessful };\n}",
+  "name": "renameAllBadlyNamedFiles",
+  "slug": "rename-all-badly-named-files",
+  "parameters": [
+    {
+      "name": "absoluteFolderPath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Rename all badly named files in a folder",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 358,
+    "lines": 13,
+    "bytes": 358,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 28,
+    "linesPerFile": 13,
+    "numberOfFiles": 1
+  },
+  "id": "qqaezpazhaiydcucnhzihhnu"
+}

@@ -1,0 +1,49 @@
+{
+  "createdAt": 1673853211449,
+  "updatedAt": 1673853211449,
+  "deletedAt": 0,
+  "createdFirstAt": 1673853211449,
+  "id": "namedparameterstypeof-readrawcsvfile",
+  "name": "NamedParameters<typeof readRawCsvFile>",
+  "slug": "namedparameterstypeof-readrawcsvfile",
+  "operationRelativeTypescriptFilePath": "src/readRawCsvFile.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "filePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "filePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "filePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof readRawCsvFile>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

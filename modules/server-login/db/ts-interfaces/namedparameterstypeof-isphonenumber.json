@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678332014621,
+  "updatedAt": 1678332014621,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332014621,
+  "id": "namedparameterstypeof-isphonenumber",
+  "name": "NamedParameters<typeof isPhoneNumber>",
+  "slug": "namedparameterstypeof-isphonenumber",
+  "operationRelativeTypescriptFilePath": "src/validation/isPhoneNumber.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "phoneNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "phoneNumber"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "phoneNumber",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof isPhoneNumber>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

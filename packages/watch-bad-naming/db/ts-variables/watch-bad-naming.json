@@ -1,0 +1,88 @@
+{
+  "createdAt": 1678330847433,
+  "updatedAt": 1678330847433,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330847433,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "watchBadNaming",
+  "slug": "watch-bad-naming",
+  "operationRelativeTypescriptFilePath": "src/watchBadNaming.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/ProjectWatcher\").ProjectWatcher<any>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "startupStrategy": {
+          "enum": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "x-enumNames": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "type": "string"
+        },
+        "filter": {
+          "type": "object",
+          "properties": {}
+        },
+        "config": {}
+      },
+      "required": [
+        "filter",
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "startupStrategy",
+          "required": false,
+          "schema": {
+            "enum": [
+              "ignore",
+              "sync",
+              "async",
+              "queue"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "filter",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "(eventName, absolutePath) => {\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"File doesn't exist (anymore)\" };\n  }\n  console.log(`Bad naming (${absolutePath}) not implemented yet`);\n  //return renameBadlyNamedFile(absolutePath);\n}",
+  "description": "Watcher for filenames/folders with capitalisation and spaces, to be renamed to the slugified version. ensure there is no overlap by other watchers.\n\nTODO: the other watchers should ignore files if they have capitals or spaces. Maybe this can be fundamental part of the watcher with a prop like \"isPrimary\" which means it should be executed first, and a prop like \"shouldOmitFromOtherWatchers\" which means it will not be included in other watchers if it matches here.",
+  "id": "omurbttduvvijekxpievoxbb"
+}

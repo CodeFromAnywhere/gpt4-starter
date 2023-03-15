@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678043831131,
+  "updatedAt": 1678043831131,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043831131,
+  "id": "namedparameterstypeof-usemodalstate",
+  "name": "NamedParameters<typeof useModalState>",
+  "slug": "namedparameterstypeof-usemodalstate",
+  "operationRelativeTypescriptFilePath": "src/Modal.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof useModalState>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

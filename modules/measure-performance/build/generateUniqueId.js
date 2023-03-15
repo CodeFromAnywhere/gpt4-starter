@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.generateUniqueId=void 0;var model_types_1=require("model-types"),generateUniqueId=function(){return(0,model_types_1.generateId)()};exports.generateUniqueId=generateUniqueId;
+//# sourceMappingURL=generateUniqueId.js.map

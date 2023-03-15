@@ -1,0 +1,74 @@
+[
+  {
+    "createdAt": 1668333190691,
+    "updatedAt": 1668333190691,
+    "deletedAt": 0,
+    "createdFirstAt": 1668333190691,
+    "name": "ask",
+    "slug": "ask",
+    "operationRelativeTypescriptFilePath": "src/general.ts",
+    "comments": [],
+    "type": "value",
+    "id": "hfixipmuohijayzjyjzkbyqj"
+  },
+  {
+    "createdAt": 1668333190691,
+    "updatedAt": 1668333190691,
+    "deletedAt": 0,
+    "createdFirstAt": 1668333190691,
+    "name": "getArgumentOrAsk",
+    "slug": "get-argument-or-ask",
+    "operationRelativeTypescriptFilePath": "src/general.ts",
+    "comments": [],
+    "type": "value",
+    "id": "npsvbrvhuurlnilgmyookplg"
+  },
+  {
+    "createdAt": 1668333190691,
+    "updatedAt": 1668333190691,
+    "deletedAt": 0,
+    "createdFirstAt": 1668333190691,
+    "name": "askOk",
+    "slug": "ask-ok",
+    "operationRelativeTypescriptFilePath": "src/general.ts",
+    "comments": [],
+    "type": "value",
+    "id": "rpesqoherkzlgihtwnvnkfqf"
+  },
+  {
+    "createdAt": 1668333190691,
+    "updatedAt": 1668333190691,
+    "deletedAt": 0,
+    "createdFirstAt": 1668333190691,
+    "name": "ask",
+    "slug": "ask",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "rdutdykfqphzoggmfhwqchuf"
+  },
+  {
+    "createdAt": 1668333190692,
+    "updatedAt": 1668333190692,
+    "deletedAt": 0,
+    "createdFirstAt": 1668333190692,
+    "name": "getArgumentOrAsk",
+    "slug": "get-argument-or-ask",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "llozgtyhsaejwmlitehhsnfb"
+  },
+  {
+    "createdAt": 1668333190692,
+    "updatedAt": 1668333190692,
+    "deletedAt": 0,
+    "createdFirstAt": 1668333190692,
+    "name": "askOk",
+    "slug": "ask-ok",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "vspysocybrbgstptffmuayzp"
+  }
+]

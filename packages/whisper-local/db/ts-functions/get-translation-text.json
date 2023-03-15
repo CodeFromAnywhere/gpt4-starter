@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678330947428,
+  "updatedAt": 1678330947428,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330947428,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getTranslationText.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  audioFilePath: string\n): Promise<string | undefined> => {\n  // TODO: Optimise this with `detectLanguage` in case it's already in English\n  const translationWhisperResult = await whisperLocalCpp({\n    audioFilePath,\n    translateToEnglish: true,\n  });\n  if (!translationWhisperResult) {\n    console.log({\n      isSuccessful: false,\n      message: \"TranslationResult couldn't be found\",\n    });\n    return;\n  }\n  const [translationPaths] = translationWhisperResult;\n\n  const translationText = fs.existsSync(translationPaths.txt)\n    ? await fs.readFile(translationPaths.txt, \"utf8\")\n    : undefined;\n\n  return translationText;\n}",
+  "name": "getTranslationText",
+  "slug": "get-translation-text",
+  "parameters": [
+    {
+      "name": "audioFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<string | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 637,
+    "lines": 23,
+    "bytes": 637,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 28,
+    "linesPerFile": 23,
+    "numberOfFiles": 1
+  },
+  "id": "oghieompfvbparcmlmutbjbl"
+}

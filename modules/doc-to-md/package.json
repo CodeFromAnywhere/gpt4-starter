@@ -1,0 +1,79 @@
+{
+  "createdAt": 1668776275297,
+  "updatedAt": 1668776275297,
+  "deletedAt": 0,
+  "createdFirstAt": 1668776275297,
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "name": "doc-to-md",
+  "operation": {
+    "buildResultIndexed": {
+      "lintProblems": [],
+      "buildSucceeded": true,
+      "indexImportExportError": ""
+    },
+    "hasGeneratedDependenciesIndexed": false,
+    "lastRebuildAt": 1678042881130,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 4,
+        "lines": 165,
+        "characters": 4047,
+        "bytes": 4047
+      },
+      "dataSize": {
+        "numberOfFiles": 4,
+        "lines": 127,
+        "characters": 3721,
+        "bytes": 3721
+      },
+      "textSize": {
+        "numberOfFiles": 6,
+        "lines": 755,
+        "characters": 19339,
+        "bytes": 19339
+      },
+      "size": {
+        "bytes": 27107,
+        "characters": 27107,
+        "lines": 1047,
+        "numberOfFiles": 14
+      }
+    },
+    "folderNameIndexed": "doc-to-md",
+    "relativeOperationLocationPathIndexed": "operations/tools/parsing/file-conversion/md",
+    "classificationIndexed": "node-cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [
+      "fs",
+      "path",
+      "lock",
+      "lockError",
+      "unlock",
+      "fs",
+      "path",
+      "lock",
+      "lockError",
+      "unlock"
+    ],
+    "packageDependenciesIndexed": []
+  },
+  "slug": "doc-to-md",
+  "id": "ixjiebnusmhbgcmhileonngk",
+  "dependencies": {
+    "mammoth": "^1.5.1",
+    "textract": "^2.5.0",
+    "fs-util": "1.0.5",
+    "lock-util": "0.0.1"
+  }
+}

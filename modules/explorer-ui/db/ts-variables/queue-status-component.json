@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331561327,
+  "updatedAt": 1678331561327,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331561327,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "QueueStatusComponent",
+  "slug": "queue-status-component",
+  "operationRelativeTypescriptFilePath": "src/SettingsPage.tsx",
+  "type": {
+    "rawType": "() => JSX.Element | null",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  const queueStatusQuery = queries.useGetQueueStatus();\n  const queueStatus = queueStatusQuery?.data?.result;\n\n  const [time, setTime] = useState(Date.now());\n  const secondsAgo = queueStatus\n    ? Math.round((time - queueStatus.updatedAt) / 1000)\n    : 0;\n  const minuteAgo = secondsAgo >= 60;\n  // NB: refetch every minute\n  useEffect(() => {\n    if (minuteAgo) {\n      queueStatusQuery.refetch();\n    }\n  }, [minuteAgo]);\n\n  useEffect(() => {\n    const intervalId = setInterval(() => {\n      setTime(Date.now());\n    }, 1000);\n\n    return () => clearInterval(intervalId);\n  }, []);\n\n  return queueStatus ? (\n    <Div>\n      <P className=\"font-bold\">\n        Queue (last checked: {secondsAgo} seconds ago)\n      </P>\n      <pre>{JSON.stringify(queueStatus, undefined, 2)}</pre>\n    </Div>\n  ) : null;\n}",
+  "description": "",
+  "id": "paldvacqsrcfrjoooejtljwf"
+}

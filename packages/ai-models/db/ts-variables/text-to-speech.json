@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678369224068,
+  "updatedAt": 1678369224068,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369224068,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "textToSpeech",
+  "slug": "text-to-speech",
+  "operationRelativeTypescriptFilePath": "src/textToSpeech.ts",
+  "type": {
+    "rawType": "(config: { text?: string | undefined; inputTextFilePath?: string | undefined; outputFilePath?: string | undefined; }) => Promise<{ isSuccessful: boolean; message: string; outputFilePath?: string | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: {\n  /**\n   * either provide text or an inputTextFilePath\n   */\n  text?: string;\n  /**\n   * either provide text or an inputTextFilePath\n   */\n  inputTextFilePath?: string;\n  /**\n   * If you don't provide this, it will be stored as [inputTextFilePathFolder]/[inputFileName].mp3\n   *\n   * needed if you don't provide an inputTextFilePath\n   */\n  outputFilePath?: string;\n}): Promise<{\n  isSuccessful: boolean;\n  message: string;\n  outputFilePath?: string;\n}> => {\n  const { inputTextFilePath, outputFilePath, text } = config;\n\n  const realText =\n    inputTextFilePath && fs.existsSync(inputTextFilePath)\n      ? await fs.readFile(inputTextFilePath, \"utf8\")\n      : text;\n\n  if (!realText) {\n    return { isSuccessful: false, message: \"Couldn't get text\" };\n  }\n\n  const parsedPath = inputTextFilePath\n    ? path.parse(inputTextFilePath)\n    : undefined;\n\n  const realOutputFilePath = outputFilePath\n    ? outputFilePath\n    : parsedPath\n    ? path.join(parsedPath.dir, `${parsedPath.name}.mp3`)\n    : undefined;\n\n  if (!realOutputFilePath) {\n    return { isSuccessful: false, message: \"Don't know where to output mp3\" };\n  }\n\n  const finalFilePath = await textToMp3(\n    { message: text, showProgress: true },\n    realOutputFilePath\n  );\n\n  return {\n    isSuccessful: !!finalFilePath,\n    message: finalFilePath ? \"Successful, got mp3\" : \"Something went wrong\",\n    outputFilePath: finalFilePath,\n  };\n}",
+  "description": "Uses \"say\" on macbook (for now) until I need this on a higher quality level\n\npromises an absolute path to a generated mp3",
+  "id": "wyrelzrtxfkudfdnakunbwcz"
+}

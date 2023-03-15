@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331952836,
+  "updatedAt": 1678331952836,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331952836,
+  "id": "namedparameterstypeof-prod",
+  "name": "NamedParameters<typeof prod>",
+  "slug": "namedparameterstypeof-prod",
+  "operationRelativeTypescriptFilePath": "src/prod.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof prod>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

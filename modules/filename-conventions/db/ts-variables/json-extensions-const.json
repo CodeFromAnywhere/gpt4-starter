@@ -1,0 +1,24 @@
+{
+  "createdAt": 1675690234433,
+  "updatedAt": 1675690234433,
+  "deletedAt": 0,
+  "createdFirstAt": 1675690234433,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "jsonExtensionsConst",
+  "slug": "json-extensions-const",
+  "operationRelativeTypescriptFilePath": "src/extensions.ts",
+  "type": {
+    "rawType": "readonly [\"json\"]",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "[\"json\"] as const",
+  "description": "",
+  "id": "kxcdukrwcusczmbliidaidie"
+}

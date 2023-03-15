@@ -1,0 +1,39 @@
+{
+  "createdAt": 1677582028531,
+  "updatedAt": 1677582028531,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582028531,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/SimplifiedSchemaFormDebug.tsx",
+  "commentsInside": [],
+  "rawText": " ({\n  parameters,\n  values,\n}: {\n  parameters: FunctionParameter[] | undefined;\n  values: any[];\n}) => {\n  const [showParams, setShowParams] = useState(false);\n  return (\n    <Div>\n      <P>values</P>\n      <MarkdownContent\n        content={createCodeblockMarkdown(\n          JSON.stringify(values, null, 2),\n          \"json\"\n        )}\n        config={{}}\n      />\n      <P\n        className=\"hover:underline cursor-pointer\"\n        onClick={() => setShowParams(!showParams)}\n      >\n        params (toggle)\n      </P>{\" \"}\n      {showParams ? (\n        <MarkdownContent\n          content={createCodeblockMarkdown(\n            JSON.stringify(parameters, null, 2),\n            \"json\"\n          )}\n          config={{}}\n        />\n      ) : null}\n    </Div>\n  );\n}",
+  "name": "SimplifiedSchemaFormDebug",
+  "slug": "simplified-schema-form-debug",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 6,
+  "size": {
+    "characters": 763,
+    "lines": 36,
+    "bytes": 763,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 21,
+    "linesPerFile": 36,
+    "numberOfFiles": 1
+  },
+  "id": "ahtrlzocalrfgnpdrbpxosac"
+}

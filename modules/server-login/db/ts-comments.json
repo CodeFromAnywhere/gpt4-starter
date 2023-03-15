@@ -1,0 +1,20 @@
+[
+  {
+    "createdAt": 1678332016243,
+    "updatedAt": 1678332016243,
+    "deletedAt": 0,
+    "createdFirstAt": 1678332016243,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/validation/isPhoneNumber.ts",
+    "comment": "TODO: Implement this (for now it must start with + and be at least 10 characters)",
+    "rawStatement": "export const isPhoneNumber = (phoneNumber: string): boolean => {\n  return phoneNumber.length >= 10 && phoneNumber.startsWith(\"+\");\n};",
+    "parameters": {},
+    "types": [
+      "todo"
+    ],
+    "firstLine": 1,
+    "lastLine": 3,
+    "id": "wmxymwgxjlvmdtdncentyrji"
+  }
+]

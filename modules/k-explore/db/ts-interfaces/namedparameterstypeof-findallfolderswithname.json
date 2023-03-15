@@ -1,0 +1,111 @@
+{
+  "createdAt": 1677579103467,
+  "updatedAt": 1677579103467,
+  "deletedAt": 0,
+  "createdFirstAt": 1677579103467,
+  "id": "namedparameterstypeof-findallfolderswithname",
+  "name": "NamedParameters<typeof findAllFoldersWithName>",
+  "slug": "namedparameterstypeof-findallfolderswithname",
+  "operationRelativeTypescriptFilePath": "src/find-folders.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "basePath": {
+              "type": "string"
+            },
+            "folderName": {
+              "type": "string"
+            },
+            "ignoreOperations": {
+              "type": "boolean"
+            },
+            "ignoreFolders": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "folders to ignore"
+            }
+          },
+          "required": [
+            "basePath",
+            "folderName"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "basePath",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "folderName",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "ignoreOperations",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "ignoreFolders",
+                "required": false,
+                "schema": {
+                  "fullComment": "folders to ignore",
+                  "items": [
+                    {
+                      "schema": {
+                        "type": "string"
+                      },
+                      "name": null
+                    }
+                  ],
+                  "type": "array"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof findAllFoldersWithName>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

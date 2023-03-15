@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330960208,
+  "updatedAt": 1678330960208,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330960208,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "whisper",
+  "slug": "whisper",
+  "operationRelativeTypescriptFilePath": "src/whisper.ts",
+  "type": {
+    "rawType": "(config: import(\"/Users/clarity/os/operations/tools/ai/ai-types/build/variables\").WhisperConfig) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: WhisperConfig) => {\n  const {\n    isDebug,\n    language,\n    translateToEnglish,\n    model,\n    audioFilePath,\n    outputFolderPath,\n  } = config;\n  if (Array.isArray(audioFilePath) && audioFilePath.length === 0) {\n    return;\n  }\n  const audioFilePaths = makeArray(audioFilePath);\n\n  const debugString = isDebug ? \"--verbose\" : undefined;\n  const languageString = language ? `--language ${language}` : undefined;\n  const translateToEnglishString = translateToEnglish\n    ? `--task translate`\n    : undefined;\n  const modelString = model ? `--model ${model}` : undefined;\n  const inputFileString = audioFilePaths.map((p) => `\"${p}\"`).join(\" \");\n  const outputFolderPathString = outputFolderPath\n    ? `--output_dir ${outputFolderPath}`\n    : `--output_dir ${path.parse(audioFilePaths[0]).dir}`;\n\n  const flags = [\n    debugString,\n    languageString,\n    translateToEnglishString,\n    modelString,\n    outputFolderPathString,\n  ].filter(notEmpty);\n\n  const flagsString = flags.length > 0 ? ` ${flags.join(\" \")}` : \"\";\n\n  const command = `whisper ${inputFileString}${flagsString}`;\n  console.log({ whisperCommand: command });\n  const result = await execAsync(command, {});\n  console.log({ result });\n\n  return audioFilePaths.map((p) => {\n    return {\n      txt: `${p}.txt`,\n      srt: `${p}.txt`,\n      vtt: `${p}.vtt`,\n    };\n  });\n}",
+  "description": "Executes Whisper (https://github.com/openai/whisper) via the CLI\n\nNB: You need to install ffmpeg and the cli, see the github repo for instructions\n\nNB: this is a way slower implementation than `whisper.cpp`\n\nTODO: Check https://github.com/openai/whisper/discussions/categories/show-and-tell for other things we can do with whisper",
+  "id": "bgnoiappyrmtxvmjofflyiod"
+}

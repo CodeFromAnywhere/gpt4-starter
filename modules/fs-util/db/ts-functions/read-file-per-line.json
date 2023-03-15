@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678041956758,
+  "updatedAt": 1678041956758,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041956758,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/readFilePerLine.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  absoluteFilePath: string,\n  withLine: (line: string, close: () => void) => void\n) => {\n  if (!fs.existsSync(absoluteFilePath)) return;\n  const readStream = fs.createReadStream(absoluteFilePath, \"utf8\");\n  const lineInterface = readlinePromises.createInterface(readStream);\n\n  await new Promise<void>((resolve) => {\n    const close = () => {\n      lineInterface.close();\n    };\n\n    lineInterface.addListener(\"close\", () => {\n      // NB: this calls when you call close, as well as whenever\n      resolve();\n    });\n\n    // TODO: how can I give the line number somehow?\n    lineInterface.addListener(\"line\", (line) => withLine(line, close));\n  });\n\n  lineInterface.removeAllListeners();\n}",
+  "name": "readFilePerLine",
+  "slug": "read-file-per-line",
+  "parameters": [],
+  "description": "Function to read any file per line.\n\nResolves when close is called or at the end of the file.",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 791,
+    "lines": 26,
+    "bytes": 791,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 30,
+    "linesPerFile": 26,
+    "numberOfFiles": 1
+  },
+  "id": "lbxqaweziqawnnaelogssueh"
+}

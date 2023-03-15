@@ -1,0 +1,60 @@
+{
+  "createdAt": 1678505778942,
+  "updatedAt": 1678505778942,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505778942,
+  "id": "namedparameterstypeof-getpersonpath",
+  "name": "NamedParameters<typeof getPersonPath>",
+  "slug": "namedparameterstypeof-getpersonpath",
+  "operationRelativeTypescriptFilePath": "src/insertPerson.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "projectRoot": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "projectRoot",
+        "slug"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "projectRoot",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "slug",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getPersonPath>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

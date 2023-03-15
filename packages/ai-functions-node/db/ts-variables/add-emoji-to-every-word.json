@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678330224026,
+  "updatedAt": 1678330224026,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330224026,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "addEmojiToEveryWord",
+  "slug": "add-emoji-to-every-word",
+  "operationRelativeTypescriptFilePath": "src/prompts.ts",
+  "type": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "async (\n  contextContent: string,\n  prompt_projectRelativePath: string,\n  isDeferred?: boolean\n) => {\n  const result = await processChatGptPrompt({\n    isDeferred,\n    contextualPromptSlug: \"add-emoji-to-every-word\",\n    contextContent,\n    prompt_projectRelativePath,\n  });\n\n  return result;\n}",
+  "description": "Emojify++",
+  "id": "tzloufiqdzqxcegrafnkxgvz"
+}

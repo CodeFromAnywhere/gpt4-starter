@@ -1,0 +1,66 @@
+{
+  "createdAt": 1678331951585,
+  "updatedAt": 1678331951585,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331951585,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/firstCoreFunction.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  port: number,\n  isWatching?: boolean,\n  isRestart?: boolean\n) => {\n  console.log(\n    `Typerepo is now running on port ${port}. Your node functions are now available through the \"api\" object!`\n  );\n  const tsFunctions = await db.get(\"TsFunction\");\n\n  // only on the first core, schedule crons and initiate watchers\n  await scheduleCronJobs(tsFunctions);\n\n  if (isWatching) {\n    watchAll(tsFunctions);\n  }\n\n  // startSearchWebIfAvailable(isWatching, isRestart);\n}",
+  "name": "firstCoreFunction",
+  "slug": "first-core-function",
+  "parameters": [
+    {
+      "name": "port",
+      "schema": {
+        "type": "number"
+      },
+      "simplifiedSchema": {
+        "type": "number"
+      },
+      "required": true
+    },
+    {
+      "name": "isWatching",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    },
+    {
+      "name": "isRestart",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    }
+  ],
+  "description": "Function that is supposed to be ran on the first core only\n\nNB: SHOULD NOT BE BLOCKING",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 560,
+    "lines": 21,
+    "bytes": 560,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 27,
+    "linesPerFile": 21,
+    "numberOfFiles": 1
+  },
+  "id": "glgidqziwgzckwcjyzobqaxj"
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1677582079870,
+    "updatedAt": 1677582079870,
+    "deletedAt": 0,
+    "createdFirstAt": 1677582079870,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/useModelFromUrl.ts",
+    "comment": "takes the model from the url",
+    "rawStatement": "export const useModelFromUrl = () => {\n  const router = useRouter();\n  const paths = router.query.paths ? makeArray(router.query.paths) : [];\n  const modelQuery = paths.pop();\n  return modelQuery;\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 3,
+    "lastLine": 5,
+    "id": "iqhfmyciwtsdeomzknuelmso"
+  }
+]

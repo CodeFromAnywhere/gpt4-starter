@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678331097560,
+  "updatedAt": 1678331097560,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331097560,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "openAiChatModelsReadonly",
+  "slug": "open-ai-chat-models-readonly",
+  "operationRelativeTypescriptFilePath": "src/types.ts",
+  "type": {
+    "rawType": "readonly [\"gpt-3.5-turbo\", \"gpt-3.5-turbo-0301\"]",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "[\n  \"gpt-3.5-turbo\",\n  // I think there's no difference. This is the march 1st release (2023)\n  \"gpt-3.5-turbo-0301\",\n] as const",
+  "description": "",
+  "id": "kybcayymttuclexrqgdetxmb"
+}

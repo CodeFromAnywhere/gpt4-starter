@@ -1,0 +1,72 @@
+{
+  "createdAt": 1678372639188,
+  "updatedAt": 1678372639188,
+  "deletedAt": 0,
+  "createdFirstAt": 1678372639188,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/jsonGpt.ts",
+  "commentsInside": [],
+  "rawText": " async <T extends { [key: string]: any }>(\n  message: string,\n  schema: { [key: string]: { type: string; description?: string } }\n): Promise<\n  StandardResponse & {\n    tokensUsed?: number | undefined;\n    chatResponse?: string | undefined;\n    jsonResponse?: T;\n  }\n> => {\n  const keys = Object.keys(schema);\n\n  const jsonFormat = keys\n    .map((key) => {\n      const value = schema[key];\n      return `${key}: ${value.type}${\n        value.description ? ` (${value.description})` : \"\"\n      }`;\n    })\n    .join(\"\\n\");\n\n  const analysis = await chatCompletion([\n    {\n      role: \"system\",\n      content: `You are JSON-bot, a large language model trained by OpenAI. You always reply with a JSON object. Your purpose is to analyse the users message. Required return format:\n    ---\n    ${jsonFormat}`,\n    },\n    { role: \"user\", content: message },\n  ]);\n\n  return analysis;\n}",
+  "name": "jsonGpt",
+  "slug": "json-gpt",
+  "parameters": [
+    {
+      "name": "message",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "simplifiedSchema": {
+        "properties": [],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "JSON GPT",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse & { tokensUsed?: number | undefined; chatResponse?: string | undefined; jsonResponse?: T | undefined; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 885,
+    "lines": 33,
+    "bytes": 885,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 27,
+    "linesPerFile": 33,
+    "numberOfFiles": 1
+  },
+  "id": "oktwicevtolkufyddbalrqmg"
+}

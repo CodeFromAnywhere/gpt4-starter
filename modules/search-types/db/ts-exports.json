@@ -1,0 +1,26 @@
+[
+  {
+    "createdAt": 1678331620715,
+    "updatedAt": 1678331620715,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331620715,
+    "name": "SearchResult",
+    "slug": "search-result",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "lvskobxlyzqvfncmbgbrfmxj"
+  },
+  {
+    "createdAt": 1678331620716,
+    "updatedAt": 1678331620716,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331620716,
+    "name": "SearchResult",
+    "slug": "search-result",
+    "operationRelativeTypescriptFilePath": "src/SearchResult.ts",
+    "comments": [],
+    "type": "value",
+    "id": "zzlahmmnaicxlbcldhvmenwd"
+  }
+]

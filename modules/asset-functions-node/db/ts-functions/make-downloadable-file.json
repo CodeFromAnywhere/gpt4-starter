@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678041493491,
+  "updatedAt": 1678041493491,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041493491,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/download/makeDownloadableFile.ts",
+  "commentsInside": [],
+  "rawText": " async (absolutePath: string) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return;\n  }\n\n  const exists = fs.existsSync(absolutePath);\n  if (!exists) {\n    return;\n  }\n\n  const stat = await fs.stat(absolutePath);\n  const isFolder = stat.isDirectory();\n\n  // console.log({ absolutePath, isFolder });\n  // return case 1: folder\n  if (isFolder) {\n    // console.log(\"it's a folder\", absolutePath);\n    // make a zip, set that as finalpath\n\n    const folderZipAbsolutePath = await zipFolder(absolutePath);\n\n    if (!folderZipAbsolutePath) {\n      console.log(\"zipping went wrong\");\n      return;\n    }\n\n    return folderZipAbsolutePath;\n  }\n\n  // return case 2: collection\n  const fileCollectionPaths = await getFileCollectionPaths(absolutePath);\n  const filesLength = fileCollectionPaths?.length || 0;\n  const isCollection = filesLength > 1;\n\n  if (isCollection && fileCollectionPaths) {\n    const result = await zipFiles(\n      fileCollectionPaths.map((p) => makeRelative(p, projectRoot))\n    );\n\n    if (!result.isSuccessful || !result.projectRelativeZipPath) {\n      console.log(result);\n      return;\n    }\n\n    return path.join(projectRoot, result.projectRelativeZipPath);\n    // make a zip, set that as final path\n  }\n\n  // final returncase: one file\n  return absolutePath;\n}",
+  "name": "makeDownloadableFile",
+  "slug": "make-downloadable-file",
+  "parameters": [
+    {
+      "name": "absolutePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 1303,
+    "lines": 52,
+    "bytes": 1303,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 52,
+    "numberOfFiles": 1
+  },
+  "id": "wxyzvijghachfsqoflagvhel"
+}

@@ -1,0 +1,86 @@
+{
+  "createdAt": 1678369217364,
+  "updatedAt": 1678369217364,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369217364,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "speechToText",
+  "slug": "speech-to-text",
+  "operationRelativeTypescriptFilePath": "src/speechToText.ts",
+  "type": {
+    "rawType": "{ (absoluteAudioFilePath: string): Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse>; config: { isPaid: boolean; priceDescription: string; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPaid": {
+              "type": "boolean"
+            },
+            "priceDescription": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            }
+          },
+          "required": [
+            "isPaid",
+            "priceDescription"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPaid",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "priceDescription",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  absoluteAudioFilePath: string\n): Promise<StandardResponse> => {\n  if (\n    (await shouldAddToQueue(\"speechToText\", [absoluteAudioFilePath])) === true\n  ) {\n    console.log(\"mmm added to queue\", absoluteAudioFilePath);\n\n    // it's been added to queue, to be done later.\n    return { isSuccessful: false, message: \"Added to queue\" };\n  }\n\n  const mbs = fs.existsSync(absoluteAudioFilePath)\n    ? (await fs.stat(absoluteAudioFilePath)).size / (1024 * 1024)\n    : undefined;\n  const hours = (mbs || 0) / 60;\n  const priceCredit = hours;\n\n  const { groupId, personId } = await getGroupOrPersonId(absoluteAudioFilePath);\n\n  const result = await createTranscriptionJson(absoluteAudioFilePath);\n  if (!result.isSuccessful) {\n    lockError(\n      absoluteAudioFilePath,\n      result.message,\n      undefined,\n      \"speechToText\",\n      [absoluteAudioFilePath]\n    );\n  }\n  return {\n    ...result,\n    payment: {\n      priceCredit,\n      groupId,\n      personId,\n      priceDescription: `Your audio was around ${mbs} minutes`,\n    },\n  };\n}",
+  "description": "Uses local whisper, for now. Audiofile must be 16-bit wav\n\nNB: I have the queueing on this layer, but if we later have faster ones that don't need a queue because they don't cost much processing power, we can add it on the individual stt level",
+  "id": "aswqgytphftyhbtxspfwnmwb"
+}

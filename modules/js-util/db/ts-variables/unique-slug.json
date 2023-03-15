@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678332154934,
+  "updatedAt": 1678332154934,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332154934,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "uniqueSlug",
+  "slug": "unique-slug",
+  "operationRelativeTypescriptFilePath": "src/uniqueSlug.ts",
+  "type": {
+    "rawType": "<T>(value: T, index: number, self: T[]) => boolean",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "onlyUnique2<{ slug: string }>(\n  (a, b) => a.slug === b.slug\n)",
+  "description": "",
+  "id": "gdihdtrpgkghpvgtehfmkmxf"
+}

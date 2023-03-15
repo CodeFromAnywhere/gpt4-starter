@@ -1,0 +1,90 @@
+{
+  "createdAt": 1678369222672,
+  "updatedAt": 1678369222672,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369222672,
+  "id": "namedparameterstypeof-texttospeech",
+  "name": "NamedParameters<typeof textToSpeech>",
+  "slug": "namedparameterstypeof-texttospeech",
+  "operationRelativeTypescriptFilePath": "src/textToSpeech.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "description": "either provide text or an inputTextFilePath"
+            },
+            "inputTextFilePath": {
+              "type": "string",
+              "description": "either provide text or an inputTextFilePath"
+            },
+            "outputFilePath": {
+              "type": "string",
+              "description": "If you don't provide this, it will be stored as [inputTextFilePathFolder]/[inputFileName].mp3\n\nneeded if you don't provide an inputTextFilePath"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "text",
+                "required": false,
+                "schema": {
+                  "fullComment": "either provide text or an inputTextFilePath",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "inputTextFilePath",
+                "required": false,
+                "schema": {
+                  "fullComment": "either provide text or an inputTextFilePath",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "outputFilePath",
+                "required": false,
+                "schema": {
+                  "fullComment": "If you don't provide this, it will be stored as [inputTextFilePathFolder]/[inputFileName].mp3\n\nneeded if you don't provide an inputTextFilePath",
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof textToSpeech>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

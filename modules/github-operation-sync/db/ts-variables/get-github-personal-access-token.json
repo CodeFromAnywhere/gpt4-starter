@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794216018,
+  "updatedAt": 1673794216018,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794216018,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getGithubPersonalAccessToken",
+  "slug": "get-github-personal-access-token",
+  "operationRelativeTypescriptFilePath": "src/getGithubPersonalAccessToken.ts",
+  "type": {
+    "rawType": "() => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const personalAccessToken = (await db.get(\"Persona\")).find(\n    (x) => !!x.githubAccessToken\n  )?.githubAccessToken;\n\n  return personalAccessToken;\n}",
+  "description": "",
+  "id": "tvjwsqumrmklobupfbnljauq"
+}

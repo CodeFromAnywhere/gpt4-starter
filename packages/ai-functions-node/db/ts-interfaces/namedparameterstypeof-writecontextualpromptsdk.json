@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330189772,
+  "updatedAt": 1678330189772,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330189772,
+  "id": "namedparameterstypeof-writecontextualpromptsdk",
+  "name": "NamedParameters<typeof writeContextualPromptSdk>",
+  "slug": "namedparameterstypeof-writecontextualpromptsdk",
+  "operationRelativeTypescriptFilePath": "src/generate-sdk/writeContextualPromptSdk.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof writeContextualPromptSdk>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

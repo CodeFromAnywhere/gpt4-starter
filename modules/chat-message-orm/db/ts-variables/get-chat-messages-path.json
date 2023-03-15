@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678505775354,
+  "updatedAt": 1678505775354,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505775354,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getChatMessagesPath",
+  "slug": "get-chat-messages-path",
+  "operationRelativeTypescriptFilePath": "src/getChatMessagesPath.ts",
+  "type": {
+    "rawType": "(projectRoot: string, personSlug: string, personaSlug: string, dateString: string) => string",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  projectRoot: string,\n  personSlug: string,\n  personaSlug: string,\n  dateString: string\n) => {\n  return path.join(\n    projectRoot,\n    \"knowledge\",\n    \"persons\",\n    personSlug,\n    \"chat-messages\",\n    personaSlug,\n    `${dateString}.json`\n  );\n}",
+  "description": "",
+  "id": "dhcwhhqmcgwwmljutgkzpsbp"
+}

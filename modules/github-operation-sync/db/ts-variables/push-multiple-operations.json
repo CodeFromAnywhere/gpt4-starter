@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794233972,
+  "updatedAt": 1673794233972,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794233972,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "pushMultipleOperations",
+  "slug": "push-multiple-operations",
+  "operationRelativeTypescriptFilePath": "src/pushMultipleOperations.ts",
+  "type": {
+    "rawType": "(operationNames: string[]) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (operationNames: string[]) => {\n  let results: PushOperationResult[] = [];\n  console.log(\"pushing multiple\");\n  console.log(\"operation list: \" + JSON.stringify(operationNames));\n  await Promise.all(\n    operationNames.map(async (operationName) => {\n      const res = await operationGithubPush(operationName);\n      results.push(res);\n    })\n  );\n  console.log(\"returning push multiple: \" + JSON.stringify(results));\n  return results;\n}",
+  "description": "",
+  "id": "gnvrggavbihebxikgpzeodhd"
+}

@@ -1,0 +1,73 @@
+{
+  "createdAt": 1668328739525,
+  "updatedAt": 1668328739525,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328739525,
+  "id": "LZEMcPKjXKrmGtyo",
+  "bin": {
+    "jsUtil": "build/cli.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.7.2"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "js-util",
+  "language": "english",
+  "slug": "js-util",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/clarity/os/operations/tools/util/js-util/src/removeOptionalKeysFromObject.ts. Error: TypeError: Cannot read properties of undefined (reading 'getId')"
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "js-util",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1678504466282,
+    "operationDependenciesIndexed": [],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/util",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 26,
+        "lines": 1139,
+        "characters": 29317,
+        "bytes": 29317
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 114,
+        "characters": 2746,
+        "bytes": 2746
+      },
+      "textSize": {
+        "numberOfFiles": 1,
+        "lines": 1135,
+        "characters": 25316,
+        "bytes": 25316
+      },
+      "size": {
+        "bytes": 57379,
+        "characters": 57379,
+        "lines": 2388,
+        "numberOfFiles": 29
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

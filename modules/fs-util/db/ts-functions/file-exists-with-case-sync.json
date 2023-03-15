@@ -1,0 +1,55 @@
+{
+  "createdAt": 1678041913819,
+  "updatedAt": 1678041913819,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041913819,
+  "isApiExposed": false,
+  "name": "fileExistsWithCaseSync",
+  "slug": "file-exists-with-case-sync",
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/fileExistsWithCaseSync.ts",
+  "commentsInside": [],
+  "description": "",
+  "parameters": [
+    {
+      "name": "filepath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "size": {
+    "characters": 312,
+    "lines": 11,
+    "bytes": 312,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 28,
+    "linesPerFile": 11,
+    "numberOfFiles": 1
+  },
+  "rawText": "\n\nexport function fileExistsWithCaseSync(filepath: string): boolean {\n  var dir = path.dirname(filepath);\n  if (dir === \"/\" || dir === \".\") return true;\n  var filenames = fs.readdirSync(dir);\n  if (filenames.indexOf(path.basename(filepath)) === -1) {\n    return false;\n  }\n  return fileExistsWithCaseSync(dir);\n}",
+  "maxIndentationDepth": 2,
+  "id": "evmtsgslrtufbbenmaycelbc"
+}

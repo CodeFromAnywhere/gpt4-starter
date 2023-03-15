@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330451901,
+  "updatedAt": 1678330451901,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330451901,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getFolderContents",
+  "slug": "get-folder-contents",
+  "operationRelativeTypescriptFilePath": "src/getFolderContents.ts",
+  "type": {
+    "rawType": "(absoluteFolderPath: string) => Promise<import(\"/Users/clarity/os/operations/tools/ai/ai-types/build/FolderContent\").FolderContent[] | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  absoluteFolderPath: string\n): Promise<FolderContent[] | undefined> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) return;\n\n  if (\n    !fs.existsSync(absoluteFolderPath) ||\n    !(await fs.stat(absoluteFolderPath)).isDirectory()\n  ) {\n    return;\n  }\n\n  const folderContents: FolderContent[] = (\n    await fs.readdir(absoluteFolderPath, {\n      withFileTypes: true,\n      encoding: \"utf8\",\n    })\n  )\n    .map((dirent) => {\n      const absolutePath = path.join(absoluteFolderPath, dirent.name);\n      const projectRelativePath = makeRelative(absolutePath, projectRoot);\n\n      const type = dirent.isDirectory()\n        ? \"folder\"\n        : dirent.isSymbolicLink()\n        ? \"link\"\n        : dirent.isFile()\n        ? \"file\"\n        : \"unknown\";\n\n      const ignoredFilesFolders = [\".DS_Store\", \".index\"];\n      if (ignoredFilesFolders.includes(dirent.name)) {\n        return;\n      }\n\n      const folderContent: FolderContent = {\n        name: dirent.name,\n        absolutePath,\n        projectRelativePath,\n        type,\n      };\n      return folderContent;\n    })\n    .filter(notEmpty);\n\n  const folders: FolderContent[] = folderContents.filter(\n    (x) => x.type === \"folder\"\n  );\n  const files: FolderContent[] = folderContents.filter(\n    (x) => x.type === \"file\"\n  );\n\n  const basenamesObject: { [basename: string]: FolderContent } = {};\n\n  files.map((item) => {\n    const basename = getFileCollectionBasename(item.absolutePath);\n\n    if (!basenamesObject[basename]) {\n      // Basecase: first one of this collection\n      basenamesObject[basename] = {\n        ...item,\n        isFileCollection: false,\n        names: [item.name],\n      };\n      return;\n    }\n\n    if (item.name.endsWith(\".md\")) {\n      // Secondary case: give .md file prio\n\n      basenamesObject[basename] = {\n        ...item,\n        isFileCollection: true,\n        names: [...(item.names || []), item.name],\n      };\n\n      // NB: it's markdown\n      return;\n    }\n    // Tertriary case: keep old one, only add name\n    basenamesObject[basename] = {\n      ...basenamesObject[basename],\n      names: [...(basenamesObject[basename].names || []), item.name],\n      isFileCollection: true,\n    };\n  });\n\n  const folderContentItems = Object.values(basenamesObject);\n\n  const allFolderContentItems = folders.concat(folderContentItems);\n\n  return allFolderContentItems;\n}",
+  "description": "For a folder, this function gets all folders in there, then one file per collection, in an efficient manner.\n\nAlso provides information on whether it's a filecollection and which other files are there.",
+  "id": "iaipzfspqrobfljnuzukegns"
+}

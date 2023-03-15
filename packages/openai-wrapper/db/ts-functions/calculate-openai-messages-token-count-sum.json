@@ -1,0 +1,95 @@
+{
+  "createdAt": 1678331078675,
+  "updatedAt": 1678331078675,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331078675,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/calculateOpenaiMessagesTokenCountSum.ts",
+  "commentsInside": [],
+  "rawText": " (\n  messages: ChatCompletionRequestMessage[],\n  isDavinci?: boolean\n) => {\n  const results = calculateOpenaiMessagesTokenCount(messages);\n\n  const tokenCountSum = sum(results.map((x) => x.tokenCount));\n  return tokenCountSum;\n}",
+  "name": "calculateOpenaiMessagesTokenCountSum",
+  "slug": "calculate-openai-messages-token-count-sum",
+  "parameters": [
+    {
+      "name": "messages",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/ChatCompletionRequestMessage"
+        }
+      },
+      "simplifiedSchema": {
+        "items": [
+          {
+            "schema": {
+              "fullComment": "",
+              "properties": [
+                {
+                  "name": "content",
+                  "required": true,
+                  "schema": {
+                    "fullComment": "The contents of the message",
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "name",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "The name of the user in a multi-user chat",
+                    "type": "string"
+                  }
+                }
+              ],
+              "type": "object"
+            },
+            "name": "ChatCompletionRequestMessage"
+          }
+        ],
+        "type": "array"
+      },
+      "required": true
+    },
+    {
+      "name": "isDavinci",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 228,
+    "lines": 9,
+    "bytes": 228,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 9,
+    "numberOfFiles": 1
+  },
+  "id": "yygieaaqyzfocwlkvxlttyuv"
+}

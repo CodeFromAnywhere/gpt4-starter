@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331016256,
+  "updatedAt": 1678331016256,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331016256,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "sendMail",
+  "slug": "send-mail",
+  "operationRelativeTypescriptFilePath": "src/sendMail.ts",
+  "type": {
+    "rawType": "(mailData: any, isMultiple?: boolean | undefined) => Promise<import(\"/Users/clarity/os/operations/node_modules/@sendgrid/client/src/response\").ClientResponse | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  mailData: MailDataFromOptional | MailDataFromOptional[],\n  isMultiple?: boolean\n): Promise<ClientResponse | undefined> => {\n  const persona = await getPrimaryPersona();\n\n  if (!persona) {\n    return;\n  }\n\n  const isOnlineNow = await isOnline();\n\n  if (!isOnlineNow) {\n    console.log(\n      `Not online, email not sent. There are two possibilities. We should either add it to queue to send it once we are online, or we should just log the email because it may be done on an offline PC and this is a dev purpose email`,\n      mailData\n    );\n    return;\n  }\n  const { sendgridApiKey, sendgridFromEmail } = persona;\n\n  if (!sendgridApiKey) {\n    console.log(\"Please setup your Sendgrid credentials first\");\n    return;\n  }\n\n  const realMailData: MailDataRequired[] = makeArray(mailData)\n    .map((data) => {\n      const { from: dataFrom, ...otherData } = data;\n\n      const from = dataFrom || sendgridFromEmail;\n\n      if (!from) {\n        console.log(\n          \"From is missing in email and also not present in OsConfig. Please provide at least one of those. Not sending email!\"\n        );\n        return;\n      }\n\n      // NB: it's a bit ugly, but doesn't work without typecast, and i'm pretty sure the type is correct...\n      const mailData = { from, ...otherData } as MailDataRequired;\n\n      return mailData;\n    })\n    .filter(notEmpty);\n\n  sgMail.setApiKey(sendgridApiKey);\n\n  const result = await sgMail\n    .send(realMailData, isMultiple)\n    .then(([result]) => {\n      return result;\n    })\n    .catch((error: ResponseError) => {\n      console.dir({ message: \"Error sending email\", error }, { depth: 999 });\n\n      return undefined;\n    });\n\n  return result;\n}",
+  "description": "Sends email(s) using sendgrid\n\nEnsure your OS config is there\n\nrequired fields:\n- to\n- text or html\n- subject\n\nOptional:\n- from (uses primary persona)",
+  "id": "dojuifzvycvbkrddsabgjsot"
+}

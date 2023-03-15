@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678329650461,
+  "updatedAt": 1678329650461,
+  "deletedAt": 0,
+  "createdFirstAt": 1678329650461,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getPublicFolderNestedPathObjectFromPeer",
+  "slug": "get-public-folder-nested-path-object-from-peer",
+  "operationRelativeTypescriptFilePath": "src/getPublicFolderNestedPathObject.ts",
+  "type": {
+    "rawType": "(peerSlug: string) => Promise<{ peerApiResult: import(\"/Users/clarity/os/operations/tools/user-interfaces/api/api-types/build/api-types\").ApiReturnType<\"getPublicFolderNestedPathObject\">; } | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  peerSlug: string\n): Promise<\n  | undefined\n  | { peerApiResult: RealApiReturnType<\"getPublicFolderNestedPathObject\"> }\n> => {\n  const { peerPeople } = await getPeerPeople();\n  const peer = peerPeople.find((x) => x.slug === peerSlug);\n  const name = peer?.name;\n  if (!name) {\n    console.log(\"Peer not found\");\n    return;\n  }\n\n  // TODO:\n  const ip = \"\";\n  // call `getPublicFolderNestedPathObject` with api with other ip\n  const peerApiResult = await apiWithConfig.getPublicFolderNestedPathObject({\n    apiUrl: `http://${ip}:${ports[\"function-server\"]}`,\n    // authToken: peer.authToken,\n    timeout: 5000,\n  });\n\n  return { peerApiResult };\n}",
+  "description": "Peer = {\nname: \"22.2.2.2.2.2\",\nslug: \"22-22-22-22\"\n}",
+  "id": "pitahejriwveiwtvwhlqtstp"
+}

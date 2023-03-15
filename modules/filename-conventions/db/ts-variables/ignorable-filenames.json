@@ -1,0 +1,58 @@
+{
+  "createdAt": 1675690237328,
+  "updatedAt": 1675690237328,
+  "deletedAt": 0,
+  "createdFirstAt": 1675690237328,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "ignorableFilenames",
+  "slug": "ignorable-filenames",
+  "operationRelativeTypescriptFilePath": "src/filename-conventions.ts",
+  "type": {
+    "rawType": "{ dsStore: string; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "dsStore": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        }
+      },
+      "required": [
+        "dsStore"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "dsStore",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "{\n  dsStore: \".DS_Store\",\n}",
+  "description": "",
+  "id": "whcefrbjebtwuxbygzkyanqk"
+}

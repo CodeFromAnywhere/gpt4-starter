@@ -1,0 +1,74 @@
+[
+  {
+    "createdAt": 1678042841108,
+    "updatedAt": 1678042841108,
+    "deletedAt": 0,
+    "createdFirstAt": 1678042841108,
+    "name": "zip",
+    "slug": "zip",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "nkytuzbhtsepyzyrfyghzkfn"
+  },
+  {
+    "createdAt": 1678042841108,
+    "updatedAt": 1678042841108,
+    "deletedAt": 0,
+    "createdFirstAt": 1678042841108,
+    "name": "zipFiles",
+    "slug": "zip-files",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "khgltjgbhatlqvbnwzllieyy"
+  },
+  {
+    "createdAt": 1678042841109,
+    "updatedAt": 1678042841109,
+    "deletedAt": 0,
+    "createdFirstAt": 1678042841109,
+    "name": "zipFolder",
+    "slug": "zip-folder",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "tqqzjjifohfifwcztbbxzgue"
+  },
+  {
+    "createdAt": 1678042841109,
+    "updatedAt": 1678042841109,
+    "deletedAt": 0,
+    "createdFirstAt": 1678042841109,
+    "name": "zip",
+    "slug": "zip",
+    "operationRelativeTypescriptFilePath": "src/zip.ts",
+    "comments": [],
+    "type": "value",
+    "id": "faezomcufxjubnavkxgqlyuf"
+  },
+  {
+    "createdAt": 1678042841109,
+    "updatedAt": 1678042841109,
+    "deletedAt": 0,
+    "createdFirstAt": 1678042841109,
+    "name": "zipFiles",
+    "slug": "zip-files",
+    "operationRelativeTypescriptFilePath": "src/zipFiles.ts",
+    "comments": [],
+    "type": "value",
+    "id": "rmtimyvnsyaolitblbsulzrr"
+  },
+  {
+    "createdAt": 1678042841109,
+    "updatedAt": 1678042841109,
+    "deletedAt": 0,
+    "createdFirstAt": 1678042841109,
+    "name": "zipFolder",
+    "slug": "zip-folder",
+    "operationRelativeTypescriptFilePath": "src/zipFolder.ts",
+    "comments": [],
+    "type": "value",
+    "id": "rnrnvlwxgmuvjgodqtyjdoqz"
+  }
+]

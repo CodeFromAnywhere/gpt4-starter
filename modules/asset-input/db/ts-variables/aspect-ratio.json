@@ -1,0 +1,31 @@
+{
+  "createdAt": 1678041568658,
+  "updatedAt": 1678041568658,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041568658,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "ASPECT_RATIO",
+  "slug": "aspect-ratio",
+  "operationRelativeTypescriptFilePath": "src/Webcam.tsx",
+  "type": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "optional": false,
+      "type": "number"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": true,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "type": "number"
+    }
+  },
+  "value": "WIDTH / HEIGHT",
+  "description": "",
+  "id": "ilmtaeieckcgvlsdxwxyfszq"
+}

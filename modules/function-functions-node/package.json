@@ -1,0 +1,102 @@
+{
+  "createdAt": 1667670104020,
+  "updatedAt": 1667670104020,
+  "deletedAt": 0,
+  "createdFirstAt": 1667670104020,
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "name": "function-functions-node",
+  "sensible": {
+    "hasGeneratedDependencies": false
+  },
+  "dependencies": {
+    "database": "0.0.1",
+    "js-util": "0.0.1",
+    "code-types": "0.0.1",
+    "fs-util-js": "0.0.1",
+    "fs-util": "1.0.5",
+    "function-types": "0.0.1",
+    "get-path": "0.0.1",
+    "read-json-file": "0.0.1",
+    "webpage-types": "0.0.1",
+    "recursive-util": "0.0.1",
+    "write-to-assets": "0.0.1"
+  },
+  "slug": "function-functions-node",
+  "id": "nwxdvcemhjxnshvyimslpusa",
+  "operation": {
+    "hasGeneratedDependenciesIndexed": true,
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": []
+    },
+    "lastRebuildAt": 1677580516635,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 7,
+        "lines": 216,
+        "characters": 5811,
+        "bytes": 5811
+      },
+      "dataSize": {
+        "numberOfFiles": 3,
+        "lines": 15071,
+        "characters": 606690,
+        "bytes": 606690
+      },
+      "textSize": {
+        "numberOfFiles": 1,
+        "lines": 161,
+        "characters": 3059,
+        "bytes": 3059
+      },
+      "size": {
+        "bytes": 615560,
+        "characters": 615560,
+        "lines": 15448,
+        "numberOfFiles": 11
+      }
+    },
+    "folderNameIndexed": "function-functions-node",
+    "relativeOperationLocationPathIndexed": "operations/tools/purpose/codebase-introspection/functions",
+    "classificationIndexed": "node-cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [
+      "db",
+      "writeToAssets",
+      "FunctionExecution",
+      "db",
+      "omitUndefinedValues",
+      "operations",
+      "db",
+      "notEmpty",
+      "TsFunction",
+      "NestedWebPage",
+      "WebPage",
+      "getMenuPagesObject",
+      "path",
+      "PublicBundleConfig",
+      "getProjectRoot",
+      "readJsonFile",
+      "StandardFunctionConfig",
+      "getFolderJs",
+      "db",
+      "FunctionData"
+    ],
+    "packageDependenciesIndexed": []
+  }
+}

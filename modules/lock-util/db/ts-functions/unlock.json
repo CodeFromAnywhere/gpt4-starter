@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678331284849,
+  "updatedAt": 1678331284849,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331284849,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/unlock.ts",
+  "commentsInside": [],
+  "rawText": " (absoluteLockedFilePath: string) => {\n  const lockFilePath = getActionStatusFilePath(absoluteLockedFilePath);\n  if (!fs.existsSync(lockFilePath)) {\n    return;\n  }\n  return fs.rm(lockFilePath);\n}",
+  "name": "unlock",
+  "slug": "unlock",
+  "parameters": [
+    {
+      "name": "absoluteLockedFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Removes lockfile based on the filepath of the file that shoul've been locked\nNB: don't provide the path to the lockfile but the path to the file that the lock should be removed from",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 377,
+    "lines": 8,
+    "bytes": 377,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 47,
+    "linesPerFile": 8,
+    "numberOfFiles": 1
+  },
+  "id": "lesiigxykoctxfygtdaoqyiw"
+}

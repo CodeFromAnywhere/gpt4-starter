@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678330264016,
+  "updatedAt": 1678330264016,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330264016,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getToolFunctions",
+  "slug": "get-tool-functions",
+  "operationRelativeTypescriptFilePath": "src/tool/getToolFunctions.ts",
+  "type": {
+    "rawType": "{ (): Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/TsFunction\").TsFunction[]>; config: { isPublic: boolean; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPublic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isPublic"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (): Promise<TsFunction[]> => {\n  const tsFunctions = await db.get(\"TsFunction\");\n\n  getPublicBundleConfig();\n  const toolFunctions = tsFunctions.filter((x) => {\n    const config = sdk[x.name as keyof typeof sdk]?.config as\n      | StandardFunctionConfig\n      | undefined;\n    const isTool = config && config?.domain;\n    return isTool;\n  });\n\n  return toolFunctions;\n}",
+  "description": "Returns all tool functions to the frontend",
+  "id": "ubluuizragchmzfmdqjoumxp"
+}

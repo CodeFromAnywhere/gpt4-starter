@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678041921593,
+  "updatedAt": 1678041921593,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041921593,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/findClosestAbsolutePath.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  absolutePath: string\n): Promise<string | undefined> => {\n  // NB: base-case\n  if (absolutePath === \"\") return;\n  const pathExists = fs.existsSync(absolutePath);\n\n  const stats = pathExists ? await fs.stat(absolutePath) : null;\n  const isFile = stats?.isFile();\n  const isFolder = stats?.isDirectory();\n\n  const isValidPath = pathExists && (isFile || isFolder);\n\n  if (isValidPath) return absolutePath;\n\n  // no valid path\n\n  const folderUpPath = getFolderJs(absolutePath);\n\n  return findClosestAbsolutePath(folderUpPath);\n}",
+  "name": "findClosestAbsolutePath",
+  "slug": "find-closest-absolute-path",
+  "parameters": [
+    {
+      "name": "absolutePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Looks if the given path is a file or a folder, and goes a folder up in case it doesn't exist, to find a path that does.",
+  "returnType": {
+    "rawType": "Promise<string | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 653,
+    "lines": 21,
+    "bytes": 653,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 31,
+    "linesPerFile": 21,
+    "numberOfFiles": 1
+  },
+  "id": "dnheadaurhbdnqplogjjlvlp"
+}

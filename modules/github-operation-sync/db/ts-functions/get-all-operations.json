@@ -1,0 +1,35 @@
+{
+  "createdAt": 1673794211212,
+  "updatedAt": 1673794211212,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794211212,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getAllOperations.ts",
+  "commentsInside": [],
+  "rawText": " async (): Promise<Operation[]> => {\n  const operations = await db.get(\"Operation\");\n  return operations;\n}",
+  "name": "getAllOperations",
+  "slug": "get-all-operations",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/types/code-types/build/Operation\").Operation[]>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 107,
+    "lines": 4,
+    "bytes": 107,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 27,
+    "linesPerFile": 4,
+    "numberOfFiles": 1
+  },
+  "id": "thsokibsulwoidrlvgxuuxxz"
+}

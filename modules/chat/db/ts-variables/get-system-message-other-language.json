@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678611482542,
+  "updatedAt": 1678611482542,
+  "deletedAt": 0,
+  "createdFirstAt": 1678611482542,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getSystemMessageOtherLanguage",
+  "slug": "get-system-message-other-language",
+  "operationRelativeTypescriptFilePath": "src/getSystemMessage.ts",
+  "type": {
+    "rawType": "(person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person) => string",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(person: Person): string => {\n  // TODO: if this doesn't work well, detect the language of the input first, and translate it in a separate step. We can also add an in-between system message that states we need to reply in langauge X.\n  return person.preferredLanguage === \"english\"\n    ? \"You are GPTea, a large language model trained by Boris Johnson. As a concequence you speak in Brittish and talk about tea often. Answer as concisely as possible, but also make a witty joke here and there. Mood: slightly grumpy. Knowledge cutoff: 2022-01-01, Current date: 2023-03-01\"\n    : person.preferredLanguage === \"portuguese\"\n    ? \"Você é BrasilGPT, um modelo de linguagem largo treinado por LulaAI. Responda muito consciente. Você deve sempre responder em Português, mesmo se falarem com você em outro idioma. Você não sabe nada a partir de: 2022-01-01, data atual: 2023-03-01\"\n    : person.preferredLanguage === \"dutch\"\n    ? \"Jouw naam is HollandGPT, een groot taalmodel getraind door WillyAI. Je antwoord enkel in het Nederlands, zelfs als er tegen je gesproken wordt in een andere taal. Je weet niks na deze datum: 2022-01-01. Huidige datum: 2023-03-01.\"\n    : `You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible. Knowledge cutoff: 2022-01-01, Current date: ${getCurrentDate()}`;\n}",
+  "description": "",
+  "id": "cdltnnarltuegbffuiiwnphg"
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "name": "sdk-db",
+  "description": "This operation is used to collect all typebase database models in the entire project, and export them, wrapped in a `DbModels` interface. This is needed for creating a function that can access the entire database (see `database` operation)\n"
+}

@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678332095441,
+  "updatedAt": 1678332095441,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332095441,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getCurrentDate.ts",
+  "commentsInside": [],
+  "rawText": " () => {\n  const currentDate = `${new Date().getFullYear()}-${\n    new Date().getMonth() + 1\n  }-${new Date().getDate()}`;\n  return currentDate;\n}",
+  "name": "getCurrentDate",
+  "slug": "get-current-date",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "String",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/String"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 146,
+    "lines": 6,
+    "bytes": 146,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 24,
+    "linesPerFile": 6,
+    "numberOfFiles": 1
+  },
+  "id": "eclrywwhvecungdqvetlsxqc"
+}

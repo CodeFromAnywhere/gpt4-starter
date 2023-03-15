@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1671317703184,
+    "updatedAt": 1671317703184,
+    "deletedAt": 0,
+    "createdFirstAt": 1671317703184,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/store.ts",
+    "comment": "This is only needed if api storage is ALL you need.",
+    "rawStatement": "export const { StoreProvider, useStore } = createStore(apiStoreInitialValues);",
+    "parameters": {},
+    "types": [],
+    "firstLine": 25,
+    "lastLine": 27,
+    "id": "hnzuckwwcptkhiagvnheuzrv"
+  }
+]

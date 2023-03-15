@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678331994735,
+  "updatedAt": 1678331994735,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331994735,
+  "id": "namedparameterstypeof-loginwithemailorphone",
+  "name": "NamedParameters<typeof loginWithEmailOrPhone>",
+  "slug": "namedparameterstypeof-loginwithemailorphone",
+  "operationRelativeTypescriptFilePath": "src/loginWithEmailOrPhone.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "emailOrPhone": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "emailOrPhone"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "emailOrPhone",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof loginWithEmailOrPhone>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

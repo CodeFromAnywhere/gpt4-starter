@@ -1,0 +1,93 @@
+{
+  "createdAt": 1678331076230,
+  "updatedAt": 1678331076230,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331076230,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/calculateOpenaiMessagesTokenCount.ts",
+  "commentsInside": [],
+  "rawText": " (\n  messages: ChatCompletionRequestMessage[]\n): (ChatCompletionRequestMessage & { tokenCount: number })[] => {\n  const encoding = get_encoding(\"cl100k_base\");\n\n  const extendedMessages = messages.map((item) => ({\n    ...item,\n    tokenCount: encoding.encode(`roleword ${item.name || \"\"} ${item.content}`)\n      .length,\n  }));\n  return extendedMessages;\n}",
+  "name": "calculateOpenaiMessagesTokenCount",
+  "slug": "calculate-openai-messages-token-count",
+  "parameters": [
+    {
+      "name": "messages",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/ChatCompletionRequestMessage"
+        }
+      },
+      "simplifiedSchema": {
+        "items": [
+          {
+            "schema": {
+              "fullComment": "",
+              "properties": [
+                {
+                  "name": "content",
+                  "required": true,
+                  "schema": {
+                    "fullComment": "The contents of the message",
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "name",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "The name of the user in a multi-user chat",
+                    "type": "string"
+                  }
+                }
+              ],
+              "type": "object"
+            },
+            "name": "ChatCompletionRequestMessage"
+          }
+        ],
+        "type": "array"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "(import(\"/Users/clarity/os/operations/node_modules/openai/dist/api\").ChatCompletionRequestMessage & { tokenCount: number; })[]",
+    "typeDefinition": {
+      "optional": false,
+      "type": "array",
+      "items": {}
+    },
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "items": [
+        {
+          "schema": {
+            "properties": [],
+            "type": "object"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 356,
+    "lines": 12,
+    "bytes": 356,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 30,
+    "linesPerFile": 12,
+    "numberOfFiles": 1
+  },
+  "id": "ydrunchshfppohlotbujavdk"
+}

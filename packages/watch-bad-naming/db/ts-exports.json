@@ -1,0 +1,122 @@
+[
+  {
+    "createdAt": 1678330829319,
+    "updatedAt": 1678330829319,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330829319,
+    "name": "exploreBadNamingFiles",
+    "slug": "explore-bad-naming-files",
+    "operationRelativeTypescriptFilePath": "src/exploreBadNamingFiles.ts",
+    "comments": [],
+    "type": "value",
+    "id": "expkvzrccctcgvikypgruxlq"
+  },
+  {
+    "createdAt": 1678330829319,
+    "updatedAt": 1678330829319,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330829319,
+    "name": "exploreBadNamingFiles",
+    "slug": "explore-bad-naming-files",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "ofunjjlxkzganeduekjemlwb"
+  },
+  {
+    "createdAt": 1678330829319,
+    "updatedAt": 1678330829319,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330829319,
+    "name": "isBadName",
+    "slug": "is-bad-name",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "hwihcchnllrgxytefddwebwv"
+  },
+  {
+    "createdAt": 1678330829319,
+    "updatedAt": 1678330829319,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330829319,
+    "name": "renameAllBadlyNamedFiles",
+    "slug": "rename-all-badly-named-files",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "dmpsqctrhqtjfzbpbstoqfis"
+  },
+  {
+    "createdAt": 1678330829320,
+    "updatedAt": 1678330829320,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330829320,
+    "name": "renameBadlyNamedFile",
+    "slug": "rename-badly-named-file",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "nltwpqlrppextqejnxjshpzs"
+  },
+  {
+    "createdAt": 1678330829320,
+    "updatedAt": 1678330829320,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330829320,
+    "name": "watchBadNaming",
+    "slug": "watch-bad-naming",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "vugjxbixopgzyjgnhvoqdsvm"
+  },
+  {
+    "createdAt": 1678330829320,
+    "updatedAt": 1678330829320,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330829320,
+    "name": "isBadName",
+    "slug": "is-bad-name",
+    "operationRelativeTypescriptFilePath": "src/isBadName.ts",
+    "comments": [],
+    "type": "value",
+    "id": "pfwtcdtwldkxgtyqatkltjsr"
+  },
+  {
+    "createdAt": 1678330829320,
+    "updatedAt": 1678330829320,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330829320,
+    "name": "renameAllBadlyNamedFiles",
+    "slug": "rename-all-badly-named-files",
+    "operationRelativeTypescriptFilePath": "src/renameAllBadlyNamedFiles.ts",
+    "comments": [],
+    "type": "value",
+    "id": "buphateuduifncrkxpoivurv"
+  },
+  {
+    "createdAt": 1678330829320,
+    "updatedAt": 1678330829320,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330829320,
+    "name": "renameBadlyNamedFile",
+    "slug": "rename-badly-named-file",
+    "operationRelativeTypescriptFilePath": "src/renameBadlyNamedFile.ts",
+    "comments": [],
+    "type": "value",
+    "id": "bhvfhdnxeevdxjzzfrsdjbcy"
+  },
+  {
+    "createdAt": 1678330829320,
+    "updatedAt": 1678330829320,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330829320,
+    "name": "watchBadNaming",
+    "slug": "watch-bad-naming",
+    "operationRelativeTypescriptFilePath": "src/watchBadNaming.ts",
+    "comments": [],
+    "type": "value",
+    "id": "tedbhmhyhhgzyqkrxuqkchxg"
+  }
+]

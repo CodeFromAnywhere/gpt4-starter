@@ -1,0 +1,1 @@
+{"version":3,"file":"imageToText.d.ts","sourceRoot":"","sources":["../src/imageToText.ts"],"names":[],"mappings":"AAEA;;;;;GAKG;AACH,eAAO,MAAM,WAAW,sBACH,MAAM,WAChB;IACP,IAAI,CAAC,EAAE,MAAM,CAAC;IACd,UAAU,CAAC,EAAE,OAAO,CAAC;IACrB,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,SAAS,CAAC,EAAE,MAAM,CAAC;CACpB;kBACwB,OAAO;aAAW,MAAM;;EASlD,CAAC"}

@@ -1,0 +1,88 @@
+{
+  "createdAt": 1678330874122,
+  "updatedAt": 1678330874122,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330874122,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "watchMarkdown",
+  "slug": "watch-markdown",
+  "operationRelativeTypescriptFilePath": "src/watchMarkdown.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/ProjectWatcher\").ProjectWatcher<any>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "startupStrategy": {
+          "enum": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "x-enumNames": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "type": "string"
+        },
+        "filter": {
+          "type": "object",
+          "properties": {}
+        },
+        "config": {}
+      },
+      "required": [
+        "filter",
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "startupStrategy",
+          "required": false,
+          "schema": {
+            "enum": [
+              "ignore",
+              "sync",
+              "async",
+              "queue"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "filter",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  eventName,\n  absolutePath\n) => {\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"File doesn't exist (anymore)\" };\n  }\n\n  await makeMarkdownIndex(absolutePath);\n}",
+  "description": "TODO:\n\n# Refactor MarkdownIndex storage\n\n- put it in frontmatter of the markdown!\n- don't watch for .markdownIndex\n- remove all .markdownindex.json\n- watch contents of md file (frontmatter only) to see if index-version is \"old\"\n- set everything being old...\n\n\n==============\n\n\nEvery time a markdown file comes in (watcher), can we do some default functions and GPT for it.\n\nCreated `MarkdownIndex` at `[filename].MarkdownIndex.json`\n\n- frontmatter\n- add author, createdAt (non-GPT)\n- title, keywords, seo keywords, seo title\n- [filename].index.json:\n- statements\n- take-aways\n- social-media-posts\n- images: GPT to get visual descriptions for any markdown file, which in turn can be turned into images\n- summary\n- snippets: Interesting standalone snippet finding in bigger video/audio `audiofile-name].snippets.json`\n\n\nTODO: Offline GPT-less naming:\n\nMatch the audio recording .md against word combinations, model names, and folder names (and operation names, with that). name of the md can be based on those matches. fire out an exact strategy later. this way, the name can be auto-generated without a GPT, which is way more free/scalable/offline/decentralised, right now",
+  "id": "katfxcisdzfjhcrpbwabzevs"
+}

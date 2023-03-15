@@ -1,0 +1,52 @@
+{
+  "createdAt": 1675690237327,
+  "updatedAt": 1675690237327,
+  "deletedAt": 0,
+  "createdFirstAt": 1675690237327,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "unregulatedFolders",
+  "slug": "unregulated-folders",
+  "operationRelativeTypescriptFilePath": "src/filename-conventions.ts",
+  "type": {
+    "rawType": "string[]",
+    "typeDefinition": {
+      "optional": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "allOf": [
+          {
+            "transform": [
+              "trim"
+            ]
+          },
+          {
+            "minLength": 1
+          }
+        ]
+      }
+    },
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "items": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "value": "[\n  \"installation\",\n  \"cloned\",\n  \"bundled\",\n  \"backups\",\n  \"to-integrate\",\n  \"browser-sessions\",\n  \"legacy\",\n  // this is a big exception with block quotes and triple dot names\n  \"pages\",\n  // TODO: not regulated because it is automated and should be good (however, there's this one little thing: namedParameters<xyz>)\n  \"db\",\n]",
+  "description": "Not regulated regarding file naming conventions",
+  "id": "fbmraudmxycryitglilvxlnq"
+}

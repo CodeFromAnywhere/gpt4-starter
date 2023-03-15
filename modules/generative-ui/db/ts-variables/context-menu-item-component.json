@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041364823,
+  "updatedAt": 1678041364823,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041364823,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "ContextMenuItemComponent",
+  "slug": "context-menu-item-component",
+  "operationRelativeTypescriptFilePath": "src/ContextMenuItemComponent.tsx",
+  "type": {
+    "rawType": "(props: { action: import(\"/Users/clarity/os/operations/tools/user-interfaces/gui/dumb/context-menu/build/types\").ContextMenuItem; projectRelativeFilePath: string; }) => JSX.Element | null",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: {\n  action: ContextMenuItem;\n  projectRelativeFilePath: string;\n}) => {\n  const { action, projectRelativeFilePath } = props;\n  if (action.getIsEnabled?.(projectRelativeFilePath) === false) {\n    return null;\n  }\n\n  return (\n    <Div\n      className=\"hover:bg-black/10 p-2 cursor-pointer\"\n      onClick={() => {\n        action.onClick(projectRelativeFilePath);\n      }}\n    >\n      {action.getTitle(projectRelativeFilePath)}\n    </Div>\n  );\n}",
+  "description": "",
+  "id": "sydskvrzfbqlvopvsjacjtae"
+}

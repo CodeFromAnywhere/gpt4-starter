@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678331996168,
+  "updatedAt": 1678331996168,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331996168,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/loginWithEmailOrPhone.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  emailOrPhone: string\n): Promise<{\n  isSuccessful: boolean;\n  message?: string;\n  emailOrPhone?: string;\n}> => {\n  const email = isEmail(emailOrPhone) ? emailOrPhone : undefined;\n\n  const phoneNumber =\n    !isEmail(emailOrPhone) && isPhoneNumber(emailOrPhone)\n      ? emailOrPhone\n      : undefined;\n\n  if (!email && !phoneNumber) {\n    return {\n      isSuccessful: false,\n      message: \"Please fill in a valid email or phone number\",\n    };\n  }\n\n  const foundPerson = (await db.get(\"Person\")).find((x) => {\n    if (email) {\n      return x.email === email;\n    }\n\n    if (phoneNumber) {\n      return x.phoneNumber === phoneNumber;\n    }\n    return false;\n  });\n\n  if (!foundPerson) {\n    return {\n      isSuccessful: false,\n      message: \"Could not find anyone with that email/phone\",\n    };\n  }\n\n  const otpCode: string = String(\n    Math.round(Math.random() * 900000 + 100000 - 1)\n  );\n\n  const authentication: Person[\"authentication\"] = email\n    ? { emailOtp: otpCode, emailOtpAt: Date.now() }\n    : phoneNumber\n    ? {\n        phoneNumberOtp: otpCode,\n        phoneNumberOtpAt: Date.now(),\n      }\n    : undefined;\n\n  const updateResult = await db.update(\n    \"Person\",\n    (item) => item.id === foundPerson.id,\n    (item) => ({\n      ...item,\n      authentication: { ...item.authentication, ...authentication },\n    })\n  );\n\n  if (email) {\n    await sendMail({\n      to: email,\n      subject: \"Your login code\",\n      text: `Please login with this code: \"${otpCode}\"`,\n    });\n  }\n\n  if (phoneNumber) {\n    await sendSms({\n      to: phoneNumber,\n      body: `Please login with this code: \"${otpCode}\"`,\n    });\n  }\n\n  return {\n    isSuccessful: true,\n    emailOrPhone,\n    message: `Please login with the code you received via ${\n      email ? \"email\" : \"sms\"\n    }`,\n  };\n}",
+  "name": "loginWithEmailOrPhone",
+  "slug": "login-with-email-or-phone",
+  "parameters": [
+    {
+      "name": "emailOrPhone",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Login with phone or email",
+  "returnType": {
+    "rawType": "Promise<{ isSuccessful: boolean; message?: string | undefined; emailOrPhone?: string | undefined; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 1817,
+    "lines": 84,
+    "bytes": 1817,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 22,
+    "linesPerFile": 84,
+    "numberOfFiles": 1
+  },
+  "id": "tdopwnfujxzwtlwbdagjdkec"
+}

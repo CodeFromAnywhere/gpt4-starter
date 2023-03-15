@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330542885,
+  "updatedAt": 1678330542885,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330542885,
+  "id": "namedparameterstypeof-getfsauthorizationtestables",
+  "name": "NamedParameters<typeof getFsAuthorizationTestables>",
+  "slug": "namedparameterstypeof-getfsauthorizationtestables",
+  "operationRelativeTypescriptFilePath": "src/getFsAuthorizationTestables.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getFsAuthorizationTestables>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

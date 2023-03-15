@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678330492720,
+  "updatedAt": 1678330492720,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330492720,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getFileCollectionPaths.ts",
+  "commentsInside": [],
+  "rawText": " async (absoluteFilePath: string) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return;\n  }\n\n  const parsedPath = path.parse(absoluteFilePath);\n\n  // console.log({ projectRelativePath, finalName });\n  const absoluteFolderPath = parsedPath.dir;\n\n  const dirents = await fs.readdir(absoluteFolderPath, {\n    encoding: \"utf8\",\n    withFileTypes: true,\n  });\n\n  const rootName = withoutSubExtensions(parsedPath.base);\n\n  const fileCollectionPaths = dirents\n    .filter((x) => x.isFile())\n    .filter((x) => withoutSubExtensions(x.name) === rootName)\n    .map((x) => path.join(absoluteFolderPath, x.name));\n\n  return fileCollectionPaths;\n}",
+  "name": "getFileCollectionPaths",
+  "slug": "get-file-collection-paths",
+  "parameters": [
+    {
+      "name": "absoluteFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Finds all files with the same main name\n\nReturns an array of absolute paths",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 734,
+    "lines": 27,
+    "bytes": 734,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 27,
+    "linesPerFile": 27,
+    "numberOfFiles": 1
+  },
+  "id": "amkygkpmhjkmkdantybfboep"
+}

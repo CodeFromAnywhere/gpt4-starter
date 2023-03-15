@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041370493,
+  "updatedAt": 1678041370493,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041370493,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "Details",
+  "slug": "details",
+  "operationRelativeTypescriptFilePath": "src/Details.tsx",
+  "type": {
+    "rawType": "(props: { summary: React.ReactNode; children: React.ReactNode; isClosed?: boolean | undefined; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: {\n  summary: string | React.ReactNode;\n  children: React.ReactNode;\n  isClosed?: boolean;\n}) => {\n  return (\n    <details\n      open={!props.isClosed}\n      className=\"group border border-gray-600 rounded-lg\"\n    >\n      <summary className=\"bg-gray-200 dark:bg-gray-700 p-2 rounded-lg group-open:rounded-b-none group-open:border group-open:border-b-gray-600 select-none\">\n        {props.summary}\n      </summary>\n      {props.children}\n    </details>\n  );\n}",
+  "description": "",
+  "id": "ojxbddgbtckukbyzeejiglwl"
+}

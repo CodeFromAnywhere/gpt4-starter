@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331948350,
+  "updatedAt": 1678331948350,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331948350,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "executeCronFunction",
+  "slug": "execute-cron-function",
+  "operationRelativeTypescriptFilePath": "src/executeCronFunction.ts",
+  "type": {
+    "rawType": "(tsFunction: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/TsFunction\").TsFunction) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (tsFunction: TsFunction) => {\n  if (\n    tsFunction.parameters &&\n    tsFunction.parameters.length > 0 &&\n    tsFunction.parameters.find((x) => x.required)\n  ) {\n    log(\"CRON Functions cannot have required parameters\", { type: \"error\" });\n    process.exit();\n  }\n\n  //@ts-ignore\n  sdk[tsFunction.name]?.();\n}",
+  "description": "NB: cron functions cannot have parameters",
+  "id": "xztdjwerhpptcuzzkoalxnci"
+}

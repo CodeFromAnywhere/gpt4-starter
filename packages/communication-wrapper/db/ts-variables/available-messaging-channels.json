@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678331032581,
+  "updatedAt": 1678331032581,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331032581,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "availableMessagingChannels",
+  "slug": "available-messaging-channels",
+  "operationRelativeTypescriptFilePath": "src/types.ts",
+  "type": {
+    "rawType": "readonly [\"whatsapp\", \"email\", \"sms\"]",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "[\"whatsapp\", \"email\", \"sms\"] as const",
+  "description": "Available messaging channels in order of preference",
+  "id": "ypslabsgjvngcprmfpdiievm"
+}

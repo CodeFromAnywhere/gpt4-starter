@@ -1,0 +1,62 @@
+{
+  "createdAt": 1667851632961,
+  "updatedAt": 1669418424020,
+  "deletedAt": 0,
+  "createdFirstAt": 1667851632961,
+  "folderName": "github-operation-sync",
+  "packageName": "github-operation-sync",
+  "relativeOperationLocationPath": "packages/guilherme",
+  "classification": "node",
+  "name": "github-operation-sync",
+  "slug": "github-operation-sync",
+  "coreDependencies": [],
+  "operationDependencies": [
+    "PackageJson",
+    "db",
+    "db",
+    "operations",
+    "db"
+  ],
+  "packageDependencies": [
+    "simpleGit",
+    "SimpleGit",
+    "SimpleGitOptions",
+    "simpleGit",
+    "SimpleGit",
+    "SimpleGitOptions"
+  ],
+  "size": {
+    "codeSize": {
+      "numberOfFiles": 6,
+      "lines": 0,
+      "characters": 13378,
+      "bytes": 13378
+    },
+    "dataSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 2428,
+      "bytes": 2428
+    },
+    "textSize": {
+      "numberOfFiles": 4,
+      "lines": 0,
+      "characters": 8184,
+      "bytes": 8184
+    },
+    "size": {
+      "bytes": 23990,
+      "characters": 23990,
+      "lines": 0,
+      "numberOfFiles": 12
+    }
+  },
+  "buildSucceeded": true,
+  "dependenciesBuildsFailed": false,
+  "indexErrors": [],
+  "indexImportExportError": "",
+  "indexInteracesErrors": "[\"No schema/definitions found for /Users/guilhermereis/Desktop/clones/king-os-v3/packages/github-sync/src/operationGithubPull.ts. Error: Error: Cannot find name 'operationName'. Did you mean 'operationIndex'?\\n\\nCannot find name 'operationManualProjectRoot'.\"]",
+  "lintProblems": [],
+  "id": "iiwvtakewgjgwjqqtdcsxtmt",
+  "language": "en"
+}

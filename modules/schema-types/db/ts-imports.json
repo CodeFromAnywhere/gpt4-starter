@@ -1,0 +1,35 @@
+[
+  {
+    "createdAt": 1678331679950,
+    "updatedAt": 1678331679950,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331679950,
+    "name": "JSONSchema7Type",
+    "slug": "jsonschema7-type",
+    "module": "json-schema",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/SimplifiedSchema.ts",
+    "classification": "package",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": false,
+    "id": "ocagyedjsiejrfvdckcjoide"
+  },
+  {
+    "createdAt": 1678331679951,
+    "updatedAt": 1678331679951,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331679951,
+    "name": "CommentTypeObject",
+    "slug": "comment-type-object",
+    "type": "value",
+    "module": "comment-types",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/SimplifiedSchema.ts",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "ppbxyignvezbfgtywkfcfqql"
+  }
+]

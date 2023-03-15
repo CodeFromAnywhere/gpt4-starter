@@ -1,0 +1,49 @@
+{
+  "createdAt": 1677579955908,
+  "updatedAt": 1677579955908,
+  "deletedAt": 0,
+  "createdFirstAt": 1677579955908,
+  "id": "namedparameterstypeof-detectfolderlanguage",
+  "name": "NamedParameters<typeof detectFolderLanguage>",
+  "slug": "namedparameterstypeof-detectfolderlanguage",
+  "operationRelativeTypescriptFilePath": "src/detectFolderLanguage.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "basePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "basePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "basePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof detectFolderLanguage>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

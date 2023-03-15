@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330836111,
+  "updatedAt": 1678330836111,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330836111,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "exploreBadNamingFiles",
+  "slug": "explore-bad-naming-files",
+  "operationRelativeTypescriptFilePath": "src/exploreBadNamingFiles.ts",
+  "type": {
+    "rawType": "(absoluteFolderPath: string) => Promise<string[]>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  absoluteFolderPath: string\n): Promise<string[]> => {\n  const exploreResult = await explore({\n    basePath: absoluteFolderPath,\n    ignore: generatedFolders,\n  });\n\n  const filePaths = exploreResult.map((x) => x.path).filter(isBadName);\n\n  console.log({\n    filePaths: filePaths.map((p) => ({ old: p, new: fileSlugify(p) })),\n  });\n\n  return filePaths;\n}",
+  "description": "explore folder recursively, returning an array of filepaths that haven't applied the naming convention.\n\nNB: sometimes the folder has bad names. In that case new folders/files need to be created, recursively.",
+  "id": "qxgafdiaevbsejqgnqtaumqh"
+}

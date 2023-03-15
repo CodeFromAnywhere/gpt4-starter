@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794238799,
+  "updatedAt": 1673794238799,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794238799,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "updateAllOperationStatusTest",
+  "slug": "update-all-operation-status-test",
+  "operationRelativeTypescriptFilePath": "src/updateAllOperationStatus.test.ts",
+  "type": {
+    "rawType": "() => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const result = await updateAllOperationStatus(true);\n}",
+  "description": "",
+  "id": "wtnjljkqxqscpqeikguvyvaz"
+}

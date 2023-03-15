@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330869233,
+  "updatedAt": 1678330869233,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330869233,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "makeMarkdownIndexCli",
+  "slug": "make-markdown-index-cli",
+  "operationRelativeTypescriptFilePath": "src/makeMarkdownIndex.cli.ts",
+  "type": {
+    "rawType": "() => void",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  const [absoluteMarkdownFilePath] = process.argv.slice(2);\n  makeMarkdownIndex(absoluteMarkdownFilePath);\n}",
+  "description": "",
+  "id": "axnxtxcfnbgeezxqubvhuwms"
+}

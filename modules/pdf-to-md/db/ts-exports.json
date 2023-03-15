@@ -1,0 +1,74 @@
+[
+  {
+    "createdAt": 1678331347675,
+    "updatedAt": 1678331347675,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331347675,
+    "name": "convertPdfToMd",
+    "slug": "convert-pdf-to-md",
+    "operationRelativeTypescriptFilePath": "src/convertPdfToMd.ts",
+    "comments": [],
+    "type": "value",
+    "id": "tftmmzffdrjvtsoqeaubcscz"
+  },
+  {
+    "createdAt": 1678331347675,
+    "updatedAt": 1678331347675,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331347675,
+    "name": "PdfToMdResult",
+    "slug": "pdf-to-md-result",
+    "operationRelativeTypescriptFilePath": "src/convertPdfToMd.ts",
+    "comments": [],
+    "type": "value",
+    "id": "hjugkwvmemxuwwpnlvrfolem"
+  },
+  {
+    "createdAt": 1678331347675,
+    "updatedAt": 1678331347675,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331347675,
+    "name": "tryParsePdf",
+    "slug": "try-parse-pdf",
+    "operationRelativeTypescriptFilePath": "src/convertPdfToMd.ts",
+    "comments": [],
+    "type": "value",
+    "id": "riynfbvuddqattryffegbmkv"
+  },
+  {
+    "createdAt": 1678331347675,
+    "updatedAt": 1678331347675,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331347675,
+    "name": "convertPdfToMd",
+    "slug": "convert-pdf-to-md",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "nugvyikgqckdwmxbgplnkrgf"
+  },
+  {
+    "createdAt": 1678331347676,
+    "updatedAt": 1678331347676,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331347676,
+    "name": "PdfToMdResult",
+    "slug": "pdf-to-md-result",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "dzcimrcabsqgqrewqpvlqhsc"
+  },
+  {
+    "createdAt": 1678331347676,
+    "updatedAt": 1678331347676,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331347676,
+    "name": "tryParsePdf",
+    "slug": "try-parse-pdf",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "smbohcecyaocdlbixvqbbvht"
+  }
+]

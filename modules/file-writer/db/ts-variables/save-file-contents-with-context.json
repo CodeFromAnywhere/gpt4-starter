@@ -1,0 +1,24 @@
+{
+  "createdAt": 1677582113209,
+  "updatedAt": 1677582113209,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582113209,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "{ saveFileContentsWithContext }",
+  "slug": "save-file-contents-with-context",
+  "operationRelativeTypescriptFilePath": "src/useFileWriter.tsx",
+  "type": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "api",
+  "description": "",
+  "id": "jnaenfmhqbbnyltimihouemw"
+}

@@ -1,0 +1,88 @@
+{
+  "createdAt": 1678330804134,
+  "updatedAt": 1678330804134,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330804134,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "watchMp3WithoutWav",
+  "slug": "watch-mp3-without-wav",
+  "operationRelativeTypescriptFilePath": "src/watchMp3WithoutWav.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/ProjectWatcher\").ProjectWatcher<any>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "startupStrategy": {
+          "enum": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "x-enumNames": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "type": "string"
+        },
+        "filter": {
+          "type": "object",
+          "properties": {}
+        },
+        "config": {}
+      },
+      "required": [
+        "filter",
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "startupStrategy",
+          "required": false,
+          "schema": {
+            "enum": [
+              "ignore",
+              "sync",
+              "async",
+              "queue"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "filter",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  eventName,\n  absolutePath,\n  isStartup\n): Promise<string | undefined> => {\n  if (!fs.existsSync(absolutePath)) {\n    console.log(\"doesn't exist\", absolutePath);\n    return;\n  }\n  if (isLocked(absolutePath)) {\n    console.log(\"is locked\", absolutePath);\n    return;\n  }\n  const result = await compressConvert(absolutePath, {\n    targetFormat: \"wav\",\n    is16bitWav: true,\n    keepOriginal: true,\n  });\n\n  return result;\n}",
+  "description": "Find all mp3 everywhere without wav, add 16-bit wav",
+  "id": "jgxqxsardmyiwajmksbwycxc"
+}

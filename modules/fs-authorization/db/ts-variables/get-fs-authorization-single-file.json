@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330539785,
+  "updatedAt": 1678330539785,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330539785,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getFsAuthorizationSingleFile",
+  "slug": "get-fs-authorization-single-file",
+  "operationRelativeTypescriptFilePath": "src/getFsAuthorizationSingleFile.ts",
+  "type": {
+    "rawType": "(config: { projectRelativeFilePath: string; user_groupSlugs: string[]; isDebug?: boolean | undefined; }) => Promise<{ canRead: boolean; canWrite: boolean; authorizationProperties?: import(\"/Users/clarity/os/operations/tools/types/markdown-types/build/AuthorizationProperties\").AuthorizationProperties | undefined; } | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: {\n  projectRelativeFilePath: string;\n  /**\n   * groupSlugs of the user. Should include \"public\"\n   */\n  user_groupSlugs: string[];\n  isDebug?: boolean;\n}): Promise<\n  | {\n      canRead: boolean;\n      canWrite: boolean;\n      authorizationProperties?: AuthorizationProperties;\n    }\n  | undefined\n> => {\n  const { projectRelativeFilePath, user_groupSlugs, isDebug } = config;\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return;\n  }\n  const absoluteFilePath = path.join(projectRoot, projectRelativeFilePath);\n  if (!fs.existsSync(absoluteFilePath)) {\n    return;\n  }\n\n  const markdownIndex = await getMarkdownIndex(projectRelativeFilePath);\n\n  const authorizationProperties: AuthorizationProperties | undefined =\n    markdownIndex;\n\n  const hasNoAuthProperties =\n    !authorizationProperties ||\n    (authorizationProperties?.isDraft === undefined &&\n      authorizationProperties?.isAnonymous === undefined &&\n      authorizationProperties?.isSecret === undefined &&\n      authorizationProperties?.isPrivate === undefined &&\n      authorizationProperties?.isPublic === undefined);\n\n  if (hasNoAuthProperties) {\n    // no specified auth, so we can take the previous folder or one of the next ones as source of truth\n    return;\n  }\n  /**\n   * boolean indicating it's already released (not in the future)\n   */\n  const isAvailable = authorizationProperties?.isAvailableFromDateAt\n    ? authorizationProperties.isAvailableFromDateAt < Date.now()\n    : true;\n\n  const canReadGroupSlugs = (\n    authorizationProperties?.canRead_groupSlugs || []\n  ).concat(\"admin\");\n  const canWriteGroupSlugs = (\n    authorizationProperties?.canRead_groupSlugs || []\n  ).concat(\"admin\");\n\n  const isReadGroup = !!canReadGroupSlugs.find((slug) =>\n    user_groupSlugs.includes(slug)\n  );\n  const isWriteGroup = !!canWriteGroupSlugs.find((slug) =>\n    user_groupSlugs.includes(slug)\n  );\n\n  const isPublic =\n    (authorizationProperties?.isPublic || hasNoAuthProperties) && isAvailable;\n\n  const canRead = isPublic || isReadGroup;\n  const canWrite = isWriteGroup;\n\n  if (isDebug) {\n    console.log({\n      markdownIndex,\n      canReadGroupSlugs,\n      canWriteGroupSlugs,\n      isReadGroup,\n      isWriteGroup,\n      isPublic,\n    });\n  }\n\n  return { canRead, canWrite, authorizationProperties };\n}",
+  "description": "General purpose function to see what the rights are for any user for any file in the file system (project relative only)\n\nNB: checks just the one file! Doesn't take into account underlying folders!",
+  "id": "yfotsmniawgamkuydorfhhgn"
+}

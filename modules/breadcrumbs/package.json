@@ -1,0 +1,74 @@
+{
+  "createdAt": 1668328741655,
+  "updatedAt": 1668328741655,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328741655,
+  "id": "kxoxrxhnzsqioawgipytghha",
+  "dependencies": {
+    "react-with-native": "1.4.9"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "devcss": "tailwindcss -w -o css.css",
+    "css": "tailwindcss -o css.css"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "breadcrumbs",
+  "language": "english",
+  "slug": "breadcrumbs",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [],
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "breadcrumbs",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1676840898466,
+    "operationDependenciesIndexed": [
+      "Div"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/gui/dumb",
+    "markdown": "# 🥐 breadcrumbs\n\nfrontend component to show a file location in a nice way (breadcrumbs)\n",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 1,
+        "lines": 37,
+        "characters": 899,
+        "bytes": 899
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 112,
+        "characters": 3627,
+        "bytes": 3627
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 47,
+        "characters": 708,
+        "bytes": 708
+      },
+      "size": {
+        "bytes": 5234,
+        "characters": 5234,
+        "lines": 196,
+        "numberOfFiles": 5
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

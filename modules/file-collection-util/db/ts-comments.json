@@ -1,0 +1,20 @@
+[
+  {
+    "createdAt": 1678330510245,
+    "updatedAt": 1678330510245,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330510245,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/updateMarkdownIndex.ts",
+    "comment": "also takes frontmatter into account and places it in the right file (.MarkdownIndex.json) using `edit-json-file` and parsefrontmatter\n\nNB: removes frontmatter from md for now to avoid duplication, assuming there's never anything else besides `MarkdownIndex` there.",
+    "rawStatement": "export const updateMarkdownIndex = async (\n  projectRelativeMarkdownFilePath: string,\n  partial: NestedPartial<MarkdownIndex>\n): Promise<boolean> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) return false;\n\n  const old = await getMarkdownIndex(projectRelativeMarkdownFilePath);\n  const absoluteMarkdownFilePath = path.join(\n    projectRoot,\n    projectRelativeMarkdownFilePath\n  );\n\n  const markdownIndexPath = getMarkdownIndexPath(\n    absoluteMarkdownFilePath,\n    false\n  );\n\n  if (!markdownIndexPath) return false;\n\n  const isSuccessful = await mapObjectJson<MarkdownIndex, MarkdownIndex>(\n    markdownIndexPath,\n    (json) =>\n      mergeNestedObject(json, old ? mergeNestedObject(old, partial) : partial),\n    { ...getUpdatedTimeObject(), ...getCreatedTimeObject() }\n  );\n\n  const markdownParse = await readMarkdownFile(absoluteMarkdownFilePath);\n  if (markdownParse) {\n    // removes the frontmatter, assuming there's never anything else besides MarkdownIndex\n    await fs.writeFile(absoluteMarkdownFilePath, markdownParse.raw);\n  }\n\n  return isSuccessful;\n  /*\n  // NB: cannot be done since there may be frontmatter included in current situation\n    const isSuccessful = await updateSingleNestedJsonFile<MarkdownIndex>(\n      markdownIndexPath,\n      partial,\n      { ...getUpdatedTimeObject(), ...getCreatedTimeObject() }\n    );*/\n};",
+    "parameters": {},
+    "types": [
+      "nb"
+    ],
+    "firstLine": 10,
+    "lastLine": 14,
+    "id": "xzevhbgsiqpgszgfghycmmmo"
+  }
+]

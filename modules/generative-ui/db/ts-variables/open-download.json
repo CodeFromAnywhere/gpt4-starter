@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041418569,
+  "updatedAt": 1678041418569,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041418569,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "openDownload",
+  "slug": "open-download",
+  "operationRelativeTypescriptFilePath": "src/openDownload.ts",
+  "type": {
+    "rawType": "(projectRelativePath: string) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (projectRelativePath: string) => {\n  const download = await api.createDownloadWithContext(projectRelativePath);\n\n  const token = download.result?.downloadId;\n  if (!token) {\n    alert?.(\"Something went wrong\");\n    return;\n  }\n\n  const url = getGetApiUrl(apiUrl, \"downloadGetApi\", { token });\n\n  window.open(url, \"_blank\")?.focus();\n}",
+  "description": "Download a file or folder",
+  "id": "vchedtnbqwxdvrojddsdetos"
+}

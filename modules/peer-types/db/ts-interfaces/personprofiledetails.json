@@ -1,0 +1,453 @@
+{
+  "createdAt": 1678428282538,
+  "updatedAt": 1678428282538,
+  "deletedAt": 0,
+  "createdFirstAt": 1678428282538,
+  "id": "personprofiledetails",
+  "name": "PersonProfileDetails",
+  "slug": "personprofiledetails",
+  "operationRelativeTypescriptFilePath": "src/PersonProfileDetails.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\n/**\n * Things the user can fill in about themselves on their profile\n */\nexport type PersonProfileDetails = Omit<\n  Person,\n  | \"authenticationMethods\"\n  | \"authorizations\"\n  | \"credit\"\n  | keyof DefaultModelType\n  | \"dataEntries\"\n  | \"devicesCalculated\"\n  | \"groupSlugs\"\n  | \"groups\"\n  | \"paymentAuthToken\"\n  | \"slug\"\n>;",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "Things the user can fill in about themselves on their profile",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "preferredLanguage": {
+          "type": "string"
+        },
+        "pictureImage": {
+          "$ref": "#/definitions/BackendAsset"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email takes priority over phone number, but they are both unique identifiers for a person"
+        },
+        "lastActivityAt": {
+          "type": "number",
+          "description": "used for whatsapp messages to determine the users last message"
+        },
+        "isEmailOptOut": {
+          "type": "boolean"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "authentication": {
+          "type": "object",
+          "properties": {
+            "emailIsVerified": {
+              "type": "boolean"
+            },
+            "emailOtp": {
+              "type": "string"
+            },
+            "emailOtpAt": {
+              "type": "number"
+            },
+            "twoFactorAuthenticationStrategy": {
+              "type": "string",
+              "enum": [
+                "disabled",
+                "any",
+                "email",
+                "phoneNumber",
+                "both"
+              ],
+              "description": "Strategy for the user to authenticate. Defaults to disabled, which means you can just verify in a single way."
+            },
+            "phoneNumberIsVerified": {
+              "type": "boolean"
+            },
+            "phoneNumberOtp": {
+              "type": "string"
+            },
+            "phoneNumberOtpAt": {
+              "type": "number"
+            },
+            "encryptedPassword": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "description": "To replace the initial system of having multiple `authenticationMethod`s\n\nIf authentication exists, that means the user is attempting to access their account\n\nWe can already have their person registered and we can already have information about them or for them without them having an account yet, because it's the same `Person` model."
+        },
+        "interestSlugs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Slug"
+          },
+          "description": "slugs of interest categories that this person should be notified about.\n\nSince this is a hierarchical model, parent interests will ensure all children are also applied."
+        },
+        "mediaChannelIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Id"
+          },
+          "description": "After the `MediaChannel` DB is filled, we can index the names of the persons of the `MediaChannel`, and and we can push them to here, if the name is \"similar\" to the name of this `Person`.\n\n`*` = \"similar\" means: exact match, or at least first name + last name match"
+        },
+        "preferred_mediaChannelId": {
+          "$ref": "#/definitions/Id",
+          "description": "Optional. Can be set by admin (not indexed)\n\nIf not available, take the first (mediaChannelIds[0])"
+        },
+        "media": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PersonSocialMedia"
+          },
+          "description": "Media that is attached to this person.\n\nNB: not used to authenticate! Can be filled in by King OS, might be erroneous"
+        },
+        "note": {
+          "type": "string",
+          "description": "Note by team or admin about the person. Can be useful for simple CRM stuff"
+        },
+        "location": {
+          "type": "string",
+          "description": "Later to be formalised with city, country, address, lat/lng, and maybe multiple possible locations. For now, and if we are using GPT for search, a string might be enough."
+        },
+        "trust": {
+          "type": "number",
+          "description": "Number 0-1 to indicate my trust towards this person"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false,
+      "description": "Things the user can fill in about themselves on their profile"
+    },
+    "simplifiedSchema": {
+      "fullComment": "Things the user can fill in about themselves on their profile",
+      "properties": [
+        {
+          "name": "name",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "preferredLanguage",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "pictureImage",
+          "required": false,
+          "schema": {
+            "fullComment": "Part of the asset that should be sent to the backend. The rest should frontend-only\n\nSome values are stored, some are not",
+            "properties": [
+              {
+                "name": "alt",
+                "required": false,
+                "schema": {
+                  "fullComment": "Stored value\n\nAlt text for the asset",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "relativePath",
+                "required": false,
+                "schema": {
+                  "fullComment": "Stored value\n\nRelative path, relative to the location the asset is defined in.\n\nOnly available if the asset was already processed by a backend. Before backend processing, only `temporaryDestination` is available.\n\nChanging the `relativePath` shouldn't do anything, it can only be changed by backend processing by giving a new `temporaryDestination`, or by changing the `name`.",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "required": false,
+                "schema": {
+                  "fullComment": "Not stored\n\nNot given by the backend data, but can be SENT to the backend.\n\nShould not be stored, but if you change this value and send it to the backend, it should rename the file and thus the relativePath stored should change.\n\nNB: I'm not sure how to solve having multiple references to a single file. If this occurs, which is hard to prevent if allowing manual editing of data, it may be hard to prevent dead links if someone changes the name of a file that is also refered to in other places. In this case, it would be ideal if all references also would be renamed, but it may be hard to find them. Even if we solve this, it's still possible to get dead links if someone renames the file (or removes it) manually. This should be taken into account, and may not break anything!",
+                  "nb": "I'm not sure how to solve having multiple references to a single file. If this occurs, which is hard to prevent if allowing manual editing of data, it may be hard to prevent dead links if someone changes the name of a file that is also refered to in other places. In this case, it would be ideal if all references also would be renamed, but it may be hard to find them. Even if we solve this, it's still possible to get dead links if someone renames the file (or removes it) manually. This should be taken into account, and may not break anything!",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "temporaryDestination",
+                "required": false,
+                "schema": {
+                  "fullComment": "Not stored\n\nFilename after uploading in the temporary folder. should still be moved to its final location\n\nOnly available straight after uploading. After the function processes the asset, this is removed and a `relativePath` is created.",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "projectRelativeReferencingFilePath",
+                "required": false,
+                "schema": {
+                  "fullComment": "Not stored\n\nNeeds to be there before calling `processAsset`. Should be augmented to the backendAsset in the frontend, before sending it to the backend.\n\nLocation of the place where the asset is referenced\n\n- markdown file (or folder where it is located)\n- typescript file (or folder where it is located)\n- database file (or folder where it is located)",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "modelName",
+                "required": false,
+                "schema": {
+                  "fullComment": "Not stored\n\nNeeds to be there before calling `processAsset`. Should be augmented to the backendAsset in the frontend, before sending it to the backend.\n\nModel that the asset is related to",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "absoluteUrl",
+                "required": false,
+                "schema": {
+                  "fullComment": "NOT STORED\n\nCan be available in case it's an asset from an external source URL for example within md.\n\nAlso can be set in case it's a static asset from a next project",
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        },
+        {
+          "name": "email",
+          "required": false,
+          "schema": {
+            "fullComment": "Email takes priority over phone number, but they are both unique identifiers for a person",
+            "type": "string"
+          }
+        },
+        {
+          "name": "lastActivityAt",
+          "required": false,
+          "schema": {
+            "fullComment": "used for whatsapp messages to determine the users last message",
+            "type": "number"
+          }
+        },
+        {
+          "name": "isEmailOptOut",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "phoneNumber",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "authentication",
+          "required": false,
+          "schema": {
+            "fullComment": "To replace the initial system of having multiple `authenticationMethod`s\n\nIf authentication exists, that means the user is attempting to access their account\n\nWe can already have their person registered and we can already have information about them or for them without them having an account yet, because it's the same `Person` model.",
+            "properties": [
+              {
+                "name": "emailIsVerified",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "emailOtp",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "emailOtpAt",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "twoFactorAuthenticationStrategy",
+                "required": false,
+                "schema": {
+                  "enum": [
+                    "disabled",
+                    "any",
+                    "email",
+                    "phoneNumber",
+                    "both"
+                  ],
+                  "fullComment": "Strategy for the user to authenticate. Defaults to disabled, which means you can just verify in a single way.",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "phoneNumberIsVerified",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "phoneNumberOtp",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "phoneNumberOtpAt",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "encryptedPassword",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        },
+        {
+          "name": "interestSlugs",
+          "required": false,
+          "schema": {
+            "fullComment": "slugs of interest categories that this person should be notified about.\n\nSince this is a hierarchical model, parent interests will ensure all children are also applied.",
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "use this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                  "type": "string"
+                },
+                "name": "Slug"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "mediaChannelIds",
+          "required": false,
+          "schema": {
+            "fullComment": "After the `MediaChannel` DB is filled, we can index the names of the persons of the `MediaChannel`, and and we can push them to here, if the name is \"similar\" to the name of this `Person`.\n\n`*` = \"similar\" means: exact match, or at least first name + last name match",
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                  "type": "string"
+                },
+                "name": "Id"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "preferred_mediaChannelId",
+          "required": false,
+          "schema": {
+            "fullComment": "Optional. Can be set by admin (not indexed)\n\nIf not available, take the first (mediaChannelIds[0])\n\nShould be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+            "type": "string"
+          }
+        },
+        {
+          "name": "media",
+          "required": false,
+          "schema": {
+            "fullComment": "Media that is attached to this person.\n\nNB: not used to authenticate! Can be filled in by King OS, might be erroneous",
+            "nb": "not used to authenticate! Can be filled in by King OS, might be erroneous",
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "media (mediums) that a person uses, e.g. linkedin, twitter, whatsapp, sms, calling, and irl",
+                  "properties": [
+                    {
+                      "name": "platformSlug",
+                      "required": true,
+                      "schema": {
+                        "fullComment": "medium where the person is a user\n\nuse this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "path",
+                      "required": true,
+                      "schema": {
+                        "fullComment": "used to find the user on the platform",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "isPremium",
+                      "required": true,
+                      "schema": {
+                        "fullComment": "(if available) whether or not the user has a premium account",
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "tagline",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "(if available) a tagline for the user of the platform",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "bio",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "(if available) a bio for the user of the platform",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                },
+                "name": "PersonSocialMedia"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "note",
+          "required": false,
+          "schema": {
+            "fullComment": "Note by team or admin about the person. Can be useful for simple CRM stuff",
+            "type": "string"
+          }
+        },
+        {
+          "name": "location",
+          "required": false,
+          "schema": {
+            "fullComment": "Later to be formalised with city, country, address, lat/lng, and maybe multiple possible locations. For now, and if we are using GPT for search, a string might be enough.",
+            "type": "string"
+          }
+        },
+        {
+          "name": "trust",
+          "required": false,
+          "schema": {
+            "fullComment": "Number 0-1 to indicate my trust towards this person",
+            "type": "number"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "PersonProfileDetails",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

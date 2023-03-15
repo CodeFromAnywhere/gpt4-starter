@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678330509905,
+  "updatedAt": 1678330509905,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330509905,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/updateMarkdownIndex.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  projectRelativeMarkdownFilePath: string,\n  partial: NestedPartial<MarkdownIndex>\n): Promise<boolean> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) return false;\n\n  const old = await getMarkdownIndex(projectRelativeMarkdownFilePath);\n  const absoluteMarkdownFilePath = path.join(\n    projectRoot,\n    projectRelativeMarkdownFilePath\n  );\n\n  const markdownIndexPath = getMarkdownIndexPath(\n    absoluteMarkdownFilePath,\n    false\n  );\n\n  if (!markdownIndexPath) return false;\n\n  const isSuccessful = await mapObjectJson<MarkdownIndex, MarkdownIndex>(\n    markdownIndexPath,\n    (json) =>\n      mergeNestedObject(json, old ? mergeNestedObject(old, partial) : partial),\n    { ...getUpdatedTimeObject(), ...getCreatedTimeObject() }\n  );\n\n  const markdownParse = await readMarkdownFile(absoluteMarkdownFilePath);\n  if (markdownParse) {\n    // removes the frontmatter, assuming there's never anything else besides MarkdownIndex\n    await fs.writeFile(absoluteMarkdownFilePath, markdownParse.raw);\n  }\n\n  return isSuccessful;\n  /*\n  // NB: cannot be done since there may be frontmatter included in current situation\n    const isSuccessful = await updateSingleNestedJsonFile<MarkdownIndex>(\n      markdownIndexPath,\n      partial,\n      { ...getUpdatedTimeObject(), ...getCreatedTimeObject() }\n    );*/\n}",
+  "name": "updateMarkdownIndex",
+  "slug": "update-markdown-index",
+  "parameters": [],
+  "description": "also takes frontmatter into account and places it in the right file (.MarkdownIndex.json) using `edit-json-file` and parsefrontmatter\n\nNB: removes frontmatter from md for now to avoid duplication, assuming there's never anything else besides `MarkdownIndex` there.",
+  "returnType": {
+    "rawType": "Promise<boolean>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 1589,
+    "lines": 44,
+    "bytes": 1589,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 36,
+    "linesPerFile": 44,
+    "numberOfFiles": 1
+  },
+  "id": "hludflvedasqcmthutrfmagx"
+}

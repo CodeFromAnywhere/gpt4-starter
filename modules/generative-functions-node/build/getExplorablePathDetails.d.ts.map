@@ -1,0 +1,1 @@
+{"version":3,"file":"getExplorablePathDetails.d.ts","sourceRoot":"","sources":["../src/getExplorablePathDetails.ts"],"names":[],"mappings":"AAIA,eAAO,MAAM,wBAAwB,gBACtB,MAAM,0BACK,MAAM,aACnB,MAAM,4BACS,MAAM,EAAE,GAAG,SAAS,wCACR,MAAM;mBAE7B,OAAO;YACd,OAAO;6BACU,SAAS,GAAG,MAAM;uBACxB,SAAS,GAAG,MAAM;EA4EtC,CAAC"}

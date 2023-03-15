@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331100251,
+  "updatedAt": 1678331100251,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331100251,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "whisper",
+  "slug": "whisper",
+  "operationRelativeTypescriptFilePath": "src/whisper.ts",
+  "type": {
+    "rawType": "(personaId?: string | undefined) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  personaId?: string\n): Promise<StandardResponse> => {\n  //  should use the whisper api\n  const { openai, ...standardResponse } = await getOpenaiInstance(personaId);\n\n  if (!openai) {\n    return standardResponse;\n  }\n\n  const file = await fs.readFile(\"\");\n  // 1 upload a file\n  const rers = await openai.createFile(file, \"\");\n\n  openai.createTranscription(\n    file,\n    \"whisper-1\",\n    \"omit music\",\n    \"verbose_json\",\n    0,\n    \"jap\"\n  );\n\n  openai.createTranslation(file, \"whisper-1\", undefined, \"json\", 1);\n\n  openai.createImage({\n    prompt: \"some guy in an airplane\",\n    n: 1,\n    response_format: \"url\",\n    size: \"1024x1024\",\n    user: \"ididid\",\n  });\n\n  // use openai.createImage for dall3\n  return { isSuccessful: true, message: \"Not implemented yet\" };\n}",
+  "description": "Use whisper api...",
+  "id": "nqpfuzrizoqsxcoxdgyiltky"
+}

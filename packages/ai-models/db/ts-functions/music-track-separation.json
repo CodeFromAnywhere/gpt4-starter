@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678369212341,
+  "updatedAt": 1678369212341,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369212341,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/musicTrackSeparation.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  absoluteMusicFilePath: string\n): Promise<{ [trackName: string]: string }> => {\n  console.log(`musicTrackSeparation NOT IMPLEMENTED YET`);\n  return {\n    original: absoluteMusicFilePath,\n  };\n}",
+  "name": "musicTrackSeparation",
+  "slug": "music-track-separation",
+  "parameters": [
+    {
+      "name": "absoluteMusicFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "separates the tracks (should be done with API for something like Spleeter)\n\nTODO: should use the spleeter api somewhere (or similar) and return an object where the keys are track-names and the values are the absolute paths to these files.",
+  "returnType": {
+    "rawType": "Promise<{ [trackName: string]: string; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 441,
+    "lines": 10,
+    "bytes": 441,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 44,
+    "linesPerFile": 10,
+    "numberOfFiles": 1
+  },
+  "id": "pbkdhnugplzciepvauahlwbk"
+}

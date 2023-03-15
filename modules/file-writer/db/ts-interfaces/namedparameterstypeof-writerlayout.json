@@ -1,0 +1,94 @@
+{
+  "createdAt": 1677582105641,
+  "updatedAt": 1677582105641,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582105641,
+  "id": "namedparameterstypeof-writerlayout",
+  "name": "NamedParameters<typeof WriterLayout>",
+  "slug": "namedparameterstypeof-writerlayout",
+  "operationRelativeTypescriptFilePath": "src/WriterLayout.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "props": {
+          "type": "object",
+          "properties": {
+            "children": {
+              "$ref": "#/definitions/global.JSX.Element"
+            }
+          },
+          "required": [
+            "children"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "props"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "props",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "children",
+                "required": true,
+                "schema": {
+                  "fullComment": "",
+                  "properties": [
+                    {
+                      "name": "type",
+                      "required": true,
+                      "schema": {
+                        "properties": [],
+                        "type": "object"
+                      }
+                    },
+                    {
+                      "name": "props",
+                      "required": true,
+                      "schema": {
+                        "properties": [],
+                        "type": "object"
+                      }
+                    },
+                    {
+                      "name": "key",
+                      "required": true,
+                      "schema": {
+                        "properties": [],
+                        "type": "object"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof WriterLayout>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

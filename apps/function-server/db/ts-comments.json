@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678331963938,
+    "updatedAt": 1678331963938,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331963938,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/scheduleCronJobs.ts",
+    "comment": "For every `RunEveryPeriodEnum`, this object provides the interval `cronExpression` string for `node-cron`",
+    "rawStatement": "export const scheduleObject: { [interval in RunEveryPeriodEnum]: string } = {\n  minute: \"* * * * *\",\n  \"5-minutes\": \"0,5,10,15,20,25,30,35,40,45,50,55 * * * *\",\n  \"quarter-hour\": \"0,15,30,45 * * * *\",\n  hour: \"0 * * * *\",\n  \"6-hours\": \"0 0,6,12,18 * * *\",\n  midnight: \"0 0 * * *\",\n  week: \"0 0 * * 1\",\n  month: \"0 0 1 * *\",\n  \"3-months\": \"0 0 1 1,4,7,10 *\",\n  year: \"0 0 1 1 *\",\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 13,
+    "lastLine": 15,
+    "id": "dbfbhoelmninsdizomtcxjny"
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678331273342,
+  "updatedAt": 1678331273342,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331273342,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "lockfileSuffix",
+  "slug": "lockfile-suffix",
+  "operationRelativeTypescriptFilePath": "src/constants.ts",
+  "type": {
+    "rawType": "String",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "\".ActionStatus.json\"",
+  "description": "",
+  "id": "aamxjtwkuypzsqyjrwbtmbov"
+}

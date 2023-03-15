@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330500249,
+  "updatedAt": 1678330500249,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330500249,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "onlyUniqueFileCollectionsFilter",
+  "slug": "only-unique-file-collections-filter",
+  "operationRelativeTypescriptFilePath": "src/isFileCollection.ts",
+  "type": {
+    "rawType": "(absoluteFilePath: string, index: number, self: string[]) => boolean",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  absoluteFilePath: string,\n  index: number,\n  self: string[]\n) => onlyUnique2(isFileCollection)(absoluteFilePath, index, self)",
+  "description": "filter for absolute file paths to get unique file collections",
+  "id": "ydtcqpgceqyfxfmuwkfkcuvo"
+}

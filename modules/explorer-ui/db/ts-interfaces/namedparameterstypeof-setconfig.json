@@ -1,0 +1,85 @@
+{
+  "createdAt": 1678331562253,
+  "updatedAt": 1678331562253,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331562253,
+  "id": "namedparameterstypeof-setconfig",
+  "name": "NamedParameters<typeof setConfig>",
+  "slug": "namedparameterstypeof-setconfig",
+  "operationRelativeTypescriptFilePath": "src/setConfig.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "apiUrl": {
+          "type": "string"
+        },
+        "disableAdmin": {
+          "type": "boolean"
+        },
+        "customCustomProjectRelativeBasePaths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "TITLE: CustomProject relative base path of your file system to show"
+        }
+      },
+      "required": [
+        "apiUrl",
+        "disableAdmin",
+        "customCustomProjectRelativeBasePaths"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "apiUrl",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "disableAdmin",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "customCustomProjectRelativeBasePaths",
+          "required": true,
+          "schema": {
+            "fullComment": "TITLE: CustomProject relative base path of your file system to show",
+            "title": "CustomProject relative base path of your file system to show",
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof setConfig>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

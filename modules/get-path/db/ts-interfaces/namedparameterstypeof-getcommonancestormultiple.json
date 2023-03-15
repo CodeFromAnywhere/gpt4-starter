@@ -1,0 +1,60 @@
+{
+  "createdAt": 1678042054147,
+  "updatedAt": 1678042054147,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042054147,
+  "id": "namedparameterstypeof-getcommonancestormultiple",
+  "name": "NamedParameters<typeof getCommonAncestorMultiple>",
+  "slug": "namedparameterstypeof-getcommonancestormultiple",
+  "operationRelativeTypescriptFilePath": "src/getCommonAncestorMultiple.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "paths"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "paths",
+          "required": true,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getCommonAncestorMultiple>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

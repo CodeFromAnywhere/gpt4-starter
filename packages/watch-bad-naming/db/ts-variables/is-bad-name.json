@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330838305,
+  "updatedAt": 1678330838305,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330838305,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "isBadName",
+  "slug": "is-bad-name",
+  "operationRelativeTypescriptFilePath": "src/isBadName.ts",
+  "type": {
+    "rawType": "(absolutePath: string) => boolean",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(absolutePath: string) => {\n  // const filename = path.parse(absolutePath).base;\n\n  const left = absolutePath.toLowerCase();\n  const right = fileSlugify(absolutePath).toLowerCase();\n\n  return left !== right;\n}",
+  "description": "the path should not contain any spaces or other weird characters",
+  "id": "wfsrjbccknradnjbmgkiphdh"
+}

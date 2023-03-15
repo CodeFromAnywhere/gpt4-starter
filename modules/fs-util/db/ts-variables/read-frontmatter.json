@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041961450,
+  "updatedAt": 1678041961450,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041961450,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "readFrontmatter",
+  "slug": "read-frontmatter",
+  "operationRelativeTypescriptFilePath": "src/readFrontmatter.ts",
+  "type": {
+    "rawType": "(absoluteFilePath: string) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (absoluteFilePath: string) => {\n  if (!fs.existsSync(absoluteFilePath)) return;\n  if (path.parse(absoluteFilePath).ext.toLowerCase() !== \".md\") {\n    return;\n  }\n  let foundFrontmatterStart = false;\n  let foundFrontmatterEnd = false;\n\n  const frontmatter: Frontmatter = {};\n\n  await readFilePerLine(absoluteFilePath, (line, close) => {\n    if (foundFrontmatterEnd) return;\n    // BASE CASE: first line\n    if (!foundFrontmatterStart) {\n      if (line === \"---\") {\n        foundFrontmatterStart = true;\n        // Next line\n        return;\n      } else {\n        foundFrontmatterEnd = true;\n        close();\n        return;\n      }\n    }\n\n    // BASE CASE: last line\n    if (line === \"---\") {\n      close();\n      foundFrontmatterEnd = true;\n      return;\n    }\n\n    // CASE: somewhere in the middle, could be a key-value. If not a key-value\n    const [key, value] = line.split(\":\").map((x) => x.trim());\n    if (value === undefined) {\n      if (key !== undefined && key !== \"\") {\n        // If there is a key without a value (no \":\") it seems a syntax error\n        close();\n      }\n      return;\n    }\n\n    frontmatter[key] = value;\n  });\n\n  return frontmatter;\n}",
+  "description": "Attempt to make a hyper efficient way to read frontmatter at the beginning of a file.\n\nShould close if:\n\n- there's no frontmatter dashes at the first line\n- after the frontmatter ends (second frontmatter dashes line)\n- after finding a syntax error in the frontmatter",
+  "id": "cdrxkoegtyzkbjwshpyzxdro"
+}

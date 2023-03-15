@@ -1,0 +1,99 @@
+{
+  "createdAt": 1678042091739,
+  "updatedAt": 1678042091739,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042091739,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getSubExtensions.ts",
+  "commentsInside": [],
+  "rawText": " (\n  absolutePath: string,\n  config?: { allowAllSubExtensions?: boolean }\n): string[] => {\n  const allowAllSubExtensions = config?.allowAllSubExtensions;\n  const fileName = path.parse(absolutePath).name; // NB: extension is already removed here.\n\n  if (allowAllSubExtensions) {\n    // easier this way...\n    const allSubExtensionsArray = fileName?.split(\".\") || [];\n    const allSubExtensions = allSubExtensionsArray.slice(1);\n    return allSubExtensions;\n  }\n\n  const pieces = fileName.split(\".\");\n\n  let isCorrect = true;\n  const subExtensions = pieces\n    .reverse()\n    .reduce((previous, current) => {\n      if (!possibleSubExtensions.includes(current)) {\n        isCorrect = false;\n      }\n\n      if (isCorrect) {\n        previous.push(current);\n      }\n\n      return previous;\n    }, [] as string[])\n    .reverse();\n\n  return subExtensions;\n}",
+  "name": "getSubExtensions",
+  "slug": "get-sub-extensions",
+  "parameters": [
+    {
+      "name": "absolutePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "config",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "allowAllSubExtensions": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "allowAllSubExtensions",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": false
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "string[]",
+    "typeDefinition": {
+      "optional": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "allOf": [
+          {
+            "transform": [
+              "trim"
+            ]
+          },
+          {
+            "minLength": 1
+          }
+        ]
+      }
+    },
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "items": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 849,
+    "lines": 34,
+    "bytes": 849,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 34,
+    "numberOfFiles": 1
+  },
+  "id": "ppzwlzeitefzfdylhvnczaca"
+}

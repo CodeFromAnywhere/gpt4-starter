@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var get_path_1=require("get-path"),renameAllBadlyNamedFiles_1=require("./renameAllBadlyNamedFiles"),p=(0,get_path_1.getRootPath)("assets");p&&(0,renameAllBadlyNamedFiles_1.renameAllBadlyNamedFiles)(p).then(console.log);
+//# sourceMappingURL=renameAllBadlyNamedFiles.test.js.map

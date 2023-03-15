@@ -1,0 +1,51 @@
+{
+  "createdAt": 1667635357725,
+  "updatedAt": 1668149811961,
+  "deletedAt": 0,
+  "createdFirstAt": 1667635357725,
+  "indexInteracesErrors": "[\"No schema/definitions found for /Users/king/King/operations/tools/parsing/edit-json-file/src/mapObjectJson.ts. Error: Error: Unknown type \\\"function\\\"\"]",
+  "buildSucceeded": true,
+  "id": "rapxykcprovyhsuzxvoyrbvk",
+  "indexImportExportError": "",
+  "lintProblems": [],
+  "folderName": "edit-json-file",
+  "packageName": "edit-json-file",
+  "relativeOperationLocationPath": "operations/tools/parsing",
+  "classification": "node",
+  "name": "edit-json-file",
+  "slug": "edit-json-file",
+  "coreDependencies": [],
+  "operationDependencies": [
+    "readJsonFile",
+    "writeJsonToFile",
+    "readJsonFile",
+    "writeJsonToFile"
+  ],
+  "packageDependencies": [],
+  "size": {
+    "codeSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 1013,
+      "bytes": 1013
+    },
+    "dataSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 2333,
+      "bytes": 2333
+    },
+    "textSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 712,
+      "bytes": 712
+    },
+    "size": {
+      "bytes": 4058,
+      "characters": 4058,
+      "lines": 0,
+      "numberOfFiles": 6
+    }
+  }
+}

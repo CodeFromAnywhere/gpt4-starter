@@ -1,0 +1,59 @@
+{
+  "createdAt": 1678331079752,
+  "updatedAt": 1678331079752,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331079752,
+  "id": "namedparameterstypeof-calculatetokencount",
+  "name": "NamedParameters<typeof calculateTokenCount>",
+  "slug": "namedparameterstypeof-calculatetokencount",
+  "operationRelativeTypescriptFilePath": "src/calculateTokenCount.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "isDavinci": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "text",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isDavinci",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof calculateTokenCount>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678041364659,
+  "updatedAt": 1678041364659,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041364659,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/ContextMenuItemComponent.tsx",
+  "commentsInside": [],
+  "rawText": " (props: {\n  action: ContextMenuItem;\n  projectRelativeFilePath: string;\n}) => {\n  const { action, projectRelativeFilePath } = props;\n  if (action.getIsEnabled?.(projectRelativeFilePath) === false) {\n    return null;\n  }\n\n  return (\n    <Div\n      className=\"hover:bg-black/10 p-2 cursor-pointer\"\n      onClick={() => {\n        action.onClick(projectRelativeFilePath);\n      }}\n    >\n      {action.getTitle(projectRelativeFilePath)}\n    </Div>\n  );\n}",
+  "name": "ContextMenuItemComponent",
+  "slug": "context-menu-item-component",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element | null",
+    "typeDefinition": {
+      "optional": true,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 450,
+    "lines": 20,
+    "bytes": 450,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 23,
+    "linesPerFile": 20,
+    "numberOfFiles": 1
+  },
+  "id": "gkfokiqvhvbmcbzbsxppaelx"
+}

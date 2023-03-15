@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330505262,
+  "updatedAt": 1678330505262,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330505262,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "renameFileCollection",
+  "slug": "rename-file-collection",
+  "operationRelativeTypescriptFilePath": "src/renameFileCollection.ts",
+  "type": {
+    "rawType": "(projectRelativeFilePath: string, newBaseName: string, config?: { isDryrun?: boolean | undefined; } | undefined) => Promise<{ isSuccessful: boolean; message: string; results?: import(\"/Users/clarity/os/operations/tools/control-fs/file-collection-util/src/renameFileCollection\").RenameResult[] | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  projectRelativeFilePath: string,\n  newBaseName: string,\n  config?: { isDryrun?: boolean }\n): Promise<{\n  isSuccessful: boolean;\n  message: string;\n  results?: RenameResult[];\n}> => {\n  const isDryrun = config?.isDryrun;\n\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No projectroot\" };\n  }\n  const fileCollectionPaths = await getFileCollectionPaths(\n    path.join(projectRoot, projectRelativeFilePath)\n  );\n\n  if (!fileCollectionPaths || fileCollectionPaths.length === 0) {\n    return { isSuccessful: false, message: \"No files found\" };\n  }\n\n  const hasCodeFile = !!fileCollectionPaths.find((absoluteFilePath) => {\n    const hasCodeExtension = codeExtensions.includes(\n      getExtension(absoluteFilePath)\n    );\n    return hasCodeExtension;\n  });\n\n  if (hasCodeFile) {\n    return {\n      isSuccessful: false,\n      message:\n        \"File collection renames doesn't support codefile renaming yet, because you may break the code.\",\n    };\n  }\n  const results: RenameResult[] = fileCollectionPaths.map((absolutePath) => {\n    // rename\n    const subExtensions = getSubExtensions(absolutePath);\n    const parsedPath = path.parse(absolutePath);\n    const extension = getExtension(parsedPath.base);\n\n    const newNameChunks = [newBaseName].concat(subExtensions).concat(extension);\n    const newName = newNameChunks.join(\".\");\n\n    const newAbsolutePath = path.join(parsedPath.dir, newName);\n\n    if (absolutePath === newAbsolutePath) {\n      //console.log(`name ${absolutePath} is already good`);\n      return { absolutePath, status: \"isRenamed\", newAbsolutePath };\n    }\n\n    if (fileExistsWithCaseSync(newAbsolutePath)) {\n      return { absolutePath, status: \"exists\", newAbsolutePath };\n    }\n\n    return { absolutePath, status: \"canRename\", newAbsolutePath };\n  });\n\n  const alreadyExists = results.filter((x) => x.status === \"exists\");\n  if (alreadyExists.length > 0) {\n    //cannot do the renaming because one already exists\n    return {\n      isSuccessful: false,\n      message:\n        \"One of the resulting filenames already exists, thus we cannot rename this collection.\",\n      results: alreadyExists,\n    };\n  }\n\n  if (isDryrun) {\n    return { isSuccessful: true, message: `Dryrun done`, results };\n  }\n  await Promise.all(\n    results.map(async (fileInfo) => {\n      if (fileInfo.status !== \"canRename\") return;\n      if (!fileInfo.newAbsolutePath) return;\n\n      await fs.rename(fileInfo.absolutePath, fileInfo.newAbsolutePath);\n    })\n  );\n  return {\n    isSuccessful: true,\n    message: `Renamed file collection of ${results.length} files`,\n    results,\n  };\n}",
+  "description": "Rename all files part of the collection of a file mentioned into something else (looks at all files with the same rootname in the same folder, ommitting (sub)extensions.\n\n\nFunctionality:\n\n- dryrun capability; first dryrun the rename file collection stuff\n- ensures the file names to rename to doesn't already exist, return with error otherwise.\n- if there's a file collection where there's one of the files that's a codefile, don't rename, warning! (ts, tsx, js, jsx, php, etc.)",
+  "id": "ufwutwrzdyzzsvfdnkniouxf"
+}

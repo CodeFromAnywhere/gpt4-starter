@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330226839,
+  "updatedAt": 1678330226839,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330226839,
+  "id": "namedparameterstypeof-pm2connect",
+  "name": "NamedParameters<typeof pm2Connect>",
+  "slug": "namedparameterstypeof-pm2connect",
+  "operationRelativeTypescriptFilePath": "src/pm2Connect.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof pm2Connect>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

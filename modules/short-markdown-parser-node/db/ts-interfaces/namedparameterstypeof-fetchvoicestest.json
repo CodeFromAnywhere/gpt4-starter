@@ -1,0 +1,33 @@
+{
+  "createdAt": 1671115739341,
+  "updatedAt": 1671115739341,
+  "deletedAt": 0,
+  "createdFirstAt": 1671115739341,
+  "id": "namedparameterstypeof-fetchvoicestest",
+  "name": "NamedParameters<typeof fetchVoicesTest>",
+  "slug": "namedparameterstypeof-fetchvoicestest",
+  "operationRelativeTypescriptFilePath": "src/fetchVoices.test.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof fetchVoicesTest>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

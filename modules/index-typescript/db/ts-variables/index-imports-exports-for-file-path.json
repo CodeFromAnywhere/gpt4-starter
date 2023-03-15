@@ -1,0 +1,278 @@
+{
+  "createdAt": 1677581374094,
+  "updatedAt": 1677581374094,
+  "deletedAt": 0,
+  "createdFirstAt": 1677581374094,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "indexImportsExportsForFilePath",
+  "slug": "index-imports-exports-for-file-path",
+  "operationRelativeTypescriptFilePath": "src/indexImportsExportsForFilePath.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/ProjectWatcher\").ProjectWatcher<any>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "startupStrategy": {
+          "enum": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "x-enumNames": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "type": "string"
+        },
+        "filter": {
+          "type": "object",
+          "properties": {}
+        },
+        "config": {
+          "type": "object",
+          "properties": {
+            "isDisabled": {
+              "type": "boolean"
+            },
+            "version": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "versionInfo": {
+              "type": "object",
+              "properties": {}
+            },
+            "isHeavy": {
+              "type": "boolean"
+            },
+            "isInternetRequired": {
+              "type": "boolean"
+            },
+            "isBrowserRequired": {
+              "type": "boolean"
+            },
+            "isPublic": {
+              "type": "boolean"
+            },
+            "isApiExposed": {
+              "type": "boolean"
+            },
+            "domain": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "isPaid": {
+              "type": "boolean"
+            },
+            "priceCredit": {
+              "type": "number"
+            },
+            "priceDescription": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "authorizations": {
+              "type": "object",
+              "properties": {}
+            },
+            "canCache": {
+              "type": "boolean"
+            },
+            "runEveryPeriod": {}
+          },
+          "required": [
+            "runEveryPeriod"
+          ]
+        }
+      },
+      "required": [
+        "filter"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "startupStrategy",
+          "required": false,
+          "schema": {
+            "enum": [
+              "ignore",
+              "sync",
+              "async",
+              "queue"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "filter",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "config",
+          "required": false,
+          "schema": {
+            "properties": [
+              {
+                "name": "isDisabled",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "version",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "versionInfo",
+                "required": false,
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                }
+              },
+              {
+                "name": "isHeavy",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isInternetRequired",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isBrowserRequired",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isPublic",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isApiExposed",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "domain",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "isPaid",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "priceCredit",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "priceDescription",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "authorizations",
+                "required": false,
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                }
+              },
+              {
+                "name": "canCache",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "runEveryPeriod",
+                "required": true,
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  eventName,\n  filePath\n) => {\n  const name = path.parse(filePath).name;\n  process.stdout.write(`Change detected: ${name}\\n`);\n  const operationBasePath = findOperationBasePath(filePath);\n  if (!operationBasePath) {\n    console.log(\"\\nCouldn't find operationBasePath\");\n    return;\n  }\n  process.stdout.write(`Indexing operation imports ...`);\n\n  await findAndWriteImportsExports(operationBasePath);\n\n  console.log(\"✅\\n\");\n}",
+  "description": "",
+  "id": "ihpawerowzhwgklieflyrwvj"
+}

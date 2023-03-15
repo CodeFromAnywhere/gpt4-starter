@@ -1,0 +1,71 @@
+{
+  "createdAt": 1677579103467,
+  "updatedAt": 1677579103467,
+  "deletedAt": 0,
+  "createdFirstAt": 1677579103467,
+  "id": "namedparameterstypeof-findalldocsfolderpaths",
+  "name": "NamedParameters<typeof findAllDocsFolderPaths>",
+  "slug": "namedparameterstypeof-findalldocsfolderpaths",
+  "operationRelativeTypescriptFilePath": "src/find-folders.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "ignoreOperations": {
+          "type": "boolean",
+          "description": "Don't look for docs folders inside of operation folders"
+        },
+        "ignoreFolders": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "optionally, ignore some folders"
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "ignoreOperations",
+          "required": false,
+          "schema": {
+            "fullComment": "Don't look for docs folders inside of operation folders",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "ignoreFolders",
+          "required": false,
+          "schema": {
+            "fullComment": "optionally, ignore some folders",
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof findAllDocsFolderPaths>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

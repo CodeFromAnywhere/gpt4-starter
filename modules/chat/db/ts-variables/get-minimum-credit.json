@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678611465861,
+  "updatedAt": 1678611465861,
+  "deletedAt": 0,
+  "createdFirstAt": 1678611465861,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getMinimumCredit",
+  "slug": "get-minimum-credit",
+  "operationRelativeTypescriptFilePath": "src/constants.ts",
+  "type": {
+    "rawType": "(persona: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/Persona\").Persona, freeMessagesAmount: number) => number",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  persona: Persona,\n  freeMessagesAmount: number\n) =>\n  -1 *\n  (persona.assistantState?.costPerMessageCredit ||\n    defaultCostPerMessageCredit) *\n  freeMessagesAmount",
+  "description": "",
+  "id": "nnmojqhaojzmdfyafltbwlkr"
+}

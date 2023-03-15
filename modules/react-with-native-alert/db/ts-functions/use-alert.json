@@ -1,0 +1,44 @@
+{
+  "createdAt": 1678043795605,
+  "updatedAt": 1678043795605,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043795605,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/Alert.tsx",
+  "commentsInside": [],
+  "rawText": " () => {\n  const alert = React.useContext(AlertContext);\n  return alert;\n}",
+  "name": "useAlert",
+  "slug": "use-alert",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/user-interfaces/gui/react-with-native/react-with-native-alert/src/types\").AlertFn | null",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": true
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 74,
+    "lines": 4,
+    "bytes": 74,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 19,
+    "linesPerFile": 4,
+    "numberOfFiles": 1
+  },
+  "id": "mwshzqwzsssyrytiajcyvwzy"
+}

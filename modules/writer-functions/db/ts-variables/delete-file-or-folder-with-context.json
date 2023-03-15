@@ -1,0 +1,59 @@
+{
+  "createdAt": 1678043301881,
+  "updatedAt": 1678043301881,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043301881,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "deleteFileOrFolderWithContext",
+  "slug": "delete-file-or-folder-with-context",
+  "operationRelativeTypescriptFilePath": "src/deleteFileOrFolderWithContext.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FileFunction\").FileFunction<undefined, import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {},
+        "isEnabled": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "isEnabled",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  projectRelativePath: string\n): Promise<StandardResponse> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No project root found\" };\n  }\n  const authorization = await getFsAuthorizationWithContext(\n    functionContext,\n    projectRelativePath\n  );\n  if (!authorization.canWrite) {\n    return { isSuccessful: false, message: \"You're not allowed to do this\" };\n  }\n\n  const absolutePath = path.join(projectRoot, projectRelativePath);\n\n  if (!fs.existsSync(absolutePath)) {\n    return {\n      isSuccessful: false,\n      message: \"This file or folder doesn't exist\",\n    };\n  }\n\n  await fs.rm(absolutePath, { recursive: true });\n\n  return { isSuccessful: true, message: \"Deleted\" };\n}",
+  "description": "",
+  "id": "xivuiwhpbphrcpxcjyjlqdjg"
+}

@@ -1,0 +1,100 @@
+{
+  "createdAt": 1678330862566,
+  "updatedAt": 1678330862566,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330862566,
+  "id": "namedparameterstypeof-getbetterlocation",
+  "name": "NamedParameters<typeof getBetterLocation>",
+  "slug": "namedparameterstypeof-getbetterlocation",
+  "operationRelativeTypescriptFilePath": "src/getBetterLocation.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "fileName": {
+              "type": "string"
+            },
+            "shortDescription": {
+              "type": "string"
+            },
+            "projectRelativePath": {
+              "type": "string"
+            },
+            "folderStructure": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "fileName",
+            "shortDescription",
+            "projectRelativePath",
+            "folderStructure"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "fileName",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "shortDescription",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "projectRelativePath",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "folderStructure",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getBetterLocation>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678330833507,
+  "updatedAt": 1678330833507,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330833507,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/exploreBadNamingFiles.test.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const assetsPath = getRootPath(\"assets\");\n  const textPath = getRootPath(\"text\");\n  if (!assetsPath || !textPath) return;\n  const assetsBadNamingPaths = await exploreBadNamingFiles(assetsPath);\n  const textBadNamingPaths = await exploreBadNamingFiles(textPath);\n}",
+  "name": "main",
+  "slug": "main",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 280,
+    "lines": 7,
+    "bytes": 280,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 40,
+    "linesPerFile": 7,
+    "numberOfFiles": 1
+  },
+  "id": "ursuzodwpqtcrpdhygkjmasw"
+}

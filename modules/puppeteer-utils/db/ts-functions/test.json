@@ -1,0 +1,35 @@
+{
+  "createdAt": 1677582389102,
+  "updatedAt": 1677582389102,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582389102,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/test.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n    const pages = [];\n    for (let i = 0; i < 10; i++) {\n        pages.push(openPage());\n    }\n    console.log({ pages });\n    const allPages = await Promise.all(pages);\n    console.log({ allPages });\n    // allPages.forEach((p) => p?.goto(\"https://facebook.com\"));\n}",
+  "name": "test",
+  "slug": "test",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 282,
+    "lines": 10,
+    "bytes": 282,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 28,
+    "linesPerFile": 10,
+    "numberOfFiles": 1
+  },
+  "id": "gmloshuemucocnenbbiszxso"
+}

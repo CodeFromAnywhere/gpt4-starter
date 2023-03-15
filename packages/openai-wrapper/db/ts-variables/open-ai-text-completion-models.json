@@ -1,0 +1,52 @@
+{
+  "createdAt": 1678331092289,
+  "updatedAt": 1678331092289,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331092289,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "openAiTextCompletionModels",
+  "slug": "open-ai-text-completion-models",
+  "operationRelativeTypescriptFilePath": "src/gpt3.ts",
+  "type": {
+    "rawType": "string[]",
+    "typeDefinition": {
+      "optional": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "allOf": [
+          {
+            "transform": [
+              "trim"
+            ]
+          },
+          {
+            "minLength": 1
+          }
+        ]
+      }
+    },
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "items": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "value": "[\n  ...openAiTextCompletionModelsReadonly,\n]",
+  "description": "",
+  "id": "dskydeordjvfwyfapgwxknqi"
+}

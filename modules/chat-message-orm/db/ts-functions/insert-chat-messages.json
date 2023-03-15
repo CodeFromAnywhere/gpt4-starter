@@ -1,0 +1,70 @@
+{
+  "createdAt": 1678505777697,
+  "updatedAt": 1678505777697,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505777697,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/insertChatMessages.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  personSlug: string,\n  personaSlug: string,\n  chatMessages: Creation<ChatMessage>[]\n): Promise<StandardResponse> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No project root\" };\n  }\n\n  const currentDate = getCurrentDate();\n  const absolutePath = getChatMessagesPath(\n    projectRoot,\n    personSlug,\n    personaSlug,\n    currentDate\n  );\n\n  const already = (await readJsonFile<ChatMessage[]>(absolutePath)) || [];\n\n  const newChatMessages = chatMessages.map((item) => {\n    const fullItem = addDefaultValues(item);\n    const storingItem = makeStoringItem(fullItem) as ChatMessage;\n    return storingItem;\n  });\n\n  const newFullData = already.concat(newChatMessages);\n\n  const isSuccessful = await writeJsonToFile(absolutePath, newFullData);\n\n  return { isSuccessful };\n}",
+  "name": "insertChatMessages",
+  "slug": "insert-chat-messages",
+  "parameters": [
+    {
+      "name": "personSlug",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "personaSlug",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "chatMessages",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Creation%3CChatMessage%3E"
+        }
+      },
+      "simplifiedSchema": {
+        "items": [],
+        "type": "array"
+      },
+      "required": true
+    }
+  ],
+  "description": "For performance reasons, exception model",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 886,
+    "lines": 32,
+    "bytes": 886,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 28,
+    "linesPerFile": 32,
+    "numberOfFiles": 1
+  },
+  "id": "fhbyrsnxwrtnqgwqosltrqrm"
+}

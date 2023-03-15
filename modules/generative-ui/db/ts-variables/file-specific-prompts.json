@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041383610,
+  "updatedAt": 1678041383610,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041383610,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "FileSpecificPrompts",
+  "slug": "file-specific-prompts",
+  "operationRelativeTypescriptFilePath": "src/FileSpecificPrompts.tsx",
+  "type": {
+    "rawType": "(props: { contentString: string; actualProjectRelativeFilePath?: string | undefined; contextualPromptsObject?: any; isFolder?: boolean | undefined; thePrompts?: import(\"/Users/clarity/os/operations/tools/ai/ai-types/build/ContextualPrompt\").ContextualPrompt[] | undefined; markdown?: string | null | undefined; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: {\n  contentString: string;\n  actualProjectRelativeFilePath?: string;\n  contextualPromptsObject?: Omit<\n    ContextualPromptsObject,\n    \"databaseContextualPromptSlugs\"\n  > | null;\n  isFolder?: boolean;\n  thePrompts?: ContextualPrompt[];\n  markdown?: string | null;\n}) => {\n  const {\n    thePrompts,\n    contentString,\n    actualProjectRelativeFilePath,\n    contextualPromptsObject,\n    isFolder,\n    markdown,\n  } = props;\n\n  const refetch = () => {\n    alert?.(\"No refetch\");\n  };\n\n  const showPromptAlert = usePromptResultAlert();\n  const alert = useAlert();\n\n  return (\n    <Div>\n      <SelectionPrompts\n        contentString={contentString}\n        projectRelativeFilePath={actualProjectRelativeFilePath}\n        selectionContextualPrompts={\n          contextualPromptsObject?.selectionContextualPrompts\n        }\n      />\n\n      <Div>\n        <P className=\"font-bold\">Apply a prompt on the whole file</P>\n        <Div className=\"flex flex-row flex-wrap\">\n          {/* Speak */}\n          <NavButton\n            title=\"🎤 Speak\"\n            onClick={async () => {\n              alert?.(\"Coming soon\", \"coming soon\");\n            }}\n          />\n          {/* Free form */}\n          {isFolder ? null : (\n            <NavButton\n              title=\"🕊 Free-form prompt\"\n              onClick={async () => {\n                let question = prompt(\n                  \"What do you want to ask/prompt about this file?\"\n                );\n\n                if (!question || question === \"\") {\n                  return;\n                }\n\n                let name = prompt(\n                  \"If we should add this prompt into the database, how should we call it? (leave empty if you don't want to save it)\"\n                );\n\n                const realName = name === \"\" ? null : name;\n\n                const customPromptContent = `I am reading this file:\\n\\n\\`\\`\\`\\n%context\\n\\`\\`\\`\\n\\n${question}`;\n\n                await processPrompt({\n                  contextualContent: {\n                    contextContent: contentString,\n                    context_projectRelativeFilePath:\n                      actualProjectRelativeFilePath,\n                  },\n                  showPromptAlert,\n                  customPromptContent,\n                  saveNewPromptWithName: realName,\n                });\n              }}\n            />\n          )}\n\n          {thePrompts?.map((prompt) => {\n            return (\n              <PromptButton\n                key={`prompt${prompt.id}`}\n                item={prompt}\n                markdown={markdown}\n                projectRelativeFilePath={actualProjectRelativeFilePath}\n              />\n            );\n          })}\n        </Div>\n      </Div>\n      {isFolder ? (\n        <Div>\n          Execute for all files\n          <Div className=\"flex flex-row flex-wrap\">\n            {contextualPromptsObject?.pageContextualPrompts.map((prompt) => {\n              return (\n                <NavButton\n                  onClick={() => {\n                    alert?.(\n                      \"Not implemented yet\",\n                      \"Execute a certain prompt for all files in a folder, recursively. Should not show the result immediately because these things should be queued and the result is too big to show immediately. There should be settings before you execute all prompts: recursively nested folders? how fast should it be executed? Which model? Etc.\"\n                    );\n                  }}\n                  title={prompt.title || prompt.name}\n                />\n              );\n            })}\n          </Div>\n        </Div>\n      ) : null}\n    </Div>\n  );\n}",
+  "description": "Component to render all the prompts under a file",
+  "id": "urcgaorxkraknaeopjrjoqoj"
+}

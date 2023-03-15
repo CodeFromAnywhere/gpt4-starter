@@ -1,0 +1,24 @@
+{
+  "createdAt": 1673794228182,
+  "updatedAt": 1673794228182,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794228182,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "PATH_TO_YOUR_BUNDLE",
+  "slug": "path-to-your-bundle",
+  "operationRelativeTypescriptFilePath": "src/operationGithubPush.ts",
+  "type": {
+    "rawType": "String",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "\"/Users/guilhermereis/Desktop/clones/typerepo/packages/guilherme/\"",
+  "description": "- git init\n- github create repo if not existent and then set `PackageJson.repository`\n- git set remote\n- git push --force\n- rm -rf .git\n​\n> Question: can we have a master git folder in the project root (main or bundle) without having to remove the `.git` every time? Maybe by renaming the `.git` in the operation to `operation.git` temporarily every time we don't use it? Probably better not to force pull/push every time and loose tons of git features...\n​\nTODO:\n\n1. put url on Operation `.repository.url`\n\nTODO: How do I get this path programatically ??",
+  "id": "zptboxxbqathiscjwevjrpeu"
+}

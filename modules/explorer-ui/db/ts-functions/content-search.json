@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678331532024,
+  "updatedAt": 1678331532024,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331532024,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/ContentSearch.tsx",
+  "commentsInside": [],
+  "rawText": " () => {\n  const [search] = useStore(\"menu.search\");\n  const explorableFilesQuery = queries.useGetExplorableFilesWithContext();\n  const paths = explorableFilesQuery.data?.result?.map((x) => x.url);\n\n  return (\n    <Div>\n      {explorableFilesQuery.isLoading ? <FancyLoader /> : null}\n      <Div>\n        SEARCH === {search} ... ContentSearch should be available here a la\n        VSCode\n      </Div>\n    </Div>\n  );\n}",
+  "name": "ContentSearch",
+  "slug": "content-search",
+  "parameters": [],
+  "description": "TODO:\nMake another API that goes through `*.MarkdownIndex.json?summary`, and another one that goes through all file contents. (). Super direct layer on explore for files. Not per letter, per search. Does need include/exclude capability\n\nUse the same `PathSearchResults` but augment it to show the matches in the file/summary content. Links to open the file collection.",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 785,
+    "lines": 18,
+    "bytes": 785,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 44,
+    "linesPerFile": 18,
+    "numberOfFiles": 1
+  },
+  "id": "mswhjcitcvrximimctgfvlra"
+}

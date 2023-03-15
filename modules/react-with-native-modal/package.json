@@ -1,0 +1,97 @@
+{
+  "createdAt": 1668328706883,
+  "updatedAt": 1668328706883,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328706883,
+  "id": "HtONHJUCgYpeRlAf",
+  "author": "Wijnand Karsens <wijnand@karsens.com>",
+  "dependencies": {
+    "react-with-native": "1.4.9",
+    "react": "17.0.2"
+  },
+  "description": "",
+  "devDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-with-native": "*",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.6.4"
+  },
+  "homepage": "https://github.com/Code-From-Anywhere/react-with-native#readme",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Code-From-Anywhere/react-with-native.git"
+  },
+  "scripts": {
+    "pub": "npm version patch --force && npm publish",
+    "build": "tsc",
+    "dev": "npx tsc-watch --onSuccess 'yarn dev:tw'",
+    "dev:tw": "tailwindcss -o css.css"
+  },
+  "source": "src/index.ts",
+  "version": "1.0.60",
+  "name": "react-with-native-modal",
+  "language": "english",
+  "slug": "react-with-native-modal",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [],
+      "lintProblems": []
+    },
+    "classificationIndexed": "ui-cjs",
+    "coreDependenciesIndexed": [
+      "useState",
+      "useContext",
+      "Modal",
+      "useState",
+      "useContext"
+    ],
+    "folderNameIndexed": "react-with-native-modal",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1678043838157,
+    "operationDependenciesIndexed": [
+      "Div",
+      "Button",
+      "P",
+      "H2",
+      "Span",
+      "Div",
+      "Button"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/gui/react-with-native",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 2,
+        "lines": 199,
+        "characters": 6120,
+        "bytes": 6120
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 139,
+        "characters": 3292,
+        "bytes": 3292
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 91,
+        "characters": 1361,
+        "bytes": 1361
+      },
+      "size": {
+        "bytes": 10773,
+        "characters": 10773,
+        "lines": 429,
+        "numberOfFiles": 6
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

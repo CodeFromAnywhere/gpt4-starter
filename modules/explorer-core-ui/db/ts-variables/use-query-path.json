@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678369267776,
+  "updatedAt": 1678369267776,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369267776,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "useQueryPath",
+  "slug": "use-query-path",
+  "operationRelativeTypescriptFilePath": "src/useQueryPath.ts",
+  "type": {
+    "rawType": "() => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  const router = useRouter();\n  const queryPath = router.query.queryPath;\n  const realQueryPathArray = queryPath ? makeArray(queryPath) : [];\n  const realQueryPath = realQueryPathArray.join(\"/\");\n  return realQueryPath;\n}",
+  "description": "Returns the queryPath of your URL without everything after ? and #",
+  "id": "evljijoecqbrsmakmknmnahs"
+}

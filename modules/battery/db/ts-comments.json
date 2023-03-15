@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678330589854,
+    "updatedAt": 1678330589854,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330589854,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/isSystemUsingBattery.ts",
+    "comment": "uses [`is-charging`](https://github.com/gillstrom/is-charging) library for cross OS support",
+    "rawStatement": "export const isSystemUsingBattery = async () => {\n  const result = await isCharging();\n  return !result;\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 3,
+    "lastLine": 5,
+    "id": "ytzgihlybmlforyfsgepcske"
+  }
+]

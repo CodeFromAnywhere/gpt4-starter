@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330492884,
+  "updatedAt": 1678330492884,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330492884,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getFileCollectionPaths",
+  "slug": "get-file-collection-paths",
+  "operationRelativeTypescriptFilePath": "src/getFileCollectionPaths.ts",
+  "type": {
+    "rawType": "(absoluteFilePath: string) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (absoluteFilePath: string) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return;\n  }\n\n  const parsedPath = path.parse(absoluteFilePath);\n\n  // console.log({ projectRelativePath, finalName });\n  const absoluteFolderPath = parsedPath.dir;\n\n  const dirents = await fs.readdir(absoluteFolderPath, {\n    encoding: \"utf8\",\n    withFileTypes: true,\n  });\n\n  const rootName = withoutSubExtensions(parsedPath.base);\n\n  const fileCollectionPaths = dirents\n    .filter((x) => x.isFile())\n    .filter((x) => withoutSubExtensions(x.name) === rootName)\n    .map((x) => path.join(absoluteFolderPath, x.name));\n\n  return fileCollectionPaths;\n}",
+  "description": "Finds all files with the same main name\n\nReturns an array of absolute paths",
+  "id": "eehyceosjrmponevrmyxnpci"
+}

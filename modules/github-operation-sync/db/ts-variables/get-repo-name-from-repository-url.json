@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794220754,
+  "updatedAt": 1673794220754,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794220754,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getRepoNameFromRepositoryUrl",
+  "slug": "get-repo-name-from-repository-url",
+  "operationRelativeTypescriptFilePath": "src/getRepoNameFromRepositoryUrl.ts",
+  "type": {
+    "rawType": "(url: string) => string | undefined",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  url: string\n): string | undefined => {\n  if (!url.startsWith(\"https://github.com/\")) return;\n\n  // TODO:\n  const parts = url.split(\"/\");\n\n  const lastPart = parts.pop(); // either the repoName or {repoName}.git\n\n  if (!lastPart) return;\n\n  if (lastPart.endsWith(\".git\")) {\n    return lastPart.slice(0, lastPart.length - \".git\".length);\n  }\n\n  return lastPart;\n}",
+  "description": "",
+  "id": "gfvmhxojnkvqhheylqkmhdsz"
+}

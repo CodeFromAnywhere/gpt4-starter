@@ -1,0 +1,103 @@
+{
+  "createdAt": 1673884831468,
+  "updatedAt": 1673884831468,
+  "deletedAt": 0,
+  "createdFirstAt": 1673884831468,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/expose/sayablesToMp3.ts",
+  "commentsInside": [],
+  "rawText": " (config: {\n  destinationAbsoluteFilePath: string;\n  sayables: Sayable[];\n}) => {\n  const { sayables, destinationAbsoluteFilePath } = config;\n  /**\n  \n  \n  \n   */\n}",
+  "name": "sayablesToMp3",
+  "slug": "sayables-to-mp-3",
+  "parameters": [
+    {
+      "name": "config",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "destinationAbsoluteFilePath": {
+            "type": "string"
+          },
+          "sayables": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Sayable"
+            }
+          }
+        },
+        "required": [
+          "destinationAbsoluteFilePath",
+          "sayables"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "destinationAbsoluteFilePath",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sayables",
+            "required": true,
+            "schema": {
+              "items": [
+                {
+                  "schema": {
+                    "fullComment": "GOAL:\n- distribute read only (and audio only) material of my codebase\n- it is also a fundament for other applications in the future",
+                    "properties": [
+                      {
+                        "name": "sayableText",
+                        "required": false,
+                        "schema": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "name": "voiceFileRelativePath",
+                        "required": false,
+                        "schema": {
+                          "type": "string"
+                        }
+                      }
+                    ],
+                    "type": "object"
+                  },
+                  "name": "Sayable"
+                }
+              ],
+              "type": "array"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "Creates a single audiofile of a Sayable[] and stores that in a configured location",
+  "returnType": {
+    "rawType": "void",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 246,
+    "lines": 11,
+    "bytes": 246,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 22,
+    "linesPerFile": 11,
+    "numberOfFiles": 1
+  },
+  "id": "uoewtkltqpjuwxppaltxmqbd"
+}

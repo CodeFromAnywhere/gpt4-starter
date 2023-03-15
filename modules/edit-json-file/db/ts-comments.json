@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1668149807655,
+    "updatedAt": 1668149807655,
+    "deletedAt": 0,
+    "createdFirstAt": 1668149807655,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/mapObjectJson.ts",
+    "comment": "Takes an absolute path to a json and a type generic and provides a map function with which you can alter that JSON (read, map, save)",
+    "rawStatement": "export const mapObjectJson = async <T, U>(\n  absolutePath: string,\n  mapFunction: (item: T) => U\n) => {\n  if (!absolutePath) return;\n  const json = await readJsonFile<T>(absolutePath);\n\n  if (!json) return;\n  const newJson = mapFunction(json);\n\n  const isSuccessful = await writeJsonToFile(absolutePath, newJson);\n\n  return isSuccessful;\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 4,
+    "lastLine": 6,
+    "id": "ovyngjdppthqhkkydypbzzvs"
+  }
+]

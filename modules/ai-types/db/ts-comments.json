@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1677578342615,
+    "updatedAt": 1677578342615,
+    "deletedAt": 0,
+    "createdFirstAt": 1677578342615,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/variables.ts",
+    "comment": "languages supported. Source: https://github.com/openai/whisper/blob/main/whisper/tokenizer.py",
+    "rawStatement": "const languages = {\n  en: \"english\",\n  zh: \"chinese\",\n  de: \"german\",\n  es: \"spanish\",\n  ru: \"russian\",\n  ko: \"korean\",\n  fr: \"french\",\n  ja: \"japanese\",\n  pt: \"portuguese\",\n  tr: \"turkish\",\n  pl: \"polish\",\n  ca: \"catalan\",\n  nl: \"dutch\",\n  ar: \"arabic\",\n  sv: \"swedish\",\n  it: \"italian\",\n  id: \"indonesian\",\n  hi: \"hindi\",\n  fi: \"finnish\",\n  vi: \"vietnamese\",\n  he: \"hebrew\",\n  uk: \"ukrainian\",\n  el: \"greek\",\n  ms: \"malay\",\n  cs: \"czech\",\n  ro: \"romanian\",\n  da: \"danish\",\n  hu: \"hungarian\",\n  ta: \"tamil\",\n  no: \"norwegian\",\n  th: \"thai\",\n  ur: \"urdu\",\n  hr: \"croatian\",\n  bg: \"bulgarian\",\n  lt: \"lithuanian\",\n  la: \"latin\",\n  mi: \"maori\",\n  ml: \"malayalam\",\n  cy: \"welsh\",\n  sk: \"slovak\",\n  te: \"telugu\",\n  fa: \"persian\",\n  lv: \"latvian\",\n  bn: \"bengali\",\n  sr: \"serbian\",\n  az: \"azerbaijani\",\n  sl: \"slovenian\",\n  kn: \"kannada\",\n  et: \"estonian\",\n  mk: \"macedonian\",\n  br: \"breton\",\n  eu: \"basque\",\n  is: \"icelandic\",\n  hy: \"armenian\",\n  ne: \"nepali\",\n  mn: \"mongolian\",\n  bs: \"bosnian\",\n  kk: \"kazakh\",\n  sq: \"albanian\",\n  sw: \"swahili\",\n  gl: \"galician\",\n  mr: \"marathi\",\n  pa: \"punjabi\",\n  si: \"sinhala\",\n  km: \"khmer\",\n  sn: \"shona\",\n  yo: \"yoruba\",\n  so: \"somali\",\n  af: \"afrikaans\",\n  oc: \"occitan\",\n  ka: \"georgian\",\n  be: \"belarusian\",\n  tg: \"tajik\",\n  sd: \"sindhi\",\n  gu: \"gujarati\",\n  am: \"amharic\",\n  yi: \"yiddish\",\n  lo: \"lao\",\n  uz: \"uzbek\",\n  fo: \"faroese\",\n  ht: \"haitian creole\",\n  ps: \"pashto\",\n  tk: \"turkmen\",\n  nn: \"nynorsk\",\n  mt: \"maltese\",\n  sa: \"sanskrit\",\n  lb: \"luxembourgish\",\n  my: \"myanmar\",\n  bo: \"tibetan\",\n  tl: \"tagalog\",\n  mg: \"malagasy\",\n  as: \"assamese\",\n  tt: \"tatar\",\n  haw: \"hawaiian\",\n  ln: \"lingala\",\n  ha: \"hausa\",\n  ba: \"bashkir\",\n  jw: \"javanese\",\n  su: \"sundanese\",\n  // these aliases are mapped to languages above\n  burmese: \"burmese\",\n  valencian: \"valencian\",\n  flemish: \"flemish\",\n  haitian: \"haitian\",\n  letzeburgesch: \"letzeburgesch\",\n  pushto: \"pushto\",\n  panjabi: \"panjabi\",\n  moldavian: \"moldavian\",\n  moldovan: \"moldovan\",\n  sinhalese: \"sinhalese\",\n  castilian: \"castilian\",\n} as const;",
+    "parameters": {},
+    "types": [],
+    "firstLine": 1,
+    "lastLine": 3,
+    "id": "mulkrvuaorwqaownjcrpqlzz"
+  }
+]

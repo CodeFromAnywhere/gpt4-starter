@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794225437,
+  "updatedAt": 1673794225437,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794225437,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "operationGithubPull",
+  "slug": "operation-github-pull",
+  "operationRelativeTypescriptFilePath": "src/operationGithubPull.ts",
+  "type": {
+    "rawType": "(operationName: string, personalAccessToken?: string | undefined) => Promise<{ isSuccessful: boolean; message: string; operationName?: string | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  operationName: string,\n  /**\n   * If you don't provide it we get it from the database\n   */\n  personalAccessToken?: string\n): Promise<{\n  isSuccessful: boolean;\n  message: string;\n  operationName?: string;\n}> => {\n  const projectRoot = getProjectRoot();\n\n  const operationsPath = getRootPath(\"operations\");\n  if (!projectRoot || !operationsPath) {\n    return { isSuccessful: false, message: \"No project root\" };\n  }\n\n  const realPersonalAccessToken =\n    personalAccessToken || (await getGithubPersonalAccessToken());\n\n  if (!realPersonalAccessToken) {\n    return {\n      isSuccessful: false,\n      message: \"Please provide PAT\",\n    };\n  }\n\n  const projectRelativeOperationPath = operations[\n    operationName as keyof typeof operations\n  ] as string | undefined;\n\n  const newPath = path.join(operationsPath, \"new\", operationName);\n\n  const absoluteOperationPath = projectRelativeOperationPath\n    ? path.join(projectRoot, projectRelativeOperationPath)\n    : newPath;\n\n  try {\n    const octokit = new Octokit({\n      auth: realPersonalAccessToken,\n    });\n\n    /**\n      docs: https://docs.github.com/en/rest/repos/repos#list-repositories-for-the-authenticated-user\n     */\n    const repos = await octokit.rest.repos.listForAuthenticatedUser({\n      affiliation: \"owner,collaborator,organization_member\",\n      per_page: 100, //The number of results per page (max 100).\n      //page: 1 //Page number of the results to fetch.\n    });\n\n    const found = repos.data.find((repo: any) => repo.name === operationName);\n\n    if (!found) {\n      return {\n        isSuccessful: false,\n        message: `Repository was not found for operation ${operationName}`,\n        operationName,\n      };\n    }\n\n    if (!fs.existsSync(absoluteOperationPath)) {\n      fs.mkdirSync(absoluteOperationPath);\n    }\n\n    const remoteUrl = found.ssh_url;\n\n    await initializeGitOrUseExistingAndPull(absoluteOperationPath, remoteUrl);\n\n    //docs: https://octokit.github.io/rest.js/v19#repos-list-collaborators\n    const collaborators = await octokit.rest.repos.listCollaborators({\n      owner: found.owner.login,\n      repo: found.name,\n      affiliation: \"all\", //outside | direct | all,\n      //per_page: 100, //The number of results per page (max 100).\n      //page: 1 //Page number of the results to fetch.\n    });\n    /** after everything rename the .git folder to .git.backup */\n    fs.renameSync(\n      path.join(absoluteOperationPath, \".git\"),\n      path.join(absoluteOperationPath, \".git.backup\")\n    );\n\n    const updateResult = await db.update(\n      \"Operation\",\n      (item) => item.operationName === operationName,\n      (old) => {\n        const newRepository: OperationRepositoryInfo = {\n          url: remoteUrl,\n          htmlUrl: found.html_url,\n          collaborators: collaborators.data.map(\n            (collaborator: any) => collaborator.login\n          ),\n          forksCount: found.forks_count,\n          stargazersCount: found.stargazers_count,\n          watchersCount: found.watchers_count,\n          openIssuesCount: found.open_issues_count,\n          size: found.size,\n          visibility: found.visibility,\n          defaultBranch: found.default_branch,\n        };\n        return { ...old, repository: newRepository };\n      }\n    );\n\n    const isSuccessful = updateResult.isSuccesful || false;\n\n    return {\n      isSuccessful,\n      message: isSuccessful\n        ? \"Pulled successfully, operation package.json has been updated\"\n        : updateResult.message || \"Something went wrong\",\n      operationName,\n    };\n  } catch (err) {\n    return {\n      isSuccessful: false,\n      message: \"Error: \" + err,\n      operationName,\n    };\n  }\n\n  //\n}",
+  "description": "`git init` in operation\n`git set remote` in there\n`git pull --force`\n\nset operation.repository indexation info\n\n`mv .git .git.backup`",
+  "id": "cpcgkahkobhulmzxhhrzepgo"
+}

@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678331852491,
+  "updatedAt": 1678331852491,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331852491,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getTestFunctionContext.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  groupSlug: string | \"public\"\n): Promise<FunctionContext | undefined> => {\n  const groups = await db.get(\"Group\");\n\n  // special device, only the public group (device without person attached)\n  if (groupSlug === \"public\") {\n    // any non-logged in device\n    const device = (await db.get(\"Device\")).find(\n      (item) => !item.currentPersonId\n    );\n\n    if (!device) {\n      console.log(\n        \"You need some devices in your db that are public (not logged in)\"\n      );\n      return;\n    }\n\n    const functionContext: FunctionContext = {\n      device,\n      tsFunction: undefined,\n      hasAuthorization: true,\n      serverContext: undefined,\n    };\n\n    return functionContext;\n  }\n\n  const person = (\n    await db.get(\"Person\", { include: { referenceKey: \"groupSlugs\" } })\n  ).find((x) => x.groupSlugs?.includes(groupSlug));\n\n  if (!person) {\n    console.log(\"No person with that groupSlug\");\n    return;\n  }\n\n  const rawDevice = (await db.get(\"Device\")).find(\n    (x) => x.currentPersonId === person.id\n  );\n  if (!rawDevice) {\n    console.log(\"No device with that person\");\n    return;\n  }\n\n  const device: Device = {\n    ...rawDevice,\n    currentPersonCalculated: personAttachInheritedGroups(person, groups),\n  };\n\n  const functionContext: FunctionContext = {\n    device,\n    tsFunction: undefined,\n    hasAuthorization: true,\n    serverContext: undefined,\n  };\n\n  return functionContext;\n}",
+  "name": "getTestFunctionContext",
+  "slug": "get-test-function-context",
+  "parameters": [
+    {
+      "name": "groupSlug",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Returns a real FunctionContext for testing purposes. the functionContext returned is a real one that connects to a real `Device` and optionally `Person`, depending on the `groupSlug` you want to find someone for.\n\nNB: for simplicity's sake, the current implementation provides a `FuncitonContext` without `tsfunction` and without `serverContext` (as this is not needed for current use-case)",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 1799,
+    "lines": 62,
+    "bytes": 1799,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 29,
+    "linesPerFile": 62,
+    "numberOfFiles": 1
+  },
+  "id": "jdwshoccjmivvjhxcfyrsgfp"
+}

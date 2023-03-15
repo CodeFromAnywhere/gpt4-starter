@@ -1,0 +1,49 @@
+{
+  "createdAt": 1673380407152,
+  "updatedAt": 1673380407152,
+  "deletedAt": 0,
+  "createdFirstAt": 1673380407152,
+  "id": "namedparameterstypeof-capitalisefirstletter",
+  "name": "NamedParameters<typeof capitaliseFirstLetter>",
+  "slug": "namedparameterstypeof-capitalisefirstletter",
+  "operationRelativeTypescriptFilePath": "src/general.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "word": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "word"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "word",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof capitaliseFirstLetter>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

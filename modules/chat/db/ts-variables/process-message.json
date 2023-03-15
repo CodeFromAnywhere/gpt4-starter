@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678372644382,
+  "updatedAt": 1678372644382,
+  "deletedAt": 0,
+  "createdFirstAt": 1678372644382,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "processMessage",
+  "slug": "process-message",
+  "operationRelativeTypescriptFilePath": "src/processMessage.ts",
+  "type": {
+    "rawType": "(config: { person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person; persona: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/Persona\").Persona; message: string; isFirstMessage: boolean; }) => Promise<{ isSuccessful: boolean; responseMessage?: string | undefined; message?: string | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: {\n  person: Person;\n  persona: Persona;\n  message: string;\n  /**\n   * Should be true if the person didn't exist before.\n   */\n  isFirstMessage: boolean;\n}): Promise<{\n  isSuccessful: boolean;\n  responseMessage?: string;\n  message?: string;\n}> => {\n  const { message, person, persona, isFirstMessage } = config;\n\n  //4) store message in db\n  const chatMessage: Creation<ChatMessage> = {\n    personId: person.id,\n    personaId: persona.id,\n    direction: \"received\",\n    // groupSlug?: string;\n    createdAt: Date.now(),\n    message,\n  };\n  // NB: needs to be stored in person folder...\n  const chatUpsertResult = await db.upsert(\"ChatMessage\", chatMessage);\n\n  // respond immedately, if needed\n  // TODO: if it's timing out (more than 15s) we should not send it directly. instead, we should cancel it and just respond with nothing, and send manually instead... not sure how to do this nicely.\n  const instantResponse = await generateInstantResponseMessage(\n    chatMessage,\n    person,\n    { isFirstMessage }\n  );\n  console.log({ instantResponse });\n\n  if (instantResponse.chatResponse) {\n    // NB: if there's a message in the result, add it to the db\n    const responseChatMessage: Creation<ChatMessage> = {\n      personId: person.id,\n      personaId: persona.id,\n      direction: \"sent\",\n      createdAt: Date.now(),\n      message: instantResponse.chatResponse,\n    };\n    const chatUpsertResult = await db.upsert(\n      \"ChatMessage\",\n      responseChatMessage\n    );\n\n    // If there's a response, we're paying the api... Let's deduct credit.\n    const updateResult = await db.update(\n      \"Person\",\n      (item) => item.id === person.id,\n      (item) => ({\n        ...item,\n        credit: (item.credit || 0) - 0.02,\n        lastActivityAt: Date.now(),\n      })\n    );\n    console.log({ updateResult });\n  }\n\n  return {\n    isSuccessful: true,\n    message: \"Processed\",\n    responseMessage: instantResponse.chatResponse,\n  };\n}",
+  "description": "All logic to process a general purpose message. This can be antying like a WhatsApp message, an email, an SMS, literally any form of communication between you (persona) and a person.",
+  "id": "bnlnsedovpqchuuerxnbwsol"
+}

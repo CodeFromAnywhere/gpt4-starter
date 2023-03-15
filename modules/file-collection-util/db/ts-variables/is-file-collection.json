@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330500249,
+  "updatedAt": 1678330500249,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330500249,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "isFileCollection",
+  "slug": "is-file-collection",
+  "operationRelativeTypescriptFilePath": "src/isFileCollection.ts",
+  "type": {
+    "rawType": "(absoluteFilePathA: string, absoluteFilePathB: string) => boolean",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  absoluteFilePathA: string,\n  absoluteFilePathB: string\n): boolean =>\n  path.parse(absoluteFilePathA).dir === path.parse(absoluteFilePathB).dir &&\n  getFileCollectionBasename(absoluteFilePathA) ===\n    getFileCollectionBasename(absoluteFilePathB)",
+  "description": "",
+  "id": "mbrpfqdqvyrxojsszokveptp"
+}

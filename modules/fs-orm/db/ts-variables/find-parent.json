@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677580412639,
+  "updatedAt": 1677580412639,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580412639,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "findParent",
+  "slug": "find-parent",
+  "operationRelativeTypescriptFilePath": "src/alter/upsertKeyValueMarkdown.ts",
+  "type": {
+    "rawType": "(arrayItem: Omit<TModel, import(\"/Users/clarity/os/operations/tools/types/model-types/build/generics\").ShouldNotBeStored>, newCategoryStack: import(\"/Users/clarity/os/operations/tools/types/model-types/build/keyValueMarkdown\").CategoryStack) => boolean",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  arrayItem: Storing<KeyValueMarkdownModelType>,\n  newCategoryStack: CategoryStack\n) => {\n  const categoryStackWithItself = arrayItem.categoryStack.concat(\n    arrayItem.slug\n  );\n  const locationString = categoryStackWithItself.join(\",\");\n  const newItemLocationString = newCategoryStack.join(\",\");\n  const isSameLocation = locationString === newItemLocationString;\n\n  return isSameLocation;\n}",
+  "description": "this location matches any category that equals the categorystack",
+  "id": "tytzwxofwvatvxqyscgbdtak"
+}

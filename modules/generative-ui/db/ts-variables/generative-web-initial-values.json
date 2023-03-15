@@ -1,0 +1,61 @@
+{
+  "createdAt": 1678041421409,
+  "updatedAt": 1678041421409,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041421409,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "generativeWebInitialValues",
+  "slug": "generative-web-initial-values",
+  "operationRelativeTypescriptFilePath": "src/store.ts",
+  "type": {
+    "rawType": "{ \"generativeWeb.defaultVariant\": string | null; \"generativeWeb.fileCollectionClosedFiles\": { [filePath: string]: string[]; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "generativeWeb.defaultVariant": {
+          "type": "string | null"
+        },
+        "generativeWeb.fileCollectionClosedFiles": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      "required": [
+        "generativeWeb.fileCollectionClosedFiles"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "generativeWeb.defaultVariant",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "generativeWeb.fileCollectionClosedFiles",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "{\n  \"generativeWeb.defaultVariant\": null,\n  \"generativeWeb.fileCollectionClosedFiles\": {},\n}",
+  "description": "",
+  "id": "sqzqdctbondvgsqykbsflzuj"
+}

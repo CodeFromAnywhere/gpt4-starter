@@ -1,0 +1,24 @@
+{
+  "createdAt": 1671116333369,
+  "updatedAt": 1671116333369,
+  "deletedAt": 0,
+  "createdFirstAt": 1671116333369,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "CONCURRENTLY_INDEXED_FILES_AMOUNT",
+  "slug": "concurrently-indexed-files-amount",
+  "operationRelativeTypescriptFilePath": "src/getImportsExports.ts",
+  "type": {
+    "rawType": "{}",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "10",
+  "description": "",
+  "id": "jkliogyxavnyeblkgdfeinsz"
+}

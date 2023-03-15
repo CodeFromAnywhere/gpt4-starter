@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678332103501,
+  "updatedAt": 1678332103501,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332103501,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getSubsetFromObject",
+  "slug": "get-subset-from-object",
+  "operationRelativeTypescriptFilePath": "src/getSubsetFromObject.ts",
+  "type": {
+    "rawType": "<T, K extends (keyof T)[]>(object: T, keys: K) => Pick<T, Subset>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "<T, K extends readonly (keyof T)[]>(\n  object: T,\n  keys: K\n) => {\n  type Subset = typeof keys[number];\n\n  const subsetObject = keys.reduce((obj, key) => {\n    return { ...obj, [key]: object[key] };\n  }, {} as Partial<T>) as Pick<T, Subset>;\n  return subsetObject;\n}",
+  "description": "takes an object and a subset of its keys and returns a subset of that object\n\ninput: { x: \"a\", y: \"b\", z: \"c\" } and [\"x\"]\n\noutput: { x: \"a\" }",
+  "id": "xdozouinfrejtpzqwdmethbd"
+}

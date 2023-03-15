@@ -1,0 +1,59 @@
+{
+  "createdAt": 1677579960461,
+  "updatedAt": 1677579960461,
+  "deletedAt": 0,
+  "createdFirstAt": 1677579960461,
+  "id": "namedparameterstypeof-detectlanguage",
+  "name": "NamedParameters<typeof detectLanguage>",
+  "slug": "namedparameterstypeof-detectlanguage",
+  "operationRelativeTypescriptFilePath": "src/detectLanguage.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "canContainMultipleLanguages": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "text",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "canContainMultipleLanguages",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof detectLanguage>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

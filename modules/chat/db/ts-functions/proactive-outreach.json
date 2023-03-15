@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678372641620,
+  "updatedAt": 1678372641620,
+  "deletedAt": 0,
+  "createdFirstAt": 1678372641620,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/proactiveOutreach.ts",
+  "commentsInside": [],
+  "rawText": " () => {\n  // 1) go over every ChatMessage channel, one by one\n  // 2) for every channel, react if it's been a while, or if you havent had the chance to reply yet.\n}",
+  "name": "proactiveOutreach",
+  "slug": "proactive-outreach",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "void",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 165,
+    "lines": 4,
+    "bytes": 165,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 41,
+    "linesPerFile": 4,
+    "numberOfFiles": 1
+  },
+  "id": "ujxmfkruhsezncgqrskszfis"
+}

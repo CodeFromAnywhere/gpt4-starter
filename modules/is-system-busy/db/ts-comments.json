@@ -1,0 +1,34 @@
+[
+  {
+    "createdAt": 1678330721979,
+    "updatedAt": 1678330721979,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330721979,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/isSystemBusy.ts",
+    "comment": "import { cpus, totalmem, freemem, loadavg } from \"os\";",
+    "rawStatement": "import { cpuUsage } from \"os-utils\";",
+    "parameters": {},
+    "types": [],
+    "firstLine": 1,
+    "lastLine": 1,
+    "id": "mfeqftczxwojpgisfxbhohaw"
+  },
+  {
+    "createdAt": 1678330721980,
+    "updatedAt": 1678330721980,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330721980,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/isSystemBusy.ts",
+    "comment": "Promises `true` if system is using more than 75% of CPU",
+    "rawStatement": "export const isSystemBusy = async (): Promise<boolean> => {\n  const percentage = await new Promise<number>((resolve) =>\n    cpuUsage((percentage) => resolve(percentage))\n  );\n\n  return percentage > 0.75;\n\n  //    This is not useful enough....\n  //   console.dir(\n  //     {\n  //       cpus: cpus(),\n  //       totalmem: totalmem(),\n  //       freemem: freemem(),\n  //       load: loadavg(),\n  //     },\n  //     { depth: 99 }\n  //   );\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 3,
+    "lastLine": 5,
+    "id": "nyqzzlegavunnzgbkbvokrpt"
+  }
+]

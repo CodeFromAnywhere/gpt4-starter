@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678329658308,
+  "updatedAt": 1678329658308,
+  "deletedAt": 0,
+  "createdFirstAt": 1678329658308,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "ping",
+  "slug": "ping",
+  "operationRelativeTypescriptFilePath": "src/ping.ts",
+  "type": {
+    "rawType": "{ (): boolean; config: { isPublic: boolean; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPublic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isPublic"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "() => true",
+  "description": "",
+  "id": "pwycjaclwtetwlpsjnnkdwsl"
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "createdAt": 1668334654958,
+    "updatedAt": 1668334654958,
+    "deletedAt": 0,
+    "createdFirstAt": 1668334654958,
+    "name": "mapArrayJson",
+    "slug": "map-array-json",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "ndpwamaddyexcexowkphgrco"
+  },
+  {
+    "createdAt": 1668334654958,
+    "updatedAt": 1668334654958,
+    "deletedAt": 0,
+    "createdFirstAt": 1668334654958,
+    "name": "mapObjectJson",
+    "slug": "map-object-json",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "cvfincpzmqcgibxetbzurret"
+  },
+  {
+    "createdAt": 1668334654959,
+    "updatedAt": 1668334654959,
+    "deletedAt": 0,
+    "createdFirstAt": 1668334654959,
+    "name": "mapArrayJson",
+    "slug": "map-array-json",
+    "operationRelativeTypescriptFilePath": "src/mapArrayJson.ts",
+    "comments": [],
+    "type": "value",
+    "id": "nenrefqrpigglfflgxskossj"
+  },
+  {
+    "createdAt": 1668334654959,
+    "updatedAt": 1668334654959,
+    "deletedAt": 0,
+    "createdFirstAt": 1668334654959,
+    "name": "mapObjectJson",
+    "slug": "map-object-json",
+    "operationRelativeTypescriptFilePath": "src/mapObjectJson.ts",
+    "comments": [],
+    "type": "value",
+    "id": "dgqdrswffuldfhuwtoqbtdjd"
+  }
+]

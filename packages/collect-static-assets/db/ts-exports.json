@@ -1,0 +1,122 @@
+[
+  {
+    "createdAt": 1671115707819,
+    "updatedAt": 1671115707819,
+    "deletedAt": 0,
+    "createdFirstAt": 1671115707819,
+    "name": "CopyPair",
+    "slug": "copy-pair",
+    "operationRelativeTypescriptFilePath": "src/copyCopyPairs.ts",
+    "comments": [],
+    "type": "value",
+    "id": "eejfvwnbderinlzjrjcqafpv"
+  },
+  {
+    "createdAt": 1671115707819,
+    "updatedAt": 1671115707819,
+    "deletedAt": 0,
+    "createdFirstAt": 1671115707819,
+    "name": "copyCopyPairs",
+    "slug": "copy-copy-pairs",
+    "operationRelativeTypescriptFilePath": "src/copyCopyPairs.ts",
+    "comments": [],
+    "type": "value",
+    "id": "mfebvdxytdzokpiyxsrzipbv"
+  },
+  {
+    "createdAt": 1671115707819,
+    "updatedAt": 1671115707819,
+    "deletedAt": 0,
+    "createdFirstAt": 1671115707819,
+    "name": "copyReaderStaticAssets",
+    "slug": "copy-reader-static-assets",
+    "operationRelativeTypescriptFilePath": "src/copyReaderStaticAssets.ts",
+    "comments": [],
+    "type": "value",
+    "id": "mhtwzhaadrtilaxuzzynpghv"
+  },
+  {
+    "createdAt": 1671115707819,
+    "updatedAt": 1671115707819,
+    "deletedAt": 0,
+    "createdFirstAt": 1671115707819,
+    "name": "findReaderStaticAssets",
+    "slug": "find-reader-static-assets",
+    "operationRelativeTypescriptFilePath": "src/findReaderStaticAssets.ts",
+    "comments": [],
+    "type": "value",
+    "id": "mtxkmsxfxmvhvhqhkaryrhmt"
+  },
+  {
+    "createdAt": 1671115707819,
+    "updatedAt": 1671115707819,
+    "deletedAt": 0,
+    "createdFirstAt": 1671115707819,
+    "name": "findStaticAssets",
+    "slug": "find-static-assets",
+    "operationRelativeTypescriptFilePath": "src/findStaticAssets.ts",
+    "comments": [],
+    "type": "value",
+    "id": "rpcbwziltbngsrboomxarpau"
+  },
+  {
+    "createdAt": 1671115707819,
+    "updatedAt": 1671115707819,
+    "deletedAt": 0,
+    "createdFirstAt": 1671115707819,
+    "name": "CopyPair",
+    "slug": "copy-pair",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "kcrguenivdhutkdrfxoxpour"
+  },
+  {
+    "createdAt": 1671115707819,
+    "updatedAt": 1671115707819,
+    "deletedAt": 0,
+    "createdFirstAt": 1671115707819,
+    "name": "copyCopyPairs",
+    "slug": "copy-copy-pairs",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "ysplivvtjvtwykopncjeteof"
+  },
+  {
+    "createdAt": 1671115707819,
+    "updatedAt": 1671115707819,
+    "deletedAt": 0,
+    "createdFirstAt": 1671115707819,
+    "name": "copyReaderStaticAssets",
+    "slug": "copy-reader-static-assets",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "krgawtuwrrhpzvxqzeigvivo"
+  },
+  {
+    "createdAt": 1671115707819,
+    "updatedAt": 1671115707819,
+    "deletedAt": 0,
+    "createdFirstAt": 1671115707819,
+    "name": "findReaderStaticAssets",
+    "slug": "find-reader-static-assets",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "xfdbfstwfhnegjdsvymkqzdn"
+  },
+  {
+    "createdAt": 1671115707819,
+    "updatedAt": 1671115707819,
+    "deletedAt": 0,
+    "createdFirstAt": 1671115707819,
+    "name": "findStaticAssets",
+    "slug": "find-static-assets",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "rffhyqagvmqhdzjopxrtfqae"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794222792,
+  "updatedAt": 1673794222792,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794222792,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "initializeGitOrUseExistingAndPull",
+  "slug": "initialize-git-or-use-existing-and-pull",
+  "operationRelativeTypescriptFilePath": "src/initializeGitOrUseExistingAndPull.ts",
+  "type": {
+    "rawType": "(dir: string, remoteUrl: string) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  dir: string,\n  remoteUrl: string\n) => {\n  /** create simplegit options */\n  const options: Partial<SimpleGitOptions> = {\n    baseDir: dir,\n    binary: \"git\",\n    maxConcurrentProcesses: 6,\n    trimmed: false,\n  };\n  const gitBackupFolder = path.resolve(dir, \".git.backup\");\n  /** if the git.backup folder exists */\n  if (fs.existsSync(gitBackupFolder)) {\n    /** rename it to .git */\n    fs.renameSync(path.resolve(dir, \".git.backup\"), path.resolve(dir, \".git\"));\n    /** then add everything, commit and force pull */\n    const git: SimpleGit = simpleGit(options);\n    await git.pull(\"origin\", \"main\", [\"--force\"]);\n  } else {\n    /** if backup folder doesn't exist */\n    const gitFolder = path.resolve(dir, \".git\");\n    if (fs.existsSync(gitFolder)) {\n      fs.rmSync(gitFolder, { recursive: true, force: true });\n    }\n    const git: SimpleGit = simpleGit(options);\n    await git.init().addRemote(\"origin\", remoteUrl);\n    await git.pull(\"origin\", \"main\", [\"--force\"]);\n  }\n}",
+  "description": "",
+  "id": "ktatlxuidfvylkjjszkmfgno"
+}

@@ -1,0 +1,3 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSubExtensions=void 0;var fs_util_1=require("fs-util"),filename_conventions_1=require("filename-conventions"),getSubExtensions=function(e,n){var s=null==n?void 0:n.allowAllSubExtensions,t=fs_util_1.path.parse(e).name;// NB: extension is already removed here.
+if(s)return((null==t?void 0:t.split("."))||[]).slice(1);var i=t.split("."),r=!0;return i.reverse().reduce((function(e,n){return filename_conventions_1.possibleSubExtensions.includes(n)||(r=!1),r&&e.push(n),e}),[]).reverse()};exports.getSubExtensions=getSubExtensions;
+//# sourceMappingURL=getSubExtensions.js.map

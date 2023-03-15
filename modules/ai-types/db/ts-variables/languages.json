@@ -1,0 +1,1137 @@
+{
+  "createdAt": 1677578342341,
+  "updatedAt": 1677578342341,
+  "deletedAt": 0,
+  "createdFirstAt": 1677578342341,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "languages",
+  "slug": "languages",
+  "operationRelativeTypescriptFilePath": "src/variables.ts",
+  "type": {
+    "rawType": "{ readonly en: \"english\"; readonly zh: \"chinese\"; readonly de: \"german\"; readonly es: \"spanish\"; readonly ru: \"russian\"; readonly ko: \"korean\"; readonly fr: \"french\"; readonly ja: \"japanese\"; readonly pt: \"portuguese\"; readonly tr: \"turkish\"; readonly pl: \"polish\"; readonly ca: \"catalan\"; readonly nl: \"dutch\"; readonly ar: \"arabic\"; readonly sv: \"swedish\"; readonly it: \"italian\"; readonly id: \"indonesian\"; readonly hi: \"hindi\"; readonly fi: \"finnish\"; readonly vi: \"vietnamese\"; readonly he: \"hebrew\"; readonly uk: \"ukrainian\"; readonly el: \"greek\"; readonly ms: \"malay\"; readonly cs: \"czech\"; readonly ro: \"romanian\"; readonly da: \"danish\"; readonly hu: \"hungarian\"; readonly ta: \"tamil\"; readonly no: \"norwegian\"; readonly th: \"thai\"; readonly ur: \"urdu\"; readonly hr: \"croatian\"; readonly bg: \"bulgarian\"; readonly lt: \"lithuanian\"; readonly la: \"latin\"; readonly mi: \"maori\"; readonly ml: \"malayalam\"; readonly cy: \"welsh\"; readonly sk: \"slovak\"; readonly te: \"telugu\"; readonly fa: \"persian\"; readonly lv: \"latvian\"; readonly bn: \"bengali\"; readonly sr: \"serbian\"; readonly az: \"azerbaijani\"; readonly sl: \"slovenian\"; readonly kn: \"kannada\"; readonly et: \"estonian\"; readonly mk: \"macedonian\"; readonly br: \"breton\"; readonly eu: \"basque\"; readonly is: \"icelandic\"; readonly hy: \"armenian\"; readonly ne: \"nepali\"; readonly mn: \"mongolian\"; readonly bs: \"bosnian\"; readonly kk: \"kazakh\"; readonly sq: \"albanian\"; readonly sw: \"swahili\"; readonly gl: \"galician\"; readonly mr: \"marathi\"; readonly pa: \"punjabi\"; readonly si: \"sinhala\"; readonly km: \"khmer\"; readonly sn: \"shona\"; readonly yo: \"yoruba\"; readonly so: \"somali\"; readonly af: \"afrikaans\"; readonly oc: \"occitan\"; readonly ka: \"georgian\"; readonly be: \"belarusian\"; readonly tg: \"tajik\"; readonly sd: \"sindhi\"; readonly gu: \"gujarati\"; readonly am: \"amharic\"; readonly yi: \"yiddish\"; readonly lo: \"lao\"; readonly uz: \"uzbek\"; readonly fo: \"faroese\"; readonly ht: \"haitian creole\"; readonly ps: \"pashto\"; readonly tk: \"turkmen\"; readonly nn: \"nynorsk\"; readonly mt: \"maltese\"; readonly sa: \"sanskrit\"; readonly lb: \"luxembourgish\"; readonly my: \"myanmar\"; readonly bo: \"tibetan\"; readonly tl: \"tagalog\"; readonly mg: \"malagasy\"; readonly as: \"assamese\"; readonly tt: \"tatar\"; readonly haw: \"hawaiian\"; readonly ln: \"lingala\"; readonly ha: \"hausa\"; readonly ba: \"bashkir\"; readonly jw: \"javanese\"; readonly su: \"sundanese\"; readonly burmese: \"burmese\"; readonly valencian: \"valencian\"; readonly flemish: \"flemish\"; readonly haitian: \"haitian\"; readonly letzeburgesch: \"letzeburgesch\"; readonly pushto: \"pushto\"; readonly panjabi: \"panjabi\"; readonly moldavian: \"moldavian\"; readonly moldovan: \"moldovan\"; readonly sinhalese: \"sinhalese\"; readonly castilian: \"castilian\"; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "en": {},
+        "zh": {},
+        "de": {},
+        "es": {},
+        "ru": {},
+        "ko": {},
+        "fr": {},
+        "ja": {},
+        "pt": {},
+        "tr": {},
+        "pl": {},
+        "ca": {},
+        "nl": {},
+        "ar": {},
+        "sv": {},
+        "it": {},
+        "id": {},
+        "hi": {},
+        "fi": {},
+        "vi": {},
+        "he": {},
+        "uk": {},
+        "el": {},
+        "ms": {},
+        "cs": {},
+        "ro": {},
+        "da": {},
+        "hu": {},
+        "ta": {},
+        "no": {},
+        "th": {},
+        "ur": {},
+        "hr": {},
+        "bg": {},
+        "lt": {},
+        "la": {},
+        "mi": {},
+        "ml": {},
+        "cy": {},
+        "sk": {},
+        "te": {},
+        "fa": {},
+        "lv": {},
+        "bn": {},
+        "sr": {},
+        "az": {},
+        "sl": {},
+        "kn": {},
+        "et": {},
+        "mk": {},
+        "br": {},
+        "eu": {},
+        "is": {},
+        "hy": {},
+        "ne": {},
+        "mn": {},
+        "bs": {},
+        "kk": {},
+        "sq": {},
+        "sw": {},
+        "gl": {},
+        "mr": {},
+        "pa": {},
+        "si": {},
+        "km": {},
+        "sn": {},
+        "yo": {},
+        "so": {},
+        "af": {},
+        "oc": {},
+        "ka": {},
+        "be": {},
+        "tg": {},
+        "sd": {},
+        "gu": {},
+        "am": {},
+        "yi": {},
+        "lo": {},
+        "uz": {},
+        "fo": {},
+        "ht": {},
+        "ps": {},
+        "tk": {},
+        "nn": {},
+        "mt": {},
+        "sa": {},
+        "lb": {},
+        "my": {},
+        "bo": {},
+        "tl": {},
+        "mg": {},
+        "as": {},
+        "tt": {},
+        "haw": {},
+        "ln": {},
+        "ha": {},
+        "ba": {},
+        "jw": {},
+        "su": {},
+        "burmese": {},
+        "valencian": {},
+        "flemish": {},
+        "haitian": {},
+        "letzeburgesch": {},
+        "pushto": {},
+        "panjabi": {},
+        "moldavian": {},
+        "moldovan": {},
+        "sinhalese": {},
+        "castilian": {}
+      },
+      "required": [
+        "en",
+        "zh",
+        "de",
+        "es",
+        "ru",
+        "ko",
+        "fr",
+        "ja",
+        "pt",
+        "tr",
+        "pl",
+        "ca",
+        "nl",
+        "ar",
+        "sv",
+        "it",
+        "id",
+        "hi",
+        "fi",
+        "vi",
+        "he",
+        "uk",
+        "el",
+        "ms",
+        "cs",
+        "ro",
+        "da",
+        "hu",
+        "ta",
+        "no",
+        "th",
+        "ur",
+        "hr",
+        "bg",
+        "lt",
+        "la",
+        "mi",
+        "ml",
+        "cy",
+        "sk",
+        "te",
+        "fa",
+        "lv",
+        "bn",
+        "sr",
+        "az",
+        "sl",
+        "kn",
+        "et",
+        "mk",
+        "br",
+        "eu",
+        "is",
+        "hy",
+        "ne",
+        "mn",
+        "bs",
+        "kk",
+        "sq",
+        "sw",
+        "gl",
+        "mr",
+        "pa",
+        "si",
+        "km",
+        "sn",
+        "yo",
+        "so",
+        "af",
+        "oc",
+        "ka",
+        "be",
+        "tg",
+        "sd",
+        "gu",
+        "am",
+        "yi",
+        "lo",
+        "uz",
+        "fo",
+        "ht",
+        "ps",
+        "tk",
+        "nn",
+        "mt",
+        "sa",
+        "lb",
+        "my",
+        "bo",
+        "tl",
+        "mg",
+        "as",
+        "tt",
+        "haw",
+        "ln",
+        "ha",
+        "ba",
+        "jw",
+        "su",
+        "burmese",
+        "valencian",
+        "flemish",
+        "haitian",
+        "letzeburgesch",
+        "pushto",
+        "panjabi",
+        "moldavian",
+        "moldovan",
+        "sinhalese",
+        "castilian"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "en",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "zh",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "de",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "es",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ru",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ko",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "fr",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ja",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "pt",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "tr",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "pl",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ca",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "nl",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ar",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "sv",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "it",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "id",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "hi",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "fi",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "vi",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "he",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "uk",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "el",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ms",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "cs",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ro",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "da",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "hu",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ta",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "no",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "th",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ur",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "hr",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "bg",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "lt",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "la",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "mi",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ml",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "cy",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "sk",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "te",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "fa",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "lv",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "bn",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "sr",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "az",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "sl",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "kn",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "et",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "mk",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "br",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "eu",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "is",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "hy",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ne",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "mn",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "bs",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "kk",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "sq",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "sw",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "gl",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "mr",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "pa",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "si",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "km",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "sn",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "yo",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "so",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "af",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "oc",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ka",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "be",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "tg",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "sd",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "gu",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "am",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "yi",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "lo",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "uz",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "fo",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ht",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ps",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "tk",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "nn",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "mt",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "sa",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "lb",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "my",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "bo",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "tl",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "mg",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "as",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "tt",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "haw",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ln",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ha",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "ba",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "jw",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "su",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "burmese",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "valencian",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "flemish",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "haitian",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "letzeburgesch",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "pushto",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "panjabi",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "moldavian",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "moldovan",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "sinhalese",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "castilian",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "{\n  en: \"english\",\n  zh: \"chinese\",\n  de: \"german\",\n  es: \"spanish\",\n  ru: \"russian\",\n  ko: \"korean\",\n  fr: \"french\",\n  ja: \"japanese\",\n  pt: \"portuguese\",\n  tr: \"turkish\",\n  pl: \"polish\",\n  ca: \"catalan\",\n  nl: \"dutch\",\n  ar: \"arabic\",\n  sv: \"swedish\",\n  it: \"italian\",\n  id: \"indonesian\",\n  hi: \"hindi\",\n  fi: \"finnish\",\n  vi: \"vietnamese\",\n  he: \"hebrew\",\n  uk: \"ukrainian\",\n  el: \"greek\",\n  ms: \"malay\",\n  cs: \"czech\",\n  ro: \"romanian\",\n  da: \"danish\",\n  hu: \"hungarian\",\n  ta: \"tamil\",\n  no: \"norwegian\",\n  th: \"thai\",\n  ur: \"urdu\",\n  hr: \"croatian\",\n  bg: \"bulgarian\",\n  lt: \"lithuanian\",\n  la: \"latin\",\n  mi: \"maori\",\n  ml: \"malayalam\",\n  cy: \"welsh\",\n  sk: \"slovak\",\n  te: \"telugu\",\n  fa: \"persian\",\n  lv: \"latvian\",\n  bn: \"bengali\",\n  sr: \"serbian\",\n  az: \"azerbaijani\",\n  sl: \"slovenian\",\n  kn: \"kannada\",\n  et: \"estonian\",\n  mk: \"macedonian\",\n  br: \"breton\",\n  eu: \"basque\",\n  is: \"icelandic\",\n  hy: \"armenian\",\n  ne: \"nepali\",\n  mn: \"mongolian\",\n  bs: \"bosnian\",\n  kk: \"kazakh\",\n  sq: \"albanian\",\n  sw: \"swahili\",\n  gl: \"galician\",\n  mr: \"marathi\",\n  pa: \"punjabi\",\n  si: \"sinhala\",\n  km: \"khmer\",\n  sn: \"shona\",\n  yo: \"yoruba\",\n  so: \"somali\",\n  af: \"afrikaans\",\n  oc: \"occitan\",\n  ka: \"georgian\",\n  be: \"belarusian\",\n  tg: \"tajik\",\n  sd: \"sindhi\",\n  gu: \"gujarati\",\n  am: \"amharic\",\n  yi: \"yiddish\",\n  lo: \"lao\",\n  uz: \"uzbek\",\n  fo: \"faroese\",\n  ht: \"haitian creole\",\n  ps: \"pashto\",\n  tk: \"turkmen\",\n  nn: \"nynorsk\",\n  mt: \"maltese\",\n  sa: \"sanskrit\",\n  lb: \"luxembourgish\",\n  my: \"myanmar\",\n  bo: \"tibetan\",\n  tl: \"tagalog\",\n  mg: \"malagasy\",\n  as: \"assamese\",\n  tt: \"tatar\",\n  haw: \"hawaiian\",\n  ln: \"lingala\",\n  ha: \"hausa\",\n  ba: \"bashkir\",\n  jw: \"javanese\",\n  su: \"sundanese\",\n  // these aliases are mapped to languages above\n  burmese: \"burmese\",\n  valencian: \"valencian\",\n  flemish: \"flemish\",\n  haitian: \"haitian\",\n  letzeburgesch: \"letzeburgesch\",\n  pushto: \"pushto\",\n  panjabi: \"panjabi\",\n  moldavian: \"moldavian\",\n  moldovan: \"moldovan\",\n  sinhalese: \"sinhalese\",\n  castilian: \"castilian\",\n} as const",
+  "description": "languages supported. Source: https://github.com/openai/whisper/blob/main/whisper/tokenizer.py",
+  "id": "chpjdpzpefqjmgbqydzoljgj"
+}

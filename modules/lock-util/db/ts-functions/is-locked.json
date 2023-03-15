@@ -1,0 +1,55 @@
+{
+  "createdAt": 1678331278135,
+  "updatedAt": 1678331278135,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331278135,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/isLocked.ts",
+  "commentsInside": [],
+  "rawText": " (absolutePath: string) => {\n  const actionStatusFilePath = getActionStatusFilePath(absolutePath);\n\n  if (fs.existsSync(actionStatusFilePath)) {\n    const lock = readJsonFileSync<ActionStatus>(actionStatusFilePath);\n\n    if (!lock) {\n      //definitely no lockfile\n      return false;\n    }\n\n    if (lock.cleanupAt && Date.now() >= lock.cleanupAt) {\n      fs.rm(actionStatusFilePath);\n      return false;\n    }\n\n    // there's a lockfile not to be cleaned up yet\n    if (lock.updatedAt) {\n      // status has recently enough been updated\n      return true;\n    }\n    return false;\n  }\n  return false;\n}",
+  "name": "isLocked",
+  "slug": "is-locked",
+  "parameters": [
+    {
+      "name": "absolutePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 602,
+    "lines": 25,
+    "bytes": 602,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 24,
+    "linesPerFile": 25,
+    "numberOfFiles": 1
+  },
+  "id": "ulbzhjslqkbachgaqibdwhvm"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794213615,
+  "updatedAt": 1673794213615,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794213615,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getAllPackagesNames",
+  "slug": "get-all-packages-names",
+  "operationRelativeTypescriptFilePath": "src/getAllPackageNames.ts",
+  "type": {
+    "rawType": "() => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const allPackagesNames = (await db.get(\"Operation\")).map((x) => x.name);\n  return allPackagesNames;\n}",
+  "description": "",
+  "id": "sczazivufjomofelglpgudyk"
+}

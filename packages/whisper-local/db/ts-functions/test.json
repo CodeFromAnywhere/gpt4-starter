@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678330962532,
+  "updatedAt": 1678330962532,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330962532,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/whisperLocalCpp.test.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const audioFilePath1 = path.join(__dirname, \"..\", \"assets\", \"nick.m4a\");\n  const audioFilePath2 = path.join(\n    __dirname,\n    \"..\",\n    \"assets\",\n    \"knowledge-base.m4a\"\n  );\n  const result1 = await compressConvert(audioFilePath1, {\n    is16bitWav: true,\n    targetFormat: \"wav\",\n  });\n  const result2 = await compressConvert(audioFilePath2, {\n    is16bitWav: true,\n    targetFormat: \"wav\",\n  });\n\n  if (result1) {\n    await whisperLocalCpp({ audioFilePath: result1 });\n  }\n  if (result2) {\n    await whisperLocalCpp({ audioFilePath: result2 });\n  }\n}",
+  "name": "test",
+  "slug": "test",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 571,
+    "lines": 24,
+    "bytes": 571,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 24,
+    "linesPerFile": 24,
+    "numberOfFiles": 1
+  },
+  "id": "vjklhoylbbxuohegkoxkoujm"
+}

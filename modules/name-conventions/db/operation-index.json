@@ -1,0 +1,56 @@
+{
+  "createdAt": 1664525624301,
+  "updatedAt": 1668148503567,
+  "deletedAt": 0,
+  "createdFirstAt": 1664525624301,
+  "folderName": "name-conventions",
+  "packageName": "name-conventions",
+  "relativeOperationLocationPath": "operations/tools/conventions",
+  "classification": "js",
+  "name": "name-conventions",
+  "slug": "name-conventions",
+  "coreDependencies": [],
+  "operationDependencies": [
+    "SimplifiedSchemaType",
+    "lowerCaseArray",
+    "singularize",
+    "isPlural",
+    "ParameterName",
+    "SimplifiedSchemaType"
+  ],
+  "packageDependencies": [],
+  "size": {
+    "codeSize": {
+      "numberOfFiles": 3,
+      "lines": 0,
+      "characters": 5855,
+      "bytes": 5855
+    },
+    "dataSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 1452,
+      "bytes": 1452
+    },
+    "textSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 2955,
+      "bytes": 2955
+    },
+    "size": {
+      "bytes": 10262,
+      "characters": 10262,
+      "lines": 0,
+      "numberOfFiles": 7
+    }
+  },
+  "buildSucceeded": true,
+  "dependenciesBuildsFailed": false,
+  "indexErrors": [],
+  "indexImportExportError": "",
+  "indexInteracesErrors": [],
+  "lintProblems": [],
+  "id": "zvwfvchwpnbdcszdvscovggy",
+  "language": "en"
+}

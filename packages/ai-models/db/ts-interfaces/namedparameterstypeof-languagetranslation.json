@@ -1,0 +1,60 @@
+{
+  "createdAt": 1678369208738,
+  "updatedAt": 1678369208738,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369208738,
+  "id": "namedparameterstypeof-languagetranslation",
+  "name": "NamedParameters<typeof languageTranslation>",
+  "slug": "namedparameterstypeof-languagetranslation",
+  "operationRelativeTypescriptFilePath": "src/languageTranslation.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "targetLanguage": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "targetLanguage"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "text",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "targetLanguage",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof languageTranslation>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

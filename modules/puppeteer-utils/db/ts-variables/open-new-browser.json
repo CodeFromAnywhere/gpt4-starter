@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677582371198,
+  "updatedAt": 1677582371198,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582371198,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "openNewBrowser",
+  "slug": "open-new-browser",
+  "operationRelativeTypescriptFilePath": "src/openNewBrowser.ts",
+  "type": {
+    "rawType": "() => Promise<import(\"/Users/clarity/os/operations/node_modules/puppeteer/lib/types\").Browser | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (): Promise<Browser | undefined> => {\n  console.log(\"OPEN BROWSER CALLED\");\n  const existingBrowserSession = await db.get(\"BrowserSession\");\n  if (existingBrowserSession[0]) {\n    const { browserSessionId } = existingBrowserSession[0];\n    try {\n      puppeteer.use(\n        RecaptchaPlugin({\n          provider: {\n            id: \"2captcha\",\n            token: \"243f9da05482cc8e9b76203a184943c9\", // REPLACE THIS WITH YOUR OWN 2CAPTCHA API KEY ⚡\n          },\n          visualFeedback: true, // colorize reCAPTCHAs (violet = detected, green = solved)\n        })\n      );\n      const existingBrowser = await puppeteer.connect({\n        browserWSEndpoint: browserSessionId,\n      });\n      const isBrowserConnected = existingBrowser.isConnected();\n      console.log({ isBrowserConnected });\n      return existingBrowser;\n    } catch (e: Error | any) {\n      console.log(\"Error in open browser\", e);\n      await db.clear(\"BrowserSession\");\n      await openNewBrowserOnChildProcess();\n      return;\n    }\n  } else {\n    await db.clear(\"BrowserSession\");\n    await openNewBrowserOnChildProcess();\n    return;\n  }\n}",
+  "description": "",
+  "id": "xomrdbytzhgwmryazatclwhg"
+}

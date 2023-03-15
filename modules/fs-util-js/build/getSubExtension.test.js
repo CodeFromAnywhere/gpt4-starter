@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var getSubExtension_1=require("./getSubExtension"),test=function(){console.log((0,getSubExtension_1.getSubExtension)("package.template.json"))};test();
+//# sourceMappingURL=getSubExtension.test.js.map

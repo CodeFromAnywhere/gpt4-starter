@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678369215990,
+  "updatedAt": 1678369215990,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369215990,
+  "id": "namedparameterstypeof-speechtotext",
+  "name": "NamedParameters<typeof speechToText>",
+  "slug": "namedparameterstypeof-speechtotext",
+  "operationRelativeTypescriptFilePath": "src/speechToText.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteAudioFilePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absoluteAudioFilePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteAudioFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof speechToText>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

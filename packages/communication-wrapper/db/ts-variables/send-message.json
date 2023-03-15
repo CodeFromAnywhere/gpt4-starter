@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331019273,
+  "updatedAt": 1678331019273,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331019273,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "sendMessage",
+  "slug": "send-message",
+  "operationRelativeTypescriptFilePath": "src/sendMessage.ts",
+  "type": {
+    "rawType": "(person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person, message: string, config?: import(\"/Users/clarity/os/operations/tools/control-web/communication-wrapper/src/types\").SendMessageConfig | undefined) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  person: Person,\n  message: string,\n  config?: SendMessageConfig\n) => {\n  const preferredChannel = config?.preferredChannel || \"whatsapp\";\n\n  // get the channels to try in the right order\n  const channelsToTry = [\n    preferredChannel,\n    ...availableMessagingChannels.filter((x) => x === preferredChannel),\n  ];\n\n  const result = await channelsToTry.reduce(\n    async (promiseSuccess, messageChannel) => {\n      const isSuccessful = await promiseSuccess;\n\n      if (isSuccessful) {\n        return true;\n      }\n\n      // if not successful yet, try it.\n      const newTry = await trySendMessage(\n        person,\n        message,\n        messageChannel,\n        config\n      );\n\n      return newTry.isSuccessful;\n    },\n    new Promise<boolean>((resolve) => resolve(false))\n  );\n\n  return { isSuccessful: result };\n}",
+  "description": "General purpose function to send a person a message.\nCan send a whatsapp message, email, or sms.\nBased on your config, it determines the channels to try, and in which order to try them.",
+  "id": "yopwwfyrfxtukncthfjvmxig"
+}

@@ -1,0 +1,109 @@
+{
+  "createdAt": 1670059190352,
+  "updatedAt": 1670059190352,
+  "deletedAt": 0,
+  "createdFirstAt": 1670059190352,
+  "name": "share",
+  "version": "1.0.0",
+  "main": "./build/esm/index.js",
+  "source": "./src/index.ts",
+  "types": "./build/esm/index.d.ts",
+  "files": [
+    "/build"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.8.4"
+  },
+  "peerDependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "npx tsc-watch --onSuccess 'yarn css'",
+    "wcss": "tailwindcss -w -o css.css",
+    "css": "tailwindcss -o css.css"
+  },
+  "operation": {
+    "hasGeneratedDependenciesIndexed": false,
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": [],
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/clarity/os/operations/tools/user-interfaces/gui/wise/share/src/Shareable.tsx. Error: Error: Unknown type \"function\""
+      ]
+    },
+    "lastRebuildAt": 1673860755818,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 5,
+        "lines": 278,
+        "characters": 8605,
+        "bytes": 8605
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 134,
+        "characters": 3540,
+        "bytes": 3540
+      },
+      "textSize": {
+        "numberOfFiles": 3,
+        "lines": 126,
+        "characters": 3378,
+        "bytes": 3378
+      },
+      "size": {
+        "bytes": 15523,
+        "characters": 15523,
+        "lines": 538,
+        "numberOfFiles": 10
+      }
+    },
+    "folderNameIndexed": "share",
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/gui/wise",
+    "classificationIndexed": "ui-esm",
+    "coreDependenciesIndexed": [
+      "useEffect",
+      "useEffect",
+      "useState",
+      "useEffect",
+      "useRef",
+      "useState"
+    ],
+    "operationDependenciesIndexed": [
+      "queries",
+      "ClickableIcon",
+      "Div",
+      "useAlert",
+      "useModal",
+      "FunctionForm",
+      "errorToast",
+      "RealApiReturnType",
+      "ClickableIcon",
+      "api"
+    ],
+    "packageDependenciesIndexed": []
+  },
+  "dependencies": {
+    "api": "0.0.1",
+    "api-types": "0.0.1",
+    "clickable-icon": "0.0.1",
+    "cool-toast": "0.0.0",
+    "function-form": "0.0.1",
+    "html2canvas": "^1.4.1",
+    "react": "*",
+    "react-with-native": "1.4.9",
+    "react-with-native-alert": "1.0.33",
+    "react-with-native-modal": "1.0.60",
+    "use-react-screenshot": "^3.0.0"
+  },
+  "slug": "share",
+  "id": "xuznentfkkennkrlzrcqilwx"
+}

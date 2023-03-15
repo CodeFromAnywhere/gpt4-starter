@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677580494177,
+  "updatedAt": 1677580494177,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580494177,
+  "id": "namedparameterstypeof-getfilefunctions",
+  "name": "NamedParameters<typeof getFileFunctions>",
+  "slug": "namedparameterstypeof-getfilefunctions",
+  "operationRelativeTypescriptFilePath": "src/getFileFunctions.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getFileFunctions>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

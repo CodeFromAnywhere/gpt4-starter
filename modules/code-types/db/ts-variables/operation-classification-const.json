@@ -1,0 +1,24 @@
+{
+  "createdAt": 1676841865648,
+  "updatedAt": 1676841865648,
+  "deletedAt": 0,
+  "createdFirstAt": 1676841865648,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "operationClassificationConst",
+  "slug": "operation-classification-const",
+  "operationRelativeTypescriptFilePath": "src/OperationClassification.ts",
+  "type": {
+    "rawType": "readonly [\"cjs\", \"ts\", \"esm\", \"node-cjs\", \"node-esm\", \"node-ts\", \"server-cjs\", \"ui-web\", \"ui-app\", \"ui-ts\", \"ui-cjs\", \"ui-esm\"]",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "[\n  // general\n  \"cjs\",\n  \"ts\",\n  \"esm\",\n\n  // backend\n  \"node-cjs\",\n  \"node-esm\",\n  \"node-ts\",\n  \"server-cjs\",\n\n  // frontend\n  \"ui-web\",\n  \"ui-app\",\n  \"ui-ts\",\n  \"ui-cjs\",\n  \"ui-esm\",\n] as const",
+  "description": "",
+  "id": "rxepdmrtkbzlgsjdjsdpptbt"
+}

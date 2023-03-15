@@ -1,0 +1,31 @@
+{
+  "createdAt": 1673852994977,
+  "updatedAt": 1673852994977,
+  "deletedAt": 0,
+  "createdFirstAt": 1673852994977,
+  "id": "credit",
+  "name": "Credit",
+  "slug": "credit",
+  "operationRelativeTypescriptFilePath": "src/later.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "number"
+    },
+    "simplifiedSchema": {
+      "type": "number"
+    },
+    "typeCoverage": 0,
+    "rawType": "Credit",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

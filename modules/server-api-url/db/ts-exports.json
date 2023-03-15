@@ -1,0 +1,62 @@
+[
+  {
+    "createdAt": 1673794791291,
+    "updatedAt": 1673794791291,
+    "deletedAt": 0,
+    "createdFirstAt": 1673794791291,
+    "name": "apiUrl",
+    "slug": "api-url",
+    "operationRelativeTypescriptFilePath": "src/apiUrl.ts",
+    "comments": [],
+    "type": "value",
+    "id": "lrybberdhnecqdkkslfaqreu"
+  },
+  {
+    "createdAt": 1673794791291,
+    "updatedAt": 1673794791291,
+    "deletedAt": 0,
+    "createdFirstAt": 1673794791291,
+    "name": "apiUrl",
+    "slug": "api-url",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "iztahjuuertfyzedlhqvylrs"
+  },
+  {
+    "createdAt": 1673794791291,
+    "updatedAt": 1673794791291,
+    "deletedAt": 0,
+    "createdFirstAt": 1673794791291,
+    "name": "isDev",
+    "slug": "is-dev",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "vhrqcsrinolxqzfzwklruiix"
+  },
+  {
+    "createdAt": 1673794791291,
+    "updatedAt": 1673794791291,
+    "deletedAt": 0,
+    "createdFirstAt": 1673794791291,
+    "name": "isDev",
+    "slug": "is-dev",
+    "operationRelativeTypescriptFilePath": "src/isDev.native.ts",
+    "comments": [],
+    "type": "value",
+    "id": "bfskgwkhgcxvlonkjhvoxrzh"
+  },
+  {
+    "createdAt": 1673794791291,
+    "updatedAt": 1673794791291,
+    "deletedAt": 0,
+    "createdFirstAt": 1673794791291,
+    "name": "isDev",
+    "slug": "is-dev",
+    "operationRelativeTypescriptFilePath": "src/isDev.ts",
+    "comments": [],
+    "type": "value",
+    "id": "hzszupmgtbtdwtuhgibtctsw"
+  }
+]

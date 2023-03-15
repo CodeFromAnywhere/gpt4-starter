@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678330459119,
+  "updatedAt": 1678330459119,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330459119,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getNavigationWithContext",
+  "slug": "get-navigation-with-context",
+  "operationRelativeTypescriptFilePath": "src/getNavigationWithContext.ts",
+  "type": {
+    "rawType": "{ (functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext, config: { customProjectRelativeBaseFolderPath?: string | undefined; queryPath: string; }): Promise<{ isSuccessful: boolean; message?: string | undefined; navigation?: import(\"/Users/clarity/os/operations/tools/ai/ai-types/build/FolderContent\").FolderContent[] | undefined; canRead?: boolean | undefined; canWrite?: boolean | undefined; projectRelativeFolderPath?: string | undefined; projectRelativeFilePath?: string | undefined; queryIsFolder?: boolean | undefined; }>; config: { isPublic: boolean; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPublic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isPublic"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  config: {\n    /**\n     * If defined, queryPath should be relative to this one. Should only be allowed for admin.\n     */\n    customProjectRelativeBaseFolderPath?: string;\n    /**\n     * QueryPath as in the URL, should be a relative path from the projectRoot (or to `customAbsoluteBaseFolderPath`, if defined)\n     */\n    queryPath: string;\n  }\n): Promise<{\n  isSuccessful: boolean;\n  message?: string;\n  navigation?: FolderContent[];\n  canRead?: boolean;\n  canWrite?: boolean;\n  projectRelativeFolderPath?: string;\n  projectRelativeFilePath?: string;\n  queryIsFolder?: boolean;\n}> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No projectroot\" };\n  }\n  const executionId = generateUniqueId();\n  const performance: (PerformanceItem | undefined)[] = [];\n  getNewPerformance(\"start\", executionId, true);\n\n  const { customProjectRelativeBaseFolderPath, queryPath } = config;\n  const queryInfo = await getQueryInfo(config);\n\n  if (!queryInfo.isSuccessful || !queryInfo.result) {\n    return { isSuccessful: false, message: queryInfo.message };\n  }\n\n  const { projectRelativeFolderPath, projectRelativeFilePath, queryIsFolder } =\n    queryInfo.result;\n  const absoluteFolderPath = path.join(projectRoot, projectRelativeFolderPath);\n  // NB: should include public and inferred groups...\n  const groupSlugs = functionContext.groups?.map((x) => x.slug) || [];\n\n  const authorization = await getFsAuthorizationWithContext(\n    functionContext,\n    projectRelativeFolderPath\n  );\n\n  if (!authorization.canRead) {\n    return { isSuccessful: false, message: \"You have no access\" };\n  }\n\n  performance.push(getNewPerformance(\"before\", executionId));\n\n  const navigation = await getFolderFileCollections(\n    absoluteFolderPath,\n    projectRoot,\n    groupSlugs\n  );\n\n  performance.push(getNewPerformance(\"navigation\", executionId));\n\n  //console.log({ performance, queryPath });\n  cleanupTimer(executionId);\n\n  return {\n    isSuccessful: true,\n    navigation,\n    canRead: authorization.canRead,\n    canWrite: authorization.canWrite,\n    projectRelativeFolderPath,\n    projectRelativeFilePath,\n    queryIsFolder,\n  };\n}",
+  "description": "DONE:\n\n- ✅ Test If a file/folder doesn't exist, it shows it weirdly as if it were a folder. This should not happen\n- ✅ fix the rest.\n- ✅ get MarkdownIndex, even if the file collection filter filters out the md file.\n- ✅ ensure `getFolderFileCollection` works\n- ✅ generateSdkOperations\n- ✅ folders arent' found!!! Fix this\n- ✅ name of file should be with the most prominent extension, but sometimes not even needed. this should be super custom\n- ✅ confirm that authorizations work correctly. for now, only admin can use explorer and other search... all roles can use `getNavigationWithContext`",
+  "id": "wrdtclrpavzygjelwldttucl"
+}

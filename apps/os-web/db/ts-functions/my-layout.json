@@ -1,0 +1,77 @@
+{
+  "createdAt": 1678041712170,
+  "updatedAt": 1678041712170,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041712170,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/components/MyLayout.tsx",
+  "commentsInside": [],
+  "rawText": " (props: {\n  NextPage: React.ReactNode;\n  pageProps: any;\n}) => {\n  const { NextPage, pageProps } = props;\n  const queryPathsQuery = queries.useGetFunctionQueryPaths();\n  const router = useRouter();\n  //const { isOffline } = usePing();\n  // if (isOffline) {\n  //   router.push(\"/settings\");\n  // }\n\n  // NB: first path before / (can be function/* or database/*)\n  const page = router.asPath.split(\"/\")[1];\n\n  const menu = queryPathsQuery.data?.result;\n  const functionMenuProps = {\n    isLoading: queryPathsQuery.isLoading,\n    webPagesFlat: menu?.flat,\n    webPagesNested: menu?.nested,\n  };\n\n  const items = [\n    { label: \"🪺 Nested\", value: \"nested\" },\n    { label: \"⚡️ Operaton-based\", value: \"operation\" },\n    { label: \"👩‍🌾 Flat\", value: \"flat\" },\n  ];\n  const [SelectMenu, menuType] = useSelect(items, items[0]);\n\n  const dbMenuQuery = queries.useGetNestedDatabaseMenu({\n    noOperationName: menuType?.value === \"flat\",\n    noOperationPath: menuType?.value !== \"nested\",\n    noSrcRelativeFolder: menuType?.value !== \"nested\",\n    noPrefix: true,\n  });\n\n  const { flat, nested } = destructureOptionalObject(dbMenuQuery.data?.result);\n\n  const dbMenuProps = {\n    // NB: passionfruit wants this xD just make a layoutconfig in the PublicBundleConfig, or make it editable per user (later)\n    // menuPosition: \"left\",\n    menuHeader: () => {\n      return <SelectMenu />;\n    },\n    isLoading: dbMenuQuery.isLoading,\n    webPagesFlat: flat,\n    webPagesNested: nested,\n  };\n\n  const menuProps =\n    page === \"database\"\n      ? dbMenuProps\n      : page === \"function\"\n      ? functionMenuProps\n      : undefined;\n\n  return (\n    <AuthenticationLayout\n      pageProps={pageProps}\n      nextPage={NextPage}\n      menu={menuProps}\n      customMenu={menuProps ? undefined : <Explorer />}\n    />\n  );\n}",
+  "name": "MyLayout",
+  "slug": "my-layout",
+  "parameters": [
+    {
+      "name": "props",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "pageProps": {},
+          "nextPage": {}
+        },
+        "required": [
+          "pageProps",
+          "nextPage"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "pageProps",
+            "required": true,
+            "schema": {
+              "properties": [],
+              "type": "object"
+            }
+          },
+          {
+            "name": "nextPage",
+            "required": true,
+            "schema": {
+              "properties": [],
+              "type": "object"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 1801,
+    "lines": 65,
+    "bytes": 1813,
+    "bytesPerCharacter": 1.0066629650194336,
+    "charactersPerLine": 28,
+    "linesPerFile": 65,
+    "numberOfFiles": 1
+  },
+  "id": "ruzhxwhzeqqukwkfywwhqayw"
+}

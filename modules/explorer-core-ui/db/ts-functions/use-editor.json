@@ -1,0 +1,72 @@
+{
+  "createdAt": 1678369265119,
+  "updatedAt": 1678369265119,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369265119,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/useEditor.ts",
+  "commentsInside": [],
+  "rawText": " () => {\n  const queryPath = useQueryPath();\n  const meQuery = queries.useGetMeWithContext();\n  const fileCollectionQuery =\n    queries.useGetFileCollectionWithContext(queryPath);\n  const result = {\n    isLoading: fileCollectionQuery.isLoading || meQuery.isLoading,\n    refetch: () => {\n      fileCollectionQuery.refetch();\n      meQuery.refetch();\n    },\n  };\n  return result;\n}",
+  "name": "useEditor",
+  "slug": "use-editor",
+  "parameters": [],
+  "description": "Useful hook to make a site dynamic for people that can have isEdit access",
+  "returnType": {
+    "rawType": "{ isLoading: boolean; refetch: () => void; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "isLoading": {
+          "type": "boolean"
+        },
+        "refetch": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      "required": [
+        "isLoading",
+        "refetch"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "isLoading",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "refetch",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 452,
+    "lines": 14,
+    "bytes": 452,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 32,
+    "linesPerFile": 14,
+    "numberOfFiles": 1
+  },
+  "id": "qveoikzenfjsbsqjseyzpgsn"
+}

@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678330224026,
+  "updatedAt": 1678330224026,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330224026,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "diaryToInstagram",
+  "slug": "diary-to-instagram",
+  "operationRelativeTypescriptFilePath": "src/prompts.ts",
+  "type": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "async (\n  selectionContent: string,\n  isDeferred?: boolean\n) => {\n  const result = await processChatGptPrompt({\n    isDeferred,\n    contextualPromptSlug: \"diary-to-instagram\",\n    selectionContent,\n  });\n\n  return result;\n}",
+  "description": "",
+  "id": "syyziohypkjujhmgretcwqef"
+}

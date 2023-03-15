@@ -1,0 +1,52 @@
+[
+  {
+    "createdAt": 1678041592657,
+    "updatedAt": 1678041592657,
+    "deletedAt": 0,
+    "createdFirstAt": 1678041592657,
+    "name": "BackendAsset",
+    "slug": "backend-asset",
+    "module": "./BackendAsset",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/Asset.ts",
+    "classification": "internal",
+    "isAbsolute": false,
+    "isModuleFromMonorepo": false,
+    "id": "vyhubcxzjxmotwmzxtewvasy"
+  },
+  {
+    "createdAt": 1678041592657,
+    "updatedAt": 1678041592657,
+    "deletedAt": 0,
+    "createdFirstAt": 1678041592657,
+    "name": "DefaultModelType",
+    "slug": "default-model-type",
+    "type": "value",
+    "module": "model-types",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/Download.ts",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "utajgvlfeefnydurmmrjghey"
+  },
+  {
+    "createdAt": 1678041592657,
+    "updatedAt": 1678041592657,
+    "deletedAt": 0,
+    "createdFirstAt": 1678041592657,
+    "name": "DefaultModelType",
+    "slug": "default-model-type",
+    "type": "value",
+    "module": "model-types",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/OpenFile.ts",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "gmqmtcrwtckmpbitggvwtflh"
+  }
+]

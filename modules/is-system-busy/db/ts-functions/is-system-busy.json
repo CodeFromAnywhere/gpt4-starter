@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678330721538,
+  "updatedAt": 1678330721538,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330721538,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/isSystemBusy.ts",
+  "commentsInside": [],
+  "rawText": " async (): Promise<boolean> => {\n  const percentage = await new Promise<number>((resolve) =>\n    cpuUsage((percentage) => resolve(percentage))\n  );\n\n  return percentage > 0.75;\n\n  //    This is not useful enough....\n  //   console.dir(\n  //     {\n  //       cpus: cpus(),\n  //       totalmem: totalmem(),\n  //       freemem: freemem(),\n  //       load: loadavg(),\n  //     },\n  //     { depth: 99 }\n  //   );\n}",
+  "name": "isSystemBusy",
+  "slug": "is-system-busy",
+  "parameters": [],
+  "description": "Promises `true` if system is using more than 75% of CPU",
+  "returnType": {
+    "rawType": "Promise<boolean>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 465,
+    "lines": 18,
+    "bytes": 465,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 18,
+    "numberOfFiles": 1
+  },
+  "id": "ofpcbykupecgtudwazhsvrso"
+}

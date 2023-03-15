@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330588058,
+  "updatedAt": 1678330588058,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330588058,
+  "id": "namedparameterstypeof-issystemusingbattery",
+  "name": "NamedParameters<typeof isSystemUsingBattery>",
+  "slug": "namedparameterstypeof-issystemusingbattery",
+  "operationRelativeTypescriptFilePath": "src/isSystemUsingBattery.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof isSystemUsingBattery>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

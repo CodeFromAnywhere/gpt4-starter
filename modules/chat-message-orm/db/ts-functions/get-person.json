@@ -1,0 +1,63 @@
+{
+  "createdAt": 1678505780692,
+  "updatedAt": 1678505780692,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505780692,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/insertPerson.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  key: PersonIndex,\n  value: string\n): Promise<Person | null> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return null;\n  }\n\n  // step 1: get the keyValue store for the key if it's not already slug\n  const slug = await getPersonSlug(projectRoot, key, value);\n  if (!slug) {\n    return null;\n  }\n  // step 2: with the gained slug, return the person via the right path\n  const person = await readJsonFile<Person>(getPersonPath(projectRoot, slug));\n\n  return person;\n}",
+  "name": "getPerson",
+  "slug": "get-person",
+  "parameters": [
+    {
+      "name": "key",
+      "schema": {
+        "$ref": "#/definitions/PersonIndex"
+      },
+      "simplifiedSchema": {
+        "enum": [
+          "id",
+          "phoneNumber",
+          "email",
+          "slug"
+        ],
+        "fullComment": "",
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "value",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "More performant way to find a person\n\nTODO: if we're going to use this, it's super important to ensure we can replace all current queries with this.",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person | null>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 648,
+    "lines": 21,
+    "bytes": 648,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 31,
+    "linesPerFile": 21,
+    "numberOfFiles": 1
+  },
+  "id": "aqwyjdrcjzsaobugeauunimq"
+}

@@ -1,0 +1,56 @@
+{
+  "createdAt": 1678042875047,
+  "updatedAt": 1678042875047,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042875047,
+  "isApiExposed": false,
+  "name": "docxToMd",
+  "slug": "docx-to-md",
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/docxToMd.ts",
+  "commentsInside": [],
+  "description": "",
+  "parameters": [
+    {
+      "name": "absoluteDocxFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "isForce",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    }
+  ],
+  "returnType": {
+    "rawType": "Promise<{ isSuccessful: boolean; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "size": {
+    "characters": 1340,
+    "lines": 56,
+    "bytes": 1340,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 24,
+    "linesPerFile": 56,
+    "numberOfFiles": 1
+  },
+  "rawText": "\n\nexport async function docxToMd(\n  absoluteDocxFilePath: string,\n  isForce?: boolean\n): Promise<{\n  isSuccessful: boolean;\n}> {\n  const parsedPath = path.parse(absoluteDocxFilePath);\n  const absoluteMarkdownFilePath = path.join(\n    parsedPath.dir,\n    `${parsedPath.name}.md`\n  );\n\n  if (fs.existsSync(absoluteDocxFilePath) && !isForce) {\n    return { isSuccessful: false };\n  }\n\n  await lock(absoluteDocxFilePath, \"locking\", \"docxToMd\", [\n    absoluteDocxFilePath,\n    isForce,\n  ]);\n\n  try {\n    const result = await new Promise<{ isSuccessful: boolean; message?: any }>(\n      async (resolve, reject) => {\n        mammoth\n          .extractRawText({ path: absoluteDocxFilePath })\n          .then(async (result) => {\n            const fullText = `---\nisSource: false\ncreatedAt: ${Date.now()}\nsource: docxToMd\n---\n\n${result.value}`;\n\n            await fs.writeFile(absoluteMarkdownFilePath, fullText, \"utf8\");\n            resolve({ isSuccessful: true });\n          })\n          .catch((reason) => {\n            resolve({ isSuccessful: false, message: reason });\n          });\n      }\n    );\n    await unlock(absoluteDocxFilePath);\n\n    return result;\n  } catch (e) {\n    await lockError(absoluteDocxFilePath, String(e), undefined, \"docxToMd\", [\n      absoluteDocxFilePath,\n      isForce,\n    ]);\n    return { isSuccessful: false };\n  }\n}",
+  "maxIndentationDepth": 6,
+  "id": "vdxidobqgqxtitzyuuuuabke"
+}

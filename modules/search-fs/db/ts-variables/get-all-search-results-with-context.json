@@ -1,0 +1,113 @@
+{
+  "createdAt": 1678331587975,
+  "updatedAt": 1678331587975,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331587975,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getAllSearchResultsWithContext",
+  "slug": "get-all-search-results-with-context",
+  "operationRelativeTypescriptFilePath": "src/getAllSearchResultsWithContext.ts",
+  "type": {
+    "rawType": "{ (functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext, query: string | null): Promise<import(\"/Users/clarity/os/operations/tools/purpose/search/search-types/build/SearchResult\").SearchResult[]>; config: { authorizations: { cfa: string; public: string; }; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "authorizations": {
+              "type": "object",
+              "properties": {
+                "cfa": {
+                  "type": "string",
+                  "allOf": [
+                    {
+                      "transform": [
+                        "trim"
+                      ]
+                    },
+                    {
+                      "minLength": 1
+                    }
+                  ]
+                },
+                "public": {
+                  "type": "string",
+                  "allOf": [
+                    {
+                      "transform": [
+                        "trim"
+                      ]
+                    },
+                    {
+                      "minLength": 1
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "cfa",
+                "public"
+              ]
+            }
+          },
+          "required": [
+            "authorizations"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "authorizations",
+                "required": true,
+                "schema": {
+                  "properties": [
+                    {
+                      "name": "cfa",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "public",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  query: string | null\n): Promise<SearchResult[]> => {\n  const projectRoot = getProjectRoot();\n  if (!query || !projectRoot) return [];\n\n  const groupSlugs = (functionContext.groups || [])\n    .map((x) => x.slug)\n    .concat([\"public\"]);\n  const functions = await getFunctions(query, groupSlugs);\n  const files = await getExplorableFilesWithContext(functionContext);\n  const dbModels = await getExplorableDbModels(query, groupSlugs);\n\n  return [...dbModels, ...functions, ...files];\n}",
+  "description": "Searches filepaths, then links to any `ui-web` that has this file available as a page, or VSCode.\n\nFor this we need to get the `MarkdownReaderPage` and other pages that are available in ui's and see the files they are linked to.\n\nI want to be able to:\n\n- search functions, interfaces, variables\n- search operations\n- search markdown files, anywhere\n- search db-ui models\n\nTODO: Think about other things needed for the search, like LLM queries",
+  "id": "iwqjuzherklxojvpcyhnhrco"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678505772744,
+  "updatedAt": 1678505772744,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505772744,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getChatMessages",
+  "slug": "get-chat-messages",
+  "operationRelativeTypescriptFilePath": "src/getChatMessages.ts",
+  "type": {
+    "rawType": "(personSlug: string, personaSlug: string, fromDate?: any, untilDate?: any) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/social-media/social-media-types/build/ChatMessage\").ChatMessage[]>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  personSlug: string,\n  personaSlug: string,\n  /**\n   * Uses the date from midnight, doesn't take into account the time.\n   *\n   * If not given, uses todays date.\n   */\n  fromDate = Date.now(),\n  /**\n   * Uses the date from midnight, doesn't take into account the time\n   *\n   * If not given, uses todays date\n   */\n  untilDate = Date.now()\n): Promise<ChatMessage[]> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) return [];\n\n  // step 1: get all dates between fromDate and untilDate as yyyy-mm-dd[]\n  const datesArray = getDatesArray(fromDate, untilDate);\n\n  // step 2: make absolute paths where the file should be\n  const pathsArray = datesArray.map((dateString) =>\n    getChatMessagesPath(projectRoot, personSlug, personaSlug, dateString)\n  );\n\n  // step 3: read all JSON files with those names that exist\n  const jsonsArray = await Promise.all(\n    pathsArray.map((absoluteJsonPath) =>\n      readJsonFile<ChatMessage[]>(absoluteJsonPath)\n    )\n  );\n\n  // step 4: add the ones that were successfully read together\n  const json = jsonsArray.filter(notEmpty).flat();\n\n  return json;\n}",
+  "description": "Ensure the chat is stored per `Person.slug`, per `Persona.slug` and per date (`yyyy-mm-dd`). VERY IMPORTANT TO SCALE THIS.\n\nExample location:\n\n`os/knowledge/persons/[slug]/chat-messages/[persona-slug]/[yyyy-mm-dd].json`.\n\nTODO: in case it's a message for a group:\n\n`os/knowledge/groups/[slug]/chat-messages/[persona-slug]/[yyyy-mm-dd].json`.",
+  "id": "boriznmffiksughjwzlmtrtw"
+}

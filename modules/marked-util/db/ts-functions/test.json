@@ -1,0 +1,35 @@
+{
+  "createdAt": 1674033624300,
+  "updatedAt": 1674033624300,
+  "deletedAt": 0,
+  "createdFirstAt": 1674033624300,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/findJsonInMarkdown.test.ts",
+  "commentsInside": [],
+  "rawText": " () => {\n  const result1 = findJsonInMarkdown<{ name: string }>(\n    '\\n    \\n`{\"name\": \"Grolloerstraat\"}`'\n  );\n  const result2 = findJsonInMarkdown<{ name: string }>(\n    '\\n\\n`{\"name\":\"screen-recording-1672931879041-no-transcription\"}`'\n  );\n\n  const result3 = findJsonInMarkdown<{ name: string }>(\n    ' Here is an example:\\n    \\n    `{\"name\":\"auto_waiting\"}`\\n'\n  );\n\n  const result4 = findJsonInMarkdown<{ name: string }>(\n    '\\n    \\nAnswer: {\"name\": \"just-hello\"}'\n  );\n\n  console.log({ result1, result2, result3, result4 });\n}",
+  "name": "test",
+  "slug": "test",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "void",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 537,
+    "lines": 18,
+    "bytes": 537,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 30,
+    "linesPerFile": 18,
+    "numberOfFiles": 1
+  },
+  "id": "bjaicrurvelvbyovbowfbtbr"
+}

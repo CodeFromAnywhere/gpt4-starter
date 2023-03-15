@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678329849353,
+  "updatedAt": 1678329849353,
+  "deletedAt": 0,
+  "createdFirstAt": 1678329849353,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/upsertDevice.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  serverContext: Context\n): Promise<Storing<Device> | undefined> => {\n  // in your function\n  const executionId = generateUniqueId();\n  const performance: (PerformanceItem | undefined)[] = [];\n\n  performance.push(getNewPerformance(\"start\", executionId, true));\n\n  const authToken: string | undefined = serverContext.data?.authToken;\n  const ip = serverContext.ip;\n\n  if (!authToken || authToken.length < 24) {\n    console.log(\"warn upsert device: no authToken\");\n    return;\n  }\n\n  // NB: range: [ <low bound of IP block>, <high bound of IP block> ], the rest is described in the type interface\n  // const ipLookup = (geoip.lookup(ip) || {}) as Partial<geoip.Lookup>;\n  // const {\n  //   city,\n  //   area: positionRadiusKm,\n  //   ll,\n  //   country,\n  //   region,\n  //   timezone,\n  // } = ipLookup;\n\n  // const position: Position | undefined =\n  //   !!ll?.[0] && !!ll?.[1] ? { latitude: ll[0], longitude: ll[1] } : undefined;\n\n  const userAgentString = serverContext.req.get(\"User-Agent\");\n  const userAgent: IResult = parseUserAgent(userAgentString);\n\n  // const ipInfo: IPInfo = {\n  //   ip,\n  //   city,\n  //   position,\n  //   positionRadiusKm,\n  //   country,\n  //   region,\n  //   timezone,\n  // };\n\n  const origin = serverContext.req.get(\"Origin\") as string;\n  const referer = serverContext.req.get(\"Referrer\") as string;\n\n  const dbPath = getRootPath(\"db\");\n  if (!dbPath) return;\n  const deviceFilePath = path.join(dbPath, \"devices\", `${authToken}.json`);\n\n  const exists = fs.existsSync(deviceFilePath);\n\n  const deviceBefore: Storing<Device> | null = exists\n    ? await readJsonFile<Storing<Device>>(deviceFilePath)\n    : null;\n\n  const newDevice: Storing<Device> | null = !exists\n    ? {\n        authToken,\n        authenticationMethods: [],\n        ip,\n        createdAt: Date.now(),\n        createdFirstAt: Date.now(),\n        deletedAt: 0,\n        id: authToken,\n        lastOnlineAt: Date.now(),\n        name: authToken,\n        updatedAt: Date.now(),\n        userAgentString: userAgentString || \"no useragent\",\n      }\n    : null;\n\n  if (newDevice) {\n    await writeJsonToFile(deviceFilePath, newDevice);\n  }\n\n  //savePageVisit(authToken, {ip}, referer);\n\n  // attach persons and groups\n  const groups = await db.get(\"Group\");\n  const persons = (await db.get(\"Person\"))\n    .filter((x) => deviceBefore?.personIds?.includes(x.id))\n    .map((person) => personAttachInheritedGroups(person, groups));\n\n  //get the current person\n  const currentPersonCalculated: Person | undefined = persons.find(\n    (x) => x.id === deviceBefore?.currentPersonId\n  );\n\n  const augmentedDevice: Storing<Device> = deviceBefore\n    ? { ...deviceBefore, persons, currentPersonCalculated }\n    : newDevice!;\n\n  return augmentedDevice;\n}",
+  "name": "upsertDevice",
+  "slug": "upsert-device",
+  "parameters": [],
+  "description": "Returns device with all attached (logged in) `Person`s, and `currentPersonCalculated`\n\nEither finds the device and updates it according to the new request metadata, or creates a new device.\n\nShould never return `undefined` if the database functions...\n\nTODO: Use cookies (https://serverjs.io/documentation/reply/#cookie-) to login\n\nNeeded for having `authToken` with GET as well in a safe manner (e.g. for images)",
+  "returnType": {
+    "rawType": "Promise<any>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 3155,
+    "lines": 104,
+    "bytes": 3155,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 30,
+    "linesPerFile": 104,
+    "numberOfFiles": 1
+  },
+  "id": "wprbftwgdmasogkswoxtjbwd"
+}

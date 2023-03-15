@@ -1,0 +1,35 @@
+{
+  "createdAt": 1677580326326,
+  "updatedAt": 1677580326326,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580326326,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/deleteDbModel.ts",
+  "commentsInside": [],
+  "rawText": " async <KInterface extends DbModelEnum>(\n  functionContext: FunctionContext,\n  interfaceName: KInterface,\n  id: string\n): Promise<DbQueryResult> => {\n  const canDelete = await hasDataPermissions(functionContext, interfaceName, [\n    \"d\",\n  ]);\n\n  if (!canDelete) {\n    return {\n      isSuccesful: false,\n      message: \"You don't have the delete permission for this model\",\n    };\n  }\n\n  const deleteResult = await db.remove(\n    interfaceName,\n    (content) => content.id === id\n  );\n  return deleteResult;\n}",
+  "name": "deleteDbModelWithContext",
+  "slug": "delete-db-model-with-context",
+  "parameters": [],
+  "description": "deletes an instance of an db data interface from the db in a typesafe way",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/database/fs-orm/build/types\").DbQueryResult>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 582,
+    "lines": 22,
+    "bytes": 582,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 22,
+    "numberOfFiles": 1
+  },
+  "id": "xkjdxklrodayrvivpyvrngws"
+}

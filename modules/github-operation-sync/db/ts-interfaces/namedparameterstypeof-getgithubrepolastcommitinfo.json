@@ -1,0 +1,60 @@
+{
+  "createdAt": 1673794217183,
+  "updatedAt": 1673794217183,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794217183,
+  "id": "namedparameterstypeof-getgithubrepolastcommitinfo",
+  "name": "NamedParameters<typeof getGithubRepoLastCommitInfo>",
+  "slug": "namedparameterstypeof-getgithubrepolastcommitinfo",
+  "operationRelativeTypescriptFilePath": "src/getGithubRepoLastCommitInfo.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "repoName": {
+          "type": "string"
+        },
+        "personalAccessToken": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "repoName",
+        "personalAccessToken"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "repoName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "personalAccessToken",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getGithubRepoLastCommitInfo>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

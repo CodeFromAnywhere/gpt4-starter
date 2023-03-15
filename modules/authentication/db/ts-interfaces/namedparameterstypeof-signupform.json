@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677581991037,
+  "updatedAt": 1677581991037,
+  "deletedAt": 0,
+  "createdFirstAt": 1677581991037,
+  "id": "namedparameterstypeof-signupform",
+  "name": "NamedParameters<typeof SignupForm>",
+  "slug": "namedparameterstypeof-signupform",
+  "operationRelativeTypescriptFilePath": "src/SignupForm.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof SignupForm>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

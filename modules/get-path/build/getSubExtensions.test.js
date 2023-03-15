@@ -1,0 +1,4 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var getSubExtensions_1=require("./getSubExtensions"),test=function(){
+//   getSubExtensions(absolutePath).includes(temporaryConvertedSubextension)   ,
+console.log((0,getSubExtensions_1.getSubExtensions)("/Users/king/King/assets/recordings/1673244762157.converted.mp3")),console.log((0,getSubExtensions_1.getSubExtensions)("/Users/king/King/assets/recordings/1673244762157.transcription.mp3")),console.log((0,getSubExtensions_1.getSubExtensions)("/Users/king/King/assets/recordings/1673244762157.Transcription.mp3")),console.log((0,getSubExtensions_1.getSubExtensions)("/Users/king/King/assets/recordings/1673244762157.android.ios.mp3")),console.log((0,getSubExtensions_1.getSubExtensions)("/Users/king/King/assets/recordings/1673244762157.walla.walla.watch.this.3.mp3"))};test();
+//# sourceMappingURL=getSubExtensions.test.js.map

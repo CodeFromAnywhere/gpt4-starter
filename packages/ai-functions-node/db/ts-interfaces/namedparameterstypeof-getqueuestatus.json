@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330238928,
+  "updatedAt": 1678330238928,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330238928,
+  "id": "namedparameterstypeof-getqueuestatus",
+  "name": "NamedParameters<typeof getQueueStatus>",
+  "slug": "namedparameterstypeof-getqueuestatus",
+  "operationRelativeTypescriptFilePath": "src/queue/getQueueStatus.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getQueueStatus>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

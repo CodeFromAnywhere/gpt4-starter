@@ -1,0 +1,109 @@
+{
+  "createdAt": 1668687823467,
+  "updatedAt": 1668687823467,
+  "deletedAt": 0,
+  "createdFirstAt": 1668687823467,
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "name": "watch-all",
+  "operation": {
+    "hasGeneratedDependenciesIndexed": true,
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": [],
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/clarity/os/operations/tools/control-project/watch-all/src/getQueueItems.ts. Error: Error: Unknown type \"function\""
+      ]
+    },
+    "lastRebuildAt": 1677579261051,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 5,
+        "lines": 278,
+        "characters": 7592,
+        "bytes": 7592
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 136,
+        "characters": 4091,
+        "bytes": 4091
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 131,
+        "characters": 2775,
+        "bytes": 2775
+      },
+      "size": {
+        "bytes": 14458,
+        "characters": 14458,
+        "lines": 545,
+        "numberOfFiles": 9
+      }
+    },
+    "folderNameIndexed": "watch-all",
+    "relativeOperationLocationPathIndexed": "operations/tools/control-project",
+    "classificationIndexed": "node-cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [
+      "db",
+      "isOnline",
+      "isSystemUsingBattery",
+      "isSystemBusy",
+      "oneByOne",
+      "ProjectWatcher",
+      "WatchEventType",
+      "db",
+      "notEmpty",
+      "explore",
+      "Creation",
+      "oneByOne",
+      "Queue",
+      "ProjectWatcher",
+      "db",
+      "sdk",
+      "TsFunction",
+      "db",
+      "path",
+      "getProjectRoot",
+      "notEmpty",
+      "log",
+      "ProjectWatcher",
+      "db"
+    ],
+    "packageDependenciesIndexed": [
+      "watch"
+    ]
+  },
+  "dependencies": {
+    "fs-util-js": "0.0.1",
+    "log": "0.0.1",
+    "one-by-one": "0.0.1",
+    "get-path": "0.0.1",
+    "chokidar": "*",
+    "database": "0.0.1",
+    "js-util": "0.0.1",
+    "fs-util": "1.0.5",
+    "k-explore": "0.0.2",
+    "queue-types": "0.0.1",
+    "model-types": "0.0.1",
+    "is-online": "0.0.1",
+    "is-system-busy": "0.0.1",
+    "battery": "0.0.1",
+    "function-types": "0.0.1"
+  },
+  "slug": "watch-all",
+  "id": "wdrlkzjoriemaynaejxldjgd"
+}

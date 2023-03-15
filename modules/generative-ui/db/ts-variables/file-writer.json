@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041386838,
+  "updatedAt": 1678041386838,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041386838,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "FileWriter",
+  "slug": "file-writer",
+  "operationRelativeTypescriptFilePath": "src/FileWriter.tsx",
+  "type": {
+    "rawType": "(props: { projectRelativeFilePath: string; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: { projectRelativeFilePath: string }) => {\n  const { projectRelativeFilePath } = props;\n\n  const { renderFileWriter } = useFileWriter({\n    projectRelativeFilePath,\n    hideButtons: true,\n    initialWriterView: \"edit\",\n  });\n\n  return (\n    <Div className=\"flex flex-1 flex-col min-h-[80vh]\">\n      <FileActions projectRelativeFilePath={projectRelativeFilePath} />\n      {renderFileWriter()}\n    </Div>\n  );\n}",
+  "description": "Can probably not stay like this if we want to place the save-button elsewhere.",
+  "id": "nfksehujmatpoiyvwshnlxjw"
+}

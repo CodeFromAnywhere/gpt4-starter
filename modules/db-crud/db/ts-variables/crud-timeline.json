@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677582050037,
+  "updatedAt": 1677582050037,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582050037,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "CrudTimeline",
+  "slug": "crud-timeline",
+  "operationRelativeTypescriptFilePath": "src/crud/CrudTimeline.tsx",
+  "type": {
+    "rawType": "(props: import(\"/Users/clarity/os/operations/tools/user-interfaces/gui/wise/db-crud/src/crud/types\").CrudViewProps) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: CrudViewProps) => {\n  return <Div />;\n}",
+  "description": "",
+  "id": "ylsvwkssyvhskvjldnlxcmns"
+}

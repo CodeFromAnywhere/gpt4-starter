@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678330950928,
+  "updatedAt": 1678330950928,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330950928,
+  "id": "namedparameterstypeof-iswav16bit",
+  "name": "NamedParameters<typeof isWav16bit>",
+  "slug": "namedparameterstypeof-iswav16bit",
+  "operationRelativeTypescriptFilePath": "src/isWav16bit.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absolutePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absolutePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absolutePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof isWav16bit>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1668333623734,
+  "updatedAt": 1668333623734,
+  "deletedAt": 0,
+  "createdFirstAt": 1668333623734,
+  "id": "namedparameterstypeof-userouter",
+  "name": "NamedParameters<typeof useRouter>",
+  "slug": "namedparameterstypeof-userouter",
+  "operationRelativeTypescriptFilePath": "src/useRouter.native.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof useRouter>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

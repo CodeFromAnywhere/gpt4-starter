@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331559766,
+  "updatedAt": 1678331559766,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331559766,
+  "id": "namedparameterstypeof-settingspage",
+  "name": "NamedParameters<typeof SettingsPage>",
+  "slug": "namedparameterstypeof-settingspage",
+  "operationRelativeTypescriptFilePath": "src/SettingsPage.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof SettingsPage>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

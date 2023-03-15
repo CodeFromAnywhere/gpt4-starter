@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041378889,
+  "updatedAt": 1678041378889,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041378889,
+  "id": "namedparameterstypeof-filecollectionpage",
+  "name": "NamedParameters<typeof FileCollectionPage>",
+  "slug": "namedparameterstypeof-filecollectionpage",
+  "operationRelativeTypescriptFilePath": "src/FileCollectionPage.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof FileCollectionPage>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

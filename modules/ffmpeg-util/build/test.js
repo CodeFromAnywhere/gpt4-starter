@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var compressConvert_1=require("./compressConvert");(0,compressConvert_1.compressConvert)("/Users/king/King/knowledge/recordings/codefrombali3.mov",{quality:20,sizeWidthPx:360,targetFormat:"mp4",isDebug:!0});
+//# sourceMappingURL=test.js.map

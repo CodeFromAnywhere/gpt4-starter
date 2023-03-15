@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678331098690,
+  "updatedAt": 1678331098690,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331098690,
+  "id": "namedparameterstypeof-whisper",
+  "name": "NamedParameters<typeof whisper>",
+  "slug": "namedparameterstypeof-whisper",
+  "operationRelativeTypescriptFilePath": "src/whisper.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "personaId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "personaId",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof whisper>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

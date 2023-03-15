@@ -1,0 +1,36 @@
+{
+  "createdAt": 1678041756184,
+  "updatedAt": 1678041756184,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041756184,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "GetStaticProps<QueryPageProps>",
+  "operationRelativeTypescriptFilePath": "src/util/searchGetStaticProps.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  context\n) => {\n  const query = takeFirst(context.params?.query) || null;\n  const projectRoot = getProjectRoot();\n  const searchWebPath = operations[\"os-web\"];\n  const headersPath =\n    projectRoot && searchWebPath\n      ? path.join(projectRoot, searchWebPath, \"public\", \"headers\")\n      : undefined;\n\n  const imagePaths = headersPath ? await fs.readdir(headersPath) : [];\n\n  const timelineItems: {\n    comment: string;\n    filePath: string | undefined;\n    line: number;\n  }[] = []; // = await getTimelineItems();\n\n  const props: QueryPageProps = {\n    query,\n    imagePaths,\n    timelineItems,\n  };\n\n  return {\n    props,\n  };\n}",
+  "name": "searchGetStaticProps",
+  "slug": "search-get-static-props",
+  "parameters": [],
+  "description": "NB: Does not include the search results themselves since they are user-dependent.",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 721,
+    "lines": 29,
+    "bytes": 721,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 29,
+    "numberOfFiles": 1
+  },
+  "id": "lngumjydbnpabrpthmtzfgvc"
+}

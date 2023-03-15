@@ -1,0 +1,88 @@
+{
+  "createdAt": 1678041406849,
+  "updatedAt": 1678041406849,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041406849,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/TextWriter.tsx",
+  "commentsInside": [],
+  "rawText": " (props: {\n  height?: number;\n  text: string;\n  tooltip?: string;\n}) => {\n  const { text, height, tooltip } = props;\n  const [characters, setCharacters] = useState(0);\n  const [showTypeBlock, setShowTypeBlock] = useState(false);\n  useEffect(() => {\n    setInterval(() => setCharacters((chars) => chars + 1), 50);\n    setInterval(() => setShowTypeBlock((show) => !show), 320);\n  }, []);\n\n  return (\n    <P>\n      {text.slice(0, characters)}\n      {showTypeBlock ? \"▋\" : \"▎\"}\n    </P>\n  );\n}",
+  "name": "TextWriter",
+  "slug": "text-writer",
+  "parameters": [
+    {
+      "name": "props",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "height": {
+            "type": "number"
+          },
+          "text": {
+            "type": "string"
+          },
+          "tooltip": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "height",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "text",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tooltip",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 489,
+    "lines": 20,
+    "bytes": 493,
+    "bytesPerCharacter": 1.0081799591002045,
+    "charactersPerLine": 24,
+    "linesPerFile": 20,
+    "numberOfFiles": 1
+  },
+  "id": "uzlcfdkljxcbcsnuzuwpczsv"
+}

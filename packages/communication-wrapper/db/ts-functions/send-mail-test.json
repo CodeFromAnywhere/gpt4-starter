@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678331013782,
+  "updatedAt": 1678331013782,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331013782,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/sendMail.test.ts",
+  "commentsInside": [],
+  "rawText": " () => {\n  sendMail({\n    to: \"wijnandworld@hotmail.com\",\n    subject: \"Login Clarity\",\n    text: \"Yoyoyo your code 123456\",\n  });\n}",
+  "name": "sendMailTest",
+  "slug": "send-mail-test",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "void",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 132,
+    "lines": 7,
+    "bytes": 132,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 19,
+    "linesPerFile": 7,
+    "numberOfFiles": 1
+  },
+  "id": "vtshcebdsjiqcvkjmacauqvf"
+}

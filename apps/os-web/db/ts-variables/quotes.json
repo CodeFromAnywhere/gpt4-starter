@@ -1,0 +1,52 @@
+{
+  "createdAt": 1673641495207,
+  "updatedAt": 1673641495207,
+  "deletedAt": 0,
+  "createdFirstAt": 1673641495207,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "quotes",
+  "slug": "quotes",
+  "operationRelativeTypescriptFilePath": "src/pages/index.tsx",
+  "type": {
+    "rawType": "string[]",
+    "typeDefinition": {
+      "optional": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "allOf": [
+          {
+            "transform": [
+              "trim"
+            ]
+          },
+          {
+            "minLength": 1
+          }
+        ]
+      }
+    },
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "items": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "value": "[\n  // \"A day without coding is a day unlived\",\n  \"Clarity AI is creating a search experience with focus on benefiting humanity, not to sell you stuff\",\n  \"If you want to immerse yourself with AI tools as soon as possible, use Clarity AI\",\n  \"The industrial revolution of AI is at your fingertips\",\n  \"Automate your job and go have fun\",\n]",
+  "description": "",
+  "id": "fybhxopoqzlucaggdygobdol"
+}

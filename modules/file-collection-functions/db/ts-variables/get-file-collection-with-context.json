@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678330449456,
+  "updatedAt": 1678330449456,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330449456,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getFileCollectionWithContext",
+  "slug": "get-file-collection-with-context",
+  "operationRelativeTypescriptFilePath": "src/getFileCollectionWithContext.ts",
+  "type": {
+    "rawType": "{ (functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext, queryPath: string): Promise<{ isSuccessful: boolean; message?: string | undefined; files?: import(\"/Users/clarity/os/operations/tools/control-fs/file-collection-util/build/FileCollectionFile\").FileCollectionFile[] | undefined; markdownIndex?: import(\"/Users/clarity/os/operations/tools/types/markdown-types/build/MarkdownIndex\").MarkdownIndex | undefined; actionStatus?: import(\"/Users/clarity/os/operations/tools/conventions/filename-conventions/build/ActionStatus\").ActionStatus | undefined; queryIsFolder?: boolean | undefined; projectRelativeFilePath?: string | undefined; projectRelativeFolderPath?: string | undefined; }>; config: { isPublic: boolean; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPublic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isPublic"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  /**\n   * file or folder path of which you want to see the file collection\n   */\n  queryPath: string\n): Promise<{\n  isSuccessful: boolean;\n  message?: string;\n  files?: FileCollectionFile[];\n  markdownIndex?: MarkdownIndex;\n  actionStatus?: ActionStatus;\n  queryIsFolder?: boolean;\n  projectRelativeFilePath?: string;\n  projectRelativeFolderPath?: string;\n}> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No project root\" };\n  }\n\n  const {\n    absoluteFileCollectionPaths,\n    projectRelativeFilePath,\n    projectRelativeFolderPath,\n    queryIsFolder,\n  } = await getFileCollectionPathsWithContext(functionContext, queryPath);\n\n  if (!projectRelativeFilePath) {\n    return { isSuccessful: false, message: \"No filepath\" };\n  }\n  if (!absoluteFileCollectionPaths) {\n    return { isSuccessful: false, message: \"No files\" };\n  }\n  const markdownIndex = await getMarkdownIndex(projectRelativeFilePath);\n\n  // TODO: add actionstatus here!\n  const actionStatus = undefined;\n\n  const files: FileCollectionFile[] = await Promise.all(\n    absoluteFileCollectionPaths.map(async (p) => {\n      const parsedPath = path.parse(p);\n\n      const isTextFile = isText(parsedPath.base);\n\n      // TODO: should be code, data, text, image, video, binary, etc. Type might overlap with BackendAsset filetypes\n      const type = getTypeFromUrlOrPath(p);\n      const rawContent = isTextFile ? await fs.readFile(p, \"utf8\") : undefined;\n\n      const file: FileCollectionFile = {\n        projectRelativePath: makeRelative(p, projectRoot),\n        name: parsedPath.base,\n        // TODO: create a function to get all actions that are appliccable on all unique filetypes we have.\n        actions: [],\n        rawContent,\n        type,\n      };\n\n      return file;\n    })\n  );\n  return {\n    isSuccessful: true,\n    message: `Found ${files.length} files`,\n    files,\n    markdownIndex,\n    actionStatus,\n  };\n}",
+  "description": "Returns a file collection as an array of files with either the raw string or a path to download a blob\n\n\n\nTODO: put this back, only for markdown files (they can be augmented). Is this the right place though?\n\n```ts\n\nconst augmentedResult = await augmentMarkdown(fileContentString, {\nfor now no code yet, it's too slow\naugmentCode: false,\naugmentContextualPrompts: false,\naugmentContextualPromptResults: true,\naugmentStatements: true,\naugmentWords: true,\nexternalHost: undefined,\nmarkdown_projectRelativeFilePath: makeRelative(\nfinalAbsolutePath,\nprojectRoot\n),\n});\n```",
+  "id": "yezilttuocnhmbirmrcfcugr"
+}

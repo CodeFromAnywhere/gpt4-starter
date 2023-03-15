@@ -1,0 +1,344 @@
+{
+  "sentences": [
+    {
+      "startAt": 0,
+      "endAt": 2000,
+      "text": "Use for bold and for italic."
+    },
+    {
+      "startAt": 2000,
+      "endAt": 4000,
+      "text": "Morty, but you know what's even better than that?"
+    },
+    {
+      "startAt": 4000,
+      "endAt": 5000,
+      "text": "Tech script."
+    },
+    {
+      "startAt": 5000,
+      "endAt": 6000,
+      "text": "It is tech, Morty."
+    },
+    {
+      "startAt": 6000,
+      "endAt": 8000,
+      "text": "You can define the type of variable."
+    },
+    {
+      "startAt": 8000,
+      "endAt": 10000,
+      "text": "And the compiler will catch any errors."
+    },
+    {
+      "startAt": 10000,
+      "endAt": 11000,
+      "text": "But then doesn't that."
+    },
+    {
+      "startAt": 11000,
+      "endAt": 13000,
+      "text": "But then it's for losers."
+    }
+  ],
+  "text": " Use for bold and for italic.\n Morty, but you know what's even better than that?\n Tech script.\n It is tech, Morty.\n You can define the type of variable.\n And the compiler will catch any errors.\n But then doesn't that.\n But then it's for losers.\n",
+  "translationText": " Use for bold and for italic.\n Morty, but you know what's even better than that?\n Tech script.\n It is tech, Morty.\n You can define the type of variable.\n And the compiler will catch any errors.\n But then doesn't that.\n But then it's for losers.\n",
+  "words": [
+    {
+      "startAt": 0,
+      "endAt": 70,
+      "text": ""
+    },
+    {
+      "startAt": 70,
+      "endAt": 320,
+      "text": "Use"
+    },
+    {
+      "startAt": 320,
+      "endAt": 540,
+      "text": "for"
+    },
+    {
+      "startAt": 540,
+      "endAt": 940,
+      "text": "bold"
+    },
+    {
+      "startAt": 940,
+      "endAt": 1170,
+      "text": "and"
+    },
+    {
+      "startAt": 1170,
+      "endAt": 1440,
+      "text": "for"
+    },
+    {
+      "startAt": 1440,
+      "endAt": 1740,
+      "text": "ital"
+    },
+    {
+      "startAt": 1740,
+      "endAt": 2000,
+      "text": "ic"
+    },
+    {
+      "startAt": 2000,
+      "endAt": 2000,
+      "text": "."
+    },
+    {
+      "startAt": 2000,
+      "endAt": 2650,
+      "text": "Morty"
+    },
+    {
+      "startAt": 2650,
+      "endAt": 2680,
+      "text": ","
+    },
+    {
+      "startAt": 2680,
+      "endAt": 2760,
+      "text": "but"
+    },
+    {
+      "startAt": 2760,
+      "endAt": 2870,
+      "text": "you"
+    },
+    {
+      "startAt": 2870,
+      "endAt": 3020,
+      "text": "know"
+    },
+    {
+      "startAt": 3020,
+      "endAt": 3170,
+      "text": "what"
+    },
+    {
+      "startAt": 3170,
+      "endAt": 3240,
+      "text": "'s"
+    },
+    {
+      "startAt": 3240,
+      "endAt": 3390,
+      "text": "even"
+    },
+    {
+      "startAt": 3390,
+      "endAt": 3620,
+      "text": "better"
+    },
+    {
+      "startAt": 3620,
+      "endAt": 3770,
+      "text": "than"
+    },
+    {
+      "startAt": 3770,
+      "endAt": 4000,
+      "text": "that"
+    },
+    {
+      "startAt": 4000,
+      "endAt": 4000,
+      "text": "?"
+    },
+    {
+      "startAt": 4000,
+      "endAt": 4320,
+      "text": "Tech"
+    },
+    {
+      "startAt": 4320,
+      "endAt": 4910,
+      "text": "script"
+    },
+    {
+      "startAt": 4910,
+      "endAt": 5000,
+      "text": "."
+    },
+    {
+      "startAt": 5000,
+      "endAt": 5110,
+      "text": "It"
+    },
+    {
+      "startAt": 5110,
+      "endAt": 5210,
+      "text": "is"
+    },
+    {
+      "startAt": 5210,
+      "endAt": 5550,
+      "text": "tech"
+    },
+    {
+      "startAt": 5550,
+      "endAt": 5730,
+      "text": ","
+    },
+    {
+      "startAt": 5730,
+      "endAt": 5820,
+      "text": "Morty"
+    },
+    {
+      "startAt": 5820,
+      "endAt": 6000,
+      "text": "."
+    },
+    {
+      "startAt": 6000,
+      "endAt": 6290,
+      "text": "You"
+    },
+    {
+      "startAt": 6290,
+      "endAt": 6400,
+      "text": "can"
+    },
+    {
+      "startAt": 6400,
+      "endAt": 6810,
+      "text": "define"
+    },
+    {
+      "startAt": 6810,
+      "endAt": 7010,
+      "text": "the"
+    },
+    {
+      "startAt": 7010,
+      "endAt": 7280,
+      "text": "type"
+    },
+    {
+      "startAt": 7280,
+      "endAt": 7410,
+      "text": "of"
+    },
+    {
+      "startAt": 7410,
+      "endAt": 8000,
+      "text": "variable"
+    },
+    {
+      "startAt": 8000,
+      "endAt": 8000,
+      "text": "."
+    },
+    {
+      "startAt": 8000,
+      "endAt": 8190,
+      "text": "And"
+    },
+    {
+      "startAt": 8190,
+      "endAt": 8340,
+      "text": "the"
+    },
+    {
+      "startAt": 8340,
+      "endAt": 8790,
+      "text": "compiler"
+    },
+    {
+      "startAt": 8790,
+      "endAt": 9010,
+      "text": "will"
+    },
+    {
+      "startAt": 9010,
+      "endAt": 9290,
+      "text": "catch"
+    },
+    {
+      "startAt": 9290,
+      "endAt": 9460,
+      "text": "any"
+    },
+    {
+      "startAt": 9460,
+      "endAt": 9800,
+      "text": "errors"
+    },
+    {
+      "startAt": 9800,
+      "endAt": 10000,
+      "text": "."
+    },
+    {
+      "startAt": 10000,
+      "endAt": 10320,
+      "text": "But"
+    },
+    {
+      "startAt": 10320,
+      "endAt": 10380,
+      "text": "then"
+    },
+    {
+      "startAt": 10380,
+      "endAt": 10560,
+      "text": "doesn"
+    },
+    {
+      "startAt": 10560,
+      "endAt": 10650,
+      "text": "'t"
+    },
+    {
+      "startAt": 10650,
+      "endAt": 10870,
+      "text": "that"
+    },
+    {
+      "startAt": 10870,
+      "endAt": 11000,
+      "text": "."
+    },
+    {
+      "startAt": 11000,
+      "endAt": 11580,
+      "text": "But"
+    },
+    {
+      "startAt": 11580,
+      "endAt": 11600,
+      "text": "then"
+    },
+    {
+      "startAt": 11600,
+      "endAt": 11770,
+      "text": "it"
+    },
+    {
+      "startAt": 11770,
+      "endAt": 12010,
+      "text": "'s"
+    },
+    {
+      "startAt": 12010,
+      "endAt": 12200,
+      "text": "for"
+    },
+    {
+      "startAt": 12200,
+      "endAt": 12720,
+      "text": "losers"
+    },
+    {
+      "startAt": 12720,
+      "endAt": 13000,
+      "text": "."
+    }
+  ],
+  "usedModelName": "small"
+}

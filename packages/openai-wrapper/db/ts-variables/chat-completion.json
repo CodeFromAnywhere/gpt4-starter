@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331087035,
+  "updatedAt": 1678331087035,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331087035,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "chatCompletion",
+  "slug": "chat-completion",
+  "operationRelativeTypescriptFilePath": "src/chatCompletion.ts",
+  "type": {
+    "rawType": "(messages: import(\"/Users/clarity/os/operations/node_modules/openai/dist/api\").ChatCompletionRequestMessage[], config?: import(\"/Users/clarity/os/operations/tools/control-web/openai-wrapper/src/types\").ChatCompletionConfig | undefined) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse & { tokensUsed?: number | undefined; chatResponse?: string | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  messages: ChatCompletionRequestMessage[],\n  config?: ChatCompletionConfig\n): Promise<\n  StandardResponse & { tokensUsed?: number; chatResponse?: string }\n> => {\n  const { openai, isSuccessful, message } = await getOpenaiInstance();\n\n  if (!openai) {\n    return { isSuccessful, message };\n  }\n\n  // By default, create a delay depending on the tokens expected\n  if (!config?.isInstant) {\n    const inputTokensCalculated =\n      config?.inputTokensCalculated ||\n      calculateOpenaiMessagesTokenCountSum(messages);\n\n    // NB: maybe limit differs per model\n    const tokenLimitPerMinute = 250000;\n    const expectedRoundtripMs = 500;\n    const factorOfMinuteTokens = inputTokensCalculated / tokenLimitPerMinute;\n    // wait the amount to never hit the limit, on average.\n    const msToWait =\n      Math.round(60000 * factorOfMinuteTokens) - expectedRoundtripMs;\n\n    if (msToWait > 0) {\n      await new Promise<void>((resolve) =>\n        setTimeout(() => resolve(), msToWait)\n      );\n    }\n  }\n\n  const model = config?.model || openAiChatModels[0];\n\n  // NB: I assume this is pretty efficient, but we could a/b test and if it's heavy, do our own http/fetch request.\n  const response = await openai\n    .createChatCompletion({\n      model,\n      messages,\n      ...config?.openaiConfig,\n    })\n    .catch((e) => {\n      // TODO: APPLY EXPONENTIAL BACKOFF HERE\n      console.log({\n        status: e.response?.status,\n        statusText: e.response?.statusText,\n        data: e.response?.data,\n      });\n    });\n\n  const tokensUsed = response?.data?.usage?.total_tokens;\n\n  //console.log({ usage: response?.data?.usage });\n  const chatResponse = response?.data?.choices?.[0]?.message?.content;\n\n  return {\n    isSuccessful: true,\n    message: \"Successful\",\n    tokensUsed,\n    chatResponse,\n  };\n}",
+  "description": "More direct way to interact with openai api chat completion\n\ndocs: https://platform.openai.com/docs/guides/chat/introduction",
+  "id": "gjuezpgdwngjgbiekxdvcqwu"
+}

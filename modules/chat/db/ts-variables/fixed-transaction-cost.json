@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678611465860,
+  "updatedAt": 1678611465860,
+  "deletedAt": 0,
+  "createdFirstAt": 1678611465860,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "fixedTransactionCost",
+  "slug": "fixed-transaction-cost",
+  "operationRelativeTypescriptFilePath": "src/constants.ts",
+  "type": {
+    "rawType": "{}",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "0.29",
+  "description": "",
+  "id": "cvjsiixhjyqdsexgxeulwobm"
+}

@@ -1,0 +1,86 @@
+{
+  "createdAt": 1678042943731,
+  "updatedAt": 1678042943731,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042943731,
+  "id": "queuefunctionconfig",
+  "name": "QueueFunctionConfig",
+  "slug": "queuefunctionconfig",
+  "operationRelativeTypescriptFilePath": "src/StandardFunctionConfig.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\nexport type QueueFunctionConfig = {\n  /**\n   * If true, function is not used in watcher or cron\n   */\n  isDisabled?: boolean;\n  /**\n   * Requires lots of ram/cpu/gpu (e.g. local AI models, file conversions, and data manipulation at scale)\n   *\n   * Will not be started if computer is busy already\n   */\n  isHeavy?: boolean;\n\n  /**\n   * If true, you state that this function requires internet. Will not be executed if there's no internet connection\n   */\n  isInternetRequired?: boolean;\n\n  /**\n   * Puppeteer stuff\n   */\n  isBrowserRequired?: boolean;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "isDisabled": {
+          "type": "boolean",
+          "description": "If true, function is not used in watcher or cron"
+        },
+        "isHeavy": {
+          "type": "boolean",
+          "description": "Requires lots of ram/cpu/gpu (e.g. local AI models, file conversions, and data manipulation at scale)\n\nWill not be started if computer is busy already"
+        },
+        "isInternetRequired": {
+          "type": "boolean",
+          "description": "If true, you state that this function requires internet. Will not be executed if there's no internet connection"
+        },
+        "isBrowserRequired": {
+          "type": "boolean",
+          "description": "Puppeteer stuff"
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "isDisabled",
+          "required": false,
+          "schema": {
+            "fullComment": "If true, function is not used in watcher or cron",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isHeavy",
+          "required": false,
+          "schema": {
+            "fullComment": "Requires lots of ram/cpu/gpu (e.g. local AI models, file conversions, and data manipulation at scale)\n\nWill not be started if computer is busy already",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isInternetRequired",
+          "required": false,
+          "schema": {
+            "fullComment": "If true, you state that this function requires internet. Will not be executed if there's no internet connection",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isBrowserRequired",
+          "required": false,
+          "schema": {
+            "fullComment": "Puppeteer stuff",
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "QueueFunctionConfig",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678043859576,
+  "updatedAt": 1678043859576,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043859576,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/Header.tsx",
+  "commentsInside": [],
+  "rawText": " () => {\n  const [isMobileMenuEnabled, setIsMobileMenuEnabled] = useStore(\n    \"menu.isMobileMenuEnabled\"\n  );\n  const [isFullscreen, setIsFullScreen] = useStore(\"menu.isFullScreen\");\n  const meQuery = queries.useGetMeWithContext();\n  const credit =\n    destructureOptionalObject(meQuery.data?.result?.device)\n      ?.currentPersonCalculated?.credit || 0;\n\n  return isFullscreen ? null : (\n    <Div\n      className=\"dark:bg-gray-800\"\n      style={{\n        justifyContent: \"space-between\",\n        flex: 1,\n        display: \"flex\",\n        flexDirection: \"row\",\n        alignItems: \"center\",\n      }}\n    >\n      <Div className=\"lg:hidden\">\n        <ClickableIcon\n          title={`⎇ B`}\n          emoji={isMobileMenuEnabled ? \"╳\" : \"🛝\"}\n          onClick={() => setIsMobileMenuEnabled(!isMobileMenuEnabled)}\n        />\n      </Div>\n\n      <ClickableIcon\n        emoji={isFullscreen ? \"⌧\" : \"〠\"}\n        onClick={() => setIsFullScreen(!isFullscreen)}\n        title={`⎇ F`}\n      />\n\n      <Div className=\"flex flex-row items-center text-xs\">\n        <ALink href=\"/deposit\">\n          <P>{credit !== undefined ? `💸 ${credit}` : \"Pricing\"}</P>\n        </ALink>\n\n        <PingApi />\n\n        <MeAuthenticationInfo />\n      </Div>\n    </Div>\n  );\n}",
+  "name": "Header",
+  "slug": "header",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element | null",
+    "typeDefinition": {
+      "optional": true,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 5,
+  "size": {
+    "characters": 1246,
+    "lines": 47,
+    "bytes": 1260,
+    "bytesPerCharacter": 1.0112359550561798,
+    "charactersPerLine": 27,
+    "linesPerFile": 47,
+    "numberOfFiles": 1
+  },
+  "id": "kjvgvypoxwyxsprbdobranef"
+}

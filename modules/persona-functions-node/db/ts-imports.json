@@ -1,0 +1,53 @@
+[
+  {
+    "createdAt": 1678364090679,
+    "updatedAt": 1678364090679,
+    "deletedAt": 0,
+    "createdFirstAt": 1678364090679,
+    "name": "db",
+    "slug": "db",
+    "type": "value",
+    "module": "database",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/getPersona.ts",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "nylwelqmhomljbiyofwoerlf"
+  },
+  {
+    "createdAt": 1678364090679,
+    "updatedAt": 1678364090679,
+    "deletedAt": 0,
+    "createdFirstAt": 1678364090679,
+    "name": "Persona",
+    "slug": "persona",
+    "type": "value",
+    "module": "peer-types",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/getPersona.ts",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "upzhfduqbidakcjyqrnxljpi"
+  },
+  {
+    "createdAt": 1678364090679,
+    "updatedAt": 1678364090679,
+    "deletedAt": 0,
+    "createdFirstAt": 1678364090679,
+    "name": "getObjectKeysArray",
+    "slug": "get-object-keys-array",
+    "type": "value",
+    "module": "js-util",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/getPersona.ts",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "vcnxregxfxrgzurjndvwyfga"
+  }
+]

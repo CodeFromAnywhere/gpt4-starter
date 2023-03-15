@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041717224,
+  "updatedAt": 1678041717224,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041717224,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "Test",
+  "slug": "test",
+  "operationRelativeTypescriptFilePath": "src/components/function-web/Flow.tsx",
+  "type": {
+    "rawType": "() => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  return (\n    <Flow\n      renderNode={(item: { todo: string; status: string }) => {\n        return <div />;\n      }}\n      childObject={{\n        status: \"lala\",\n        todo: \"sss\",\n        children: [{ status: \"\", todo: \"\", children: [] }],\n      }}\n    />\n  );\n}",
+  "description": "",
+  "id": "liesctjafszqtxzmeiprxgss"
+}

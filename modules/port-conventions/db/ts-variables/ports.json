@@ -1,0 +1,47 @@
+{
+  "createdAt": 1669883699182,
+  "updatedAt": 1669883699182,
+  "deletedAt": 0,
+  "createdFirstAt": 1669883699182,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "ports",
+  "slug": "ports",
+  "operationRelativeTypescriptFilePath": "src/port-conventions.ts",
+  "type": {
+    "rawType": "{ readonly \"function-server\": 42000; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "function-server": {}
+      },
+      "required": [
+        "function-server"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "function-server",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "{\n  \"function-server\": 42000,\n} as const",
+  "description": "See https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers for available ports\n\nRange 42000-42080 seems to have no ports. There are many more ranges\n\nWhen creating a new app, ensure you not only define the port here, but also in",
+  "id": "rzfavumhpqxnjyfuyclyeygk"
+}

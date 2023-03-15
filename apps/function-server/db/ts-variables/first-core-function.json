@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331951752,
+  "updatedAt": 1678331951752,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331951752,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "firstCoreFunction",
+  "slug": "first-core-function",
+  "operationRelativeTypescriptFilePath": "src/firstCoreFunction.ts",
+  "type": {
+    "rawType": "(port: number, isWatching?: boolean | undefined, isRestart?: boolean | undefined) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  port: number,\n  isWatching?: boolean,\n  isRestart?: boolean\n) => {\n  console.log(\n    `Typerepo is now running on port ${port}. Your node functions are now available through the \"api\" object!`\n  );\n  const tsFunctions = await db.get(\"TsFunction\");\n\n  // only on the first core, schedule crons and initiate watchers\n  await scheduleCronJobs(tsFunctions);\n\n  if (isWatching) {\n    watchAll(tsFunctions);\n  }\n\n  // startSearchWebIfAvailable(isWatching, isRestart);\n}",
+  "description": "Function that is supposed to be ran on the first core only\n\nNB: SHOULD NOT BE BLOCKING",
+  "id": "gbfnshyvagyzttwmcmpxuyfh"
+}

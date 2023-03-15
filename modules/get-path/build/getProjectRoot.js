@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getProjectRoot=void 0;var fs_util_1=require("fs-util"),findFolderWhereMatch_1=require("./findFolderWhereMatch"),getProjectRoot=function(e){var t=(0,findFolderWhereMatch_1.findFolderWhereMatch)(e||process.cwd(),hasProjectRootFile);if(t)return t.folderPath};exports.getProjectRoot=getProjectRoot;var hasProjectRootFile=function(e){var t=fs_util_1.path.join(e,".project-root");return fs_util_1.fs.existsSync(t)};
+//# sourceMappingURL=getProjectRoot.js.map

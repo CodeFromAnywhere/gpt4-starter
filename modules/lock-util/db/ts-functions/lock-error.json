@@ -1,0 +1,98 @@
+{
+  "createdAt": 1678331282613,
+  "updatedAt": 1678331282613,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331282613,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/lockError.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  aboluteLockableFilePath: string,\n  errorMessage: string,\n  /**\n   * Defaults to never\n   */\n  cleanupAt?: number,\n  functionName?: string,\n  parameters?: any[]\n) => {\n  const parsedPath = path.parse(aboluteLockableFilePath);\n\n  const lockFilePath = path.join(\n    parsedPath.dir,\n    `${parsedPath.name}${lockfileSuffix}`\n  );\n\n  await writeJsonToFile<ActionStatus>(lockFilePath, {\n    ...getUpdatedTimeObject(),\n    status: \"error\",\n    functionName: functionName || \"lockError\",\n    parameters,\n    message: errorMessage,\n    cleanupAt,\n  });\n}",
+  "name": "lockError",
+  "slug": "lock-error",
+  "parameters": [
+    {
+      "name": "aboluteLockableFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "errorMessage",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "cleanupAt",
+      "schema": {
+        "type": "number",
+        "description": "Defaults to never"
+      },
+      "simplifiedSchema": {
+        "fullComment": "Defaults to never",
+        "type": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "functionName",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": false
+    },
+    {
+      "name": "parameters",
+      "schema": {
+        "type": "array",
+        "items": {}
+      },
+      "simplifiedSchema": {
+        "items": [
+          {
+            "schema": {
+              "properties": [],
+              "type": "object"
+            },
+            "name": null
+          }
+        ],
+        "type": "array"
+      },
+      "required": false
+    }
+  ],
+  "description": "lock a file with a given error message",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 595,
+    "lines": 26,
+    "bytes": 595,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 23,
+    "linesPerFile": 26,
+    "numberOfFiles": 1
+  },
+  "id": "yynsqeosnwhyeajizkzaiayu"
+}

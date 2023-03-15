@@ -1,0 +1,78 @@
+{
+  "createdAt": 1678611478305,
+  "updatedAt": 1678611478305,
+  "deletedAt": 0,
+  "createdFirstAt": 1678611478305,
+  "id": "personastatistics",
+  "name": "PersonaStatistics",
+  "slug": "personastatistics",
+  "operationRelativeTypescriptFilePath": "src/getPersonaStatistics.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\nexport type PersonaStatistics = {\n  name?: string;\n  newMessagesTodayAmount?: number;\n  activeUsersTodayAmount?: number;\n  newUsersTodayAmount?: number;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "newMessagesTodayAmount": {
+          "type": "number"
+        },
+        "activeUsersTodayAmount": {
+          "type": "number"
+        },
+        "newUsersTodayAmount": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "name",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "newMessagesTodayAmount",
+          "required": false,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "activeUsersTodayAmount",
+          "required": false,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "newUsersTodayAmount",
+          "required": false,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "PersonaStatistics",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

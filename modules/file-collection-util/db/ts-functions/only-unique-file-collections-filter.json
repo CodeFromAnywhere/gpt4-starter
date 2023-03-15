@@ -1,0 +1,86 @@
+{
+  "createdAt": 1678330499845,
+  "updatedAt": 1678330499845,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330499845,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/isFileCollection.ts",
+  "commentsInside": [],
+  "rawText": " (\n  absoluteFilePath: string,\n  index: number,\n  self: string[]\n) => onlyUnique2(isFileCollection)(absoluteFilePath, index, self)",
+  "name": "onlyUniqueFileCollectionsFilter",
+  "slug": "only-unique-file-collections-filter",
+  "parameters": [
+    {
+      "name": "absoluteFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "index",
+      "schema": {
+        "type": "number"
+      },
+      "simplifiedSchema": {
+        "type": "number"
+      },
+      "required": true
+    },
+    {
+      "name": "self",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "simplifiedSchema": {
+        "items": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": null
+          }
+        ],
+        "type": "array"
+      },
+      "required": true
+    }
+  ],
+  "description": "filter for absolute file paths to get unique file collections",
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 191,
+    "lines": 5,
+    "bytes": 191,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 38,
+    "linesPerFile": 5,
+    "numberOfFiles": 1
+  },
+  "id": "sqirqhaxmclmfjvbzgsegfmu"
+}

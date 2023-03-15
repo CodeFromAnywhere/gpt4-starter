@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678042094363,
+  "updatedAt": 1678042094363,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042094363,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "hasDependency",
+  "slug": "has-dependency",
+  "operationRelativeTypescriptFilePath": "src/hasDependency.ts",
+  "type": {
+    "rawType": "(operation: import(\"/Users/clarity/os/operations/tools/types/code-types/build/Operation\").Operation, dependency: string) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(operation: Operation, dependency: string) => {\n  return getAllPackageJsonDependencies(operation).includes(dependency);\n}",
+  "description": "",
+  "id": "asecvllxkxawqngvuwqkdhry"
+}

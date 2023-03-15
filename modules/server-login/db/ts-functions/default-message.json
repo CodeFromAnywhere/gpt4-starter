@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678332002135,
+  "updatedAt": 1678332002135,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332002135,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/signupBare.ts",
+  "commentsInside": [],
+  "rawText": " (otpCode: string) =>\n  `Please confirm with this code: \"${otpCode}\"`",
+  "name": "defaultMessage",
+  "slug": "default-message",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "String",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/String"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 69,
+    "lines": 2,
+    "bytes": 69,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 35,
+    "linesPerFile": 2,
+    "numberOfFiles": 1
+  },
+  "id": "zshjhnnpvfkrcdqrwwgxgjyr"
+}

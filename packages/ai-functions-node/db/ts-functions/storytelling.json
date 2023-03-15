@@ -1,0 +1,57 @@
+{
+  "createdAt": 1678330218740,
+  "updatedAt": 1678330218740,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330218740,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "PromptFunction",
+  "operationRelativeTypescriptFilePath": "src/prompts.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  contextContent: string,\n  isDeferred?: boolean\n) => {\n  const result = await processChatGptPrompt({\n    isDeferred,\n    contextualPromptSlug: \"storytelling\",\n    contextContent,\n  });\n\n  return result;\n}",
+  "name": "storytelling",
+  "slug": "storytelling",
+  "parameters": [
+    {
+      "name": "contextContent",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "isDeferred",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    }
+  ],
+  "description": "Write a story about this code and what's happening in there",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 273,
+    "lines": 12,
+    "bytes": 273,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 23,
+    "linesPerFile": 12,
+    "numberOfFiles": 1
+  },
+  "id": "aenhlbmbcphyanxbeowvupwb"
+}

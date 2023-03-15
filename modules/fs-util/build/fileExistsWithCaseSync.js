@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.fileExistsWithCaseSync=void 0;var fs_1=require("./fs"),path_1=require("./path");function fileExistsWithCaseSync(e){var s=path_1.path.dirname(e);return"/"===s||"."===s||-1!==fs_1.fs.readdirSync(s).indexOf(path_1.path.basename(e))&&fileExistsWithCaseSync(s)}exports.fileExistsWithCaseSync=fileExistsWithCaseSync;
+//# sourceMappingURL=fileExistsWithCaseSync.js.map

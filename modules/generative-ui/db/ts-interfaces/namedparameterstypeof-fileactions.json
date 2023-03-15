@@ -1,0 +1,69 @@
+{
+  "createdAt": 1678041372336,
+  "updatedAt": 1678041372336,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041372336,
+  "id": "namedparameterstypeof-fileactions",
+  "name": "NamedParameters<typeof FileActions>",
+  "slug": "namedparameterstypeof-fileactions",
+  "operationRelativeTypescriptFilePath": "src/FileActions.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "props": {
+          "type": "object",
+          "properties": {
+            "projectRelativeFilePath": {
+              "type": "string",
+              "description": "File to apply the actions on"
+            }
+          },
+          "required": [
+            "projectRelativeFilePath"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "props"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "props",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "projectRelativeFilePath",
+                "required": true,
+                "schema": {
+                  "fullComment": "File to apply the actions on",
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof FileActions>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

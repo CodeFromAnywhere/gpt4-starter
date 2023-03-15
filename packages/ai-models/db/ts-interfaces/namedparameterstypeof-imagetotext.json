@@ -1,0 +1,104 @@
+{
+  "createdAt": 1678369206069,
+  "updatedAt": 1678369206069,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369206069,
+  "id": "namedparameterstypeof-imagetotext",
+  "name": "NamedParameters<typeof imageToText>",
+  "slug": "namedparameterstypeof-imagetotext",
+  "operationRelativeTypescriptFilePath": "src/imageToText.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteImagePath": {
+          "type": "string"
+        },
+        "config": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "similarity": {
+              "type": "boolean"
+            },
+            "maxLength": {
+              "type": "number"
+            },
+            "minLength": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "absoluteImagePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteImagePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "config",
+          "required": false,
+          "schema": {
+            "properties": [
+              {
+                "name": "text",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "similarity",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "maxLength",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "minLength",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof imageToText>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

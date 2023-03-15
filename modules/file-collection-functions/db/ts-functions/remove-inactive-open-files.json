@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678330466382,
+  "updatedAt": 1678330466382,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330466382,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/removeInactiveOpenFiles.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const removeResult = await db.remove(\"OpenFile\", (item) => {\n    const isNotRecent = Date.now() - item.openedAt > 86400000;\n    return !item.isPinned && !item.isOpen && isNotRecent;\n  });\n}",
+  "name": "removeInactiveOpenFiles",
+  "slug": "remove-inactive-open-files",
+  "parameters": [],
+  "description": "Cleans up the open files by removing the ones that aren't \"pinned\" or \"open\" and also haven't been opened for over a day. This means they don't need to appear in the search results anymore",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 394,
+    "lines": 6,
+    "bytes": 394,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 66,
+    "linesPerFile": 6,
+    "numberOfFiles": 1
+  },
+  "id": "qhgatfcpuodyisrttawzhoxu"
+}

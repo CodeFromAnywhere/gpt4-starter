@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041415578,
+  "updatedAt": 1678041415578,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041415578,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getReaderPageInfo",
+  "slug": "get-reader-page-info",
+  "operationRelativeTypescriptFilePath": "src/getReaderPageInfo.ts",
+  "type": {
+    "rawType": "(isFolder: boolean | undefined, contextualPromptsObject: any, contextualPromptResults: import(\"/Users/clarity/os/operations/tools/ai/ai-types/build/ContextualPromptResult\").ContextualPromptResult[] | null | undefined) => { thePrompts: any; selectionContextualPromptResults: any; fileContextualPromptResults: any; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  isFolder: boolean | undefined,\n  contextualPromptsObject:\n    | Omit<ContextualPromptsObject, \"databaseContextualPromptSlugs\">\n    | null\n    | undefined,\n  contextualPromptResults: ContextualPromptResult[] | null | undefined\n) => {\n  const fileContextualPromptResults = contextualPromptResults?.filter(\n    (x) => !x.selectionString\n  );\n  const selectionContextualPromptResults = contextualPromptResults?.filter(\n    (x) => !!x.selectionString\n  );\n\n  const thePrompts = isFolder\n    ? contextualPromptsObject?.folderContextualPrompts || []\n    : contextualPromptsObject?.pageContextualPrompts || [];\n\n  return {\n    thePrompts,\n    selectionContextualPromptResults,\n    fileContextualPromptResults,\n  };\n}",
+  "description": "",
+  "id": "cdgajbdxoirottwhfzkizhrn"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677579105114,
+  "updatedAt": 1677579105114,
+  "deletedAt": 0,
+  "createdFirstAt": 1677579105114,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "findAllDocsFolderPaths",
+  "slug": "find-all-docs-folder-paths",
+  "operationRelativeTypescriptFilePath": "src/find-folders.ts",
+  "type": {
+    "rawType": "(ignoreOperations?: boolean | undefined, ignoreFolders?: string[] | undefined) => Promise<string[]>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  /**\n   * Don't look for docs folders inside of operation folders\n   */\n  ignoreOperations?: boolean,\n  /**\n   * optionally, ignore some folders\n   */\n  ignoreFolders?: string[]\n): Promise<string[]> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) return [];\n  const docsBasePath = isBundle(projectRoot)\n    ? projectRoot\n    : getRootPath(\"operations\");\n\n  if (!docsBasePath) return [];\n\n  const docsFolderPaths = await findAllFoldersWithName({\n    basePath: docsBasePath,\n    folderName: \"docs\",\n    ignoreOperations,\n    ignoreFolders,\n  });\n  return docsFolderPaths;\n}",
+  "description": "Returns absolute paths for all docs folders (not the files inside)",
+  "id": "vddibfgisxmojmhorgjwnsvz"
+}

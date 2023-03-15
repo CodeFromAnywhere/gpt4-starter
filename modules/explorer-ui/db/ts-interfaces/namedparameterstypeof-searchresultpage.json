@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331556372,
+  "updatedAt": 1678331556372,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331556372,
+  "id": "namedparameterstypeof-searchresultpage",
+  "name": "NamedParameters<typeof SearchResultPage>",
+  "slug": "namedparameterstypeof-searchresultpage",
+  "operationRelativeTypescriptFilePath": "src/SearchResultPage.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof SearchResultPage>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

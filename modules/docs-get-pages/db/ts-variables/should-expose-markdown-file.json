@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331418307,
+  "updatedAt": 1678331418307,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331418307,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "shouldExposeMarkdownFile",
+  "slug": "should-expose-markdown-file",
+  "operationRelativeTypescriptFilePath": "src/shouldExposeMarkdownFile.ts",
+  "type": {
+    "rawType": "(parameters: import(\"/Users/clarity/os/operations/tools/types/matter-types/build/Frontmatter\").Frontmatter) => boolean",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(parameters: Frontmatter) => {\n  return !Boolean(parameters.isDraft) && parameters.privacy !== \"private\";\n}",
+  "description": "markdown file should only be exposed if it doesn't say `privacy: private` or `isDraft: true` in your frontmatter.",
+  "id": "vqjhkascwtcehzdzbpdbuosm"
+}

@@ -1,0 +1,67 @@
+{
+  "createdAt": 1678330218742,
+  "updatedAt": 1678330218742,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330218742,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "PromptFunction",
+  "operationRelativeTypescriptFilePath": "src/prompts.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  contextContent: string,\n  prompt_projectRelativePath: string,\n  isDeferred?: boolean\n) => {\n  const result = await processChatGptPrompt({\n    isDeferred,\n    contextualPromptSlug: \"rick-and-morty\",\n    contextContent,\n    prompt_projectRelativePath,\n  });\n\n  return result;\n}",
+  "name": "rickAndMorty",
+  "slug": "rick-and-morty",
+  "parameters": [
+    {
+      "name": "contextContent",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "prompt_projectRelativePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "isDeferred",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    }
+  ],
+  "description": "Rick teaches Morty",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 304,
+    "lines": 14,
+    "bytes": 304,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 22,
+    "linesPerFile": 14,
+    "numberOfFiles": 1
+  },
+  "id": "hpsejiimpxjbqjxhrnipgygv"
+}

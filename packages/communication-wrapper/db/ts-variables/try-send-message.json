@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331030142,
+  "updatedAt": 1678331030142,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331030142,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "trySendMessage",
+  "slug": "try-send-message",
+  "operationRelativeTypescriptFilePath": "src/trySendMessage.ts",
+  "type": {
+    "rawType": "(person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person, message: string, messagingChannel: any, config?: any) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  person: Person,\n  message: string,\n  messagingChannel: MessagingChannel,\n  config?: Omit<SendMessageConfig, \"preferredChannel\">\n): Promise<StandardResponse> => {\n  if (messagingChannel === \"email\") {\n    if (!person.email) {\n      return { isSuccessful: false, message: \"No email found\" };\n    }\n    const result = await sendMail({\n      to: person.email,\n      subject: config?.emailConfig?.subject,\n      text: message,\n      // uses primary persona if not given\n      from: config?.persona?.sendgridFromEmail,\n    });\n\n    const isSuccessful = result?.statusCode === 200;\n\n    return { isSuccessful, message: \"Sent email\" };\n  }\n\n  if (person.phoneNumber) {\n    const result = await sendTwilioMessage(person.phoneNumber, message, {\n      channel: messagingChannel,\n      persona: config?.persona,\n    });\n\n    return { isSuccessful: result.isSuccessful };\n  }\n\n  // no email, no phone number...\n  return { isSuccessful: false };\n  // actually try to send to `messagingChannel`\n}",
+  "description": "If you are certain about sending a message over a certain channel, you can use this function directly, but it's usually better to use `sendMessage` so all channels can be tried in the right order.\n\nFor email, the api of `sendEmail` is not fully used (it's simplified)",
+  "id": "bmrgemjfuluutrdexfeajimn"
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "createdAt": 1678330915982,
+    "updatedAt": 1678330915982,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330915982,
+    "name": "getYoutubeVideoUrls",
+    "slug": "get-youtube-video-urls",
+    "operationRelativeTypescriptFilePath": "src/getChannelVideoUrls.ts",
+    "comments": [],
+    "type": "value",
+    "id": "kxwaxqqzxsidtouspjmfrrru"
+  },
+  {
+    "createdAt": 1678330915982,
+    "updatedAt": 1678330915982,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330915982,
+    "name": "getYoutubeVideoUrls",
+    "slug": "get-youtube-video-urls",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "kkukuaaswdmsebpkjpamprrh"
+  },
+  {
+    "createdAt": 1678330915982,
+    "updatedAt": 1678330915982,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330915982,
+    "name": "watchAppleMemos",
+    "slug": "watch-apple-memos",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "swrknvtngseziahwqcgxtcxy"
+  },
+  {
+    "createdAt": 1678330915982,
+    "updatedAt": 1678330915982,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330915982,
+    "name": "watchAppleMemos",
+    "slug": "watch-apple-memos",
+    "operationRelativeTypescriptFilePath": "src/watchAppleMemos.ts",
+    "comments": [],
+    "type": "value",
+    "id": "hdznwekooqnuxsgjjfovwocg"
+  }
+]

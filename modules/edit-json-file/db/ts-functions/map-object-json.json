@@ -1,0 +1,41 @@
+{
+  "createdAt": 1668149807278,
+  "updatedAt": 1668149807278,
+  "deletedAt": 0,
+  "createdFirstAt": 1668149807278,
+  "publicAuthorization": [
+    "read",
+    "search"
+  ],
+  "isApiExposed": false,
+  "isPostApi": false,
+  "isGetApi": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/mapObjectJson.ts",
+  "commentsInside": [],
+  "rawText": " async <T, U>(\n  absolutePath: string,\n  mapFunction: (item: T) => U\n) => {\n  if (!absolutePath) return;\n  const json = await readJsonFile<T>(absolutePath);\n\n  if (!json) return;\n  const newJson = mapFunction(json);\n\n  const isSuccessful = await writeJsonToFile(absolutePath, newJson);\n\n  return isSuccessful;\n}",
+  "name": "mapObjectJson",
+  "slug": "map-object-json",
+  "parameters": [],
+  "description": "Takes an absolute path to a json and a type generic and provides a map function with which you can alter that JSON (read, map, save)",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 443,
+    "lines": 14,
+    "bytes": 443,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 32,
+    "linesPerFile": 14,
+    "numberOfFiles": 1
+  },
+  "id": "tbfksjfzbghsovyctwtmagvb"
+}

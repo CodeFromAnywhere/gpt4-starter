@@ -1,0 +1,55 @@
+{
+  "createdAt": 1677578332433,
+  "updatedAt": 1677578332433,
+  "deletedAt": 0,
+  "createdFirstAt": 1677578332433,
+  "id": "recordingtype",
+  "name": "RecordingType",
+  "slug": "recordingtype",
+  "operationRelativeTypescriptFilePath": "src/RecordingType.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "/**\n`RecordingType` specifies the type of recording that was found\n\n`audiobook`: Audio is an audiobook. Probably not easy to detect. Also, it's probably very time consuming. However, we might get a lot of information from the first chunk, and can already see if it's an audiobook based on that one. Stuff like \"this is Audible\" gives away a lot. (single chunk needed)\n\n`music`: Audio is music. probably easy to detect for a classifier. Could be harder for LLM's, unless whisper outputs something like `[Music]` multiple times. (single chunk needed)\n\n`conversation`: At least two speakers. This can be detected based on the thing that was said because usually there are questions and answers and it follows a dynamic pattern typical to conversations. Other AI classifiers could also be used like \"amount of speaker detection\"\n\n`monologue`: Single speaker that says something\n\n`code`: Audio is about code. This probably requires more postprocessing in order to do stuff with it.\n\n`voicemail`: Audio is a text that looks like it is meant for someone or multiple people. This can be detected by a LLM by looking for things like \"you\" or names, etc, especially in the beginning and end.\n\nother: None of the above. Could be nature sounds for example, or silent audio where nothing is said.\n\n`unknown`: If it can't be known for sure after going through the entire transcript. Also happens if api isn't working.\n*/\n\nexport type RecordingType =\n  | \"audiobook\"\n  | \"music\"\n  | \"conversation\"\n  | \"monologue\"\n  | \"code\"\n  | \"voicemail\"\n  | \"unknown\"\n  | \"other\";",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "`RecordingType` specifies the type of recording that was found\n\n`audiobook`: Audio is an audiobook. Probably not easy to detect. Also, it's probably very time consuming. However, we might get a lot of information from the first chunk, and can already see if it's an audiobook based on that one. Stuff like \"this is Audible\" gives away a lot. (single chunk needed)\n\n`music`: Audio is music. probably easy to detect for a classifier. Could be harder for LLM's, unless whisper outputs something like `[Music]` multiple times. (single chunk needed)\n\n`conversation`: At least two speakers. This can be detected based on the thing that was said because usually there are questions and answers and it follows a dynamic pattern typical to conversations. Other AI classifiers could also be used like \"amount of speaker detection\"\n\n`monologue`: Single speaker that says something\n\n`code`: Audio is about code. This probably requires more postprocessing in order to do stuff with it.\n\n`voicemail`: Audio is a text that looks like it is meant for someone or multiple people. This can be detected by a LLM by looking for things like \"you\" or names, etc, especially in the beginning and end.\n\nother: None of the above. Could be nature sounds for example, or silent audio where nothing is said.\n\n`unknown`: If it can't be known for sure after going through the entire transcript. Also happens if api isn't working.",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "string",
+      "enum": [
+        "audiobook",
+        "music",
+        "conversation",
+        "monologue",
+        "code",
+        "voicemail",
+        "unknown",
+        "other"
+      ],
+      "description": "`RecordingType` specifies the type of recording that was found\n\n`audiobook`: Audio is an audiobook. Probably not easy to detect. Also, it's probably very time consuming. However, we might get a lot of information from the first chunk, and can already see if it's an audiobook based on that one. Stuff like \"this is Audible\" gives away a lot. (single chunk needed)\n\n`music`: Audio is music. probably easy to detect for a classifier. Could be harder for LLM's, unless whisper outputs something like `[Music]` multiple times. (single chunk needed)\n\n`conversation`: At least two speakers. This can be detected based on the thing that was said because usually there are questions and answers and it follows a dynamic pattern typical to conversations. Other AI classifiers could also be used like \"amount of speaker detection\"\n\n`monologue`: Single speaker that says something\n\n`code`: Audio is about code. This probably requires more postprocessing in order to do stuff with it.\n\n`voicemail`: Audio is a text that looks like it is meant for someone or multiple people. This can be detected by a LLM by looking for things like \"you\" or names, etc, especially in the beginning and end.\n\nother: None of the above. Could be nature sounds for example, or silent audio where nothing is said.\n\n`unknown`: If it can't be known for sure after going through the entire transcript. Also happens if api isn't working."
+    },
+    "simplifiedSchema": {
+      "enum": [
+        "audiobook",
+        "music",
+        "conversation",
+        "monologue",
+        "code",
+        "voicemail",
+        "unknown",
+        "other"
+      ],
+      "fullComment": "`RecordingType` specifies the type of recording that was found\n\n`audiobook`: Audio is an audiobook. Probably not easy to detect. Also, it's probably very time consuming. However, we might get a lot of information from the first chunk, and can already see if it's an audiobook based on that one. Stuff like \"this is Audible\" gives away a lot. (single chunk needed)\n\n`music`: Audio is music. probably easy to detect for a classifier. Could be harder for LLM's, unless whisper outputs something like `[Music]` multiple times. (single chunk needed)\n\n`conversation`: At least two speakers. This can be detected based on the thing that was said because usually there are questions and answers and it follows a dynamic pattern typical to conversations. Other AI classifiers could also be used like \"amount of speaker detection\"\n\n`monologue`: Single speaker that says something\n\n`code`: Audio is about code. This probably requires more postprocessing in order to do stuff with it.\n\n`voicemail`: Audio is a text that looks like it is meant for someone or multiple people. This can be detected by a LLM by looking for things like \"you\" or names, etc, especially in the beginning and end.\n\nother: None of the above. Could be nature sounds for example, or silent audio where nothing is said.\n\n`unknown`: If it can't be known for sure after going through the entire transcript. Also happens if api isn't working.",
+      "type": "string"
+    },
+    "typeCoverage": 0,
+    "rawType": "RecordingType",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

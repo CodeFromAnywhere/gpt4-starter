@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678042870704,
+    "updatedAt": 1678042870704,
+    "deletedAt": 0,
+    "createdFirstAt": 1678042870704,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/docToMd.ts",
+    "comment": "@ts-ignore",
+    "rawStatement": "import textract from \"textract\";",
+    "parameters": {},
+    "types": [],
+    "firstLine": 1,
+    "lastLine": 1,
+    "id": "mgcooxhwrptyazzuhzljrpgk"
+  }
+]

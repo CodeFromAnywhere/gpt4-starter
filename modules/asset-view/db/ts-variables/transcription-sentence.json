@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041644607,
+  "updatedAt": 1678041644607,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041644607,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "TranscriptionSentence",
+  "slug": "transcription-sentence",
+  "operationRelativeTypescriptFilePath": "src/AssetView.tsx",
+  "type": {
+    "rawType": "(props: { time: number; sentence: import(\"/Users/clarity/os/operations/tools/ai/ai-types/build/TranscribedText\").TranscribedText; transcription: import(\"/Users/clarity/os/operations/tools/ai/ai-types/build/Transcription\").Transcription; correctRef?: React.RefObject<HTMLAudioElement> | undefined; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: {\n  time: number;\n  sentence: TranscribedText;\n  transcription: Transcription;\n  correctRef?: React.RefObject<HTMLAudioElement>;\n}) => {\n  const { sentence, time, transcription, correctRef } = props;\n  const isHighlighted =\n    time * 1000 > sentence.startAt && time * 1000 < sentence.endAt;\n\n  const highlightedWord = transcription.words.find(\n    (x) => time * 1000 > x.startAt && time * 1000 < x.endAt\n  );\n\n  const words = sentence.text.split(\" \");\n\n  const wordsWithHighlight = words\n    .map((word) => {\n      const isWordHighlighted =\n        isHighlighted &&\n        highlightedWord &&\n        slugify(highlightedWord.text) === slugify(word);\n\n      return isWordHighlighted ? word.toUpperCase() : word;\n    })\n    .join(\" \");\n\n  return (\n    <P\n      style={isHighlighted ? { color: \"lightgreen\" } : undefined}\n      onClick={() => {\n        if (!correctRef?.current) return;\n        correctRef.current.currentTime = sentence.startAt / 1000;\n        correctRef.current.play();\n      }}\n    >\n      {wordsWithHighlight}\n    </P>\n  );\n}",
+  "description": "",
+  "id": "wglzrylxlgjlpfwrwgertdod"
+}

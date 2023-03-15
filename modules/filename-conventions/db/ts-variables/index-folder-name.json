@@ -1,0 +1,24 @@
+{
+  "createdAt": 1675690237327,
+  "updatedAt": 1675690237327,
+  "deletedAt": 0,
+  "createdFirstAt": 1675690237327,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "indexFolderName",
+  "slug": "index-folder-name",
+  "operationRelativeTypescriptFilePath": "src/filename-conventions.ts",
+  "type": {
+    "rawType": "String",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "\".index\"",
+  "description": "",
+  "id": "rveknasahaexxsroevcdhtuz"
+}

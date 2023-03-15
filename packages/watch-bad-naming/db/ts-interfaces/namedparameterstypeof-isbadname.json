@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678330836929,
+  "updatedAt": 1678330836929,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330836929,
+  "id": "namedparameterstypeof-isbadname",
+  "name": "NamedParameters<typeof isBadName>",
+  "slug": "namedparameterstypeof-isbadname",
+  "operationRelativeTypescriptFilePath": "src/isBadName.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absolutePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absolutePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absolutePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof isBadName>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

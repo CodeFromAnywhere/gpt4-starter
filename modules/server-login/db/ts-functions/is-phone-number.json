@@ -1,0 +1,55 @@
+{
+  "createdAt": 1678332015901,
+  "updatedAt": 1678332015901,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332015901,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/validation/isPhoneNumber.ts",
+  "commentsInside": [],
+  "rawText": " (phoneNumber: string): boolean => {\n  return phoneNumber.length >= 10 && phoneNumber.startsWith(\"+\");\n}",
+  "name": "isPhoneNumber",
+  "slug": "is-phone-number",
+  "parameters": [
+    {
+      "name": "phoneNumber",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "TODO: Implement this (for now it must start with + and be at least 10 characters)",
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 185,
+    "lines": 3,
+    "bytes": 185,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 62,
+    "linesPerFile": 3,
+    "numberOfFiles": 1
+  },
+  "id": "hlouozuzdswwxbqtpoufrofo"
+}

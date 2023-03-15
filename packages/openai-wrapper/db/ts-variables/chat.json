@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331084213,
+  "updatedAt": 1678331084213,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331084213,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "chat",
+  "slug": "chat",
+  "operationRelativeTypescriptFilePath": "src/chat.ts",
+  "type": {
+    "rawType": "(person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person, truncatedMessages: import(\"/Users/clarity/os/operations/tools/purpose/social-media/social-media-types/build/ChatMessage\").ChatMessage[], config?: ({ systemMessage?: string | null | undefined; } & import(\"/Users/clarity/os/operations/tools/control-web/openai-wrapper/src/types\").ChatCompletionConfig) | undefined) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse & { chatResponse?: string | undefined; tokensUsed?: number | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  person: Person,\n  truncatedMessages: ChatMessage[],\n  config?: {\n    /**\n     * Supply `null` to omit the system-message.\n     *\n     * Defaults to the ChatGPT default systemMessage.\n     */\n    systemMessage?: string | null;\n  } & ChatCompletionConfig\n): Promise<\n  StandardResponse & {\n    chatResponse?: string;\n    /**\n     * Total tokens used (and paid for).\n     *\n     * NB: current cost is 2$ per 1000000 tokens.\n     */\n    tokensUsed?: number;\n  }\n> => {\n  if (\n    config?.inputTokensCalculated &&\n    config?.inputTokensCalculated > 4096 - 256\n  ) {\n    return {\n      isSuccessful: false,\n      message: \"Too many tokens in input. Truncation went wrong maybe!\",\n    };\n  }\n\n  if (truncatedMessages.length === 0) {\n    return { isSuccessful: false, message: \"Empty chat\" };\n  }\n\n  // get all messages from entire chat history\n  const messages: ChatCompletionRequestMessage[] = truncatedMessages.map(\n    (x) => ({\n      role: x.direction === \"sent\" ? \"assistant\" : \"user\",\n      name:\n        x.direction === \"received\"\n          ? slugify(kebabCase(person.name))\n          : undefined,\n      content: x.message,\n    })\n  );\n\n  if (config?.systemMessage) {\n    messages.unshift({\n      role: \"system\",\n      content: config?.systemMessage,\n    });\n  }\n\n  // console.log({ messages });\n  const chatCompletionResult = await chatCompletion(messages, config);\n\n  return chatCompletionResult;\n}",
+  "description": "wraps `chatCompletion` for it to work with our own `ChatMessage` model.",
+  "id": "svdcevfmlmjwnauzkywfifnm"
+}

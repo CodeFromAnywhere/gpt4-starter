@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677581967545,
+  "updatedAt": 1677581967545,
+  "deletedAt": 0,
+  "createdFirstAt": 1677581967545,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "ConfirmForm",
+  "slug": "confirm-form",
+  "operationRelativeTypescriptFilePath": "src/ConfirmForm.tsx",
+  "type": {
+    "rawType": "(props: { isSignup?: boolean | undefined; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: { isSignup?: boolean }) => {\n  const { isSignup } = props;\n  const router = useRouter();\n  const otp = takeFirst(router.query.otp);\n  const emailOrPhone = takeFirst(router.query.emailOrPhone);\n\n  const meQuery = queries.useGetMeWithContext();\n  return (\n    <Div className=\"flex flex-1 flex-row mx-10\">\n      <Div className=\"flex flex-1 flex-col\">\n        <P className=\"text-4xl\">Confirmation Code</P>\n        {!router.isReady ? (\n          <FancyLoader />\n        ) : isSignup ? (\n          <FunctionForm\n            tsFunction={SignupConfirm}\n            initialValues={[emailOrPhone, otp]}\n            withApiResult={(\n              result: RealApiReturnType<\"signupConfirmWithContext\">\n            ) => {\n              if (result.isSuccessful && result.result?.isSuccessful) {\n                router.push(\"/\");\n              }\n              meQuery.refetch();\n              showStandardResponse(result);\n            }}\n          />\n        ) : (\n          <FunctionForm\n            tsFunction={LoginConfirm}\n            initialValues={[emailOrPhone, otp]}\n            withApiResult={(\n              result: RealApiReturnType<\"loginConfirmWithContext\">\n            ) => {\n              if (result.isSuccessful && result.result?.isSuccessful) {\n                router.push(\"/\");\n              }\n              meQuery.refetch();\n              showStandardResponse(result);\n            }}\n          />\n        )}\n      </Div>\n    </Div>\n  );\n}",
+  "description": "",
+  "id": "dgxnigsppnbgcxcktycwflxy"
+}

@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678331557607,
+  "updatedAt": 1678331557607,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331557607,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/SearchResultPage.tsx",
+  "commentsInside": [],
+  "rawText": " () => {\n  const router = useRouter();\n\n  const [searchQuery, setSearchQuery] = useStore(\"menu.search\");\n  const searchResultsQuery =\n    queries.useGetAllSearchResultsWithContext(searchQuery);\n\n  return (\n    <Div>\n      <P>Search: {searchQuery}</P>\n      {searchResultsQuery.isLoading ? (\n        <FancyLoader />\n      ) : (\n        searchResultsQuery.data?.result?.map((searchResult, index) => {\n          return (\n            <SearchResultComponent\n              key={`s${index}`}\n              index={index}\n              searchResult={searchResult}\n            />\n          );\n        })\n      )}\n      <div className=\"flex flex-row w-full h-40\">\n        <a\n          className=\"bg-orange-700 hover flex flex-1 justify-center items-center hover:bg-orange-500\"\n          href={`https://search.brave.com/search?q=${searchQuery}`}\n        >\n          🦁 Brave\n        </a>\n        <a\n          className=\"bg-gray-700 hover flex flex-1 justify-center items-center hover:bg-gray-500\"\n          href={`https://www.google.com/search?igu=1&q=${searchQuery}`}\n        >\n          🤖 Google\n        </a>\n      </div>\n    </Div>\n  );\n}",
+  "name": "SearchResultPage",
+  "slug": "search-result-page",
+  "parameters": [],
+  "description": "LLM search (getAllSearchResultsWithContext) which includes db, functions, interfaces, etc.",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 7,
+  "size": {
+    "characters": 1220,
+    "lines": 40,
+    "bytes": 1224,
+    "bytesPerCharacter": 1.0032786885245901,
+    "charactersPerLine": 31,
+    "linesPerFile": 40,
+    "numberOfFiles": 1
+  },
+  "id": "xlqansurppbgkalogmtbbxpx"
+}

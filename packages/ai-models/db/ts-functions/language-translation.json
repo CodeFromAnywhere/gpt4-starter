@@ -1,0 +1,56 @@
+{
+  "createdAt": 1678369210022,
+  "updatedAt": 1678369210022,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369210022,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/languageTranslation.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  text: string,\n  targetLanguage: string\n) => {\n  return textToText(`Please translate the following text into ${targetLanguage}:\n  \n${text}`);\n}",
+  "name": "languageTranslation",
+  "slug": "language-translation",
+  "parameters": [
+    {
+      "name": "text",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "targetLanguage",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Might very well be using a LLM Prompt, but there are more niche models that might do a better job, more efficiently, more cheaply, more performantly.",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 302,
+    "lines": 8,
+    "bytes": 302,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 38,
+    "linesPerFile": 8,
+    "numberOfFiles": 1
+  },
+  "id": "qvznonwzrawjnkkyrivohjbl"
+}

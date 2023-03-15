@@ -1,0 +1,86 @@
+{
+  "createdAt": 1678330211346,
+  "updatedAt": 1678330211346,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330211346,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/processChatGptPrompt.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  prompt: string,\n  isHeadless: boolean | undefined,\n  thread: string | undefined,\n  controller: \"playwright\" | \"puppeteer\" | \"faker\"\n): Promise<ProcessPromptFunctionResult> => {\n  const result: ProcessPromptFunctionResult =\n    controller === \"playwright\"\n      ? { isSuccessful: false, message: \"Playwright is disabled atm\" } //controlChatGpt(prompt, isHeadless)\n      : controller === \"puppeteer\"\n      ? await openAIChat({ prompt, isHeadless, thread })\n      : {\n          isSuccessful: true,\n          message: \"Done test\",\n          result: {\n            text: \"Lorum ipsum lorum ipsum lorum ipsum lorum ipsum lorum ipsum lorum ipsum lorum ipsum\",\n            thread: \"\",\n          },\n        };\n\n  return result;\n}",
+  "name": "controlChatGptWrapper",
+  "slug": "control-chat-gpt-wrapper",
+  "parameters": [
+    {
+      "name": "prompt",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "isHeadless",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    },
+    {
+      "name": "thread",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": false
+    },
+    {
+      "name": "controller",
+      "schema": {
+        "type": "string",
+        "enum": [
+          "playwright",
+          "puppeteer",
+          "faker"
+        ]
+      },
+      "simplifiedSchema": {
+        "enum": [
+          "playwright",
+          "puppeteer",
+          "faker"
+        ],
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/ai/ai-types/build/ProcessPromptFunctionResult\").ProcessPromptFunctionResult>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 6,
+  "size": {
+    "characters": 730,
+    "lines": 22,
+    "bytes": 730,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 33,
+    "linesPerFile": 22,
+    "numberOfFiles": 1
+  },
+  "id": "qifmyfdeqmklvvxskfxuxgjd"
+}

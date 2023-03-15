@@ -1,0 +1,60 @@
+{
+  "createdAt": 1677586397612,
+  "updatedAt": 1677586397612,
+  "deletedAt": 0,
+  "createdFirstAt": 1677586397612,
+  "id": "sayable",
+  "name": "Sayable",
+  "slug": "sayable",
+  "operationRelativeTypescriptFilePath": "src/expose/sayablesToMp3.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "/**\nGOAL:\n- distribute read only (and audio only) material of my codebase\n- it is also a fundament for other applications in the future\n */\n\nexport type Sayable = {\n  sayableText?: string;\n  voiceFileRelativePath?: string;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "GOAL:\n- distribute read only (and audio only) material of my codebase\n- it is also a fundament for other applications in the future",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "sayableText": {
+          "type": "string"
+        },
+        "voiceFileRelativePath": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "description": "GOAL:\n- distribute read only (and audio only) material of my codebase\n- it is also a fundament for other applications in the future"
+    },
+    "simplifiedSchema": {
+      "fullComment": "GOAL:\n- distribute read only (and audio only) material of my codebase\n- it is also a fundament for other applications in the future",
+      "properties": [
+        {
+          "name": "sayableText",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "voiceFileRelativePath",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "Sayable",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

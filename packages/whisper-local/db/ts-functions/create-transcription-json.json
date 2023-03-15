@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678330944906,
+  "updatedAt": 1678330944906,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330944906,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/createTranscriptionJson.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  audioFilePath: string\n): Promise<{ isSuccessful: boolean; message: string }> => {\n  // 1) run whisper for word-level timestamp\n  const wordWhisperResult = await whisperLocalCpp({\n    audioFilePath,\n    isWordSegments: true,\n  });\n  if (!wordWhisperResult) {\n    return {\n      isSuccessful: false,\n      message: \"No initial whisper result\",\n    };\n  }\n  const [wordPaths] = wordWhisperResult;\n\n  const words = await readTranscriptionCsv(wordPaths.csv);\n  if (!words) {\n    return { isSuccessful: false, message: \"Words couldn't be found\" };\n  }\n\n  // 2) run whisper for regular timestamps\n  const regularWhisperResult = await whisperLocalCpp({ audioFilePath });\n\n  if (!regularWhisperResult) {\n    return {\n      isSuccessful: false,\n      message: \"No initial whisper result\",\n    };\n  }\n  const [regularPaths] = regularWhisperResult;\n  const sentences = await readTranscriptionCsv(regularPaths.csv);\n\n  if (!sentences) {\n    return { isSuccessful: false, message: \"Sentences couldn't be found\" };\n  }\n\n  const text = fs.existsSync(regularPaths.txt)\n    ? await fs.readFile(regularPaths.txt, \"utf8\")\n    : undefined;\n  if (!text) {\n    return { isSuccessful: false, message: \"Text couldn't be found\" };\n  }\n\n  const language = detectLanguage(text);\n\n  const translationText =\n    language !== \"english\" ? await getTranslationText(audioFilePath) : text;\n\n  if (!translationText) {\n    return {\n      isSuccessful: false,\n      message: \"Translation went wrong\",\n    };\n  }\n\n  const transcription: Transcription = {\n    sentences,\n    text,\n    translationText,\n    words,\n    usedModelName: \"small\",\n  };\n\n  const parsedPath = path.parse(audioFilePath);\n\n  const transcriptionPath = path.join(\n    parsedPath.dir,\n    `${parsedPath.name}.transcription.json`\n  );\n\n  const isSuccessful = await writeJsonToFile(transcriptionPath, transcription);\n\n  if (!isSuccessful) {\n    return {\n      isSuccessful: false,\n      message: \"Failed\",\n    };\n  }\n\n  await fs.rm(regularPaths.csv);\n  await fs.rm(regularPaths.txt);\n\n  return {\n    isSuccessful: true,\n    message: \"Done\",\n  };\n}",
+  "name": "createTranscriptionJson",
+  "slug": "create-transcription-json",
+  "parameters": [
+    {
+      "name": "audioFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Whisper needs to be ran 2-3 times in order to have a good transcription\n\n- once for regular timestamps\n- once for word-level timestamps\n- if the source isn't english, once extra for the english translation task\n\nWith whisper, I need everything in `[filename].transcription.json`\n\n- default segment length stored in `.subtitles[]`\n- the word-level segments `.words[]`.\n- raw text in `.text: string`",
+  "returnType": {
+    "rawType": "Promise<{ isSuccessful: boolean; message: string; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 2483,
+    "lines": 98,
+    "bytes": 2483,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 98,
+    "numberOfFiles": 1
+  },
+  "id": "gvzgzqfctdcldtltwauwptfn"
+}

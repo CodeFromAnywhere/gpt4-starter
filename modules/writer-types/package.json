@@ -1,0 +1,74 @@
+{
+  "createdAt": 1668328745380,
+  "updatedAt": 1668328745380,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328745380,
+  "id": "bewcxueuynedlzvljjsciqab",
+  "dependencies": {
+    "language-types": "0.0.1",
+    "model-types": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "writer-types",
+  "language": "english",
+  "slug": "writer-types",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [],
+      "lintProblems": []
+    },
+    "classificationIndexed": "node-cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "writer-types",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1670218889095,
+    "operationDependenciesIndexed": [
+      "WordPriority",
+      "Language"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/purpose/writer",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 1,
+        "lines": 113,
+        "characters": 2523,
+        "bytes": 2523
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 112,
+        "characters": 3537,
+        "bytes": 3537
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 82,
+        "characters": 1267,
+        "bytes": 1267
+      },
+      "size": {
+        "bytes": 7327,
+        "characters": 7327,
+        "lines": 307,
+        "numberOfFiles": 5
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

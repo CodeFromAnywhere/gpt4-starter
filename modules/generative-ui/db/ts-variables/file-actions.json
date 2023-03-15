@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041373688,
+  "updatedAt": 1678041373688,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041373688,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "FileActions",
+  "slug": "file-actions",
+  "operationRelativeTypescriptFilePath": "src/FileActions.tsx",
+  "type": {
+    "rawType": "(props: { projectRelativeFilePath: string; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: {\n  /**\n   * File to apply the actions on\n   */\n  projectRelativeFilePath: string;\n}) => {\n  const { projectRelativeFilePath } = props;\n\n  const queryPath = useQueryPath();\n  const fileCollectionQuery =\n    queries.useGetFileCollectionWithContext(queryPath);\n\n  const refetch = () => {\n    fileCollectionQuery.refetch();\n  };\n\n  const alert = useAlert();\n\n  const { save, isSaved } = useFileWriter({\n    projectRelativeFilePath,\n    hideButtons: true,\n    initialWriterView: \"edit\",\n  });\n\n  const saveAction: ContextMenuItem = {\n    getTitle: () => \"💾 Save\",\n    getIsEnabled: () => !isSaved,\n    onClick: async () => {\n      await save();\n      refetch();\n    },\n  };\n\n  const copyAction: ContextMenuItem = {\n    getTitle: () => \"🖲 Copy\",\n    onClick: () => {\n      console.log(\"Coming soon\");\n    },\n  };\n\n  const openAction: ContextMenuItem = {\n    getTitle: () => \"↩️ Open with\",\n    onClick: async () => {\n      alert?.(\n        \"Coming soon, open VSCode/TextEdit/Browser, or other programs for other files?\"\n      );\n\n      if (!projectRelativeFilePath) return;\n\n      const apiResult = await api.vscodeOpen({\n        files: [{ projectRelativePath: projectRelativeFilePath }],\n      });\n\n      showStandardResponse(apiResult);\n    },\n  };\n  const runTestAction: ContextMenuItem = {\n    getTitle: () => \"⚡️ Test\",\n    getIsEnabled: (projectRelativeFilePath) =>\n      projectRelativeFilePath?.endsWith(\".test.ts\") || false,\n    onClick: () => {\n      alert?.(\"Coming soon (open test with nodejs)\");\n    },\n  };\n\n  const exportAction: ContextMenuItem = {\n    getTitle: () => \"⬇️ Export\",\n    onClick: () => {\n      alert?.(\"Export (pdf, presentation-pdf)\");\n    },\n  };\n\n  const runFunctionAction: ContextMenuItem = {\n    getTitle: () => \"⚡️ Run\",\n    onClick: () => {\n      alert?.(\n        \"Run file-action on this file, like generating an image description or sending it via an email\"\n      );\n    },\n  };\n\n  const allActions = [\n    saveAction,\n    openAction,\n    copyAction,\n    runTestAction,\n    exportAction,\n    runFunctionAction,\n  ];\n\n  return (\n    <Div className=\"flex flex-row flex-wrap\">\n      {allActions.map((action) => (\n        <ContextMenuItemComponent\n          action={action}\n          projectRelativeFilePath={projectRelativeFilePath}\n        />\n      ))}\n    </Div>\n  );\n}",
+  "description": "TODO: finish actions, ensure the refething is also working\n\nActions for every text-file\n\n- Save\n- Open in VSCode, TextEdit\n- Copy text content\n- Run ts file with node (if testfile) or to open terminal in folder (for any other file)",
+  "id": "phxivtlmxtleokrsozbrwqvl"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041380293,
+  "updatedAt": 1678041380293,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041380293,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "FileCollectionPage",
+  "slug": "file-collection-page",
+  "operationRelativeTypescriptFilePath": "src/FileCollectionPage.tsx",
+  "type": {
+    "rawType": "() => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  const queryPath = useQueryPath();\n  const fileCollectionQuery =\n    queries.useGetFileCollectionWithContext(queryPath);\n  const fileCollection = fileCollectionQuery.data?.result;\n\n  const statusQuery = queries.useGetFileCollectionStatusWithContext(queryPath);\n  const status = statusQuery.data?.result;\n\n  const hasPlayableFile = !!fileCollection?.files?.find(\n    (x) => x.type && [\"audio\", \"video\"].includes(x.type)\n  );\n  const binaryFiles =\n    fileCollection?.files?.filter((x) => x.type === \"other\") || [];\n  const textFiles = fileCollection?.files?.filter((x) => x.type === \"text\");\n  const imageFiles =\n    fileCollection?.files?.filter((x) => x.type === \"image\") || [];\n\n  const basePathsQuery = queries.useGetExplorableBasePathsWithContext();\n  const explorableBasePaths = basePathsQuery.data?.result;\n\n  const renderCollection = () => {\n    return (\n      <Div>\n        <FileCollectionActions />\n\n        <P>Status:{status?.status || \"loading...\"}</P>\n\n        {status?.actionStatus?.message ? (\n          <P>{status.actionStatus.message}</P>\n        ) : null}\n\n        {status?.queue ? <P>{status.queue.length} in queue</P> : null}\n\n        {binaryFiles.map((binaryFile) => {\n          const onClick = async () => {\n            openDownload(binaryFile.projectRelativePath);\n          };\n\n          return (\n            <ContextMenuItemComponent\n              action={{\n                getTitle: () => `💾 Download ${binaryFile.name}`,\n                onClick,\n              }}\n              projectRelativeFilePath={binaryFile.projectRelativePath}\n            />\n          );\n        })}\n\n        {hasPlayableFile ? (\n          <Details summary=\"Player\">\n            <TranscriptionPlayer />\n          </Details>\n        ) : null}\n\n        {imageFiles.length > 0\n          ? imageFiles.map((imageFile) => {\n              // Enable capability to render image\n\n              return (\n                <Details summary={imageFile.projectRelativePath}>\n                  <AssetView\n                    projectRelativeReferencingFilePath={\n                      imageFile.projectRelativePath\n                    }\n                    asset={{\n                      absoluteUrl: getAssetDirectlyApiUrl(\n                        apiUrl,\n                        imageFile.projectRelativePath\n                      ),\n                    }}\n                  />\n                </Details>\n              );\n            })\n          : null}\n\n        {textFiles?.map((item, index) => (\n          <TextFile item={item} index={index} />\n        ))}\n      </Div>\n    );\n  };\n\n  return (\n    <Div className=\"h-full\">\n      <Div className=\"flex flex-1 flex-col mx-2\">\n        {fileCollectionQuery?.data?.isSuccessful === false ? (\n          <Div>\n            <P>{fileCollectionQuery.data?.message}</P>\n          </Div>\n        ) : fileCollection?.isSuccessful === false ? (\n          <Div>\n            <P>{fileCollection?.message}</P>\n            <P>These are the paths you can access</P>\n            {explorableBasePaths?.map((item) => {\n              return (\n                <P>\n                  <NavButton\n                    title={item.name}\n                    href={`/${item.projectRelativePath}`}\n                  />\n                </P>\n              );\n            })}\n          </Div>\n        ) : (\n          renderCollection()\n        )}\n      </Div>\n    </Div>\n  );\n}",
+  "description": "Whenever you come back to the browser, some weird shit happens",
+  "id": "mbezzmzhylxigwlrfyrzwjcn"
+}

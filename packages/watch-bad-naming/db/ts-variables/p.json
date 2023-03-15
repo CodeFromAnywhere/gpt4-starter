@@ -1,0 +1,41 @@
+{
+  "createdAt": 1678330840622,
+  "updatedAt": 1678330840622,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330840622,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "p",
+  "slug": "p",
+  "operationRelativeTypescriptFilePath": "src/renameAllBadlyNamedFiles.test.ts",
+  "type": {
+    "rawType": "string | undefined",
+    "typeDefinition": {
+      "optional": true,
+      "type": "string",
+      "allOf": [
+        {
+          "transform": [
+            "trim"
+          ]
+        },
+        {
+          "minLength": 1
+        }
+      ]
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "type": "string"
+    }
+  },
+  "value": "getRootPath(\"assets\")",
+  "description": "",
+  "id": "nqhssojfcrjovmlcgvnwzimh"
+}

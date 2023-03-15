@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678331993291,
+  "updatedAt": 1678331993291,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331993291,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "loginConfirmWithContext",
+  "slug": "login-confirm-with-context",
+  "operationRelativeTypescriptFilePath": "src/loginConfirmWithContext.ts",
+  "type": {
+    "rawType": "{ (functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext, emailOrPhone: string, otp: string): Promise<{ isSuccessful: boolean; message: string; }>; config: { isPublic: boolean; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPublic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isPublic"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  emailOrPhone: string,\n  otp: string\n): Promise<{ isSuccessful: boolean; message: string }> => {\n  const email = isEmail(emailOrPhone) ? emailOrPhone : undefined;\n\n  const phoneNumber =\n    !isEmail(emailOrPhone) && isPhoneNumber(emailOrPhone)\n      ? emailOrPhone\n      : undefined;\n\n  if (!email && !phoneNumber) {\n    return {\n      isSuccessful: false,\n      message: \"Please fill in a valid email or phone number\",\n    };\n  }\n\n  const foundPerson = (await db.get(\"Person\")).find((x) => {\n    if (email) {\n      return x.email === email;\n    }\n\n    if (phoneNumber) {\n      return x.phoneNumber === phoneNumber;\n    }\n    return false;\n  });\n\n  if (!foundPerson) {\n    return {\n      isSuccessful: false,\n      message: \"Could not find anyone with that email/phone\",\n    };\n  }\n\n  const isMatch = email\n    ? foundPerson.authentication?.emailOtpAt &&\n      foundPerson.authentication?.emailOtp === otp &&\n      foundPerson.authentication?.emailOtpAt + 900000 > Date.now()\n    : phoneNumber\n    ? foundPerson.authentication?.phoneNumberOtpAt &&\n      foundPerson.authentication?.phoneNumberOtp === otp &&\n      foundPerson.authentication?.phoneNumberOtpAt + 900000 > Date.now()\n    : false;\n\n  if (!isMatch) {\n    return {\n      isSuccessful: false,\n      message: \"Your code was incorrect or timed out\",\n    };\n  }\n\n  // it's a match. Let's update device and log you in.\n\n  const updatePersonResult = await db.update(\n    \"Person\",\n    (item) => item.id === foundPerson.id,\n    (item) => {\n      const authentication: Person[\"authentication\"] = email\n        ? { emailOtp: undefined }\n        : phoneNumber\n        ? { phoneNumberOtp: undefined }\n        : undefined;\n      return {\n        ...item,\n        authentication: { ...item.authentication, ...authentication },\n      };\n    }\n  );\n  const updateResult = await db.update(\n    \"Device\",\n    (item) => item.authToken === functionContext.authToken,\n    (item) => {\n      // add the personId\n      const personIds = (item.personIds || [])\n        .concat(foundPerson.id)\n        .filter(onlyUnique2());\n\n      return { ...item, personIds, currentPersonId: foundPerson.id };\n    }\n  );\n\n  return {\n    isSuccessful: true,\n    message: \"Logged in!\",\n  };\n}",
+  "description": "",
+  "id": "sgddhqrqzjvwwfeesqjiexxb"
+}

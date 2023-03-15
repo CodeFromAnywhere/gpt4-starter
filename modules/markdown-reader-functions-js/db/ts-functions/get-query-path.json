@@ -1,0 +1,52 @@
+{
+  "createdAt": 1668448753164,
+  "updatedAt": 1668448753164,
+  "deletedAt": 0,
+  "createdFirstAt": 1668448753164,
+  "publicAuthorization": [
+    "read",
+    "search"
+  ],
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getQueryPath.ts",
+  "commentsInside": [],
+  "rawText": " (parsedUrlQuery: ParsedUrlQuery | undefined) => {\n  const paths = parsedUrlQuery?.paths;\n  const queryPath = Array.isArray(paths)\n    ? paths.join(\"/\")\n    : paths === undefined\n    ? \"\"\n    : paths;\n  return queryPath;\n}",
+  "name": "getQueryPath",
+  "slug": "get-query-path",
+  "parameters": [
+    {
+      "name": "parsedUrlQuery",
+      "schema": {
+        "$ref": "#/definitions/ParsedUrlQuery"
+      },
+      "simplifiedSchema": {
+        "fullComment": "",
+        "properties": [],
+        "type": "object"
+      },
+      "required": false
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 222,
+    "lines": 9,
+    "bytes": 222,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 9,
+    "numberOfFiles": 1
+  },
+  "id": "ftnnnmhutkgsethzeyqtpsqh"
+}

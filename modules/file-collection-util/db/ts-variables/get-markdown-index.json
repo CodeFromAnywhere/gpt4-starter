@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330495252,
+  "updatedAt": 1678330495252,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330495252,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getMarkdownIndex",
+  "slug": "get-markdown-index",
+  "operationRelativeTypescriptFilePath": "src/getMarkdownIndex.ts",
+  "type": {
+    "rawType": "(projectRelativePath: string) => Promise<import(\"/Users/clarity/os/operations/tools/types/markdown-types/build/MarkdownIndex\").MarkdownIndex | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  projectRelativePath: string\n): Promise<MarkdownIndex | undefined> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) return;\n  const absolutePath = path.join(projectRoot, projectRelativePath);\n  const stats = await fs.stat(absolutePath);\n  const isFolder = stats.isDirectory();\n\n  const parsedPath = path.parse(absolutePath);\n  const isMarkdownFile = parsedPath.ext === \".md\";\n\n  const absoluteFilePath = isFolder\n    ? await returnReadmePathFromFolder(absolutePath)\n    : absolutePath;\n\n  if (!absoluteFilePath) return;\n\n  const absoluteMarkdownIndexPath = getMarkdownIndexPath(\n    absoluteFilePath,\n    true\n  );\n\n  const frontmatter = isMarkdownFile\n    ? await readFrontmatter(absoluteFilePath)\n    : undefined;\n\n  const frontmatterMarkdownIndex = frontmatter\n    ? frontmatterToObject<MarkdownIndex>(\n        frontmatter,\n        Index.type.simplifiedSchema as SimplifiedSchema\n      )\n    : null;\n\n  const markdownIndex = await readJsonFile<MarkdownIndex>(\n    absoluteMarkdownIndexPath\n  );\n\n  if (!markdownIndex && !frontmatterMarkdownIndex) {\n    return;\n  }\n\n  // NB: do \"as\" because we're sure either one of them is truly a `MarkdownIndex`\n  const fullMarkdownIndex = {\n    ...frontmatterMarkdownIndex,\n    ...markdownIndex,\n  } as MarkdownIndex;\n\n  return fullMarkdownIndex;\n}",
+  "description": "provide a path to a folder or a markdown file, and it will give you the beloning `MarkdownIndex`.\n\nUses `readme.md` for a folder.\n\nIt sources from both frontmatter as well as .MarkdownIndex.json until we can make the complete transition to frontmatter or the other (but this may take some time!)\n\nNB: can be any file, it will always search for a markdownindex for the basename for that file... but preferably a .md file",
+  "id": "emhcvwqdtcjnejtmcclapvjz"
+}

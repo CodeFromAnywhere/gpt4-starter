@@ -1,0 +1,78 @@
+{
+  "createdAt": 1668328700406,
+  "updatedAt": 1668328700406,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328700406,
+  "id": "YROAWZykJeSsJSKv",
+  "dependencies": {
+    "js-util": "0.0.1",
+    "react-query": "*"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "api-types",
+  "language": "english",
+  "slug": "api-types",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/clarity/os/operations/tools/user-interfaces/api/api-types/src/api-types.ts. Error: Error: Unknown node \" import(\"function-types\").FileFunction<import(\"asset-functions-node\").DownloadConfig, import(\"function-types\").StandardResponse & {\n        downloadId?: string | undefined;\n    }>\" of kind \"LastTypeNode\""
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "api-types",
+    "hasGeneratedDependenciesIndexed": true,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1678331921427,
+    "operationDependenciesIndexed": [
+      "sdk"
+    ],
+    "packageDependenciesIndexed": [
+      "UseQueryResult"
+    ],
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/api",
+    "markdown": "api-related types needed for the `api` operation\n",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 3,
+        "lines": 224,
+        "characters": 7265,
+        "bytes": 7265
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 118,
+        "characters": 3014,
+        "bytes": 3014
+      },
+      "textSize": {
+        "numberOfFiles": 3,
+        "lines": 51,
+        "characters": 1881,
+        "bytes": 1881
+      },
+      "size": {
+        "bytes": 12160,
+        "characters": 12160,
+        "lines": 393,
+        "numberOfFiles": 8
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

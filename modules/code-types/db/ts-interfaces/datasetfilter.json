@@ -1,0 +1,104 @@
+{
+  "createdAt": 1676841838023,
+  "updatedAt": 1676841838023,
+  "deletedAt": 0,
+  "createdFirstAt": 1676841838023,
+  "id": "datasetfilter",
+  "name": "DatasetFilter",
+  "slug": "datasetfilter",
+  "operationRelativeTypescriptFilePath": "src/Dataset.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n/**\n * Can be better, see https://www.w3schools.com/js/js_comparisons.asp\n */\nexport type DatasetFilter = {\n  objectParameterKey: string;\n  /**\n   * This will sometines need to be casted\n   */\n  value: string;\n  /**\n   * Uses type equality\n   */\n  operator: DatasetFilterOperator;\n  /**\n   * TODO: Maybe add possibility to use a sort function from the SDK\n   */\n  filterFunctionName?: string;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "Can be better, see https://www.w3schools.com/js/js_comparisons.asp",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "objectParameterKey": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "description": "This will sometines need to be casted"
+        },
+        "operator": {
+          "$ref": "#/definitions/DatasetFilterOperator",
+          "description": "Uses type equality"
+        },
+        "filterFunctionName": {
+          "type": "string",
+          "description": "TODO: Maybe add possibility to use a sort function from the SDK"
+        }
+      },
+      "required": [
+        "objectParameterKey",
+        "value",
+        "operator"
+      ],
+      "additionalProperties": false,
+      "description": "Can be better, see https://www.w3schools.com/js/js_comparisons.asp"
+    },
+    "simplifiedSchema": {
+      "fullComment": "Can be better, see https://www.w3schools.com/js/js_comparisons.asp",
+      "properties": [
+        {
+          "name": "objectParameterKey",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "value",
+          "required": true,
+          "schema": {
+            "fullComment": "This will sometines need to be casted",
+            "type": "string"
+          }
+        },
+        {
+          "name": "operator",
+          "required": true,
+          "schema": {
+            "enum": [
+              "includesLetters",
+              "includes",
+              "startsWith",
+              "endsWith",
+              "equal",
+              "notEqual",
+              "greaterThan",
+              "greaterThanOrEqual",
+              "lessThan",
+              "lessThanOrEqual"
+            ],
+            "fullComment": "Uses type equality\n\n",
+            "type": "string"
+          }
+        },
+        {
+          "name": "filterFunctionName",
+          "required": false,
+          "schema": {
+            "fullComment": "TODO: Maybe add possibility to use a sort function from the SDK",
+            "todo": "Maybe add possibility to use a sort function from the SDK",
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "DatasetFilter",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

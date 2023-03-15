@@ -1,0 +1,35 @@
+{
+  "createdAt": 1677580353400,
+  "updatedAt": 1677580353400,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580353400,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/hasDataPermissions.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  functionContext: FunctionContext,\n  interfaceName: keyof DbModels,\n  requiredPermissionLetters: string[]\n) => {\n  const groupSlugs = functionContext.groups?.map((x) => x.slug);\n  if (groupSlugs?.includes(\"admin\")) {\n    return true;\n  }\n  const tsInterface = await getTsInterface(interfaceName);\n  const authorizationsString =\n    groupSlugs\n      ?.map((slug) => tsInterface?.authorizations?.[slug])\n      .filter(notEmpty)\n      .join(\"\") || \"\";\n\n  const hasNoPermission = !!requiredPermissionLetters.find(\n    (letter) => !authorizationsString.includes(letter)\n  );\n\n  if (hasNoPermission) {\n    console.log({ groupSlugs, authorizationsString });\n  }\n  return !hasNoPermission;\n}",
+  "name": "hasDataPermissions",
+  "slug": "has-data-permissions",
+  "parameters": [],
+  "description": "Checks if a user has the data permission to do something with a certain dbmodel",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 772,
+    "lines": 25,
+    "bytes": 772,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 31,
+    "linesPerFile": 25,
+    "numberOfFiles": 1
+  },
+  "id": "ivttibrknooelwtlkqoydosa"
+}

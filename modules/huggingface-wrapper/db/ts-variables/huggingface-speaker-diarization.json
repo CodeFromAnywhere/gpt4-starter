@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331054640,
+  "updatedAt": 1678331054640,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331054640,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "huggingfaceSpeakerDiarization",
+  "slug": "huggingface-speaker-diarization",
+  "operationRelativeTypescriptFilePath": "src/huggingfaceSpeakerDiarization.ts",
+  "type": {
+    "rawType": "(config: { absoluteAudioFilePath: string; }) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: {\n  absoluteAudioFilePath: string;\n}) => {\n  const { absoluteAudioFilePath } = config;\n  const persona = await getPrimaryPersona();\n  const apiKey = persona.huggingfaceAuthToken;\n\n  if (!apiKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please setup an API Key for huggingface\",\n    };\n  }\n\n  try {\n    const huggingfaceResult = await request({\n      contentAbsoluteFilePath: absoluteAudioFilePath,\n      // model: \"pyannote/speaker-diarization\", <-- api seems broken\n      model: \"tawkit/phil-pyannote-speaker-diarization-endpoint\",\n      apiKey,\n    });\n\n    console.log({ huggingfaceResult });\n  } catch (e) {\n    console.log(`huggingFaceSpeakerDiarization error`, e);\n  }\n}",
+  "description": "",
+  "id": "uajpnxultsdecafsyhnbwjjg"
+}

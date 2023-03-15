@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678330224025,
+  "updatedAt": 1678330224025,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330224025,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "haiku",
+  "slug": "haiku",
+  "operationRelativeTypescriptFilePath": "src/prompts.ts",
+  "type": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "async (\n  anyContext: string,\n  prompt_projectRelativePath: string,\n  isDeferred?: boolean\n) => {\n  const result = await processChatGptPrompt({\n    isDeferred,\n    contextualPromptSlug: \"haiku\",\n    anyContext,\n    prompt_projectRelativePath,\n  });\n\n  return result;\n}",
+  "description": "Write a Haiku",
+  "id": "ayynffimoerjhhrjyblzitoe"
+}

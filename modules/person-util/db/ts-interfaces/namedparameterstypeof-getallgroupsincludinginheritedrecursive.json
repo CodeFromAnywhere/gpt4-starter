@@ -1,0 +1,66 @@
+{
+  "createdAt": 1678331372996,
+  "updatedAt": 1678331372996,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331372996,
+  "id": "namedparameterstypeof-getallgroupsincludinginheritedrecursive",
+  "name": "NamedParameters<typeof getAllGroupsIncludingInheritedRecursive>",
+  "slug": "namedparameterstypeof-getallgroupsincludinginheritedrecursive",
+  "operationRelativeTypescriptFilePath": "src/getAllGroupsIncludingInherited.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Group"
+          }
+        },
+        "groupSlugs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "groups"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "groupSlugs",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getAllGroupsIncludingInheritedRecursive>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

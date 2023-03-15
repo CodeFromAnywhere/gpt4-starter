@@ -1,0 +1,2320 @@
+{
+  "createdAt": 1678611475563,
+  "updatedAt": 1678611475563,
+  "deletedAt": 0,
+  "createdFirstAt": 1678611475563,
+  "id": "namedparameterstypeof-getpaywallresult",
+  "name": "NamedParameters<typeof getPaywallResult>",
+  "slug": "namedparameterstypeof-getpaywallresult",
+  "operationRelativeTypescriptFilePath": "src/getPaywallResult.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "chatMessage": {
+          "$ref": "#/definitions/Creation%3CChatMessage%3E"
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChatMessage"
+          }
+        },
+        "person": {
+          "$ref": "#/definitions/Person"
+        },
+        "persona": {
+          "$ref": "#/definitions/Persona"
+        },
+        "config": {
+          "type": "object",
+          "properties": {
+            "isFirstMessage": {
+              "type": "boolean"
+            },
+            "newUsersAmount": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "chatMessage",
+        "history",
+        "person",
+        "persona",
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "history",
+          "required": true,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "Simplified model, until we are also going to include `MediaPost` and `MediaChannel`... For now, need nothing else than this for chat like WhatsApp, SMS, Email, etc...\n\nThe message is always from a sender and goes to a receiver. Both the sender and receiver can be either a person or persona. In case it's a persona, the personId should be found for the persona.\n\nTODO: ensure this gets stored in the folder of the external person!",
+                  "todo": "ensure this gets stored in the folder of the external person!",
+                  "properties": [
+                    {
+                      "name": "createdAt",
+                      "required": true,
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "updatedAt",
+                      "required": true,
+                      "schema": {
+                        "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "deletedAt",
+                      "required": true,
+                      "schema": {
+                        "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "createdFirstAt",
+                      "required": true,
+                      "schema": {
+                        "fullComment": "in some cases, data can be created before it was created in our system. In this case, use CreatedFirstAt if this information is important.\n\nTime\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "operationName",
+                      "required": true,
+                      "schema": {
+                        "fullComment": "name of operation the model belongs to\n\n- calculated value (not stored in database)\n- can be `null` or an actual operationName that it was saved at\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                        "type": "null"
+                      }
+                    },
+                    {
+                      "name": "projectRelativePath",
+                      "required": true,
+                      "schema": {
+                        "fullComment": "path to dbfile\n\n- calculated value (not stored in database)\n- relatively from the project (without slash at start)\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "operationRelativePath",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "path to db file\n\n- relatively from the operation root folder (without slash at start)\n- calculated value (not stored in database)\n- can be `undefined` if the db file does not belong to an operation\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "id",
+                      "required": true,
+                      "schema": {
+                        "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "categoryStack",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "In case of jsonSingle storageMethod, the categoryStack is generated by the location of the file in the db model folder in the db folder.\n\nNB: Changing this value when updating/upserting, changes where the item is located!\n\nTaken from the location in the folder of the db-model.\n\nNB: Changing this value when updating/upserting, changes where the item is located!",
+                        "nb": "Changing this value when updating/upserting, changes where the item is located!",
+                        "items": [
+                          {
+                            "schema": {
+                              "type": "string"
+                            },
+                            "name": null
+                          }
+                        ],
+                        "type": "array"
+                      }
+                    },
+                    {
+                      "name": "personaId",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "admin (internal person)",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "personId",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "external person",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "direction",
+                      "required": true,
+                      "schema": {
+                        "enum": [
+                          "sent",
+                          "received"
+                        ],
+                        "fullComment": "If sent, the dicection is \"persona -> person\" If received, the direction is \"person -> persona\"",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "groupSlug",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Should be given in case the message occurred in a bigger channel. If not given, it is assumed the ChatMessage is a direct message between a person and a persona.\n\nThe actual `MediaChannel` is a detail that is not important so I think we can get away with directly referencing to the group the MediaChannel belongs to.",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "message",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "usedTokensAmount",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Used tokens by open ai (cost: 2$ per 1M tokens)",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "isFree",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "If set to true, this means that this was sent by a user with less than 0 credit, indicating the user didn't pay for it.",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "isPaywallMessage",
+                      "required": false,
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                },
+                "name": "ChatMessage"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "person",
+          "required": true,
+          "schema": {
+            "fullComment": "--- projectRelativeStorageLocationFilePath: operations/tools/purpose/p2p/peer-types/src/person/persons.json\n---\n\nModel to describe a human person. This model gathers and stores all persons around the world, except for yourself. Kind of a user-like model...\n\n\nThe data inside this model is coming from the `Person` itself but also from the owner of the OS server. It should be possible for the person to automatically push information into any of their instances on any server, but the OS owner can augment this.\n\nNB: This is a `DefaultModelType`, which means name and slug need not to be unique, but it is highly preferred.",
+            "nb": "This is a `DefaultModelType`, which means name and slug need not to be unique, but it is highly preferred.",
+            "properties": [
+              {
+                "name": "createdAt",
+                "required": true,
+                "schema": {
+                  "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                  "type": "number"
+                }
+              },
+              {
+                "name": "updatedAt",
+                "required": true,
+                "schema": {
+                  "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                  "type": "number"
+                }
+              },
+              {
+                "name": "deletedAt",
+                "required": true,
+                "schema": {
+                  "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                  "type": "number"
+                }
+              },
+              {
+                "name": "createdFirstAt",
+                "required": true,
+                "schema": {
+                  "fullComment": "in some cases, data can be created before it was created in our system. In this case, use CreatedFirstAt if this information is important.\n\nTime\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                  "type": "number"
+                }
+              },
+              {
+                "name": "operationName",
+                "required": true,
+                "schema": {
+                  "fullComment": "name of operation the model belongs to\n\n- calculated value (not stored in database)\n- can be `null` or an actual operationName that it was saved at\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                  "type": "null"
+                }
+              },
+              {
+                "name": "projectRelativePath",
+                "required": true,
+                "schema": {
+                  "fullComment": "path to dbfile\n\n- calculated value (not stored in database)\n- relatively from the project (without slash at start)\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "operationRelativePath",
+                "required": false,
+                "schema": {
+                  "fullComment": "path to db file\n\n- relatively from the operation root folder (without slash at start)\n- calculated value (not stored in database)\n- can be `undefined` if the db file does not belong to an operation\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "id",
+                "required": true,
+                "schema": {
+                  "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "categoryStack",
+                "required": false,
+                "schema": {
+                  "fullComment": "In case of jsonSingle storageMethod, the categoryStack is generated by the location of the file in the db model folder in the db folder.\n\nNB: Changing this value when updating/upserting, changes where the item is located!\n\nTaken from the location in the folder of the db-model.\n\nNB: Changing this value when updating/upserting, changes where the item is located!",
+                  "nb": "Changing this value when updating/upserting, changes where the item is located!",
+                  "items": [
+                    {
+                      "schema": {
+                        "type": "string"
+                      },
+                      "name": null
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "name",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "slug",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "preferredLanguage",
+                "required": false,
+                "schema": {
+                  "enum": [
+                    "english",
+                    "dutch",
+                    "nepali",
+                    "portuguese",
+                    "brazilian",
+                    "german",
+                    "french",
+                    "spanish",
+                    "italian",
+                    "norwegian",
+                    "swedish",
+                    "danish",
+                    "vietnamese",
+                    "indonesian",
+                    "southAfrican",
+                    "tokiPona",
+                    "hindi",
+                    "mandarin",
+                    "arabic",
+                    "bengali",
+                    "urdu",
+                    "japanese",
+                    "swahili"
+                  ],
+                  "fullComment": "all currently supported languages",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "pictureImage",
+                "required": false,
+                "schema": {
+                  "fullComment": "Part of the asset that should be sent to the backend. The rest should frontend-only\n\nSome values are stored, some are not",
+                  "properties": [
+                    {
+                      "name": "alt",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Stored value\n\nAlt text for the asset",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "relativePath",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Stored value\n\nRelative path, relative to the location the asset is defined in.\n\nOnly available if the asset was already processed by a backend. Before backend processing, only `temporaryDestination` is available.\n\nChanging the `relativePath` shouldn't do anything, it can only be changed by backend processing by giving a new `temporaryDestination`, or by changing the `name`.",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "name",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Not stored\n\nNot given by the backend data, but can be SENT to the backend.\n\nShould not be stored, but if you change this value and send it to the backend, it should rename the file and thus the relativePath stored should change.\n\nNB: I'm not sure how to solve having multiple references to a single file. If this occurs, which is hard to prevent if allowing manual editing of data, it may be hard to prevent dead links if someone changes the name of a file that is also refered to in other places. In this case, it would be ideal if all references also would be renamed, but it may be hard to find them. Even if we solve this, it's still possible to get dead links if someone renames the file (or removes it) manually. This should be taken into account, and may not break anything!",
+                        "nb": "I'm not sure how to solve having multiple references to a single file. If this occurs, which is hard to prevent if allowing manual editing of data, it may be hard to prevent dead links if someone changes the name of a file that is also refered to in other places. In this case, it would be ideal if all references also would be renamed, but it may be hard to find them. Even if we solve this, it's still possible to get dead links if someone renames the file (or removes it) manually. This should be taken into account, and may not break anything!",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "temporaryDestination",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Not stored\n\nFilename after uploading in the temporary folder. should still be moved to its final location\n\nOnly available straight after uploading. After the function processes the asset, this is removed and a `relativePath` is created.",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "projectRelativeReferencingFilePath",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Not stored\n\nNeeds to be there before calling `processAsset`. Should be augmented to the backendAsset in the frontend, before sending it to the backend.\n\nLocation of the place where the asset is referenced\n\n- markdown file (or folder where it is located)\n- typescript file (or folder where it is located)\n- database file (or folder where it is located)",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "modelName",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Not stored\n\nNeeds to be there before calling `processAsset`. Should be augmented to the backendAsset in the frontend, before sending it to the backend.\n\nModel that the asset is related to",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "absoluteUrl",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "NOT STORED\n\nCan be available in case it's an asset from an external source URL for example within md.\n\nAlso can be set in case it's a static asset from a next project",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                }
+              },
+              {
+                "name": "email",
+                "required": false,
+                "schema": {
+                  "fullComment": "Email takes priority over phone number, but they are both unique identifiers for a person",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "lastActivityAt",
+                "required": false,
+                "schema": {
+                  "fullComment": "used for whatsapp messages to determine the users last message",
+                  "type": "number"
+                }
+              },
+              {
+                "name": "isEmailOptOut",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "phoneNumber",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "authentication",
+                "required": false,
+                "schema": {
+                  "fullComment": "To replace the initial system of having multiple `authenticationMethod`s\n\nIf authentication exists, that means the user is attempting to access their account\n\nWe can already have their person registered and we can already have information about them or for them without them having an account yet, because it's the same `Person` model.",
+                  "properties": [
+                    {
+                      "name": "emailIsVerified",
+                      "required": false,
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "emailOtp",
+                      "required": false,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "emailOtpAt",
+                      "required": false,
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "twoFactorAuthenticationStrategy",
+                      "required": false,
+                      "schema": {
+                        "enum": [
+                          "disabled",
+                          "any",
+                          "email",
+                          "phoneNumber",
+                          "both"
+                        ],
+                        "fullComment": "Strategy for the user to authenticate. Defaults to disabled, which means you can just verify in a single way.",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "phoneNumberIsVerified",
+                      "required": false,
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "phoneNumberOtp",
+                      "required": false,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "phoneNumberOtpAt",
+                      "required": false,
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "encryptedPassword",
+                      "required": false,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                }
+              },
+              {
+                "name": "interestSlugs",
+                "required": false,
+                "schema": {
+                  "fullComment": "slugs of interest categories that this person should be notified about.\n\nSince this is a hierarchical model, parent interests will ensure all children are also applied.",
+                  "items": [
+                    {
+                      "schema": {
+                        "fullComment": "use this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                        "type": "string"
+                      },
+                      "name": "Slug"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "mediaChannelIds",
+                "required": false,
+                "schema": {
+                  "fullComment": "After the `MediaChannel` DB is filled, we can index the names of the persons of the `MediaChannel`, and and we can push them to here, if the name is \"similar\" to the name of this `Person`.\n\n`*` = \"similar\" means: exact match, or at least first name + last name match",
+                  "items": [
+                    {
+                      "schema": {
+                        "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                        "type": "string"
+                      },
+                      "name": "Id"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "preferred_mediaChannelId",
+                "required": false,
+                "schema": {
+                  "fullComment": "Optional. Can be set by admin (not indexed)\n\nIf not available, take the first (mediaChannelIds[0])\n\nShould be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "media",
+                "required": false,
+                "schema": {
+                  "fullComment": "Media that is attached to this person.\n\nNB: not used to authenticate! Can be filled in by King OS, might be erroneous",
+                  "nb": "not used to authenticate! Can be filled in by King OS, might be erroneous",
+                  "items": [
+                    {
+                      "schema": {
+                        "fullComment": "media (mediums) that a person uses, e.g. linkedin, twitter, whatsapp, sms, calling, and irl",
+                        "properties": [
+                          {
+                            "name": "platformSlug",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "medium where the person is a user\n\nuse this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "path",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "used to find the user on the platform",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "isPremium",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "(if available) whether or not the user has a premium account",
+                              "type": "boolean"
+                            }
+                          },
+                          {
+                            "name": "tagline",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "(if available) a tagline for the user of the platform",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "bio",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "(if available) a bio for the user of the platform",
+                              "type": "string"
+                            }
+                          }
+                        ],
+                        "type": "object"
+                      },
+                      "name": "PersonSocialMedia"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "dataEntries",
+                "required": false,
+                "schema": {
+                  "items": [
+                    {
+                      "schema": {
+                        "fullComment": "key value data storage model for information about a person\n\n- the filename must identify the person this is about (`personSlug`)\n- the categories are the different people and the person information categories\n- the keys are the person information datapoints\n- the values are the values of the datapoints that you stored about this user\n\nExample:\n\nthe file `person-information-values/abraham-lincoln.md` could contain something like this:\n\n```md # life born: 11-01-1777 died: 20-12-1812\n\n# identification firstName: Abraham lastName: Lincoln ```\n\nNB: It's not going to be easy to keep this model in sync with the model it relies on!\n\nTODO: figure out if this kan be a `KeyValueMarkdownModelType` or `MarkdownModelType`",
+                        "todo": "figure out if this kan be a `KeyValueMarkdownModelType` or `MarkdownModelType`",
+                        "nb": "It's not going to be easy to keep this model in sync with the model it relies on!",
+                        "properties": [
+                          {
+                            "name": "createdAt",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "updatedAt",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "deletedAt",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "createdFirstAt",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "in some cases, data can be created before it was created in our system. In this case, use CreatedFirstAt if this information is important.\n\nTime\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "operationName",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "name of operation the model belongs to\n\n- calculated value (not stored in database)\n- can be `null` or an actual operationName that it was saved at\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                              "type": "null"
+                            }
+                          },
+                          {
+                            "name": "projectRelativePath",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "path to dbfile\n\n- calculated value (not stored in database)\n- relatively from the project (without slash at start)\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "operationRelativePath",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "path to db file\n\n- relatively from the operation root folder (without slash at start)\n- calculated value (not stored in database)\n- can be `undefined` if the db file does not belong to an operation\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "id",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "categoryStack",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "In case of jsonSingle storageMethod, the categoryStack is generated by the location of the file in the db model folder in the db folder.\n\nNB: Changing this value when updating/upserting, changes where the item is located!\n\nTaken from the location in the folder of the db-model.\n\nNB: Changing this value when updating/upserting, changes where the item is located!",
+                              "nb": "Changing this value when updating/upserting, changes where the item is located!",
+                              "items": [
+                                {
+                                  "schema": {
+                                    "type": "string"
+                                  },
+                                  "name": null
+                                }
+                              ],
+                              "type": "array"
+                            }
+                          },
+                          {
+                            "name": "personId",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "personInformationSlug",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "use this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "value",
+                            "required": true,
+                            "schema": {
+                              "type": "string"
+                            }
+                          }
+                        ],
+                        "type": "object"
+                      },
+                      "name": "PersonInformationValue"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "devicesCalculated",
+                "required": false,
+                "schema": {
+                  "fullComment": "Devices can be attached to a person by looking in the device model and finding the devices that refer to this person\n\nAmong other things, this can be used to determine the `Person` location",
+                  "items": [
+                    {
+                      "schema": {
+                        "fullComment": "--- dbStorageMethod: jsonSingle\n---\n\nA Device that accesses any King OS api.\n\nA device can be connected to a person. A person can have multiple `Device`s.\n\nA Device does not necissarily have King OS installed themselves, they can also be a visitor to another King OS app of someone else.",
+                        "properties": [
+                          {
+                            "name": "ip",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "The ip of the device. Can be a local IP or remote IP.\n\nNB: Port is not included",
+                              "nb": "Port is not included",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "city",
+                            "required": false,
+                            "schema": {
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "position",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "",
+                              "properties": [
+                                {
+                                  "name": "latitude",
+                                  "required": true,
+                                  "schema": {
+                                    "type": "number"
+                                  }
+                                },
+                                {
+                                  "name": "longitude",
+                                  "required": true,
+                                  "schema": {
+                                    "type": "number"
+                                  }
+                                }
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          {
+                            "name": "positionRadiusKm",
+                            "required": false,
+                            "schema": {
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "country",
+                            "required": false,
+                            "schema": {
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "region",
+                            "required": false,
+                            "schema": {
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "timezone",
+                            "required": false,
+                            "schema": {
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "createdAt",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "updatedAt",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "deletedAt",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "createdFirstAt",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "in some cases, data can be created before it was created in our system. In this case, use CreatedFirstAt if this information is important.\n\nTime\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "operationName",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "name of operation the model belongs to\n\n- calculated value (not stored in database)\n- can be `null` or an actual operationName that it was saved at\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                              "type": "null"
+                            }
+                          },
+                          {
+                            "name": "projectRelativePath",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "path to dbfile\n\n- calculated value (not stored in database)\n- relatively from the project (without slash at start)\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "operationRelativePath",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "path to db file\n\n- relatively from the operation root folder (without slash at start)\n- calculated value (not stored in database)\n- can be `undefined` if the db file does not belong to an operation\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "id",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "categoryStack",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "In case of jsonSingle storageMethod, the categoryStack is generated by the location of the file in the db model folder in the db folder.\n\nNB: Changing this value when updating/upserting, changes where the item is located!\n\nTaken from the location in the folder of the db-model.\n\nNB: Changing this value when updating/upserting, changes where the item is located!",
+                              "nb": "Changing this value when updating/upserting, changes where the item is located!",
+                              "items": [
+                                {
+                                  "schema": {
+                                    "type": "string"
+                                  },
+                                  "name": null
+                                }
+                              ],
+                              "type": "array"
+                            }
+                          },
+                          {
+                            "name": "authToken",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "AuthToken is used to identify a device. Unique identifier that is saved in the devices browser/app.\n\nIf the authToken is the same, we can be sure that the device is matched, even if the IP is different.\n\nShould be identical to ID",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "userAgentString",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Raw `User-Agent` header.\n\nNOT used to identify the device, since the device can already be connected to a person!",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "name",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Name of the device, calculated based on metadata like location, os, and ip\n\nCan be edited by the user",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "hasPapi",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "Is set to true if the devices IP is pinged and seems to have something that resembles a King OS PAPI.",
+                              "type": "boolean"
+                            }
+                          },
+                          {
+                            "name": "isOnlineCalculated",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "Returning `true` or `false` indicating whether or not the IP is giving a response",
+                              "type": "boolean"
+                            }
+                          },
+                          {
+                            "name": "lastOnlineAt",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Whenever the peer is online, this should update",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "isLocalIpCalculated",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "if true, the above IP is a local one, meaning it cannot be accessed from outside of this network\n\nThis is easy to determine: local IP's must start with \"192.168\"",
+                              "type": "boolean"
+                            }
+                          },
+                          {
+                            "name": "isFavorite",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "if `true`, this device will show on top",
+                              "type": "boolean"
+                            }
+                          },
+                          {
+                            "name": "isPrivate",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "If true, this peer should not be shared",
+                              "type": "boolean"
+                            }
+                          },
+                          {
+                            "name": "lastSyncDatabaseAtObject",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "last sync of any model\n\nUseful for example for a p2p messaging",
+                              "properties": [],
+                              "type": "object"
+                            }
+                          },
+                          {
+                            "name": "personIds",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "If the device is authenticated, this should be set.\n\nCan be unset by the person",
+                              "items": [
+                                {
+                                  "schema": {
+                                    "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                                    "type": "string"
+                                  },
+                                  "name": "Id"
+                                }
+                              ],
+                              "type": "array"
+                            }
+                          },
+                          {
+                            "name": "currentPersonId",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "A device can switch between persons, by changing this value\n\nShould be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "currentPersonCalculated",
+                            "required": false,
+                            "schema": {
+                              "circularRefName": "Person",
+                              "fullComment": "If you have a currentPersonId, it is calculated and provided by selecting it from the persons array\n\nFor now, only provided by functioncontext",
+                              "properties": [],
+                              "type": "object"
+                            }
+                          },
+                          {
+                            "name": "appOperationsCalculated",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "Calculated all operations that can be exposed as apps. This is taken from `getAllAppOperations` function",
+                              "items": [
+                                {
+                                  "schema": {
+                                    "fullComment": "",
+                                    "properties": [
+                                      {
+                                        "name": "name",
+                                        "required": true,
+                                        "schema": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      {
+                                        "name": "port",
+                                        "required": true,
+                                        "schema": {
+                                          "type": "number"
+                                        }
+                                      },
+                                      {
+                                        "name": "description",
+                                        "required": false,
+                                        "schema": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      {
+                                        "name": "isOnline",
+                                        "required": false,
+                                        "schema": {
+                                          "type": "boolean"
+                                        }
+                                      },
+                                      {
+                                        "name": "emoji",
+                                        "required": false,
+                                        "schema": {
+                                          "fullComment": "Emoji that should be used as the app icon. Can be calculated from the `operation.md`",
+                                          "type": "string"
+                                        }
+                                      }
+                                    ],
+                                    "type": "object"
+                                  },
+                                  "name": "AppOperation"
+                                }
+                              ],
+                              "type": "array"
+                            }
+                          },
+                          {
+                            "name": "authenticationMethods",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "DEPRECATED: Going to move to `Person.authentication` in favor of simplicity.\n\nLater, we may need a `LoginAttempt` Model in order to facilitate 2FA because it may take multiple steps to log someone in.\n\nFor now, you're immediately logged in once the password or OTP matches the Person, and you can immediately set `currentPersonId` and `personIds`\n\nIf the `Device` is not identified as a person yet, this can be configured to authenticate with different methods. Once it matches to a person, this can be cleared and `personId` can be attached.",
+                              "items": [
+                                {
+                                  "schema": {
+                                    "fullComment": "",
+                                    "properties": [
+                                      {
+                                        "name": "method",
+                                        "required": true,
+                                        "schema": {
+                                          "enum": [
+                                            "usernamePassword",
+                                            "phoneNumber",
+                                            "email",
+                                            "apple",
+                                            "google",
+                                            "facebook",
+                                            "twitter",
+                                            "linkedin",
+                                            "github"
+                                          ],
+                                          "fullComment": "NB: Not all are supported yet\n\nUsername + password should be the default\n\nEmail OTP, phone number OTP (sms or call or whatsapp), should be optional 2FA methods\n\nAll others can also act as authentication methods, but the token shouldn't be stored",
+                                          "nb": "Not all are supported yet",
+                                          "type": "string"
+                                        }
+                                      },
+                                      {
+                                        "name": "handle",
+                                        "required": true,
+                                        "schema": {
+                                          "fullComment": "most of the time, this is a username, but can also be phone number or email or so",
+                                          "type": "string"
+                                        }
+                                      },
+                                      {
+                                        "name": "encryptedCredential",
+                                        "required": false,
+                                        "schema": {
+                                          "fullComment": "This can be a password or token, depending on the method.\n\nIn case of OTP, this isn't required (e.g. for `phoneNumber`)",
+                                          "type": "string"
+                                        }
+                                      },
+                                      {
+                                        "name": "credential",
+                                        "required": false,
+                                        "schema": {
+                                          "fullComment": "original credential. should only be available on the device, not on the person",
+                                          "type": "string"
+                                        }
+                                      },
+                                      {
+                                        "name": "otp",
+                                        "required": false,
+                                        "schema": {
+                                          "fullComment": "one time password code, that will be sent to email or sms (or in the future other ways)",
+                                          "type": "number"
+                                        }
+                                      },
+                                      {
+                                        "name": "isAuthenticated",
+                                        "required": true,
+                                        "schema": {
+                                          "fullComment": "If OTP is not filled in yet, will be false, otherwise true",
+                                          "type": "boolean"
+                                        }
+                                      }
+                                    ],
+                                    "type": "object"
+                                  },
+                                  "name": "AuthenticationMethod"
+                                }
+                              ],
+                              "type": "array"
+                            }
+                          }
+                        ],
+                        "type": "object"
+                      },
+                      "name": "Device"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "authenticationMethods",
+                "required": false,
+                "schema": {
+                  "fullComment": "DEPRECATED: to be replaced by `authentication` in favor of simplicity\n\nMethods that can be used to identify yourself as being this user\n\nShould be set up by the user either when registering, or in settings, to provide more methods.\n\nNB: It's important to note that a `Person` should not be able to add credentials that are already added by another person. This means that, when adding such a method, all `Person`s need to be searched!",
+                  "nb": "It's important to note that a `Person` should not be able to add credentials that are already added by another person. This means that, when adding such a method, all `Person`s need to be searched!",
+                  "items": [
+                    {
+                      "schema": {
+                        "fullComment": "",
+                        "properties": [
+                          {
+                            "name": "method",
+                            "required": true,
+                            "schema": {
+                              "enum": [
+                                "usernamePassword",
+                                "phoneNumber",
+                                "email",
+                                "apple",
+                                "google",
+                                "facebook",
+                                "twitter",
+                                "linkedin",
+                                "github"
+                              ],
+                              "fullComment": "NB: Not all are supported yet\n\nUsername + password should be the default\n\nEmail OTP, phone number OTP (sms or call or whatsapp), should be optional 2FA methods\n\nAll others can also act as authentication methods, but the token shouldn't be stored",
+                              "nb": "Not all are supported yet",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "handle",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "most of the time, this is a username, but can also be phone number or email or so",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "encryptedCredential",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "This can be a password or token, depending on the method.\n\nIn case of OTP, this isn't required (e.g. for `phoneNumber`)",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "credential",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "original credential. should only be available on the device, not on the person",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "otp",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "one time password code, that will be sent to email or sms (or in the future other ways)",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "isAuthenticated",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "If OTP is not filled in yet, will be false, otherwise true",
+                              "type": "boolean"
+                            }
+                          }
+                        ],
+                        "type": "object"
+                      },
+                      "name": "AuthenticationMethod"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "groupSlugs",
+                "required": false,
+                "schema": {
+                  "fullComment": "To which groups does this person belong?\n\nThis determines additional authorizations\n\nCan be set on signup, but can always be edited by admin",
+                  "items": [
+                    {
+                      "schema": {
+                        "fullComment": "use this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                        "type": "string"
+                      },
+                      "name": "Slug"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "paymentAuthToken",
+                "required": false,
+                "schema": {
+                  "fullComment": "For now this can be a stripe token, stored for this \"customer\". Handy to connect the customer to the Person. Later this can become an array of multiple credentials, for example if you want to add multiple creditcards.",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "credit",
+                "required": false,
+                "schema": {
+                  "fullComment": "Actions by the `Person` can create changes in the amount of credits\n\nThe exact meaning of the number of credits is determined by the OS settings. Can for example be 1:1 to euro, 1:1 to bitcoin, or a custom credit system. Transferability is also customisable.\n\nInsufficient credit can limit the persons possibilities within the OS\n\n",
+                  "type": "number"
+                }
+              },
+              {
+                "name": "note",
+                "required": false,
+                "schema": {
+                  "fullComment": "Note by team or admin about the person. Can be useful for simple CRM stuff",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "location",
+                "required": false,
+                "schema": {
+                  "fullComment": "Later to be formalised with city, country, address, lat/lng, and maybe multiple possible locations. For now, and if we are using GPT for search, a string might be enough.",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "trust",
+                "required": false,
+                "schema": {
+                  "fullComment": "Number 0-1 to indicate my trust towards this person",
+                  "type": "number"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        },
+        {
+          "name": "persona",
+          "required": true,
+          "schema": {
+            "fullComment": "Highly private model.\n\nConfiguration for a person identity that you say that is you.\n\nAs a OS user you can have multiple personas between which you can easily switch.\n\nThe difference from `Person` is that `Person` stores other people, whereas `Persona` stores different identities you give to yourself.\n\nEvery persona is admin by default\n\nNB: brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...\n\n> Persona: A persona, depending on the context, is the public image of one's personality, the social role that one adopts, or simply a fictional character. The word derives from Latin, where it originally referred to a theatrical mask. On the social web, users develop virtual personas as online identities. (Wikipedia)",
+            "nb": "brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...",
+            "properties": [
+              {
+                "name": "slug",
+                "required": true,
+                "schema": {
+                  "fullComment": "kebab-case of the name, should be unique\n\nuse this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "language",
+                "required": true,
+                "schema": {
+                  "enum": [
+                    "english",
+                    "dutch",
+                    "nepali",
+                    "portuguese",
+                    "brazilian",
+                    "german",
+                    "french",
+                    "spanish",
+                    "italian",
+                    "norwegian",
+                    "swedish",
+                    "danish",
+                    "vietnamese",
+                    "indonesian",
+                    "southAfrican",
+                    "tokiPona",
+                    "hindi",
+                    "mandarin",
+                    "arabic",
+                    "bengali",
+                    "urdu",
+                    "japanese",
+                    "swahili"
+                  ],
+                  "fullComment": "all currently supported languages",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "createdAt",
+                "required": true,
+                "schema": {
+                  "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                  "type": "number"
+                }
+              },
+              {
+                "name": "updatedAt",
+                "required": true,
+                "schema": {
+                  "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                  "type": "number"
+                }
+              },
+              {
+                "name": "deletedAt",
+                "required": true,
+                "schema": {
+                  "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                  "type": "number"
+                }
+              },
+              {
+                "name": "createdFirstAt",
+                "required": true,
+                "schema": {
+                  "fullComment": "in some cases, data can be created before it was created in our system. In this case, use CreatedFirstAt if this information is important.\n\nTime\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                  "type": "number"
+                }
+              },
+              {
+                "name": "operationName",
+                "required": true,
+                "schema": {
+                  "fullComment": "name of operation the model belongs to\n\n- calculated value (not stored in database)\n- can be `null` or an actual operationName that it was saved at\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                  "type": "null"
+                }
+              },
+              {
+                "name": "projectRelativePath",
+                "required": true,
+                "schema": {
+                  "fullComment": "path to dbfile\n\n- calculated value (not stored in database)\n- relatively from the project (without slash at start)\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "operationRelativePath",
+                "required": false,
+                "schema": {
+                  "fullComment": "path to db file\n\n- relatively from the operation root folder (without slash at start)\n- calculated value (not stored in database)\n- can be `undefined` if the db file does not belong to an operation\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "id",
+                "required": true,
+                "schema": {
+                  "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "categoryStack",
+                "required": false,
+                "schema": {
+                  "fullComment": "In case of jsonSingle storageMethod, the categoryStack is generated by the location of the file in the db model folder in the db folder.\n\nNB: Changing this value when updating/upserting, changes where the item is located!\n\nTaken from the location in the folder of the db-model.\n\nNB: Changing this value when updating/upserting, changes where the item is located!",
+                  "nb": "Changing this value when updating/upserting, changes where the item is located!",
+                  "items": [
+                    {
+                      "schema": {
+                        "type": "string"
+                      },
+                      "name": null
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "isPrimary",
+                "required": false,
+                "schema": {
+                  "fullComment": "If this is set to true, this persona instance will be selected when searching for a persona. Ensure that there is just one default persona!\n\nIf none are `isPrimary`, the first persona instance can be selected\n\nIf the persona doesn't have a certain key, the same key of the `.isPrimary:true` `Persona` will be used as a fallback",
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isFavorite",
+                "required": false,
+                "schema": {
+                  "fullComment": "If true, this will pop up in persona selection\n\nIf not, you can still find it using auto-complete, though",
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "pictureImages",
+                "required": false,
+                "schema": {
+                  "fullComment": "Some pictures that can be used that show this person",
+                  "items": [
+                    {
+                      "schema": {
+                        "fullComment": "Part of the asset that should be sent to the backend. The rest should frontend-only\n\nSome values are stored, some are not",
+                        "properties": [
+                          {
+                            "name": "alt",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "Stored value\n\nAlt text for the asset",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "relativePath",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "Stored value\n\nRelative path, relative to the location the asset is defined in.\n\nOnly available if the asset was already processed by a backend. Before backend processing, only `temporaryDestination` is available.\n\nChanging the `relativePath` shouldn't do anything, it can only be changed by backend processing by giving a new `temporaryDestination`, or by changing the `name`.",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "name",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "Not stored\n\nNot given by the backend data, but can be SENT to the backend.\n\nShould not be stored, but if you change this value and send it to the backend, it should rename the file and thus the relativePath stored should change.\n\nNB: I'm not sure how to solve having multiple references to a single file. If this occurs, which is hard to prevent if allowing manual editing of data, it may be hard to prevent dead links if someone changes the name of a file that is also refered to in other places. In this case, it would be ideal if all references also would be renamed, but it may be hard to find them. Even if we solve this, it's still possible to get dead links if someone renames the file (or removes it) manually. This should be taken into account, and may not break anything!",
+                              "nb": "I'm not sure how to solve having multiple references to a single file. If this occurs, which is hard to prevent if allowing manual editing of data, it may be hard to prevent dead links if someone changes the name of a file that is also refered to in other places. In this case, it would be ideal if all references also would be renamed, but it may be hard to find them. Even if we solve this, it's still possible to get dead links if someone renames the file (or removes it) manually. This should be taken into account, and may not break anything!",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "temporaryDestination",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "Not stored\n\nFilename after uploading in the temporary folder. should still be moved to its final location\n\nOnly available straight after uploading. After the function processes the asset, this is removed and a `relativePath` is created.",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "projectRelativeReferencingFilePath",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "Not stored\n\nNeeds to be there before calling `processAsset`. Should be augmented to the backendAsset in the frontend, before sending it to the backend.\n\nLocation of the place where the asset is referenced\n\n- markdown file (or folder where it is located)\n- typescript file (or folder where it is located)\n- database file (or folder where it is located)",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "modelName",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "Not stored\n\nNeeds to be there before calling `processAsset`. Should be augmented to the backendAsset in the frontend, before sending it to the backend.\n\nModel that the asset is related to",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "absoluteUrl",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "NOT STORED\n\nCan be available in case it's an asset from an external source URL for example within md.\n\nAlso can be set in case it's a static asset from a next project",
+                              "type": "string"
+                            }
+                          }
+                        ],
+                        "type": "object"
+                      },
+                      "name": "BackendAsset"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "dataEntries",
+                "required": true,
+                "schema": {
+                  "fullComment": "You can give different characteristics to your personas if you wish",
+                  "items": [
+                    {
+                      "schema": {
+                        "fullComment": "key value data storage model for information about a person\n\n- the filename must identify the person this is about (`personSlug`)\n- the categories are the different people and the person information categories\n- the keys are the person information datapoints\n- the values are the values of the datapoints that you stored about this user\n\nExample:\n\nthe file `person-information-values/abraham-lincoln.md` could contain something like this:\n\n```md # life born: 11-01-1777 died: 20-12-1812\n\n# identification firstName: Abraham lastName: Lincoln ```\n\nNB: It's not going to be easy to keep this model in sync with the model it relies on!\n\nTODO: figure out if this kan be a `KeyValueMarkdownModelType` or `MarkdownModelType`",
+                        "todo": "figure out if this kan be a `KeyValueMarkdownModelType` or `MarkdownModelType`",
+                        "nb": "It's not going to be easy to keep this model in sync with the model it relies on!",
+                        "properties": [
+                          {
+                            "name": "createdAt",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "updatedAt",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "deletedAt",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Time\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "createdFirstAt",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "in some cases, data can be created before it was created in our system. In this case, use CreatedFirstAt if this information is important.\n\nTime\n\nTime can be stored in various ways but in my experience it is, again, best to keep it simple and just have one way to store time. I can think about this for hours, but my intuition goes towards using the same format as Date.now() because it is a very small format and is easy to read.\n\nIt is the amount of ms since 1970.\n\nI could argue to store it in seconds since 1970 since there are few applications of doing ms, but maybe we do, and it's just 30% bigger. No problem.\n\nTherefore, let's store all time values in the format Date.now()",
+                              "type": "number"
+                            }
+                          },
+                          {
+                            "name": "operationName",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "name of operation the model belongs to\n\n- calculated value (not stored in database)\n- can be `null` or an actual operationName that it was saved at\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                              "type": "null"
+                            }
+                          },
+                          {
+                            "name": "projectRelativePath",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "path to dbfile\n\n- calculated value (not stored in database)\n- relatively from the project (without slash at start)\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "operationRelativePath",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "path to db file\n\n- relatively from the operation root folder (without slash at start)\n- calculated value (not stored in database)\n- can be `undefined` if the db file does not belong to an operation\n- can be `undefined` when you are creating an item, because then it can be set for you",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "id",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "categoryStack",
+                            "required": false,
+                            "schema": {
+                              "fullComment": "In case of jsonSingle storageMethod, the categoryStack is generated by the location of the file in the db model folder in the db folder.\n\nNB: Changing this value when updating/upserting, changes where the item is located!\n\nTaken from the location in the folder of the db-model.\n\nNB: Changing this value when updating/upserting, changes where the item is located!",
+                              "nb": "Changing this value when updating/upserting, changes where the item is located!",
+                              "items": [
+                                {
+                                  "schema": {
+                                    "type": "string"
+                                  },
+                                  "name": null
+                                }
+                              ],
+                              "type": "array"
+                            }
+                          },
+                          {
+                            "name": "personId",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "personInformationSlug",
+                            "required": true,
+                            "schema": {
+                              "fullComment": "use this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "value",
+                            "required": true,
+                            "schema": {
+                              "type": "string"
+                            }
+                          }
+                        ],
+                        "type": "object"
+                      },
+                      "name": "PersonInformationValue"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "interestSlugs",
+                "required": false,
+                "schema": {
+                  "fullComment": "Interests this persona has\n\nCan be matched against a channel to be the recommended persona",
+                  "items": [
+                    {
+                      "schema": {
+                        "fullComment": "use this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                        "type": "string"
+                      },
+                      "name": "Slug"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "locationSlugs",
+                "required": false,
+                "schema": {
+                  "fullComment": "Where does this persona reside? can be multiple locations\n\nCan be matched against a channel to be the recommended persona",
+                  "items": [
+                    {
+                      "schema": {
+                        "fullComment": "use this for any identifier that's not an Id-type. Usually this is a kebab-case version of a written text, but it can also be a file path, for example.",
+                        "type": "string"
+                      },
+                      "name": "Slug"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "spokenLanguages",
+                "required": false,
+                "schema": {
+                  "fullComment": "Languages that this persona can speak\n\nCan be matched against a channel to be the recommended persona",
+                  "items": [
+                    {
+                      "schema": {
+                        "enum": [
+                          "english",
+                          "dutch",
+                          "nepali",
+                          "portuguese",
+                          "brazilian",
+                          "german",
+                          "french",
+                          "spanish",
+                          "italian",
+                          "norwegian",
+                          "swedish",
+                          "danish",
+                          "vietnamese",
+                          "indonesian",
+                          "southAfrican",
+                          "tokiPona",
+                          "hindi",
+                          "mandarin",
+                          "arabic",
+                          "bengali",
+                          "urdu",
+                          "japanese",
+                          "swahili"
+                        ],
+                        "fullComment": "all currently supported languages",
+                        "type": "string"
+                      },
+                      "name": "Language"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "stripeWebhookSigningSecret",
+                "required": false,
+                "schema": {
+                  "fullComment": "secret for signing the webhook",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "stripePublishableKey",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "stripeSecret",
+                "required": false,
+                "schema": {
+                  "fullComment": "NB: should have a custom input in the `SimplifiedSchemaForm`",
+                  "nb": "should have a custom input in the `SimplifiedSchemaForm`",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "twilioAccountSid",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "twilioAuthToken",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "twilioFromPhoneNumber",
+                "required": false,
+                "schema": {
+                  "fullComment": "Provide the phone number you are using by default for sending SMS messages",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "twilioWhatsappFromPhoneNumber",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "sendgridApiKey",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "sendgridFromEmail",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "githubEmail",
+                "required": false,
+                "schema": {
+                  "fullComment": "Github stuff",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "githubAccessToken",
+                "required": false,
+                "schema": {
+                  "fullComment": "Personal access token",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "githubOrganisation",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "useGithubOrganisation",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "mediaCredentialIds",
+                "required": false,
+                "schema": {
+                  "items": [
+                    {
+                      "schema": {
+                        "fullComment": "Should be an unique string By default, you can use `generateId()` to generate a random string of 16 characters. If you wish, you can also use any other string, as long as you are sure it's unique.\n\n# Background Info\n\nazAZ09 characters are easy to copy and provide 62 characters. the goal of an id is to be unique.\n\nthe advantage of a random id compared to an numeric id starting with 1 with auto increment is that you can set them up decentralised.\n\nthe change of duplicate ids gets bigger once you make them shorter the change of finding an existing id gets bigger once you make them shorter\n\nAn Id with 12 characters would provide 3.22e21 combinations.\n\nWhat is the change of duplicate ids? This depends on the amount of identifyable items in the data What is the change of guessing an id? This depends on speed of a brute force attack and the amount of available datapoints. If you can guess 10000 times per second, you can make 864.000.000 guesses. A billion guesses on a dataset of a billion datapoints yields 3226 correct ids on average.\n\nWhy make an id short? I don't know if there's an important reason.\n\nAll in all, I think we should make ids 24 characters by default. This would make it very easy to store, yet, with more than E42 combinations, make it nearly impossible to get duplication or brute force hits.\n\nAn id would look like this:\n\n``` { \"id\": \"sk2EcW9AkZpksk2EcW9AkZpk\" } ```\n\nLooks good to me! Don't think about it and just keep it simple. We can always migrate later to a bigger amount, but I don't see good reason to keep it smaller than this.",
+                        "type": "string"
+                      },
+                      "name": "Id"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "apiKey2Captcha",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "openAiPassword",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "openAiEmail",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "openAiToken",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "linkedinEmail",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "linkedinPassword",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "twitterLoginHandle",
+                "required": false,
+                "schema": {
+                  "fullComment": "phone, email or username",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "twitterPassword",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "facebookLoginHandle",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "facebookPassword",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "mediumLoginHandle",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "mediumPassword",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "redditLoginHandle",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "redditPassword",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "devtoLoginHandle",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "devtoPassword",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "slackLoginHandle",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "slackPassword",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "huggingfaceAuthToken",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "uberduckApiKey",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "uberduckSecret",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "bananadevApiKey",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "bananadevModelKeys",
+                "required": false,
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                }
+              },
+              {
+                "name": "assistantState",
+                "required": false,
+                "schema": {
+                  "fullComment": "If the persona has a chatbot, provide the (initial or permanent) assistant configuration here.\n\nState for an \"assistant\" role in the chat completions api of openai, given by the \"system\" role.\n\nSome states might be able to be dynamicly altered by certain behavior of the user.\n\nTODO: Add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
+                  "todo": "Add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
+                  "properties": [
+                    {
+                      "name": "freeMessagesPerNewUser",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "free messages per new user",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "freeMessagesPerNewUserAfterDauLimit",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "free messages per new user after dau limit",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "maximumNewUsersPerDay",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "amount of new users allowed (per day)",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "giftsPerDay",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "amount of gifts to inactive users (per day)",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "giftFreeMessages",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "free messages in a gift",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "dauLimit",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "dau limit (defaults to 100)",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "dauLimitPaid",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "paid dau limit ($5+)",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "dauLimitVip",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "vip dau limit ($50+)",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "minimumCreditPaid",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "minimum credit required to be \"paid\", defaults to 0",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "minimumCreditVip",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "minimum credit required to be \"deluxe\", omitted if not set",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "freeMessagesForReferral",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "reward free messages for referal use",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "freeMessagesForReferralPay",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "reward for referal pay",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "costPerMessageCredit",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Defaults to 0.05",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "personality",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "e.g. Elon Musk",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "etnicity",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "E.g. \"caucasian\" | \"black\" | \"asian\";",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "profession",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "e.g. rapper, programmer",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "creator",
+                      "required": false,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "mood",
+                      "required": false,
+                      "schema": {
+                        "enum": [
+                          "happy",
+                          "sad",
+                          "horny",
+                          "grumpy",
+                          "nervous",
+                          "mad",
+                          "angry",
+                          "loving",
+                          "annoyed",
+                          "sleepy"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "characteristics",
+                      "required": false,
+                      "schema": {
+                        "items": [
+                          {
+                            "schema": {
+                              "enum": [
+                                "egoistic",
+                                "narsicistic",
+                                "depressed",
+                                "anxious",
+                                "loves user",
+                                "into user"
+                              ],
+                              "type": "string"
+                            },
+                            "name": null
+                          }
+                        ],
+                        "type": "array"
+                      }
+                    },
+                    {
+                      "name": "humorStyle",
+                      "required": false,
+                      "schema": {
+                        "items": [
+                          {
+                            "schema": {
+                              "enum": [
+                                "saddistic",
+                                "sarcastic",
+                                "witty",
+                                "crazy",
+                                "nihilistic",
+                                "none"
+                              ],
+                              "type": "string"
+                            },
+                            "name": null
+                          }
+                        ],
+                        "type": "array"
+                      }
+                    },
+                    {
+                      "name": "rhymeAbility",
+                      "required": false,
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "goals",
+                      "required": false,
+                      "schema": {
+                        "items": [
+                          {
+                            "schema": {
+                              "type": "string"
+                            },
+                            "name": null
+                          }
+                        ],
+                        "type": "array"
+                      }
+                    },
+                    {
+                      "name": "rules",
+                      "required": false,
+                      "schema": {
+                        "items": [
+                          {
+                            "schema": {
+                              "type": "string"
+                            },
+                            "name": null
+                          }
+                        ],
+                        "type": "array"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                }
+              },
+              {
+                "name": "email",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "phone",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        },
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isFirstMessage",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "newUsersAmount",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getPaywallResult>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

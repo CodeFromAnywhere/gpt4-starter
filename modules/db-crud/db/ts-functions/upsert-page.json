@@ -1,0 +1,39 @@
+{
+  "createdAt": 1677582035353,
+  "updatedAt": 1677582035353,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582035353,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/UpsertPage.tsx",
+  "commentsInside": [],
+  "rawText": " () => {\n  const router = useRouter();\n  const query = mapValuesSync(router.query, (value) => takeFirst(value));\n  const model = useInfiniteGetDbModel();\n  const allItems = model?.data?.pages\n    ?.map((x) => x.result?.data)\n    .flat()\n    .filter(notEmpty) as AugmentedAnyModelType[];\n  const instance = allItems?.find((x) => x.id === query.id);\n  const modelName = useModelFromUrl();\n  const metadataQuery = queries.useGetDbModelMetadataWithContext(modelName);\n  const { tsInterface } = destructureOptionalObject(metadataQuery.data?.result);\n  const simplifiedSchema = tsInterface?.type?.simplifiedSchema;\n  const referencableModelNames = getReferencableModels(simplifiedSchema)\n    ?.map((x) => x.interfaceName)\n    .filter(notEmpty);\n\n  return (\n    <Div scroll className=\"py-4 px-8 lg:px-20\">\n      {model.isLoading ? (\n        <FancyLoader />\n      ) : !simplifiedSchema || !modelName ? (\n        <Div>Something's wrong</Div>\n      ) : (\n        <UpsertForm\n          modelName={modelName}\n          simplifiedSchema={simplifiedSchema}\n          instance={instance}\n          referencableModelNames={referencableModelNames}\n        />\n      )}\n    </Div>\n  );\n}",
+  "name": "UpsertPage",
+  "slug": "upsert-page",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 5,
+  "size": {
+    "characters": 1168,
+    "lines": 34,
+    "bytes": 1168,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 34,
+    "linesPerFile": 34,
+    "numberOfFiles": 1
+  },
+  "id": "lpszusxjjzeobhekuqtrzwqc"
+}

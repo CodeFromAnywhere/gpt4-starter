@@ -1,0 +1,46 @@
+{
+  "createdAt": 1677582373360,
+  "updatedAt": 1677582373360,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582373360,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/openPage.ts",
+  "commentsInside": [],
+  "rawText": " async (pageId?: string): Promise<Page | undefined> => {\n    const browser = await openNewBrowser();\n    if (!browser) {\n        console.log(\"BROSER NOT FOUND\");\n        await delay(5000);\n        console.log(\"TRY AGAIN\");\n        const browser = await openNewBrowser();\n        if (!browser) return;\n        if (browser) {\n            if (pageId) {\n                return getBrowserPageById(browser, pageId);\n            }\n\n            const page = await getNewPage(browser);\n\n            await page?.setBypassCSP(true);\n            return page;\n        }\n        return;\n    }\n\n    if (pageId) {\n        return getBrowserPageById(browser, pageId);\n    }\n\n    const page = await getNewPage(browser);\n    await page?.setBypassCSP(true);\n    return page;\n}",
+  "name": "openPage",
+  "slug": "open-page",
+  "parameters": [
+    {
+      "name": "pageId",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": false
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/node_modules/puppeteer/lib/types\").Page | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 8,
+  "size": {
+    "characters": 755,
+    "lines": 29,
+    "bytes": 755,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 29,
+    "numberOfFiles": 1
+  },
+  "id": "qeksbncykpbhvgcjbudwargu"
+}

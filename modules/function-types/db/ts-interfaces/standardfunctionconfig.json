@@ -1,0 +1,247 @@
+{
+  "createdAt": 1678042943731,
+  "updatedAt": 1678042943731,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042943731,
+  "id": "standardfunctionconfig",
+  "name": "StandardFunctionConfig",
+  "slug": "standardfunctionconfig",
+  "operationRelativeTypescriptFilePath": "src/StandardFunctionConfig.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\nexport type StandardFunctionConfig = QueueFunctionConfig & {\n  /**\n   * Used to determine if there are important changes. Can be added to things that used this function for example, for indexation, for example. This way we know how the index came to be better.\n   */\n  version?: string;\n\n  /**\n   * Provide info for every version. Especially needed if we have a function that produces output that we'll keep using. This way we can trace back the behavior that caused the output\n   */\n  versionInfo?: {\n    [version: string]: string;\n  };\n\n  /**\n   * If `true`, this function will be publicly available through the API.\n   *\n   * If you want more custom autorizations, use `authorization` object\n   */\n  isPublic?: boolean;\n  /**\n   * Function is only applicable for admins (e.g. it does something on the server, only useful for admins). It can therefore only be executed by admins\n   *\n   * If you want more custom autorizations, use `authorization` object\n   */\n  isAdmin?: boolean;\n  /**\n   * for all exported functions in node operations, true by default\n   * false for others\n   *\n   * can be overwritten using frontmatter\n   *\n   * DEPRECATED: remove, should be same as `isPublic`\n   */\n  isApiExposed?: boolean;\n\n  /**\n   * If it's a slug without TLD, the function will be on on a landing page without its own domain\n   * If it's a slug with TLD, it can get it's own domain\n   * If domain is given, function is wrapped into `sdk-public-tools`, wrapped with:\n   *\n   * - providing email and other required credentials\n   * - adding to queue if server is busy\n   *\n   * Later I can wrap this even more with monetisation and 'tool-owner', so I can let others do the same with a single click (promote after form is filled is like \"learn more about how to earn money with the new AI tech revolution (or so)\")\n   */\n  domain?: string;\n  /**\n   * If true, usage will be counted in `UsageReport`.\n   *\n   * If you set this...\n   *\n   * - either `priceCredit` should be set in the config or in the return object\n   * - If this is a CRON or Watch function, you need to return `personId` or `groupId` by whom the payment needs to be deducted from. If you won't return that, it will only be deducted for API executions.\n   *\n   */\n  isPaid?: boolean;\n  /**\n   * Cost per execution in credit\n   *\n   * e.g. 0.05 means that 1 execution costs 5 credit cent.\n   *\n   * Instead of defining this here, you can also return `priceCredit` as part of the return statement\n   *\n   * If you do define it, the user needs to have more credit than this amount, but if it ends up costing more, the `priceCredit` returning from the function will be leading, if it's there.\n   */\n  priceCredit?: number;\n  /**\n   * Price is calculated in the function. `price` should be part of the return statement\n   */\n  priceDescription?: string;\n\n  /**\n   * @see GroupAuthorizationObject\n   */\n  authorizations?: GroupAuthorizationObject;\n\n  /**\n   * whether or not the function can be cached (relies on cache invalidation)\n   */\n  canCache?: boolean;\n\n  /**\n    You can specify `runEveryPeriod` in your frontmatter of a function. This will set `runEveryPeriod` for the TsFunction. This is used by `function-server`: it will execute CRON-jobs that run these things on those periods.\n \n    Will only work if the function takes no arguments.\n    */\n  runEveryPeriod?: RunEveryPeriodEnum;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "Used to determine if there are important changes. Can be added to things that used this function for example, for indexation, for example. This way we know how the index came to be better."
+        },
+        "versionInfo": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Provide info for every version. Especially needed if we have a function that produces output that we'll keep using. This way we can trace back the behavior that caused the output"
+        },
+        "isPublic": {
+          "type": "boolean",
+          "description": "If `true`, this function will be publicly available through the API.\n\nIf you want more custom autorizations, use `authorization` object"
+        },
+        "isAdmin": {
+          "type": "boolean",
+          "description": "Function is only applicable for admins (e.g. it does something on the server, only useful for admins). It can therefore only be executed by admins\n\nIf you want more custom autorizations, use `authorization` object"
+        },
+        "isApiExposed": {
+          "type": "boolean",
+          "description": "for all exported functions in node operations, true by default false for others\n\ncan be overwritten using frontmatter\n\nDEPRECATED: remove, should be same as `isPublic`"
+        },
+        "domain": {
+          "type": "string",
+          "description": "If it's a slug without TLD, the function will be on on a landing page without its own domain If it's a slug with TLD, it can get it's own domain If domain is given, function is wrapped into `sdk-public-tools`, wrapped with:\n\n- providing email and other required credentials\n- adding to queue if server is busy\n\nLater I can wrap this even more with monetisation and 'tool-owner', so I can let others do the same with a single click (promote after form is filled is like \"learn more about how to earn money with the new AI tech revolution (or so)\")"
+        },
+        "isPaid": {
+          "type": "boolean",
+          "description": "If true, usage will be counted in `UsageReport`.\n\nIf you set this...\n\n- either `priceCredit` should be set in the config or in the return object\n- If this is a CRON or Watch function, you need to return `personId` or `groupId` by whom the payment needs to be deducted from. If you won't return that, it will only be deducted for API executions."
+        },
+        "priceCredit": {
+          "type": "number",
+          "description": "Cost per execution in credit\n\ne.g. 0.05 means that 1 execution costs 5 credit cent.\n\nInstead of defining this here, you can also return `priceCredit` as part of the return statement\n\nIf you do define it, the user needs to have more credit than this amount, but if it ends up costing more, the `priceCredit` returning from the function will be leading, if it's there."
+        },
+        "priceDescription": {
+          "type": "string",
+          "description": "Price is calculated in the function. `price` should be part of the return statement"
+        },
+        "authorizations": {
+          "$ref": "#/definitions/GroupAuthorizationObject"
+        },
+        "canCache": {
+          "type": "boolean",
+          "description": "whether or not the function can be cached (relies on cache invalidation)"
+        },
+        "runEveryPeriod": {
+          "$ref": "#/definitions/RunEveryPeriodEnum",
+          "description": "You can specify `runEveryPeriod` in your frontmatter of a function. This will set `runEveryPeriod` for the TsFunction. This is used by `function-server`: it will execute CRON-jobs that run these things on those periods.\n\nWill only work if the function takes no arguments."
+        },
+        "isDisabled": {
+          "type": "boolean",
+          "description": "If true, function is not used in watcher or cron"
+        },
+        "isHeavy": {
+          "type": "boolean",
+          "description": "Requires lots of ram/cpu/gpu (e.g. local AI models, file conversions, and data manipulation at scale)\n\nWill not be started if computer is busy already"
+        },
+        "isInternetRequired": {
+          "type": "boolean",
+          "description": "If true, you state that this function requires internet. Will not be executed if there's no internet connection"
+        },
+        "isBrowserRequired": {
+          "type": "boolean",
+          "description": "Puppeteer stuff"
+        }
+      }
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "version",
+          "required": false,
+          "schema": {
+            "fullComment": "Used to determine if there are important changes. Can be added to things that used this function for example, for indexation, for example. This way we know how the index came to be better.",
+            "type": "string"
+          }
+        },
+        {
+          "name": "versionInfo",
+          "required": false,
+          "schema": {
+            "fullComment": "Provide info for every version. Especially needed if we have a function that produces output that we'll keep using. This way we can trace back the behavior that caused the output",
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "isPublic",
+          "required": false,
+          "schema": {
+            "fullComment": "If `true`, this function will be publicly available through the API.\n\nIf you want more custom autorizations, use `authorization` object",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isAdmin",
+          "required": false,
+          "schema": {
+            "fullComment": "Function is only applicable for admins (e.g. it does something on the server, only useful for admins). It can therefore only be executed by admins\n\nIf you want more custom autorizations, use `authorization` object",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isApiExposed",
+          "required": false,
+          "schema": {
+            "fullComment": "for all exported functions in node operations, true by default false for others\n\ncan be overwritten using frontmatter\n\nDEPRECATED: remove, should be same as `isPublic`",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "domain",
+          "required": false,
+          "schema": {
+            "fullComment": "If it's a slug without TLD, the function will be on on a landing page without its own domain If it's a slug with TLD, it can get it's own domain If domain is given, function is wrapped into `sdk-public-tools`, wrapped with:\n\n- providing email and other required credentials\n- adding to queue if server is busy\n\nLater I can wrap this even more with monetisation and 'tool-owner', so I can let others do the same with a single click (promote after form is filled is like \"learn more about how to earn money with the new AI tech revolution (or so)\")",
+            "type": "string"
+          }
+        },
+        {
+          "name": "isPaid",
+          "required": false,
+          "schema": {
+            "fullComment": "If true, usage will be counted in `UsageReport`.\n\nIf you set this...\n\n- either `priceCredit` should be set in the config or in the return object\n- If this is a CRON or Watch function, you need to return `personId` or `groupId` by whom the payment needs to be deducted from. If you won't return that, it will only be deducted for API executions.",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "priceCredit",
+          "required": false,
+          "schema": {
+            "fullComment": "Cost per execution in credit\n\ne.g. 0.05 means that 1 execution costs 5 credit cent.\n\nInstead of defining this here, you can also return `priceCredit` as part of the return statement\n\nIf you do define it, the user needs to have more credit than this amount, but if it ends up costing more, the `priceCredit` returning from the function will be leading, if it's there.",
+            "type": "number"
+          }
+        },
+        {
+          "name": "priceDescription",
+          "required": false,
+          "schema": {
+            "fullComment": "Price is calculated in the function. `price` should be part of the return statement",
+            "type": "string"
+          }
+        },
+        {
+          "name": "authorizations",
+          "required": false,
+          "schema": {
+            "fullComment": "The key, groupName, is a slug of a group, or a wildcard (*) for all groups\n\nThe value should be a concatenation of all operations permitted in this dataset.\n\n- C for create\n- R for read\n- U for update\n- D for delete\n\nExample: `{ \"cfa\": \"CRUD\" }` would say that this dataset can be fully altered and read by the \"cfa\" group\n\nFor `Dataset`s this should be applied through the database.\n\nFor database models, this should be applied in frontmatter, like this:\n\n```\n--- authorizations: cfa:crud, public:r\n--- ```\n\nThe above applies on the database. For functions, you can do the following:\n\n- X for execute\n- I for reading info about the function (docs etc)\n- R for reading the code (same like CRUD)\n- U for updating the code (same like CRUD)\n\nFor knowledge (text), you can apply authorizations in frontmatter of the markdown, in the same way as you can for data (canRead/canWrite are the only ones needed).\n\nNB: In a later stage we may add more permissions like \"isSearchable (S)\"",
+            "nb": "In a later stage we may add more permissions like \"isSearchable (S)\"",
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "canCache",
+          "required": false,
+          "schema": {
+            "fullComment": "whether or not the function can be cached (relies on cache invalidation)",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "runEveryPeriod",
+          "required": false,
+          "schema": {
+            "enum": [
+              "minute",
+              "5-minutes",
+              "quarter-hour",
+              "hour",
+              "6-hours",
+              "midnight",
+              "week",
+              "month",
+              "3-months",
+              "year"
+            ],
+            "fullComment": "You can specify `runEveryPeriod` in your frontmatter of a function. This will set `runEveryPeriod` for the TsFunction. This is used by `function-server`: it will execute CRON-jobs that run these things on those periods.\n\nWill only work if the function takes no arguments.\n\nUsed to specify functions that need to run every time with a specific interval\n\nAll times are at at the server timezone time\n\n- `minute`: every minute at 0 seconds\n- `5-mintues`: every 5 minutes, starting at the first minute of the hour\n- `quarter-hour`: every 15 minutes, starting at the first minute of the hour\n- `hour`: every hour, starting at the first minute of the hour\n- `6-hours`: every 6 hours, starting at midnight\n- `midnight`: every midnight (00:00:00)\n- `week`: every week at sundaynight (sunday, 1 second after 23:59:59 PM)\n- `month`: at the first second of the first day of the month (0:00:00)\n- `3-months`: every start of the quarter: january 1st (0:00:00), april 1st, july 1st, october 1st\n- `year`: every new year at january 1st at 0:00:00",
+            "type": "string"
+          }
+        },
+        {
+          "name": "isDisabled",
+          "required": false,
+          "schema": {
+            "fullComment": "If true, function is not used in watcher or cron",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isHeavy",
+          "required": false,
+          "schema": {
+            "fullComment": "Requires lots of ram/cpu/gpu (e.g. local AI models, file conversions, and data manipulation at scale)\n\nWill not be started if computer is busy already",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isInternetRequired",
+          "required": false,
+          "schema": {
+            "fullComment": "If true, you state that this function requires internet. Will not be executed if there's no internet connection",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isBrowserRequired",
+          "required": false,
+          "schema": {
+            "fullComment": "Puppeteer stuff",
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "StandardFunctionConfig",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "createdAt": 1678331077237,
+  "updatedAt": 1678331077237,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331077237,
+  "id": "namedparameterstypeof-calculateopenaimessagestokencountsum",
+  "name": "NamedParameters<typeof calculateOpenaiMessagesTokenCountSum>",
+  "slug": "namedparameterstypeof-calculateopenaimessagestokencountsum",
+  "operationRelativeTypescriptFilePath": "src/calculateOpenaiMessagesTokenCountSum.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChatCompletionRequestMessage"
+          }
+        },
+        "isDavinci": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "messages"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "messages",
+          "required": true,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "",
+                  "properties": [
+                    {
+                      "name": "role",
+                      "required": true,
+                      "schema": {
+                        "enum": [
+                          "system",
+                          "user",
+                          "assistant"
+                        ],
+                        "fullComment": "The role of the author of this message.\n\n",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "content",
+                      "required": true,
+                      "schema": {
+                        "fullComment": "The contents of the message",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "name",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "The name of the user in a multi-user chat",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                },
+                "name": "ChatCompletionRequestMessage"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "isDavinci",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof calculateOpenaiMessagesTokenCountSum>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

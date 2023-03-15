@@ -1,0 +1,74 @@
+{
+  "createdAt": 1668328719659,
+  "updatedAt": 1668328719659,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328719659,
+  "id": "uuclgmywjvtmhcfgjlbgmgix",
+  "dependencies": {
+    "read-json-file": "0.0.1",
+    "fs-util": "1.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "edit-json-file",
+  "language": "english",
+  "slug": "edit-json-file",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "indexInteracesErrors": "[\"No schema/definitions found for /Users/king/King/operations/tools/parsing/edit-json-file/src/mapObjectJson.ts. Error: Error: Unknown type \\\"function\\\"\"]",
+      "lintProblems": []
+    },
+    "classificationIndexed": "node-cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "edit-json-file",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1676840927073,
+    "operationDependenciesIndexed": [
+      "readJsonFile",
+      "writeJsonToFile",
+      "readJsonFile",
+      "writeJsonToFile"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/parsing",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 2,
+        "lines": 39,
+        "characters": 1013,
+        "bytes": 1013
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 112,
+        "characters": 3659,
+        "bytes": 3659
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 46,
+        "characters": 734,
+        "bytes": 734
+      },
+      "size": {
+        "bytes": 5406,
+        "characters": 5406,
+        "lines": 197,
+        "numberOfFiles": 6
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

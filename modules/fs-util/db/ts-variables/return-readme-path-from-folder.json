@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041967906,
+  "updatedAt": 1678041967906,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041967906,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "returnReadmePathFromFolder",
+  "slug": "return-readme-path-from-folder",
+  "operationRelativeTypescriptFilePath": "src/returnReadmePathFromFolder.ts",
+  "type": {
+    "rawType": "(absoluteFolderPath: string) => Promise<string | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  absoluteFolderPath: string\n): Promise<string | undefined> => {\n  const dirents = await fs.readdir(absoluteFolderPath, {\n    withFileTypes: true,\n    encoding: \"utf8\",\n  });\n\n  const readmeDirent = dirents.find(\n    (x) => x.isFile() && x.name.toLowerCase() === \"readme.md\"\n  );\n  if (!readmeDirent) return;\n  const absoluteReadmeFilePath = path.join(\n    absoluteFolderPath,\n    readmeDirent.name\n  );\n  return absoluteReadmeFilePath;\n}",
+  "description": "returns a readme path from folder, if it's there, regardless of the exact  capitilisation",
+  "id": "hmyzbpmjxexoaodcxdlzsxmg"
+}

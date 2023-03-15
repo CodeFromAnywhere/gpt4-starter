@@ -1,0 +1,36 @@
+{
+  "createdAt": 1678330811496,
+  "updatedAt": 1678330811496,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330811496,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "ProjectWatcher",
+  "operationRelativeTypescriptFilePath": "src/watchWavToSpeech.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  eventName,\n  absolutePath,\n  isStartup\n) => {\n  if (isLocked(absolutePath)) {\n    console.log(\"mmm locked\", absolutePath);\n    return false;\n  }\n  if (!fs.existsSync(absolutePath)) {\n    console.log(\"mmm doesn't exist\", absolutePath);\n    return { isSuccessful: false, message: \"File doesn't exist (anymore)\" };\n  }\n  const textResult = await speechToText(absolutePath);\n}",
+  "name": "watchWavToSpeech",
+  "slug": "watch-wav-to-speech",
+  "parameters": [],
+  "description": "Watch wav files anywhere. Every wav file that doesn't have a `.txt` file existing under the same name should be whispered. This way it's integrated on many more pipelines than just recording (also import, for example)\n\nBesides using whisper, speaker separation can be applied as well",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 666,
+    "lines": 17,
+    "bytes": 666,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 39,
+    "linesPerFile": 17,
+    "numberOfFiles": 1
+  },
+  "id": "sxtaesqrsqplpmnpzjdfqihy"
+}

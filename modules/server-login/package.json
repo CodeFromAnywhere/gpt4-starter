@@ -1,0 +1,134 @@
+{
+  "createdAt": 1668328702215,
+  "updatedAt": 1668328702215,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328702215,
+  "id": "figgjjgfvhincexqpsqtbnsl",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "auth-types": "0.0.1",
+    "code-types": "0.0.1",
+    "model-types": "0.0.1",
+    "peer-types": "0.0.1",
+    "database": "0.0.1",
+    "js-util": "0.0.1",
+    "asset-functions-node": "0.0.1",
+    "asset-type": "0.0.1",
+    "convert-case": "0.0.1",
+    "function-types": "0.0.1",
+    "communication-wrapper": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "server-login",
+  "language": "english",
+  "slug": "server-login",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/clarity/os/operations/tools/user-interfaces/api/server-login/src/signupBare.ts. Error: Error: Unknown type \"function\""
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "node-cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "server-login",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1678332027744,
+    "operationDependenciesIndexed": [
+      "Authorization",
+      "FunctionContext",
+      "Storing",
+      "Device",
+      "Group",
+      "StandardFunctionConfig",
+      "StandardFunctionConfig",
+      "db",
+      "getSubsetFromObject",
+      "publicPersonKeys",
+      "PublicPerson",
+      "StandardFunctionConfig",
+      "db",
+      "FunctionContext",
+      "onlyUnique2",
+      "isEmail",
+      "Person",
+      "StandardFunctionConfig",
+      "db",
+      "sendMail",
+      "sendSms",
+      "isEmail",
+      "Person",
+      "StandardFunctionConfig",
+      "db",
+      "FunctionContext",
+      "StandardFunctionConfig",
+      "processAsset",
+      "BackendAsset",
+      "slugify",
+      "db",
+      "sendMail",
+      "sendSms",
+      "Creation",
+      "isEmail",
+      "Person",
+      "db",
+      "FunctionContext",
+      "onlyUnique2",
+      "isEmail",
+      "Person",
+      "StandardFunctionConfig",
+      "BackendAsset",
+      "StandardFunctionConfig",
+      "db",
+      "FunctionContext",
+      "db",
+      "FunctionContext",
+      "PersonProfileDetails",
+      "processAsset"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/api",
+    "markdown": "This operation exposes rudimentary functions to set cookies from the backend. We require cookies in order to authenticate a user for GET requests. Cookies are sent to the server for every request and are a safer way, because they are not part of the URL that can be found in the browser history.\n\nThis thing is far from finished, see `todo/` for what needs to be done.\n",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 22,
+        "lines": 1194,
+        "characters": 32852,
+        "bytes": 32852
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 172,
+        "characters": 5376,
+        "bytes": 5376
+      },
+      "textSize": {
+        "numberOfFiles": 5,
+        "lines": 286,
+        "characters": 8470,
+        "bytes": 8470
+      },
+      "size": {
+        "bytes": 46698,
+        "characters": 46698,
+        "lines": 1652,
+        "numberOfFiles": 29
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

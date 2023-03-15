@@ -1,0 +1,81 @@
+{
+  "createdAt": 1678330462643,
+  "updatedAt": 1678330462643,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330462643,
+  "id": "namedparameterstypeof-getqueryinfo",
+  "name": "NamedParameters<typeof getQueryInfo>",
+  "slug": "namedparameterstypeof-getqueryinfo",
+  "operationRelativeTypescriptFilePath": "src/getQueryInfo.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "customProjectRelativeBaseFolderPath": {
+              "type": "string",
+              "description": "If defined, queryPath should be relative to this one. Should only be allowed for admin."
+            },
+            "queryPath": {
+              "type": "string",
+              "description": "QueryPath as in the URL, should be a relative path from the projectRoot (or to `customAbsoluteBaseFolderPath`, if defined)"
+            }
+          },
+          "required": [
+            "queryPath"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "customProjectRelativeBaseFolderPath",
+                "required": false,
+                "schema": {
+                  "fullComment": "If defined, queryPath should be relative to this one. Should only be allowed for admin.",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "queryPath",
+                "required": true,
+                "schema": {
+                  "fullComment": "QueryPath as in the URL, should be a relative path from the projectRoot (or to `customAbsoluteBaseFolderPath`, if defined)",
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getQueryInfo>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "createdAt": 1678331354481,
+  "updatedAt": 1678331354481,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331354481,
+  "isApiExposed": false,
+  "name": "convertPdfToMd",
+  "slug": "convert-pdf-to-md",
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/convertPdfToMd.ts",
+  "commentsInside": [],
+  "description": "",
+  "parameters": [
+    {
+      "name": "config",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "inputPdfFilePath": {
+            "type": "string"
+          },
+          "outputMdFilePath": {
+            "type": "string",
+            "description": "if not given, will save it in the same place with the same name"
+          }
+        },
+        "required": [
+          "inputPdfFilePath"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "inputPdfFilePath",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outputMdFilePath",
+            "required": false,
+            "schema": {
+              "fullComment": "if not given, will save it in the same place with the same name",
+              "type": "string"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/parsing/file-conversion/md/pdf-to-md/src/convertPdfToMd\").PdfToMdResult>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "size": {
+    "characters": 807,
+    "lines": 30,
+    "bytes": 807,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 27,
+    "linesPerFile": 30,
+    "numberOfFiles": 1
+  },
+  "rawText": "\nexport async function convertPdfToMd(config: {\n  inputPdfFilePath: string;\n  /**\n   * if not given, will save it in the same place with the same name\n   */\n  outputMdFilePath?: string;\n}): Promise<PdfToMdResult> {\n  const { inputPdfFilePath, outputMdFilePath } = config;\n  const result = new Promise<PdfToMdResult>(async (resolve) => {\n    const parsedPdf = await tryParsePdf(inputPdfFilePath);\n    const parsedPath = path.parse(inputPdfFilePath);\n    const finalOutputMdFilePath =\n      outputMdFilePath || path.join(parsedPath.dir, `${parsedPath.name}.md`);\n\n    const fullText = `---\nisSource: false\ncreatedAt: ${Date.now()}\nsource: convertPdfToMd\n---\n\n${parsedPdf?.text}`;\n\n    await fs.writeFile(finalOutputMdFilePath, fullText, \"utf8\");\n\n    resolve({ isSuccessful: true });\n  });\n\n  return result;\n}",
+  "maxIndentationDepth": 3,
+  "id": "nbxgedtitrnmtljcefnoxbay"
+}

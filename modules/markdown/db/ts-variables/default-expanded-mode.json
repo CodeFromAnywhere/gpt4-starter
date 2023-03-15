@@ -1,0 +1,46 @@
+{
+  "createdAt": 1677581916548,
+  "updatedAt": 1677581916548,
+  "deletedAt": 0,
+  "createdFirstAt": 1677581916548,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "defaultExpandedMode",
+  "slug": "default-expanded-mode",
+  "operationRelativeTypescriptFilePath": "src/MarkdownCodeblock.tsx",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/user-interfaces/gui/smart/markdown/src/MarkdownCodeblock\").CodeblockMode",
+    "typeDefinition": {
+      "optional": false,
+      "enum": [
+        "preview",
+        "scroll",
+        "full"
+      ],
+      "x-enumNames": [
+        "preview",
+        "scroll",
+        "full"
+      ],
+      "type": "string"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "enum": [
+        "preview",
+        "scroll",
+        "full"
+      ],
+      "type": "string"
+    }
+  },
+  "value": "\"scroll\"",
+  "description": "",
+  "id": "abgcgoyangeawyrcgqsxezpa"
+}

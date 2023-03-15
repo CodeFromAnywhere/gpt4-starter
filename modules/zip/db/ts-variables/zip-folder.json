@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678042849440,
+  "updatedAt": 1678042849440,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042849440,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "zipFolder",
+  "slug": "zip-folder",
+  "operationRelativeTypescriptFilePath": "src/zipFolder.ts",
+  "type": {
+    "rawType": "(absoluteFolderPath: string) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (absoluteFolderPath: string) => {\n  // must exist\n  if (!fs.existsSync(absoluteFolderPath)) {\n    return;\n  }\n\n  const stat = await fs.stat(absoluteFolderPath);\n  // must be a folder\n  if (!stat.isDirectory()) {\n    return;\n  }\n\n  const baseFolderPath = path.join(absoluteFolderPath, \"..\");\n  const folderName = getFileOrFolderName(absoluteFolderPath);\n\n  console.log({ absoluteFolderPath, baseFolderPath, folderName });\n  const zipPath = zip({\n    baseFolderPath,\n    folderName,\n    zipName: folderName,\n    requirePassword: false,\n  });\n\n  return zipPath;\n}",
+  "description": "",
+  "id": "dnuifnnmalfxpjbgxsebppjj"
+}

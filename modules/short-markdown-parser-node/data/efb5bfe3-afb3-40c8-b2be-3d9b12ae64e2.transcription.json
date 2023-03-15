@@ -1,0 +1,124 @@
+{
+  "sentences": [
+    {
+      "startAt": 0,
+      "endAt": 2000,
+      "text": "Hey Morty, listen up you little shit!"
+    },
+    {
+      "startAt": 2000,
+      "endAt": 4400,
+      "text": "I'm gonna explain this markdown thing to you."
+    }
+  ],
+  "text": " Hey Morty, listen up you little shit!\n I'm gonna explain this markdown thing to you.\n",
+  "translationText": " Hey Morty, listen up you little shit!\n I'm gonna explain this markdown thing to you.\n",
+  "words": [
+    {
+      "startAt": 0,
+      "endAt": 90,
+      "text": ""
+    },
+    {
+      "startAt": 90,
+      "endAt": 260,
+      "text": "Hey"
+    },
+    {
+      "startAt": 260,
+      "endAt": 840,
+      "text": "Morty"
+    },
+    {
+      "startAt": 840,
+      "endAt": 850,
+      "text": ","
+    },
+    {
+      "startAt": 850,
+      "endAt": 1170,
+      "text": "listen"
+    },
+    {
+      "startAt": 1170,
+      "endAt": 1300,
+      "text": "up"
+    },
+    {
+      "startAt": 1300,
+      "endAt": 1440,
+      "text": "you"
+    },
+    {
+      "startAt": 1440,
+      "endAt": 1770,
+      "text": "little"
+    },
+    {
+      "startAt": 1770,
+      "endAt": 2000,
+      "text": "shit"
+    },
+    {
+      "startAt": 2000,
+      "endAt": 2000,
+      "text": "!"
+    },
+    {
+      "startAt": 2000,
+      "endAt": 2090,
+      "text": "I"
+    },
+    {
+      "startAt": 2090,
+      "endAt": 2180,
+      "text": "'m"
+    },
+    {
+      "startAt": 2180,
+      "endAt": 2500,
+      "text": "gonna"
+    },
+    {
+      "startAt": 2500,
+      "endAt": 2970,
+      "text": "explain"
+    },
+    {
+      "startAt": 2970,
+      "endAt": 3200,
+      "text": "this"
+    },
+    {
+      "startAt": 3200,
+      "endAt": 3450,
+      "text": "mark"
+    },
+    {
+      "startAt": 3450,
+      "endAt": 3700,
+      "text": "down"
+    },
+    {
+      "startAt": 3700,
+      "endAt": 4020,
+      "text": "thing"
+    },
+    {
+      "startAt": 4020,
+      "endAt": 4150,
+      "text": "to"
+    },
+    {
+      "startAt": 4150,
+      "endAt": 4400,
+      "text": "you"
+    },
+    {
+      "startAt": 4400,
+      "endAt": 4400,
+      "text": "."
+    }
+  ],
+  "usedModelName": "small"
+}

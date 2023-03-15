@@ -1,0 +1,34 @@
+[
+  {
+    "createdAt": 1678330581698,
+    "updatedAt": 1678330581698,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330581698,
+    "name": "getBatteryLevelPercentage",
+    "slug": "get-battery-level-percentage",
+    "module": "./getBatteryLevelPercentage",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/test.ts",
+    "classification": "internal",
+    "isAbsolute": false,
+    "isModuleFromMonorepo": false,
+    "id": "avfcrthxhisfpgabtjbzerpv"
+  },
+  {
+    "createdAt": 1678330581699,
+    "updatedAt": 1678330581699,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330581699,
+    "name": "isSystemUsingBattery",
+    "slug": "is-system-using-battery",
+    "module": "./isSystemUsingBattery",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/test.ts",
+    "classification": "internal",
+    "isAbsolute": false,
+    "isModuleFromMonorepo": false,
+    "id": "skrahderusymswdvnxthjtfn"
+  }
+]

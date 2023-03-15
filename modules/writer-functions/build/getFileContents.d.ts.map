@@ -1,0 +1,1 @@
+{"version":3,"file":"getFileContents.d.ts","sourceRoot":"","sources":["../src/getFileContents.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,YAAY,CAAC;AAI1C;;GAEG;AACH,eAAO,MAAM,eAAe,EAAE,YAAY,CACxC,SAAS,EACT;IACE,YAAY,EAAE,OAAO,CAAC;IACtB,OAAO,CAAC,EAAE,MAAM,CAAC;IACjB,YAAY,CAAC,EAAE,MAAM,CAAC;CACvB,CAgCF,CAAC"}

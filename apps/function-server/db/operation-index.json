@@ -1,0 +1,67 @@
+{
+  "createdAt": 1664526195163,
+  "updatedAt": 1668149029401,
+  "deletedAt": 0,
+  "createdFirstAt": 1664526195163,
+  "folderName": "function-server",
+  "packageName": "function-server",
+  "relativeOperationLocationPath": "operations/tools/interfaces/api",
+  "classification": "server",
+  "name": "function-server",
+  "slug": "function-server",
+  "coreDependencies": [],
+  "operationDependencies": [
+    "oneByOne",
+    "functionEndpoints",
+    "getApiEndpoints",
+    "postApiEndpoints",
+    "log",
+    "ports",
+    "sdk",
+    "getProjectRoot",
+    "path",
+    "db",
+    "RunEveryPeriodEnum",
+    "TsFunction",
+    "getObjectKeysArray",
+    "takeFirst"
+  ],
+  "packageDependencies": [
+    "Context",
+    "schedule"
+  ],
+  "size": {
+    "codeSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 6025,
+      "bytes": 6025
+    },
+    "dataSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 2521,
+      "bytes": 2521
+    },
+    "textSize": {
+      "numberOfFiles": 4,
+      "lines": 0,
+      "characters": 7498,
+      "bytes": 7498
+    },
+    "size": {
+      "bytes": 16044,
+      "characters": 16044,
+      "lines": 0,
+      "numberOfFiles": 8
+    }
+  },
+  "buildSucceeded": true,
+  "dependenciesBuildsFailed": false,
+  "indexErrors": [],
+  "indexImportExportError": "",
+  "indexInteracesErrors": [],
+  "lintProblems": [],
+  "id": "syxmgzykfaesyryxtmainzir",
+  "language": "en"
+}

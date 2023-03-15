@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var getBatteryLevelPercentage_1=require("./getBatteryLevelPercentage"),isSystemUsingBattery_1=require("./isSystemUsingBattery");(0,getBatteryLevelPercentage_1.getBatteryLevelPercentage)().then(console.log),(0,isSystemUsingBattery_1.isSystemUsingBattery)().then(console.log);
+//# sourceMappingURL=test.js.map

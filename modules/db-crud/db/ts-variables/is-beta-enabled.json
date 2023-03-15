@@ -1,0 +1,24 @@
+{
+  "createdAt": 1677582059448,
+  "updatedAt": 1677582059448,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582059448,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "{ isBetaEnabled }",
+  "slug": "is-beta-enabled",
+  "operationRelativeTypescriptFilePath": "src/crud/ModelComponent.tsx",
+  "type": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "publicEnvironmentVariables",
+  "description": "",
+  "id": "nsdieitbqzjeptaibepifapy"
+}

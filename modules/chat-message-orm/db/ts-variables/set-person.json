@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678505781168,
+  "updatedAt": 1678505781168,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505781168,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "setPerson",
+  "slug": "set-person",
+  "operationRelativeTypescriptFilePath": "src/insertPerson.ts",
+  "type": {
+    "rawType": "(person: any) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (person: Creation<Person>) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false };\n  }\n\n  const fullItem = addDefaultValues(person);\n  const storingItem = makeStoringItem(fullItem) as Person;\n\n  const isSuccessful = await writeJsonToFile(\n    getPersonPath(projectRoot, person.slug),\n    storingItem\n  );\n  return { isSuccessful };\n}",
+  "description": "",
+  "id": "cxfdyiwygisusicehanlnfqq"
+}

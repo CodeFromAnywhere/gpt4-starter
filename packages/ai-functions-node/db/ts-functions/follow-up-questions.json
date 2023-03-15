@@ -1,0 +1,47 @@
+{
+  "createdAt": 1678330218741,
+  "updatedAt": 1678330218741,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330218741,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "PromptFunction",
+  "operationRelativeTypescriptFilePath": "src/prompts.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  isDeferred?: boolean\n) => {\n  const result = await processChatGptPrompt({\n    isDeferred,\n    contextualPromptSlug: \"follow-up-questions\",\n  });\n\n  return result;\n}",
+  "name": "followUpQuestions",
+  "slug": "follow-up-questions",
+  "parameters": [
+    {
+      "name": "isDeferred",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 175,
+    "lines": 10,
+    "bytes": 175,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 18,
+    "linesPerFile": 10,
+    "numberOfFiles": 1
+  },
+  "id": "qdahspruwmbmcbanmvhezodq"
+}

@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678043438307,
+  "updatedAt": 1678043438307,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043438307,
+  "id": "namedparameterstypeof-istypescript",
+  "name": "NamedParameters<typeof isTypescript>",
+  "slug": "namedparameterstypeof-istypescript",
+  "operationRelativeTypescriptFilePath": "src/util/isTypescript.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "text",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof isTypescript>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

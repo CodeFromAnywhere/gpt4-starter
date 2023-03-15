@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678043323076,
+  "updatedAt": 1678043323076,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043323076,
+  "id": "namedparameterstypeof-openfinder",
+  "name": "NamedParameters<typeof openFinder>",
+  "slug": "namedparameterstypeof-openfinder",
+  "operationRelativeTypescriptFilePath": "src/openFinder.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "projectRelativePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "projectRelativePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "projectRelativePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof openFinder>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

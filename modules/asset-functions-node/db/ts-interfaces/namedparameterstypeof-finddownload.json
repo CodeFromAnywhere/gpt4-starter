@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678041489805,
+  "updatedAt": 1678041489805,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041489805,
+  "id": "namedparameterstypeof-finddownload",
+  "name": "NamedParameters<typeof findDownload>",
+  "slug": "namedparameterstypeof-finddownload",
+  "operationRelativeTypescriptFilePath": "src/download/findDownload.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "projectRelativePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "projectRelativePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "projectRelativePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof findDownload>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "createdAt": 1673794795404,
+  "updatedAt": 1673794795404,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794795404,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "realCustomApiUrl",
+  "slug": "real-custom-api-url",
+  "operationRelativeTypescriptFilePath": "src/apiUrl.ts",
+  "type": {
+    "rawType": "string | undefined",
+    "typeDefinition": {
+      "optional": true,
+      "type": "string",
+      "allOf": [
+        {
+          "transform": [
+            "trim"
+          ]
+        },
+        {
+          "minLength": 1
+        }
+      ]
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "type": "string"
+    }
+  },
+  "value": "typeof customApiUrl === \"string\" && customApiUrl !== \"\"\n    ? customApiUrl\n    : undefined",
+  "description": "",
+  "id": "hbavywfqccdxtnlnkyxgabkh"
+}

@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678331089506,
+  "updatedAt": 1678331089506,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331089506,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getOpenaiInstance.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  personaId?: string\n): Promise<StandardResponse & { openai?: OpenAIApi }> => {\n  // NB: this is not the most efficient, another fileread here. Ensure it's cached in memory!\n  const personas = await db.get(\"Persona\");\n  const persona =\n    personas.find((x) => x.id === personaId) || (await getPrimaryPersona());\n  if (!persona) {\n    return { isSuccessful: false, message: \"No persona\" };\n  }\n\n  const apiKey = persona.openAiToken;\n\n  if (!apiKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please setup an API Key for OpenAI\",\n    };\n  }\n\n  const configuration = new Configuration({\n    // organization: \"not needed?\",\n    apiKey,\n  });\n\n  const openai = new OpenAIApi(configuration);\n\n  return { isSuccessful: true, openai };\n}",
+  "name": "getOpenaiInstance",
+  "slug": "get-openai-instance",
+  "parameters": [
+    {
+      "name": "personaId",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": false
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse & { openai?: import(\"/Users/clarity/os/operations/node_modules/openai/dist/api\").OpenAIApi | undefined; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 754,
+    "lines": 29,
+    "bytes": 754,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 29,
+    "numberOfFiles": 1
+  },
+  "id": "sxozcjkvrxpiwqepvpubspkm"
+}

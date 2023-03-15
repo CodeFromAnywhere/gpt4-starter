@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331076409,
+  "updatedAt": 1678331076409,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331076409,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "calculateOpenaiMessagesTokenCount",
+  "slug": "calculate-openai-messages-token-count",
+  "operationRelativeTypescriptFilePath": "src/calculateOpenaiMessagesTokenCount.ts",
+  "type": {
+    "rawType": "(messages: import(\"/Users/clarity/os/operations/node_modules/openai/dist/api\").ChatCompletionRequestMessage[]) => (import(\"/Users/clarity/os/operations/node_modules/openai/dist/api\").ChatCompletionRequestMessage & { tokenCount: number; })[]",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  messages: ChatCompletionRequestMessage[]\n): (ChatCompletionRequestMessage & { tokenCount: number })[] => {\n  const encoding = get_encoding(\"cl100k_base\");\n\n  const extendedMessages = messages.map((item) => ({\n    ...item,\n    tokenCount: encoding.encode(`roleword ${item.name || \"\"} ${item.content}`)\n      .length,\n  }));\n  return extendedMessages;\n}",
+  "description": "",
+  "id": "vaipgjkeojmptrdpongngsus"
+}

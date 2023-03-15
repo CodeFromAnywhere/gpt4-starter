@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678043432786,
+  "updatedAt": 1678043432786,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043432786,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "{ useStore, StoreProvider }",
+  "slug": "use-store-store-provider",
+  "operationRelativeTypescriptFilePath": "src/store.ts",
+  "type": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "createStore(writerInitialValues)",
+  "description": "",
+  "id": "hfblgqgvutvhknzobbfvuhbz"
+}

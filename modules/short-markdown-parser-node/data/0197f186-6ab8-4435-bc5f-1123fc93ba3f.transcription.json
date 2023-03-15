@@ -1,0 +1,219 @@
+{
+  "sentences": [
+    {
+      "startAt": 0,
+      "endAt": 2000,
+      "text": "I'm getting to the... Morty."
+    },
+    {
+      "startAt": 2000,
+      "endAt": 4640,
+      "text": "You see, lockdown is these things called tittles."
+    },
+    {
+      "startAt": 4640,
+      "endAt": 6440,
+      "text": "Used for the big tittle and then..."
+    },
+    {
+      "startAt": 6440,
+      "endAt": 8040,
+      "text": "And so on for the smaller ones."
+    }
+  ],
+  "text": " I'm getting to the... Morty.\n You see, lockdown is these things called tittles.\n Used for the big tittle and then...\n And so on for the smaller ones.\n",
+  "translationText": " I'm getting to the... Morty.\n You see, lockdown is these things called tittles.\n Used for the big tittle and then...\n And so on for the smaller ones.\n",
+  "words": [
+    {
+      "startAt": 0,
+      "endAt": 50,
+      "text": ""
+    },
+    {
+      "startAt": 50,
+      "endAt": 60,
+      "text": "I"
+    },
+    {
+      "startAt": 60,
+      "endAt": 150,
+      "text": "'m"
+    },
+    {
+      "startAt": 150,
+      "endAt": 500,
+      "text": "getting"
+    },
+    {
+      "startAt": 500,
+      "endAt": 600,
+      "text": "to"
+    },
+    {
+      "startAt": 600,
+      "endAt": 740,
+      "text": "the"
+    },
+    {
+      "startAt": 740,
+      "endAt": 1410,
+      "text": "..."
+    },
+    {
+      "startAt": 1410,
+      "endAt": 2000,
+      "text": "Morty"
+    },
+    {
+      "startAt": 2000,
+      "endAt": 2000,
+      "text": "."
+    },
+    {
+      "startAt": 2000,
+      "endAt": 2350,
+      "text": "You"
+    },
+    {
+      "startAt": 2350,
+      "endAt": 2860,
+      "text": "see"
+    },
+    {
+      "startAt": 2860,
+      "endAt": 2880,
+      "text": ","
+    },
+    {
+      "startAt": 2880,
+      "endAt": 3270,
+      "text": "lockdown"
+    },
+    {
+      "startAt": 3270,
+      "endAt": 3370,
+      "text": "is"
+    },
+    {
+      "startAt": 3370,
+      "endAt": 3630,
+      "text": "these"
+    },
+    {
+      "startAt": 3630,
+      "endAt": 3950,
+      "text": "things"
+    },
+    {
+      "startAt": 3950,
+      "endAt": 4250,
+      "text": "called"
+    },
+    {
+      "startAt": 4250,
+      "endAt": 4300,
+      "text": "t"
+    },
+    {
+      "startAt": 4300,
+      "endAt": 4450,
+      "text": "itt"
+    },
+    {
+      "startAt": 4450,
+      "endAt": 4640,
+      "text": "les"
+    },
+    {
+      "startAt": 4640,
+      "endAt": 4640,
+      "text": "."
+    },
+    {
+      "startAt": 4640,
+      "endAt": 4910,
+      "text": "Used"
+    },
+    {
+      "startAt": 4910,
+      "endAt": 5110,
+      "text": "for"
+    },
+    {
+      "startAt": 5110,
+      "endAt": 5310,
+      "text": "the"
+    },
+    {
+      "startAt": 5310,
+      "endAt": 5510,
+      "text": "big"
+    },
+    {
+      "startAt": 5510,
+      "endAt": 5570,
+      "text": "t"
+    },
+    {
+      "startAt": 5570,
+      "endAt": 5900,
+      "text": "ittle"
+    },
+    {
+      "startAt": 5900,
+      "endAt": 6100,
+      "text": "and"
+    },
+    {
+      "startAt": 6100,
+      "endAt": 6440,
+      "text": "then"
+    },
+    {
+      "startAt": 6440,
+      "endAt": 6440,
+      "text": "..."
+    },
+    {
+      "startAt": 6440,
+      "endAt": 6630,
+      "text": "And"
+    },
+    {
+      "startAt": 6630,
+      "endAt": 6750,
+      "text": "so"
+    },
+    {
+      "startAt": 6750,
+      "endAt": 6870,
+      "text": "on"
+    },
+    {
+      "startAt": 6870,
+      "endAt": 7060,
+      "text": "for"
+    },
+    {
+      "startAt": 7060,
+      "endAt": 7280,
+      "text": "the"
+    },
+    {
+      "startAt": 7280,
+      "endAt": 7690,
+      "text": "smaller"
+    },
+    {
+      "startAt": 7690,
+      "endAt": 7980,
+      "text": "ones"
+    },
+    {
+      "startAt": 7980,
+      "endAt": 8040,
+      "text": "."
+    }
+  ],
+  "usedModelName": "small"
+}

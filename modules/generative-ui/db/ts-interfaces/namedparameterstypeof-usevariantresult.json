@@ -1,0 +1,57 @@
+{
+  "createdAt": 1678041426271,
+  "updatedAt": 1678041426271,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041426271,
+  "id": "namedparameterstypeof-usevariantresult",
+  "name": "NamedParameters<typeof useVariantResult>",
+  "slug": "namedparameterstypeof-usevariantresult",
+  "operationRelativeTypescriptFilePath": "src/useVariantResult.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "fileContextualPromptResults": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ContextualPromptResult"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "fileContextualPromptResults",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof useVariantResult>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

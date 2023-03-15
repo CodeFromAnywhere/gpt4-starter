@@ -1,0 +1,135 @@
+{
+  "createdAt": 1673852991822,
+  "updatedAt": 1673852991822,
+  "deletedAt": 0,
+  "createdFirstAt": 1673852991822,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "projectPaymentConfig",
+  "slug": "project-payment-config",
+  "operationRelativeTypescriptFilePath": "src/PaymentConfig.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/monetisation/payment-types/src/PaymentConfig\").PaymentConfig",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "creditToEuroRatio": {
+          "type": "number"
+        },
+        "creditToEuroConversionCost": {
+          "type": "number"
+        },
+        "currencyConversionCost": {
+          "type": "number"
+        },
+        "creditToCreditTransactionCost": {
+          "type": "number"
+        },
+        "interestAmount": {
+          "type": "number"
+        },
+        "interestInterval": {},
+        "canPersonBuyCredit": {
+          "type": "boolean"
+        },
+        "canPersonCashOutCredit": {
+          "type": "boolean"
+        },
+        "canPersonRequestCashOut": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "creditToEuroRatio",
+        "creditToEuroConversionCost",
+        "currencyConversionCost",
+        "creditToCreditTransactionCost",
+        "interestAmount",
+        "interestInterval",
+        "canPersonBuyCredit",
+        "canPersonCashOutCredit",
+        "canPersonRequestCashOut"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "creditToEuroRatio",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "creditToEuroConversionCost",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "currencyConversionCost",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "creditToCreditTransactionCost",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "interestAmount",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "interestInterval",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "canPersonBuyCredit",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "canPersonCashOutCredit",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "canPersonRequestCashOut",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "{\n  creditToEuroRatio: 1,\n  creditToEuroConversionCost: 0.01,\n  currencyConversionCost: 0.01,\n  creditToCreditTransactionCost: 0.01,\n  interestAmount: 0.005,\n  interestInterval: \"week\",\n  canPersonBuyCredit: true,\n  canPersonCashOutCredit: false,\n  canPersonRequestCashOut: true,\n}",
+  "description": "",
+  "id": "bmnzcehlpisgbilsaypfvxet"
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678331032734,
+    "updatedAt": 1678331032734,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331032734,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/types.ts",
+    "comment": "Available messaging channels in order of preference",
+    "rawStatement": "export const availableMessagingChannels = [\"whatsapp\", \"email\", \"sms\"] as const;",
+    "parameters": {},
+    "types": [],
+    "firstLine": 3,
+    "lastLine": 5,
+    "id": "edaulhvnxslyjmgjvrieosfr"
+  }
+]

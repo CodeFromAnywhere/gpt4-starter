@@ -1,0 +1,50 @@
+{
+  "createdAt": 1668717090488,
+  "updatedAt": 1668717090488,
+  "deletedAt": 0,
+  "createdFirstAt": 1668717090488,
+  "isApiExposed": true,
+  "isExported": true,
+  "groupAuthorization": {},
+  "operationRelativeTypescriptFilePath": "src/toQueryString.ts",
+  "commentsInside": [],
+  "rawText": " (query?: any) => {\n  const hasQuery =\n    query && Object.entries(query)?.filter(isValidEntry).length > 0;\n  return hasQuery\n    ? \"?\" +\n        Object.entries(query)\n          .filter(isValidEntry)\n          .map(([key, value]) => {\n            const encodedValue = encodeURIComponent(String(value));\n            return `${key}=${encodedValue}`;\n          })\n          .join(\"&\")\n    : \"\";\n}",
+  "name": "toQueryString",
+  "slug": "to-query-string",
+  "parameters": [
+    {
+      "name": "query",
+      "schema": {},
+      "simplifiedSchema": {
+        "properties": [],
+        "type": "object"
+      },
+      "required": false
+    }
+  ],
+  "description": "returns something like `?x=a&y=b&z=c`",
+  "returnType": {
+    "rawType": "String",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/String"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 6,
+  "size": {
+    "characters": 430,
+    "lines": 14,
+    "bytes": 430,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 31,
+    "linesPerFile": 14,
+    "numberOfFiles": 1
+  },
+  "id": "eictyagtmziipoeqsmdcpedw"
+}

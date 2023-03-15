@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330955021,
+  "updatedAt": 1678330955021,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330955021,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "readTranscriptionCsv",
+  "slug": "read-transcription-csv",
+  "operationRelativeTypescriptFilePath": "src/readTranscriptionCsv.ts",
+  "type": {
+    "rawType": "(csvPath: string) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (csvPath: string) => {\n  if (!fs.existsSync(csvPath)) return null;\n\n  const readable = canReadSync(csvPath);\n  if (!readable) return null;\n  const fileString = fs.readFileSync(csvPath, \"utf8\");\n  if (!fileString) return null;\n\n  const lines = fileString.split(\"\\n\");\n\n  const parsed = lines\n    .map((line) => {\n      if (line === \"\") {\n        return;\n      }\n      const [startAt, endAt, ...rest] = line.split(\",\");\n\n      const quoted = rest.join(\",\");\n\n      const text = quoted.trim().slice(1, quoted.length - 2);\n\n      return { startAt: Number(startAt), endAt: Number(endAt), text };\n    })\n    .filter(notEmpty);\n\n  return parsed as TranscribedText[];\n}",
+  "description": "",
+  "id": "zysqwqcsqzpwobvavqpkwxdc"
+}

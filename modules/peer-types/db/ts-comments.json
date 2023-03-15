@@ -1,0 +1,40 @@
+[
+  {
+    "createdAt": 1678428301856,
+    "updatedAt": 1678428301856,
+    "deletedAt": 0,
+    "createdFirstAt": 1678428301856,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/person/Person.ts",
+    "comment": "Can be seen for every person, without authentication\n\nNB: I wish it were possible to ensure these keys exist on the person here, but we can't validate that while still keeping it a const I guess",
+    "rawStatement": "export const publicPersonKeys = [\n  \"name\",\n  \"slug\",\n  \"id\",\n  \"pictureImage\",\n  \"interestSlugs\",\n  \"media\",\n  \"preferred_mediaChannelId\",\n  \"groupSlugs\",\n  \"operationName\",\n  \"projectRelativePath\",\n] as const;",
+    "parameters": {},
+    "types": [
+      "nb"
+    ],
+    "firstLine": 9,
+    "lastLine": 13,
+    "id": "kcmbgfvssyfxaoinxcqqueep"
+  },
+  {
+    "createdAt": 1678428301856,
+    "updatedAt": 1678428301856,
+    "deletedAt": 0,
+    "createdFirstAt": 1678428301856,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/person/Person.ts",
+    "comment": "\nModel to describe a human person. This model gathers and stores all persons around the world, except for yourself. Kind of a user-like model...\n\n\nThe data inside this model is coming from the `Person` itself but also from the owner of the OS server. It should be possible for the person to automatically push information into any of their instances on any server, but the OS owner can augment this.\n\nNB: This is a `DefaultModelType`, which means name and slug need not to be unique, but it is highly preferred.",
+    "rawStatement": "export interface Person extends DefaultModelType {\n  name: string;\n  slug: string;\n  preferredLanguage?: string;\n  pictureImage?: BackendAsset;\n  /**\n   * Email takes priority over phone number, but they are both unique identifiers for a person\n   */\n  email?: string;\n  /**\n   * used for whatsapp messages to determine the users last message\n   */\n  lastActivityAt?: number;\n  isEmailOptOut?: boolean;\n  phoneNumber?: string;\n\n  /**\n   * To replace the initial system of having multiple `authenticationMethod`s\n   *\n   * If authentication exists, that means the user is attempting to access their account\n   *\n   * We can already have their person registered and we can already have information about them or for them without them having an account yet, because it's the same `Person` model.\n   */\n  authentication?: {\n    emailIsVerified?: boolean;\n    emailOtp?: string;\n    emailOtpAt?: number;\n\n    /**\n     * Strategy for the user to authenticate. Defaults to disabled, which means you can just verify in a single way.\n     */\n    twoFactorAuthenticationStrategy?:\n      | \"disabled\"\n      | \"any\"\n      | \"email\"\n      | \"phoneNumber\"\n      | \"both\";\n    phoneNumberIsVerified?: boolean;\n    phoneNumberOtp?: string;\n    phoneNumberOtpAt?: number;\n    encryptedPassword?: string;\n  };\n\n  /**\n   * slugs of interest categories that this person should be notified about.\n   *\n   * Since this is a hierarchical model, parent interests will ensure all children are also applied.\n   */\n  interestSlugs?: Slug[];\n\n  /**\n   * After the `MediaChannel` DB is filled, we can index the names of the persons of the `MediaChannel`, and and we can push them to here, if the name is \"similar\" to the name of this `Person`.\n   *\n   * `*` = \"similar\" means: exact match, or at least first name + last name match\n   */\n  mediaChannelIds?: Id[];\n  /**\n   * Optional. Can be set by admin (not indexed)\n   *\n   * If not available, take the first (mediaChannelIds[0])\n   */\n  preferred_mediaChannelId?: Id;\n\n  /**\n   * Media that is attached to this person.\n   *\n   * NB: not used to authenticate! Can be filled in by King OS, might be erroneous\n   */\n  media?: PersonSocialMedia[];\n\n  dataEntries?: PersonInformationValue[];\n\n  /**\n   * Devices can be attached to a person by looking in the device model and finding the devices that refer to this person\n   *\n   * Among other things, this can be used to determine the `Person` location\n   */\n  devicesCalculated?: Device[];\n\n  /**\n   * DEPRECATED: to be replaced by `authentication` in favor of simplicity\n   *\n   * Methods that can be used to identify yourself as being this user\n   *\n   * Should be set up by the user either when registering, or in settings, to provide more methods.\n   *\n   * NB: It's important to note that a `Person` should not be able to add credentials that are already added by another person. This means that, when adding such a method, all `Person`s need to be searched!\n   */\n  authenticationMethods?: AuthenticationMethod[];\n\n  /**\n   * To which groups does this person belong?\n   *\n   * This determines additional authorizations\n   *\n   * Can be set on signup, but can always be edited by admin\n   */\n  groupSlugs?: Slug[];\n  groups?: Group[];\n\n  /**\n   * DEPRECATED: I don't think we need this, since we are going to build a trust-based authorization system\n   *\n   * Which custom authorizations does this `Person` have?\n   *\n   * authorizations?: Authorization[];\n   *\n   *\n   */\n\n  /**\n   * For now this can be a stripe token, stored for this \"customer\". Handy to connect the customer to the Person. Later this can become an array of multiple credentials, for example if you want to add multiple creditcards.\n   */\n  paymentAuthToken?: string;\n\n  /**\n   * Actions by the `Person` can create changes in the amount of credits\n   *\n   * The exact meaning of the number of credits is determined by the OS settings. Can for example be 1:1 to euro, 1:1 to bitcoin, or a custom credit system. Transferability is also customisable.\n   *\n   * Insufficient credit can limit the persons possibilities within the OS\n   */\n  credit?: Credit;\n\n  /**\n   * Note by team or admin about the person. Can be useful for simple CRM stuff\n   */\n  note?: string;\n\n  /**\n   * Later to be formalised with city, country, address, lat/lng, and maybe multiple possible locations. For now, and if we are using GPT for search, a string might be enough.\n   */\n  location?: string;\n\n  /**\n   * Number 0-1 to indicate my trust towards this person\n   */\n  trust?: number;\n}",
+    "parameters": {
+      "projectRelativeStorageLocationFilePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json"
+    },
+    "types": [
+      "nb"
+    ],
+    "firstLine": 30,
+    "lastLine": 41,
+    "id": "ufuzusbxbgjfeolveexgjjyv"
+  }
+]

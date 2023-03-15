@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678369213319,
+  "updatedAt": 1678369213319,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369213319,
+  "id": "namedparameterstypeof-speakerseparation",
+  "name": "NamedParameters<typeof speakerSeparation>",
+  "slug": "namedparameterstypeof-speakerseparation",
+  "operationRelativeTypescriptFilePath": "src/speakerSeparation.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteAudioFilePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absoluteAudioFilePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteAudioFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof speakerSeparation>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

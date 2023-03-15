@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678331546901,
+  "updatedAt": 1678331546901,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331546901,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/PathSearch.tsx",
+  "commentsInside": [],
+  "rawText": " () => {\n  const [search, setSearch] = useStore(\"menu.search\");\n  const explorableFilesQuery = queries.useGetExplorableFilesWithContext();\n  const paths = explorableFilesQuery.data?.result?.map((x) => x.url);\n  /**\n   TODO:\n   - add pinned, open, and top 100 recent, in that order, to the paths array\n   - improve performance, it's way too slow\n  */\n  return (\n    <Div>\n      {explorableFilesQuery.isLoading ? <FancyLoader /> : null}\n      <PathSearchResults search={search} paths={paths || []} />\n    </Div>\n  );\n}",
+  "name": "PathSearch",
+  "slug": "path-search",
+  "parameters": [],
+  "description": "Use `api.getExplorableFilesWithContext` with `PathSearchResults` component",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 590,
+    "lines": 16,
+    "bytes": 590,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 37,
+    "linesPerFile": 16,
+    "numberOfFiles": 1
+  },
+  "id": "bodeidtkspluqhchfxaflmnl"
+}

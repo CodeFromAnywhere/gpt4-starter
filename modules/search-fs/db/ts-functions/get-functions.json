@@ -1,0 +1,67 @@
+{
+  "createdAt": 1678331601102,
+  "updatedAt": 1678331601102,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331601102,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getFunctions.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  query: string,\n  groupSlugs: string[]\n): Promise<SearchResult[]> => {\n  const tsFunctionsReadable = (await db.get(\"TsFunction\")).filter((x) => {\n    if (groupSlugs.includes(\"admin\")) {\n      return true;\n    }\n\n    const config = sdk[x.name as keyof typeof sdk]?.config as\n      | StandardFunctionConfig\n      | undefined;\n\n    //get persmissions for every group the user is in\n    const groupPermissions = groupSlugs\n      .map((slug) => config?.authorizations?.[slug])\n      .filter(notEmpty)\n      .join(\"\");\n\n    const lowercasePermissions = groupPermissions.toLowerCase();\n\n    // see if the \"R\" is included in those permissions, which would indicate we are allowed to read this function.\n    const canRead = lowercasePermissions.includes(\"r\");\n    const canExecute = lowercasePermissions.includes(\"x\");\n    const canWrite = lowercasePermissions.includes(\"u\");\n\n    return canRead || canExecute || canWrite;\n  });\n\n  const functions = tsFunctionsReadable\n    .filter((x) => {\n      const names = `${x.name.toLowerCase()} ${humanCase(\n        x.name\n      ).toLowerCase()}`;\n      return names.includes(query.toLowerCase());\n    })\n    .map((x) => {\n      const result: SearchResult = {\n        title: `⚡️ ${x.name}`,\n        description: x.description,\n        url: `/function/${x.name}`,\n      };\n\n      return result;\n    });\n\n  return functions;\n}",
+  "name": "getFunctions",
+  "slug": "get-functions",
+  "parameters": [
+    {
+      "name": "query",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "groupSlugs",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "simplifiedSchema": {
+        "items": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": null
+          }
+        ],
+        "type": "array"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/purpose/search/search-types/build/SearchResult\").SearchResult[]>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 1366,
+    "lines": 48,
+    "bytes": 1370,
+    "bytesPerCharacter": 1.0029282576866765,
+    "charactersPerLine": 28,
+    "linesPerFile": 48,
+    "numberOfFiles": 1
+  },
+  "id": "xpkljdartzvysomjidbvuyov"
+}

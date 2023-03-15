@@ -1,0 +1,115 @@
+{
+  "createdAt": 1678330982227,
+  "updatedAt": 1678330982227,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330982227,
+  "id": "namedparameterstypeof-bananacarrot",
+  "name": "NamedParameters<typeof bananaCarrot>",
+  "slug": "namedparameterstypeof-bananacarrot",
+  "operationRelativeTypescriptFilePath": "src/bananaCarrot.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "modelParameters": {
+          "type": "object",
+          "properties": {
+            "imageUrl": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string",
+              "description": "text for QA / Similarity"
+            },
+            "similarity": {
+              "type": "boolean",
+              "description": "whether to return text-image similarity"
+            },
+            "maxLength": {
+              "type": "number",
+              "description": "max length of the generation"
+            },
+            "minLength": {
+              "type": "number",
+              "description": "min length of the generation"
+            }
+          },
+          "required": [
+            "imageUrl"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "modelParameters"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "modelParameters",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "imageUrl",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "text",
+                "required": false,
+                "schema": {
+                  "fullComment": "text for QA / Similarity",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "similarity",
+                "required": false,
+                "schema": {
+                  "fullComment": "whether to return text-image similarity",
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "maxLength",
+                "required": false,
+                "schema": {
+                  "fullComment": "max length of the generation",
+                  "type": "number"
+                }
+              },
+              {
+                "name": "minLength",
+                "required": false,
+                "schema": {
+                  "fullComment": "min length of the generation",
+                  "type": "number"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof bananaCarrot>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

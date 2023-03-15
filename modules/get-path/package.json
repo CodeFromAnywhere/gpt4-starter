@@ -1,0 +1,176 @@
+{
+  "createdAt": 1668328686931,
+  "updatedAt": 1668328686931,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328686931,
+  "id": "dryPyPWnCUmLjarA",
+  "dependencies": {
+    "fs-util": "1.0.5",
+    "log": "0.0.1",
+    "code-types": "0.0.1",
+    "read-json-file": "0.0.1",
+    "k-explore": "0.0.2",
+    "filename-conventions": "0.0.1",
+    "try-parse-json": "0.0.1",
+    "js-util": "0.0.1",
+    "fs-util-js": "0.0.1"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "get-path",
+  "language": "english",
+  "slug": "get-path",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/clarity/os/operations/tools/control-project/get-path/src/getRootPath.ts. Error: Error: Unknown node \" databaseFolderName\" of kind \"Identifier\""
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "get-path",
+    "hasGeneratedDependenciesIndexed": true,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1678042151441,
+    "operationDependenciesIndexed": [
+      "path",
+      "fs",
+      "log",
+      "OperationClassification",
+      "Operation",
+      "path",
+      "fs",
+      "getAllFoldersUntilFolder",
+      "path",
+      "ModuleKind",
+      "ModuleResolutionKind",
+      "Operation",
+      "OperationClassification",
+      "TsConfig",
+      "fs",
+      "path",
+      "readJsonFileSync",
+      "tryParseJson",
+      "OperationClassification",
+      "getLastFolder",
+      "mergeObjectsArray",
+      "notEmpty",
+      "exploreOperationFolders",
+      "getLastFolder",
+      "path",
+      "exploreOperationFolders",
+      "log",
+      "operations",
+      "path",
+      "getLastFolder",
+      "OperationPathParse",
+      "Operation",
+      "readJsonFileSync",
+      "makeRelative",
+      "PathParse",
+      "fs",
+      "path",
+      "log",
+      "fs",
+      "path",
+      "makeRelative",
+      "databaseFolderName",
+      "path",
+      "path",
+      "possibleSubExtensions",
+      "Operation",
+      "path",
+      "Operation",
+      "readJsonFileSync",
+      "fs",
+      "path",
+      "fs",
+      "path",
+      "Operation",
+      "tryParseJson"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/control-project",
+    "markdown": "Useful functions to get paths within King OS.\n\nDepends on `sdk-operations`, which makes it only work inside of a typerepo.\n",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 26,
+        "lines": 848,
+        "characters": 24315,
+        "bytes": 24315
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 213,
+        "characters": 5581,
+        "bytes": 5581
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 492,
+        "characters": 10007,
+        "bytes": 10007
+      },
+      "size": {
+        "bytes": 39903,
+        "characters": 39903,
+        "lines": 1553,
+        "numberOfFiles": 30
+      }
+    },
+    "hasGeneratedImportsIndexed": false,
+    "circularDependencies": [
+      [
+        {
+          "operationName": "get-path",
+          "filePath": "/Users/king/King/operations/tools/control-project/get-path/src/getOperationClassification.ts"
+        },
+        {
+          "operationName": "read-json-file",
+          "filePath": "/Users/king/King/operations/tools/parsing/read-files/read-json-file/src/readProjectRelativeJsonFile.ts"
+        }
+      ],
+      [
+        {
+          "operationName": "get-path",
+          "filePath": "/Users/king/King/operations/tools/control-project/get-path/src/getOperationClassificationObject.ts"
+        },
+        {
+          "operationName": "k-explore",
+          "filePath": "/Users/king/King/operations/tools/control-project/k-explore/src/explore.ts"
+        }
+      ],
+      [
+        {
+          "operationName": "get-path",
+          "filePath": "/Users/king/King/operations/tools/control-project/get-path/src/getOperationPathParse.ts"
+        },
+        {
+          "operationName": "read-json-file",
+          "filePath": "/Users/king/King/operations/tools/parsing/read-files/read-json-file/src/readProjectRelativeJsonFile.ts"
+        }
+      ],
+      [
+        {
+          "operationName": "get-path",
+          "filePath": "/Users/king/King/operations/tools/control-project/get-path/src/isBundle.ts"
+        },
+        {
+          "operationName": "read-json-file",
+          "filePath": "/Users/king/King/operations/tools/parsing/read-files/read-json-file/src/readProjectRelativeJsonFile.ts"
+        }
+      ]
+    ]
+  }
+}

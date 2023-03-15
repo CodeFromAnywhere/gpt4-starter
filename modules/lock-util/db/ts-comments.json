@@ -1,0 +1,20 @@
+[
+  {
+    "createdAt": 1678331285170,
+    "updatedAt": 1678331285170,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331285170,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/unlock.ts",
+    "comment": "Removes lockfile based on the filepath of the file that shoul've been locked\nNB: don't provide the path to the lockfile but the path to the file that the lock should be removed from",
+    "rawStatement": "export const unlock = (absoluteLockedFilePath: string) => {\n  const lockFilePath = getActionStatusFilePath(absoluteLockedFilePath);\n  if (!fs.existsSync(lockFilePath)) {\n    return;\n  }\n  return fs.rm(lockFilePath);\n};",
+    "parameters": {},
+    "types": [
+      "nb"
+    ],
+    "firstLine": 4,
+    "lastLine": 7,
+    "id": "wuqiebzunwqteelrbobyhrvy"
+  }
+]

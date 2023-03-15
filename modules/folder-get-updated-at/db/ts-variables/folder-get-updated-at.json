@@ -1,0 +1,33 @@
+{
+  "createdAt": 1672636521245,
+  "updatedAt": 1672636521245,
+  "deletedAt": 0,
+  "createdFirstAt": 1672636521245,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "folderGetUpdatedAt",
+  "slug": "folder-get-updated-at",
+  "operationRelativeTypescriptFilePath": "src/folderGetUpdatedAt.ts",
+  "type": {
+    "rawType": "(config: { folderPath: string; }) => Promise<number>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: {\n  folderPath: string;\n}): Promise<number> => {\n  const { folderPath } = config;\n  const typescriptFiles = await getFolderTypescriptFiles(folderPath, true);\n  return typescriptFiles.reduce((updatedAt, file) => {\n    const fileUpdatedAt = file.stats?.updatedAt;\n    if (!fileUpdatedAt) return updatedAt;\n    if (fileUpdatedAt > updatedAt) return fileUpdatedAt;\n    return updatedAt;\n  }, 0);\n}",
+  "description": "get last updated file updatedAt time in whole folder, recursively. only finds typescript files, ignores index.",
+  "id": "qrksogmcyrewtecwmqdmvisq"
+}

@@ -1,0 +1,268 @@
+{
+  "createdAt": 1673852523983,
+  "updatedAt": 1673852523983,
+  "deletedAt": 0,
+  "createdFirstAt": 1673852523983,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "watchWavWithoutMp3",
+  "slug": "watch-wav-without-mp-3",
+  "operationRelativeTypescriptFilePath": "src/watchWavWithoutMp3.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/types/code-types/build/functions/ProjectWatcher\").ProjectWatcher<any>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "startupStrategy": {
+          "enum": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "x-enumNames": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "type": "string"
+        },
+        "filter": {
+          "type": "object",
+          "properties": {}
+        },
+        "config": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "versionInfo": {
+              "type": "object",
+              "properties": {}
+            },
+            "isHeavy": {
+              "type": "boolean"
+            },
+            "isInternetRequired": {
+              "type": "boolean"
+            },
+            "isBrowserRequired": {
+              "type": "boolean"
+            },
+            "isPublic": {
+              "type": "boolean"
+            },
+            "isApiExposed": {
+              "type": "boolean"
+            },
+            "domain": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "isPaid": {
+              "type": "boolean"
+            },
+            "priceCredit": {
+              "type": "number"
+            },
+            "priceDescription": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "authorizations": {
+              "type": "object",
+              "properties": {}
+            },
+            "canCache": {
+              "type": "boolean"
+            },
+            "runEveryPeriod": {}
+          },
+          "required": [
+            "runEveryPeriod"
+          ]
+        }
+      },
+      "required": [
+        "filter"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "startupStrategy",
+          "required": false,
+          "schema": {
+            "enum": [
+              "ignore",
+              "sync",
+              "async",
+              "queue"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "filter",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "config",
+          "required": false,
+          "schema": {
+            "properties": [
+              {
+                "name": "version",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "versionInfo",
+                "required": false,
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                }
+              },
+              {
+                "name": "isHeavy",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isInternetRequired",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isBrowserRequired",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isPublic",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isApiExposed",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "domain",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "isPaid",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "priceCredit",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "priceDescription",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "authorizations",
+                "required": false,
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                }
+              },
+              {
+                "name": "canCache",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "runEveryPeriod",
+                "required": true,
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  eventName,\n  absolutePath,\n  isStartup\n): Promise<string | undefined> => {\n  if (isLocked(absolutePath)) {\n    return;\n  }\n  if (!fs.existsSync(absolutePath)) {\n    return;\n  }\n  const result = await compressConvert(absolutePath, {\n    targetFormat: \"mp3\",\n    keepOriginal: true,\n  });\n\n  return result;\n}",
+  "description": "Find all wav everywhere without mp3, add mp3",
+  "id": "aczeyqxlrpiumswkozrquxjh"
+}

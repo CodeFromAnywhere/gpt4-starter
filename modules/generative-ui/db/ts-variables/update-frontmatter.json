@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041377011,
+  "updatedAt": 1678041377011,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041377011,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "updateFrontmatter",
+  "slug": "update-frontmatter",
+  "operationRelativeTypescriptFilePath": "src/FileCollectionActions.tsx",
+  "type": {
+    "rawType": "(projectRelativePath: string | undefined, newFrontmatter: { [key: string]: string; }, refetch?: (() => void) | undefined) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  projectRelativePath: string | undefined,\n  newFrontmatter: { [key: string]: string },\n  refetch?: () => void\n) => {\n  if (!projectRelativePath) return;\n\n  const apiResult = await api.updateFrontmatterWithContext(\n    projectRelativePath,\n    newFrontmatter\n  );\n\n  showStandardResponse(apiResult);\n\n  if (apiResult.result?.isSuccessful) {\n    refetch?.();\n  }\n}",
+  "description": "",
+  "id": "tmiadivfomjbclguwyltvfjj"
+}

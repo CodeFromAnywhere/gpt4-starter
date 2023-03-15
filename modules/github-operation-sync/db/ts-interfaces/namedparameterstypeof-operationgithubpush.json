@@ -1,0 +1,49 @@
+{
+  "createdAt": 1673794226566,
+  "updatedAt": 1673794226566,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794226566,
+  "id": "namedparameterstypeof-operationgithubpush",
+  "name": "NamedParameters<typeof operationGithubPush>",
+  "slug": "namedparameterstypeof-operationgithubpush",
+  "operationRelativeTypescriptFilePath": "src/operationGithubPush.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "operationName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "operationName"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "operationName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof operationGithubPush>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

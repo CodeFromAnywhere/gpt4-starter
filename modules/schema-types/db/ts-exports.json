@@ -1,0 +1,98 @@
+[
+  {
+    "createdAt": 1678331679952,
+    "updatedAt": 1678331679952,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331679952,
+    "name": "SimplifiedSchemaType",
+    "slug": "simplified-schema-type",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "erjbruzeqoyqnkchhkqxdpyo"
+  },
+  {
+    "createdAt": 1678331679952,
+    "updatedAt": 1678331679952,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331679952,
+    "name": "SimplifiedSchema",
+    "slug": "simplified-schema",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "tixumvhqnlpynhfmvddapsxg"
+  },
+  {
+    "createdAt": 1678331679953,
+    "updatedAt": 1678331679953,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331679953,
+    "name": "SimplifiedSchemaProperty",
+    "slug": "simplified-schema-property",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "falrqotzfvdubchfythkrqke"
+  },
+  {
+    "createdAt": 1678331679953,
+    "updatedAt": 1678331679953,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331679953,
+    "name": "SimplifiedSchemaItem",
+    "slug": "simplified-schema-item",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "ksurhukagnfunumpckcvmxgv"
+  },
+  {
+    "createdAt": 1678331679953,
+    "updatedAt": 1678331679953,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331679953,
+    "name": "SimplifiedSchemaType",
+    "slug": "simplified-schema-type",
+    "operationRelativeTypescriptFilePath": "src/SimplifiedSchema.ts",
+    "comments": [],
+    "type": "value",
+    "id": "dzkestmaycowpgffpafssgax"
+  },
+  {
+    "createdAt": 1678331679953,
+    "updatedAt": 1678331679953,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331679953,
+    "name": "SimplifiedSchema",
+    "slug": "simplified-schema",
+    "operationRelativeTypescriptFilePath": "src/SimplifiedSchema.ts",
+    "comments": [],
+    "type": "value",
+    "id": "yvecgdwgegcgjsyeupbhwhcc"
+  },
+  {
+    "createdAt": 1678331679953,
+    "updatedAt": 1678331679953,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331679953,
+    "name": "SimplifiedSchemaProperty",
+    "slug": "simplified-schema-property",
+    "operationRelativeTypescriptFilePath": "src/SimplifiedSchema.ts",
+    "comments": [],
+    "type": "value",
+    "id": "ymoypbllqtbqzrprfivzjqwu"
+  },
+  {
+    "createdAt": 1678331679953,
+    "updatedAt": 1678331679953,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331679953,
+    "name": "SimplifiedSchemaItem",
+    "slug": "simplified-schema-item",
+    "operationRelativeTypescriptFilePath": "src/SimplifiedSchema.ts",
+    "comments": [],
+    "type": "value",
+    "id": "hxbyqdagywzxocymsxaxxbmd"
+  }
+]

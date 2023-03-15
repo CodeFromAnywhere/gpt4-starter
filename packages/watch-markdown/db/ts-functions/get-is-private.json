@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678330866651,
+  "updatedAt": 1678330866651,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330866651,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getIsPrivate.ts",
+  "commentsInside": [],
+  "rawText": " async (contents: string) => {\n  const isPrivateConventionPath = path.join(\n    __dirname,\n    \"..\",\n    \"src\",\n    \"is-private-convention.md\"\n  );\n\n  const conventionText = await fs.readFile(isPrivateConventionPath, \"utf8\");\n  const tttResult = await textToText(`Consider the following text:\n  \n---\n${contents}\n---\n\nShould we mark this file private? Please respond in JSON, in this format: \\`{ isPrivate: boolean }\\`.\n\n${conventionText}`);\n\n  if (!tttResult.isSuccessful) {\n    return { isSuccessful: false, message: tttResult.message };\n  }\n\n  const json = findJsonInMarkdown<{ isPrivate: boolean }>(tttResult.result);\n  const isPrivate = json?.isPrivate;\n\n  return { isSuccessful: true, message: tttResult.message, isPrivate };\n}",
+  "name": "getIsPrivate",
+  "slug": "get-is-private",
+  "parameters": [
+    {
+      "name": "contents",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 732,
+    "lines": 28,
+    "bytes": 732,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 28,
+    "numberOfFiles": 1
+  },
+  "id": "bylfqpnpknlodqocnpmyfngj"
+}

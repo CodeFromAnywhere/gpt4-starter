@@ -1,0 +1,80 @@
+{
+  "createdAt": 1678331563495,
+  "updatedAt": 1678331563495,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331563495,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/setConfig.ts",
+  "commentsInside": [],
+  "rawText": " (\n  apiUrl: string,\n  disableAdmin: boolean,\n  /**\n   * TITLE: CustomProject relative base path of your file system to show\n   */\n  customCustomProjectRelativeBasePaths: string[]\n) => {\n  setItem(\"api.customUrl\", apiUrl === \"\" ? null : apiUrl);\n  setItem(\"explorer.config\", {\n    disableAdmin,\n    customCustomProjectRelativeBasePaths,\n  });\n}",
+  "name": "setConfig",
+  "slug": "set-config",
+  "parameters": [
+    {
+      "name": "apiUrl",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "disableAdmin",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": true
+    },
+    {
+      "name": "customCustomProjectRelativeBasePaths",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "TITLE: CustomProject relative base path of your file system to show"
+      },
+      "simplifiedSchema": {
+        "fullComment": "TITLE: CustomProject relative base path of your file system to show",
+        "title": "CustomProject relative base path of your file system to show",
+        "items": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": null
+          }
+        ],
+        "type": "array"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "void",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 344,
+    "lines": 14,
+    "bytes": 344,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 14,
+    "numberOfFiles": 1
+  },
+  "id": "fvrrurfcainyzgblxpsrotey"
+}

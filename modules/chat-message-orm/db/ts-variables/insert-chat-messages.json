@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678505777878,
+  "updatedAt": 1678505777878,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505777878,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "insertChatMessages",
+  "slug": "insert-chat-messages",
+  "operationRelativeTypescriptFilePath": "src/insertChatMessages.ts",
+  "type": {
+    "rawType": "(personSlug: string, personaSlug: string, chatMessages: any[]) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  personSlug: string,\n  personaSlug: string,\n  chatMessages: Creation<ChatMessage>[]\n): Promise<StandardResponse> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No project root\" };\n  }\n\n  const currentDate = getCurrentDate();\n  const absolutePath = getChatMessagesPath(\n    projectRoot,\n    personSlug,\n    personaSlug,\n    currentDate\n  );\n\n  const already = (await readJsonFile<ChatMessage[]>(absolutePath)) || [];\n\n  const newChatMessages = chatMessages.map((item) => {\n    const fullItem = addDefaultValues(item);\n    const storingItem = makeStoringItem(fullItem) as ChatMessage;\n    return storingItem;\n  });\n\n  const newFullData = already.concat(newChatMessages);\n\n  const isSuccessful = await writeJsonToFile(absolutePath, newFullData);\n\n  return { isSuccessful };\n}",
+  "description": "For performance reasons, exception model",
+  "id": "mctemhflpilumjkzgwajqwij"
+}

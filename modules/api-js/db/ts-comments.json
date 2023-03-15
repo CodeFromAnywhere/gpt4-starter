@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678331877582,
+    "updatedAt": 1678331877582,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331877582,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/getGetApiUrl.ts",
+    "comment": "gets an api url for a context get api\n\nreturns something like `[apiUrl]/[apiFunctionName][queryString]`",
+    "rawStatement": "export const getGetApiUrl = (\n  apiUrl: string | undefined,\n  apiFunctionName: string,\n  query: { [name: string]: string[] | string | undefined }\n): string | undefined => {\n  if (!apiUrl) return;\n  const queryString = Object.keys(query).length > 0 ? toQueryString(query) : \"\";\n  const url = `${apiUrl}/function/${apiFunctionName}${queryString}`;\n  return url;\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 4,
+    "lastLine": 8,
+    "id": "oetthqlmfpckyxerynkquiau"
+  }
+]

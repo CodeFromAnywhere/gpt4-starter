@@ -1,0 +1,71 @@
+{
+  "createdAt": 1673794226566,
+  "updatedAt": 1673794226566,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794226566,
+  "id": "namedparameterstypeof-initializegitoruseexistingandpush",
+  "name": "NamedParameters<typeof initializeGitOrUseExistingAndPush>",
+  "slug": "namedparameterstypeof-initializegitoruseexistingandpush",
+  "operationRelativeTypescriptFilePath": "src/operationGithubPush.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "dir": {
+          "type": "string"
+        },
+        "remoteUrl": {
+          "type": "string"
+        },
+        "commitMessage": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dir",
+        "remoteUrl",
+        "commitMessage"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "dir",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "remoteUrl",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "commitMessage",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof initializeGitOrUseExistingAndPush>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

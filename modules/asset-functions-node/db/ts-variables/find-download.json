@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041491230,
+  "updatedAt": 1678041491230,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041491230,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "findDownload",
+  "slug": "find-download",
+  "operationRelativeTypescriptFilePath": "src/download/findDownload.ts",
+  "type": {
+    "rawType": "(projectRelativePath: string) => Promise<import(\"/Users/clarity/os/operations/tools/asset/asset-type/build/Download\").Download | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  projectRelativePath: string\n): Promise<Download | undefined> => {\n  const already = (await db.get(\"Download\")).find((x) => {\n    const stillAvailable = x.availableUntilAt\n      ? x.availableUntilAt > Date.now()\n      : true;\n\n    const samePath = x.download_projectRelativePath === projectRelativePath;\n\n    return samePath && stillAvailable;\n  });\n\n  return already;\n}",
+  "description": "",
+  "id": "svoxeuuhyegjbmsckfvprvyx"
+}

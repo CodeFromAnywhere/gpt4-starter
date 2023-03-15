@@ -1,0 +1,112 @@
+{
+  "createdAt": 1678330983708,
+  "updatedAt": 1678330983708,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330983708,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/bananaCarrot.ts",
+  "commentsInside": [],
+  "rawText": " async (modelParameters: {\n  imageUrl: string;\n\n  /**\n   * text for QA / Similarity*/\n  text?: string;\n  /**\n   * whether to return text-image similarity\n   */\n  similarity?: boolean;\n  /**\n   * max length of the generation\n   */\n  maxLength?: number;\n  /**\n   * min length of the generation\n   */\n  minLength?: number;\n}) => {\n  const persona = await getPrimaryPersona();\n\n  const apiKey = persona.bananadevApiKey;\n\n  if (!apiKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please setup an API Key for Carrot Banana\",\n    };\n  }\n\n  const modelKey = persona.bananadevModelKeys?.carrot;\n\n  if (!modelKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please provide a correct model that you have a model key for\",\n    };\n  }\n\n  const result = await banana.run(apiKey, modelKey, modelParameters);\n\n  console.log({ carrotResult: result });\n  return { isSuccessful: true, message: \"You did it\", result };\n}",
+  "name": "bananaCarrot",
+  "slug": "banana-carrot",
+  "parameters": [
+    {
+      "name": "modelParameters",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "imageUrl": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string",
+            "description": "text for QA / Similarity"
+          },
+          "similarity": {
+            "type": "boolean",
+            "description": "whether to return text-image similarity"
+          },
+          "maxLength": {
+            "type": "number",
+            "description": "max length of the generation"
+          },
+          "minLength": {
+            "type": "number",
+            "description": "min length of the generation"
+          }
+        },
+        "required": [
+          "imageUrl"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "imageUrl",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "text",
+            "required": false,
+            "schema": {
+              "fullComment": "text for QA / Similarity",
+              "type": "string"
+            }
+          },
+          {
+            "name": "similarity",
+            "required": false,
+            "schema": {
+              "fullComment": "whether to return text-image similarity",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "maxLength",
+            "required": false,
+            "schema": {
+              "fullComment": "max length of the generation",
+              "type": "number"
+            }
+          },
+          {
+            "name": "minLength",
+            "required": false,
+            "schema": {
+              "fullComment": "min length of the generation",
+              "type": "number"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 929,
+    "lines": 44,
+    "bytes": 929,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 21,
+    "linesPerFile": 44,
+    "numberOfFiles": 1
+  },
+  "id": "hculxyqnqpvbnwqqywlaoogy"
+}

@@ -1,0 +1,36 @@
+{
+  "createdAt": 1671316522590,
+  "updatedAt": 1671316522590,
+  "deletedAt": 0,
+  "createdFirstAt": 1671316522590,
+  "isApiExposed": true,
+  "isExported": true,
+  "groupAuthorization": {},
+  "operationRelativeTypescriptFilePath": "src/db.ts",
+  "commentsInside": [],
+  "rawText": " (\n  modelName: keyof DbModels,\n  customQueryConfig?: CustomQueryConfig\n) => mergeConfigs<DbModels>(modelName, dbConfig, customQueryConfig)",
+  "name": "getMergedQueryConfig",
+  "slug": "get-merged-query-config",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "import(\"/Users/king/King/operations/tools/purpose/codebase-introspection/database/fs-orm/build/types\").QueryConfig & { dbStorageMethod: any; manualProjectRoot: string; projectRoot: string; }",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 139,
+    "lines": 4,
+    "bytes": 139,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 35,
+    "linesPerFile": 4,
+    "numberOfFiles": 1
+  },
+  "id": "ogghhpejrlvdiflmrjbffapx"
+}

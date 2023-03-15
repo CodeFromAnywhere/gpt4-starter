@@ -1,0 +1,111 @@
+{
+  "createdAt": 1678041414133,
+  "updatedAt": 1678041414133,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041414133,
+  "id": "namedparameterstypeof-getreaderpageinfo",
+  "name": "NamedParameters<typeof getReaderPageInfo>",
+  "slug": "namedparameterstypeof-getreaderpageinfo",
+  "operationRelativeTypescriptFilePath": "src/getReaderPageInfo.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "isFolder": {
+          "type": "boolean"
+        },
+        "contextualPromptsObject": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "selectionContextualPrompts": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/ContextualPrompt"
+                  }
+                },
+                "pageContextualPrompts": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/ContextualPrompt"
+                  }
+                },
+                "folderContextualPrompts": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/ContextualPrompt"
+                  }
+                }
+              },
+              "required": [
+                "selectionContextualPrompts",
+                "pageContextualPrompts",
+                "folderContextualPrompts"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "contextualPromptResults": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ContextualPromptResult"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "isFolder",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "contextualPromptsObject",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "contextualPromptResults",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getReaderPageInfo>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678331593018,
+  "updatedAt": 1678331593018,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331593018,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getExplorableBasePathsWithContext",
+  "slug": "get-explorable-base-paths-with-context",
+  "operationRelativeTypescriptFilePath": "src/getExplorableBasePathsWithContext.ts",
+  "type": {
+    "rawType": "{ (functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext): { projectRelativePath: string; name: string; }[]; config: { isPublic: boolean; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPublic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isPublic"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "(\n  functionContext: FunctionContext\n): { projectRelativePath: string; name: string }[] => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return [];\n  }\n\n  const {\n    device: { currentPersonCalculated },\n  } = functionContext;\n\n  const groupSlugs = functionContext.device?.currentPersonCalculated\n    ?.groupSlugs || [\"public\"];\n\n  const isAdmin = groupSlugs.includes(\"admin\");\n\n  const groupBasePaths = groupSlugs.map((slug) => {\n    return {\n      projectRelativePath: makeRelative(\n        path.join(projectRoot, \"knowledge\", \"groups\", slug),\n        projectRoot\n      ),\n      name: humanCase(slug),\n    };\n  });\n\n  // NB: add your own user path if you are logged in\n  const myBasePaths = currentPersonCalculated?.slug\n    ? [\n        {\n          projectRelativePath: makeRelative(\n            path.join(\n              projectRoot,\n              \"knowledge\",\n              \"persons\",\n              currentPersonCalculated.slug\n            ),\n            projectRoot\n          ),\n          name: \"My files\",\n        },\n      ]\n    : [];\n\n  const explorableBasePaths = myBasePaths.concat(groupBasePaths);\n\n  if (isAdmin) {\n    // add before the rest\n    explorableBasePaths.unshift({ projectRelativePath: \"\", name: \"OS Root\" });\n  }\n\n  return explorableBasePaths;\n}",
+  "description": "Get the readable and writeable basePaths of any user (project relative)\n\nIf you're not signed in as a person, this function will return an empty array\n\nBasepaths need to be:\n\n- If you're admin, all files everywhere, `root` is visible, is `/`\n- user has is `/knowledge/persons/[slug]`\n- for every group you're in, there should be a button leading to `/knowledge/groups/[slug]`",
+  "id": "bhlnnexggsfimyvwhomjdqqq"
+}

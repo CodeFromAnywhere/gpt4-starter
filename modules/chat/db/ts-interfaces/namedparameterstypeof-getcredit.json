@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678611463325,
+  "updatedAt": 1678611463325,
+  "deletedAt": 0,
+  "createdFirstAt": 1678611463325,
+  "id": "namedparameterstypeof-getcredit",
+  "name": "NamedParameters<typeof getCredit>",
+  "slug": "namedparameterstypeof-getcredit",
+  "operationRelativeTypescriptFilePath": "src/constants.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "totalPaymentEuros": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "totalPaymentEuros"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "totalPaymentEuros",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getCredit>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

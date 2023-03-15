@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var makeMarkdownIndex_1=require("./makeMarkdownIndex"),makeMarkdownIndexCli=function(){var e=process.argv.slice(2)[0];(0,makeMarkdownIndex_1.makeMarkdownIndex)(e)};makeMarkdownIndexCli();
+//# sourceMappingURL=makeMarkdownIndex.cli.js.map

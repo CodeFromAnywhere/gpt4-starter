@@ -1,0 +1,24 @@
+{
+  "createdAt": 1669055918474,
+  "updatedAt": 1669055918474,
+  "deletedAt": 0,
+  "createdFirstAt": 1669055918474,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "defaultZoom",
+  "slug": "default-zoom",
+  "operationRelativeTypescriptFilePath": "src/map/MapInput.tsx",
+  "type": {
+    "rawType": "{}",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "11",
+  "description": "",
+  "id": "wfucevhiaowqxzouifxxzupe"
+}

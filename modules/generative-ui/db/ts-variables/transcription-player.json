@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041410016,
+  "updatedAt": 1678041410016,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041410016,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "TranscriptionPlayer",
+  "slug": "transcription-player",
+  "operationRelativeTypescriptFilePath": "src/TranscriptionPlayer.tsx",
+  "type": {
+    "rawType": "() => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  const queryPath = useQueryPath();\n  const fileCollectionQuery =\n    queries.useGetFileCollectionWithContext(queryPath);\n\n  const files = fileCollectionQuery.data?.result?.files;\n\n  const transcriptionFileContent = files?.find((x) =>\n    x.name.endsWith(\".transcription.json\")\n  )?.rawContent;\n  const transcription = transcriptionFileContent\n    ? tryParseJson<Transcription>(transcriptionFileContent) || undefined\n    : undefined;\n\n  const videoFile = files?.find((x) => x.type === \"video\");\n  const audioFile = files?.find((x) => x.type === \"audio\");\n  const preferredPlayerFile = videoFile || audioFile;\n  const absoluteUrl = preferredPlayerFile?.projectRelativePath\n    ? getAssetDirectlyApiUrl(apiUrl, preferredPlayerFile?.projectRelativePath)\n    : undefined;\n\n  console.log(\"render transcriptionplayer\", { absoluteUrl });\n  //\n  return (\n    <Div>\n      {absoluteUrl ? (\n        <AssetView\n          className=\"max-h-screen max-w-screen\"\n          projectRelativeReferencingFilePath={\n            preferredPlayerFile?.projectRelativePath\n          }\n          asset={{ absoluteUrl }}\n          transcription={transcription}\n        />\n      ) : null}\n    </Div>\n  );\n}",
+  "description": "",
+  "id": "kuapfdpuervlakuaqoursazr"
+}

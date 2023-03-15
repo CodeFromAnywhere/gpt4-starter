@@ -1,0 +1,38 @@
+[
+  {
+    "createdAt": 1670218879166,
+    "updatedAt": 1670218879166,
+    "deletedAt": 0,
+    "createdFirstAt": 1670218879166,
+    "name": "WordPriority",
+    "slug": "word-priority",
+    "type": "type",
+    "hasGeneric": false,
+    "module": "language-types",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/types.ts",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "gpeuzmjxjzsfnxxzonnszxrw"
+  },
+  {
+    "createdAt": 1670218879166,
+    "updatedAt": 1670218879166,
+    "deletedAt": 0,
+    "createdFirstAt": 1670218879166,
+    "name": "Language",
+    "slug": "language",
+    "type": "type",
+    "hasGeneric": false,
+    "module": "model-types",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/types.ts",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "kcmslsclcscikcrjgkzwatvj"
+  }
+]

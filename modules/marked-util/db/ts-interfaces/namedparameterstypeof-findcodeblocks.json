@@ -1,0 +1,49 @@
+{
+  "createdAt": 1674033614233,
+  "updatedAt": 1674033614233,
+  "deletedAt": 0,
+  "createdFirstAt": 1674033614233,
+  "id": "namedparameterstypeof-findcodeblocks",
+  "name": "NamedParameters<typeof findCodeblocks>",
+  "slug": "namedparameterstypeof-findcodeblocks",
+  "operationRelativeTypescriptFilePath": "src/findCodeblocks.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "markdownString": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "markdownString"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "markdownString",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof findCodeblocks>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var sendMessage_1=require("./sendMessage");(0,sendMessage_1.sendMessage)("+31681904650","YO");
+//# sourceMappingURL=sendMessage.test.js.map

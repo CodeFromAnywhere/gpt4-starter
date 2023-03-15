@@ -1,0 +1,5 @@
+"use strict";var __assign=this&&this.__assign||function(){return __assign=Object.assign||function(r){for(var e,t=1,n=arguments.length;t<n;t++)for(var s in e=arguments[t])Object.prototype.hasOwnProperty.call(e,s)&&(r[s]=e[s]);return r},__assign.apply(this,arguments)};Object.defineProperty(exports,"__esModule",{value:!0}),exports.personAttachInheritedGroups=void 0;var getAllGroupsIncludingInherited_1=require("./getAllGroupsIncludingInherited"),personAttachInheritedGroups=function(r,e){var t=(0,getAllGroupsIncludingInherited_1.getAllGroupsIncludingInheritedRecursive)(e,r.groupSlugs);return __assign(__assign({},r),{groupSlugs:t.map((function(r){return r.slug})),groups:t})};
+/**
+ * This special map function attaches all groups (including public and inherited) for a person, on top of just the ones that are found int `Person.groupSlugs` (if any)
+ */exports.personAttachInheritedGroups=personAttachInheritedGroups;
+//# sourceMappingURL=personAttachInheritedGroups.js.map

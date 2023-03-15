@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331547115,
+  "updatedAt": 1678331547115,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331547115,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "PathSearch",
+  "slug": "path-search",
+  "operationRelativeTypescriptFilePath": "src/PathSearch.tsx",
+  "type": {
+    "rawType": "() => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  const [search, setSearch] = useStore(\"menu.search\");\n  const explorableFilesQuery = queries.useGetExplorableFilesWithContext();\n  const paths = explorableFilesQuery.data?.result?.map((x) => x.url);\n  /**\n   TODO:\n   - add pinned, open, and top 100 recent, in that order, to the paths array\n   - improve performance, it's way too slow\n  */\n  return (\n    <Div>\n      {explorableFilesQuery.isLoading ? <FancyLoader /> : null}\n      <PathSearchResults search={search} paths={paths || []} />\n    </Div>\n  );\n}",
+  "description": "Use `api.getExplorableFilesWithContext` with `PathSearchResults` component",
+  "id": "ffijnhgltjcwhkdccfqmodak"
+}

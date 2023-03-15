@@ -1,0 +1,46 @@
+{
+  "createdAt": 1673963764589,
+  "updatedAt": 1673963764589,
+  "deletedAt": 0,
+  "createdFirstAt": 1673963764589,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/isWav16bit.ts",
+  "commentsInside": [],
+  "rawText": " async (absolutePath: string): Promise<boolean> => {\n  console.log(\"checking\");\n  const is16bit = await new Promise<boolean>((resolve) => {\n    ffmpeg(absolutePath).ffprobe((err, data) => {\n      console.log({ err, data });\n\n      const bitRate = data?.format?.bit_rate;\n\n      console.log({ bitRate });\n\n      if (bitRate === 16) {\n        return true;\n      }\n      return false;\n    });\n  });\n\n  return is16bit;\n}",
+  "name": "isWav16bit",
+  "slug": "is-wav-16bit",
+  "parameters": [
+    {
+      "name": "absolutePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<boolean>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 416,
+    "lines": 19,
+    "bytes": 416,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 22,
+    "linesPerFile": 19,
+    "numberOfFiles": 1
+  },
+  "id": "jnmnewpalhzchrxnppfsjcle"
+}

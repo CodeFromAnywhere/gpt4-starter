@@ -1,0 +1,91 @@
+{
+  "createdAt": 1668328713791,
+  "updatedAt": 1668328713791,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328713791,
+  "id": "ebYfsGPcccnstOyQ",
+  "dependencies": {
+    "fs-util": "1.0.5",
+    "get-path": "0.0.1",
+    "write-to-assets": "0.0.1",
+    "js-util": "0.0.1",
+    "k-explore": "0.0.2",
+    "measure-performance": "0.0.1",
+    "read-markdown-file": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "detect-language",
+  "language": "english",
+  "slug": "detect-language",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [],
+      "lintProblems": []
+    },
+    "classificationIndexed": "node-cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "detect-language",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1677579966452,
+    "operationDependenciesIndexed": [
+      "path",
+      "getProjectRoot",
+      "writeToAssets",
+      "mergeObjectsArray",
+      "notEmpty",
+      "explore",
+      "generateUniqueId",
+      "getNewPerformance",
+      "PerformanceItem",
+      "cleanupTimer",
+      "readMarkdownFile"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/language",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 4,
+        "lines": 272,
+        "characters": 15115,
+        "bytes": 15115
+      },
+      "dataSize": {
+        "numberOfFiles": 3,
+        "lines": 117,
+        "characters": 20448,
+        "bytes": 20448
+      },
+      "textSize": {
+        "numberOfFiles": 1,
+        "lines": 138,
+        "characters": 5530,
+        "bytes": 5530
+      },
+      "size": {
+        "bytes": 41093,
+        "characters": 41093,
+        "lines": 527,
+        "numberOfFiles": 8
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

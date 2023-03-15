@@ -1,0 +1,106 @@
+{
+  "createdAt": 1678331136234,
+  "updatedAt": 1678331136234,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331136234,
+  "id": "namedparameterstypeof-createnewstripepayment",
+  "name": "NamedParameters<typeof createNewStripePayment>",
+  "slug": "namedparameterstypeof-createnewstripepayment",
+  "operationRelativeTypescriptFilePath": "src/newStripePayment.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "personId": {
+          "type": "string"
+        },
+        "config": {
+          "type": "object",
+          "properties": {
+            "defaultQuantity": {
+              "type": "number"
+            },
+            "priceCent": {
+              "type": "number",
+              "description": "defaults to 50 cent"
+            },
+            "isQuantityEditable": {
+              "type": "boolean"
+            },
+            "productName": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "personId"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "personId",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "config",
+          "required": false,
+          "schema": {
+            "properties": [
+              {
+                "name": "defaultQuantity",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "priceCent",
+                "required": false,
+                "schema": {
+                  "fullComment": "defaults to 50 cent",
+                  "type": "number"
+                }
+              },
+              {
+                "name": "isQuantityEditable",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "productName",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof createNewStripePayment>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

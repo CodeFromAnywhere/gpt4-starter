@@ -1,0 +1,53 @@
+{
+  "createdAt": 1678611461047,
+  "updatedAt": 1678611461047,
+  "deletedAt": 0,
+  "createdFirstAt": 1678611461047,
+  "id": "chatmessageanalysis",
+  "name": "ChatMessageAnalysis",
+  "slug": "chatmessageanalysis",
+  "operationRelativeTypescriptFilePath": "src/ChatMessageAnalysis.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "// TODO: this should simply be a data structure, inserted into the second argument as simplified schema! Why am I doing so difficult xD don't require simplifiedschema though, just a subset is fine\n\nexport type ChatMessageAnalysis = {\n  /**\n   * User requests an image\n   */\n  isResponseVisualRequested: boolean;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "TODO: this should simply be a data structure, inserted into the second argument as simplified schema! Why am I doing so difficult xD don't require simplifiedschema though, just a subset is fine",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "isResponseVisualRequested": {
+          "type": "boolean",
+          "description": "User requests an image"
+        }
+      },
+      "required": [
+        "isResponseVisualRequested"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "isResponseVisualRequested",
+          "required": true,
+          "schema": {
+            "fullComment": "User requests an image",
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "ChatMessageAnalysis",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

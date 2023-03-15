@@ -1,0 +1,112 @@
+{
+  "createdAt": 1667851620132,
+  "updatedAt": 1667851620132,
+  "deletedAt": 0,
+  "createdFirstAt": 1667851620132,
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "name": "github-operation-sync",
+  "sensible": {
+    "hasGeneratedDependencies": false
+  },
+  "dependencies": {
+    "@octokit/rest": "^19.0.5",
+    "database": "0.0.1",
+    "dotenv": "^16.0.3",
+    "moment": "^2.29.4",
+    "simple-git": "^3.14.1",
+    "code-types": "0.0.1",
+    "log": "0.0.1",
+    "js-util": "0.0.1",
+    "get-path": "0.0.1"
+  },
+  "slug": "github-operation-sync",
+  "repository": {
+    "url": "https://github.com/CodeFromAnywhere/github-operation-sync.git"
+  },
+  "id": "szzumimxdmdrzerrkustawaf",
+  "operation": {
+    "hasGeneratedDependenciesIndexed": true,
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": []
+    },
+    "lastRebuildAt": 1673794246127,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 13,
+        "lines": 650,
+        "characters": 18370,
+        "bytes": 18370
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 150,
+        "characters": 4293,
+        "bytes": 4293
+      },
+      "textSize": {
+        "numberOfFiles": 1,
+        "lines": 214,
+        "characters": 3651,
+        "bytes": 3651
+      },
+      "size": {
+        "bytes": 26314,
+        "characters": 26314,
+        "lines": 1014,
+        "numberOfFiles": 16
+      }
+    },
+    "folderNameIndexed": "github-operation-sync",
+    "relativeOperationLocationPathIndexed": "operations/tools/purpose/codebase-introspection/operations",
+    "classificationIndexed": "node-cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [
+      "Operation",
+      "db",
+      "db",
+      "db",
+      "CommitInfo",
+      "db",
+      "operations",
+      "getProjectRoot",
+      "getRootPath",
+      "isBundle",
+      "mergeNestedObject",
+      "db",
+      "db",
+      "log",
+      "mapMany",
+      "mergeNestedObject",
+      "notEmpty"
+    ],
+    "packageDependenciesIndexed": [
+      "Octokit",
+      "simpleGit",
+      "SimpleGit",
+      "SimpleGitOptions",
+      "simpleGit",
+      "SimpleGit",
+      "SimpleGitOptions",
+      "Octokit",
+      "OperationRepositoryInfo",
+      "simpleGit",
+      "SimpleGit",
+      "SimpleGitOptions",
+      "Octokit",
+      "OperationRepositoryInfo"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678331942187,
+  "updatedAt": 1678331942187,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331942187,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/cli/runFunctionServer.cli.ts",
+  "commentsInside": [],
+  "rawText": " () => {\n  const [isWatchingString, isRestartString] = process.argv.slice(2);\n\n  runFunctionServer(\n    isWatchingString === \"true\" ? true : false,\n    isRestartString === \"true\" ? true : false\n  );\n}",
+  "name": "runFunctionServerCli",
+  "slug": "run-function-server-cli",
+  "parameters": [],
+  "description": "Argument:\n- pass true if you want the server to be watching\n- pass true true if you want the server to be watching and this is a restart (so don't launch things like browser)\n- if you pass nothing, there will be no browser start and no watcher",
+  "returnType": {
+    "rawType": "void",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 443,
+    "lines": 11,
+    "bytes": 443,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 40,
+    "linesPerFile": 11,
+    "numberOfFiles": 1
+  },
+  "id": "pgsnfrowqjxmtutgvkcruglm"
+}

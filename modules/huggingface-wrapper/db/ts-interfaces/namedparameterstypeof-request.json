@@ -1,0 +1,88 @@
+{
+  "createdAt": 1678331050445,
+  "updatedAt": 1678331050445,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331050445,
+  "id": "namedparameterstypeof-request",
+  "name": "NamedParameters<typeof request>",
+  "slug": "namedparameterstypeof-request",
+  "operationRelativeTypescriptFilePath": "src/huggingFaceInference.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "$ref": "#/definitions/HuggingfaceConfig"
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "fullComment": "",
+            "properties": [
+              {
+                "name": "text",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "contentAbsoluteFilePath",
+                "required": false,
+                "schema": {
+                  "fullComment": "If this is given, will be used instead of text",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "isAudio",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "apiKey",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "model",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof request>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

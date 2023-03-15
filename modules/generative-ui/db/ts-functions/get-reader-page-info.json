@@ -1,0 +1,154 @@
+{
+  "createdAt": 1678041415423,
+  "updatedAt": 1678041415423,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041415423,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getReaderPageInfo.ts",
+  "commentsInside": [],
+  "rawText": " (\n  isFolder: boolean | undefined,\n  contextualPromptsObject:\n    | Omit<ContextualPromptsObject, \"databaseContextualPromptSlugs\">\n    | null\n    | undefined,\n  contextualPromptResults: ContextualPromptResult[] | null | undefined\n) => {\n  const fileContextualPromptResults = contextualPromptResults?.filter(\n    (x) => !x.selectionString\n  );\n  const selectionContextualPromptResults = contextualPromptResults?.filter(\n    (x) => !!x.selectionString\n  );\n\n  const thePrompts = isFolder\n    ? contextualPromptsObject?.folderContextualPrompts || []\n    : contextualPromptsObject?.pageContextualPrompts || [];\n\n  return {\n    thePrompts,\n    selectionContextualPromptResults,\n    fileContextualPromptResults,\n  };\n}",
+  "name": "getReaderPageInfo",
+  "slug": "get-reader-page-info",
+  "parameters": [
+    {
+      "name": "isFolder",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    },
+    {
+      "name": "contextualPromptsObject",
+      "schema": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "selectionContextualPrompts": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/ContextualPrompt"
+                }
+              },
+              "pageContextualPrompts": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/ContextualPrompt"
+                }
+              },
+              "folderContextualPrompts": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/ContextualPrompt"
+                }
+              }
+            },
+            "required": [
+              "selectionContextualPrompts",
+              "pageContextualPrompts",
+              "folderContextualPrompts"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "simplifiedSchema": {
+        "properties": [],
+        "type": "object"
+      },
+      "required": false
+    },
+    {
+      "name": "contextualPromptResults",
+      "schema": {
+        "anyOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ContextualPromptResult"
+            }
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "simplifiedSchema": {
+        "properties": [],
+        "type": "object"
+      },
+      "required": false
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "{ thePrompts: any; selectionContextualPromptResults: any; fileContextualPromptResults: any; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "thePrompts": {},
+        "selectionContextualPromptResults": {},
+        "fileContextualPromptResults": {}
+      },
+      "required": [
+        "thePrompts",
+        "selectionContextualPromptResults",
+        "fileContextualPromptResults"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "thePrompts",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "selectionContextualPromptResults",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "fileContextualPromptResults",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 713,
+    "lines": 25,
+    "bytes": 713,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 29,
+    "linesPerFile": 25,
+    "numberOfFiles": 1
+  },
+  "id": "ehnftsckctthmdakntsumhek"
+}

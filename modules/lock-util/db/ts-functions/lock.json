@@ -1,0 +1,86 @@
+{
+  "createdAt": 1678331280296,
+  "updatedAt": 1678331280296,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331280296,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/lock.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  aboluteLockableFilePath: string,\n  message: string,\n  functionName?: string,\n  parameters?: any[]\n) => {\n  const parsedPath = path.parse(aboluteLockableFilePath);\n  const lockFilePath = path.join(\n    parsedPath.dir,\n    `${parsedPath.name}${lockfileSuffix}`\n  );\n\n  await writeJsonToFile<ActionStatus>(lockFilePath, {\n    ...getUpdatedTimeObject(),\n    status: \"busy\",\n    functionName: functionName || \"lock\",\n    parameters,\n    message,\n    cleanupAt: Date.now() + maximumLockTime,\n  });\n}",
+  "name": "lock",
+  "slug": "lock",
+  "parameters": [
+    {
+      "name": "aboluteLockableFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "message",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "functionName",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": false
+    },
+    {
+      "name": "parameters",
+      "schema": {
+        "type": "array",
+        "items": {}
+      },
+      "simplifiedSchema": {
+        "items": [
+          {
+            "schema": {
+              "properties": [],
+              "type": "object"
+            },
+            "name": null
+          }
+        ],
+        "type": "array"
+      },
+      "required": false
+    }
+  ],
+  "description": "either creates the lockfile if it didn't exist or it will update it with new updatedAt and status. If status isn't set, status will be removed",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 646,
+    "lines": 21,
+    "bytes": 646,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 31,
+    "linesPerFile": 21,
+    "numberOfFiles": 1
+  },
+  "id": "xdnfbgchmjkuelcfojpaiydu"
+}

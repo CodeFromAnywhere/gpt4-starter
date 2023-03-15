@@ -1,0 +1,35 @@
+{
+  "createdAt": 1673794215806,
+  "updatedAt": 1673794215806,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794215806,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getGithubPersonalAccessToken.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const personalAccessToken = (await db.get(\"Persona\")).find(\n    (x) => !!x.githubAccessToken\n  )?.githubAccessToken;\n\n  return personalAccessToken;\n}",
+  "name": "getGithubPersonalAccessToken",
+  "slug": "get-github-personal-access-token",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 166,
+    "lines": 7,
+    "bytes": 166,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 24,
+    "linesPerFile": 7,
+    "numberOfFiles": 1
+  },
+  "id": "rtvvlmxpadaneoyyjpwpunpr"
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "createdAt": 1678330533407,
+    "updatedAt": 1678330533407,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330533407,
+    "name": "getFsAuthorizationSingleFile",
+    "slug": "get-fs-authorization-single-file",
+    "operationRelativeTypescriptFilePath": "src/getFsAuthorizationSingleFile.ts",
+    "comments": [],
+    "type": "value",
+    "id": "obpfkmhlrqziiqrrpqdpgyfl"
+  },
+  {
+    "createdAt": 1678330533407,
+    "updatedAt": 1678330533407,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330533407,
+    "name": "getFsAuthorizationTestables",
+    "slug": "get-fs-authorization-testables",
+    "operationRelativeTypescriptFilePath": "src/getFsAuthorizationTestables.ts",
+    "comments": [],
+    "type": "value",
+    "id": "pbrqueonewgybtaerulshdya"
+  },
+  {
+    "createdAt": 1678330533407,
+    "updatedAt": 1678330533407,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330533407,
+    "name": "getFsAuthorizationWithContext",
+    "slug": "get-fs-authorization-with-context",
+    "operationRelativeTypescriptFilePath": "src/getFsAuthorizationWithContext.ts",
+    "comments": [],
+    "type": "value",
+    "id": "yotflfvufiggchamhlosubog"
+  },
+  {
+    "createdAt": 1678330533407,
+    "updatedAt": 1678330533407,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330533407,
+    "name": "getFsAuthorizationSingleFile",
+    "slug": "get-fs-authorization-single-file",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "tabmenydzeavfzoxejtayluu"
+  },
+  {
+    "createdAt": 1678330533407,
+    "updatedAt": 1678330533407,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330533407,
+    "name": "getFsAuthorizationTestables",
+    "slug": "get-fs-authorization-testables",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "oshwplqflmkhxgtpqnzttsfu"
+  },
+  {
+    "createdAt": 1678330533407,
+    "updatedAt": 1678330533407,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330533407,
+    "name": "getFsAuthorizationWithContext",
+    "slug": "get-fs-authorization-with-context",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "shouzgruxwwjfxihptfczdam"
+  }
+]

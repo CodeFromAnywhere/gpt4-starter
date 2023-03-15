@@ -1,0 +1,46 @@
+{
+  "createdAt": 1668836010170,
+  "updatedAt": 1668836010170,
+  "deletedAt": 0,
+  "createdFirstAt": 1668836010170,
+  "id": "namedparameterstypeof-getreflink",
+  "name": "NamedParameters<typeof getRefLink>",
+  "slug": "namedparameterstypeof-getreflink",
+  "operationRelativeTypescriptFilePath": "src/getRefLink.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "ref": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "ref",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getRefLink>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

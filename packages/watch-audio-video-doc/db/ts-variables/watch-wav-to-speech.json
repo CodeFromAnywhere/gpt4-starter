@@ -1,0 +1,88 @@
+{
+  "createdAt": 1678330811644,
+  "updatedAt": 1678330811644,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330811644,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "watchWavToSpeech",
+  "slug": "watch-wav-to-speech",
+  "operationRelativeTypescriptFilePath": "src/watchWavToSpeech.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/ProjectWatcher\").ProjectWatcher<any>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "startupStrategy": {
+          "enum": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "x-enumNames": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "type": "string"
+        },
+        "filter": {
+          "type": "object",
+          "properties": {}
+        },
+        "config": {}
+      },
+      "required": [
+        "filter",
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "startupStrategy",
+          "required": false,
+          "schema": {
+            "enum": [
+              "ignore",
+              "sync",
+              "async",
+              "queue"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "filter",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  eventName,\n  absolutePath,\n  isStartup\n) => {\n  if (isLocked(absolutePath)) {\n    console.log(\"mmm locked\", absolutePath);\n    return false;\n  }\n  if (!fs.existsSync(absolutePath)) {\n    console.log(\"mmm doesn't exist\", absolutePath);\n    return { isSuccessful: false, message: \"File doesn't exist (anymore)\" };\n  }\n  const textResult = await speechToText(absolutePath);\n}",
+  "description": "Watch wav files anywhere. Every wav file that doesn't have a `.txt` file existing under the same name should be whispered. This way it's integrated on many more pipelines than just recording (also import, for example)\n\nBesides using whisper, speaker separation can be applied as well",
+  "id": "fltxhcunqxajxzvgwqepjzhu"
+}

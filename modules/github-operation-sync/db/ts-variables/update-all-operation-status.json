@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794241319,
+  "updatedAt": 1673794241319,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794241319,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "updateAllOperationStatus",
+  "slug": "update-all-operation-status",
+  "operationRelativeTypescriptFilePath": "src/updateAllOperationStatus.ts",
+  "type": {
+    "rawType": "(dryrun?: boolean | undefined) => Promise<{ isSuccessful: boolean; message?: string | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  dryrun?: boolean\n): Promise<{\n  isSuccessful: boolean;\n  message?: string;\n}> => {\n  const operations = await db.get(\"Operation\");\n\n  const personalAccessToken = (await db.get(\"Persona\")).find(\n    (x) => !!x.githubAccessToken\n  )?.githubAccessToken;\n\n  if (!personalAccessToken) {\n    return {\n      isSuccessful: false,\n      message:\n        \"You don't have any persona setup with a GitHub personal access token, please update your Personas.\",\n    };\n  }\n\n  const operationNameWithLastCommitInfoArray = (\n    await mapMany(\n      operations,\n      async (operation) => {\n        if (!operation.repository) {\n          log(`No repository found for ${operation.name}`, { type: \"warning\" });\n          return;\n        }\n\n        const repoName =\n          typeof operation.repository === \"string\"\n            ? getRepoNameFromRepositoryUrl(operation.repository)\n            : getRepoNameFromRepositoryUrl(operation.repository.url);\n\n        if (!repoName) {\n          log(`No repoName found for ${operation.name}`, { type: \"warning\" });\n          return;\n        }\n\n        const status = await getGithubRepoLastCommitInfo(\n          repoName,\n          personalAccessToken\n        );\n\n        if (!status.isSuccessful || !status.lastCommit) return;\n\n        return {\n          lastCommit: status.lastCommit,\n          name: operation.name,\n        };\n      },\n      10\n    )\n  ).filter(notEmpty);\n\n  if (dryrun) {\n    console.log({\n      operationNameWithLastCommitInfoArray,\n    });\n\n    return { isSuccessful: true, message: \"Did dryrun\" };\n  }\n\n  const updateResult = await db.update(\n    \"Operation\",\n    () => true,\n    (old) => {\n      const lastCommitInfo = operationNameWithLastCommitInfoArray.find(\n        (x) => x.name === old.name\n      )?.lastCommit;\n\n      if (!lastCommitInfo) return old;\n\n      // const newOperation = mergeNestedObject(old, {\n      //   operation: { lastCommitInfo },\n      // });\n\n      const url =\n        typeof old.repository === \"string\"\n          ? old.repository\n          : old.repository?.url;\n\n      const oldRepositoryInfo =\n        typeof old.repository === \"object\" ? old.repository : {};\n\n      const newRepository: OperationRepositoryInfo = {\n        url: url!,\n        ...oldRepositoryInfo,\n        lastCommitInfo,\n      };\n\n      return { ...old, repository: newRepository };\n    }\n  );\n\n  return {\n    isSuccessful: updateResult.isSuccesful || false,\n    message: updateResult.message,\n  };\n}",
+  "description": "TODO: TEST, then run this every hour",
+  "id": "ouurrdjwflucorjxupjkzktd"
+}

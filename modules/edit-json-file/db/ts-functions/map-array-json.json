@@ -1,0 +1,41 @@
+{
+  "createdAt": 1668149806030,
+  "updatedAt": 1668149806030,
+  "deletedAt": 0,
+  "createdFirstAt": 1668149806030,
+  "publicAuthorization": [
+    "read",
+    "search"
+  ],
+  "isApiExposed": false,
+  "isPostApi": false,
+  "isGetApi": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/mapArrayJson.ts",
+  "commentsInside": [],
+  "rawText": " async <T, U>(\n  absolutePath: string,\n  mapFunction: (item: T) => U\n) => {\n  if (!absolutePath) return;\n  const json = await readJsonFile<T[]>(absolutePath);\n\n  if (!json) return;\n  const newJson = json.map(mapFunction);\n\n  const isSuccessful = await writeJsonToFile(absolutePath, newJson);\n\n  return isSuccessful;\n}",
+  "name": "mapArrayJson",
+  "slug": "map-array-json",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 317,
+    "lines": 14,
+    "bytes": 317,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 23,
+    "linesPerFile": 14,
+    "numberOfFiles": 1
+  },
+  "id": "clxllwctjwnelpesntvbgqly"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678042847253,
+  "updatedAt": 1678042847253,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042847253,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "zipFiles",
+  "slug": "zip-files",
+  "operationRelativeTypescriptFilePath": "src/zipFiles.ts",
+  "type": {
+    "rawType": "(projectRelativePaths: string[]) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse & { projectRelativeZipPath?: string | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  projectRelativePaths: string[]\n): Promise<StandardResponse & { projectRelativeZipPath?: string }> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No projectroot\" };\n  }\n\n  const absolutePaths = projectRelativePaths.map((p) =>\n    path.join(projectRoot, p)\n  );\n\n  // must all exist\n  const allExists = isAllTrue(absolutePaths.map((p) => fs.existsSync(p)));\n\n  if (!allExists) {\n    return { isSuccessful: false, message: \"Not all files exist\" };\n  }\n\n  // find common ancestor for all files\n  const commonAncestor = await getCommonAncestorMultiple(absolutePaths);\n\n  if (!commonAncestor) {\n    return { isSuccessful: false, message: \"Couldn't find common ancestor\" };\n  }\n\n  const zipName = generateId();\n  const absoluteNewFolderPath = path.join(commonAncestor, zipName);\n\n  // console.log({ commonAncestor, zipName, absoluteNewFolderPath });\n\n  await fs.mkdir(absoluteNewFolderPath, { recursive: true });\n\n  // copy all files/folders into a temp folder\n  await Promise.all(\n    absolutePaths.map(async (absolutePath) => {\n      const name = path.parse(absolutePath).base;\n      await fs.cp(absolutePath, path.join(absoluteNewFolderPath, name));\n    })\n  );\n\n  // zip the folder\n  const zipPath = await zipFolder(absoluteNewFolderPath);\n\n  if (!zipPath) {\n    return { isSuccessful: false, message: \"Couldn't zip folder\" };\n  }\n  // remove the temp folder\n  await fs.rm(absoluteNewFolderPath, { recursive: true, force: true });\n\n  // return the project relative path for the zip\n  const projectRelativeZipPath = makeRelative(zipPath, projectRoot);\n\n  return { isSuccessful: true, message: \"You got it\", projectRelativeZipPath };\n}",
+  "description": "Zips an array of project relative file or folder paths into a zip, by making a folder, putting it there, and removing the folder after the zip is created",
+  "id": "praqwofqxivbnzrvgjsqoobb"
+}

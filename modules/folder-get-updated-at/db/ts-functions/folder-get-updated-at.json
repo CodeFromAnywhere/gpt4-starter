@@ -1,0 +1,65 @@
+{
+  "createdAt": 1672636521099,
+  "updatedAt": 1672636521099,
+  "deletedAt": 0,
+  "createdFirstAt": 1672636521099,
+  "isApiExposed": true,
+  "isExported": true,
+  "groupAuthorization": {},
+  "operationRelativeTypescriptFilePath": "src/folderGetUpdatedAt.ts",
+  "commentsInside": [],
+  "rawText": " async (config: {\n  folderPath: string;\n}): Promise<number> => {\n  const { folderPath } = config;\n  const typescriptFiles = await getFolderTypescriptFiles(folderPath, true);\n  return typescriptFiles.reduce((updatedAt, file) => {\n    const fileUpdatedAt = file.stats?.updatedAt;\n    if (!fileUpdatedAt) return updatedAt;\n    if (fileUpdatedAt > updatedAt) return fileUpdatedAt;\n    return updatedAt;\n  }, 0);\n}",
+  "name": "folderGetUpdatedAt",
+  "slug": "folder-get-updated-at",
+  "parameters": [
+    {
+      "name": "config",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "folderPath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "folderPath"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "folderPath",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "get last updated file updatedAt time in whole folder, recursively. only finds typescript files, ignores index.",
+  "returnType": {
+    "rawType": "Promise<number>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 519,
+    "lines": 12,
+    "bytes": 519,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 43,
+    "linesPerFile": 12,
+    "numberOfFiles": 1
+  },
+  "id": "duqitdblzbonkmbglxosleet"
+}

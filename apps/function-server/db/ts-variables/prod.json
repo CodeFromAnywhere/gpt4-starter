@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331954442,
+  "updatedAt": 1678331954442,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331954442,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "prod",
+  "slug": "prod",
+  "operationRelativeTypescriptFilePath": "src/prod.ts",
+  "type": {
+    "rawType": "() => void",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return;\n  }\n\n  const functionServerFolder = operations[\"function-server\"];\n  const osWebFolder = (operations as any)[\"os-web\"];\n  if (!osWebFolder) {\n    return;\n  }\n  const absoluteFunctionServerFolder = path.join(\n    projectRoot,\n    functionServerFolder\n  );\n  const absoluteOsWebFolder = path.join(projectRoot, osWebFolder);\n\n  spawnSync(\"yarn prod\", {\n    cwd: absoluteFunctionServerFolder,\n    shell: true,\n    stdio: \"inherit\",\n  });\n  spawnSync(\"yarn prod\", {\n    cwd: absoluteOsWebFolder,\n    shell: true,\n    stdio: \"inherit\",\n  });\n}",
+  "description": "`ship` command/function should simply rerun yarn prod for `os-web` and `function-server`",
+  "id": "dddxvicrxgccsblbnxfzunog"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1671116322417,
+  "updatedAt": 1671116322417,
+  "deletedAt": 0,
+  "createdFirstAt": 1671116322417,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "isImportGenerated",
+  "slug": "is-import-generated",
+  "operationRelativeTypescriptFilePath": "src/calculatePackageJsonDependencies.ts",
+  "type": {
+    "rawType": "(x: any) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(x: Creation<TsImport>) =>\n  x.isModuleFromMonorepo && isGeneratedOperationName(x.module)",
+  "description": "",
+  "id": "iigspoqmrvdmnakstwednaal"
+}

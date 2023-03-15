@@ -1,0 +1,41 @@
+{
+  "createdAt": 1678330798697,
+  "updatedAt": 1678330798697,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330798697,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "imageFileExtensions",
+  "slug": "image-file-extensions",
+  "operationRelativeTypescriptFilePath": "src/extensions.ts",
+  "type": {
+    "rawType": "never[]",
+    "typeDefinition": {
+      "optional": false,
+      "type": "array",
+      "items": {}
+    },
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "items": [
+        {
+          "schema": {
+            "properties": [],
+            "type": "object"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "value": "[\n  // what we want\n  // \".png\",\n  // \".webp\",\n  // \".svg\",\n  // what we don't want\n  // \".jpg\",\n  // \".jpeg\",\n  // \".gif\",\n  // is this even a format? don't remember. the paint thing. bitmap?\n  // \".bmp\",\n]",
+  "description": "",
+  "id": "rikilauivhoxwelybbbovnrk"
+}

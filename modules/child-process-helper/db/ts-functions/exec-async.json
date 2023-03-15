@@ -1,0 +1,135 @@
+{
+  "createdAt": 1673860819431,
+  "updatedAt": 1673860819431,
+  "deletedAt": 0,
+  "createdFirstAt": 1673860819431,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/general.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  command: string,\n  execOptions: ExecOptions\n): Promise<{ isSuccessful: boolean; response: string }> => {\n  const result = await new Promise<{ isSuccessful: boolean; response: string }>(\n    (resolve) => {\n      const execution = exec(command, execOptions, (error, stdout, stderr) => {\n        console.log({ error, stdout, stderr });\n      })\n        .on(\"exit\", (code) => {\n          resolve({ response: String(code), isSuccessful: false });\n        })\n        .on(\"error\", (err) => {\n          resolve({ response: String(err), isSuccessful: false });\n        });\n\n      execution.stdout?.on(\"data\", (data) => {\n        console.log(data);\n      });\n    }\n  );\n\n  return result;\n}",
+  "name": "execAsync",
+  "slug": "exec-async",
+  "parameters": [
+    {
+      "name": "command",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "execOptions",
+      "schema": {
+        "$ref": "#/definitions/ExecOptions"
+      },
+      "simplifiedSchema": {
+        "fullComment": "",
+        "properties": [
+          {
+            "name": "uid",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "gid",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "cwd",
+            "required": false,
+            "schema": {
+              "properties": [],
+              "type": "object"
+            }
+          },
+          {
+            "name": "windowsHide",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "timeout",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "shell",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "signal",
+            "required": false,
+            "schema": {
+              "fullComment": "A signal object that allows you to communicate with a DOM request (such as a Fetch) and abort it if required via an AbortController object.",
+              "properties": [
+                {
+                  "name": "aborted",
+                  "required": true,
+                  "schema": {
+                    "fullComment": "Returns true if this AbortSignal's AbortController has signaled to abort, and false otherwise.",
+                    "type": "boolean"
+                  }
+                }
+              ],
+              "type": "object"
+            }
+          },
+          {
+            "name": "maxBuffer",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "killSignal",
+            "required": false,
+            "schema": {
+              "properties": [],
+              "type": "object"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "promises to exec something with response and success as result (Promised)",
+  "returnType": {
+    "rawType": "Promise<{ isSuccessful: boolean; response: string; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 5,
+  "size": {
+    "characters": 763,
+    "lines": 24,
+    "bytes": 763,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 32,
+    "linesPerFile": 24,
+    "numberOfFiles": 1
+  },
+  "id": "wlmhrjeqtraqwvimibrnhyxd"
+}

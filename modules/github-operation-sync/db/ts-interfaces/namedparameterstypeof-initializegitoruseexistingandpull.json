@@ -1,0 +1,60 @@
+{
+  "createdAt": 1673794221502,
+  "updatedAt": 1673794221502,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794221502,
+  "id": "namedparameterstypeof-initializegitoruseexistingandpull",
+  "name": "NamedParameters<typeof initializeGitOrUseExistingAndPull>",
+  "slug": "namedparameterstypeof-initializegitoruseexistingandpull",
+  "operationRelativeTypescriptFilePath": "src/initializeGitOrUseExistingAndPull.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "dir": {
+          "type": "string"
+        },
+        "remoteUrl": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dir",
+        "remoteUrl"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "dir",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "remoteUrl",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof initializeGitOrUseExistingAndPull>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

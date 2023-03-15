@@ -1,0 +1,80 @@
+{
+  "createdAt": 1678331095018,
+  "updatedAt": 1678331095018,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331095018,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/messagesToTokenableText.ts",
+  "commentsInside": [],
+  "rawText": " (\n  messages: ChatCompletionRequestMessage[]\n): string => {\n  return messages\n    .map(\n      (item) =>\n        `${item.role} ${item.name ? `${item.name} ` : \"\"}${item.content}`\n    )\n    .join(\" \");\n}",
+  "name": "messagesToTokenableText",
+  "slug": "messages-to-tokenable-text",
+  "parameters": [
+    {
+      "name": "messages",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/ChatCompletionRequestMessage"
+        }
+      },
+      "simplifiedSchema": {
+        "items": [
+          {
+            "schema": {
+              "fullComment": "",
+              "properties": [
+                {
+                  "name": "content",
+                  "required": true,
+                  "schema": {
+                    "fullComment": "The contents of the message",
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "name",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "The name of the user in a multi-user chat",
+                    "type": "string"
+                  }
+                }
+              ],
+              "type": "object"
+            },
+            "name": "ChatCompletionRequestMessage"
+          }
+        ],
+        "type": "array"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "String",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/String"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 202,
+    "lines": 10,
+    "bytes": 202,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 20,
+    "linesPerFile": 10,
+    "numberOfFiles": 1
+  },
+  "id": "vqdjjbqnxmjdpvcitrnsqlex"
+}

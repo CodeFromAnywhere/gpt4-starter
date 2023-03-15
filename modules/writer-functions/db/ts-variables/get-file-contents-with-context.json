@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678043307103,
+  "updatedAt": 1678043307103,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043307103,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getFileContentsWithContext",
+  "slug": "get-file-contents-with-context",
+  "operationRelativeTypescriptFilePath": "src/getFileContentsWithContext.ts",
+  "type": {
+    "rawType": "{ (functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext, projectRelativeFilePath: string): Promise<{ isSuccessful: boolean; message: string; fileContents?: string | undefined; }>; config: { isPublic: boolean; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPublic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isPublic"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  projectRelativeFilePath: string\n): Promise<{\n  isSuccessful: boolean;\n  message: string;\n  fileContents?: string;\n}> => {\n  if (!projectRelativeFilePath) {\n    return {\n      isSuccessful: false,\n      message: \"No path\",\n    };\n  }\n  const projectRoot = getProjectRoot();\n\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No project root\" };\n  }\n\n  const absolutePath = path.join(projectRoot, projectRelativeFilePath);\n\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"File doesn't exist\" };\n  }\n\n  const authorization = await getFsAuthorizationWithContext(\n    functionContext,\n    projectRelativeFilePath\n  );\n  if (!authorization.canRead) {\n    return { isSuccessful: false, message: \"You're not allowed to do this\" };\n  }\n\n  const stats = await fs.stat(absolutePath);\n\n  if (stats.size > 1024 * 1024 || stats.isDirectory()) {\n    return {\n      isSuccessful: false,\n      message: \"That's a directory or bigger than 1MB\",\n    };\n  }\n\n  const fileContents = await fs.readFile(absolutePath, \"utf8\");\n\n  return { fileContents, isSuccessful: true, message: \"Did it\" };\n}",
+  "description": "Gets the contents of a file in the project",
+  "id": "nvaibfhafinqyrxhqqgxtqpa"
+}

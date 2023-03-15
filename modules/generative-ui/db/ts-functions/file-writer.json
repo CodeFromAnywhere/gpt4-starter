@@ -1,0 +1,68 @@
+{
+  "createdAt": 1678041386674,
+  "updatedAt": 1678041386674,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041386674,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/FileWriter.tsx",
+  "commentsInside": [],
+  "rawText": " (props: { projectRelativeFilePath: string }) => {\n  const { projectRelativeFilePath } = props;\n\n  const { renderFileWriter } = useFileWriter({\n    projectRelativeFilePath,\n    hideButtons: true,\n    initialWriterView: \"edit\",\n  });\n\n  return (\n    <Div className=\"flex flex-1 flex-col min-h-[80vh]\">\n      <FileActions projectRelativeFilePath={projectRelativeFilePath} />\n      {renderFileWriter()}\n    </Div>\n  );\n}",
+  "name": "FileWriter",
+  "slug": "file-writer",
+  "parameters": [
+    {
+      "name": "props",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "projectRelativeFilePath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "projectRelativeFilePath"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "projectRelativeFilePath",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "Can probably not stay like this if we want to place the save-button elsewhere.",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 495,
+    "lines": 16,
+    "bytes": 495,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 31,
+    "linesPerFile": 16,
+    "numberOfFiles": 1
+  },
+  "id": "nkfajngmnddhvnxanqnfciib"
+}

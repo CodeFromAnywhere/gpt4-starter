@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677580495909,
+  "updatedAt": 1677580495909,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580495909,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getFileFunctions",
+  "slug": "get-file-functions",
+  "operationRelativeTypescriptFilePath": "src/getFileFunctions.ts",
+  "type": {
+    "rawType": "() => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const tsFunctions = await db.get(\"TsFunction\");\n\n  const fileFunctions = tsFunctions.filter((item) => {\n    const hasPathParameter = !!item.parameters?.find((x) =>\n      isPathParameter(x.name)\n    );\n    return hasPathParameter;\n  });\n\n  writeToAssets(\n    __filename,\n    fileFunctions.map(({ name, operationName, parameters }) => ({\n      name,\n      operationName,\n      parameters,\n    })),\n    \"file-functions.json\"\n  );\n}",
+  "description": "",
+  "id": "tsgzatruvhckvwdhvevqwwoy"
+}

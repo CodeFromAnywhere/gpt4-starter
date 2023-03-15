@@ -1,0 +1,1 @@
+{"version":3,"file":"newStripePayment.d.ts","sourceRoot":"","sources":["../src/newStripePayment.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,eAAe,EAAE,MAAM,SAAS,CAAC;AAC1C,OAAO,EAA0B,MAAM,EAAE,OAAO,EAAE,MAAM,YAAY,CAAC;AAErE;;;;GAIG;AACH,eAAO,MAAM,sBAAsB;;YAEzB,MAAM;aACL,OAAO;2BACO,eAAe,CAAC,sBAAsB,CAAC;oBAC9C,eAAe,CAAC,eAAe,CAAC;IAChD;;OAEG;;;;MAMD,QAAQ,MAAM,GAAG,SAAS,CA6E7B,CAAC"}

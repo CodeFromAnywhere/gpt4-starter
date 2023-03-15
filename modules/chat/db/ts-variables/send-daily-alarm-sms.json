@@ -1,0 +1,75 @@
+{
+  "createdAt": 1678372650430,
+  "updatedAt": 1678372650430,
+  "deletedAt": 0,
+  "createdFirstAt": 1678372650430,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "sendDailyAlarmSms",
+  "slug": "send-daily-alarm-sms",
+  "operationRelativeTypescriptFilePath": "src/sendDailyAlarmSms.ts",
+  "type": {
+    "rawType": "{ (): any; config: { runEveryPeriod: string; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "runEveryPeriod": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            }
+          },
+          "required": [
+            "runEveryPeriod"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "runEveryPeriod",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const now = time().myTimeDate;\n  if (now.getHours() !== 8) {\n    // only 8 pm\n    return;\n  }\n\n  const persona = await getPersona();\n  if (!persona) return;\n\n  sendTwilioMessage(persona.phone, \"Wake up!\");\n}",
+  "description": "",
+  "id": "skxhnbutibvrsypnktcvknuo"
+}

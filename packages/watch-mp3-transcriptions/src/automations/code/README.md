@@ -1,0 +1,1 @@
+We can probably filter out questions that contain words that are defined in the codebase. These transcribed things can be anything: questions, generating new code, or doing refactors or writing down bugs in the right place.

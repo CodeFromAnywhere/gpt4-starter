@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678329839282,
+  "updatedAt": 1678329839282,
+  "deletedAt": 0,
+  "createdFirstAt": 1678329839282,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/isRawEndpoint.ts",
+  "commentsInside": [],
+  "rawText": " (functionName: string) => {\n  return functionName.endsWith(apiConventions.rawFunctionConventionSuffix);\n}",
+  "name": "isRawEndpoint",
+  "slug": "is-raw-endpoint",
+  "parameters": [
+    {
+      "name": "functionName",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 106,
+    "lines": 3,
+    "bytes": 106,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 35,
+    "linesPerFile": 3,
+    "numberOfFiles": 1
+  },
+  "id": "zdkaarycoofkddnskozxymct"
+}

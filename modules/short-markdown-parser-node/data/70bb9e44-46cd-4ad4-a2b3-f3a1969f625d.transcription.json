@@ -1,0 +1,64 @@
+{
+  "sentences": [
+    {
+      "startAt": 0,
+      "endAt": 3080,
+      "text": "Rick, what about this front matter thing?"
+    }
+  ],
+  "text": " Rick, what about this front matter thing?\n",
+  "translationText": " Rick, what about this front matter thing?\n",
+  "words": [
+    {
+      "startAt": 0,
+      "endAt": 0,
+      "text": ""
+    },
+    {
+      "startAt": 0,
+      "endAt": 160,
+      "text": "Rick"
+    },
+    {
+      "startAt": 160,
+      "endAt": 240,
+      "text": ","
+    },
+    {
+      "startAt": 240,
+      "endAt": 400,
+      "text": "what"
+    },
+    {
+      "startAt": 400,
+      "endAt": 600,
+      "text": "about"
+    },
+    {
+      "startAt": 600,
+      "endAt": 760,
+      "text": "this"
+    },
+    {
+      "startAt": 760,
+      "endAt": 1020,
+      "text": "front"
+    },
+    {
+      "startAt": 1020,
+      "endAt": 2090,
+      "text": "matter"
+    },
+    {
+      "startAt": 2090,
+      "endAt": 3000,
+      "text": "thing"
+    },
+    {
+      "startAt": 3000,
+      "endAt": 3080,
+      "text": "?"
+    }
+  ],
+  "usedModelName": "small"
+}

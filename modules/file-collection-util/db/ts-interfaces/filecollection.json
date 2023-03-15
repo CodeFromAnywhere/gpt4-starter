@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678330486275,
+  "updatedAt": 1678330486275,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330486275,
+  "id": "filecollection",
+  "name": "FileCollection",
+  "slug": "filecollection",
+  "operationRelativeTypescriptFilePath": "src/FileCollection.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "/**\n * I'll later probably find more things to add here, but until that time, it's simply an array of filenames, where the first one is the primary one\n */\nexport type FileCollection = string[];",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "I'll later probably find more things to add here, but until that time, it's simply an array of filenames, where the first one is the primary one",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "I'll later probably find more things to add here, but until that time, it's simply an array of filenames, where the first one is the primary one"
+    },
+    "simplifiedSchema": {
+      "fullComment": "I'll later probably find more things to add here, but until that time, it's simply an array of filenames, where the first one is the primary one",
+      "items": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    },
+    "typeCoverage": 0,
+    "rawType": "FileCollection",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

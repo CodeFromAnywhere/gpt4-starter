@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678043833099,
+  "updatedAt": 1678043833099,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043833099,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "ModalProvider",
+  "slug": "modal-provider",
+  "operationRelativeTypescriptFilePath": "src/Modal.tsx",
+  "type": {
+    "rawType": "({ children }: { children: any; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "({ children }: { children: any }) => {\n  let { showModal, handleModal, modalContent, title, hideModal } =\n    useModalState();\n  return (\n    <Provider\n      value={{ showModal, handleModal, modalContent, title, hideModal }}\n    >\n      <Modal />\n      {children}\n    </Provider>\n  );\n}",
+  "description": "",
+  "id": "tgllylzadurzrhsfohbadwtv"
+}

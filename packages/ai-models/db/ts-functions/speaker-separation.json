@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678369214567,
+  "updatedAt": 1678369214567,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369214567,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/speakerSeparation.ts",
+  "commentsInside": [],
+  "rawText": " async (absoluteAudioFilePath: string) => {\n  const result = await huggingfaceSpeakerDiarization({ absoluteAudioFilePath });\n  console.log({ speakerSeparation: result });\n}",
+  "name": "speakerSeparation",
+  "slug": "speaker-separation",
+  "parameters": [
+    {
+      "name": "absoluteAudioFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Use huggingface inference with some speaker separation model\n\nShould return a file again I guess, or does it return textual info? Let's see",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 311,
+    "lines": 6,
+    "bytes": 311,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 52,
+    "linesPerFile": 6,
+    "numberOfFiles": 1
+  },
+  "id": "pxybiittcbwfmtcaavysyblp"
+}

@@ -1,0 +1,82 @@
+{
+  "createdAt": 1678505773827,
+  "updatedAt": 1678505773827,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505773827,
+  "id": "namedparameterstypeof-getchatmessagespath",
+  "name": "NamedParameters<typeof getChatMessagesPath>",
+  "slug": "namedparameterstypeof-getchatmessagespath",
+  "operationRelativeTypescriptFilePath": "src/getChatMessagesPath.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "projectRoot": {
+          "type": "string"
+        },
+        "personSlug": {
+          "type": "string"
+        },
+        "personaSlug": {
+          "type": "string"
+        },
+        "dateString": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "projectRoot",
+        "personSlug",
+        "personaSlug",
+        "dateString"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "projectRoot",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "personSlug",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "personaSlug",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "dateString",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getChatMessagesPath>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

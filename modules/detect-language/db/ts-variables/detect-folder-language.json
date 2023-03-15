@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677579957394,
+  "updatedAt": 1677579957394,
+  "deletedAt": 0,
+  "createdFirstAt": 1677579957394,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "detectFolderLanguage",
+  "slug": "detect-folder-language",
+  "operationRelativeTypescriptFilePath": "src/detectFolderLanguage.ts",
+  "type": {
+    "rawType": "(basePath: string) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (basePath: string) => {\n  const executionId = generateUniqueId();\n  const performance: (PerformanceItem | undefined)[] = [];\n  getNewPerformance(\"start\", executionId, true);\n\n  const results = (await explore({ basePath, extension: \"md\" })).map(\n    (x) => x.path\n  );\n\n  console.log(`files: ${results.length}`);\n\n  performance.push(getNewPerformance(\"explore\", executionId));\n\n  // get all languages\n\n  const languages = (\n    await Promise.all(\n      results.map(async (absolutePath) => {\n        const contents = (await readMarkdownFile(absolutePath))?.raw;\n\n        if (!contents) return;\n\n        const language = detectLanguage(contents);\n\n        return language;\n      })\n    )\n  ).filter(notEmpty);\n\n  const english = languages.filter((x) => x === \"english\").length;\n  const other = languages.filter((x) => x === \"other\").length;\n\n  console.log({ english, other });\n\n  console.log({ performance });\n  cleanupTimer(executionId);\n}",
+  "description": "Scan all md files and count the amount of english files and files containing another language\n\n\nNB: another way: by looking at the top 10000 words in the `getMarkdownWordDictionaryForFolder` and matching them to languages)",
+  "id": "cqzknkpovmnrrhcehisiyssc"
+}

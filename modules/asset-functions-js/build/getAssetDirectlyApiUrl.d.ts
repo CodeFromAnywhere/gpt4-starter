@@ -1,0 +1,2 @@
+export declare const getAssetDirectlyApiUrl: (apiUrl: string | undefined, projectRelativeAssetPath: string, isDownload?: boolean) => string | undefined;
+//# sourceMappingURL=getAssetDirectlyApiUrl.d.ts.map

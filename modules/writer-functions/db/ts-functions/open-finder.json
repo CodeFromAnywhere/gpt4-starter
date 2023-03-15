@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678043324325,
+  "updatedAt": 1678043324325,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043324325,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/openFinder.ts",
+  "commentsInside": [],
+  "rawText": " async (projectRelativePath: string) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return;\n  }\n\n  const absolutePath = path.join(projectRoot, projectRelativePath);\n  if (!fs.existsSync(absolutePath)) {\n    return;\n  }\n\n  const stats = await fs.stat(absolutePath);\n  const isFolder = stats.isDirectory();\n\n  const basePath = isFolder ? absolutePath : path.parse(absolutePath).dir;\n\n  const name = isFolder ? \".\" : path.parse(absolutePath).base;\n\n  execSync(`open -R ${name}`, { cwd: basePath, encoding: \"utf8\" });\n}",
+  "name": "openFinder",
+  "slug": "open-finder",
+  "parameters": [
+    {
+      "name": "projectRelativePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Opens a file or folder in finder (admin only)",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 584,
+    "lines": 20,
+    "bytes": 584,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 29,
+    "linesPerFile": 20,
+    "numberOfFiles": 1
+  },
+  "id": "awsuzcsgbkavnrgirbkleoqr"
+}

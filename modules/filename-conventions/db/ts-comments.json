@@ -1,0 +1,20 @@
+[
+  {
+    "createdAt": 1675690248354,
+    "updatedAt": 1675690248354,
+    "deletedAt": 0,
+    "createdFirstAt": 1675690248354,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/isIndexableFileId.ts",
+    "comment": "NB: What is this used for again?",
+    "rawStatement": "export const isIndexableFileId = (fileId: string): boolean => {\n  const isOperationName = hasSubExtension(\n    fileId,\n    operationUnindexableNamesOrSubExtensions,\n    true\n  );\n\n  const isFrontendOptionalName = hasSubExtension(\n    fileId,\n    frontendOptionalFileSubExtensions,\n    false\n  );\n\n  const isIndex = fileId === \"index\";\n\n  const isIndexable = !isIndex && !isFrontendOptionalName && !isOperationName;\n\n  return isIndexable;\n};",
+    "parameters": {},
+    "types": [
+      "nb"
+    ],
+    "firstLine": 7,
+    "lastLine": 9,
+    "id": "lsdvjohlmasskevvokrzwnkx"
+  }
+]

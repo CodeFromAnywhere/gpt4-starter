@@ -1,0 +1,33 @@
+{
+  "createdAt": 1671115743322,
+  "updatedAt": 1671115743322,
+  "deletedAt": 0,
+  "createdFirstAt": 1671115743322,
+  "id": "namedparameterstypeof-generateaugmentedshortmarkdowntest",
+  "name": "NamedParameters<typeof generateAugmentedShortMarkdownTest>",
+  "slug": "namedparameterstypeof-generateaugmentedshortmarkdowntest",
+  "operationRelativeTypescriptFilePath": "src/generateAugmentedShortMarkdown.test.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof generateAugmentedShortMarkdownTest>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

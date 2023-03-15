@@ -1,0 +1,208 @@
+{
+  "createdAt": 1678331006689,
+  "updatedAt": 1678331006689,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331006689,
+  "id": "twiliowebhooktype",
+  "name": "TwilioWebhookType",
+  "slug": "twiliowebhooktype",
+  "operationRelativeTypescriptFilePath": "src/TwilioWebhookType.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "/**\n * NB: couln't find this in the docs or api spec... Made myself, but it is probably not 100% accurate! just tested with a simple WhatsApp message.\n */\nexport type TwilioWebhookType = {\n  SmsMessageSid: string;\n  NumMedia: string;\n  /**\n   * ProfileName of the sender (whatsapp?)\n   */\n  ProfileName: string;\n  SmsSid: string;\n  /**\n   * seems to be the phone number without + (whatsapp)\n   */\n  WaId?: string;\n  SmsStatus: string;\n  /**\n   * The message!\n   */\n  Body: string;\n\n  /**\n   * The phonenumber where the message should go\n   */\n  To: string;\n\n  NumSegments: string;\n  ReferralNumMedia: string;\n  MessageSid: string;\n  /**\n   * Useful to verify to the correct persona\n   */\n  AccountSid: string;\n  /**\n   * The phone number where the message came from\n   */\n  From: string;\n  ApiVersion: string;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "NB: couln't find this in the docs or api spec... Made myself, but it is probably not 100% accurate! just tested with a simple WhatsApp message.",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "SmsMessageSid": {
+          "type": "string"
+        },
+        "NumMedia": {
+          "type": "string"
+        },
+        "ProfileName": {
+          "type": "string",
+          "description": "ProfileName of the sender (whatsapp?)"
+        },
+        "SmsSid": {
+          "type": "string"
+        },
+        "WaId": {
+          "type": "string",
+          "description": "seems to be the phone number without + (whatsapp)"
+        },
+        "SmsStatus": {
+          "type": "string"
+        },
+        "Body": {
+          "type": "string",
+          "description": "The message!"
+        },
+        "To": {
+          "type": "string",
+          "description": "The phonenumber where the message should go"
+        },
+        "NumSegments": {
+          "type": "string"
+        },
+        "ReferralNumMedia": {
+          "type": "string"
+        },
+        "MessageSid": {
+          "type": "string"
+        },
+        "AccountSid": {
+          "type": "string",
+          "description": "Useful to verify to the correct persona"
+        },
+        "From": {
+          "type": "string",
+          "description": "The phone number where the message came from"
+        },
+        "ApiVersion": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "SmsMessageSid",
+        "NumMedia",
+        "ProfileName",
+        "SmsSid",
+        "SmsStatus",
+        "Body",
+        "To",
+        "NumSegments",
+        "ReferralNumMedia",
+        "MessageSid",
+        "AccountSid",
+        "From",
+        "ApiVersion"
+      ],
+      "additionalProperties": false,
+      "description": "NB: couln't find this in the docs or api spec... Made myself, but it is probably not 100% accurate! just tested with a simple WhatsApp message."
+    },
+    "simplifiedSchema": {
+      "fullComment": "NB: couln't find this in the docs or api spec... Made myself, but it is probably not 100% accurate! just tested with a simple WhatsApp message.",
+      "nb": "couln't find this in the docs or api spec... Made myself, but it is probably not 100% accurate! just tested with a simple WhatsApp message.",
+      "properties": [
+        {
+          "name": "SmsMessageSid",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "NumMedia",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ProfileName",
+          "required": true,
+          "schema": {
+            "fullComment": "ProfileName of the sender (whatsapp?)",
+            "type": "string"
+          }
+        },
+        {
+          "name": "SmsSid",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "WaId",
+          "required": false,
+          "schema": {
+            "fullComment": "seems to be the phone number without + (whatsapp)",
+            "type": "string"
+          }
+        },
+        {
+          "name": "SmsStatus",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "Body",
+          "required": true,
+          "schema": {
+            "fullComment": "The message!",
+            "type": "string"
+          }
+        },
+        {
+          "name": "To",
+          "required": true,
+          "schema": {
+            "fullComment": "The phonenumber where the message should go",
+            "type": "string"
+          }
+        },
+        {
+          "name": "NumSegments",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ReferralNumMedia",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "MessageSid",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "AccountSid",
+          "required": true,
+          "schema": {
+            "fullComment": "Useful to verify to the correct persona",
+            "type": "string"
+          }
+        },
+        {
+          "name": "From",
+          "required": true,
+          "schema": {
+            "fullComment": "The phone number where the message came from",
+            "type": "string"
+          }
+        },
+        {
+          "name": "ApiVersion",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "TwilioWebhookType",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

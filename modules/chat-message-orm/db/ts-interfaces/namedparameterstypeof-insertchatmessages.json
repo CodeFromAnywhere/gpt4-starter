@@ -1,0 +1,75 @@
+{
+  "createdAt": 1678505776337,
+  "updatedAt": 1678505776337,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505776337,
+  "id": "namedparameterstypeof-insertchatmessages",
+  "name": "NamedParameters<typeof insertChatMessages>",
+  "slug": "namedparameterstypeof-insertchatmessages",
+  "operationRelativeTypescriptFilePath": "src/insertChatMessages.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "personSlug": {
+          "type": "string"
+        },
+        "personaSlug": {
+          "type": "string"
+        },
+        "chatMessages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Creation%3CChatMessage%3E"
+          }
+        }
+      },
+      "required": [
+        "personSlug",
+        "personaSlug",
+        "chatMessages"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "personSlug",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "personaSlug",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "chatMessages",
+          "required": true,
+          "schema": {
+            "items": [],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof insertChatMessages>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

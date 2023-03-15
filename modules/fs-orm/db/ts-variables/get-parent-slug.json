@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677580435669,
+  "updatedAt": 1677580435669,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580435669,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getParentSlug",
+  "slug": "get-parent-slug",
+  "operationRelativeTypescriptFilePath": "src/convention/getParentSlug.ts",
+  "type": {
+    "rawType": "(item: Omit<TModel, import(\"/Users/clarity/os/operations/tools/types/model-types/build/generics\").ShouldNotBeStored>) => string | undefined",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  item: Storing<KeyValueMarkdownModelType>\n): string | undefined => {\n  const parentSlug: string | undefined =\n    item.categoryStack[item.categoryStack.length - 1];\n  return parentSlug;\n}",
+  "description": "get a parent slug without the parent_xxxSlug reference (uses the categoryStack)\n\ncan be undefined if the item has no parent",
+  "id": "uoqbuxlzbuvmuqaerhqpqawc"
+}

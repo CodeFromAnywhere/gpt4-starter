@@ -1,0 +1,50 @@
+{
+  "createdAt": 1678043759329,
+  "updatedAt": 1678043759329,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043759329,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "tabsStoreInitialValues",
+  "slug": "tabs-store-initial-values",
+  "operationRelativeTypescriptFilePath": "src/store.ts",
+  "type": {
+    "rawType": "{ \"tabs.currentTab\": { [tabKey: string]: number; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "tabs.currentTab": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      "required": [
+        "tabs.currentTab"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "tabs.currentTab",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "{\n  \"tabs.currentTab\": {},\n}",
+  "description": "",
+  "id": "zgziqlrxuijsdcwxumbdbxlw"
+}

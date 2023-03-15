@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678331354480,
+  "updatedAt": 1678331354480,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331354480,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/convertPdfToMd.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  inputPdfFilePath: string\n): Promise<parsePdf.Result | undefined> => {\n  try {\n    await lock(inputPdfFilePath, \"busy\", \"tryParsePdf\", [inputPdfFilePath]);\n    let dataBuffer = await fs.readFile(inputPdfFilePath);\n    const result = await parsePdf(dataBuffer);\n    await unlock(inputPdfFilePath);\n    return result;\n  } catch (e) {\n    console.log(`couldn't parse pdf`, { e });\n    await unlock(inputPdfFilePath);\n\n    return;\n  }\n}",
+  "name": "tryParsePdf",
+  "slug": "try-parse-pdf",
+  "parameters": [
+    {
+      "name": "inputPdfFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/node_modules/@types/pdf-parse/index\").Result | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 442,
+    "lines": 16,
+    "bytes": 442,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 28,
+    "linesPerFile": 16,
+    "numberOfFiles": 1
+  },
+  "id": "ngqtxeinjjnggbllpebuwihw"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677582351367,
+  "updatedAt": 1677582351367,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582351367,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getBrowserTabs",
+  "slug": "get-browser-tabs",
+  "operationRelativeTypescriptFilePath": "src/getBrowserTabs.ts",
+  "type": {
+    "rawType": "(browserInfo: import(\"/Users/clarity/os/operations/niches/bhagya-2023-01-26/control-web/browser-types/build/BrowserSession\").BrowserSession) => Promise<import(\"/Users/clarity/os/operations/node_modules/puppeteer-core/lib/types\").Page[]>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  browserInfo: BrowserSession\n): Promise<Page[]> => {\n  const browser = await puppeteer.connect({\n    browserWSEndpoint: browserInfo.browserSessionId,\n  });\n  let allTabs: Page[] = await browser.pages();\n  console.log({ allTabs });\n  return allTabs;\n}",
+  "description": "",
+  "id": "auisbacatnxmdnyhyxbqmuhs"
+}

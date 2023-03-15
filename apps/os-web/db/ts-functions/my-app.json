@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678041737508,
+  "updatedAt": 1678041737508,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041737508,
+  "isApiExposed": false,
+  "name": "MyApp",
+  "slug": "my-app",
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/pages/_app.tsx",
+  "commentsInside": [],
+  "description": "",
+  "parameters": [],
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "size": {
+    "characters": 1983,
+    "lines": 68,
+    "bytes": 1983,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 29,
+    "linesPerFile": 68,
+    "numberOfFiles": 1
+  },
+  "rawText": "\n\nfunction MyApp({ Component, pageProps }: AppProps) {\n  return (\n    <QueryClientProvider client={queryClient}>\n      <Head>\n        <meta charSet=\"utf-8\" />\n        <meta httpEquiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n        <meta\n          name=\"viewport\"\n          content=\"width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no\"\n        />\n\n        <meta\n          name=\"description\"\n          content=\"Clarity AI is a search engine that helps you automate parts of your workflow\"\n        />\n        <meta\n          name=\"keywords\"\n          content=\"ai, search engine, artificial intelligence\"\n        />\n\n        <link rel=\"manifest\" href=\"/manifest.json\" />\n        <link\n          href=\"/icons/favicon-16x16.png\"\n          rel=\"icon\"\n          type=\"image/png\"\n          sizes=\"16x16\"\n        />\n        <link\n          href=\"/icons/favicon-32x32.png\"\n          rel=\"icon\"\n          type=\"image/png\"\n          sizes=\"32x32\"\n        />\n        <link rel=\"apple-touch-icon\" href=\"/apple-icon.png\"></link>\n        <meta name=\"theme-color\" content=\"#317EFB\" />\n\n        <title>Clarity AI</title>\n\n        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />\n        <link\n          rel=\"preconnect\"\n          href=\"https://fonts.gstatic.com\"\n          crossOrigin=\"true\"\n        />\n        <link\n          href=\"https://fonts.googleapis.com/css2?family=Raleway&display=swap\"\n          rel=\"stylesheet\"\n        />\n\n        {/* NB: for CODE syntax highlighting of \"markdown\" markdown-parser */}\n        <link\n          rel=\"stylesheet\"\n          href=\"https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/default.min.css\"\n        />\n      </Head>\n      <ToastContainer />\n      <AlertProvider>\n        <StoreProvider>\n          <ModalProvider>\n            <MyLayout NextPage={Component} pageProps={pageProps} />\n          </ModalProvider>\n        </StoreProvider>\n      </AlertProvider>\n    </QueryClientProvider>\n  );\n}",
+  "maxIndentationDepth": 6,
+  "id": "uxvjjbtthnxsrpnzhqdssotn"
+}

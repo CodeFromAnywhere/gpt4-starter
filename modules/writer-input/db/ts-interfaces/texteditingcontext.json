@@ -1,0 +1,62 @@
+{
+  "createdAt": 1678043426835,
+  "updatedAt": 1678043426835,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043426835,
+  "id": "texteditingcontext",
+  "name": "TextEditingContext",
+  "slug": "texteditingcontext",
+  "operationRelativeTypescriptFilePath": "src/old/getContext.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "export type TextEditingContext = {\n  wordAtPosition: string;\n  positionIndex: number;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "wordAtPosition": {
+          "type": "string"
+        },
+        "positionIndex": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "wordAtPosition",
+        "positionIndex"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "wordAtPosition",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "positionIndex",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "TextEditingContext",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

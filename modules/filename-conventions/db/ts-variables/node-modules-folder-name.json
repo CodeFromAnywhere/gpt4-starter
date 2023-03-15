@@ -1,0 +1,24 @@
+{
+  "createdAt": 1675690237327,
+  "updatedAt": 1675690237327,
+  "deletedAt": 0,
+  "createdFirstAt": 1675690237327,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "nodeModulesFolderName",
+  "slug": "node-modules-folder-name",
+  "operationRelativeTypescriptFilePath": "src/filename-conventions.ts",
+  "type": {
+    "rawType": "String",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "\"node_modules\"",
+  "description": "",
+  "id": "uscaxqmktspolvtzylkqazhh"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678611477412,
+  "updatedAt": 1678611477412,
+  "deletedAt": 0,
+  "createdFirstAt": 1678611477412,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getPaywallResult",
+  "slug": "get-paywall-result",
+  "operationRelativeTypescriptFilePath": "src/getPaywallResult.ts",
+  "type": {
+    "rawType": "(chatMessage: any, history: import(\"/Users/clarity/os/operations/tools/purpose/social-media/social-media-types/build/ChatMessage\").ChatMessage[], person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person, persona: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/Persona\").Persona, config: { isFirstMessage?: boolean | undefined; newUsersAmount?: number | undefined; }) => Promise<{ isSuccessful: boolean; message?: string | undefined; isPaywallHit: boolean; tokensUsed?: number | undefined; chatResponse?: string | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  chatMessage: Creation<ChatMessage>,\n  history: ChatMessage[],\n  person: Person,\n\n  persona: Persona,\n  config: { isFirstMessage?: boolean; newUsersAmount?: number }\n): Promise<{\n  isSuccessful: boolean;\n  message?: string;\n  isPaywallHit: boolean;\n  tokensUsed?: number;\n  chatResponse?: string;\n}> => {\n  //if you ask for \"credit\"\n  const askForCredit = chatMessage.message.toLowerCase() === \"credit\";\n\n  const { freeMessagesAmount, tooManyDau, dailyActiveUsers } =\n    getMessageLimitInfo(person, persona);\n\n  // If credit is lower than `-1` when messages comes in,\n  const insufficientCredit =\n    (person.credit || 0) <= getMinimumCredit(persona, freeMessagesAmount);\n\n  const tooManyDauMessage = `Due to lots of active users, we are not able to respond to your request right now. Our current limits:\n\nCurrent active users: ${dailyActiveUsers}\n\n${\n  persona.assistantState?.dauLimitVip && persona.assistantState.minimumCreditVip\n    ? `VIP users allowed (deposit minimum: €${persona.assistantState?.minimumCreditVip}): ${persona.assistantState?.dauLimitVip} users`\n    : \"\"\n}\n${\n  persona.assistantState?.dauLimitPaid\n    ? `Paid users allowed: ${persona.assistantState?.dauLimitPaid} users`\n    : \"\"\n}\n${\n  persona.assistantState?.dauLimit\n    ? `Free users allowed: ${persona.assistantState?.dauLimit} users`\n    : \"\"\n}\n\nWe ask you to deposit some credit before starting with this bot, so you'll be first in line to use it.`;\n\n  const newUserLimit =\n    config.newUsersAmount &&\n    persona.assistantState?.maximumNewUsersPerDay &&\n    config.isFirstMessage\n      ? persona.assistantState.maximumNewUsersPerDay > config.newUsersAmount\n      : false;\n\n  if (!newUserLimit && !askForCredit && !insufficientCredit && !tooManyDau) {\n    return {\n      isSuccessful: true,\n      isPaywallHit: false,\n    };\n  }\n\n  const lastSentMessage = [...history]\n    .reverse()\n    .find((x) => x.direction === \"sent\");\n\n  const paywallMessageCreatedAt = lastSentMessage?.isPaywallMessage\n    ? lastSentMessage.createdAt\n    : undefined;\n\n  const tooSoonPaywallMessage = paywallMessageCreatedAt\n    ? Date.now() - paywallMessageCreatedAt < 86400000\n    : false;\n\n  if (tooSoonPaywallMessage) {\n    return {\n      isSuccessful: false,\n      isPaywallHit: true,\n      message: \"You already hit the paywall less than a day ago\",\n    };\n  }\n\n  const paymentReason: PaymentMetadata[\"paymentReason\"] = newUserLimit\n    ? \"whatsapp-new-user-limit\"\n    : askForCredit\n    ? \"whatsapp-ask-for-credit\"\n    : tooManyDau\n    ? \"whatsapp-too-many-dau\"\n    : \"whatsapp-insufficient-credit\";\n\n  const customSuccessMessage =\n    \"Yay! You've got $messages new messages to send. Enjoy!\";\n\n  const [cheapPaymentUrl, expensivePaymentUrl] = await Promise.all([\n    createNewStripePayment({\n      personId: person.id,\n      persona,\n      paymentReason,\n      customSuccessMessage,\n    }),\n    createNewStripePayment({\n      personId: person.id,\n      persona,\n      productName: \"Clarity Credit\",\n      defaultQuantity: 10,\n      isQuantityEditable: true,\n      paymentReason,\n      customSuccessMessage,\n    }),\n  ]);\n\n  if (!cheapPaymentUrl || !expensivePaymentUrl) {\n    return {\n      isSuccessful: false,\n      isPaywallHit: true,\n      message: \"Generating payment links went wrong\",\n    };\n  }\n\n  const messagesAmountCheap = getMessagesAmountCheap(persona);\n  const messagesAmountMore = getMessagesAmountMore(persona);\n\n  const cheaperFactor =\n    Math.round(\n      (messagesAmountMore /\n        messagesAmountCheap /\n        (expensivePayment / cheapPayment)) *\n        100\n    ) / 100;\n\n  const insufficientMessage = `You're out of messages. Please buy new messages if you wish to keep talking with me.`;\n\n  const newUserLimitMessage = `We're at capacity and aren't onboarding any new users at this point. To enter, please buy messages, and you'll be first in line.`;\n\n  const creditMessage = `Your credit is ${person.credit || 0}`;\n\n  const reasonMessage = insufficientCredit\n    ? insufficientMessage\n    : tooManyDau\n    ? tooManyDauMessage\n    : newUserLimit\n    ? newUserLimitMessage\n    : creditMessage;\n\n  const chatResponse = `Hi, ${person.name}.\n      \n${reasonMessage}\n\nClick here to buy ${messagesAmountCheap} messages for 21 cent (plus 29 cent transaction cost):\n\n${cheapPaymentUrl}\n\nClick here to buy ${messagesAmountMore} messages for 5 euros (${cheaperFactor}x cheaper) or choose your own amount:\n\n${expensivePaymentUrl}\n\nCheck my website to find more chatbots and other AI. We're also offering custom chatbots for your company:\n\nhttps://chat.findclarity.ai\n    `;\n\n  return {\n    isPaywallHit: true,\n    isSuccessful: true,\n    tokensUsed: 0,\n    message: \"Credit deposit required\",\n    chatResponse,\n  };\n}",
+  "description": "",
+  "id": "hxsvhsggkwptelnlunpetbyf"
+}

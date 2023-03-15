@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678329663505,
+  "updatedAt": 1678329663505,
+  "deletedAt": 0,
+  "createdFirstAt": 1678329663505,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/removePeer.ts",
+  "commentsInside": [],
+  "rawText": " async (id: string) => {\n  const removeResult = await db.remove(\"Device\", (peer) => peer.id === id);\n  return removeResult;\n}",
+  "name": "removePeer",
+  "slug": "remove-peer",
+  "parameters": [
+    {
+      "name": "id",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "TODO: connect with peoples",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 151,
+    "lines": 4,
+    "bytes": 151,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 38,
+    "linesPerFile": 4,
+    "numberOfFiles": 1
+  },
+  "id": "uddmezwaddxqnjykfoybcpxt"
+}

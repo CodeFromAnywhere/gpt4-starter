@@ -1,0 +1,131 @@
+{
+  "createdAt": 1678043832655,
+  "updatedAt": 1678043832655,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043832655,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/Modal.tsx",
+  "commentsInside": [],
+  "rawText": " () => {\n  const [showModal, setShowModal] = useState(false);\n  const [modalContent, setModalContent] = useState<ModalContent>(null);\n  const [title, setTitle] = useState(\"\");\n\n  const handleModal: HandleModal = (\n    content: ModalContent = null,\n    title?: string\n  ) => {\n    setShowModal(!showModal);\n    if (content) {\n      setModalContent(content);\n    }\n    if (title) {\n      setTitle(title);\n    }\n  };\n\n  const hideModal = () => setShowModal(false);\n\n  return { showModal, handleModal, hideModal, modalContent, title };\n}",
+  "name": "useModalState",
+  "slug": "use-modal-state",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "{ showModal: boolean; handleModal: HandleModal; hideModal: () => void; modalContent: ModalContent; title: string; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "showModal": {
+          "type": "boolean"
+        },
+        "handleModal": {
+          "type": "object",
+          "properties": {}
+        },
+        "hideModal": {
+          "type": "object",
+          "properties": {}
+        },
+        "modalContent": {
+          "enum": [
+            "ul",
+            "trin",
+            "SX.Elemen"
+          ],
+          "x-enumNames": [
+            "ul",
+            "trin",
+            "SX.Elemen"
+          ],
+          "type": "string"
+        },
+        "title": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        }
+      },
+      "required": [
+        "showModal",
+        "handleModal",
+        "hideModal",
+        "title"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "showModal",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "handleModal",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "hideModal",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "modalContent",
+          "required": false,
+          "schema": {
+            "enum": [
+              "ul",
+              "trin",
+              "SX.Elemen"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "title",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 533,
+    "lines": 22,
+    "bytes": 533,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 24,
+    "linesPerFile": 22,
+    "numberOfFiles": 1
+  },
+  "id": "zivteplnykibcqidbeklnvbw"
+}

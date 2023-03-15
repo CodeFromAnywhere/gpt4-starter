@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678330224025,
+  "updatedAt": 1678330224025,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330224025,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "outlineToInvestorPitch",
+  "slug": "outline-to-investor-pitch",
+  "operationRelativeTypescriptFilePath": "src/prompts.ts",
+  "type": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "async (\n  isDeferred?: boolean\n) => {\n  const result = await processChatGptPrompt({\n    isDeferred,\n    contextualPromptSlug: \"outline-to-investor-pitch\",\n  });\n\n  return result;\n}",
+  "description": "",
+  "id": "hobgdvypzclimkfsqdqsmetj"
+}

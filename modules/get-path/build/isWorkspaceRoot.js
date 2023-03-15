@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.isWorkspaceRoot=void 0;var fs_util_1=require("fs-util"),try_parse_json_1=require("try-parse-json"),isWorkspaceRoot=function(s){var e,o=fs_util_1.path.join(s,"package.json");if(fs_util_1.fs.existsSync(o)){var r=(0,try_parse_json_1.tryParseJson)(fs_util_1.fs.readFileSync(o,"utf8"));if(r&&r.workspaces)return{isBundle:(null===(e=r.operation)||void 0===e?void 0:e.isBundle)||!1,isWorkspaceRoot:!0}}};exports.isWorkspaceRoot=isWorkspaceRoot;
+//# sourceMappingURL=isWorkspaceRoot.js.map

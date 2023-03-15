@@ -1,0 +1,1 @@
+{"version":3,"file":"calculateOpenaiMessagesTokenCount.d.ts","sourceRoot":"","sources":["../src/calculateOpenaiMessagesTokenCount.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,4BAA4B,EAAE,MAAM,QAAQ,CAAC;AAEtD,eAAO,MAAM,iCAAiC,aAClC,4BAA4B,EAAE,KACvC,CAAC,4BAA4B,GAAG;IAAE,UAAU,EAAE,MAAM,CAAA;CAAE,CAAC,EASzD,CAAC"}

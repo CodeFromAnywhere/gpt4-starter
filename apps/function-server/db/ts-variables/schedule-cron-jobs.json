@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331963664,
+  "updatedAt": 1678331963664,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331963664,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "scheduleCronJobs",
+  "slug": "schedule-cron-jobs",
+  "operationRelativeTypescriptFilePath": "src/scheduleCronJobs.ts",
+  "type": {
+    "rawType": "(tsFunctions: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/TsFunction\").TsFunction[]) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (tsFunctions: TsFunction[]) => {\n  const cronFunctions = tsFunctions\n    .map((x) => {\n      const fn = sdk[x.name as keyof typeof sdk] as any;\n      const config = fn?.config as StandardFunctionConfig | undefined;\n      return { ...x, config };\n    })\n    .filter((x) => !!x.config?.runEveryPeriod);\n\n  log(\n    `Scheduling ${cronFunctions.length} CRON jobs: ${cronFunctions\n      .map((x) => `${x.name} (${x.config?.runEveryPeriod})`)\n      .join(\", \")}`,\n    { type: \"important\" }\n  );\n\n  getObjectKeysArray(scheduleObject).map((interval) => {\n    const cronExpression = scheduleObject[interval];\n    const functionsToExecute = cronFunctions.filter(\n      // should later be replaced with the thing you find on the actual function\n      (x) => x.config?.runEveryPeriod === interval\n    );\n    if (functionsToExecute.length > 0) {\n      schedule(\n        cronExpression,\n        () => {\n          oneByOne(functionsToExecute, executeCronFunction);\n        },\n        { name: interval }\n      );\n    }\n  });\n}",
+  "description": "",
+  "id": "qvtyhmcglqhjmtxccddhukty"
+}

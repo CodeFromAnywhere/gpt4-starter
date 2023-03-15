@@ -1,0 +1,24 @@
+{
+  "createdAt": 1677677268757,
+  "updatedAt": 1677677268757,
+  "deletedAt": 0,
+  "createdFirstAt": 1677677268757,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "API_NO_RESPONSE_TIME_KEY",
+  "slug": "api-no-response-time-key",
+  "operationRelativeTypescriptFilePath": "src/api.ts",
+  "type": {
+    "rawType": "String",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "\"api.timeoutAt\"",
+  "description": "Should contain a string unix timestamp of the last time the API had no response.",
+  "id": "fehbwsakhcdbmkfgzbehzzku"
+}

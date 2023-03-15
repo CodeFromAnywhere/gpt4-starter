@@ -1,0 +1,46 @@
+{
+  "createdAt": 1673860749419,
+  "updatedAt": 1673860749419,
+  "deletedAt": 0,
+  "createdFirstAt": 1673860749419,
+  "id": "namedparameterstypeof-uselastselection",
+  "name": "NamedParameters<typeof useLastSelection>",
+  "slug": "namedparameterstypeof-uselastselection",
+  "operationRelativeTypescriptFilePath": "src/useLastSelection.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "isDisabled": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "isDisabled",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof useLastSelection>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

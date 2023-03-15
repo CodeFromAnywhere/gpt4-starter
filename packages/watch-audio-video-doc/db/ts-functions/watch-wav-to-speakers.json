@@ -1,0 +1,36 @@
+{
+  "createdAt": 1678330808933,
+  "updatedAt": 1678330808933,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330808933,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "ProjectWatcher",
+  "operationRelativeTypescriptFilePath": "src/watchWavToSpeakers.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  eventName,\n  absolutePath,\n  isStartup\n) => {\n  if (isLocked(absolutePath)) {\n    return false;\n  }\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"File doesn't exist (anymore)\" };\n  }\n  const speakerSeparationResult = await speakerSeparation(absolutePath);\n  console.log({ speakerSeparationResult });\n}",
+  "name": "watchWavToSpeakers",
+  "slug": "watch-wav-to-speakers",
+  "parameters": [],
+  "description": "Watch wav files anywhere and add speaker separation output if that isn't there yet",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 430,
+    "lines": 14,
+    "bytes": 430,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 31,
+    "linesPerFile": 14,
+    "numberOfFiles": 1
+  },
+  "id": "ckbwymmbhhoutdwmdmolrdhl"
+}

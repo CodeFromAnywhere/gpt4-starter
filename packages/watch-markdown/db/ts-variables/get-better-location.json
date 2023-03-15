@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330864309,
+  "updatedAt": 1678330864309,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330864309,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getBetterLocation",
+  "slug": "get-better-location",
+  "operationRelativeTypescriptFilePath": "src/getBetterLocation.ts",
+  "type": {
+    "rawType": "(config: { fileName: string; shortDescription: string; projectRelativePath: string; folderStructure: string; }) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: {\n  fileName: string;\n  shortDescription: string;\n  projectRelativePath: string;\n  folderStructure: string;\n}) => {\n  const { fileName, folderStructure, projectRelativePath, shortDescription } =\n    config;\n\n  const locationResult = await textToText(`Consider this file: ${fileName}.\nThis is what it contains: ${shortDescription}\nThis is the file's current location in the file system: ${projectRelativePath}\nThis is the folder structure of my file system:\n\\`\\`\\`\n${folderStructure}\n\\`\\`\\`\n\n\nIs \\`${projectRelativePath}\\` a good location? Give me your top 5 locations you think this file should be located, with a weight (0-1) for each location.`);\n\n  console.log({ locationResult });\n}",
+  "description": "holy grail of LLM's: data structurisation",
+  "id": "sbgwihsbkqvgkxqgakurkmed"
+}

@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678331987947,
+  "updatedAt": 1678331987947,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331987947,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getPublicPerson",
+  "slug": "get-public-person",
+  "operationRelativeTypescriptFilePath": "src/getPublicPerson.ts",
+  "type": {
+    "rawType": "{ (id?: string | undefined): unknown; config: { isPublic: boolean; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPublic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isPublic"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (id?: string) => {\n  return (await getPublicPersons()).find((x) => x.id === id);\n}",
+  "description": "",
+  "id": "yplhtjxgqxdvmfofhhiovugp"
+}

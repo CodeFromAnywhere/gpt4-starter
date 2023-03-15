@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678369229212,
+    "updatedAt": 1678369229212,
+    "deletedAt": 0,
+    "createdFirstAt": 1678369229212,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/util/getGroupOrPersonId.ts",
+    "comment": "calculate groupId/personId this based on the path (/knowledge/users/[email]/*, etc)",
+    "rawStatement": "export const getGroupOrPersonId = async (absoluteAudioFilePath: string) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { groupId: undefined, personId: undefined };\n  }\n\n  const projectRelativeFilePath = makeRelative(\n    absoluteAudioFilePath,\n    projectRoot\n  );\n  const chunks = projectRelativeFilePath.split(\"/\");\n  const persons = await db.get(\"Person\");\n  const groups = await db.get(\"Group\");\n  const groupSlug = projectRelativeFilePath.startsWith(\"knowledge/groups/\")\n    ? chunks[2]\n    : undefined;\n\n  const groupId = groupSlug\n    ? groups.find((x) => x.slug === groupSlug)?.id\n    : undefined;\n  const slug = projectRelativeFilePath.startsWith(\"knowledge/users/\")\n    ? chunks[2]\n    : undefined;\n  const personId = slug ? persons.find((x) => x.slug === slug)?.id : undefined;\n\n  return { groupId, personId };\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 4,
+    "lastLine": 6,
+    "id": "ejxatbiovcrpqsnexaixmynm"
+  }
+]

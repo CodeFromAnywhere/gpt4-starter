@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678330240520,
+  "updatedAt": 1678330240520,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330240520,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/queue/getQueueStatus.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const status = await readJsonFile<QueueStatus>(\n    path.join(__dirname, \"../..\", \"assets\", \"queueStatus.json\")\n  );\n\n  return status;\n}",
+  "name": "getQueueStatus",
+  "slug": "get-queue-status",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 153,
+    "lines": 7,
+    "bytes": 153,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 22,
+    "linesPerFile": 7,
+    "numberOfFiles": 1
+  },
+  "id": "wbshaypsnhkcoynewemeczip"
+}

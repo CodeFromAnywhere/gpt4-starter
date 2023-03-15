@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678369221844,
+  "updatedAt": 1678369221844,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369221844,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "textToImage",
+  "slug": "text-to-image",
+  "operationRelativeTypescriptFilePath": "src/textToImage.ts",
+  "type": {
+    "rawType": "(config: { text?: string | undefined; inputTextFilePath?: string | undefined; outputFilePath?: string | undefined; }) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: {\n  /**\n   * either provide text or an inputTextFilePath\n   */\n  text?: string;\n  /**\n   * either provide text or an inputTextFilePath\n   */\n  inputTextFilePath?: string;\n  /**\n   * if you don't provide this, it will be stored as [inputTextFilePathFolder]/[inputFileName].png\n   *\n   * needed if you don't provide an inputTextFilePath\n   */\n  outputFilePath?: string;\n}) => {\n  const { text } = config;\n\n  const response = await bananaStableDiffusion({ text });\n  return response;\n}",
+  "description": "should use banana.dev Stable Diffusion\npromises an absolute path of the resulting image",
+  "id": "nodlmtphvirkarzcmdbsbjck"
+}

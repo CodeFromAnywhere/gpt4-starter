@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678042849278,
+  "updatedAt": 1678042849278,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042849278,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/zipFolder.ts",
+  "commentsInside": [],
+  "rawText": " async (absoluteFolderPath: string) => {\n  // must exist\n  if (!fs.existsSync(absoluteFolderPath)) {\n    return;\n  }\n\n  const stat = await fs.stat(absoluteFolderPath);\n  // must be a folder\n  if (!stat.isDirectory()) {\n    return;\n  }\n\n  const baseFolderPath = path.join(absoluteFolderPath, \"..\");\n  const folderName = getFileOrFolderName(absoluteFolderPath);\n\n  console.log({ absoluteFolderPath, baseFolderPath, folderName });\n  const zipPath = zip({\n    baseFolderPath,\n    folderName,\n    zipName: folderName,\n    requirePassword: false,\n  });\n\n  return zipPath;\n}",
+  "name": "zipFolder",
+  "slug": "zip-folder",
+  "parameters": [
+    {
+      "name": "absoluteFolderPath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 567,
+    "lines": 25,
+    "bytes": 567,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 23,
+    "linesPerFile": 25,
+    "numberOfFiles": 1
+  },
+  "id": "scbjitzzzxpztqxozgpcrdrw"
+}

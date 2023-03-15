@@ -1,0 +1,125 @@
+{
+  "createdAt": 1678330209317,
+  "updatedAt": 1678330209317,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330209317,
+  "id": "namedparameterstypeof-processchatgptprompt",
+  "name": "NamedParameters<typeof processChatGptPrompt>",
+  "slug": "namedparameterstypeof-processchatgptprompt",
+  "operationRelativeTypescriptFilePath": "src/processChatGptPrompt.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "$ref": "#/definitions/ProcessPromptProps"
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "fullComment": "",
+            "properties": [
+              {
+                "name": "contextContent",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "selectionContent",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "contextualPromptSlug",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "anyContext",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "customPromptContent",
+                "required": false,
+                "schema": {
+                  "fullComment": "DESCRIPTION: These variables can be used: %context will be replaced by your context, %selection will be replaced by your selection. Provide a good prompt that combines that in a specific format",
+                  "description": "These variables can be used: %context will be replaced by your context, %selection will be replaced by your selection. Provide a good prompt that combines that in a specific format",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "saveNewPromptWithName",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "isHeadless",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "prompt_projectRelativePath",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "thread",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "isDeferred",
+                "required": false,
+                "schema": {
+                  "fullComment": "If true, it'll just validate if this will be executed, it won't return the actual result but will execute the result in the background",
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof processChatGptPrompt>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

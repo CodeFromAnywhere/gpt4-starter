@@ -1,0 +1,160 @@
+{
+  "createdAt": 1676361298456,
+  "updatedAt": 1676361298456,
+  "deletedAt": 0,
+  "createdFirstAt": 1676361298456,
+  "id": "authorizationproperties",
+  "name": "AuthorizationProperties",
+  "slug": "authorizationproperties",
+  "operationRelativeTypescriptFilePath": "src/AuthorizationProperties.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "export type AuthorizationProperties = {\n  /**\n   DESCRIPTION: Only accessible to admin\n  */\n  isPrivate?: boolean;\n\n  /**\n   * DESCRIPTION: Don't show in the file explorer if you don't have access to this file. NB: only works in combination with pricing or `.isPrivate: true`\n   */\n  isSecret?: boolean;\n\n  /**\n   * Not sure how I should make this possible yet, but the biggest reason for having persona's is because you may want to do things anonymously. If persona's are truly not really needed, just anonymous and non-anonymous, then we can greatly simplify things by removing that model altogether.\n   *\n   * Also you'd have much fine-grained control over what's anonymous and what isn't in this way. I like this a lot.\n   */\n  isAnonymous?: boolean;\n\n  /**\n   * DESCRIPTION:If true, will not show up for read-only people\n   */\n  isDraft?: boolean;\n\n  /**\n   * DESCRIPTION: If true, this file/folder will be available to the public\n   */\n  isPublic?: boolean;\n\n  /**\n   *\n   * DESCRIPTION: If set, file content will not be available for people that aren't part of this group.\n   */\n  canRead_groupSlugs?: string[];\n  /**\n   *\n   */\n  canWrite_groupSlugs?: string[];\n\n  /**\n   * DESCRIPTION: If this is a date in the future, the file won't be available until that date\n   */\n  isAvailableFromDateAt?: number;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "isPrivate": {
+          "type": "boolean",
+          "description": "DESCRIPTION: Only accessible to admin"
+        },
+        "isSecret": {
+          "type": "boolean",
+          "description": "DESCRIPTION: Don't show in the file explorer if you don't have access to this file. NB: only works in combination with pricing or `.isPrivate: true`"
+        },
+        "isAnonymous": {
+          "type": "boolean",
+          "description": "Not sure how I should make this possible yet, but the biggest reason for having persona's is because you may want to do things anonymously. If persona's are truly not really needed, just anonymous and non-anonymous, then we can greatly simplify things by removing that model altogether.\n\nAlso you'd have much fine-grained control over what's anonymous and what isn't in this way. I like this a lot."
+        },
+        "isDraft": {
+          "type": "boolean",
+          "description": "DESCRIPTION:If true, will not show up for read-only people"
+        },
+        "isPublic": {
+          "type": "boolean",
+          "description": "DESCRIPTION: If true, this file/folder will be available to the public"
+        },
+        "canRead_groupSlugs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "DESCRIPTION: If set, file content will not be available for people that aren't part of this group."
+        },
+        "canWrite_groupSlugs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "isAvailableFromDateAt": {
+          "type": "number",
+          "description": "DESCRIPTION: If this is a date in the future, the file won't be available until that date"
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "isPrivate",
+          "required": false,
+          "schema": {
+            "fullComment": "DESCRIPTION: Only accessible to admin",
+            "description": "Only accessible to admin",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isSecret",
+          "required": false,
+          "schema": {
+            "fullComment": "DESCRIPTION: Don't show in the file explorer if you don't have access to this file. NB: only works in combination with pricing or `.isPrivate: true`",
+            "description": "Don't show in the file explorer if you don't have access to this file. NB: only works in combination with pricing or `.isPrivate: true`",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isAnonymous",
+          "required": false,
+          "schema": {
+            "fullComment": "Not sure how I should make this possible yet, but the biggest reason for having persona's is because you may want to do things anonymously. If persona's are truly not really needed, just anonymous and non-anonymous, then we can greatly simplify things by removing that model altogether.\n\nAlso you'd have much fine-grained control over what's anonymous and what isn't in this way. I like this a lot.",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isDraft",
+          "required": false,
+          "schema": {
+            "fullComment": "DESCRIPTION:If true, will not show up for read-only people",
+            "description": "If true, will not show up for read-only people",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isPublic",
+          "required": false,
+          "schema": {
+            "fullComment": "DESCRIPTION: If true, this file/folder will be available to the public",
+            "description": "If true, this file/folder will be available to the public",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "canRead_groupSlugs",
+          "required": false,
+          "schema": {
+            "fullComment": "DESCRIPTION: If set, file content will not be available for people that aren't part of this group.",
+            "description": "If set, file content will not be available for people that aren't part of this group.",
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "canWrite_groupSlugs",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "isAvailableFromDateAt",
+          "required": false,
+          "schema": {
+            "fullComment": "DESCRIPTION: If this is a date in the future, the file won't be available until that date",
+            "description": "If this is a date in the future, the file won't be available until that date",
+            "type": "number"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "AuthorizationProperties",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

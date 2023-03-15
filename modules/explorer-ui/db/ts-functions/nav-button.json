@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678331543859,
+  "updatedAt": 1678331543859,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331543859,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/NavButton.tsx",
+  "commentsInside": [],
+  "rawText": " (props: {\n  onClick?: () => void;\n  href?: string;\n  isActive?: boolean;\n  title: string;\n  id?: string;\n  isDisabled?: boolean;\n  openContextMenuProps?: object;\n}) => {\n  const {\n    href,\n    title,\n    onClick,\n    isActive,\n    openContextMenuProps,\n    id,\n    isDisabled,\n  } = props;\n\n  const hoverClassName = isDisabled\n    ? \"\"\n    : \"hover:dark:bg-green-900 hover:bg-green-200\";\n\n  const bgClassName = isActive\n    ? \"bg-green-200 dark:bg-green-900\"\n    : \"dark:bg-black/50\";\n\n  const disabledClassName = isDisabled ? \"text-gray-500\" : \"\";\n\n  const className = `${bgClassName} ${hoverClassName} ${disabledClassName} p-1 cursor-pointer text-xs line-clamp-1 truncate text-ellipsis`;\n\n  if (href) {\n    return (\n      <ALink\n        onClick={() => (isDisabled ? null : onClick?.())}\n        id={id}\n        href={href}\n        className={className}\n      >\n        <div id={id} {...openContextMenuProps}>\n          {title}\n        </div>\n      </ALink>\n    );\n  }\n\n  // TODO: add word-wrap ellipsis\n  return (\n    <P\n      id={id}\n      onClick={() => {\n        if (isDisabled) return;\n\n        onClick?.();\n      }}\n      className={className}\n      {...openContextMenuProps}\n    >\n      {title}\n    </P>\n  );\n}",
+  "name": "NavButton",
+  "slug": "nav-button",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 5,
+  "size": {
+    "characters": 1220,
+    "lines": 62,
+    "bytes": 1220,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 20,
+    "linesPerFile": 62,
+    "numberOfFiles": 1
+  },
+  "id": "gfvrnlrqeuswgpmrxykglfdb"
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678331164151,
+    "updatedAt": 1678331164151,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331164151,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/youtubeToMp4_old.ts",
+    "comment": "Downloads a youtube mp4 onto a certain location.\n\nStatus will be stored in action-status file.",
+    "rawStatement": "export const youtubeToMp4_old = async (\n  youtubeUrl: string,\n  absoluteFolderPath: string\n): Promise<StandardResponse & { projectRelativeFilePath?: string }> => {\n  console.log({ youtubeToMp4: { youtubeUrl, absoluteFolderPath } });\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"no projectroot\" };\n  }\n\n  try {\n    // getting youtube video information...\n    const info = await getBasicInfo(youtubeUrl);\n    const title = slugify(kebabCase(info.videoDetails.title));\n    const filename = `${title}.mp4`;\n    const absoluteFilePath = path.join(absoluteFolderPath, filename);\n\n    console.log(\"youtube to mp3 launched\", { youtubeUrl, absoluteFolderPath });\n\n    lock(absoluteFilePath, `Progress: 0%`, \"youtubeToMp4\", [\n      youtubeUrl,\n      absoluteFolderPath,\n    ]);\n\n    // promise for completing the full video download\n    const result = await new Promise<{\n      isSuccessful: boolean;\n      message: string;\n      projectRelativeFilePath?: string;\n    }>((resolve) => {\n      const video = ytdl(youtubeUrl);\n\n      video.pipe(fs.createWriteStream(absoluteFilePath)); //path and file name to output file\n      video.on(\"response\", function (res) {\n        let totalSize = res.headers[\"content-length\"];\n        let dataRead = 0;\n        res.on(\"data\", function (data: Buffer) {\n          dataRead += data.length;\n          let percent = dataRead / totalSize;\n\n          lock(\n            absoluteFilePath,\n            `Progress: ${(percent * 100).toFixed(2)}%`,\n            \"youtubeToMp4\",\n            [youtubeUrl, absoluteFolderPath]\n          );\n\n          //console.log((percent * 100).toFixed(2) + \"% \");\n        });\n        res.on(\"end\", function () {\n          console.log(\"\\n\");\n        });\n      });\n      video.on(\"end\", () => {\n        unlock(absoluteFilePath);\n        resolve({\n          projectRelativeFilePath: makeRelative(absoluteFilePath, projectRoot),\n          isSuccessful: true,\n          message: \"Youtube video saved successfully\",\n        });\n      });\n      video.on(\"error\", (e: Error) => {\n        resolve({ isSuccessful: false, message: e.message });\n        lockError(absoluteFilePath, e.message, undefined, \"youtubeToMp4\", [\n          youtubeUrl,\n          absoluteFolderPath,\n        ]);\n      });\n    });\n    return result;\n  } catch (e: Error | any | unknown) {\n    console.log(\"youtubetomp4errr\", e);\n    return { isSuccessful: false, message: e.message };\n  }\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 10,
+    "lastLine": 14,
+    "id": "yzwlfligcbssqzcibfoeswmw"
+  }
+]

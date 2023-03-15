@@ -1,0 +1,60 @@
+{
+  "createdAt": 1678505780692,
+  "updatedAt": 1678505780692,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505780692,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/insertPerson.ts",
+  "commentsInside": [],
+  "rawText": " (projectRoot: string, slug: string) => {\n  return path.join(projectRoot, \"knowledge\", \"persons\", slug, \"person.json\");\n}",
+  "name": "getPersonPath",
+  "slug": "get-person-path",
+  "parameters": [
+    {
+      "name": "projectRoot",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "slug",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "String",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/String"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 121,
+    "lines": 3,
+    "bytes": 121,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 40,
+    "linesPerFile": 3,
+    "numberOfFiles": 1
+  },
+  "id": "tksngjwvqmaiwclnlydmghei"
+}

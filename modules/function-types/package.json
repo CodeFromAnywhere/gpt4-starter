@@ -1,0 +1,92 @@
+{
+  "createdAt": 1668699426447,
+  "updatedAt": 1668699426447,
+  "deletedAt": 0,
+  "createdFirstAt": 1668699426447,
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "name": "function-types",
+  "operation": {
+    "hasGeneratedDependenciesIndexed": false,
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": []
+    },
+    "lastRebuildAt": 1678043000202,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 15,
+        "lines": 616,
+        "characters": 19161,
+        "bytes": 19161
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 131,
+        "characters": 3955,
+        "bytes": 3955
+      },
+      "textSize": {
+        "numberOfFiles": 3,
+        "lines": 365,
+        "characters": 8285,
+        "bytes": 8285
+      },
+      "size": {
+        "bytes": 31401,
+        "characters": 31401,
+        "lines": 1112,
+        "numberOfFiles": 20
+      }
+    },
+    "folderNameIndexed": "function-types",
+    "relativeOperationLocationPathIndexed": "operations/tools/purpose/codebase-introspection/functions",
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [
+      "Storing",
+      "Group",
+      "Device",
+      "DefaultModelType",
+      "Id",
+      "Markdown",
+      "PerformanceItem",
+      "SimplifiedSchema",
+      "GroupAuthorizationObject",
+      "Markdown",
+      "TsIndexModelType",
+      "TsComment",
+      "TypeInfo",
+      "SizeSummary",
+      "BundleConfig"
+    ],
+    "packageDependenciesIndexed": [
+      "Schema"
+    ]
+  },
+  "dependencies": {
+    "bundle-types": "0.0.1",
+    "code-types": "0.0.1",
+    "schema-types": "0.0.1",
+    "authorization-types": "0.0.1",
+    "ts-json-schema-generator": "*",
+    "model-types": "0.0.1",
+    "peer-types": "0.0.1",
+    "measure-performance": "0.0.1",
+    "comment-types": "0.0.1",
+    "types": "0.0.1",
+    "function-types": "0.0.1"
+  },
+  "slug": "function-types",
+  "id": "ozvpmyyzqlomnozlvceebulr"
+}

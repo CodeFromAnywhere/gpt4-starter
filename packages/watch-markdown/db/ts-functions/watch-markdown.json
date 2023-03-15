@@ -1,0 +1,36 @@
+{
+  "createdAt": 1678330873950,
+  "updatedAt": 1678330873950,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330873950,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "ProjectWatcher",
+  "operationRelativeTypescriptFilePath": "src/watchMarkdown.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  eventName,\n  absolutePath\n) => {\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"File doesn't exist (anymore)\" };\n  }\n\n  await makeMarkdownIndex(absolutePath);\n}",
+  "name": "watchMarkdown",
+  "slug": "watch-markdown",
+  "parameters": [],
+  "description": "TODO:\n\n# Refactor MarkdownIndex storage\n\n- put it in frontmatter of the markdown!\n- don't watch for .markdownIndex\n- remove all .markdownindex.json\n- watch contents of md file (frontmatter only) to see if index-version is \"old\"\n- set everything being old...\n\n\n==============\n\n\nEvery time a markdown file comes in (watcher), can we do some default functions and GPT for it.\n\nCreated `MarkdownIndex` at `[filename].MarkdownIndex.json`\n\n- frontmatter\n- add author, createdAt (non-GPT)\n- title, keywords, seo keywords, seo title\n- [filename].index.json:\n- statements\n- take-aways\n- social-media-posts\n- images: GPT to get visual descriptions for any markdown file, which in turn can be turned into images\n- summary\n- snippets: Interesting standalone snippet finding in bigger video/audio `audiofile-name].snippets.json`\n\n\nTODO: Offline GPT-less naming:\n\nMatch the audio recording .md against word combinations, model names, and folder names (and operation names, with that). name of the md can be based on those matches. fire out an exact strategy later. this way, the name can be auto-generated without a GPT, which is way more free/scalable/offline/decentralised, right now",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 1377,
+    "lines": 42,
+    "bytes": 1377,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 33,
+    "linesPerFile": 42,
+    "numberOfFiles": 1
+  },
+  "id": "jzpsmyispyviopcxadfzrlfc"
+}

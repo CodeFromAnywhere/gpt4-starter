@@ -1,0 +1,60 @@
+{
+  "createdAt": 1673794232561,
+  "updatedAt": 1673794232561,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794232561,
+  "id": "namedparameterstypeof-pushmultipleoperations",
+  "name": "NamedParameters<typeof pushMultipleOperations>",
+  "slug": "namedparameterstypeof-pushmultipleoperations",
+  "operationRelativeTypescriptFilePath": "src/pushMultipleOperations.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "operationNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "operationNames"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "operationNames",
+          "required": true,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof pushMultipleOperations>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

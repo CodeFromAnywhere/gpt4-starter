@@ -1,0 +1,49 @@
+{
+  "createdAt": 1674033625256,
+  "updatedAt": 1674033625256,
+  "deletedAt": 0,
+  "createdFirstAt": 1674033625256,
+  "id": "namedparameterstypeof-trimcodeblock",
+  "name": "NamedParameters<typeof trimCodeblock>",
+  "slug": "namedparameterstypeof-trimcodeblock",
+  "operationRelativeTypescriptFilePath": "src/findJsonInMarkdown.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "codeblock": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "codeblock"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "codeblock",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof trimCodeblock>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

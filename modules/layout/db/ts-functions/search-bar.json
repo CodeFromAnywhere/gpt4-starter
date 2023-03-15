@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678043867578,
+  "updatedAt": 1678043867578,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043867578,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/SearchBar.tsx",
+  "commentsInside": [],
+  "rawText": " (props: { isSmall?: boolean }) => {\n  const { isSmall } = props;\n  const [placeholder, setPlaceholder] = useState(placeholders[0]);\n  useState<string | null>(null);\n\n  const [searchQuery, setSearchQuery] = useStore(\"menu.search\");\n  const router = useRouter();\n\n  const go = () => {\n    if (searchQuery.length === 0) return;\n    router.push(`/search/${searchQuery}`);\n  };\n  return (\n    <Div\n      className={`rounded-full border border-zinc-700 dark:border-zinc-300 p-2 px-4 ${\n        isSmall ? \"text-sm my-2\" : \"text-3xl\"\n      } hover:bg-zinc-200 dark:hover:bg-zinc-800 bg-zinc-100 bg-opacity-75 dark:bg-zinc-600 dark flex flex-row`}\n    >\n      <Form\n        onSubmit={(e) => {\n          e.preventDefault();\n          go();\n        }}\n      >\n        <Input\n          placeholder={placeholder}\n          className=\"flex px-3 flex-1 bg-transparent focus:outline-none\"\n          value={searchQuery}\n          onClick={() => setPlaceholder(pickRandomArrayItem(placeholders))}\n          onChange={(e) => setSearchQuery(e.target.value)}\n        />\n      </Form>\n\n      <Div onClick={go} className=\"cursor-pointer\">\n        🔎\n      </Div>\n    </Div>\n  );\n}",
+  "name": "SearchBar",
+  "slug": "search-bar",
+  "parameters": [
+    {
+      "name": "props",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "isSmall": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "isSmall",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "Add small search bar to default header.\n\nEnsure last search is visible in header search\n\nRemove brave button from that small searchbar (only on big one is fine)",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 5,
+  "size": {
+    "characters": 1318,
+    "lines": 43,
+    "bytes": 1320,
+    "bytesPerCharacter": 1.0015174506828528,
+    "charactersPerLine": 31,
+    "linesPerFile": 43,
+    "numberOfFiles": 1
+  },
+  "id": "huznahgleukggjbtuweutdto"
+}

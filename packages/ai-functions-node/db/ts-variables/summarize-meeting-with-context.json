@@ -1,0 +1,103 @@
+{
+  "createdAt": 1678330260697,
+  "updatedAt": 1678330260697,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330260697,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "summarizeMeetingWithContext",
+  "slug": "summarize-meeting-with-context",
+  "operationRelativeTypescriptFilePath": "src/summarizeMeetingWithContext.ts",
+  "type": {
+    "rawType": "{ (functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext, email?: string | undefined, meetingYoutubeUrl?: string | undefined, meetingAudio?: import(\"/Users/clarity/os/operations/tools/asset/asset-type/build/BackendAsset\").BackendAsset | undefined): unknown; config: { isPublic: boolean; authorizations: { public: string; }; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPublic": {
+              "type": "boolean"
+            },
+            "authorizations": {
+              "type": "object",
+              "properties": {
+                "public": {
+                  "type": "string",
+                  "allOf": [
+                    {
+                      "transform": [
+                        "trim"
+                      ]
+                    },
+                    {
+                      "minLength": 1
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "public"
+              ]
+            }
+          },
+          "required": [
+            "isPublic",
+            "authorizations"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "authorizations",
+                "required": true,
+                "schema": {
+                  "properties": [
+                    {
+                      "name": "public",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n\n  /**\n   * TITLE: Email (required)\n   */\n  email?: string,\n  /**\n   * TITLE: Youtube URL of your meeting (optional)\n   */\n  meetingYoutubeUrl?: string,\n  /**\n   * TITLE: Audiofile of your meeting (optional)\n   */\n  meetingAudio?: BackendAsset\n) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No projectroot\" };\n  }\n  const hasMeetingYoutubeUrl = meetingYoutubeUrl !== \"\" && meetingYoutubeUrl;\n  const hasMeetingAudio = !!meetingAudio;\n  if (hasMeetingAudio && hasMeetingYoutubeUrl) {\n    return {\n      isSuccessful: false,\n      message: \"Please provide either a yoube URL or some audio, not both\",\n    };\n  }\n\n  if (!email || !isEmail(email)) {\n    return {\n      isSuccessful: false,\n      message: \"Please fill in a valid email address\",\n    };\n  }\n\n  email = email.toLowerCase();\n  const userBaseFolderPath = path.join(\n    projectRoot,\n    \"knowledge\",\n    \"persons\",\n    email\n  );\n  // make a directory for the user\n  if (!fs.existsSync(userBaseFolderPath)) {\n    await fs.mkdir(userBaseFolderPath, { recursive: true });\n  }\n\n  if (meetingAudio) {\n    // process the asset if it's there\n    meetingAudio = await processAsset(meetingAudio, {\n      customAbsoluteFolderPath: userBaseFolderPath,\n    });\n  }\n\n  const signupResult = await signupBare({\n    emailOrPhone: email,\n    customEmail: (otpCode, email) =>\n      `Hi there! \n      \nI'm happy to welcome you to the private alpha of  Clarity AI. \n      \nPlease click here to confirm your registration and continue: \n\nhttps://clarity.codefromanywhere.com/signup-confirm?otp=${otpCode}&emailOrPhone=${email}\n      \nYou can also fill in the code manually. The code is \"${otpCode}\". The code is valid for 15 minutes.\n\nAs a small present I've given you 20 credits so you can get started doing some productive work with your voice.\n\nKind regards, \n\nPunkesh\nMarketing Manager at Clarity AI`,\n    credit: 20,\n  });\n\n  if (!signupResult.isSuccessful) {\n    // might already have an account\n    return { isSuccessful: false, message: signupResult.message };\n  }\n\n  if (!meetingAudio && !meetingYoutubeUrl) {\n    return {\n      isSuccessful: true,\n      message:\n        \"You have applied for the private beta. To confirm your application, please verify your email.\",\n    };\n  }\n\n  // if you filled in either an audio or a youtube URL, send email\n\n  await sendMail({\n    to: email,\n    subject: \"Your meeting is being summarised\",\n    text: `Please wait while we are summarising your meeting, this might take a while. Please make sure to verify your account in the meantime (see other email).`,\n  });\n\n  if (meetingYoutubeUrl) {\n    youtubeToMp4(meetingYoutubeUrl, {\n      destinationFolderPath: userBaseFolderPath,\n      isToMp3: true,\n    });\n\n    return {\n      isSuccessful: true,\n      message:\n        \"Your video is being processed. The results will be available in your account later (check your mail)\",\n    };\n  }\n\n  return {\n    isSuccessful: true,\n    message:\n      \"Your audio has been uploaded and being processed. The result will later be available in your account. Please check your mail to unlock it.\",\n  };\n}",
+  "description": "Endpoint that onboards users into Clarity AI",
+  "id": "jfmzeokfdpfzzokbhltgjlzs"
+}

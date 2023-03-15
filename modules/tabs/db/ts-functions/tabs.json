@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678043757035,
+  "updatedAt": 1678043757035,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043757035,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/Tabs.tsx",
+  "commentsInside": [],
+  "rawText": " (props: {\n  title?: string;\n  /**\n   * if you have multiple tabs and/or show it at multiple places, it'd be wise to name your tab so the localStorage can be stored with a different key\n   */\n  tabKey?: string;\n  tabs: TabType[];\n  isSmall?: boolean;\n}) => {\n  const { title, tabs, isSmall, tabKey } = props;\n  const realKey = tabKey || \"default\";\n  const [currentTab, setCurrentTab] = useStore(\"tabs.currentTab\");\n  const thisCurrentTab = currentTab[realKey];\n\n  const buttons = tabs.map((tab, index) => {\n    const { emoji, title } = tab;\n    const isActive = (thisCurrentTab || 0) === index;\n    const labeledButton: LabeledButtonType = {\n      size: isSmall ? \"small\" : undefined,\n      emoji,\n      title,\n      onClick: () => {\n        setCurrentTab({ ...currentTab, [realKey]: index });\n      },\n      isActive,\n    };\n    return labeledButton;\n  });\n  // take the first tab by default\n  const activeTab =\n    tabs.find((_, index) => thisCurrentTab === index) || tabs[0];\n\n  return (\n    <Div\n      className={`w-full flex flex-col flex-1 ${\n        isSmall ? \"rounded-sm\" : \"rounded-xl\"\n      }`}\n    >\n      <Div className=\"flex flex-row justify-between items-center\">\n        {title ? (\n          <P className={isSmall ? \"text-lg\" : \"text-3xl\"}>{title}</P>\n        ) : null}\n        <Div className={`flex flex-row ${isSmall ? \"gap-1\" : \"gap-3\"}`}>\n          {buttons.map(LabeledButton)}\n        </Div>\n      </Div>\n\n      {activeTab?.renderTab()}\n    </Div>\n  );\n}",
+  "name": "Tabs",
+  "slug": "tabs",
+  "parameters": [],
+  "description": "Container for tabs",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 5,
+  "size": {
+    "characters": 1492,
+    "lines": 51,
+    "bytes": 1492,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 29,
+    "linesPerFile": 51,
+    "numberOfFiles": 1
+  },
+  "id": "tyzcfalkzndekjdfybwynpvd"
+}

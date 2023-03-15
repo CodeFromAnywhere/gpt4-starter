@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677581128216,
+  "updatedAt": 1677581128216,
+  "deletedAt": 0,
+  "createdFirstAt": 1677581128216,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "findMonorepoModules",
+  "slug": "find-monorepo-modules",
+  "operationRelativeTypescriptFilePath": "src/findAllDependencyOperations.ts",
+  "type": {
+    "rawType": "(allImports: import(\"/Users/clarity/os/operations/tools/types/code-types/build/TsImport\").TsImport[], operationName: string) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  allImports: TsImport[],\n  operationName: string\n) => {\n  const imports = allImports.filter((x) => x.operationName === operationName);\n\n  const monorepoModules = imports\n    .map((x) =>\n      x.isModuleFromMonorepo && x.isModuleResolved ? x.module : null\n    )\n    .filter(notEmpty)\n    .filter(onlyUnique);\n\n  return monorepoModules;\n}",
+  "description": "finds all dependencies of an operation name",
+  "id": "hxcbeqzsnqujczewcmuqomns"
+}

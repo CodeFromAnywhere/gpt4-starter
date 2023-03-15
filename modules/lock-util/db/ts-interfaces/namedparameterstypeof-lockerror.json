@@ -1,0 +1,102 @@
+{
+  "createdAt": 1678331281306,
+  "updatedAt": 1678331281306,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331281306,
+  "id": "namedparameterstypeof-lockerror",
+  "name": "NamedParameters<typeof lockError>",
+  "slug": "namedparameterstypeof-lockerror",
+  "operationRelativeTypescriptFilePath": "src/lockError.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "aboluteLockableFilePath": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "cleanupAt": {
+          "type": "number",
+          "description": "Defaults to never"
+        },
+        "functionName": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "aboluteLockableFilePath",
+        "errorMessage"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "aboluteLockableFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "errorMessage",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "cleanupAt",
+          "required": false,
+          "schema": {
+            "fullComment": "Defaults to never",
+            "type": "number"
+          }
+        },
+        {
+          "name": "functionName",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "parameters",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof lockError>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

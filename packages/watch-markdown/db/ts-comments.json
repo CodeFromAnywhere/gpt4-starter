@@ -1,0 +1,36 @@
+[
+  {
+    "createdAt": 1678330874282,
+    "updatedAt": 1678330874282,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330874282,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/watchMarkdown.ts",
+    "comment": "TODO:\n\n# Refactor MarkdownIndex storage\n\n- put it in frontmatter of the markdown!\n- don't watch for .markdownIndex\n- remove all .markdownindex.json\n- watch contents of md file (frontmatter only) to see if index-version is \"old\"\n- set everything being old...\n\n\n==============\n\n\nEvery time a markdown file comes in (watcher), can we do some default functions and GPT for it.\n\nCreated `MarkdownIndex` at `[filename].MarkdownIndex.json`\n\n- frontmatter\n- add author, createdAt (non-GPT)\n- title, keywords, seo keywords, seo title\n- [filename].index.json:\n- statements\n- take-aways\n- social-media-posts\n- images: GPT to get visual descriptions for any markdown file, which in turn can be turned into images\n- summary\n- snippets: Interesting standalone snippet finding in bigger video/audio `audiofile-name].snippets.json`\n\n\nTODO: Offline GPT-less naming:\n\nMatch the audio recording .md against word combinations, model names, and folder names (and operation names, with that). name of the md can be based on those matches. fire out an exact strategy later. this way, the name can be auto-generated without a GPT, which is way more free/scalable/offline/decentralised, right now",
+    "rawStatement": "export const watchMarkdown: ProjectWatcher = async (\n  eventName,\n  absolutePath\n) => {\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"File doesn't exist (anymore)\" };\n  }\n\n  await makeMarkdownIndex(absolutePath);\n};",
+    "parameters": {},
+    "types": [
+      "todo"
+    ],
+    "firstLine": 5,
+    "lastLine": 39,
+    "id": "gvysxurjragnlibuakcnygij"
+  },
+  {
+    "createdAt": 1678330874282,
+    "updatedAt": 1678330874282,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330874282,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/watchMarkdown.ts",
+    "comment": "filter to only get all add/change for any .md file that doesn't have a [file].MarkdownIndex.json",
+    "rawStatement": "watchMarkdown.filter = (eventName, absolutePath) => {\n  // for now disable it for a while\n  if (eventName !== \"add\") {\n    return false;\n  }\n\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return false;\n  }\n  if (!absolutePath.startsWith(projectRoot)) {\n    return false;\n  }\n  const parsedPath = path.parse(absolutePath);\n  const extension = parsedPath.ext;\n\n  // no correct extension\n  if (extension !== \".md\") {\n    return false;\n  }\n\n  const potentialIndexPath = path.join(\n    parsedPath.dir,\n    `${parsedPath.name}.MarkdownIndex.json`\n  );\n\n  if (!fs.existsSync(potentialIndexPath)) {\n    // no index yet\n    return true;\n  }\n\n  // a markdown not indexed yet!\n  return true;\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 53,
+    "lastLine": 55,
+    "id": "ayirppljrwhkblbviyhriupg"
+  }
+]

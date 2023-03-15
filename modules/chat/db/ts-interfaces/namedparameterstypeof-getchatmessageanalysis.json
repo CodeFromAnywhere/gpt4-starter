@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678611470715,
+  "updatedAt": 1678611470715,
+  "deletedAt": 0,
+  "createdFirstAt": 1678611470715,
+  "id": "namedparameterstypeof-getchatmessageanalysis",
+  "name": "NamedParameters<typeof getChatMessageAnalysis>",
+  "slug": "namedparameterstypeof-getchatmessageanalysis",
+  "operationRelativeTypescriptFilePath": "src/getChatMessageAnalysis.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "message",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getChatMessageAnalysis>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

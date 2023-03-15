@@ -1,0 +1,92 @@
+{
+  "createdAt": 1677677268414,
+  "updatedAt": 1677677268414,
+  "deletedAt": 0,
+  "createdFirstAt": 1677677268414,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/api.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  fnName: string,\n  config: ApiConfig,\n  ...parameters: any\n): Promise<RealApiReturnType<any>> => {\n  // TODO: document this convention\n  const storageAuthToken: string | undefined = await getItem(\n    AUTH_TOKEN_STORAGE_KEY\n  );\n\n  const authToken = config.authToken || storageAuthToken;\n  const realApiUrl = config.apiUrl || apiUrl;\n\n  if (realApiUrl === undefined) {\n    return {\n      isSuccessful: false,\n      isNotConnected: true,\n      message: \"The API cannot be found\",\n    };\n  }\n\n  const fullUrl = `${realApiUrl}/function/${fnName}`;\n\n  try {\n    const abortController = new AbortController();\n    const id = setTimeout(\n      () => abortController.abort(),\n      config.timeout || 10000\n    );\n\n    const response = await fetch(fullUrl, {\n      method: \"POST\",\n      signal: config.timeout ? abortController.signal : undefined,\n      headers: {\n        Accept: \"application/json\",\n        \"Content-Type\": \"application/json\",\n      },\n      body: JSON.stringify({ authToken, parameters }),\n    })\n      .then((response) => response.json())\n      .then((response) => {\n        setItem(API_NO_RESPONSE_TIME_KEY, \"0\");\n\n        return response;\n      })\n      .catch((error) => {\n        console.log({\n          explanation:\n            \"Your request could not be executed, you may be disconnected or the server may not be available.\",\n          error,\n          errorStatus: error.status,\n          errorString: String(error),\n        });\n\n        setItem(API_NO_RESPONSE_TIME_KEY, String(Date.now()));\n        return {\n          isSuccessful: false,\n          isNotConnected: true,\n          message:\n            \"Could not connect to any API. Please see your API configuration.\",\n        };\n      });\n\n    clearTimeout(id);\n    return response;\n  } catch (e) {\n    setItem(API_NO_RESPONSE_TIME_KEY, String(Date.now()));\n\n    return {\n      isSuccessful: false,\n      isNotConnected: true,\n      message:\n        \"The API didn't resolve, and the fetch crashed because of it: \" +\n        String(e),\n    };\n  }\n}",
+  "name": "untypedApiFunction",
+  "slug": "untyped-api-function",
+  "parameters": [
+    {
+      "name": "fnName",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "config",
+      "schema": {
+        "$ref": "#/definitions/ApiConfig"
+      },
+      "simplifiedSchema": {
+        "fullComment": "",
+        "properties": [
+          {
+            "name": "apiUrl",
+            "required": false,
+            "schema": {
+              "fullComment": "optionally provide an api URL (uses sdk-env-public key if not provded)",
+              "type": "string"
+            }
+          },
+          {
+            "name": "authToken",
+            "required": false,
+            "schema": {
+              "fullComment": "optionally provide an authtoken (uses storage key if not provided)",
+              "type": "string"
+            }
+          },
+          {
+            "name": "timeout",
+            "required": false,
+            "schema": {
+              "fullComment": "optionally provide a max ms to execute the api fetch",
+              "type": "number"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    },
+    {
+      "name": "parameters",
+      "schema": {},
+      "simplifiedSchema": {
+        "properties": [],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "Used for calling the actual api for a function with some config\n\nNB: this is not a typed function as we are just overwriting it so we don't need any inference on this",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/user-interfaces/api/api-types/build/api-types\").ApiReturnType<any>>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 6,
+  "size": {
+    "characters": 2196,
+    "lines": 79,
+    "bytes": 2196,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 28,
+    "linesPerFile": 79,
+    "numberOfFiles": 1
+  },
+  "id": "zwuagabwimvtinpvaebhbfxi"
+}

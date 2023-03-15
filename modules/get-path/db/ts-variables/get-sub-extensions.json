@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678042091902,
+  "updatedAt": 1678042091902,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042091902,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getSubExtensions",
+  "slug": "get-sub-extensions",
+  "operationRelativeTypescriptFilePath": "src/getSubExtensions.ts",
+  "type": {
+    "rawType": "(absolutePath: string, config?: { allowAllSubExtensions?: boolean | undefined; } | undefined) => string[]",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  absolutePath: string,\n  config?: { allowAllSubExtensions?: boolean }\n): string[] => {\n  const allowAllSubExtensions = config?.allowAllSubExtensions;\n  const fileName = path.parse(absolutePath).name; // NB: extension is already removed here.\n\n  if (allowAllSubExtensions) {\n    // easier this way...\n    const allSubExtensionsArray = fileName?.split(\".\") || [];\n    const allSubExtensions = allSubExtensionsArray.slice(1);\n    return allSubExtensions;\n  }\n\n  const pieces = fileName.split(\".\");\n\n  let isCorrect = true;\n  const subExtensions = pieces\n    .reverse()\n    .reduce((previous, current) => {\n      if (!possibleSubExtensions.includes(current)) {\n        isCorrect = false;\n      }\n\n      if (isCorrect) {\n        previous.push(current);\n      }\n\n      return previous;\n    }, [] as string[])\n    .reverse();\n\n  return subExtensions;\n}",
+  "description": "",
+  "id": "fttlhzzcbshphgppvqtrstgz"
+}

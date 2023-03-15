@@ -1,0 +1,64 @@
+{
+  "createdAt": 1678330984747,
+  "updatedAt": 1678330984747,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330984747,
+  "id": "namedparameterstypeof-bananastablediffusion",
+  "name": "NamedParameters<typeof bananaStableDiffusion>",
+  "slug": "namedparameterstypeof-bananastablediffusion",
+  "operationRelativeTypescriptFilePath": "src/bananaStableDiffusion.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "text",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof bananaStableDiffusion>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678372650144,
+  "updatedAt": 1678372650144,
+  "deletedAt": 0,
+  "createdFirstAt": 1678372650144,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/sendDailyAlarmSms.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const now = time().myTimeDate;\n  if (now.getHours() !== 8) {\n    // only 8 pm\n    return;\n  }\n\n  const persona = await getPersona();\n  if (!persona) return;\n\n  sendTwilioMessage(persona.phone, \"Wake up!\");\n}",
+  "name": "sendDailyAlarmSms",
+  "slug": "send-daily-alarm-sms",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 224,
+    "lines": 12,
+    "bytes": 224,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 19,
+    "linesPerFile": 12,
+    "numberOfFiles": 1
+  },
+  "id": "rgowmzhccvwtmavvqgtoplxx"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678332095619,
+  "updatedAt": 1678332095619,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332095619,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getCurrentDate",
+  "slug": "get-current-date",
+  "operationRelativeTypescriptFilePath": "src/getCurrentDate.ts",
+  "type": {
+    "rawType": "() => string",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  const currentDate = `${new Date().getFullYear()}-${\n    new Date().getMonth() + 1\n  }-${new Date().getDate()}`;\n  return currentDate;\n}",
+  "description": "",
+  "id": "ysmxbccabpfcwtxucnrpuaac"
+}

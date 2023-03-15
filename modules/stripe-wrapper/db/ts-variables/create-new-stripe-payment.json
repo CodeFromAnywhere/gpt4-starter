@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331138189,
+  "updatedAt": 1678331138189,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331138189,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "createNewStripePayment",
+  "slug": "create-new-stripe-payment",
+  "operationRelativeTypescriptFilePath": "src/newStripePayment.ts",
+  "type": {
+    "rawType": "(personId: string, config?: { defaultQuantity?: number | undefined; priceCent?: number | undefined; isQuantityEditable?: boolean | undefined; productName?: string | undefined; } | undefined) => Promise<string | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  personId: string,\n\n  config?: {\n    defaultQuantity?: number;\n    /**\n     * defaults to 50 cent\n     */\n    priceCent?: number;\n\n    isQuantityEditable?: boolean;\n\n    productName?: string;\n  }\n): Promise<string | undefined> => {\n  const person = (await db.get(\"Person\")).find((x) => x.id === personId);\n\n  const persona = await getPrimaryPersona();\n  if (!persona) {\n    return;\n  }\n\n  if (!persona.stripeSecret || !persona.stripePublishableKey) {\n    return;\n  }\n  const stripe = new Stripe(persona.stripeSecret, { apiVersion: \"2022-11-15\" });\n\n  const priceResult = await stripe.prices.create({\n    currency: \"eur\",\n    unit_amount: config?.priceCent || 50,\n    product_data: { name: config?.productName || \"Credit\" },\n  });\n\n  /** NB: this is how you can create a session, but the paymentLink api also creates a session, and immediately gives you a short link, which is better. Therefore, you don't need to do this manually.\n  \n\n\n\n  const sessionResult = await stripe.checkout.sessions.create({\n    mode: \"payment\",\n    success_url: \"https://findclarity.ai\",\n    cancel_url: \"https://findclarity.ai\",\n    customer_email: person?.email,\n\n    line_items: [\n      {\n        price: priceResult.id,\n        // price_data: {\n        //   currency: \"eur\",\n        //   product_data: { name: \"Clarity Credit\" },\n        //   unit_amount: priceCent || 50,\n        // },\n        quantity: 1,\n      },\n    ],\n    metadata: { personId },\n  });\n  */\n\n  const paymentLink = await stripe.paymentLinks.create({\n    line_items: [\n      {\n        quantity: config?.defaultQuantity || 1,\n        price: priceResult.id,\n        adjustable_quantity: {\n          enabled: config?.isQuantityEditable || false,\n          minimum: 1,\n          maximum: 99,\n        },\n      },\n    ],\n    metadata: { personId },\n  });\n  //console.log({ priceResult, paymentLink });\n\n  return paymentLink.url || undefined;\n}",
+  "description": "One-time payment, generated for a person, if they want to make a payment or if they are out of credit.\n\nThis function promises a URL, if it all worked.",
+  "id": "zqpamgsfcoybuxtymamdrvip"
+}

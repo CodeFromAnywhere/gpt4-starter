@@ -1,0 +1,46 @@
+{
+  "createdAt": 1677580468225,
+  "updatedAt": 1677580468225,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580468225,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/waitForLockfile.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  lockfilePath: string\n): Promise<boolean> => {\n  if (fs.existsSync(lockfilePath)) {\n    const unixDate = await fs.readFile(lockfilePath, \"utf8\");\n    const msAgo = Date.now() - Number(unixDate);\n    if (msAgo < maxQueryTimeSeconds * 1000) {\n      // wait a 100ms!\n      // console.log(\"Waiting for lockfile...\");\n\n      await new Promise<undefined>((resolve) =>\n        setTimeout(() => resolve(undefined), 100)\n      );\n      return waitForLockfile(lockfilePath);\n    }\n\n    // if we get here, the file exists for more than 10 seconds\n\n    console.log(\n      \"Warning: lockfile exists more than ten seconds. I'm assuming the query failed, but this is not good! Should never have such slow queries.\"\n    );\n  }\n\n  await writeStringToFile(lockfilePath, String(Date.now()));\n\n  return true;\n}",
+  "name": "waitForLockfile",
+  "slug": "wait-for-lockfile",
+  "parameters": [
+    {
+      "name": "lockfilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<boolean>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 800,
+    "lines": 27,
+    "bytes": 800,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 30,
+    "linesPerFile": 27,
+    "numberOfFiles": 1
+  },
+  "id": "jzanngmxnopvvahfzcmwqsgy"
+}

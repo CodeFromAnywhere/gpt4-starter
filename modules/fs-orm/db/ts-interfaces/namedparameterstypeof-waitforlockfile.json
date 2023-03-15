@@ -1,0 +1,49 @@
+{
+  "createdAt": 1677580466973,
+  "updatedAt": 1677580466973,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580466973,
+  "id": "namedparameterstypeof-waitforlockfile",
+  "name": "NamedParameters<typeof waitForLockfile>",
+  "slug": "namedparameterstypeof-waitforlockfile",
+  "operationRelativeTypescriptFilePath": "src/waitForLockfile.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "lockfilePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "lockfilePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "lockfilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof waitForLockfile>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

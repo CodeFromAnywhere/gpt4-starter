@@ -1,0 +1,57 @@
+{
+  "createdAt": 1673794231148,
+  "updatedAt": 1673794231148,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794231148,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/pullMultipleOperations.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  operationNames: string[]\n): Promise<{\n  isSuccessful: boolean;\n  message: string;\n  results?: {\n    isSuccessful: boolean;\n    message: string;\n    operationName?: string | undefined;\n  }[];\n}> => {\n  const personalAccessToken = await getGithubPersonalAccessToken();\n  if (!personalAccessToken) {\n    return {\n      isSuccessful: false,\n      message:\n        \"You don't have any persona setup with a GitHub personal access token, please update your Personas.\",\n    };\n  }\n\n  console.log(\"pulling multiple\");\n  const results = await Promise.all(\n    operationNames.map(async (operationName) =>\n      operationGithubPull(operationName, personalAccessToken)\n    )\n  );\n\n  console.log(\"returning pull multiple: \" + JSON.stringify(results));\n\n  return { isSuccessful: true, message: \"Yeah!\", results };\n}",
+  "name": "pullMultipleOperations",
+  "slug": "pull-multiple-operations",
+  "parameters": [
+    {
+      "name": "operationNames",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "simplifiedSchema": {
+        "items": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": null
+          }
+        ],
+        "type": "array"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<{ isSuccessful: boolean; message: string; results?: { isSuccessful: boolean; message: string; operationName?: string | undefined; }[] | undefined; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 811,
+    "lines": 31,
+    "bytes": 811,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 31,
+    "numberOfFiles": 1
+  },
+  "id": "ndtxaijhndfqgzugdfjgzcos"
+}

@@ -1,0 +1,101 @@
+{
+  "createdAt": 1678369207564,
+  "updatedAt": 1678369207564,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369207564,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/imageToText.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  absoluteImagePath: string,\n  config?: {\n    text?: string;\n    similarity?: boolean;\n    maxLength?: number;\n    minLength?: number;\n  }\n): Promise<{ isSuccessful: boolean; message: string; result?: object }> => {\n  /**\n  use getassetdirectly\n   */\n  const imageUrl = \"\"; // TODO: should be available through our own server, preferably, based on absoluteImagePath.\n\n  const result = await bananaCarrot({ imageUrl, ...(config || {}) });\n\n  return result;\n}",
+  "name": "imageToText",
+  "slug": "image-to-text",
+  "parameters": [
+    {
+      "name": "absoluteImagePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "config",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "similarity": {
+            "type": "boolean"
+          },
+          "maxLength": {
+            "type": "number"
+          },
+          "minLength": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "similarity",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "maxLength",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "minLength",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": false
+    }
+  ],
+  "description": "Image caption generation using banana.dev API with the carrot model\n\nTakes in a path to an image.\nReturns a caption for that image.",
+  "returnType": {
+    "rawType": "Promise<{ isSuccessful: boolean; message: string; result?: object | undefined; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 597,
+    "lines": 21,
+    "bytes": 597,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 28,
+    "linesPerFile": 21,
+    "numberOfFiles": 1
+  },
+  "id": "qccxiqkrvlnyauddwoopvjvp"
+}

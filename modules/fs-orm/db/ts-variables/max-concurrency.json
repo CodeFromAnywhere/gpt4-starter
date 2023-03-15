@@ -1,0 +1,24 @@
+{
+  "createdAt": 1677580448785,
+  "updatedAt": 1677580448785,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580448785,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "maxConcurrency",
+  "slug": "max-concurrency",
+  "operationRelativeTypescriptFilePath": "src/createDb.ts",
+  "type": {
+    "rawType": "{}",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "256",
+  "description": "Crashes for upsert at 1024 on m2. It would be good to find a way to ensure we never crash here, or at least report where the out of memory bug came from.",
+  "id": "mlbjnxxvggeoxvhrfjvydrrg"
+}

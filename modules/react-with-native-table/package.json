@@ -1,0 +1,97 @@
+{
+  "createdAt": 1668328708165,
+  "updatedAt": 1668328708165,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328708165,
+  "id": "SdhvsYtyLKPmzDWq",
+  "dependencies": {
+    "react": "17.0.2",
+    "react-with-native": "1.4.9",
+    "convert-case": "0.0.1",
+    "js-util": "0.0.1",
+    "schema-util": "0.0.1",
+    "code-types": "0.0.1",
+    "asset-view": "0.0.0",
+    "model-types": "0.0.1",
+    "asset-type": "0.0.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.6",
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "npx tsc-watch --onSuccess 'yarn dev:tw'",
+    "dev:tw": "tailwindcss -o css.css",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "react-with-native-table",
+  "language": "english",
+  "slug": "react-with-native-table",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/king/King/operations/tools/user-interfaces/gui/react-with-native/react-with-native-table/src/Table.tsx. Error: TypeError: Cannot read properties of undefined (reading 'kind')"
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "ui-cjs",
+    "coreDependenciesIndexed": [
+      "useEffect",
+      "useMemo",
+      "useRef",
+      "useState"
+    ],
+    "folderNameIndexed": "react-with-native-table",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1672638717762,
+    "operationDependenciesIndexed": [
+      "Div",
+      "TsInterface",
+      "humanCase",
+      "makeArray",
+      "notEmpty",
+      "getReferenceParameterInfo",
+      "ModelItemAssetView",
+      "AugmentedAnyModelType",
+      "BackendAsset"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/gui/react-with-native",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 1,
+        "lines": 356,
+        "characters": 11531,
+        "bytes": 11531
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 139,
+        "characters": 3442,
+        "bytes": 3442
+      },
+      "textSize": {
+        "numberOfFiles": 1,
+        "lines": 74,
+        "characters": 1284,
+        "bytes": 1284
+      },
+      "size": {
+        "bytes": 16257,
+        "characters": 16257,
+        "lines": 569,
+        "numberOfFiles": 4
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

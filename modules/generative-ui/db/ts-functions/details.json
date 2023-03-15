@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678041370332,
+  "updatedAt": 1678041370332,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041370332,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/Details.tsx",
+  "commentsInside": [],
+  "rawText": " (props: {\n  summary: string | React.ReactNode;\n  children: React.ReactNode;\n  isClosed?: boolean;\n}) => {\n  return (\n    <details\n      open={!props.isClosed}\n      className=\"group border border-gray-600 rounded-lg\"\n    >\n      <summary className=\"bg-gray-200 dark:bg-gray-700 p-2 rounded-lg group-open:rounded-b-none group-open:border group-open:border-b-gray-600 select-none\">\n        {props.summary}\n      </summary>\n      {props.children}\n    </details>\n  );\n}",
+  "name": "Details",
+  "slug": "details",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 466,
+    "lines": 17,
+    "bytes": 466,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 27,
+    "linesPerFile": 17,
+    "numberOfFiles": 1
+  },
+  "id": "hfzpcseswpmcizcdaodfonuq"
+}

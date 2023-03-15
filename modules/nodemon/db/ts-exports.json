@@ -1,0 +1,26 @@
+[
+  {
+    "createdAt": 1669056153430,
+    "updatedAt": 1669056153430,
+    "deletedAt": 0,
+    "createdFirstAt": 1669056153430,
+    "name": "nodemon",
+    "slug": "nodemon",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "ifeftlztjhsbxawqasvuftkf"
+  },
+  {
+    "createdAt": 1669056153430,
+    "updatedAt": 1669056153430,
+    "deletedAt": 0,
+    "createdFirstAt": 1669056153430,
+    "name": "nodemon",
+    "slug": "nodemon",
+    "operationRelativeTypescriptFilePath": "src/nodemon.ts",
+    "comments": [],
+    "type": "value",
+    "id": "bxdojxzeezoikngiemmzfuom"
+  }
+]

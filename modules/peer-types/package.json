@@ -1,0 +1,115 @@
+{
+  "createdAt": 1668328718447,
+  "updatedAt": 1668328718447,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328718447,
+  "id": "hvMDXibXiSQYwWSD",
+  "dependencies": {
+    "model-types": "0.0.1",
+    "code-types": "0.0.1",
+    "geo-types": "0.0.1",
+    "asset-type": "0.0.1",
+    "social-media-types": "0.0.1",
+    "ua-parser-js": "*",
+    "server": "*",
+    "auth-types": "0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "peer-types",
+  "language": "english",
+  "slug": "peer-types",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [],
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "peer-types",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1678599226106,
+    "operationDependenciesIndexed": [
+      "DefaultModelType",
+      "Id",
+      "Position",
+      "DefaultModelType",
+      "BackendAsset",
+      "Location",
+      "Id",
+      "Language",
+      "Slug",
+      "SlugModelType",
+      "Interest",
+      "MediaCredential",
+      "KeyValueMarkdownModelType",
+      "Slug",
+      "DefaultModelType",
+      "Id",
+      "KeyValueMarkdownModelType",
+      "Slug",
+      "DefaultModelType",
+      "Id",
+      "Slug",
+      "DefaultModelType",
+      "Slug",
+      "Slug",
+      "SlugModelType",
+      "DefaultModelType",
+      "Slug",
+      "SlugModelType",
+      "Authorization",
+      "AuthorizationModel",
+      "Credit",
+      "DefaultModelType",
+      "Id",
+      "Slug",
+      "BackendAsset"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/purpose/p2p",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 18,
+        "lines": 1025,
+        "characters": 29165,
+        "bytes": 29165
+      },
+      "dataSize": {
+        "numberOfFiles": 3,
+        "lines": 335,
+        "characters": 8907,
+        "bytes": 8907
+      },
+      "textSize": {
+        "numberOfFiles": 43,
+        "lines": 1930,
+        "characters": 71567,
+        "bytes": 71567
+      },
+      "size": {
+        "bytes": 109639,
+        "characters": 109639,
+        "lines": 3290,
+        "numberOfFiles": 64
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

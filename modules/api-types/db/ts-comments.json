@@ -1,0 +1,50 @@
+[
+  {
+    "createdAt": 1678331909918,
+    "updatedAt": 1678331909918,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331909918,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/util.ts",
+    "comment": "Removes the last parameter of a tuple type\n\nSee https://stackoverflow.com/questions/72299206/typescript-how-to-remove-the-last-parameter-of-a-function-type",
+    "rawStatement": "export type Pop<T extends any[]> = T extends [...infer U, any] ? U : never;",
+    "parameters": {},
+    "types": [],
+    "firstLine": 6,
+    "lastLine": 10,
+    "id": "yioliwpimqhjuaxjbqfgqwvn"
+  },
+  {
+    "createdAt": 1678331909919,
+    "updatedAt": 1678331909919,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331909919,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/util.ts",
+    "comment": "Removes the first parameter of a tuple type\n\nMade based on pop",
+    "rawStatement": "export type Shift<T extends any[]> = T extends [any, ...infer U] ? U : never;",
+    "parameters": {},
+    "types": [],
+    "firstLine": 12,
+    "lastLine": 16,
+    "id": "gzqaffpprrhrqrpwxavvpdru"
+  },
+  {
+    "createdAt": 1678331909919,
+    "updatedAt": 1678331909919,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331909919,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/util.ts",
+    "comment": "Removes promise from a type\n\nExamples:\n\n```ts\ntype X = WithoutPromise<Promise<string>> //X is string\ntype Y = WithoutPromise<string> // Y is string\n```",
+    "rawStatement": "export type WithoutPromise<T> = T extends Promise<infer U> ? U : T;",
+    "parameters": {},
+    "types": [],
+    "firstLine": 19,
+    "lastLine": 28,
+    "id": "pgahysxqgdvhiqknrxwndtms"
+  }
+]

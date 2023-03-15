@@ -1,0 +1,84 @@
+{
+  "createdAt": 1669127388637,
+  "updatedAt": 1669127388637,
+  "deletedAt": 0,
+  "createdFirstAt": 1669127388637,
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "name": "recursive-util",
+  "slug": "recursive-util",
+  "id": "mrbcdmxycfnpcesizugqjcio",
+  "operation": {
+    "buildResultIndexed": {
+      "lintProblems": [],
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/king/King/operations/tools/user-interfaces/gui/smart/recursive-util/src/nestifyQueryPathObjectRecursive.ts. Error: TypeError: Cannot read properties of undefined (reading 'getId')"
+      ],
+      "buildSucceeded": true,
+      "indexImportExportError": ""
+    },
+    "hasGeneratedDependenciesIndexed": false,
+    "lastRebuildAt": 1671554642910,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 9,
+        "lines": 359,
+        "characters": 10580,
+        "bytes": 10580
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 121,
+        "characters": 3908,
+        "bytes": 3908
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 192,
+        "characters": 4074,
+        "bytes": 4074
+      },
+      "size": {
+        "bytes": 18562,
+        "characters": 18562,
+        "lines": 672,
+        "numberOfFiles": 13
+      }
+    },
+    "folderNameIndexed": "recursive-util",
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/gui/smart",
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [
+      "NestedObject",
+      "NestedWebPage",
+      "WebPage",
+      "MenuObjectType",
+      "NestedObject",
+      "ChildObject",
+      "ChildObject",
+      "NestedObject",
+      "MenuItemType",
+      "NestedPathObject",
+      "ChildObject",
+      "NestedObject",
+      "NestedPathObject",
+      "NestedPathObject"
+    ],
+    "packageDependenciesIndexed": []
+  },
+  "dependencies": {
+    "recursive-types": "0.0.1",
+    "webpage-types": "0.0.1",
+    "nested-menu-types": "0.0.1"
+  }
+}

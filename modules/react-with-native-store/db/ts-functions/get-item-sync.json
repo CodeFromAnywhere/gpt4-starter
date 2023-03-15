@@ -1,0 +1,47 @@
+{
+  "createdAt": 1671116731822,
+  "updatedAt": 1671116731822,
+  "deletedAt": 0,
+  "createdFirstAt": 1671116731822,
+  "isApiExposed": true,
+  "isExported": true,
+  "groupAuthorization": {},
+  "operationRelativeTypescriptFilePath": "src/storage.ts",
+  "commentsInside": [],
+  "rawText": " (key: string) => {\n  if (typeof window === \"undefined\") {\n    return undefined;\n  }\n  const item = localStorage.getItem(key);\n  return item ? JSON.parse(item) : undefined;\n}",
+  "name": "getItemSync",
+  "slug": "get-item-sync",
+  "parameters": [
+    {
+      "name": "key",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "ONLY web",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 182,
+    "lines": 7,
+    "bytes": 182,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 7,
+    "numberOfFiles": 1
+  },
+  "id": "uiuyhcihlfvthexoeombdhsx"
+}

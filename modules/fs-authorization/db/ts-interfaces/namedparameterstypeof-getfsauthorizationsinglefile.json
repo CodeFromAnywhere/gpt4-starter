@@ -1,0 +1,101 @@
+{
+  "createdAt": 1678330538375,
+  "updatedAt": 1678330538375,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330538375,
+  "id": "namedparameterstypeof-getfsauthorizationsinglefile",
+  "name": "NamedParameters<typeof getFsAuthorizationSingleFile>",
+  "slug": "namedparameterstypeof-getfsauthorizationsinglefile",
+  "operationRelativeTypescriptFilePath": "src/getFsAuthorizationSingleFile.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "projectRelativeFilePath": {
+              "type": "string"
+            },
+            "user_groupSlugs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "groupSlugs of the user. Should include \"public\""
+            },
+            "isDebug": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "projectRelativeFilePath",
+            "user_groupSlugs"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "projectRelativeFilePath",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "user_groupSlugs",
+                "required": true,
+                "schema": {
+                  "fullComment": "groupSlugs of the user. Should include \"public\"",
+                  "items": [
+                    {
+                      "schema": {
+                        "type": "string"
+                      },
+                      "name": null
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "isDebug",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getFsAuthorizationSingleFile>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

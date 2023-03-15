@@ -1,0 +1,85 @@
+{
+  "createdAt": 1670071391648,
+  "updatedAt": 1670071391648,
+  "deletedAt": 0,
+  "createdFirstAt": 1670071391648,
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "name": "ai-types",
+  "operation": {
+    "hasGeneratedDependenciesIndexed": false,
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": []
+    },
+    "lastRebuildAt": 1677578364074,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 16,
+        "lines": 596,
+        "characters": 16274,
+        "bytes": 16274
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 122,
+        "characters": 3735,
+        "bytes": 3735
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 479,
+        "characters": 10905,
+        "bytes": 10905
+      },
+      "size": {
+        "bytes": 30914,
+        "characters": 30914,
+        "lines": 1197,
+        "numberOfFiles": 20
+      }
+    },
+    "folderNameIndexed": "ai-types",
+    "relativeOperationLocationPathIndexed": "operations/tools/ai",
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [
+      "DefaultModelType",
+      "SlugModelType",
+      "DefaultModelType",
+      "ChildObject",
+      "SlugModelType",
+      "FileType",
+      "DefaultModelType",
+      "BackendAsset",
+      "AuthorizationProperties",
+      "DefaultModelType",
+      "BackendAsset",
+      "StandardFunctionConfig",
+      "UpdatedTimeObject"
+    ],
+    "packageDependenciesIndexed": []
+  },
+  "dependencies": {
+    "model-types": "0.0.1",
+    "recursive-types": "0.0.1",
+    "filename-conventions": "0.0.1",
+    "asset-type": "0.0.1",
+    "code-types": "0.0.1",
+    "matter-types": "0.0.1",
+    "markdown-types": "0.0.1",
+    "function-types": "0.0.1"
+  },
+  "slug": "ai-types",
+  "id": "rzgsitofuukkatcuriaoazvg"
+}

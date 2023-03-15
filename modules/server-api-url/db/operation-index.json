@@ -1,0 +1,53 @@
+{
+  "createdAt": 1664526211953,
+  "updatedAt": 1668149133356,
+  "deletedAt": 0,
+  "createdFirstAt": 1664526211953,
+  "folderName": "server-api-url",
+  "packageName": "server-api-url",
+  "relativeOperationLocationPath": "operations/tools/interfaces/api",
+  "classification": "js",
+  "name": "server-api-url",
+  "slug": "server-api-url",
+  "coreDependencies": [],
+  "operationDependencies": [
+    "publicEnvironmentVariables",
+    "publicLocalEnvironmentVariables",
+    "ports"
+  ],
+  "packageDependencies": [],
+  "size": {
+    "codeSize": {
+      "numberOfFiles": 3,
+      "lines": 0,
+      "characters": 909,
+      "bytes": 909
+    },
+    "dataSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 1420,
+      "bytes": 1420
+    },
+    "textSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 491,
+      "bytes": 491
+    },
+    "size": {
+      "bytes": 2820,
+      "characters": 2820,
+      "lines": 0,
+      "numberOfFiles": 7
+    }
+  },
+  "buildSucceeded": true,
+  "dependenciesBuildsFailed": false,
+  "indexErrors": [],
+  "indexImportExportError": "",
+  "indexInteracesErrors": [],
+  "lintProblems": [],
+  "id": "nvidiexladdqfyfkkcoxakev",
+  "language": "en"
+}

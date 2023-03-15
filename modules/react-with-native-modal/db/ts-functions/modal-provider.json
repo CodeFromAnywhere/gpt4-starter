@@ -1,0 +1,67 @@
+{
+  "createdAt": 1678043832655,
+  "updatedAt": 1678043832655,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043832655,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/Modal.tsx",
+  "commentsInside": [],
+  "rawText": " ({ children }: { children: any }) => {\n  let { showModal, handleModal, modalContent, title, hideModal } =\n    useModalState();\n  return (\n    <Provider\n      value={{ showModal, handleModal, modalContent, title, hideModal }}\n    >\n      <Modal />\n      {children}\n    </Provider>\n  );\n}",
+  "name": "ModalProvider",
+  "slug": "modal-provider",
+  "parameters": [
+    {
+      "name": "{ children }",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "children": {}
+        },
+        "required": [
+          "children"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "children",
+            "required": true,
+            "schema": {
+              "properties": [],
+              "type": "object"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 287,
+    "lines": 12,
+    "bytes": 287,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 24,
+    "linesPerFile": 12,
+    "numberOfFiles": 1
+  },
+  "id": "ipxkcwdrtuvkyszqknqocweo"
+}

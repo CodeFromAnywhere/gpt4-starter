@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677580353618,
+  "updatedAt": 1677580353618,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580353618,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "hasDataPermissions",
+  "slug": "has-data-permissions",
+  "operationRelativeTypescriptFilePath": "src/hasDataPermissions.ts",
+  "type": {
+    "rawType": "(functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext, interfaceName: keyof import(\"/Users/clarity/os/operations/tools/generated/sdk-db/build/sdk-db\").DbModels, requiredPermissionLetters: string[]) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  interfaceName: keyof DbModels,\n  requiredPermissionLetters: string[]\n) => {\n  const groupSlugs = functionContext.groups?.map((x) => x.slug);\n  if (groupSlugs?.includes(\"admin\")) {\n    return true;\n  }\n  const tsInterface = await getTsInterface(interfaceName);\n  const authorizationsString =\n    groupSlugs\n      ?.map((slug) => tsInterface?.authorizations?.[slug])\n      .filter(notEmpty)\n      .join(\"\") || \"\";\n\n  const hasNoPermission = !!requiredPermissionLetters.find(\n    (letter) => !authorizationsString.includes(letter)\n  );\n\n  if (hasNoPermission) {\n    console.log({ groupSlugs, authorizationsString });\n  }\n  return !hasNoPermission;\n}",
+  "description": "Checks if a user has the data permission to do something with a certain dbmodel",
+  "id": "juqlmqtqstxkqxxjxvvbneua"
+}

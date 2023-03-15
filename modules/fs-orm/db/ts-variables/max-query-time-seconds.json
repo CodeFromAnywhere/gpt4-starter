@@ -1,0 +1,24 @@
+{
+  "createdAt": 1677580468396,
+  "updatedAt": 1677580468396,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580468396,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "maxQueryTimeSeconds",
+  "slug": "max-query-time-seconds",
+  "operationRelativeTypescriptFilePath": "src/waitForLockfile.ts",
+  "type": {
+    "rawType": "{}",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "10",
+  "description": "",
+  "id": "isuqqktryzipqfjuxcgdsmyc"
+}

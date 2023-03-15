@@ -1,0 +1,19 @@
+[
+  {
+    "createdAt": 1668336591228,
+    "updatedAt": 1668336591228,
+    "deletedAt": 0,
+    "createdFirstAt": 1668336591228,
+    "name": "Div",
+    "slug": "div",
+    "type": "value",
+    "module": "react-with-native",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/BreadCrumbs.tsx",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "znfchlxfaqfkxsuderchxvul"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1674033624450,
+  "updatedAt": 1674033624450,
+  "deletedAt": 0,
+  "createdFirstAt": 1674033624450,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "test",
+  "slug": "test",
+  "operationRelativeTypescriptFilePath": "src/findJsonInMarkdown.test.ts",
+  "type": {
+    "rawType": "() => void",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  const result1 = findJsonInMarkdown<{ name: string }>(\n    '\\n    \\n`{\"name\": \"Grolloerstraat\"}`'\n  );\n  const result2 = findJsonInMarkdown<{ name: string }>(\n    '\\n\\n`{\"name\":\"screen-recording-1672931879041-no-transcription\"}`'\n  );\n\n  const result3 = findJsonInMarkdown<{ name: string }>(\n    ' Here is an example:\\n    \\n    `{\"name\":\"auto_waiting\"}`\\n'\n  );\n\n  const result4 = findJsonInMarkdown<{ name: string }>(\n    '\\n    \\nAnswer: {\"name\": \"just-hello\"}'\n  );\n\n  console.log({ result1, result2, result3, result4 });\n}",
+  "description": "",
+  "id": "fjhlelujrzyqxrswmcgldetl"
+}

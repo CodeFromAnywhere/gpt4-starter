@@ -1,0 +1,24 @@
+{
+  "createdAt": 1677578342341,
+  "updatedAt": 1677578342341,
+  "deletedAt": 0,
+  "createdFirstAt": 1677578342341,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "whisperModelNames",
+  "slug": "whisper-model-names",
+  "operationRelativeTypescriptFilePath": "src/variables.ts",
+  "type": {
+    "rawType": "readonly [\"tiny\", \"tiny.en\", \"base\", \"base.en\", \"small\", \"small.en\", \"medium\", \"medium.en\", \"large-v1\", \"large\"]",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "[\n  \"tiny\",\n  \"tiny.en\",\n  \"base\",\n  \"base.en\",\n  \"small\",\n  \"small.en\",\n  \"medium\",\n  \"medium.en\",\n  \"large-v1\",\n  \"large\",\n] as const",
+  "description": "",
+  "id": "bmnpctyyfcvovispynwufsbq"
+}

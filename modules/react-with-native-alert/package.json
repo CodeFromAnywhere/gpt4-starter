@@ -1,0 +1,115 @@
+{
+  "createdAt": 1668328705569,
+  "updatedAt": 1668328705569,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328705569,
+  "id": "HRCvBKzhcQmtavKi",
+  "author": "Wijnand Karsens",
+  "dependencies": {
+    "@types/react-native": "^0.66.11",
+    "react-with-native": "1.4.9",
+    "@headlessui/react": "*",
+    "react-native": "*",
+    "react": "*",
+    "fancy-loader": "0.0.1"
+  },
+  "peerDependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-native": "^0.66.4"
+  },
+  "description": "Alert for web and native",
+  "devDependencies": {
+    "@headlessui/react": "^1.4.2",
+    "@types/react-dom": "^17.0.11",
+    "next": "^12.0.9",
+    "react-dom": "^17.0.2",
+    "react-native": "^0.66.4",
+    "react-with-native": "*",
+    "tailwindcss": "^3.0.24"
+  },
+  "homepage": "https://github.com/Code-From-Anywhere/react-with-native#readme",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Code-From-Anywhere/react-with-native.git"
+  },
+  "scripts": {
+    "pub": "npm version patch --force && npm publish",
+    "build": "tsc",
+    "dev": "npx tsc-watch --onSuccess 'yarn dev:tw'",
+    "dev:tw": "tailwindcss -o css.css"
+  },
+  "source": "src/index.ts",
+  "version": "1.0.33",
+  "name": "react-with-native-alert",
+  "language": "english",
+  "slug": "react-with-native-alert",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/clarity/os/operations/tools/user-interfaces/gui/react-with-native/react-with-native-alert/src/types.tsx. Error: Error: Unknown type \"function\""
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "ui-cjs",
+    "coreDependenciesIndexed": [
+      "AlertStatic",
+      "Alert",
+      "createContext",
+      "Alert",
+      "AlertStatic",
+      "useState",
+      "Fragment",
+      "AlertButton",
+      "AlertOptions",
+      "AlertButton",
+      "AlertOptions",
+      "AlertStatic"
+    ],
+    "folderNameIndexed": "react-with-native-alert",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1678043810268,
+    "operationDependenciesIndexed": [
+      "Div",
+      "P",
+      "FancyLoader"
+    ],
+    "packageDependenciesIndexed": [
+      "Dialog",
+      "Transition"
+    ],
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/gui/react-with-native",
+    "markdown": "# Alert\n\nTODO: NB: seems not to work right now in a new template! Fix it\n",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 5,
+        "lines": 202,
+        "characters": 6760,
+        "bytes": 6760
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 156,
+        "characters": 3946,
+        "bytes": 3946
+      },
+      "textSize": {
+        "numberOfFiles": 3,
+        "lines": 86,
+        "characters": 1230,
+        "bytes": 1230
+      },
+      "size": {
+        "bytes": 11936,
+        "characters": 11936,
+        "lines": 444,
+        "numberOfFiles": 10
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

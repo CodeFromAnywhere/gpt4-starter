@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678331954277,
+  "updatedAt": 1678331954277,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331954277,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/prod.ts",
+  "commentsInside": [],
+  "rawText": " () => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return;\n  }\n\n  const functionServerFolder = operations[\"function-server\"];\n  const osWebFolder = (operations as any)[\"os-web\"];\n  if (!osWebFolder) {\n    return;\n  }\n  const absoluteFunctionServerFolder = path.join(\n    projectRoot,\n    functionServerFolder\n  );\n  const absoluteOsWebFolder = path.join(projectRoot, osWebFolder);\n\n  spawnSync(\"yarn prod\", {\n    cwd: absoluteFunctionServerFolder,\n    shell: true,\n    stdio: \"inherit\",\n  });\n  spawnSync(\"yarn prod\", {\n    cwd: absoluteOsWebFolder,\n    shell: true,\n    stdio: \"inherit\",\n  });\n}",
+  "name": "prod",
+  "slug": "prod",
+  "parameters": [],
+  "description": "`ship` command/function should simply rerun yarn prod for `os-web` and `function-server`",
+  "returnType": {
+    "rawType": "void",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 708,
+    "lines": 28,
+    "bytes": 708,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 28,
+    "numberOfFiles": 1
+  },
+  "id": "iebolzqojiemcasjpojcsebw"
+}

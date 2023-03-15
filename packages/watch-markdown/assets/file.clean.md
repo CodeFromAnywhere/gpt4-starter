@@ -1,0 +1,3 @@
+Markdown is an incredibly useful formatting tool that enables its users to write documents more easily and faster. With watch markdown, writing documents just became even easier. Watch Markdown provides multiple informations that make writing quicker and easier, making it an invaluable tool for anyone who uses markdown.
+
+This document contains a markdown strategy

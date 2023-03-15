@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677586399141,
+  "updatedAt": 1677586399141,
+  "deletedAt": 0,
+  "createdFirstAt": 1677586399141,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "sayablesToMp3",
+  "slug": "sayables-to-mp3",
+  "operationRelativeTypescriptFilePath": "src/expose/sayablesToMp3.ts",
+  "type": {
+    "rawType": "(config: { destinationAbsoluteFilePath: string; sayables: import(\"/Users/clarity/os/operations/tools/parsing/file-conversion/md/markdown-parsings/src/expose/sayablesToMp3\").Sayable[]; }) => void",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(config: {\n  destinationAbsoluteFilePath: string;\n  sayables: Sayable[];\n}) => {\n  const { sayables, destinationAbsoluteFilePath } = config;\n  /**\n  \n  \n  \n   */\n}",
+  "description": "Creates a single audiofile of a Sayable[] and stores that in a configured location",
+  "id": "hqmmahbpuhkjqjhhjsbqnwmu"
+}

@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678330891774,
+  "updatedAt": 1678330891774,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330891774,
+  "id": "namedparameterstypeof-getrecordingtype",
+  "name": "NamedParameters<typeof getRecordingType>",
+  "slug": "namedparameterstypeof-getrecordingtype",
+  "operationRelativeTypescriptFilePath": "src/getRecordingType.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteTranscriptionFilePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absoluteTranscriptionFilePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteTranscriptionFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getRecordingType>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

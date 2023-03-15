@@ -1,0 +1,60 @@
+{
+  "createdAt": 1678330894631,
+  "updatedAt": 1678330894631,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330894631,
+  "id": "namedparameterstypeof-transcriptiontogptchunks",
+  "name": "NamedParameters<typeof transcriptionToGptChunks>",
+  "slug": "namedparameterstypeof-transcriptiontogptchunks",
+  "operationRelativeTypescriptFilePath": "src/transcriptionToGptChunks.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "transcriptionAbsoluteFilePath": {
+          "type": "string"
+        },
+        "maxGptNodeTokenSize": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "transcriptionAbsoluteFilePath",
+        "maxGptNodeTokenSize"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "transcriptionAbsoluteFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "maxGptNodeTokenSize",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof transcriptionToGptChunks>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

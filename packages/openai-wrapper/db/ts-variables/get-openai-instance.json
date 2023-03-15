@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331089686,
+  "updatedAt": 1678331089686,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331089686,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getOpenaiInstance",
+  "slug": "get-openai-instance",
+  "operationRelativeTypescriptFilePath": "src/getOpenaiInstance.ts",
+  "type": {
+    "rawType": "(personaId?: string | undefined) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse & { openai?: import(\"/Users/clarity/os/operations/node_modules/openai/dist/api\").OpenAIApi | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  personaId?: string\n): Promise<StandardResponse & { openai?: OpenAIApi }> => {\n  // NB: this is not the most efficient, another fileread here. Ensure it's cached in memory!\n  const personas = await db.get(\"Persona\");\n  const persona =\n    personas.find((x) => x.id === personaId) || (await getPrimaryPersona());\n  if (!persona) {\n    return { isSuccessful: false, message: \"No persona\" };\n  }\n\n  const apiKey = persona.openAiToken;\n\n  if (!apiKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please setup an API Key for OpenAI\",\n    };\n  }\n\n  const configuration = new Configuration({\n    // organization: \"not needed?\",\n    apiKey,\n  });\n\n  const openai = new OpenAIApi(configuration);\n\n  return { isSuccessful: true, openai };\n}",
+  "description": "",
+  "id": "jbulqwkxclylomoeoifckaul"
+}

@@ -1,0 +1,50 @@
+{
+  "createdAt": 1678372658053,
+  "updatedAt": 1678372658053,
+  "deletedAt": 0,
+  "createdFirstAt": 1678372658053,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "weeklyMail",
+  "slug": "weekly-mail",
+  "operationRelativeTypescriptFilePath": "src/weeklyMail.ts",
+  "type": {
+    "rawType": "{ (isDryrun?: boolean | undefined): any; config: {}; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (isDryrun?: boolean) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) return;\n  const now = new Date(Date.now());\n  const year = now.getFullYear();\n  const monthNumber = now.getMonth() + 1;\n  const weekNumber = Math.ceil(now.getDate() / 7);\n\n  /**\n Send mail from `knowledge/groups/cfa/mail/[fullyear]-[month]-w[week].md` (no leading zeros)\n  */\n  const mailFilePath = path.join(\n    projectRoot,\n    `knowledge`,\n    \"groups\",\n    \"cfa\",\n    \"mail\",\n    `${year}-${monthNumber}-w${weekNumber}.md`\n  );\n\n  if (!fs.existsSync(mailFilePath)) {\n    console.log(`${mailFilePath} doesn't exist`);\n    // maybe just send credits and email that?\n    return;\n  }\n\n  const mailMarkdownParse = await readMarkdownFile(mailFilePath);\n  // check if it was already sent. never send the same thing twice\n\n  if (!mailMarkdownParse) {\n    console.log(`${mailFilePath} not parsed`);\n\n    return;\n  }\n\n  if (mailMarkdownParse.parameters?.sentMail === \"true\") {\n    console.log(`${mailFilePath} already sentmail`);\n    // already sent before, don't do it again.\n    return;\n  }\n\n  if (!isDryrun) {\n    // add 10 credits for everyone with an email\n    await db.update(\n      \"Person\",\n      (item) => !!item.email,\n      (item) => ({ ...item, credit: (item.credit || 0) + 10 })\n    );\n  }\n\n  const persons = (await db.get(\"Person\")).filter((x) => !!x.email);\n\n  const persona = await getPersona();\n  if (!persona) return;\n\n  const mailContent = {\n    to: persona.email,\n    bcc: persons.map((x) => x.email).filter(notEmpty),\n    text: mailMarkdownParse.raw,\n  };\n  if (isDryrun) {\n    console.log({ mailContent });\n  } else {\n    await sendMail(mailContent);\n  }\n\n  // update frontmatter: sentMail: true\n  mailMarkdownParse.parameters = {\n    ...mailMarkdownParse.parameters,\n    sentMail: \"true\",\n  };\n\n  const finalMarkdown = markdownParseToMarkdownString(mailMarkdownParse);\n  // save md\n  await writeStringToFile(mailFilePath, finalMarkdown);\n}",
+  "description": "There should be an initial amount of free credit and a weekly email to all users to give them some more free credit.\n\nWeekly CRON to keep things going with the homeserver\n\nIt can email everyone that some credits were added to their account. Besides, there is probably always news and events.",
+  "id": "fhikaobzbtnarztcqwcpjska"
+}

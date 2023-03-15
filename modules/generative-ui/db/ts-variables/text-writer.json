@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041407003,
+  "updatedAt": 1678041407003,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041407003,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "TextWriter",
+  "slug": "text-writer",
+  "operationRelativeTypescriptFilePath": "src/TextWriter.tsx",
+  "type": {
+    "rawType": "(props: { height?: number | undefined; text: string; tooltip?: string | undefined; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: {\n  height?: number;\n  text: string;\n  tooltip?: string;\n}) => {\n  const { text, height, tooltip } = props;\n  const [characters, setCharacters] = useState(0);\n  const [showTypeBlock, setShowTypeBlock] = useState(false);\n  useEffect(() => {\n    setInterval(() => setCharacters((chars) => chars + 1), 50);\n    setInterval(() => setShowTypeBlock((show) => !show), 320);\n  }, []);\n\n  return (\n    <P>\n      {text.slice(0, characters)}\n      {showTypeBlock ? \"▋\" : \"▎\"}\n    </P>\n  );\n}",
+  "description": "",
+  "id": "tulztbpszyduqvnuhgswfpvz"
+}

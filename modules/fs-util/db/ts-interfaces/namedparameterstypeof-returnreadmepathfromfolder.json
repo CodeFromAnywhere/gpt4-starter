@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678041966555,
+  "updatedAt": 1678041966555,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041966555,
+  "id": "namedparameterstypeof-returnreadmepathfromfolder",
+  "name": "NamedParameters<typeof returnReadmePathFromFolder>",
+  "slug": "namedparameterstypeof-returnreadmepathfromfolder",
+  "operationRelativeTypescriptFilePath": "src/returnReadmePathFromFolder.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteFolderPath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absoluteFolderPath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteFolderPath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof returnReadmePathFromFolder>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "createdAt": 1678043867796,
+  "updatedAt": 1678043867796,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043867796,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "placeholders",
+  "slug": "placeholders",
+  "operationRelativeTypescriptFilePath": "src/SearchBar.tsx",
+  "type": {
+    "rawType": "string[]",
+    "typeDefinition": {
+      "optional": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "allOf": [
+          {
+            "transform": [
+              "trim"
+            ]
+          },
+          {
+            "minLength": 1
+          }
+        ]
+      }
+    },
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "items": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "value": "[\n  \"Make a presentation\",\n  \"Summarize my report\",\n  \"Write an article\",\n  \"Make socialmedia post\",\n  \"Make a business plan\",\n  \"Transcribe my meeting\",\n  \"Annotate my podcast\",\n]",
+  "description": "",
+  "id": "ljsyactuukqhctfbjrzftree"
+}

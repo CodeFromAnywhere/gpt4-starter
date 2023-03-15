@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330444438,
+  "updatedAt": 1678330444438,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330444438,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getFileCollectionPathsWithContext",
+  "slug": "get-file-collection-paths-with-context",
+  "operationRelativeTypescriptFilePath": "src/getFileCollectionPathsWithContext.ts",
+  "type": {
+    "rawType": "(functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext, queryPath: string) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse & { absoluteFileCollectionPaths?: string[] | undefined; projectRelativeFilePath?: string | undefined; projectRelativeFolderPath?: string | undefined; queryIsFolder?: boolean | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  queryPath: string\n): Promise<\n  StandardResponse & {\n    absoluteFileCollectionPaths?: string[];\n    projectRelativeFilePath?: string;\n    projectRelativeFolderPath?: string;\n    queryIsFolder?: boolean;\n  }\n> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No project root\" };\n  }\n\n  const queryInfo = await getQueryInfo({ queryPath });\n  if (\n    !queryInfo.isSuccessful ||\n    !queryInfo.result ||\n    !queryInfo.result.projectRelativeFilePath\n  ) {\n    return { isSuccessful: false, message: queryInfo.message };\n  }\n\n  const {\n    result: {\n      projectRelativeFilePath,\n      projectRelativeFolderPath,\n      queryIsFolder,\n    },\n  } = queryInfo;\n\n  // 1) is folder allowed for this users roles?\n  const authorization = await getFsAuthorizationWithContext(\n    functionContext,\n    projectRelativeFilePath\n  );\n\n  if (!authorization || !authorization.canRead) {\n    return { isSuccessful: false, message: \"You have no access\" };\n  }\n\n  // 2) which files belong to the same file collection?\n  const absolutePath = path.join(projectRoot, projectRelativeFilePath);\n\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"Doesn't exist\" };\n  }\n\n  const absoluteFileCollectionPaths = await getFileCollectionPaths(\n    absolutePath\n  );\n\n  if (\n    !absoluteFileCollectionPaths ||\n    absoluteFileCollectionPaths.length === 0\n  ) {\n    return { isSuccessful: false, message: \"No file collection found\" };\n  }\n\n  return {\n    isSuccessful: true,\n    absoluteFileCollectionPaths,\n    projectRelativeFilePath,\n    projectRelativeFolderPath,\n    queryIsFolder,\n  };\n}",
+  "description": "",
+  "id": "macgcipaqoqlyeaebqlzzxgb"
+}

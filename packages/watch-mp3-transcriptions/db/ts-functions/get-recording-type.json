@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678330893409,
+  "updatedAt": 1678330893409,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330893409,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getRecordingType.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  absoluteTranscriptionFilePath: string\n): Promise<RecordingType> => {\n  const chunks = await transcriptionToGptChunks(\n    absoluteTranscriptionFilePath,\n    CHUNK_TOKEN_SIZE\n  );\n  if (!chunks) return \"unknown\";\n  if (chunks.length > 4) {\n    // might be book\n    const audiobookPromptResult =\n      await textToText(`Does this text seem to be a transcription of an audiobook?\n\n---\n${chunks[0]}\n---\n\nRespond with \"true\" if it does, \"false\" otherwise.\n`);\n    if (audiobookPromptResult.result?.trim() === \"true\") {\n      return \"audiobook\";\n    }\n  }\n\n  const musicPromptResult =\n    await textToText(`Does this text seem to be a transcription of music?\n\n---\n${chunks[0]}\n---\n\nRespond with \"true\" if it does, \"false\" otherwise.\n`);\n  if (musicPromptResult.result?.trim() === \"true\") {\n    return \"music\";\n  }\n\n  const firstDetectedRecordingType = await chunks.reduce(\n    async (previous, chunk) => {\n      const promisedPrevious = await previous;\n      // already determined, don't do more stuff\n      if (promisedPrevious !== \"unknown\") return promisedPrevious;\n\n      const prompt = `Consider this transcript, and classify it into one of the following: \"conversation\", \"monologue\", \"voicemail\", \"code\", \"unknown\", \"other\". \\n\\n\\n ---\\n${chunk}\\n---\\nIf you don't know for sure, reply with \"unknown\". Reply with only the word of the classification.`;\n\n      const promptResult = (await textToText(prompt)).result;\n\n      if (!promptResult) return promisedPrevious;\n\n      if (promptResult.includes(\"conversation\")) return \"conversation\";\n      if (promptResult.includes(\"monologue\")) return \"monologue\";\n      if (promptResult.includes(\"code\")) return \"code\";\n      if (promptResult.includes(\"voicemail\")) return \"voicemail\";\n      if (promptResult.includes(\"other\")) return \"other\";\n\n      return \"unknown\";\n    },\n    new Promise((resolve) => resolve(\"unknown\")) as Promise<RecordingType>\n  );\n\n  return firstDetectedRecordingType;\n}",
+  "name": "getRecordingType",
+  "slug": "get-recording-type",
+  "parameters": [
+    {
+      "name": "absoluteTranscriptionFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Function that uses AI (LLM's mostly) that tries to determine the recording type from a transcription from an audio.\n\nUses `Transcription` file, then chunks the english text, and tries to determine the type as efficiently as possible.",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/ai/ai-types/build/RecordingType\").RecordingType>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 2180,
+    "lines": 64,
+    "bytes": 2180,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 34,
+    "linesPerFile": 64,
+    "numberOfFiles": 1
+  },
+  "id": "twbguxrlavuptnjrexpmannf"
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "createdAt": 1678331048153,
+    "updatedAt": 1678331048153,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331048153,
+    "name": "HuggingfaceConfig",
+    "slug": "huggingface-config",
+    "operationRelativeTypescriptFilePath": "src/huggingFaceInference.ts",
+    "comments": [],
+    "type": "value",
+    "id": "jhfcdojmitcwkqfxdgorvcir"
+  },
+  {
+    "createdAt": 1678331048153,
+    "updatedAt": 1678331048153,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331048153,
+    "name": "request",
+    "slug": "request",
+    "operationRelativeTypescriptFilePath": "src/huggingFaceInference.ts",
+    "comments": [],
+    "type": "value",
+    "id": "udcirtataiyaymksicgcpnxc"
+  },
+  {
+    "createdAt": 1678331048154,
+    "updatedAt": 1678331048154,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331048154,
+    "name": "huggingfaceSpeakerDiarization",
+    "slug": "huggingface-speaker-diarization",
+    "operationRelativeTypescriptFilePath": "src/huggingfaceSpeakerDiarization.ts",
+    "comments": [],
+    "type": "value",
+    "id": "pupezbdfebkahgxdbdbbqrvg"
+  },
+  {
+    "createdAt": 1678331048154,
+    "updatedAt": 1678331048154,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331048154,
+    "name": "HuggingfaceConfig",
+    "slug": "huggingface-config",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "paepcbmnzzevxzpeumdvovpz"
+  },
+  {
+    "createdAt": 1678331048154,
+    "updatedAt": 1678331048154,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331048154,
+    "name": "request",
+    "slug": "request",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "lvjyitkxicpzhjothahrqrvh"
+  },
+  {
+    "createdAt": 1678331048154,
+    "updatedAt": 1678331048154,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331048154,
+    "name": "huggingfaceSpeakerDiarization",
+    "slug": "huggingface-speaker-diarization",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "imiplgzcqiqflkmbeibstlgu"
+  }
+]

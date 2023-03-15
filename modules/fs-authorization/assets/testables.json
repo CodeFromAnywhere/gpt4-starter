@@ -1,0 +1,1595 @@
+[
+  {
+    "groupSlug": "admin",
+    "projectRelativePath": "",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676129043398,
+        "updatedAt": 1676129043398,
+        "deletedAt": 0,
+        "createdFirstAt": 1676129043398,
+        "authToken": "avbcvvzkpywqvxysoybpbgvs",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "avbcvvzkpywqvxysoybpbgvs",
+        "lastOnlineAt": 1676129043398,
+        "name": "avbcvvzkpywqvxysoybpbgvs",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "avbcvvzkpywqvxysoybpbgvs",
+        "categoryStack": [],
+        "personIds": [
+          "lqtkzkqqjkclfonzcgbvehoc"
+        ],
+        "currentPersonId": "lqtkzkqqjkclfonzcgbvehoc",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/avbcvvzkpywqvxysoybpbgvs.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673605446466,
+          "updatedAt": 1673605446466,
+          "deletedAt": 0,
+          "createdFirstAt": 1673605446466,
+          "name": "wijnand karsens123",
+          "slug": "wijnand-karsens",
+          "groupSlugs": [
+            "admin"
+          ],
+          "email": "wijnandworld@hotmail.com",
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676131786437
+          },
+          "id": "lqtkzkqqjkclfonzcgbvehoc",
+          "pictureImage": {
+            "relativePath": "./person-assets/pictureimage-wijnand-karsens-id-281271bteprbqlfrdjaxkwwrgrugxeymcqdlfp.jpg"
+          },
+          "trust": 1,
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "admin",
+              "language": "english",
+              "description": "This is admin group",
+              "customAuthorizations": [
+                {
+                  "isProjectWide": true,
+                  "canExecute": true,
+                  "canWriteCreate": true,
+                  "canWriteUpdate": true,
+                  "canWriteDelete": true,
+                  "canRead": true,
+                  "canSearch": true
+                }
+              ],
+              "slug": "admin",
+              "id": "wrxetoqtrggdpuohtzqxcrax",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "admin",
+    "projectRelativePath": "operations/tools/cleanup/os-web",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676129043398,
+        "updatedAt": 1676129043398,
+        "deletedAt": 0,
+        "createdFirstAt": 1676129043398,
+        "authToken": "avbcvvzkpywqvxysoybpbgvs",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "avbcvvzkpywqvxysoybpbgvs",
+        "lastOnlineAt": 1676129043398,
+        "name": "avbcvvzkpywqvxysoybpbgvs",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "avbcvvzkpywqvxysoybpbgvs",
+        "categoryStack": [],
+        "personIds": [
+          "lqtkzkqqjkclfonzcgbvehoc"
+        ],
+        "currentPersonId": "lqtkzkqqjkclfonzcgbvehoc",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/avbcvvzkpywqvxysoybpbgvs.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673605446466,
+          "updatedAt": 1673605446466,
+          "deletedAt": 0,
+          "createdFirstAt": 1673605446466,
+          "name": "wijnand karsens123",
+          "slug": "wijnand-karsens",
+          "groupSlugs": [
+            "admin"
+          ],
+          "email": "wijnandworld@hotmail.com",
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676131786437
+          },
+          "id": "lqtkzkqqjkclfonzcgbvehoc",
+          "pictureImage": {
+            "relativePath": "./person-assets/pictureimage-wijnand-karsens-id-281271bteprbqlfrdjaxkwwrgrugxeymcqdlfp.jpg"
+          },
+          "trust": 1,
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "admin",
+              "language": "english",
+              "description": "This is admin group",
+              "customAuthorizations": [
+                {
+                  "isProjectWide": true,
+                  "canExecute": true,
+                  "canWriteCreate": true,
+                  "canWriteUpdate": true,
+                  "canWriteDelete": true,
+                  "canRead": true,
+                  "canSearch": true
+                }
+              ],
+              "slug": "admin",
+              "id": "wrxetoqtrggdpuohtzqxcrax",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "admin",
+    "projectRelativePath": "assets/music",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676129043398,
+        "updatedAt": 1676129043398,
+        "deletedAt": 0,
+        "createdFirstAt": 1676129043398,
+        "authToken": "avbcvvzkpywqvxysoybpbgvs",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "avbcvvzkpywqvxysoybpbgvs",
+        "lastOnlineAt": 1676129043398,
+        "name": "avbcvvzkpywqvxysoybpbgvs",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "avbcvvzkpywqvxysoybpbgvs",
+        "categoryStack": [],
+        "personIds": [
+          "lqtkzkqqjkclfonzcgbvehoc"
+        ],
+        "currentPersonId": "lqtkzkqqjkclfonzcgbvehoc",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/avbcvvzkpywqvxysoybpbgvs.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673605446466,
+          "updatedAt": 1673605446466,
+          "deletedAt": 0,
+          "createdFirstAt": 1673605446466,
+          "name": "wijnand karsens123",
+          "slug": "wijnand-karsens",
+          "groupSlugs": [
+            "admin"
+          ],
+          "email": "wijnandworld@hotmail.com",
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676131786437
+          },
+          "id": "lqtkzkqqjkclfonzcgbvehoc",
+          "pictureImage": {
+            "relativePath": "./person-assets/pictureimage-wijnand-karsens-id-281271bteprbqlfrdjaxkwwrgrugxeymcqdlfp.jpg"
+          },
+          "trust": 1,
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "admin",
+              "language": "english",
+              "description": "This is admin group",
+              "customAuthorizations": [
+                {
+                  "isProjectWide": true,
+                  "canExecute": true,
+                  "canWriteCreate": true,
+                  "canWriteUpdate": true,
+                  "canWriteDelete": true,
+                  "canRead": true,
+                  "canSearch": true
+                }
+              ],
+              "slug": "admin",
+              "id": "wrxetoqtrggdpuohtzqxcrax",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "admin",
+    "projectRelativePath": "assets/images",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676129043398,
+        "updatedAt": 1676129043398,
+        "deletedAt": 0,
+        "createdFirstAt": 1676129043398,
+        "authToken": "avbcvvzkpywqvxysoybpbgvs",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "avbcvvzkpywqvxysoybpbgvs",
+        "lastOnlineAt": 1676129043398,
+        "name": "avbcvvzkpywqvxysoybpbgvs",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "avbcvvzkpywqvxysoybpbgvs",
+        "categoryStack": [],
+        "personIds": [
+          "lqtkzkqqjkclfonzcgbvehoc"
+        ],
+        "currentPersonId": "lqtkzkqqjkclfonzcgbvehoc",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/avbcvvzkpywqvxysoybpbgvs.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673605446466,
+          "updatedAt": 1673605446466,
+          "deletedAt": 0,
+          "createdFirstAt": 1673605446466,
+          "name": "wijnand karsens123",
+          "slug": "wijnand-karsens",
+          "groupSlugs": [
+            "admin"
+          ],
+          "email": "wijnandworld@hotmail.com",
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676131786437
+          },
+          "id": "lqtkzkqqjkclfonzcgbvehoc",
+          "pictureImage": {
+            "relativePath": "./person-assets/pictureimage-wijnand-karsens-id-281271bteprbqlfrdjaxkwwrgrugxeymcqdlfp.jpg"
+          },
+          "trust": 1,
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "admin",
+              "language": "english",
+              "description": "This is admin group",
+              "customAuthorizations": [
+                {
+                  "isProjectWide": true,
+                  "canExecute": true,
+                  "canWriteCreate": true,
+                  "canWriteUpdate": true,
+                  "canWriteDelete": true,
+                  "canRead": true,
+                  "canSearch": true
+                }
+              ],
+              "slug": "admin",
+              "id": "wrxetoqtrggdpuohtzqxcrax",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "admin",
+    "projectRelativePath": "knowledge/users/wijnand-karsens",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676129043398,
+        "updatedAt": 1676129043398,
+        "deletedAt": 0,
+        "createdFirstAt": 1676129043398,
+        "authToken": "avbcvvzkpywqvxysoybpbgvs",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "avbcvvzkpywqvxysoybpbgvs",
+        "lastOnlineAt": 1676129043398,
+        "name": "avbcvvzkpywqvxysoybpbgvs",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "avbcvvzkpywqvxysoybpbgvs",
+        "categoryStack": [],
+        "personIds": [
+          "lqtkzkqqjkclfonzcgbvehoc"
+        ],
+        "currentPersonId": "lqtkzkqqjkclfonzcgbvehoc",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/avbcvvzkpywqvxysoybpbgvs.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673605446466,
+          "updatedAt": 1673605446466,
+          "deletedAt": 0,
+          "createdFirstAt": 1673605446466,
+          "name": "wijnand karsens123",
+          "slug": "wijnand-karsens",
+          "groupSlugs": [
+            "admin"
+          ],
+          "email": "wijnandworld@hotmail.com",
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676131786437
+          },
+          "id": "lqtkzkqqjkclfonzcgbvehoc",
+          "pictureImage": {
+            "relativePath": "./person-assets/pictureimage-wijnand-karsens-id-281271bteprbqlfrdjaxkwwrgrugxeymcqdlfp.jpg"
+          },
+          "trust": 1,
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "admin",
+              "language": "english",
+              "description": "This is admin group",
+              "customAuthorizations": [
+                {
+                  "isProjectWide": true,
+                  "canExecute": true,
+                  "canWriteCreate": true,
+                  "canWriteUpdate": true,
+                  "canWriteDelete": true,
+                  "canRead": true,
+                  "canSearch": true
+                }
+              ],
+              "slug": "admin",
+              "id": "wrxetoqtrggdpuohtzqxcrax",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "admin",
+    "projectRelativePath": "knowledge/users/wijnand",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676129043398,
+        "updatedAt": 1676129043398,
+        "deletedAt": 0,
+        "createdFirstAt": 1676129043398,
+        "authToken": "avbcvvzkpywqvxysoybpbgvs",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "avbcvvzkpywqvxysoybpbgvs",
+        "lastOnlineAt": 1676129043398,
+        "name": "avbcvvzkpywqvxysoybpbgvs",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "avbcvvzkpywqvxysoybpbgvs",
+        "categoryStack": [],
+        "personIds": [
+          "lqtkzkqqjkclfonzcgbvehoc"
+        ],
+        "currentPersonId": "lqtkzkqqjkclfonzcgbvehoc",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/avbcvvzkpywqvxysoybpbgvs.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673605446466,
+          "updatedAt": 1673605446466,
+          "deletedAt": 0,
+          "createdFirstAt": 1673605446466,
+          "name": "wijnand karsens123",
+          "slug": "wijnand-karsens",
+          "groupSlugs": [
+            "admin"
+          ],
+          "email": "wijnandworld@hotmail.com",
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676131786437
+          },
+          "id": "lqtkzkqqjkclfonzcgbvehoc",
+          "pictureImage": {
+            "relativePath": "./person-assets/pictureimage-wijnand-karsens-id-281271bteprbqlfrdjaxkwwrgrugxeymcqdlfp.jpg"
+          },
+          "trust": 1,
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "admin",
+              "language": "english",
+              "description": "This is admin group",
+              "customAuthorizations": [
+                {
+                  "isProjectWide": true,
+                  "canExecute": true,
+                  "canWriteCreate": true,
+                  "canWriteUpdate": true,
+                  "canWriteDelete": true,
+                  "canRead": true,
+                  "canSearch": true
+                }
+              ],
+              "slug": "admin",
+              "id": "wrxetoqtrggdpuohtzqxcrax",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "admin",
+    "projectRelativePath": "knowledge/groups/admin",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676129043398,
+        "updatedAt": 1676129043398,
+        "deletedAt": 0,
+        "createdFirstAt": 1676129043398,
+        "authToken": "avbcvvzkpywqvxysoybpbgvs",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "avbcvvzkpywqvxysoybpbgvs",
+        "lastOnlineAt": 1676129043398,
+        "name": "avbcvvzkpywqvxysoybpbgvs",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "avbcvvzkpywqvxysoybpbgvs",
+        "categoryStack": [],
+        "personIds": [
+          "lqtkzkqqjkclfonzcgbvehoc"
+        ],
+        "currentPersonId": "lqtkzkqqjkclfonzcgbvehoc",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/avbcvvzkpywqvxysoybpbgvs.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673605446466,
+          "updatedAt": 1673605446466,
+          "deletedAt": 0,
+          "createdFirstAt": 1673605446466,
+          "name": "wijnand karsens123",
+          "slug": "wijnand-karsens",
+          "groupSlugs": [
+            "admin"
+          ],
+          "email": "wijnandworld@hotmail.com",
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676131786437
+          },
+          "id": "lqtkzkqqjkclfonzcgbvehoc",
+          "pictureImage": {
+            "relativePath": "./person-assets/pictureimage-wijnand-karsens-id-281271bteprbqlfrdjaxkwwrgrugxeymcqdlfp.jpg"
+          },
+          "trust": 1,
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "admin",
+              "language": "english",
+              "description": "This is admin group",
+              "customAuthorizations": [
+                {
+                  "isProjectWide": true,
+                  "canExecute": true,
+                  "canWriteCreate": true,
+                  "canWriteUpdate": true,
+                  "canWriteDelete": true,
+                  "canRead": true,
+                  "canSearch": true
+                }
+              ],
+              "slug": "admin",
+              "id": "wrxetoqtrggdpuohtzqxcrax",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "admin",
+    "projectRelativePath": "knowledge/groups/cfa",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676129043398,
+        "updatedAt": 1676129043398,
+        "deletedAt": 0,
+        "createdFirstAt": 1676129043398,
+        "authToken": "avbcvvzkpywqvxysoybpbgvs",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "avbcvvzkpywqvxysoybpbgvs",
+        "lastOnlineAt": 1676129043398,
+        "name": "avbcvvzkpywqvxysoybpbgvs",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "avbcvvzkpywqvxysoybpbgvs",
+        "categoryStack": [],
+        "personIds": [
+          "lqtkzkqqjkclfonzcgbvehoc"
+        ],
+        "currentPersonId": "lqtkzkqqjkclfonzcgbvehoc",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/avbcvvzkpywqvxysoybpbgvs.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673605446466,
+          "updatedAt": 1673605446466,
+          "deletedAt": 0,
+          "createdFirstAt": 1673605446466,
+          "name": "wijnand karsens123",
+          "slug": "wijnand-karsens",
+          "groupSlugs": [
+            "admin"
+          ],
+          "email": "wijnandworld@hotmail.com",
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676131786437
+          },
+          "id": "lqtkzkqqjkclfonzcgbvehoc",
+          "pictureImage": {
+            "relativePath": "./person-assets/pictureimage-wijnand-karsens-id-281271bteprbqlfrdjaxkwwrgrugxeymcqdlfp.jpg"
+          },
+          "trust": 1,
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "admin",
+              "language": "english",
+              "description": "This is admin group",
+              "customAuthorizations": [
+                {
+                  "isProjectWide": true,
+                  "canExecute": true,
+                  "canWriteCreate": true,
+                  "canWriteUpdate": true,
+                  "canWriteDelete": true,
+                  "canRead": true,
+                  "canSearch": true
+                }
+              ],
+              "slug": "admin",
+              "id": "wrxetoqtrggdpuohtzqxcrax",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "admin",
+    "projectRelativePath": "knowledge/groups/public",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676129043398,
+        "updatedAt": 1676129043398,
+        "deletedAt": 0,
+        "createdFirstAt": 1676129043398,
+        "authToken": "avbcvvzkpywqvxysoybpbgvs",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "avbcvvzkpywqvxysoybpbgvs",
+        "lastOnlineAt": 1676129043398,
+        "name": "avbcvvzkpywqvxysoybpbgvs",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "avbcvvzkpywqvxysoybpbgvs",
+        "categoryStack": [],
+        "personIds": [
+          "lqtkzkqqjkclfonzcgbvehoc"
+        ],
+        "currentPersonId": "lqtkzkqqjkclfonzcgbvehoc",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/avbcvvzkpywqvxysoybpbgvs.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673605446466,
+          "updatedAt": 1673605446466,
+          "deletedAt": 0,
+          "createdFirstAt": 1673605446466,
+          "name": "wijnand karsens123",
+          "slug": "wijnand-karsens",
+          "groupSlugs": [
+            "admin"
+          ],
+          "email": "wijnandworld@hotmail.com",
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676131786437
+          },
+          "id": "lqtkzkqqjkclfonzcgbvehoc",
+          "pictureImage": {
+            "relativePath": "./person-assets/pictureimage-wijnand-karsens-id-281271bteprbqlfrdjaxkwwrgrugxeymcqdlfp.jpg"
+          },
+          "trust": 1,
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "admin",
+              "language": "english",
+              "description": "This is admin group",
+              "customAuthorizations": [
+                {
+                  "isProjectWide": true,
+                  "canExecute": true,
+                  "canWriteCreate": true,
+                  "canWriteUpdate": true,
+                  "canWriteDelete": true,
+                  "canRead": true,
+                  "canSearch": true
+                }
+              ],
+              "slug": "admin",
+              "id": "wrxetoqtrggdpuohtzqxcrax",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "public",
+    "projectRelativePath": "",
+    "functionContext": {
+      "device": {
+        "createdAt": 1673770084905,
+        "updatedAt": 1673770084905,
+        "deletedAt": 0,
+        "createdFirstAt": 1673770084905,
+        "authToken": "jkuqooagagjufbxjlphxghwc",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "jkuqooagagjufbxjlphxghwc",
+        "lastOnlineAt": 1673770084905,
+        "name": "jkuqooagagjufbxjlphxghwc",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "jkuqooagagjufbxjlphxghwc",
+        "categoryStack": [],
+        "operationName": null,
+        "projectRelativePath": "/db/devices/jkuqooagagjufbxjlphxghwc.json"
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "public",
+    "projectRelativePath": "operations/tools/cleanup/os-web",
+    "functionContext": {
+      "device": {
+        "createdAt": 1673770084905,
+        "updatedAt": 1673770084905,
+        "deletedAt": 0,
+        "createdFirstAt": 1673770084905,
+        "authToken": "jkuqooagagjufbxjlphxghwc",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "jkuqooagagjufbxjlphxghwc",
+        "lastOnlineAt": 1673770084905,
+        "name": "jkuqooagagjufbxjlphxghwc",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "jkuqooagagjufbxjlphxghwc",
+        "categoryStack": [],
+        "operationName": null,
+        "projectRelativePath": "/db/devices/jkuqooagagjufbxjlphxghwc.json"
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "public",
+    "projectRelativePath": "assets/music",
+    "functionContext": {
+      "device": {
+        "createdAt": 1673770084905,
+        "updatedAt": 1673770084905,
+        "deletedAt": 0,
+        "createdFirstAt": 1673770084905,
+        "authToken": "jkuqooagagjufbxjlphxghwc",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "jkuqooagagjufbxjlphxghwc",
+        "lastOnlineAt": 1673770084905,
+        "name": "jkuqooagagjufbxjlphxghwc",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "jkuqooagagjufbxjlphxghwc",
+        "categoryStack": [],
+        "operationName": null,
+        "projectRelativePath": "/db/devices/jkuqooagagjufbxjlphxghwc.json"
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "public",
+    "projectRelativePath": "assets/images",
+    "functionContext": {
+      "device": {
+        "createdAt": 1673770084905,
+        "updatedAt": 1673770084905,
+        "deletedAt": 0,
+        "createdFirstAt": 1673770084905,
+        "authToken": "jkuqooagagjufbxjlphxghwc",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "jkuqooagagjufbxjlphxghwc",
+        "lastOnlineAt": 1673770084905,
+        "name": "jkuqooagagjufbxjlphxghwc",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "jkuqooagagjufbxjlphxghwc",
+        "categoryStack": [],
+        "operationName": null,
+        "projectRelativePath": "/db/devices/jkuqooagagjufbxjlphxghwc.json"
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "public",
+    "projectRelativePath": "knowledge/users/wijnand-karsens",
+    "functionContext": {
+      "device": {
+        "createdAt": 1673770084905,
+        "updatedAt": 1673770084905,
+        "deletedAt": 0,
+        "createdFirstAt": 1673770084905,
+        "authToken": "jkuqooagagjufbxjlphxghwc",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "jkuqooagagjufbxjlphxghwc",
+        "lastOnlineAt": 1673770084905,
+        "name": "jkuqooagagjufbxjlphxghwc",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "jkuqooagagjufbxjlphxghwc",
+        "categoryStack": [],
+        "operationName": null,
+        "projectRelativePath": "/db/devices/jkuqooagagjufbxjlphxghwc.json"
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "public",
+    "projectRelativePath": "knowledge/users/wijnand",
+    "functionContext": {
+      "device": {
+        "createdAt": 1673770084905,
+        "updatedAt": 1673770084905,
+        "deletedAt": 0,
+        "createdFirstAt": 1673770084905,
+        "authToken": "jkuqooagagjufbxjlphxghwc",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "jkuqooagagjufbxjlphxghwc",
+        "lastOnlineAt": 1673770084905,
+        "name": "jkuqooagagjufbxjlphxghwc",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "jkuqooagagjufbxjlphxghwc",
+        "categoryStack": [],
+        "operationName": null,
+        "projectRelativePath": "/db/devices/jkuqooagagjufbxjlphxghwc.json"
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "public",
+    "projectRelativePath": "knowledge/groups/admin",
+    "functionContext": {
+      "device": {
+        "createdAt": 1673770084905,
+        "updatedAt": 1673770084905,
+        "deletedAt": 0,
+        "createdFirstAt": 1673770084905,
+        "authToken": "jkuqooagagjufbxjlphxghwc",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "jkuqooagagjufbxjlphxghwc",
+        "lastOnlineAt": 1673770084905,
+        "name": "jkuqooagagjufbxjlphxghwc",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "jkuqooagagjufbxjlphxghwc",
+        "categoryStack": [],
+        "operationName": null,
+        "projectRelativePath": "/db/devices/jkuqooagagjufbxjlphxghwc.json"
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "public",
+    "projectRelativePath": "knowledge/groups/cfa",
+    "functionContext": {
+      "device": {
+        "createdAt": 1673770084905,
+        "updatedAt": 1673770084905,
+        "deletedAt": 0,
+        "createdFirstAt": 1673770084905,
+        "authToken": "jkuqooagagjufbxjlphxghwc",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "jkuqooagagjufbxjlphxghwc",
+        "lastOnlineAt": 1673770084905,
+        "name": "jkuqooagagjufbxjlphxghwc",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "jkuqooagagjufbxjlphxghwc",
+        "categoryStack": [],
+        "operationName": null,
+        "projectRelativePath": "/db/devices/jkuqooagagjufbxjlphxghwc.json"
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "public",
+    "projectRelativePath": "knowledge/groups/public",
+    "functionContext": {
+      "device": {
+        "createdAt": 1673770084905,
+        "updatedAt": 1673770084905,
+        "deletedAt": 0,
+        "createdFirstAt": 1673770084905,
+        "authToken": "jkuqooagagjufbxjlphxghwc",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "jkuqooagagjufbxjlphxghwc",
+        "lastOnlineAt": 1673770084905,
+        "name": "jkuqooagagjufbxjlphxghwc",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "jkuqooagagjufbxjlphxghwc",
+        "categoryStack": [],
+        "operationName": null,
+        "projectRelativePath": "/db/devices/jkuqooagagjufbxjlphxghwc.json"
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "cfa",
+    "projectRelativePath": "",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676373286156,
+        "updatedAt": 1676373286156,
+        "deletedAt": 0,
+        "createdFirstAt": 1676373286156,
+        "authToken": "xmadxdipuiwswcbfghqwamki",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "xmadxdipuiwswcbfghqwamki",
+        "lastOnlineAt": 1676373286156,
+        "name": "xmadxdipuiwswcbfghqwamki",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "xmadxdipuiwswcbfghqwamki",
+        "categoryStack": [],
+        "personIds": [
+          "ibfpswrsrinlnkjcwwsbwbpf"
+        ],
+        "currentPersonId": "ibfpswrsrinlnkjcwwsbwbpf",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/xmadxdipuiwswcbfghqwamki.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673611367501,
+          "updatedAt": 1673611367501,
+          "deletedAt": 0,
+          "createdFirstAt": 1673611367501,
+          "name": "wijnand",
+          "slug": "wijnand",
+          "email": "wijnand@karsens.com",
+          "groupSlugs": [
+            "cfa",
+            "ai-group"
+          ],
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676373294858
+          },
+          "id": "ibfpswrsrinlnkjcwwsbwbpf",
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "CFA Team",
+              "language": "english",
+              "description": "This is cfa group",
+              "customAuthorizations": [],
+              "slug": "cfa",
+              "inherited_groupSlugs": [
+                "ai-group"
+              ],
+              "id": "kjsflkdjkllllllfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            },
+            {
+              "name": "AI Group",
+              "language": "english",
+              "description": "Able to use clarity as a group",
+              "slug": "ai-group",
+              "id": "kjsflkdjkkjkjkjklfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "cfa",
+    "projectRelativePath": "operations/tools/cleanup/os-web",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676373286156,
+        "updatedAt": 1676373286156,
+        "deletedAt": 0,
+        "createdFirstAt": 1676373286156,
+        "authToken": "xmadxdipuiwswcbfghqwamki",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "xmadxdipuiwswcbfghqwamki",
+        "lastOnlineAt": 1676373286156,
+        "name": "xmadxdipuiwswcbfghqwamki",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "xmadxdipuiwswcbfghqwamki",
+        "categoryStack": [],
+        "personIds": [
+          "ibfpswrsrinlnkjcwwsbwbpf"
+        ],
+        "currentPersonId": "ibfpswrsrinlnkjcwwsbwbpf",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/xmadxdipuiwswcbfghqwamki.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673611367501,
+          "updatedAt": 1673611367501,
+          "deletedAt": 0,
+          "createdFirstAt": 1673611367501,
+          "name": "wijnand",
+          "slug": "wijnand",
+          "email": "wijnand@karsens.com",
+          "groupSlugs": [
+            "cfa",
+            "ai-group"
+          ],
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676373294858
+          },
+          "id": "ibfpswrsrinlnkjcwwsbwbpf",
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "CFA Team",
+              "language": "english",
+              "description": "This is cfa group",
+              "customAuthorizations": [],
+              "slug": "cfa",
+              "inherited_groupSlugs": [
+                "ai-group"
+              ],
+              "id": "kjsflkdjkllllllfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            },
+            {
+              "name": "AI Group",
+              "language": "english",
+              "description": "Able to use clarity as a group",
+              "slug": "ai-group",
+              "id": "kjsflkdjkkjkjkjklfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "cfa",
+    "projectRelativePath": "assets/music",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676373286156,
+        "updatedAt": 1676373286156,
+        "deletedAt": 0,
+        "createdFirstAt": 1676373286156,
+        "authToken": "xmadxdipuiwswcbfghqwamki",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "xmadxdipuiwswcbfghqwamki",
+        "lastOnlineAt": 1676373286156,
+        "name": "xmadxdipuiwswcbfghqwamki",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "xmadxdipuiwswcbfghqwamki",
+        "categoryStack": [],
+        "personIds": [
+          "ibfpswrsrinlnkjcwwsbwbpf"
+        ],
+        "currentPersonId": "ibfpswrsrinlnkjcwwsbwbpf",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/xmadxdipuiwswcbfghqwamki.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673611367501,
+          "updatedAt": 1673611367501,
+          "deletedAt": 0,
+          "createdFirstAt": 1673611367501,
+          "name": "wijnand",
+          "slug": "wijnand",
+          "email": "wijnand@karsens.com",
+          "groupSlugs": [
+            "cfa",
+            "ai-group"
+          ],
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676373294858
+          },
+          "id": "ibfpswrsrinlnkjcwwsbwbpf",
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "CFA Team",
+              "language": "english",
+              "description": "This is cfa group",
+              "customAuthorizations": [],
+              "slug": "cfa",
+              "inherited_groupSlugs": [
+                "ai-group"
+              ],
+              "id": "kjsflkdjkllllllfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            },
+            {
+              "name": "AI Group",
+              "language": "english",
+              "description": "Able to use clarity as a group",
+              "slug": "ai-group",
+              "id": "kjsflkdjkkjkjkjklfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "cfa",
+    "projectRelativePath": "assets/images",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676373286156,
+        "updatedAt": 1676373286156,
+        "deletedAt": 0,
+        "createdFirstAt": 1676373286156,
+        "authToken": "xmadxdipuiwswcbfghqwamki",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "xmadxdipuiwswcbfghqwamki",
+        "lastOnlineAt": 1676373286156,
+        "name": "xmadxdipuiwswcbfghqwamki",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "xmadxdipuiwswcbfghqwamki",
+        "categoryStack": [],
+        "personIds": [
+          "ibfpswrsrinlnkjcwwsbwbpf"
+        ],
+        "currentPersonId": "ibfpswrsrinlnkjcwwsbwbpf",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/xmadxdipuiwswcbfghqwamki.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673611367501,
+          "updatedAt": 1673611367501,
+          "deletedAt": 0,
+          "createdFirstAt": 1673611367501,
+          "name": "wijnand",
+          "slug": "wijnand",
+          "email": "wijnand@karsens.com",
+          "groupSlugs": [
+            "cfa",
+            "ai-group"
+          ],
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676373294858
+          },
+          "id": "ibfpswrsrinlnkjcwwsbwbpf",
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "CFA Team",
+              "language": "english",
+              "description": "This is cfa group",
+              "customAuthorizations": [],
+              "slug": "cfa",
+              "inherited_groupSlugs": [
+                "ai-group"
+              ],
+              "id": "kjsflkdjkllllllfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            },
+            {
+              "name": "AI Group",
+              "language": "english",
+              "description": "Able to use clarity as a group",
+              "slug": "ai-group",
+              "id": "kjsflkdjkkjkjkjklfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "cfa",
+    "projectRelativePath": "knowledge/users/wijnand-karsens",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676373286156,
+        "updatedAt": 1676373286156,
+        "deletedAt": 0,
+        "createdFirstAt": 1676373286156,
+        "authToken": "xmadxdipuiwswcbfghqwamki",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "xmadxdipuiwswcbfghqwamki",
+        "lastOnlineAt": 1676373286156,
+        "name": "xmadxdipuiwswcbfghqwamki",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "xmadxdipuiwswcbfghqwamki",
+        "categoryStack": [],
+        "personIds": [
+          "ibfpswrsrinlnkjcwwsbwbpf"
+        ],
+        "currentPersonId": "ibfpswrsrinlnkjcwwsbwbpf",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/xmadxdipuiwswcbfghqwamki.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673611367501,
+          "updatedAt": 1673611367501,
+          "deletedAt": 0,
+          "createdFirstAt": 1673611367501,
+          "name": "wijnand",
+          "slug": "wijnand",
+          "email": "wijnand@karsens.com",
+          "groupSlugs": [
+            "cfa",
+            "ai-group"
+          ],
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676373294858
+          },
+          "id": "ibfpswrsrinlnkjcwwsbwbpf",
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "CFA Team",
+              "language": "english",
+              "description": "This is cfa group",
+              "customAuthorizations": [],
+              "slug": "cfa",
+              "inherited_groupSlugs": [
+                "ai-group"
+              ],
+              "id": "kjsflkdjkllllllfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            },
+            {
+              "name": "AI Group",
+              "language": "english",
+              "description": "Able to use clarity as a group",
+              "slug": "ai-group",
+              "id": "kjsflkdjkkjkjkjklfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "cfa",
+    "projectRelativePath": "knowledge/users/wijnand",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676373286156,
+        "updatedAt": 1676373286156,
+        "deletedAt": 0,
+        "createdFirstAt": 1676373286156,
+        "authToken": "xmadxdipuiwswcbfghqwamki",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "xmadxdipuiwswcbfghqwamki",
+        "lastOnlineAt": 1676373286156,
+        "name": "xmadxdipuiwswcbfghqwamki",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "xmadxdipuiwswcbfghqwamki",
+        "categoryStack": [],
+        "personIds": [
+          "ibfpswrsrinlnkjcwwsbwbpf"
+        ],
+        "currentPersonId": "ibfpswrsrinlnkjcwwsbwbpf",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/xmadxdipuiwswcbfghqwamki.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673611367501,
+          "updatedAt": 1673611367501,
+          "deletedAt": 0,
+          "createdFirstAt": 1673611367501,
+          "name": "wijnand",
+          "slug": "wijnand",
+          "email": "wijnand@karsens.com",
+          "groupSlugs": [
+            "cfa",
+            "ai-group"
+          ],
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676373294858
+          },
+          "id": "ibfpswrsrinlnkjcwwsbwbpf",
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "CFA Team",
+              "language": "english",
+              "description": "This is cfa group",
+              "customAuthorizations": [],
+              "slug": "cfa",
+              "inherited_groupSlugs": [
+                "ai-group"
+              ],
+              "id": "kjsflkdjkllllllfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            },
+            {
+              "name": "AI Group",
+              "language": "english",
+              "description": "Able to use clarity as a group",
+              "slug": "ai-group",
+              "id": "kjsflkdjkkjkjkjklfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "cfa",
+    "projectRelativePath": "knowledge/groups/admin",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676373286156,
+        "updatedAt": 1676373286156,
+        "deletedAt": 0,
+        "createdFirstAt": 1676373286156,
+        "authToken": "xmadxdipuiwswcbfghqwamki",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "xmadxdipuiwswcbfghqwamki",
+        "lastOnlineAt": 1676373286156,
+        "name": "xmadxdipuiwswcbfghqwamki",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "xmadxdipuiwswcbfghqwamki",
+        "categoryStack": [],
+        "personIds": [
+          "ibfpswrsrinlnkjcwwsbwbpf"
+        ],
+        "currentPersonId": "ibfpswrsrinlnkjcwwsbwbpf",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/xmadxdipuiwswcbfghqwamki.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673611367501,
+          "updatedAt": 1673611367501,
+          "deletedAt": 0,
+          "createdFirstAt": 1673611367501,
+          "name": "wijnand",
+          "slug": "wijnand",
+          "email": "wijnand@karsens.com",
+          "groupSlugs": [
+            "cfa",
+            "ai-group"
+          ],
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676373294858
+          },
+          "id": "ibfpswrsrinlnkjcwwsbwbpf",
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "CFA Team",
+              "language": "english",
+              "description": "This is cfa group",
+              "customAuthorizations": [],
+              "slug": "cfa",
+              "inherited_groupSlugs": [
+                "ai-group"
+              ],
+              "id": "kjsflkdjkllllllfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            },
+            {
+              "name": "AI Group",
+              "language": "english",
+              "description": "Able to use clarity as a group",
+              "slug": "ai-group",
+              "id": "kjsflkdjkkjkjkjklfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "cfa",
+    "projectRelativePath": "knowledge/groups/cfa",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676373286156,
+        "updatedAt": 1676373286156,
+        "deletedAt": 0,
+        "createdFirstAt": 1676373286156,
+        "authToken": "xmadxdipuiwswcbfghqwamki",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "xmadxdipuiwswcbfghqwamki",
+        "lastOnlineAt": 1676373286156,
+        "name": "xmadxdipuiwswcbfghqwamki",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "xmadxdipuiwswcbfghqwamki",
+        "categoryStack": [],
+        "personIds": [
+          "ibfpswrsrinlnkjcwwsbwbpf"
+        ],
+        "currentPersonId": "ibfpswrsrinlnkjcwwsbwbpf",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/xmadxdipuiwswcbfghqwamki.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673611367501,
+          "updatedAt": 1673611367501,
+          "deletedAt": 0,
+          "createdFirstAt": 1673611367501,
+          "name": "wijnand",
+          "slug": "wijnand",
+          "email": "wijnand@karsens.com",
+          "groupSlugs": [
+            "cfa",
+            "ai-group"
+          ],
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676373294858
+          },
+          "id": "ibfpswrsrinlnkjcwwsbwbpf",
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "CFA Team",
+              "language": "english",
+              "description": "This is cfa group",
+              "customAuthorizations": [],
+              "slug": "cfa",
+              "inherited_groupSlugs": [
+                "ai-group"
+              ],
+              "id": "kjsflkdjkllllllfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            },
+            {
+              "name": "AI Group",
+              "language": "english",
+              "description": "Able to use clarity as a group",
+              "slug": "ai-group",
+              "id": "kjsflkdjkkjkjkjklfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  },
+  {
+    "groupSlug": "cfa",
+    "projectRelativePath": "knowledge/groups/public",
+    "functionContext": {
+      "device": {
+        "createdAt": 1676373286156,
+        "updatedAt": 1676373286156,
+        "deletedAt": 0,
+        "createdFirstAt": 1676373286156,
+        "authToken": "xmadxdipuiwswcbfghqwamki",
+        "authenticationMethods": [],
+        "ip": "::1",
+        "id": "xmadxdipuiwswcbfghqwamki",
+        "lastOnlineAt": 1676373286156,
+        "name": "xmadxdipuiwswcbfghqwamki",
+        "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15",
+        "slug": "xmadxdipuiwswcbfghqwamki",
+        "categoryStack": [],
+        "personIds": [
+          "ibfpswrsrinlnkjcwwsbwbpf"
+        ],
+        "currentPersonId": "ibfpswrsrinlnkjcwwsbwbpf",
+        "operationName": null,
+        "projectRelativePath": "/db/devices/xmadxdipuiwswcbfghqwamki.json",
+        "currentPersonCalculated": {
+          "createdAt": 1673611367501,
+          "updatedAt": 1673611367501,
+          "deletedAt": 0,
+          "createdFirstAt": 1673611367501,
+          "name": "wijnand",
+          "slug": "wijnand",
+          "email": "wijnand@karsens.com",
+          "groupSlugs": [
+            "cfa",
+            "ai-group"
+          ],
+          "authentication": {
+            "emailIsVerified": true,
+            "emailOtpAt": 1676373294858
+          },
+          "id": "ibfpswrsrinlnkjcwwsbwbpf",
+          "operationName": null,
+          "projectRelativePath": "operations/tools/purpose/p2p/peer-types/src/person/persons.json",
+          "groups": [
+            {
+              "createdAt": 1671097978270,
+              "updatedAt": 1671097978270,
+              "deletedAt": 0,
+              "createdFirstAt": 1671097978270,
+              "name": "CFA Team",
+              "language": "english",
+              "description": "This is cfa group",
+              "customAuthorizations": [],
+              "slug": "cfa",
+              "inherited_groupSlugs": [
+                "ai-group"
+              ],
+              "id": "kjsflkdjkllllllfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            },
+            {
+              "name": "AI Group",
+              "language": "english",
+              "description": "Able to use clarity as a group",
+              "slug": "ai-group",
+              "id": "kjsflkdjkkjkjkjklfjsdkljfdslkj",
+              "operationName": null,
+              "projectRelativePath": "/db/groups.json"
+            }
+          ]
+        }
+      },
+      "hasAuthorization": true
+    }
+  }
+]

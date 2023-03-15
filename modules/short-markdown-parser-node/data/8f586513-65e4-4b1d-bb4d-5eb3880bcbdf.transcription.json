@@ -1,0 +1,384 @@
+{
+  "sentences": [
+    {
+      "startAt": 0,
+      "endAt": 5760,
+      "text": "Oh, right? Four links. Use Link Text Earl, Four images. Use all Text Midjurl."
+    },
+    {
+      "startAt": 5760,
+      "endAt": 10080,
+      "text": "Well, you know it's better than that. Type of script. It's statically typed."
+    },
+    {
+      "startAt": 10080,
+      "endAt": 13920,
+      "text": "Morty, that means the compiler catches errors before you've been run your con."
+    },
+    {
+      "startAt": 13920,
+      "endAt": 17120,
+      "text": "The Python doesn't have that. Python is for government drones."
+    }
+  ],
+  "text": " Oh, right? Four links. Use Link Text Earl, Four images. Use all Text Midjurl.\n Well, you know it's better than that. Type of script. It's statically typed.\n Morty, that means the compiler catches errors before you've been run your con.\n The Python doesn't have that. Python is for government drones.\n",
+  "translationText": " Oh, right? Four links. Use Link Text Earl, Four images. Use all Text Midjurl.\n Well, you know it's better than that. Type of script. It's statically typed.\n Morty, that means the compiler catches errors before you've been run your con.\n The Python doesn't have that. Python is for government drones.\n",
+  "words": [
+    {
+      "startAt": 0,
+      "endAt": 80,
+      "text": ""
+    },
+    {
+      "startAt": 80,
+      "endAt": 180,
+      "text": "Oh"
+    },
+    {
+      "startAt": 180,
+      "endAt": 670,
+      "text": ","
+    },
+    {
+      "startAt": 670,
+      "endAt": 820,
+      "text": "right"
+    },
+    {
+      "startAt": 820,
+      "endAt": 1240,
+      "text": "?"
+    },
+    {
+      "startAt": 1240,
+      "endAt": 1510,
+      "text": "Four"
+    },
+    {
+      "startAt": 1510,
+      "endAt": 2190,
+      "text": "links"
+    },
+    {
+      "startAt": 2190,
+      "endAt": 2230,
+      "text": "."
+    },
+    {
+      "startAt": 2230,
+      "endAt": 2380,
+      "text": "Use"
+    },
+    {
+      "startAt": 2380,
+      "endAt": 2650,
+      "text": "Link"
+    },
+    {
+      "startAt": 2650,
+      "endAt": 2900,
+      "text": "Text"
+    },
+    {
+      "startAt": 2900,
+      "endAt": 3160,
+      "text": "Earl"
+    },
+    {
+      "startAt": 3160,
+      "endAt": 3330,
+      "text": ","
+    },
+    {
+      "startAt": 3330,
+      "endAt": 3540,
+      "text": "Four"
+    },
+    {
+      "startAt": 3540,
+      "endAt": 3940,
+      "text": "images"
+    },
+    {
+      "startAt": 3940,
+      "endAt": 4370,
+      "text": "."
+    },
+    {
+      "startAt": 4370,
+      "endAt": 4420,
+      "text": "Use"
+    },
+    {
+      "startAt": 4420,
+      "endAt": 4680,
+      "text": "all"
+    },
+    {
+      "startAt": 4680,
+      "endAt": 5030,
+      "text": "Text"
+    },
+    {
+      "startAt": 5030,
+      "endAt": 5290,
+      "text": "Mid"
+    },
+    {
+      "startAt": 5290,
+      "endAt": 5370,
+      "text": "j"
+    },
+    {
+      "startAt": 5370,
+      "endAt": 5760,
+      "text": "url"
+    },
+    {
+      "startAt": 5760,
+      "endAt": 5760,
+      "text": "."
+    },
+    {
+      "startAt": 5760,
+      "endAt": 5940,
+      "text": "Well"
+    },
+    {
+      "startAt": 5940,
+      "endAt": 6030,
+      "text": ","
+    },
+    {
+      "startAt": 6030,
+      "endAt": 6170,
+      "text": "you"
+    },
+    {
+      "startAt": 6170,
+      "endAt": 6430,
+      "text": "know"
+    },
+    {
+      "startAt": 6430,
+      "endAt": 6440,
+      "text": "it"
+    },
+    {
+      "startAt": 6440,
+      "endAt": 6530,
+      "text": "'s"
+    },
+    {
+      "startAt": 6530,
+      "endAt": 6810,
+      "text": "better"
+    },
+    {
+      "startAt": 6810,
+      "endAt": 7060,
+      "text": "than"
+    },
+    {
+      "startAt": 7060,
+      "endAt": 7140,
+      "text": "that"
+    },
+    {
+      "startAt": 7140,
+      "endAt": 7500,
+      "text": "."
+    },
+    {
+      "startAt": 7500,
+      "endAt": 7740,
+      "text": "Type"
+    },
+    {
+      "startAt": 7740,
+      "endAt": 7780,
+      "text": "of"
+    },
+    {
+      "startAt": 7780,
+      "endAt": 8250,
+      "text": "script"
+    },
+    {
+      "startAt": 8250,
+      "endAt": 8620,
+      "text": "."
+    },
+    {
+      "startAt": 8620,
+      "endAt": 8650,
+      "text": "It"
+    },
+    {
+      "startAt": 8650,
+      "endAt": 8760,
+      "text": "'s"
+    },
+    {
+      "startAt": 8760,
+      "endAt": 9480,
+      "text": "statically"
+    },
+    {
+      "startAt": 9480,
+      "endAt": 9780,
+      "text": "typed"
+    },
+    {
+      "startAt": 9780,
+      "endAt": 10080,
+      "text": "."
+    },
+    {
+      "startAt": 10080,
+      "endAt": 10350,
+      "text": "Morty"
+    },
+    {
+      "startAt": 10350,
+      "endAt": 10460,
+      "text": ","
+    },
+    {
+      "startAt": 10460,
+      "endAt": 10910,
+      "text": "that"
+    },
+    {
+      "startAt": 10910,
+      "endAt": 10950,
+      "text": "means"
+    },
+    {
+      "startAt": 10950,
+      "endAt": 11110,
+      "text": "the"
+    },
+    {
+      "startAt": 11110,
+      "endAt": 11550,
+      "text": "compiler"
+    },
+    {
+      "startAt": 11550,
+      "endAt": 11930,
+      "text": "catches"
+    },
+    {
+      "startAt": 11930,
+      "endAt": 12260,
+      "text": "errors"
+    },
+    {
+      "startAt": 12260,
+      "endAt": 12590,
+      "text": "before"
+    },
+    {
+      "startAt": 12590,
+      "endAt": 12750,
+      "text": "you"
+    },
+    {
+      "startAt": 12750,
+      "endAt": 12910,
+      "text": "'ve"
+    },
+    {
+      "startAt": 12910,
+      "endAt": 13130,
+      "text": "been"
+    },
+    {
+      "startAt": 13130,
+      "endAt": 13290,
+      "text": "run"
+    },
+    {
+      "startAt": 13290,
+      "endAt": 13510,
+      "text": "your"
+    },
+    {
+      "startAt": 13510,
+      "endAt": 13670,
+      "text": "con"
+    },
+    {
+      "startAt": 13670,
+      "endAt": 13920,
+      "text": "."
+    },
+    {
+      "startAt": 13920,
+      "endAt": 14120,
+      "text": "The"
+    },
+    {
+      "startAt": 14120,
+      "endAt": 14410,
+      "text": "Python"
+    },
+    {
+      "startAt": 14410,
+      "endAt": 14690,
+      "text": "doesn"
+    },
+    {
+      "startAt": 14690,
+      "endAt": 14790,
+      "text": "'t"
+    },
+    {
+      "startAt": 14790,
+      "endAt": 15240,
+      "text": "have"
+    },
+    {
+      "startAt": 15240,
+      "endAt": 15350,
+      "text": "that"
+    },
+    {
+      "startAt": 15350,
+      "endAt": 15400,
+      "text": "."
+    },
+    {
+      "startAt": 15400,
+      "endAt": 15780,
+      "text": "Python"
+    },
+    {
+      "startAt": 15780,
+      "endAt": 15840,
+      "text": "is"
+    },
+    {
+      "startAt": 15840,
+      "endAt": 16000,
+      "text": "for"
+    },
+    {
+      "startAt": 16000,
+      "endAt": 16560,
+      "text": "government"
+    },
+    {
+      "startAt": 16560,
+      "endAt": 16890,
+      "text": "drones"
+    },
+    {
+      "startAt": 16890,
+      "endAt": 17120,
+      "text": "."
+    }
+  ],
+  "usedModelName": "small"
+}

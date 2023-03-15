@@ -1,0 +1,1 @@
+{"version":3,"file":"operationGithubPush.d.ts","sourceRoot":"","sources":["../src/operationGithubPush.ts"],"names":[],"mappings":"AAsBA,eAAO,MAAM,mBAAmB,kBACf,MAAM,KACpB,QAAQ,mBAAmB,CAsF7B,CAAC;AA0CF,MAAM,CAAC,OAAO,MAAM,mBAAmB,GAAG;IACxC,OAAO,EAAE,OAAO,CAAC;IACjB,OAAO,EAAE,MAAM,CAAC;IAChB,IAAI,EAAE;QACJ,aAAa,EAAE,MAAM,CAAC;QACtB,cAAc,CAAC,EAAE,MAAM,CAAC;KACzB,CAAC;CACH,CAAC"}

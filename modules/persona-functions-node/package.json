@@ -1,0 +1,76 @@
+{
+  "createdAt": 1668328719047,
+  "updatedAt": 1668328719047,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328719047,
+  "id": "uvlsdhymohxzavizeimkaalt",
+  "dependencies": {
+    "database": "0.0.1",
+    "peer-types": "0.0.1",
+    "js-util": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "persona-functions-node",
+  "language": "english",
+  "slug": "persona-functions-node",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [],
+      "lintProblems": []
+    },
+    "classificationIndexed": "node-cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "persona-functions-node",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1678504471648,
+    "operationDependenciesIndexed": [
+      "db",
+      "Persona",
+      "getObjectKeysArray"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/purpose/p2p",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 1,
+        "lines": 32,
+        "characters": 750,
+        "bytes": 750
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 112,
+        "characters": 3548,
+        "bytes": 3548
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 30,
+        "characters": 2364,
+        "bytes": 2364
+      },
+      "size": {
+        "bytes": 6662,
+        "characters": 6662,
+        "lines": 174,
+        "numberOfFiles": 5
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

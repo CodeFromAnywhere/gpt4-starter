@@ -1,0 +1,81 @@
+{
+  "createdAt": 1678042100746,
+  "updatedAt": 1678042100746,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042100746,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/isWorkspaceRoot.ts",
+  "commentsInside": [],
+  "rawText": " (\n  folderPath: string\n): undefined | { isBundle: boolean; isWorkspaceRoot: boolean } => {\n  const packageJsonPath = path.join(folderPath, \"package.json\");\n  const existsPackageJson = fs.existsSync(packageJsonPath);\n  if (!existsPackageJson) return;\n\n  const packageJson = tryParseJson<Operation>(\n    fs.readFileSync(packageJsonPath, \"utf8\")\n  );\n\n  if (!packageJson || !packageJson.workspaces) {\n    return;\n  }\n\n  return {\n    isBundle: packageJson.operation?.isBundle || false,\n    isWorkspaceRoot: true,\n  };\n}",
+  "name": "isWorkspaceRoot",
+  "slug": "is-workspace-root",
+  "parameters": [
+    {
+      "name": "folderPath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "simple sync function to check if a folder is the root of a workspace (not operation but a workspace)",
+  "returnType": {
+    "rawType": "{ isBundle: boolean; isWorkspaceRoot: boolean; } | undefined",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "isBundle": {
+          "type": "boolean"
+        },
+        "isWorkspaceRoot": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "isBundle",
+        "isWorkspaceRoot"
+      ],
+      "optional": true
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "isBundle",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isWorkspaceRoot",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 616,
+    "lines": 20,
+    "bytes": 616,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 31,
+    "linesPerFile": 20,
+    "numberOfFiles": 1
+  },
+  "id": "xfxtafnktrpizafdcdmmvmsh"
+}

@@ -1,0 +1,39 @@
+{
+  "sentences": [
+    {
+      "startAt": 0,
+      "endAt": 2000,
+      "text": "What is it?"
+    }
+  ],
+  "text": " What is it?\n",
+  "translationText": " What is it?\n",
+  "words": [
+    {
+      "startAt": 0,
+      "endAt": 60,
+      "text": ""
+    },
+    {
+      "startAt": 60,
+      "endAt": 800,
+      "text": "What"
+    },
+    {
+      "startAt": 800,
+      "endAt": 1110,
+      "text": "is"
+    },
+    {
+      "startAt": 1110,
+      "endAt": 1320,
+      "text": "it"
+    },
+    {
+      "startAt": 1320,
+      "endAt": 2000,
+      "text": "?"
+    }
+  ],
+  "usedModelName": "small"
+}

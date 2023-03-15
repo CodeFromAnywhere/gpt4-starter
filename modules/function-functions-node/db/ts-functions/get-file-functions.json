@@ -1,0 +1,35 @@
+{
+  "createdAt": 1677580495679,
+  "updatedAt": 1677580495679,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580495679,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getFileFunctions.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const tsFunctions = await db.get(\"TsFunction\");\n\n  const fileFunctions = tsFunctions.filter((item) => {\n    const hasPathParameter = !!item.parameters?.find((x) =>\n      isPathParameter(x.name)\n    );\n    return hasPathParameter;\n  });\n\n  writeToAssets(\n    __filename,\n    fileFunctions.map(({ name, operationName, parameters }) => ({\n      name,\n      operationName,\n      parameters,\n    })),\n    \"file-functions.json\"\n  );\n}",
+  "name": "getFileFunctions",
+  "slug": "get-file-functions",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 445,
+    "lines": 20,
+    "bytes": 445,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 22,
+    "linesPerFile": 20,
+    "numberOfFiles": 1
+  },
+  "id": "tmwzxggdjdqstvsimzhbbofc"
+}

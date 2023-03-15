@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330988447,
+  "updatedAt": 1678330988447,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330988447,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "bananaWhisper",
+  "slug": "banana-whisper",
+  "operationRelativeTypescriptFilePath": "src/bananaWhisper.ts",
+  "type": {
+    "rawType": "(config: { absoluteAudioFilePath: string; }) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: {\n  absoluteAudioFilePath: string;\n}) => {\n  const { absoluteAudioFilePath } = config;\n  const persona = await getPrimaryPersona();\n\n  const apiKey = persona.bananadevApiKey;\n\n  if (!apiKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please setup an API Key for Whisper Banana\",\n    };\n  }\n\n  const modelKey = persona.bananadevModelKeys?.whisper;\n\n  if (!modelKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please provide a correct model that you have a model key for\",\n    };\n  }\n\n  const file = await fs.readFile(absoluteAudioFilePath);\n  const mp3bytes = new Uint8Array(file);\n  const mp3BytesString = base64.fromByteArray(mp3bytes);\n\n  const modelParameters = { mp3BytesString };\n  const result = await banana.run(apiKey, modelKey, modelParameters);\n\n  console.log({ resultBanana: result });\n}",
+  "description": "",
+  "id": "mqwfyfxhjusypujjnngutmcb"
+}

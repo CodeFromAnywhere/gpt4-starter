@@ -1,0 +1,1 @@
+{"version":3,"file":"getGithubRepoLastCommitInfo.d.ts","sourceRoot":"","sources":["../src/getGithubRepoLastCommitInfo.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,UAAU,EAAE,MAAM,YAAY,CAAC;AAExC;;;;GAIG;AACH,eAAO,MAAM,2BAA2B,aAC5B,MAAM,uBACK,MAAM,KAC1B,QAAQ;IACT,YAAY,EAAE,OAAO,CAAC;IACtB,OAAO,EAAE,MAAM,CAAC;IAChB,UAAU,CAAC,EAAE,UAAU,CAAC;CACzB,CAsDA,CAAC"}

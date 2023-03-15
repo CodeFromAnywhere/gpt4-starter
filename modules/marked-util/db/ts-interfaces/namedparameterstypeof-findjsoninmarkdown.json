@@ -1,0 +1,46 @@
+{
+  "createdAt": 1674033625256,
+  "updatedAt": 1674033625256,
+  "deletedAt": 0,
+  "createdFirstAt": 1674033625256,
+  "id": "namedparameterstypeof-findjsoninmarkdown",
+  "name": "NamedParameters<typeof findJsonInMarkdown>",
+  "slug": "namedparameterstypeof-findjsoninmarkdown",
+  "operationRelativeTypescriptFilePath": "src/findJsonInMarkdown.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "text",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof findJsonInMarkdown>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

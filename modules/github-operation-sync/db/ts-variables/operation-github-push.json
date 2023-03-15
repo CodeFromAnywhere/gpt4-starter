@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794228182,
+  "updatedAt": 1673794228182,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794228182,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "operationGithubPush",
+  "slug": "operation-github-push",
+  "operationRelativeTypescriptFilePath": "src/operationGithubPush.ts",
+  "type": {
+    "rawType": "(operationName: string) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/operations/github-operation-sync/src/operationGithubPush\").PushOperationResult>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  operationName: string\n): Promise<PushOperationResult> => {\n  try {\n    /* \n\n    //This is breaking\n    //I'll just pass the operationName for now\n\n    const { repository } = (await db.get(\"PackageJson\", { operationName }))[0];\n\n    if (!repository) {\n      return {\n        success: false,\n        message: `target package.json has no \"repository\" field`,\n      };\n    }\n    */\n    // create repo if not existent\n    const octokit = new Octokit({\n      auth: process.env.PERSONAL_ACESSS_TOKEN,\n    });\n\n    const repos = await octokit.rest.repos.listForAuthenticatedUser({\n      affiliation: \"owner,collaborator,organization_member\",\n      per_page: 100, //The number of results per page (max 100).\n      //page: 1 //Page number of the results to fetch.\n    });\n\n    const repoName = operationName;\n    let createdRepoUrl = \"\";\n    /** If repo already exists in remote server */\n    const found = repos.data.find((repo: any) => repo.name === operationName);\n\n    if (found) {\n      const dir = path.resolve(PATH_TO_YOUR_BUNDLE, operationName);\n      await initializeGitOrUseExistingAndPush(\n        dir,\n        found.clone_url,\n        \"Improvements\"\n      );\n      /** after everything rename the .git folder to .git.backup */\n      fs.renameSync(\n        path.resolve(dir, \".git\"),\n        path.resolve(dir, \".git.backup\")\n      );\n      return {\n        success: true,\n        message: \"The repo already existed and was updated.\",\n        data: {\n          operationName,\n        },\n      };\n    } else {\n      //https://octokit.github.io/rest.js/v19#repos\n      //Creates a new repository for the authenticated user.\n      const { data: createdRepo } =\n        await octokit.rest.repos.createForAuthenticatedUser({\n          name: repoName,\n        });\n      createdRepoUrl = createdRepo.clone_url;\n\n      const dir = path.resolve(PATH_TO_YOUR_BUNDLE, operationName);\n\n      await initializeGitOrUseExistingAndPush(\n        dir,\n        createdRepo.clone_url,\n        \"first commit\"\n      );\n\n      return {\n        success: true,\n        message: \"Created repo url: \" + createdRepoUrl,\n        data: {\n          operationName,\n          createdRepoUrl,\n        },\n      };\n    }\n  } catch (err) {\n    return {\n      success: false,\n      message: \"Something went wrong !!!\" + JSON.stringify(err),\n      data: {\n        operationName,\n      },\n    };\n  }\n}",
+  "description": "",
+  "id": "fgjwsfxgtrfrqopvyxncsblp"
+}

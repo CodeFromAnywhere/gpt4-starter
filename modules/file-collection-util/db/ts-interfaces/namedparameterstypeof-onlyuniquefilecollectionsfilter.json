@@ -1,0 +1,82 @@
+{
+  "createdAt": 1678330498359,
+  "updatedAt": 1678330498359,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330498359,
+  "id": "namedparameterstypeof-onlyuniquefilecollectionsfilter",
+  "name": "NamedParameters<typeof onlyUniqueFileCollectionsFilter>",
+  "slug": "namedparameterstypeof-onlyuniquefilecollectionsfilter",
+  "operationRelativeTypescriptFilePath": "src/isFileCollection.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteFilePath": {
+          "type": "string"
+        },
+        "index": {
+          "type": "number"
+        },
+        "self": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "absoluteFilePath",
+        "index",
+        "self"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "index",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "self",
+          "required": true,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof onlyUniqueFileCollectionsFilter>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

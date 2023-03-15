@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678043327315,
+  "updatedAt": 1678043327315,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043327315,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "processAssetUploadWithContext",
+  "slug": "process-asset-upload-with-context",
+  "operationRelativeTypescriptFilePath": "src/processAssetUploadWithContext.ts",
+  "type": {
+    "rawType": "(functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext, projectRelativeFolderPath?: string | undefined, assets?: import(\"/Users/clarity/os/operations/tools/asset/asset-type/build/BackendAsset\").BackendAsset[] | undefined) => Promise<{ isSuccessful: boolean; message: string; processed?: import(\"/Users/clarity/os/operations/tools/asset/asset-type/build/BackendAsset\").BackendAsset[] | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  projectRelativeFolderPath?: string,\n  assets?: BackendAsset[]\n): Promise<{\n  isSuccessful: boolean;\n  message: string;\n  processed?: BackendAsset[];\n}> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No projectroot\" };\n  }\n\n  const explorableBasePaths =\n    getExplorableBasePathsWithContext(functionContext);\n\n  projectRelativeFolderPath =\n    projectRelativeFolderPath || explorableBasePaths[0]?.projectRelativePath;\n\n  if (!projectRelativeFolderPath) {\n    return { isSuccessful: false, message: \"No folder to put in\" };\n  }\n\n  const authorization = await getFsAuthorizationWithContext(\n    functionContext,\n    projectRelativeFolderPath\n  );\n\n  if (!authorization.canWrite) {\n    return { isSuccessful: false, message: \"Unauthorized\" };\n  }\n\n  if (!assets) {\n    return { isSuccessful: false, message: \"No assets\" };\n  }\n\n  const customAbsoluteFolderPath = path.join(\n    projectRoot,\n    projectRelativeFolderPath\n  );\n\n  const stats = fs.existsSync(customAbsoluteFolderPath)\n    ? await fs.stat(customAbsoluteFolderPath)\n    : undefined;\n\n  if (!stats?.isDirectory()) {\n    return { isSuccessful: false, message: \"Must be a folder\" };\n  }\n  const processed = (\n    await Promise.all(\n      assets.map((asset) => processAsset(asset, { customAbsoluteFolderPath }))\n    )\n  ).filter(notEmpty);\n\n  return { isSuccessful: true, message: \"Processed\", processed };\n}",
+  "description": "Used for the markdown reader to immediately process a asset upload. If we want to validate this, it would be good to allow a second parameter that checks if you have access to the file",
+  "id": "gsvqkclwogsvwhitghvdzigi"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041764489,
+  "updatedAt": 1678041764489,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041764489,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "useMe",
+  "slug": "use-me",
+  "operationRelativeTypescriptFilePath": "src/util/useMe.ts",
+  "type": {
+    "rawType": "() => { me: any; isLoading: boolean; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  const meQuery = queries.useGetMeWithContext();\n  const me = destructureOptionalObject(\n    meQuery.data?.result?.device\n  )?.currentPersonCalculated;\n\n  return { me, isLoading: meQuery.isLoading };\n}",
+  "description": "",
+  "id": "rfbdsjphmdagvrigsavizyya"
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"isPhoneNumber.js","sourceRoot":"","sources":["../../src/validation/isPhoneNumber.ts"],"names":[],"mappings":";;;AAAA;;GAEG;AACI,IAAM,aAAa,GAAG,UAAC,WAAmB;IAC/C,OAAO,WAAW,CAAC,MAAM,IAAI,EAAE,IAAI,WAAW,CAAC,UAAU,CAAC,GAAG,CAAC,CAAC;AACjE,CAAC,CAAC;AAFW,QAAA,aAAa,iBAExB"}

@@ -1,0 +1,1309 @@
+{
+  "createdAt": 1678041759216,
+  "updatedAt": 1678041759216,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041759216,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "initialValues",
+  "slug": "initial-values",
+  "operationRelativeTypescriptFilePath": "src/util/store.ts",
+  "type": {
+    "rawType": "{ executionId: string; initialValues: any[] | undefined; \"tabs.currentTab\": { [tabKey: string]: number; }; \"db-crud.datasetConfig\": (import(\"/Users/clarity/os/operations/tools/types/code-types/build/Dataset\").DatasetConfig & { id?: string | undefined; key?: string | undefined; }) | null; \"db-crud.search\": string; unsavedFiles: { [projectRelativePath: string]: string | undefined; }; openPages: import(\"/Users/clarity/os/operations/tools/user-interfaces/gui/smart/file-tabs/build/types\").OpenPage<string>[]; writerView: import(\"/Users/clarity/os/operations/tools/purpose/writer/writer-types/build/types\").WriterViewEnum; subtextConfig: import(\"/Users/clarity/os/operations/tools/purpose/writer/writer-types/build/types\").SubtextConfig; subwordConfig: import(\"/Users/clarity/os/operations/tools/purpose/writer/writer-types/build/types\").SubwordConfig; \"menu.search\": string; \"menu.expanded\": import(\"/Users/clarity/os/operations/tools/user-interfaces/gui/smart/nested-menu/build/store\").ExpandedObject; \"menu.showMenu\": boolean; \"menu.isFullScreen\": boolean; \"menu.isMobileMenuEnabled\": boolean; \"generativeWeb.defaultVariant\": string | null; \"generativeWeb.fileCollectionClosedFiles\": { [filePath: string]: string[]; }; \"api.authToken\": string; \"api.customUrl\": string | null; \"api.timeoutAt\": number | null; \"explorer.searchType\": { label: string; value: string; }; \"explorer.config\": { disableAdmin?: boolean | undefined; customProjectRelativeBasePaths?: string[] | undefined; activeCustomProjectRelativeBasePath?: string | undefined; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "executionId": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        },
+        "initialValues": {
+          "type": "array",
+          "items": {}
+        },
+        "tabs.currentTab": {
+          "type": "object",
+          "properties": {}
+        },
+        "db-crud.datasetConfig": {
+          "enum": [
+            "ul",
+            "mport(\"/Users/clarity/os/operations/tools/types/code-types/build/Dataset\").DatasetConfig & { id?: string | undefined; key?: string | undefined; "
+          ],
+          "x-enumNames": [
+            "ul",
+            "mport(\"/Users/clarity/os/operations/tools/types/code-types/build/Dataset\").DatasetConfig & { id?: string | undefined; key?: string | undefined; "
+          ],
+          "type": "string"
+        },
+        "db-crud.search": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        },
+        "unsavedFiles": {
+          "type": "object",
+          "properties": {}
+        },
+        "openPages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "transform": [
+                      "trim"
+                    ]
+                  },
+                  {
+                    "minLength": 1
+                  }
+                ]
+              },
+              "page": {},
+              "query": {
+                "type": "object",
+                "properties": {}
+              },
+              "pinned": {
+                "type": "boolean"
+              },
+              "temporary": {
+                "type": "boolean"
+              },
+              "isUnsaved": {
+                "type": "boolean"
+              },
+              "cursorPosition": {
+                "type": "number"
+              },
+              "cursorWord": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "transform": [
+                      "trim"
+                    ]
+                  },
+                  {
+                    "minLength": 1
+                  }
+                ]
+              },
+              "cursorSentence": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "transform": [
+                      "trim"
+                    ]
+                  },
+                  {
+                    "minLength": 1
+                  }
+                ]
+              },
+              "startPosition": {
+                "type": "number"
+              },
+              "endPosition": {
+                "type": "number"
+              },
+              "exactSelection": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "transform": [
+                      "trim"
+                    ]
+                  },
+                  {
+                    "minLength": 1
+                  }
+                ]
+              },
+              "lastOpenedAt": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "id",
+              "page",
+              "query",
+              "lastOpenedAt"
+            ]
+          }
+        },
+        "writerView": {
+          "enum": [
+            "config",
+            "view",
+            "edit",
+            "presentation",
+            "frontmatter",
+            "todoOffers",
+            "postable",
+            "shortStudio",
+            "prompts",
+            "prompt-results"
+          ],
+          "x-enumNames": [
+            "config",
+            "view",
+            "edit",
+            "presentation",
+            "frontmatter",
+            "todoOffers",
+            "postable",
+            "shortStudio",
+            "prompts",
+            "prompt-results"
+          ],
+          "type": "string"
+        },
+        "subtextConfig": {
+          "type": "object",
+          "properties": {
+            "isEnabled": {
+              "type": "boolean"
+            },
+            "translations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "language": {
+                    "enum": [
+                      "english",
+                      "dutch",
+                      "nepali",
+                      "portuguese",
+                      "brazilian",
+                      "german",
+                      "french",
+                      "spanish",
+                      "italian",
+                      "norwegian",
+                      "swedish",
+                      "danish",
+                      "vietnamese",
+                      "indonesian",
+                      "southAfrican",
+                      "tokiPona",
+                      "hindi",
+                      "mandarin",
+                      "arabic",
+                      "bengali",
+                      "urdu",
+                      "japanese",
+                      "swahili"
+                    ],
+                    "x-enumNames": [
+                      "english",
+                      "dutch",
+                      "nepali",
+                      "portuguese",
+                      "brazilian",
+                      "german",
+                      "french",
+                      "spanish",
+                      "italian",
+                      "norwegian",
+                      "swedish",
+                      "danish",
+                      "vietnamese",
+                      "indonesian",
+                      "southAfrican",
+                      "tokiPona",
+                      "hindi",
+                      "mandarin",
+                      "arabic",
+                      "bengali",
+                      "urdu",
+                      "japanese",
+                      "swahili"
+                    ],
+                    "type": "string"
+                  },
+                  "showAlternative": {
+                    "type": "boolean"
+                  },
+                  "showPhonetic": {
+                    "type": "boolean"
+                  },
+                  "showLatin": {
+                    "type": "boolean"
+                  },
+                  "showTokiPona": {
+                    "type": "boolean"
+                  },
+                  "showCommon": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "language"
+                ]
+              }
+            },
+            "showEmojiTranslation": {
+              "type": "boolean"
+            },
+            "showDefinitionsWithPriority": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "medium",
+                  "critical",
+                  "high",
+                  "low"
+                ],
+                "x-enumNames": [
+                  "medium",
+                  "critical",
+                  "high",
+                  "low"
+                ],
+                "type": "string"
+              }
+            },
+            "showRelated": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "image",
+                      "asset",
+                      "pages",
+                      "data",
+                      "code"
+                    ],
+                    "x-enumNames": [
+                      "image",
+                      "asset",
+                      "pages",
+                      "data",
+                      "code"
+                    ],
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "enum": [
+                      "all",
+                      "single",
+                      "short"
+                    ],
+                    "x-enumNames": [
+                      "all",
+                      "single",
+                      "short"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "quantity"
+                ]
+              }
+            }
+          }
+        },
+        "subwordConfig": {
+          "type": "object",
+          "properties": {
+            "isEnabled": {
+              "type": "boolean"
+            },
+            "subwordSize": {
+              "enum": [
+                "normal",
+                "mini",
+                "micro"
+              ],
+              "x-enumNames": [
+                "normal",
+                "mini",
+                "micro"
+              ],
+              "type": "string"
+            },
+            "translations": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "english",
+                  "dutch",
+                  "nepali",
+                  "portuguese",
+                  "brazilian",
+                  "german",
+                  "french",
+                  "spanish",
+                  "italian",
+                  "norwegian",
+                  "swedish",
+                  "danish",
+                  "vietnamese",
+                  "indonesian",
+                  "southAfrican",
+                  "tokiPona",
+                  "hindi",
+                  "mandarin",
+                  "arabic",
+                  "bengali",
+                  "urdu",
+                  "japanese",
+                  "swahili"
+                ],
+                "x-enumNames": [
+                  "english",
+                  "dutch",
+                  "nepali",
+                  "portuguese",
+                  "brazilian",
+                  "german",
+                  "french",
+                  "spanish",
+                  "italian",
+                  "norwegian",
+                  "swedish",
+                  "danish",
+                  "vietnamese",
+                  "indonesian",
+                  "southAfrican",
+                  "tokiPona",
+                  "hindi",
+                  "mandarin",
+                  "arabic",
+                  "bengali",
+                  "urdu",
+                  "japanese",
+                  "swahili"
+                ],
+                "type": "string"
+              }
+            },
+            "translationsViewMode": {
+              "enum": [
+                "tooltip",
+                "disabled",
+                "context",
+                "subword"
+              ],
+              "x-enumNames": [
+                "tooltip",
+                "disabled",
+                "context",
+                "subword"
+              ],
+              "type": "string"
+            },
+            "showDefinition": {
+              "type": "boolean"
+            },
+            "occurenceAmountViewMode": {
+              "enum": [
+                "tooltip",
+                "disabled",
+                "context",
+                "subword"
+              ],
+              "x-enumNames": [
+                "tooltip",
+                "disabled",
+                "context",
+                "subword"
+              ],
+              "type": "string"
+            },
+            "blurMode": {
+              "enum": [
+                "disabled",
+                "special"
+              ],
+              "x-enumNames": [
+                "disabled",
+                "special"
+              ],
+              "type": "string"
+            },
+            "audioMode": {
+              "enum": [
+                "tooltip",
+                "disabled",
+                "context",
+                "subword"
+              ],
+              "x-enumNames": [
+                "tooltip",
+                "disabled",
+                "context",
+                "subword"
+              ],
+              "type": "string"
+            },
+            "replaceWordMode": {
+              "enum": [
+                "disabled",
+                "tokiPona",
+                "translate",
+                "alternative",
+                "phonetic",
+                "emoji"
+              ],
+              "x-enumNames": [
+                "disabled",
+                "tokiPona",
+                "translate",
+                "alternative",
+                "phonetic",
+                "emoji"
+              ],
+              "type": "string"
+            },
+            "heatmapMode": {
+              "enum": [
+                "disabled",
+                "projectFrequency",
+                "englishFrequency"
+              ],
+              "x-enumNames": [
+                "disabled",
+                "projectFrequency",
+                "englishFrequency"
+              ],
+              "type": "string"
+            }
+          }
+        },
+        "menu.search": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        },
+        "menu.expanded": {
+          "type": "object",
+          "properties": {}
+        },
+        "menu.showMenu": {
+          "type": "boolean"
+        },
+        "menu.isFullScreen": {
+          "type": "boolean"
+        },
+        "menu.isMobileMenuEnabled": {
+          "type": "boolean"
+        },
+        "generativeWeb.defaultVariant": {
+          "type": "string | null"
+        },
+        "generativeWeb.fileCollectionClosedFiles": {
+          "type": "object",
+          "properties": {}
+        },
+        "api.authToken": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        },
+        "api.customUrl": {
+          "type": "string | null"
+        },
+        "api.timeoutAt": {
+          "type": "number | null"
+        },
+        "explorer.searchType": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "value": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            }
+          },
+          "required": [
+            "label",
+            "value"
+          ]
+        },
+        "explorer.config": {
+          "type": "object",
+          "properties": {
+            "disableAdmin": {
+              "type": "boolean"
+            },
+            "customProjectRelativeBasePaths": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "transform": [
+                      "trim"
+                    ]
+                  },
+                  {
+                    "minLength": 1
+                  }
+                ]
+              }
+            },
+            "activeCustomProjectRelativeBasePath": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            }
+          }
+        }
+      },
+      "required": [
+        "executionId",
+        "tabs.currentTab",
+        "db-crud.search",
+        "unsavedFiles",
+        "openPages",
+        "writerView",
+        "subtextConfig",
+        "subwordConfig",
+        "menu.search",
+        "menu.expanded",
+        "menu.showMenu",
+        "menu.isFullScreen",
+        "menu.isMobileMenuEnabled",
+        "generativeWeb.fileCollectionClosedFiles",
+        "api.authToken",
+        "explorer.searchType",
+        "explorer.config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "executionId",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "initialValues",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "tabs.currentTab",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "db-crud.datasetConfig",
+          "required": false,
+          "schema": {
+            "enum": [
+              "ul",
+              "mport(\"/Users/clarity/os/operations/tools/types/code-types/build/Dataset\").DatasetConfig & { id?: string | undefined; key?: string | undefined; "
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "db-crud.search",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "unsavedFiles",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "openPages",
+          "required": true,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "properties": [
+                    {
+                      "name": "id",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "page",
+                      "required": true,
+                      "schema": {
+                        "properties": [],
+                        "type": "object"
+                      }
+                    },
+                    {
+                      "name": "query",
+                      "required": true,
+                      "schema": {
+                        "properties": [],
+                        "type": "object"
+                      }
+                    },
+                    {
+                      "name": "pinned",
+                      "required": false,
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "temporary",
+                      "required": false,
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "isUnsaved",
+                      "required": false,
+                      "schema": {
+                        "type": "boolean"
+                      }
+                    },
+                    {
+                      "name": "cursorPosition",
+                      "required": false,
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "cursorWord",
+                      "required": false,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "cursorSentence",
+                      "required": false,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "startPosition",
+                      "required": false,
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "endPosition",
+                      "required": false,
+                      "schema": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "exactSelection",
+                      "required": false,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "lastOpenedAt",
+                      "required": true,
+                      "schema": {
+                        "type": "number"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "writerView",
+          "required": true,
+          "schema": {
+            "enum": [
+              "config",
+              "view",
+              "edit",
+              "presentation",
+              "frontmatter",
+              "todoOffers",
+              "postable",
+              "shortStudio",
+              "prompts",
+              "prompt-results"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "subtextConfig",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isEnabled",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "translations",
+                "required": false,
+                "schema": {
+                  "items": [
+                    {
+                      "schema": {
+                        "properties": [
+                          {
+                            "name": "language",
+                            "required": true,
+                            "schema": {
+                              "enum": [
+                                "english",
+                                "dutch",
+                                "nepali",
+                                "portuguese",
+                                "brazilian",
+                                "german",
+                                "french",
+                                "spanish",
+                                "italian",
+                                "norwegian",
+                                "swedish",
+                                "danish",
+                                "vietnamese",
+                                "indonesian",
+                                "southAfrican",
+                                "tokiPona",
+                                "hindi",
+                                "mandarin",
+                                "arabic",
+                                "bengali",
+                                "urdu",
+                                "japanese",
+                                "swahili"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "showAlternative",
+                            "required": false,
+                            "schema": {
+                              "type": "boolean"
+                            }
+                          },
+                          {
+                            "name": "showPhonetic",
+                            "required": false,
+                            "schema": {
+                              "type": "boolean"
+                            }
+                          },
+                          {
+                            "name": "showLatin",
+                            "required": false,
+                            "schema": {
+                              "type": "boolean"
+                            }
+                          },
+                          {
+                            "name": "showTokiPona",
+                            "required": false,
+                            "schema": {
+                              "type": "boolean"
+                            }
+                          },
+                          {
+                            "name": "showCommon",
+                            "required": false,
+                            "schema": {
+                              "type": "boolean"
+                            }
+                          }
+                        ],
+                        "type": "object"
+                      },
+                      "name": null
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "showEmojiTranslation",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "showDefinitionsWithPriority",
+                "required": false,
+                "schema": {
+                  "items": [
+                    {
+                      "schema": {
+                        "enum": [
+                          "medium",
+                          "critical",
+                          "high",
+                          "low"
+                        ],
+                        "type": "string"
+                      },
+                      "name": null
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "showRelated",
+                "required": false,
+                "schema": {
+                  "items": [
+                    {
+                      "schema": {
+                        "properties": [
+                          {
+                            "name": "type",
+                            "required": true,
+                            "schema": {
+                              "enum": [
+                                "image",
+                                "asset",
+                                "pages",
+                                "data",
+                                "code"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          {
+                            "name": "quantity",
+                            "required": true,
+                            "schema": {
+                              "enum": [
+                                "all",
+                                "single",
+                                "short"
+                              ],
+                              "type": "string"
+                            }
+                          }
+                        ],
+                        "type": "object"
+                      },
+                      "name": null
+                    }
+                  ],
+                  "type": "array"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        },
+        {
+          "name": "subwordConfig",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isEnabled",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "subwordSize",
+                "required": false,
+                "schema": {
+                  "enum": [
+                    "normal",
+                    "mini",
+                    "micro"
+                  ],
+                  "type": "string"
+                }
+              },
+              {
+                "name": "translations",
+                "required": false,
+                "schema": {
+                  "items": [
+                    {
+                      "schema": {
+                        "enum": [
+                          "english",
+                          "dutch",
+                          "nepali",
+                          "portuguese",
+                          "brazilian",
+                          "german",
+                          "french",
+                          "spanish",
+                          "italian",
+                          "norwegian",
+                          "swedish",
+                          "danish",
+                          "vietnamese",
+                          "indonesian",
+                          "southAfrican",
+                          "tokiPona",
+                          "hindi",
+                          "mandarin",
+                          "arabic",
+                          "bengali",
+                          "urdu",
+                          "japanese",
+                          "swahili"
+                        ],
+                        "type": "string"
+                      },
+                      "name": null
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "translationsViewMode",
+                "required": false,
+                "schema": {
+                  "enum": [
+                    "tooltip",
+                    "disabled",
+                    "context",
+                    "subword"
+                  ],
+                  "type": "string"
+                }
+              },
+              {
+                "name": "showDefinition",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "occurenceAmountViewMode",
+                "required": false,
+                "schema": {
+                  "enum": [
+                    "tooltip",
+                    "disabled",
+                    "context",
+                    "subword"
+                  ],
+                  "type": "string"
+                }
+              },
+              {
+                "name": "blurMode",
+                "required": false,
+                "schema": {
+                  "enum": [
+                    "disabled",
+                    "special"
+                  ],
+                  "type": "string"
+                }
+              },
+              {
+                "name": "audioMode",
+                "required": false,
+                "schema": {
+                  "enum": [
+                    "tooltip",
+                    "disabled",
+                    "context",
+                    "subword"
+                  ],
+                  "type": "string"
+                }
+              },
+              {
+                "name": "replaceWordMode",
+                "required": false,
+                "schema": {
+                  "enum": [
+                    "disabled",
+                    "tokiPona",
+                    "translate",
+                    "alternative",
+                    "phonetic",
+                    "emoji"
+                  ],
+                  "type": "string"
+                }
+              },
+              {
+                "name": "heatmapMode",
+                "required": false,
+                "schema": {
+                  "enum": [
+                    "disabled",
+                    "projectFrequency",
+                    "englishFrequency"
+                  ],
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        },
+        {
+          "name": "menu.search",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "menu.expanded",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "menu.showMenu",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "menu.isFullScreen",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "menu.isMobileMenuEnabled",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "generativeWeb.defaultVariant",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "generativeWeb.fileCollectionClosedFiles",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "api.authToken",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "api.customUrl",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "api.timeoutAt",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "explorer.searchType",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "label",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        },
+        {
+          "name": "explorer.config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "disableAdmin",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "customProjectRelativeBasePaths",
+                "required": false,
+                "schema": {
+                  "items": [
+                    {
+                      "schema": {
+                        "type": "string"
+                      },
+                      "name": null
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              {
+                "name": "activeCustomProjectRelativeBasePath",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "{\n  ...explorerInitialValues,\n  ...apiStoreInitialValues,\n  ...generativeWebInitialValues,\n  ...nestedMenuStoreInitialValues,\n  ...writerInitialValues,\n  ...fileTabsInitialValues,\n  ...dbCrudInitialValues,\n  ...tabsStoreInitialValues,\n  ...functionWebInitialValues,\n}",
+  "description": "",
+  "id": "ktemopxccfcszrvbhsozytpn"
+}

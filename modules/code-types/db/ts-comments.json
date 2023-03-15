@@ -1,0 +1,20 @@
+[
+  {
+    "createdAt": 1676841916229,
+    "updatedAt": 1676841916229,
+    "deletedAt": 0,
+    "createdFirstAt": 1676841916229,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/ts/TypescriptFile.ts",
+    "comment": "IDEA: What if we could make a custom db storage method for a typescript file, so you can read and write typescript with the database?\n\nThe first thing I can do, is to generate all typescript stuff using a model like this:\n\nLater, I can read a typescript file with a rust parser to get it into this model again.\n\nThis is actually super useful for metacoding and coding GUI's\n\nAlso a great start for making my own programming language ;)\n\n\nThere are multiple ways of describing a typescript file I guess. This is one of them. Another one could be a definition where you put the required context in the statements and types themselves.",
+    "rawStatement": "export interface TypescriptFile\n  extends DefaultModelType,\n    TypescriptScopeContext,\n    TypescriptScopeContent {}",
+    "parameters": {},
+    "types": [
+      "idea"
+    ],
+    "firstLine": 4,
+    "lastLine": 17,
+    "id": "zrggwfrsmsyokocqsuewptkd"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331537859,
+  "updatedAt": 1678331537859,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331537859,
+  "id": "namedparameterstypeof-foldermenu",
+  "name": "NamedParameters<typeof FolderMenu>",
+  "slug": "namedparameterstypeof-foldermenu",
+  "operationRelativeTypescriptFilePath": "src/FolderMenu.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof FolderMenu>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330842843,
+  "updatedAt": 1678330842843,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330842843,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "renameAllBadlyNamedFiles",
+  "slug": "rename-all-badly-named-files",
+  "operationRelativeTypescriptFilePath": "src/renameAllBadlyNamedFiles.ts",
+  "type": {
+    "rawType": "(absoluteFolderPath: string) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (absoluteFolderPath: string) => {\n  const filePaths = await exploreBadNamingFiles(absoluteFolderPath);\n\n  const result = (\n    await Promise.all(\n      filePaths.map((filePath) => renameBadlyNamedFile(filePath))\n    )\n  ).map((x) => !!x);\n\n  const isSuccessful = isAllTrue(result);\n\n  return { isSuccessful };\n}",
+  "description": "Rename all badly named files in a folder",
+  "id": "ipgtzdhjdwlursdyztzbybdv"
+}

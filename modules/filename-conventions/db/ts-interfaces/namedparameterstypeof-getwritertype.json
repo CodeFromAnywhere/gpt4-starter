@@ -1,0 +1,46 @@
+{
+  "createdAt": 1675690232369,
+  "updatedAt": 1675690232369,
+  "deletedAt": 0,
+  "createdFirstAt": 1675690232369,
+  "id": "namedparameterstypeof-getwritertype",
+  "name": "NamedParameters<typeof getWriterType>",
+  "slug": "namedparameterstypeof-getwritertype",
+  "operationRelativeTypescriptFilePath": "src/extensions.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "extension": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "extension",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getWriterType>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

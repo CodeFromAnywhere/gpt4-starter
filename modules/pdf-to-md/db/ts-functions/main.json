@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678331352056,
+  "updatedAt": 1678331352056,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331352056,
+  "isApiExposed": false,
+  "name": "main",
+  "slug": "main",
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/convertPdfToMd.test.ts",
+  "commentsInside": [],
+  "description": "",
+  "parameters": [],
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "size": {
+    "characters": 271,
+    "lines": 12,
+    "bytes": 271,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 23,
+    "linesPerFile": 12,
+    "numberOfFiles": 1
+  },
+  "rawText": "\n\nasync function main() {\n  const { isSuccessful } = await convertPdfToMd({\n    inputPdfFilePath: path.join(__dirname, \"..\"),\n  });\n  if (isSuccessful) {\n    console.log(\"success converting pdf to md ! \");\n  } else {\n    console.log(\"error converting pdf to md. \");\n  }\n}",
+  "maxIndentationDepth": 2,
+  "id": "jxmuopzsnfugowhpwuzkuzah"
+}

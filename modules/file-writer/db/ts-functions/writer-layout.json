@@ -1,0 +1,60 @@
+{
+  "createdAt": 1677582107078,
+  "updatedAt": 1677582107078,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582107078,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/WriterLayout.tsx",
+  "commentsInside": [],
+  "rawText": " (props: { children: JSX.Element }) => {\n  const { fullPath } = usePath();\n\n  return (\n    <Div\n      className={`flex flex-col flex-1 h-full`}\n      textClassName=\"dark:text-white\"\n    >\n      <Div className=\"sticky top-0\">\n        <OpenFileWriterPages pagesObject={{}} />\n        <BreadCrumbs path={fullPath || \"\"} />\n      </Div>\n      {props.children}\n    </Div>\n  );\n}",
+  "name": "WriterLayout",
+  "slug": "writer-layout",
+  "parameters": [
+    {
+      "name": "props",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "children": {
+            "$ref": "#/definitions/global.JSX.Element"
+          }
+        },
+        "required": [
+          "children"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 373,
+    "lines": 16,
+    "bytes": 373,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 23,
+    "linesPerFile": 16,
+    "numberOfFiles": 1
+  },
+  "id": "bygsyfhwialhbetaxslygoby"
+}

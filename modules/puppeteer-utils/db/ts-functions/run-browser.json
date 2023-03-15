@@ -1,0 +1,35 @@
+{
+  "createdAt": 1677582338941,
+  "updatedAt": 1677582338941,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582338941,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/cli/runBrowser.cli.ts",
+  "commentsInside": [],
+  "rawText": " async (): Promise<Browser> => {\n  console.log(\"Run browser called\");\n  puppeteer.use(\n    RecaptchaPlugin({\n      provider: {\n        id: \"2captcha\",\n        token: \"243f9da05482cc8e9b76203a184943c9\", // REPLACE THIS WITH YOUR OWN 2CAPTCHA API KEY ⚡\n      },\n      visualFeedback: true, // colorize reCAPTCHAs (violet = detected, green = solved)\n    })\n  );\n\n  puppeteer.use(StealthPlugin());\n  const browser = await puppeteer.launch(browserLunchOptions);\n  const browserWSEndpoint = browser.wsEndpoint();\n  const browserSession: Creation<BrowserSession> = {\n    browserName: \"browser\",\n    browserSessionId: browserWSEndpoint,\n  };\n  console.log(\"browserId\", browser.wsEndpoint());\n  // Remove all the old session\n  await db.clear(\"BrowserSession\");\n  await db.clear(\"BrowserPage\");\n  await db.upsert(\"BrowserSession\", browserSession);\n  openMultiTabs({\n    noOfTabs: 10,\n    tabUrl: \"https://chat.openai.com/chat\",\n    browser,\n  });\n  return browser;\n}",
+  "name": "runBrowser",
+  "slug": "run-browser",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/node_modules/puppeteer/lib/types\").Browser>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 956,
+    "lines": 31,
+    "bytes": 958,
+    "bytesPerCharacter": 1.002092050209205,
+    "charactersPerLine": 31,
+    "linesPerFile": 31,
+    "numberOfFiles": 1
+  },
+  "id": "jsvnsdyulcsgikqcwdpmyqvg"
+}

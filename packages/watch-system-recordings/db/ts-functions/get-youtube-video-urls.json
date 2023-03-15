@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678330919994,
+  "updatedAt": 1678330919994,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330919994,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getChannelVideoUrls.ts",
+  "commentsInside": [],
+  "rawText": " () => {}",
+  "name": "getYoutubeVideoUrls",
+  "slug": "get-youtube-video-urls",
+  "parameters": [],
+  "description": "Should get all video urls, both unlisted and listed ones, from your channel\n\nTODO:\n- fix this\n- get it for CFA and GewoonWijnand\n- download all mp3's for that\n- transcribe all of it, see results\n- figure out how to split speakers locally, that would be amazing. even if not, it's already GREAT.",
+  "returnType": {
+    "rawType": "void",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 0,
+  "size": {
+    "characters": 303,
+    "lines": 8,
+    "bytes": 303,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 38,
+    "linesPerFile": 8,
+    "numberOfFiles": 1
+  },
+  "id": "sbkhgaonqoflqrakjmiscsqz"
+}

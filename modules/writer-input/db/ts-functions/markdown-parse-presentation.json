@@ -1,0 +1,297 @@
+{
+  "createdAt": 1678043369041,
+  "updatedAt": 1678043369041,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043369041,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/MarkdownParsePresentation.tsx",
+  "commentsInside": [],
+  "rawText": " (props: {\n  markdownParse: MarkdownParse;\n  augmentedWordObject?: MappedObject<AugmentedWord>;\n  projectRelativeBaseFolderPath: string;\n  projectRelativeMarkdownFilePath: string;\n}) => {\n  const {\n    markdownParse,\n    augmentedWordObject,\n    projectRelativeBaseFolderPath,\n    projectRelativeMarkdownFilePath,\n  } = props;\n  const [slide, setSlide] = useState(0);\n\n  useHotkey(\n    (event) => event.keyCode === 37,\n    () => setSlide((slide) => slide - 1),\n    []\n  );\n  useHotkey(\n    (event) => event.keyCode === 39,\n    () => setSlide((slide) => slide + 1),\n    []\n  );\n\n  if (!markdownParse.content) return null;\n\n  const markdownParagraphs = flattenMarkdownChunks(markdownParse.content);\n\n  const filtered = markdownParagraphs.filter((x) => x.paragraph !== \"\");\n\n  console.log({ markdownParagraphs, filtered });\n\n  const paragraph = filtered[slide];\n\n  if (!paragraph) {\n    return <P>No slides</P>;\n  }\n\n  const navigationIcons: ClickableIconType[] = [\n    {\n      onClick: () => setSlide(0),\n      emoji: \"⏮\",\n      disabled: slide === 0,\n    },\n\n    {\n      onClick: () => setSlide(slide - 1),\n      emoji: \"⬅\",\n      disabled: slide === 0,\n    },\n\n    {\n      onClick: () => setSlide(slide + 1),\n      emoji: \"➡\",\n      disabled: slide === markdownParagraphs.length - 1,\n    },\n\n    {\n      onClick: () => setSlide(markdownParagraphs.length - 1),\n      emoji: \"⏭\",\n      disabled: slide === markdownParagraphs.length - 1,\n    },\n  ];\n  const navigation = (\n    <Div className=\"flex flex-row gap-3\">\n      {navigationIcons.map((item, index) => (\n        <ClickableIcon {...item} key={`icon${index}`} />\n      ))}\n    </Div>\n  );\n\n  const title = paragraph.categoryStack[paragraph.categoryStack.length - 1];\n\n  return (\n    <Div className=\"flex flex-col flex-1\">\n      <Div className=\"flex flex-1 flex-col min-h-screen\">\n        {navigation}\n\n        <Div className=\"flex flex-col justify-center items-center\">\n          <P className=\"text-4xl\">{title}</P>\n\n          <Div className=\"flex flex-row flex-wrap\">\n            {renderBreadCrumbs(paragraph.categoryStack)}\n          </Div>\n        </Div>\n\n        <Div className=\"flex flex-1 flex-col items-center justify-center overflow-y-auto\">\n          <MarkdownContent\n            content={paragraph.paragraph}\n            config={{\n              big: true,\n              projectRelativeBaseFolderPath,\n              projectRelativeMarkdownFilePath,\n              augmentedWordObject,\n              isDev,\n              isStatic: false,\n            }}\n          />\n        </Div>\n      </Div>\n    </Div>\n  );\n}",
+  "name": "MarkdownParsePresentation",
+  "slug": "markdown-parse-presentation",
+  "parameters": [
+    {
+      "name": "props",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "markdownParse": {
+            "$ref": "#/definitions/MarkdownParse"
+          },
+          "augmentedWordObject": {
+            "$ref": "#/definitions/MappedObject%3CAugmentedWord%3E"
+          },
+          "projectRelativeBaseFolderPath": {
+            "type": "string"
+          },
+          "projectRelativeMarkdownFilePath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "markdownParse",
+          "projectRelativeBaseFolderPath",
+          "projectRelativeMarkdownFilePath"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "markdownParse",
+            "required": true,
+            "schema": {
+              "fullComment": "",
+              "properties": [
+                {
+                  "name": "fileName",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "if available, this can be the filename of the markdown in this markdown-parse. Can be used for things like merging",
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "createdAt",
+                  "required": false,
+                  "schema": {
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "openedAt",
+                  "required": false,
+                  "schema": {
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "updatedAt",
+                  "required": false,
+                  "schema": {
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "deletedAt",
+                  "required": false,
+                  "schema": {
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "createdFirstAt",
+                  "required": false,
+                  "schema": {
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "parameters",
+                  "required": true,
+                  "schema": {
+                    "fullComment": "parameters found in frontmatter\n\nOur version of frontmatter is a bit simpler than regular frontmatter\n\nNot sure if this is a good idea, but it keeps it simple for our OS\n\nall values parse in a similar way to csv\n\nmake sure that you use quotes if you want to store a string with commas, because commas in a parameter indicate that it is a string array\n\nNB: string arrays are comma separated values, where you can put values with special characters in between quotes",
+                    "nb": "string arrays are comma separated values, where you can put values with special characters in between quotes",
+                    "properties": [],
+                    "type": "object"
+                  }
+                },
+                {
+                  "name": "content",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "structured content based on h1, h2, h3, etc (paragraphs, recursive)",
+                    "items": [
+                      {
+                        "schema": {
+                          "fullComment": "",
+                          "properties": [
+                            {
+                              "name": "level",
+                              "required": true,
+                              "schema": {
+                                "fullComment": "0 is a paragraph 1-6 is h1 until h6",
+                                "type": "number"
+                              }
+                            },
+                            {
+                              "name": "content",
+                              "required": false,
+                              "schema": {
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "name": "markdownEmbed",
+                              "required": false,
+                              "schema": {
+                                "fullComment": "Anything in the format `![alt](src)`\n\nNB: I need to be very clear how this one works",
+                                "nb": "I need to be very clear how this one works",
+                                "properties": [
+                                  {
+                                    "name": "alt",
+                                    "required": true,
+                                    "schema": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  {
+                                    "name": "src",
+                                    "required": true,
+                                    "schema": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  {
+                                    "name": "type",
+                                    "required": true,
+                                    "schema": {
+                                      "enum": [
+                                        "video",
+                                        "audio",
+                                        "image",
+                                        "text",
+                                        "other"
+                                      ],
+                                      "fullComment": "Possible Asset Types\n\nLater, maybe also support: \"markdown\",\"json\",\"typescript\"",
+                                      "type": "string"
+                                    }
+                                  }
+                                ],
+                                "type": "object"
+                              }
+                            },
+                            {
+                              "name": "markdownLink",
+                              "required": false,
+                              "schema": {
+                                "fullComment": "Anything in the format `[alt](href)`\n\nIt needs to be clear how this works. There is a convention for this, and I should implement that as good as possible, and document it here",
+                                "properties": [
+                                  {
+                                    "name": "alt",
+                                    "required": true,
+                                    "schema": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  {
+                                    "name": "href",
+                                    "required": true,
+                                    "schema": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  {
+                                    "name": "type",
+                                    "required": true,
+                                    "schema": {
+                                      "enum": [
+                                        "video",
+                                        "audio",
+                                        "image",
+                                        "text",
+                                        "other"
+                                      ],
+                                      "fullComment": "Can be inferred from href\n\nPossible Asset Types\n\nLater, maybe also support: \"markdown\",\"json\",\"typescript\"",
+                                      "type": "string"
+                                    }
+                                  }
+                                ],
+                                "type": "object"
+                              }
+                            },
+                            {
+                              "name": "title",
+                              "required": false,
+                              "schema": {
+                                "fullComment": "NB: title can also be an empty string (\"\")",
+                                "nb": "title can also be an empty string (\"\")",
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "name": "children",
+                              "required": false,
+                              "schema": {
+                                "fullComment": "all content until the next title. it's either a content array if there's any titles found, or a string[] if it's paragraphs",
+                                "items": [
+                                  {
+                                    "schema": {
+                                      "circularRefName": "MarkdownChunk",
+                                      "properties": [],
+                                      "type": "object"
+                                    },
+                                    "name": "MarkdownChunk"
+                                  }
+                                ],
+                                "type": "array"
+                              }
+                            }
+                          ],
+                          "type": "object"
+                        },
+                        "name": "MarkdownChunk"
+                      }
+                    ],
+                    "type": "array"
+                  }
+                },
+                {
+                  "name": "raw",
+                  "required": true,
+                  "schema": {
+                    "fullComment": "raw markdown without frontmatter",
+                    "type": "string"
+                  }
+                }
+              ],
+              "type": "object"
+            }
+          },
+          {
+            "name": "projectRelativeBaseFolderPath",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectRelativeMarkdownFilePath",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element | null",
+    "typeDefinition": {
+      "optional": true,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 7,
+  "size": {
+    "characters": 2570,
+    "lines": 104,
+    "bytes": 2578,
+    "bytesPerCharacter": 1.003112840466926,
+    "charactersPerLine": 25,
+    "linesPerFile": 104,
+    "numberOfFiles": 1
+  },
+  "id": "euorumegdqmykawtvrevzbuj"
+}

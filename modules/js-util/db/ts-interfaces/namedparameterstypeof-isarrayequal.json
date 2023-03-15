@@ -1,0 +1,80 @@
+{
+  "createdAt": 1678332108028,
+  "updatedAt": 1678332108028,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332108028,
+  "id": "namedparameterstypeof-isarrayequal",
+  "name": "NamedParameters<typeof isArrayEqual>",
+  "slug": "namedparameterstypeof-isarrayequal",
+  "operationRelativeTypescriptFilePath": "src/isArrayEqual.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "a": {
+          "type": "array",
+          "items": {}
+        },
+        "b": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "a",
+        "b"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "a",
+          "required": true,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "b",
+          "required": true,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof isArrayEqual>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

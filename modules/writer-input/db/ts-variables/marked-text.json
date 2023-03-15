@@ -1,0 +1,71 @@
+{
+  "createdAt": 1678043391396,
+  "updatedAt": 1678043391396,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043391396,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "MarkedText",
+  "slug": "marked-text",
+  "operationRelativeTypescriptFilePath": "src/editors/MarkedText.tsx",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/writer/writer-input/src/editors/types\").ContentEditableRenderComponentType<import(\"/Users/clarity/os/operations/node_modules/@types/marked/index\").marked.Tokens.Code | import(\"/Users/clarity/os/operations/node_modules/@types/marked/index\").marked.Tokens.Table | import(\"/Users/clarity/os/operations/node_modules/@types/marked/index\").marked.Tokens.ListItem | import(\"/Users/clarity/os/operations/node_modules/@types/marked/index\").marked.Tokens.Text | import(\"/Users/clarity/os/operations/node_modules/@types/marked/index\").marked.Tokens.Escape | import(\"/Users/clarity/os/operations/node_modules/@types/marked/index\").marked.Tokens.Tag | import(\"/Users/clarity/os/operations/node_modules/@types/marked/index\").marked.Tokens.Strong | import(\"/Users/clarity/os/operations/node_modules/@types/marked/index\").marked.Tokens.Em>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "toMarkdownString": {
+          "type": "object",
+          "properties": {}
+        },
+        "exampleInputs": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "toMarkdownString",
+        "exampleInputs"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "toMarkdownString",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "exampleInputs",
+          "required": true,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "(props) => {\n  const {\n    subwordConfig,\n    markdownFileConfig,\n    subtextConfig,\n    markedToken,\n    testModeEnabled,\n  } = props;\n\n  const sentences = markedToken.raw.split(\"\\n\");\n  return (\n    <div>\n      {sentences.map((sentence) => (\n        <div>\n          <SpannedSentence\n            sentence={sentence}\n            subwordConfig={subwordConfig}\n            markdownFileConfig={markdownFileConfig}\n            subtextConfig={subtextConfig}\n            testModeEnabled={testModeEnabled}\n          />\n        </div>\n      ))}\n    </div>\n  );\n}",
+  "description": "",
+  "id": "thkkuqcxqxflzvulougjzmco"
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "createdAt": 1678331658883,
+    "updatedAt": 1678331658883,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331658883,
+    "name": "commentTypesConst",
+    "slug": "comment-types-const",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "rehpxbuhdawcdpkfxluzvwxh"
+  },
+  {
+    "createdAt": 1678331658883,
+    "updatedAt": 1678331658883,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331658883,
+    "name": "commentTypes",
+    "slug": "comment-types",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "rwatggiqpullwmforzqgelbt"
+  },
+  {
+    "createdAt": 1678331658883,
+    "updatedAt": 1678331658883,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331658883,
+    "name": "CommentType",
+    "slug": "comment-type",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "adebaghjdxebcvcnnmfblobh"
+  },
+  {
+    "createdAt": 1678331658883,
+    "updatedAt": 1678331658883,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331658883,
+    "name": "CommentTypeObject",
+    "slug": "comment-type-object",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "ndxxzdlmxfnfahqfmiyortba"
+  },
+  {
+    "createdAt": 1678331658883,
+    "updatedAt": 1678331658883,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331658883,
+    "name": "TsComment",
+    "slug": "ts-comment",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "qagxijkmvzmdfyelcemegsns"
+  },
+  {
+    "createdAt": 1678331658883,
+    "updatedAt": 1678331658883,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331658883,
+    "name": "commentTypesConst",
+    "slug": "comment-types-const",
+    "operationRelativeTypescriptFilePath": "src/TsComment.ts",
+    "comments": [],
+    "type": "value",
+    "id": "vgnjfwvpzzykgzewqewkgqwp"
+  },
+  {
+    "createdAt": 1678331658883,
+    "updatedAt": 1678331658883,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331658883,
+    "name": "commentTypes",
+    "slug": "comment-types",
+    "operationRelativeTypescriptFilePath": "src/TsComment.ts",
+    "comments": [],
+    "type": "value",
+    "id": "saxcjbouhqqjrbsafiyltopu"
+  },
+  {
+    "createdAt": 1678331658884,
+    "updatedAt": 1678331658884,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331658884,
+    "name": "CommentType",
+    "slug": "comment-type",
+    "operationRelativeTypescriptFilePath": "src/TsComment.ts",
+    "comments": [],
+    "type": "value",
+    "id": "fdtingtkrfaditiotqpenrrk"
+  },
+  {
+    "createdAt": 1678331658884,
+    "updatedAt": 1678331658884,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331658884,
+    "name": "CommentTypeObject",
+    "slug": "comment-type-object",
+    "operationRelativeTypescriptFilePath": "src/TsComment.ts",
+    "comments": [],
+    "type": "value",
+    "id": "rgtcvmptdcorvrhnhzfuklqf"
+  },
+  {
+    "createdAt": 1678331658884,
+    "updatedAt": 1678331658884,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331658884,
+    "name": "TsComment",
+    "slug": "ts-comment",
+    "operationRelativeTypescriptFilePath": "src/TsComment.ts",
+    "comments": [],
+    "type": "value",
+    "id": "ielejnvbndkvizmguqcfhbbq"
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "createdAt": 1678331054456,
+  "updatedAt": 1678331054456,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331054456,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/huggingfaceSpeakerDiarization.ts",
+  "commentsInside": [],
+  "rawText": " async (config: {\n  absoluteAudioFilePath: string;\n}) => {\n  const { absoluteAudioFilePath } = config;\n  const persona = await getPrimaryPersona();\n  const apiKey = persona.huggingfaceAuthToken;\n\n  if (!apiKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please setup an API Key for huggingface\",\n    };\n  }\n\n  try {\n    const huggingfaceResult = await request({\n      contentAbsoluteFilePath: absoluteAudioFilePath,\n      // model: \"pyannote/speaker-diarization\", <-- api seems broken\n      model: \"tawkit/phil-pyannote-speaker-diarization-endpoint\",\n      apiKey,\n    });\n\n    console.log({ huggingfaceResult });\n  } catch (e) {\n    console.log(`huggingFaceSpeakerDiarization error`, e);\n  }\n}",
+  "name": "huggingfaceSpeakerDiarization",
+  "slug": "huggingface-speaker-diarization",
+  "parameters": [
+    {
+      "name": "config",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "absoluteAudioFilePath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "absoluteAudioFilePath"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "absoluteAudioFilePath",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 709,
+    "lines": 27,
+    "bytes": 709,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 27,
+    "numberOfFiles": 1
+  },
+  "id": "kxccxbaxgpqhtbkntduqsvcz"
+}

@@ -1,0 +1,271 @@
+{
+  "createdAt": 1678428261893,
+  "updatedAt": 1678428261893,
+  "deletedAt": 0,
+  "createdFirstAt": 1678428261893,
+  "id": "assistantstate",
+  "name": "AssistantState",
+  "slug": "assistantstate",
+  "operationRelativeTypescriptFilePath": "src/AssistantState.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\n/**\n * state for an \"assistant\" role in the chat completions api of openai, given by the \"system\" role.\n *\n * Some states might be able to be dynamicly altered by certain behavior of the user.\n \nTODO: add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.\n\n */\nexport type AssistantState = {\n  /**\n   * Activate more expensive stuff with different levels\n   *\n   * default = 2 cents per message\n   * light = 0.4 cents per message\n   * silver = 5 cents per message\n   * gold = 20 cents per message\n   */\n  premium?: \"default\" | \"light\" | \"silver\" | \"gold\";\n  /**\n   * e.g. Elon Musk\n   */\n  personality?: string;\n  /**\n   * E.g. \"caucasian\" | \"black\" | \"asian\";\n   */\n  etnicity?: string;\n  /**\n   * e.g. rapper, programmer\n   */\n  profession?: string;\n  creator?: string;\n  mood?: LlmMood;\n  characteristics?: LlmCharacteristic[];\n  humorStyle?: LlmHumorStyle[];\n  rhymeAbility?: boolean;\n  goals?: string[];\n  rules?: string[];\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "state for an \"assistant\" role in the chat completions api of openai, given by the \"system\" role.\n\nSome states might be able to be dynamicly altered by certain behavior of the user.\n\nTODO: add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "premium": {
+          "type": "string",
+          "enum": [
+            "default",
+            "light",
+            "silver",
+            "gold"
+          ],
+          "description": "Activate more expensive stuff with different levels\n\ndefault = 2 cents per message light = 0.4 cents per message silver = 5 cents per message gold = 20 cents per message"
+        },
+        "personality": {
+          "type": "string",
+          "description": "e.g. Elon Musk"
+        },
+        "etnicity": {
+          "type": "string",
+          "description": "E.g. \"caucasian\" | \"black\" | \"asian\";"
+        },
+        "profession": {
+          "type": "string",
+          "description": "e.g. rapper, programmer"
+        },
+        "creator": {
+          "type": "string"
+        },
+        "mood": {
+          "type": "string",
+          "enum": [
+            "happy",
+            "sad",
+            "horny",
+            "grumpy",
+            "nervous",
+            "mad",
+            "angry",
+            "loving",
+            "annoyed",
+            "sleepy"
+          ]
+        },
+        "characteristics": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "egoistic",
+              "narsicistic",
+              "depressed",
+              "anxious",
+              "loves user",
+              "into user"
+            ]
+          }
+        },
+        "humorStyle": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "saddistic",
+              "sarcastic",
+              "witty",
+              "crazy",
+              "nihilistic",
+              "none"
+            ]
+          }
+        },
+        "rhymeAbility": {
+          "type": "boolean"
+        },
+        "goals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "description": "state for an \"assistant\" role in the chat completions api of openai, given by the \"system\" role.\n\nSome states might be able to be dynamicly altered by certain behavior of the user.\n\nTODO: add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc."
+    },
+    "simplifiedSchema": {
+      "fullComment": "state for an \"assistant\" role in the chat completions api of openai, given by the \"system\" role.\n\nSome states might be able to be dynamicly altered by certain behavior of the user.\n\nTODO: add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
+      "todo": "add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
+      "properties": [
+        {
+          "name": "premium",
+          "required": false,
+          "schema": {
+            "enum": [
+              "default",
+              "light",
+              "silver",
+              "gold"
+            ],
+            "fullComment": "Activate more expensive stuff with different levels\n\ndefault = 2 cents per message light = 0.4 cents per message silver = 5 cents per message gold = 20 cents per message",
+            "type": "string"
+          }
+        },
+        {
+          "name": "personality",
+          "required": false,
+          "schema": {
+            "fullComment": "e.g. Elon Musk",
+            "type": "string"
+          }
+        },
+        {
+          "name": "etnicity",
+          "required": false,
+          "schema": {
+            "fullComment": "E.g. \"caucasian\" | \"black\" | \"asian\";",
+            "type": "string"
+          }
+        },
+        {
+          "name": "profession",
+          "required": false,
+          "schema": {
+            "fullComment": "e.g. rapper, programmer",
+            "type": "string"
+          }
+        },
+        {
+          "name": "creator",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "mood",
+          "required": false,
+          "schema": {
+            "enum": [
+              "happy",
+              "sad",
+              "horny",
+              "grumpy",
+              "nervous",
+              "mad",
+              "angry",
+              "loving",
+              "annoyed",
+              "sleepy"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "characteristics",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "enum": [
+                    "egoistic",
+                    "narsicistic",
+                    "depressed",
+                    "anxious",
+                    "loves user",
+                    "into user"
+                  ],
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "humorStyle",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "enum": [
+                    "saddistic",
+                    "sarcastic",
+                    "witty",
+                    "crazy",
+                    "nihilistic",
+                    "none"
+                  ],
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "rhymeAbility",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "goals",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "rules",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "AssistantState",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

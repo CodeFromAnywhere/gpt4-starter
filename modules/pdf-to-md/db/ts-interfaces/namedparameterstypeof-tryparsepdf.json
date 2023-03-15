@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678331353022,
+  "updatedAt": 1678331353022,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331353022,
+  "id": "namedparameterstypeof-tryparsepdf",
+  "name": "NamedParameters<typeof tryParsePdf>",
+  "slug": "namedparameterstypeof-tryparsepdf",
+  "operationRelativeTypescriptFilePath": "src/convertPdfToMd.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "inputPdfFilePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "inputPdfFilePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "inputPdfFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof tryParsePdf>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

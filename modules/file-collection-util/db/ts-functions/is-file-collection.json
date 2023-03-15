@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678330499845,
+  "updatedAt": 1678330499845,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330499845,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/isFileCollection.ts",
+  "commentsInside": [],
+  "rawText": " (\n  absoluteFilePathA: string,\n  absoluteFilePathB: string\n): boolean =>\n  path.parse(absoluteFilePathA).dir === path.parse(absoluteFilePathB).dir &&\n  getFileCollectionBasename(absoluteFilePathA) ===\n    getFileCollectionBasename(absoluteFilePathB)",
+  "name": "isFileCollection",
+  "slug": "is-file-collection",
+  "parameters": [
+    {
+      "name": "absoluteFilePathA",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "absoluteFilePathB",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 250,
+    "lines": 7,
+    "bytes": 250,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 36,
+    "linesPerFile": 7,
+    "numberOfFiles": 1
+  },
+  "id": "lxtxdythohznzapesoyhaqon"
+}

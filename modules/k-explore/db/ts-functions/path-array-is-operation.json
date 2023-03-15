@@ -1,0 +1,66 @@
+{
+  "createdAt": 1677579113938,
+  "updatedAt": 1677579113938,
+  "deletedAt": 0,
+  "createdFirstAt": 1677579113938,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/util.ts",
+  "commentsInside": [],
+  "rawText": " (pathArray: string[]) => {\n  const hasPackageJson = !!pathArray.find(\n    (x) => path.parse(x).base === \"package.json\"\n  );\n  const hasTsConfig = !!pathArray.find(\n    (x) => path.parse(x).base === \"tsconfig.json\"\n  );\n\n  const isOperation = hasPackageJson && hasTsConfig;\n  return isOperation;\n}",
+  "name": "pathArrayIsOperation",
+  "slug": "path-array-is-operation",
+  "parameters": [
+    {
+      "name": "pathArray",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "simplifiedSchema": {
+        "items": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": null
+          }
+        ],
+        "type": "array"
+      },
+      "required": true
+    }
+  ],
+  "description": "Checks if pathArray contains a package.json and a tsconfig.json and thus should be an operation\n\nHandy for `cancelRecursionOn` in `explore`",
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 436,
+    "lines": 13,
+    "bytes": 436,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 34,
+    "linesPerFile": 13,
+    "numberOfFiles": 1
+  },
+  "id": "pixcvceaexuxjtqfysvxnqdd"
+}

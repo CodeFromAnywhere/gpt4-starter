@@ -1,0 +1,48 @@
+{
+  "createdAt": 1668448752840,
+  "updatedAt": 1668448752840,
+  "deletedAt": 0,
+  "createdFirstAt": 1668448752840,
+  "id": "namedparameterstypeof-getquerypath",
+  "name": "NamedParameters<typeof getQueryPath>",
+  "slug": "namedparameterstypeof-getquerypath",
+  "operationRelativeTypescriptFilePath": "src/getQueryPath.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "parsedUrlQuery": {
+          "$ref": "#/definitions/ParsedUrlQuery"
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "parsedUrlQuery",
+          "required": false,
+          "schema": {
+            "fullComment": "",
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getQueryPath>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

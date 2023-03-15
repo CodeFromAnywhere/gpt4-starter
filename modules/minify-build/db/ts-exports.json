@@ -1,0 +1,26 @@
+[
+  {
+    "createdAt": 1671116467281,
+    "updatedAt": 1671116467281,
+    "deletedAt": 0,
+    "createdFirstAt": 1671116467281,
+    "name": "minifyBuild",
+    "slug": "minify-build",
+    "operationRelativeTypescriptFilePath": "src/general.ts",
+    "comments": [],
+    "type": "value",
+    "id": "lnxgxfopmhygidqgcjtwfswx"
+  },
+  {
+    "createdAt": 1671116467281,
+    "updatedAt": 1671116467281,
+    "deletedAt": 0,
+    "createdFirstAt": 1671116467281,
+    "name": "minifyBuild",
+    "slug": "minify-build",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "lhhbtazimvbgopmkckkdlqlj"
+  }
+]

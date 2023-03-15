@@ -1,0 +1,66 @@
+{
+  "createdAt": 1677582393048,
+  "updatedAt": 1677582393048,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582393048,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/twitterLogin.ts",
+  "commentsInside": [],
+  "rawText": " async (props: { page: Page }) => {\n    const { page } = props;\n    const { password, username } = credentials;\n    await page.goto(\"https://twitter.com/login\");\n\n    // Adding listener for console\n    page.on(\"console\", (message) => console.log(`${message.text()}`));\n\n    // wait for username input field to appear\n    const navigationOutcome = await racePromises([\n        page.waitForSelector('input[autocomplete=\"username\"]'),\n        page.waitForSelector(\n            'div[class=\"css-18t94o4 css-1dbjc4n r-sdzlij r-1phboty r-rs99b7 r-ywje51 r-usiww2 r-2yi16 r-1qi8awa r-1ny4l3l r-ymttw5 r-o7ynqc r-6416eg r-lrvibr r-13qz1uu\"]'\n        ),\n    ]);\n\n    console.log({ navigationOutcome });\n\n    if (navigationOutcome === 0) {\n        await typeInTheInputField({\n            page,\n            selector: 'input[autocomplete=\"username\"]',\n            value: username,\n        });\n\n        // clicking next button\n        await page.click(\n            'div[class=\"css-18t94o4 css-1dbjc4n r-sdzlij r-1phboty r-rs99b7 r-ywje51 r-usiww2 r-2yi16 r-1qi8awa r-1ny4l3l r-ymttw5 r-o7ynqc r-6416eg r-lrvibr r-13qz1uu\"]'\n        );\n\n        // wait for the password field to appear\n        await typeInTheInputField({\n            page,\n            selector: 'input[autocomplete=\"current-password\"]',\n            value: password,\n        });\n\n        // waiting and clicking on the login button\n        await page.waitForSelector(\n            'div[class=\"css-901oao r-1awozwy r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0\"]'\n        );\n\n        await page.click(\n            'div[class=\"css-901oao r-1awozwy r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0\"]'\n        );\n    }\n}",
+  "name": "twitterLogin",
+  "slug": "twitter-login",
+  "parameters": [
+    {
+      "name": "props",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "$ref": "#/definitions/Page"
+          }
+        },
+        "required": [
+          "page"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "page",
+            "required": true,
+            "schema": {
+              "fullComment": "Page provides methods to interact with a single tab or\n {@link  https://developer.chrome.com/extensions/background_pages | extension background page } \nin Chromium.\n\n:::note\n\nOne Browser instance might have multiple Page instances.\n\n:::",
+              "properties": [],
+              "type": "object"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 6,
+  "size": {
+    "characters": 1775,
+    "lines": 47,
+    "bytes": 1775,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 38,
+    "linesPerFile": 47,
+    "numberOfFiles": 1
+  },
+  "id": "wckmlrytawvblbapjvttffax"
+}

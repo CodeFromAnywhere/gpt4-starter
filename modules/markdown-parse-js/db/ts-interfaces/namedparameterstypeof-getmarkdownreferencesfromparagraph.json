@@ -1,0 +1,49 @@
+{
+  "createdAt": 1669467042678,
+  "updatedAt": 1669467042678,
+  "deletedAt": 0,
+  "createdFirstAt": 1669467042678,
+  "id": "namedparameterstypeof-getmarkdownreferencesfromparagraph",
+  "name": "NamedParameters<typeof getMarkdownReferencesFromParagraph>",
+  "slug": "namedparameterstypeof-getmarkdownreferencesfromparagraph",
+  "operationRelativeTypescriptFilePath": "src/getMarkdownReferencesFromParagraph.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "paragraph": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "paragraph"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "paragraph",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getMarkdownReferencesFromParagraph>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

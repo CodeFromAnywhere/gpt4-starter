@@ -1,0 +1,99 @@
+{
+  "sentences": [
+    {
+      "startAt": 0,
+      "endAt": 4160,
+      "text": "Hey Rick, do with Marko, what does this have to do with?"
+    }
+  ],
+  "text": " Hey Rick, do with Marko, what does this have to do with?\n",
+  "translationText": " Hey Rick, do with Marko, what does this have to do with?\n",
+  "words": [
+    {
+      "startAt": 0,
+      "endAt": 40,
+      "text": ""
+    },
+    {
+      "startAt": 40,
+      "endAt": 400,
+      "text": "Hey"
+    },
+    {
+      "startAt": 400,
+      "endAt": 970,
+      "text": "Rick"
+    },
+    {
+      "startAt": 970,
+      "endAt": 1140,
+      "text": ","
+    },
+    {
+      "startAt": 1140,
+      "endAt": 1450,
+      "text": "do"
+    },
+    {
+      "startAt": 1450,
+      "endAt": 1900,
+      "text": "with"
+    },
+    {
+      "startAt": 1900,
+      "endAt": 2580,
+      "text": "Mark"
+    },
+    {
+      "startAt": 2580,
+      "endAt": 2650,
+      "text": "o"
+    },
+    {
+      "startAt": 2650,
+      "endAt": 2790,
+      "text": ","
+    },
+    {
+      "startAt": 2790,
+      "endAt": 2940,
+      "text": "what"
+    },
+    {
+      "startAt": 2940,
+      "endAt": 3150,
+      "text": "does"
+    },
+    {
+      "startAt": 3150,
+      "endAt": 3380,
+      "text": "this"
+    },
+    {
+      "startAt": 3380,
+      "endAt": 3720,
+      "text": "have"
+    },
+    {
+      "startAt": 3720,
+      "endAt": 3720,
+      "text": "to"
+    },
+    {
+      "startAt": 3720,
+      "endAt": 3850,
+      "text": "do"
+    },
+    {
+      "startAt": 3850,
+      "endAt": 4160,
+      "text": "with"
+    },
+    {
+      "startAt": 4160,
+      "endAt": 4160,
+      "text": "?"
+    }
+  ],
+  "usedModelName": "small"
+}

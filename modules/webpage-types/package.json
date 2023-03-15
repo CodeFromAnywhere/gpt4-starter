@@ -1,0 +1,70 @@
+{
+  "createdAt": 1668934147056,
+  "updatedAt": 1668934147056,
+  "deletedAt": 0,
+  "createdFirstAt": 1668934147056,
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "name": "webpage-types",
+  "operation": {
+    "hasGeneratedDependenciesIndexed": false,
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": []
+    },
+    "lastRebuildAt": 1670064149850,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 2,
+        "lines": 159,
+        "characters": 4473,
+        "bytes": 4473
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 108,
+        "characters": 3365,
+        "bytes": 3365
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 196,
+        "characters": 4250,
+        "bytes": 4250
+      },
+      "size": {
+        "bytes": 12088,
+        "characters": 12088,
+        "lines": 463,
+        "numberOfFiles": 6
+      }
+    },
+    "folderNameIndexed": "webpage-types",
+    "relativeOperationLocationPathIndexed": "operations/tools/types",
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [
+      "humanCase",
+      "notEmpty",
+      "ChildObject"
+    ],
+    "packageDependenciesIndexed": []
+  },
+  "dependencies": {
+    "recursive-types": "0.0.1",
+    "convert-case": "0.0.1",
+    "js-util": "0.0.1"
+  },
+  "slug": "webpage-types",
+  "id": "lnwhnaoqskdjejvofpnoecrv"
+}

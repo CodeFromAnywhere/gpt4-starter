@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678330844915,
+  "updatedAt": 1678330844915,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330844915,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/renameBadlyNamedFile.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  absoluteFilePath: string\n): Promise<string | undefined> => {\n  if (!fs.existsSync(absoluteFilePath)) {\n    return;\n  }\n  const newPath = fileSlugify(absoluteFilePath);\n  if (absoluteFilePath === newPath) {\n    // already good\n    console.log(`already good ${absoluteFilePath}`);\n    return absoluteFilePath;\n  }\n  const newFolderPath = path.parse(newPath).dir;\n  if (!fs.existsSync(newFolderPath)) {\n    await fs.mkdir(newFolderPath, { recursive: true });\n  }\n  await fs.rename(absoluteFilePath, newPath);\n  console.log(`renamed ${newPath}`);\n  return newPath;\n}",
+  "name": "renameBadlyNamedFile",
+  "slug": "rename-badly-named-file",
+  "parameters": [
+    {
+      "name": "absoluteFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<string | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 573,
+    "lines": 20,
+    "bytes": 573,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 29,
+    "linesPerFile": 20,
+    "numberOfFiles": 1
+  },
+  "id": "eaulzxtlkhjlqsujzqisedja"
+}

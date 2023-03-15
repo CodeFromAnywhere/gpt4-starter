@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678330835920,
+  "updatedAt": 1678330835920,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330835920,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/exploreBadNamingFiles.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  absoluteFolderPath: string\n): Promise<string[]> => {\n  const exploreResult = await explore({\n    basePath: absoluteFolderPath,\n    ignore: generatedFolders,\n  });\n\n  const filePaths = exploreResult.map((x) => x.path).filter(isBadName);\n\n  console.log({\n    filePaths: filePaths.map((p) => ({ old: p, new: fileSlugify(p) })),\n  });\n\n  return filePaths;\n}",
+  "name": "exploreBadNamingFiles",
+  "slug": "explore-bad-naming-files",
+  "parameters": [
+    {
+      "name": "absoluteFolderPath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "explore folder recursively, returning an array of filepaths that haven't applied the naming convention.\n\nNB: sometimes the folder has bad names. In that case new folders/files need to be created, recursively.",
+  "returnType": {
+    "rawType": "Promise<string[]>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 572,
+    "lines": 18,
+    "bytes": 572,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 32,
+    "linesPerFile": 18,
+    "numberOfFiles": 1
+  },
+  "id": "hfiiogfbtkbbdmdwirinjepv"
+}

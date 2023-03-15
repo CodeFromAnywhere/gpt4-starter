@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678329650207,
+  "updatedAt": 1678329650207,
+  "deletedAt": 0,
+  "createdFirstAt": 1678329650207,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getPublicFolderNestedPathObject.ts",
+  "commentsInside": [],
+  "rawText": " async (): Promise<\n  NestedPathObject | undefined\n> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) return;\n\n  const publicFolderPath = path.join(projectRoot, \"public\");\n\n  const nestedPathObject = await getNestedPathObject(publicFolderPath);\n\n  return nestedPathObject;\n}",
+  "name": "getPublicFolderNestedPathObject",
+  "slug": "get-public-folder-nested-path-object",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/types/recursive-types/build/NestedPathObject\").NestedPathObject | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 290,
+    "lines": 12,
+    "bytes": 290,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 24,
+    "linesPerFile": 12,
+    "numberOfFiles": 1
+  },
+  "id": "pkmnbcdtbxmpdukdgthwjxxi"
+}

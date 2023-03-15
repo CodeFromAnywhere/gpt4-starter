@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673860819718,
+  "updatedAt": 1673860819718,
+  "deletedAt": 0,
+  "createdFirstAt": 1673860819718,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "execAsync",
+  "slug": "exec-async",
+  "operationRelativeTypescriptFilePath": "src/general.ts",
+  "type": {
+    "rawType": "(command: string, execOptions: import(\"child_process\").ExecOptions) => Promise<{ isSuccessful: boolean; response: string; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  command: string,\n  execOptions: ExecOptions\n): Promise<{ isSuccessful: boolean; response: string }> => {\n  const result = await new Promise<{ isSuccessful: boolean; response: string }>(\n    (resolve) => {\n      const execution = exec(command, execOptions, (error, stdout, stderr) => {\n        console.log({ error, stdout, stderr });\n      })\n        .on(\"exit\", (code) => {\n          resolve({ response: String(code), isSuccessful: false });\n        })\n        .on(\"error\", (err) => {\n          resolve({ response: String(err), isSuccessful: false });\n        });\n\n      execution.stdout?.on(\"data\", (data) => {\n        console.log(data);\n      });\n    }\n  );\n\n  return result;\n}",
+  "description": "promises to exec something with response and success as result (Promised)",
+  "id": "hdveygywnbbqsolpzmmpmayj"
+}

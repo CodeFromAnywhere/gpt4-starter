@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794214586,
+  "updatedAt": 1673794214586,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794214586,
+  "id": "namedparameterstypeof-getgithubpersonalaccesstoken",
+  "name": "NamedParameters<typeof getGithubPersonalAccessToken>",
+  "slug": "namedparameterstypeof-getgithubpersonalaccesstoken",
+  "operationRelativeTypescriptFilePath": "src/getGithubPersonalAccessToken.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getGithubPersonalAccessToken>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

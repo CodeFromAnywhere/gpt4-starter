@@ -1,0 +1,122 @@
+[
+  {
+    "createdAt": 1678330889114,
+    "updatedAt": 1678330889114,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330889114,
+    "name": "CHUNK_TOKEN_SIZE",
+    "slug": "chunk-token-size",
+    "operationRelativeTypescriptFilePath": "src/getRecordingType.ts",
+    "comments": [],
+    "type": "value",
+    "id": "fwpdrlwpurjbfdlpspwebwyg"
+  },
+  {
+    "createdAt": 1678330889114,
+    "updatedAt": 1678330889114,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330889114,
+    "name": "getRecordingType",
+    "slug": "get-recording-type",
+    "operationRelativeTypescriptFilePath": "src/getRecordingType.ts",
+    "comments": [],
+    "type": "value",
+    "id": "agikmhxtthlqrmdysnobcxru"
+  },
+  {
+    "createdAt": 1678330889114,
+    "updatedAt": 1678330889114,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330889114,
+    "name": "CHUNK_TOKEN_SIZE",
+    "slug": "chunk-token-size",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "bsvwqgnjjltkmgawrtkzipub"
+  },
+  {
+    "createdAt": 1678330889114,
+    "updatedAt": 1678330889114,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330889114,
+    "name": "getRecordingType",
+    "slug": "get-recording-type",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "puwrtqjoneeurfosmpwddinm"
+  },
+  {
+    "createdAt": 1678330889114,
+    "updatedAt": 1678330889114,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330889114,
+    "name": "TOKEN_COUNT_MARGIN",
+    "slug": "token-count-margin",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "swvblaxirufqrryihrmzstxb"
+  },
+  {
+    "createdAt": 1678330889114,
+    "updatedAt": 1678330889114,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330889114,
+    "name": "transcriptionToGptChunks",
+    "slug": "transcription-to-gpt-chunks",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "eikjmchhnyyzzqofojflhxti"
+  },
+  {
+    "createdAt": 1678330889114,
+    "updatedAt": 1678330889114,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330889114,
+    "name": "watchMp3Transcriptions",
+    "slug": "watch-mp3-transcriptions",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "kmzilxfmydsnbsggdcbwixlo"
+  },
+  {
+    "createdAt": 1678330889114,
+    "updatedAt": 1678330889114,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330889114,
+    "name": "TOKEN_COUNT_MARGIN",
+    "slug": "token-count-margin",
+    "operationRelativeTypescriptFilePath": "src/transcriptionToGptChunks.ts",
+    "comments": [],
+    "type": "value",
+    "id": "lyvtlrdfvjfjfbznyslioczs"
+  },
+  {
+    "createdAt": 1678330889114,
+    "updatedAt": 1678330889114,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330889114,
+    "name": "transcriptionToGptChunks",
+    "slug": "transcription-to-gpt-chunks",
+    "operationRelativeTypescriptFilePath": "src/transcriptionToGptChunks.ts",
+    "comments": [],
+    "type": "value",
+    "id": "dxscqvfybcqpoeztkzombexz"
+  },
+  {
+    "createdAt": 1678330889114,
+    "updatedAt": 1678330889114,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330889114,
+    "name": "watchMp3Transcriptions",
+    "slug": "watch-mp3-transcriptions",
+    "operationRelativeTypescriptFilePath": "src/watchMp3Transcriptions.ts",
+    "comments": [],
+    "type": "value",
+    "id": "aeylbmyyiqbeazocdsyooalt"
+  }
+]

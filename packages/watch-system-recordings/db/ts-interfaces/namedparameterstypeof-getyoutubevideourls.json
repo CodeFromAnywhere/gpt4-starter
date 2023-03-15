@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330918436,
+  "updatedAt": 1678330918436,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330918436,
+  "id": "namedparameterstypeof-getyoutubevideourls",
+  "name": "NamedParameters<typeof getYoutubeVideoUrls>",
+  "slug": "namedparameterstypeof-getyoutubevideourls",
+  "operationRelativeTypescriptFilePath": "src/getChannelVideoUrls.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getYoutubeVideoUrls>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

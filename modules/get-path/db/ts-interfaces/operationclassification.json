@@ -1,0 +1,62 @@
+{
+  "createdAt": 1678042060145,
+  "updatedAt": 1678042060145,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042060145,
+  "id": "operationclassification",
+  "name": "OperationClassification",
+  "slug": "operationclassification",
+  "operationRelativeTypescriptFilePath": "src/getOperationClassificationObject.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "TODO: Ensure embedding this will embed the actual docs in my markdown renderer. I guess it might already do so!\n\n![](../docs/OperationClassification.md)\n\nTODO: It would be great to learn more about this topic and see if I can make more cross-environment packages. A great use case would be to create a wrapper around the current `fs-orm` to enable using it at the frontend too.",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "string",
+      "enum": [
+        "cjs",
+        "ts",
+        "esm",
+        "node-cjs",
+        "node-esm",
+        "node-ts",
+        "server-cjs",
+        "ui-web",
+        "ui-app",
+        "ui-ts",
+        "ui-cjs",
+        "ui-esm"
+      ],
+      "description": "TODO: Ensure embedding this will embed the actual docs in my markdown renderer. I guess it might already do so!\n\n![](../docs/OperationClassification.md)\n\nTODO: It would be great to learn more about this topic and see if I can make more cross-environment packages. A great use case would be to create a wrapper around the current `fs-orm` to enable using it at the frontend too."
+    },
+    "simplifiedSchema": {
+      "enum": [
+        "cjs",
+        "ts",
+        "esm",
+        "node-cjs",
+        "node-esm",
+        "node-ts",
+        "server-cjs",
+        "ui-web",
+        "ui-app",
+        "ui-ts",
+        "ui-cjs",
+        "ui-esm"
+      ],
+      "fullComment": "TODO: Ensure embedding this will embed the actual docs in my markdown renderer. I guess it might already do so!\n\n![](../docs/OperationClassification.md)\n\nTODO: It would be great to learn more about this topic and see if I can make more cross-environment packages. A great use case would be to create a wrapper around the current `fs-orm` to enable using it at the frontend too.",
+      "todo": "Ensure embedding this will embed the actual docs in my markdown renderer. I guess it might already do so!",
+      "type": "string"
+    },
+    "typeCoverage": 0,
+    "rawType": "OperationClassification",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

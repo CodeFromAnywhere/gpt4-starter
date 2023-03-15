@@ -1,0 +1,101 @@
+{
+  "createdAt": 1673794226566,
+  "updatedAt": 1673794226566,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794226566,
+  "id": "pushoperationresult",
+  "name": "PushOperationResult",
+  "slug": "pushoperationresult",
+  "operationRelativeTypescriptFilePath": "src/operationGithubPush.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\nexport declare type PushOperationResult = {\n  success: boolean;\n  message: string;\n  data: {\n    operationName: string;\n    createdRepoUrl?: string;\n  };\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "operationName": {
+              "type": "string"
+            },
+            "createdRepoUrl": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "operationName"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "success",
+        "message",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "success",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "message",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "data",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "operationName",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "createdRepoUrl",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "PushOperationResult",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

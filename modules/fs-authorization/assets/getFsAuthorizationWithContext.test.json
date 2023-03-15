@@ -1,0 +1,278 @@
+[
+  {
+    "groupSlug": "admin",
+    "result": {
+      "canRead": true,
+      "canWrite": true,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": ""
+  },
+  {
+    "groupSlug": "admin",
+    "result": {
+      "canRead": true,
+      "canWrite": true,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "operations/tools/cleanup/os-web"
+  },
+  {
+    "groupSlug": "admin",
+    "result": {
+      "canRead": true,
+      "canWrite": true,
+      "authorizationProperties": {
+        "isPublic": true
+      }
+    },
+    "projectRelativePath": "assets/music"
+  },
+  {
+    "groupSlug": "admin",
+    "result": {
+      "canRead": true,
+      "canWrite": true,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "assets/images"
+  },
+  {
+    "groupSlug": "admin",
+    "result": {
+      "canRead": true,
+      "canWrite": true
+    },
+    "projectRelativePath": "knowledge/users/wijnand-karsens"
+  },
+  {
+    "groupSlug": "admin",
+    "result": {
+      "canRead": true,
+      "canWrite": true,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "knowledge/users/wijnand"
+  },
+  {
+    "groupSlug": "admin",
+    "result": {
+      "canRead": true,
+      "canWrite": true
+    },
+    "projectRelativePath": "knowledge/groups/admin"
+  },
+  {
+    "groupSlug": "admin",
+    "result": {
+      "canRead": true,
+      "canWrite": true,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "knowledge/groups/cfa"
+  },
+  {
+    "groupSlug": "admin",
+    "result": {
+      "canRead": true,
+      "canWrite": true
+    },
+    "projectRelativePath": "knowledge/groups/public"
+  },
+  {
+    "groupSlug": "public",
+    "result": {
+      "canRead": false,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": ""
+  },
+  {
+    "groupSlug": "public",
+    "result": {
+      "canRead": false,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "operations/tools/cleanup/os-web"
+  },
+  {
+    "groupSlug": "public",
+    "result": {
+      "canRead": true,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPublic": true
+      }
+    },
+    "projectRelativePath": "assets/music"
+  },
+  {
+    "groupSlug": "public",
+    "result": {
+      "canRead": false,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "assets/images"
+  },
+  {
+    "groupSlug": "public",
+    "result": {
+      "canRead": false,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "knowledge/users/wijnand-karsens"
+  },
+  {
+    "groupSlug": "public",
+    "result": {
+      "canRead": false,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "knowledge/users/wijnand"
+  },
+  {
+    "groupSlug": "public",
+    "result": {
+      "canRead": false,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "knowledge/groups/admin"
+  },
+  {
+    "groupSlug": "public",
+    "result": {
+      "canRead": false,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "knowledge/groups/cfa"
+  },
+  {
+    "groupSlug": "public",
+    "result": {
+      "canRead": true,
+      "canWrite": true
+    },
+    "projectRelativePath": "knowledge/groups/public"
+  },
+  {
+    "groupSlug": "cfa",
+    "result": {
+      "canRead": false,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": ""
+  },
+  {
+    "groupSlug": "cfa",
+    "result": {
+      "canRead": false,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "operations/tools/cleanup/os-web"
+  },
+  {
+    "groupSlug": "cfa",
+    "result": {
+      "canRead": true,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPublic": true
+      }
+    },
+    "projectRelativePath": "assets/music"
+  },
+  {
+    "groupSlug": "cfa",
+    "result": {
+      "canRead": false,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "assets/images"
+  },
+  {
+    "groupSlug": "cfa",
+    "result": {
+      "canRead": false,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "knowledge/users/wijnand-karsens"
+  },
+  {
+    "groupSlug": "cfa",
+    "result": {
+      "canRead": true,
+      "canWrite": true
+    },
+    "projectRelativePath": "knowledge/users/wijnand"
+  },
+  {
+    "groupSlug": "cfa",
+    "result": {
+      "canRead": false,
+      "canWrite": false,
+      "authorizationProperties": {
+        "isPrivate": true
+      }
+    },
+    "projectRelativePath": "knowledge/groups/admin"
+  },
+  {
+    "groupSlug": "cfa",
+    "result": {
+      "canRead": true,
+      "canWrite": true
+    },
+    "projectRelativePath": "knowledge/groups/cfa"
+  },
+  {
+    "groupSlug": "cfa",
+    "result": {
+      "canRead": true,
+      "canWrite": true
+    },
+    "projectRelativePath": "knowledge/groups/public"
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678428267823,
+  "updatedAt": 1678428267823,
+  "deletedAt": 0,
+  "createdFirstAt": 1678428267823,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "achievements",
+  "slug": "achievements",
+  "operationRelativeTypescriptFilePath": "src/Developer.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/src/Developer\").Achievement[]",
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "[\n  {\n    name: \"Rich guy\",\n    emoji: \"🤑\",\n    description: \"Earned more than X an hour from a client\",\n    levels: [10, 30, 50, 80, 100, 150, 250],\n  },\n\n  {\n    name: \"Shipper\",\n    emoji: \"🚢\",\n    description: \"Shipped more than X apps\",\n    levels: [1, 2, 5, 10, 15, 20, 25],\n  },\n\n  {\n    name: \"Doc guru\",\n    emoji: \"👨🏻‍⚕️\",\n    description: \"Made more than X documenation pages\",\n    levels: [10, 20, 50, 100, 150, 200, 250],\n  },\n\n  {\n    name: \"Meeting Organiser\",\n    emoji: \"☕︎\",\n    description: \"Organised at least X meetings in the same week\",\n    levels: [1, 2, 3, 5, 7, 10, 15],\n  },\n]",
+  "description": "",
+  "id": "fjsrwtalcbialvcfdhudphdl"
+}

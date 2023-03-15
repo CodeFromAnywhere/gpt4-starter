@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677579248903,
+  "updatedAt": 1677579248903,
+  "deletedAt": 0,
+  "createdFirstAt": 1677579248903,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "test",
+  "slug": "test",
+  "operationRelativeTypescriptFilePath": "src/watchAll.test.ts",
+  "type": {
+    "rawType": "() => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const tsFunctions = await db.get(\"TsFunction\");\n  watchAll(tsFunctions);\n}",
+  "description": "",
+  "id": "iymoffflsjqerndewhpespan"
+}

@@ -1,0 +1,55 @@
+{
+  "createdAt": 1678611465371,
+  "updatedAt": 1678611465371,
+  "deletedAt": 0,
+  "createdFirstAt": 1678611465371,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/constants.ts",
+  "commentsInside": [],
+  "rawText": " (totalPaymentEuros: number) => {\n  return (\n    Math.round(\n      (totalPaymentEuros -\n        fixedTransactionCost -\n        systemMessageCost -\n        percentageTransactionCost * totalPaymentEuros) *\n        100\n    ) / 100\n  );\n}",
+  "name": "getCredit",
+  "slug": "get-credit",
+  "parameters": [
+    {
+      "name": "totalPaymentEuros",
+      "schema": {
+        "type": "number"
+      },
+      "simplifiedSchema": {
+        "type": "number"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 234,
+    "lines": 11,
+    "bytes": 234,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 21,
+    "linesPerFile": 11,
+    "numberOfFiles": 1
+  },
+  "id": "cdfytpjtzqmsdzimgbwcydyt"
+}

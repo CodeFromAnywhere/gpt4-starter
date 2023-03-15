@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678329629626,
+  "updatedAt": 1678329629626,
+  "deletedAt": 0,
+  "createdFirstAt": 1678329629626,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getAllAppOperations",
+  "slug": "get-all-app-operations",
+  "operationRelativeTypescriptFilePath": "src/getAllAppOperations.ts",
+  "type": {
+    "rawType": "() => Promise<import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/AppOperation\").AppOperation[]>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (): Promise<AppOperation[]> => {\n  const appOperations = (await db.get(\"Operation\"))\n    .filter(\n      (operation) =>\n        operation.name &&\n        operation.operation?.classificationIndexed === \"ui-web\" &&\n        operation.operation?.port\n    )\n    .map((operation, index) => {\n      const description =\n        operation.operation?.markdown || operation.description;\n      const port = operation.operation?.port!;\n\n      return {\n        name: operation.name,\n        port,\n        description,\n        emoji: getFirstEmoji(description),\n      };\n    })\n    .sort((a, b) => {\n      if (!a.port || !b.port) return -1;\n\n      if (a.port < b.port) return -1;\n      return 1;\n    });\n\n  const appOperationsWithOnline: AppOperation[] = await Promise.all(\n    appOperations.map(async (appOperation) => {\n      const isOnline = await isPortUsed(appOperation.port);\n      const newAppOperation: AppOperation = {\n        ...appOperation,\n        isOnline,\n      };\n      return newAppOperation;\n    })\n  );\n\n  return appOperationsWithOnline;\n}",
+  "description": "Gets all app operations from all packageJsons from the database. Adds `isOnline` to it on the fly by checking if it can connect to the port or not",
+  "id": "uwkgnlkqpnlmxkxbqvlimfvb"
+}

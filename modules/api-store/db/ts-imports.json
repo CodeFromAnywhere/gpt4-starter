@@ -1,0 +1,19 @@
+[
+  {
+    "createdAt": 1671317696860,
+    "updatedAt": 1671317696860,
+    "deletedAt": 0,
+    "createdFirstAt": 1671317696860,
+    "name": "createStore",
+    "slug": "create-store",
+    "type": "value",
+    "module": "react-with-native-store",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/store.ts",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "tqzdulrujpdssdaqlncuredt"
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678043856173,
+  "updatedAt": 1678043856173,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043856173,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/AuthenticationLayout.tsx",
+  "commentsInside": [],
+  "rawText": " (props: {\n  /**\n   * DEPRECATED: If given, menu will be rendered from \"menu\".\n   */\n  menu?: MenuProps;\n  /**\n   * There are some default pages like /login and /signup. If you want to overwrite these with your own, you need to specify their paths here.\n   */\n  overwriteDefaultPages?: string[];\n  customHeader?: React.ReactNode;\n  customMenu?: React.ReactNode;\n  custom404Page?: React.ReactNode;\n  // how to build up the menu\n\n  // typed as any needed because of react-bug\n  nextPage?: any;\n  pageProps?: any;\n}) => {\n  const [isFullscreen, setIsFullscreen] = useStore(\"menu.isFullScreen\");\n  const [isMobileMenuEnabled, setIsMobileMenuEnabled] = useStore(\n    \"menu.isMobileMenuEnabled\"\n  );\n\n  useHotkey(isAltF, () => setIsFullscreen(!isFullscreen), [isFullscreen]);\n  useHotkey(isAltB, () => setIsMobileMenuEnabled(!isMobileMenuEnabled), [\n    isMobileMenuEnabled,\n  ]);\n\n  const {\n    nextPage,\n    pageProps,\n    custom404Page,\n    customMenu,\n    menu: menuProps,\n    customHeader,\n    overwriteDefaultPages,\n  } = props;\n\n  return (\n    <UserApp\n      NextPage={nextPage}\n      overwriteDefaultPages={overwriteDefaultPages}\n      pageProps={pageProps}\n      customHeader={customHeader}\n      customMenu={customMenu}\n      menuProps={menuProps}\n    />\n  );\n}",
+  "name": "AuthenticationLayout",
+  "slug": "authentication-layout",
+  "parameters": [],
+  "description": "`UserApp` with standard layout with menu from \"menu\" and default Header\n\nAlso handles the shortcuts keybindings for full screen and showing menu, etc.\n\nTODO: extrahere `.menu` prop from this component completely, `.customMenu` is better. the purpose of this component is the behavior of the `layout` and putting everything together for mobile and desktop (small and large resolutions)",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 1649,
+    "lines": 53,
+    "bytes": 1649,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 31,
+    "linesPerFile": 53,
+    "numberOfFiles": 1
+  },
+  "id": "evpwaihvuvrwtissgadhfhsc"
+}

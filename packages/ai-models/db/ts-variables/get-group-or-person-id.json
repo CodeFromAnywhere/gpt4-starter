@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678369229046,
+  "updatedAt": 1678369229046,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369229046,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getGroupOrPersonId",
+  "slug": "get-group-or-person-id",
+  "operationRelativeTypescriptFilePath": "src/util/getGroupOrPersonId.ts",
+  "type": {
+    "rawType": "(absoluteAudioFilePath: string) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (absoluteAudioFilePath: string) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { groupId: undefined, personId: undefined };\n  }\n\n  const projectRelativeFilePath = makeRelative(\n    absoluteAudioFilePath,\n    projectRoot\n  );\n  const chunks = projectRelativeFilePath.split(\"/\");\n  const persons = await db.get(\"Person\");\n  const groups = await db.get(\"Group\");\n  const groupSlug = projectRelativeFilePath.startsWith(\"knowledge/groups/\")\n    ? chunks[2]\n    : undefined;\n\n  const groupId = groupSlug\n    ? groups.find((x) => x.slug === groupSlug)?.id\n    : undefined;\n  const slug = projectRelativeFilePath.startsWith(\"knowledge/users/\")\n    ? chunks[2]\n    : undefined;\n  const personId = slug ? persons.find((x) => x.slug === slug)?.id : undefined;\n\n  return { groupId, personId };\n}",
+  "description": "calculate groupId/personId this based on the path (/knowledge/users/[email]/*, etc)",
+  "id": "bzexlmnxkfymjjtpptmxvlns"
+}

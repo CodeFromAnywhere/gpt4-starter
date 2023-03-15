@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331550435,
+  "updatedAt": 1678331550435,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331550435,
+  "id": "namedparameterstypeof-searchbar",
+  "name": "NamedParameters<typeof SearchBar>",
+  "slug": "namedparameterstypeof-searchbar",
+  "operationRelativeTypescriptFilePath": "src/SearchBar.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof SearchBar>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

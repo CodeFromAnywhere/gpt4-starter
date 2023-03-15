@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678332002381,
+  "updatedAt": 1678332002381,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332002381,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "signupBare",
+  "slug": "signup-bare",
+  "operationRelativeTypescriptFilePath": "src/signupBare.ts",
+  "type": {
+    "rawType": "(config: { pictureImage?: import(\"/Users/clarity/os/operations/tools/asset/asset-type/build/BackendAsset\").BackendAsset | undefined; emailOrPhone: string; fullName?: string | undefined; customEmail?: ((otpCode: string, email: string) => string) | undefined; customSms?: ((otpCode: string, phoneNumber: string) => string) | undefined; credit?: number | undefined; }) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: {\n  pictureImage?: BackendAsset;\n  emailOrPhone: string;\n  fullName?: string;\n  customEmail?: (otpCode: string, email: string) => string;\n  customSms?: (otpCode: string, phoneNumber: string) => string;\n  credit?: number;\n}) => {\n  let { pictureImage, emailOrPhone, fullName, customEmail, customSms, credit } =\n    config;\n\n  if (pictureImage) {\n    // processing is a oneliner for this type of functions!\n    pictureImage = await processAsset(pictureImage);\n  }\n\n  const email = isEmail(emailOrPhone) ? emailOrPhone : undefined;\n  const phoneNumber =\n    !isEmail(emailOrPhone) && isPhoneNumber(emailOrPhone)\n      ? emailOrPhone\n      : undefined;\n\n  if (!email && !phoneNumber) {\n    return {\n      isSuccessful: false,\n      message: \"Please fill in a valid email or phone number\",\n    };\n  }\n\n  const alreadyPerson = (await db.get(\"Person\")).find((x) => {\n    if (email) {\n      return x.email === email;\n    }\n\n    if (phoneNumber) {\n      return x.phoneNumber === phoneNumber;\n    }\n    return false;\n  });\n\n  if (\n    alreadyPerson?.authentication?.emailIsVerified ||\n    alreadyPerson?.authentication?.phoneNumberIsVerified\n  ) {\n    return {\n      isSuccessful: false,\n      message: `There's already an account for ${emailOrPhone}. Please try logging in`,\n    };\n  }\n\n  const otpCode: string = String(\n    Math.round(Math.random() * 900000 + 100000 - 1)\n  );\n\n  if (!alreadyPerson) {\n    const authentication: Person[\"authentication\"] = email\n      ? { emailIsVerified: false, emailOtp: otpCode, emailOtpAt: Date.now() }\n      : phoneNumber\n      ? {\n          phoneNumberIsVerified: false,\n          phoneNumberOtp: otpCode,\n          phoneNumberOtpAt: Date.now(),\n        }\n      : undefined;\n\n    const newPerson: Creation<Person> = {\n      name: fullName || emailOrPhone,\n      slug: slugify(fullName || emailOrPhone),\n      email,\n      phoneNumber,\n      credit,\n      authentication,\n    };\n    await db.upsert(\"Person\", newPerson);\n  }\n\n  // now we have a person (alreadyPerson or newPerson) that needs to be verified through OTP\n\n  if (email) {\n    await sendMail({\n      to: email,\n      subject: \"Confirm signup\",\n      text: customEmail?.(otpCode, email) || defaultMessage(otpCode),\n    });\n  }\n\n  if (phoneNumber) {\n    await sendSms({\n      to: phoneNumber,\n      body: customSms?.(otpCode, phoneNumber) || defaultMessage(otpCode),\n    });\n  }\n\n  return {\n    isSuccessful: true,\n    emailOrPhone,\n    message: `Please verify your account, we've sent you a code.`,\n  };\n}",
+  "description": "",
+  "id": "dncbpcnxqtmypiqbiwvavyqm"
+}

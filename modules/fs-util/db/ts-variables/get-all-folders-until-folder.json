@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041933119,
+  "updatedAt": 1678041933119,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041933119,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getAllFoldersUntilFolder",
+  "slug": "get-all-folders-until-folder",
+  "operationRelativeTypescriptFilePath": "src/getAllFoldersUntilFolder.ts",
+  "type": {
+    "rawType": "(folderPath: string) => string[]",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(folderPath: string): string[] => {\n  const chunks = trimSlashes(folderPath).split(\"/\");\n  // chunks = ['a', 'random', 'path']\n\n  const result = chunks.map((_, index, array) => {\n    return \"/\" + array.slice(0, index + 1).join(\"/\");\n  });\n\n  result.unshift(\"/\");\n  return result;\n}",
+  "description": "NB: I already have this somewhere else but couldn't find it!\n\nIf the path is /a/random/path\n\nThe result of this function will be:\n\n['/a', '/a/random', '/a/random/path']\n\nCan also be a relative path, but then there will be a slash prepended, so not optimal.",
+  "id": "xqoncdzrejmkhzhdknfwvbnp"
+}

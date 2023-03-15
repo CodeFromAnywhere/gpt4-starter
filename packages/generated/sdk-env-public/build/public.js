@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.publicEnvironmentVariables=void 0,exports.publicEnvironmentVariables={markdownReaderTitle:"Clarity AI",dbAdminTitle:"Clarity AI",remoteServer:"",runRemoteServer:!1,isBetaEnabled:!0};
+//# sourceMappingURL=public.js.map

@@ -1,0 +1,20 @@
+[
+  {
+    "createdAt": 1668334926494,
+    "updatedAt": 1668334926494,
+    "deletedAt": 0,
+    "createdFirstAt": 1668334926494,
+    "name": "SimplifiedSchema",
+    "slug": "simplified-schema",
+    "type": "type",
+    "hasGeneric": false,
+    "module": "code-types",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/parsePrimitive.ts",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "kuvgekmxqixksjeggslczntv"
+  }
+]

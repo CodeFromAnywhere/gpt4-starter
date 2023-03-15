@@ -1,0 +1,48 @@
+{
+  "createdAt": 1678041952474,
+  "updatedAt": 1678041952474,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041952474,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/parseMd.ts",
+  "commentsInside": [],
+  "rawText": " (mdFilePath: Path): Markdown => {\n  const fileContents = fs.readFileSync(mdFilePath, \"utf8\");\n  const fileStats = fs.statSync(mdFilePath);\n\n  const config: matter.GrayMatterOption<string, any> | undefined = undefined;\n  const matterResult = matter(fileContents, config);\n\n  const fileName = mdFilePath.split(\"/\").pop()!.replace(/\\.md$/, \"\");\n\n  return {\n    content: matterResult.content,\n    createdAt: fileStats.birthtimeMs,\n    fileName,\n    openedAt: fileStats.atimeMs,\n    params: matterResult.data,\n    updatedAt: fileStats.ctimeMs,\n    modifiedAt: fileStats.mtimeMs,\n  };\n}",
+  "name": "parseMd",
+  "slug": "parse-md",
+  "parameters": [
+    {
+      "name": "mdFilePath",
+      "schema": {
+        "$ref": "#/definitions/Path",
+        "description": "path to a md file"
+      },
+      "simplifiedSchema": {
+        "fullComment": "path to a md file\n\nunlike PathLike, this is only a string\n\nFor now, we don't have a clear convention whether or not this string should be absolute or anything.",
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "DEPRECATED: just use `md-to-json-parse`\n\nparse a md file to all the needed info\n@param mdFilePath path to a md file\n@returns Md",
+  "returnType": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/control-fs/fs-util/src/types\").Markdown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 708,
+    "lines": 23,
+    "bytes": 708,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 31,
+    "linesPerFile": 23,
+    "numberOfFiles": 1
+  },
+  "id": "sggavaejodffgngfftrlkppl"
+}

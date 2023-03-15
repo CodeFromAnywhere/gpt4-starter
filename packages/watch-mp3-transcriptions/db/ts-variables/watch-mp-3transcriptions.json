@@ -1,0 +1,268 @@
+{
+  "createdAt": 1673852626378,
+  "updatedAt": 1673852626378,
+  "deletedAt": 0,
+  "createdFirstAt": 1673852626378,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "watchMp3Transcriptions",
+  "slug": "watch-mp-3transcriptions",
+  "operationRelativeTypescriptFilePath": "src/watchMp3Transcriptions.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/types/code-types/build/functions/ProjectWatcher\").ProjectWatcher<any>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "startupStrategy": {
+          "enum": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "x-enumNames": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "type": "string"
+        },
+        "filter": {
+          "type": "object",
+          "properties": {}
+        },
+        "config": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "versionInfo": {
+              "type": "object",
+              "properties": {}
+            },
+            "isHeavy": {
+              "type": "boolean"
+            },
+            "isInternetRequired": {
+              "type": "boolean"
+            },
+            "isBrowserRequired": {
+              "type": "boolean"
+            },
+            "isPublic": {
+              "type": "boolean"
+            },
+            "isApiExposed": {
+              "type": "boolean"
+            },
+            "domain": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "isPaid": {
+              "type": "boolean"
+            },
+            "priceCredit": {
+              "type": "number"
+            },
+            "priceDescription": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "authorizations": {
+              "type": "object",
+              "properties": {}
+            },
+            "canCache": {
+              "type": "boolean"
+            },
+            "runEveryPeriod": {}
+          },
+          "required": [
+            "runEveryPeriod"
+          ]
+        }
+      },
+      "required": [
+        "filter"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "startupStrategy",
+          "required": false,
+          "schema": {
+            "enum": [
+              "ignore",
+              "sync",
+              "async",
+              "queue"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "filter",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "config",
+          "required": false,
+          "schema": {
+            "properties": [
+              {
+                "name": "version",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "versionInfo",
+                "required": false,
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                }
+              },
+              {
+                "name": "isHeavy",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isInternetRequired",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isBrowserRequired",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isPublic",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isApiExposed",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "domain",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "isPaid",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "priceCredit",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "priceDescription",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "authorizations",
+                "required": false,
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                }
+              },
+              {
+                "name": "canCache",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "runEveryPeriod",
+                "required": true,
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  _,\n  absolutePath\n): Promise<string | undefined> => {\n  if (!fs.existsSync(absolutePath)) {\n    return;\n  }\n\n  if (isLocked(absolutePath)) {\n    return;\n  }\n  const chunks = await transcriptionToGptChunks(absolutePath, CHUNK_TOKEN_SIZE);\n\n  if (!chunks) {\n    return;\n  }\n\n  // turn speech into clean text\n  const finalCleanedupResultString = (\n    await oneByOne(chunks, async (chunk) => {\n      const result =\n        await textToText(`Consider this transcription and please make it cleaner (remove speaking errors and transform it into alineas)\n\n\\`\\`\\`\n${chunk}\n\\`\\`\\`\n`);\n      return result.result;\n    })\n  )\n    .filter(notEmpty)\n    .join(\"\\n\\n\");\n\n  const parsedPath = path.parse(absolutePath);\n  const totalExtension = \".transcription.json\";\n  const baseName = parsedPath.base.slice(\n    0,\n    parsedPath.base.length - totalExtension.length\n  );\n  const cleanFilePath = path.join(parsedPath.dir, `${baseName}.md`);\n\n  if (finalCleanedupResultString === \"\") {\n    console.log(\"No result transcribing\", finalCleanedupResultString);\n    return;\n  }\n\n  const recordingType = await getRecordingType(absolutePath);\n\n  const fullMd = `---\nisSource: false\nsource: wav, whisper, gpt3\ncreatedAt: ${Date.now()}\ntype: recording\nrecordingType: ${recordingType}\n---\n\n${finalCleanedupResultString}`;\n\n  await fs.writeFile(cleanFilePath, fullMd, \"utf8\");\n\n  return cleanFilePath;\n}",
+  "description": "Add an automation (watcher that queues or does) to act on any `.mp3.txt` (which indicates a whisper is done) that doesn't have a `.clean.md`\n\nThere are many other things we can do with the spoken text transcription of an audio file, but these will be applied on any md file (which is much more general purpose)\n\nPromises the path of the resulting converted cleaned-up file",
+  "id": "jexibjhpcbvzidfobcfckvdl"
+}

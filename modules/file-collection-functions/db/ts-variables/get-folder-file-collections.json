@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330454232,
+  "updatedAt": 1678330454232,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330454232,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getFolderFileCollections",
+  "slug": "get-folder-file-collections",
+  "operationRelativeTypescriptFilePath": "src/getFolderFileCollections.ts",
+  "type": {
+    "rawType": "(absoluteFolderPath: string, projectRoot: string, user_groupSlugs: string[]) => Promise<import(\"/Users/clarity/os/operations/tools/ai/ai-types/build/FolderContent\").FolderContent[]>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  absoluteFolderPath: string,\n  projectRoot: string,\n  user_groupSlugs: string[]\n): Promise<FolderContent[]> => {\n  const executionId = generateUniqueId();\n  const performance: (PerformanceItem | undefined)[] = [];\n  getNewPerformance(\"start\", executionId, true);\n  const items = await getFolderContents(absoluteFolderPath);\n  if (!items) {\n    return [];\n  }\n  performance.push(getNewPerformance(\"readdir\", executionId));\n\n  const navigation: FolderContent[] = (\n    await Promise.all(\n      items.map(async (item) => {\n        // TODO: think about it. Maybe we should do something with symbolic links because we don't want to go deep forever, it could actually be nice to use this feature of the OS as well!\"\n\n        // NB: we assume it's lowercase readme for efficiency purposes here\n        const projectRelativePathIncludingFolderFile =\n          item.type === \"folder\"\n            ? path.join(item.projectRelativePath, \"readme.md\")\n            : item.projectRelativePath;\n\n        // NB: since .md has prio, this must be the one on top of the item\n        // Only need to check auth for folders and for markdown-files...\n        const needCheckAuthorization =\n          item.type === \"folder\" || item.name.endsWith(\".md\");\n\n        const authorization = needCheckAuthorization\n          ? await getFsAuthorizationSingleFile({\n              projectRelativeFilePath: projectRelativePathIncludingFolderFile,\n              user_groupSlugs,\n            })\n          : undefined;\n\n        const canRead = !authorization || authorization.canRead;\n        const canWrite = !authorization || authorization.canWrite;\n\n        const folderContent: FolderContent = {\n          ...item,\n          canRead,\n          canWrite,\n          ...authorization?.authorizationProperties,\n        };\n\n        return folderContent;\n      })\n    )\n  ).filter((item) => item.canRead);\n\n  performance.push(getNewPerformance(\"readfiles-createnav\", executionId));\n\n  // console.log({ performance, absoluteFolderPath });\n  cleanupTimer(executionId);\n\n  return navigation;\n}",
+  "description": "",
+  "id": "uqqkrebfvmyyayjsvphkqkqa"
+}

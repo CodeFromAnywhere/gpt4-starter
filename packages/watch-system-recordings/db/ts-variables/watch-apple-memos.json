@@ -1,0 +1,88 @@
+{
+  "createdAt": 1678330922854,
+  "updatedAt": 1678330922854,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330922854,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "watchAppleMemos",
+  "slug": "watch-apple-memos",
+  "operationRelativeTypescriptFilePath": "src/watchAppleMemos.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/ProjectWatcher\").ProjectWatcher<any>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "startupStrategy": {
+          "enum": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "x-enumNames": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "type": "string"
+        },
+        "filter": {
+          "type": "object",
+          "properties": {}
+        },
+        "config": {}
+      },
+      "required": [
+        "filter",
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "startupStrategy",
+          "required": false,
+          "schema": {
+            "enum": [
+              "ignore",
+              "sync",
+              "async",
+              "queue"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "filter",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  _,\n  absolutePath,\n  isStartup\n) => {\n  if (!fs.existsSync(absolutePath)) {\n    return;\n  }\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) return;\n  const screenPath = path.join(projectRoot, \"knowledge\", \"recordings\");\n\n  const stats = await fs.stat(absolutePath);\n  const createdAt = stats.ctimeMs;\n\n  // if (isStartup) {\n  //   return;\n  // }\n\n  // first put the wav there\n  const resultingAudioPath = await compressConvert(absolutePath, {\n    targetFormat: \"wav\",\n    is16bitWav: true,\n    keepOriginal: true,\n    outputFolderPath: screenPath,\n    name: String(createdAt),\n  });\n\n  if (!resultingAudioPath) {\n    return;\n  }\n\n  const movedMarkPath = `${absolutePath}.${movedFileSubextension}`;\n  await fs.writeFile(movedMarkPath, String(Date.now()), \"utf8\");\n}",
+  "description": "Watch `/Application Support/com.apple.voicememos/Recordings` and move them to /knowledge/recordings immediately. on success, add a file. `[recording-name].m4a.moved`\n\nWhen restarting the server, find all m4a's there that don't have this file. Transcribe those too with whisper.",
+  "id": "fwpnjppqjthuvltjhpwlbenk"
+}

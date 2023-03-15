@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var getCommonAncestorMultiple_1=require("./getCommonAncestorMultiple");console.log((0,getCommonAncestorMultiple_1.getCommonAncestorMultiple)(["/a/b/c","/a/b/c/d","/a/b/c/e"]));
+//# sourceMappingURL=getCommonAncestorMultiple.test.js.map

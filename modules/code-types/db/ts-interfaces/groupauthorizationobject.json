@@ -1,0 +1,38 @@
+{
+  "createdAt": 1676841897180,
+  "updatedAt": 1676841897180,
+  "deletedAt": 0,
+  "createdFirstAt": 1676841897180,
+  "id": "groupauthorizationobject",
+  "name": "GroupAuthorizationObject",
+  "slug": "groupauthorizationobject",
+  "operationRelativeTypescriptFilePath": "src/TsInterface.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "The key, groupName, is a slug of a group, or a wildcard (*) for all groups\n\nThe value should be a concatenation of all operations permitted in this dataset.\n\n- C for create\n- R for read\n- U for update\n- D for delete\n\nExample: `{ \"cfa\": \"CRUD\" }` would say that this dataset can be fully altered and read by the \"cfa\" group\n\nFor `Dataset`s this should be applied through the database.\n\nFor database models, this should be applied in frontmatter, like this:\n\n```\n--- authorizations: cfa:crud, public:r\n--- ```\n\nThe above applies on the database. For functions, you can do the following:\n\n- X for execute\n- I for reading info about the function (docs etc)\n- R for reading the code (same like CRUD)\n- U for updating the code (same like CRUD)\n\nFor knowledge (text), you can apply authorizations in frontmatter of the markdown, in the same way as you can for data (canRead/canWrite are the only ones needed).\n\nNB: In a later stage we may add more permissions like \"isSearchable (S)\"",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "The key, groupName, is a slug of a group, or a wildcard (*) for all groups\n\nThe value should be a concatenation of all operations permitted in this dataset.\n\n- C for create\n- R for read\n- U for update\n- D for delete\n\nExample: `{ \"cfa\": \"CRUD\" }` would say that this dataset can be fully altered and read by the \"cfa\" group\n\nFor `Dataset`s this should be applied through the database.\n\nFor database models, this should be applied in frontmatter, like this:\n\n```\n--- authorizations: cfa:crud, public:r\n--- ```\n\nThe above applies on the database. For functions, you can do the following:\n\n- X for execute\n- I for reading info about the function (docs etc)\n- R for reading the code (same like CRUD)\n- U for updating the code (same like CRUD)\n\nFor knowledge (text), you can apply authorizations in frontmatter of the markdown, in the same way as you can for data (canRead/canWrite are the only ones needed).\n\nNB: In a later stage we may add more permissions like \"isSearchable (S)\""
+    },
+    "simplifiedSchema": {
+      "fullComment": "The key, groupName, is a slug of a group, or a wildcard (*) for all groups\n\nThe value should be a concatenation of all operations permitted in this dataset.\n\n- C for create\n- R for read\n- U for update\n- D for delete\n\nExample: `{ \"cfa\": \"CRUD\" }` would say that this dataset can be fully altered and read by the \"cfa\" group\n\nFor `Dataset`s this should be applied through the database.\n\nFor database models, this should be applied in frontmatter, like this:\n\n```\n--- authorizations: cfa:crud, public:r\n--- ```\n\nThe above applies on the database. For functions, you can do the following:\n\n- X for execute\n- I for reading info about the function (docs etc)\n- R for reading the code (same like CRUD)\n- U for updating the code (same like CRUD)\n\nFor knowledge (text), you can apply authorizations in frontmatter of the markdown, in the same way as you can for data (canRead/canWrite are the only ones needed).\n\nNB: In a later stage we may add more permissions like \"isSearchable (S)\"",
+      "nb": "In a later stage we may add more permissions like \"isSearchable (S)\"",
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "GroupAuthorizationObject",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

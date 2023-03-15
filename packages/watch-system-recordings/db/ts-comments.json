@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678330923011,
+    "updatedAt": 1678330923011,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330923011,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/watchAppleMemos.ts",
+    "comment": "Watch `/Application Support/com.apple.voicememos/Recordings` and move them to /knowledge/recordings immediately. on success, add a file. `[recording-name].m4a.moved`\n\nWhen restarting the server, find all m4a's there that don't have this file. Transcribe those too with whisper.",
+    "rawStatement": "export const watchAppleMemos: ProjectWatcher = async (\n  _,\n  absolutePath,\n  isStartup\n) => {\n  if (!fs.existsSync(absolutePath)) {\n    return;\n  }\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) return;\n  const screenPath = path.join(projectRoot, \"knowledge\", \"recordings\");\n\n  const stats = await fs.stat(absolutePath);\n  const createdAt = stats.ctimeMs;\n\n  // if (isStartup) {\n  //   return;\n  // }\n\n  // first put the wav there\n  const resultingAudioPath = await compressConvert(absolutePath, {\n    targetFormat: \"wav\",\n    is16bitWav: true,\n    keepOriginal: true,\n    outputFolderPath: screenPath,\n    name: String(createdAt),\n  });\n\n  if (!resultingAudioPath) {\n    return;\n  }\n\n  const movedMarkPath = `${absolutePath}.${movedFileSubextension}`;\n  await fs.writeFile(movedMarkPath, String(Date.now()), \"utf8\");\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 7,
+    "lastLine": 13,
+    "id": "rsolmwhfqzfnxczyihpnfhhs"
+  }
+]

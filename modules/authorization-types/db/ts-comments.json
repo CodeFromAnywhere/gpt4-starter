@@ -1,0 +1,22 @@
+[
+  {
+    "createdAt": 1678331645485,
+    "updatedAt": 1678331645485,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331645485,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/GroupAuthorizationObject.ts",
+    "comment": "```\n\nThe above applies on the database. For functions, you can do the following:\n\n- X for execute\n- I for reading info about the function (docs etc)\n- R for reading the code (same like CRUD)\n- U for updating the code (same like CRUD)\n\nFor knowledge (text), you can apply authorizations in frontmatter of the markdown, in the same way as you can for data (canRead/canWrite are the only ones needed).\n\nNB: In a later stage we may add more permissions like \"isSearchable (S)\"",
+    "rawStatement": "export type GroupAuthorizationObject = {\n  [groupName: string]: string;\n};",
+    "parameters": {
+      "authorizations": "cfa"
+    },
+    "types": [
+      "nb"
+    ],
+    "firstLine": 1,
+    "lastLine": 34,
+    "id": "xnaryaksmwhqwyyavtqmvsmf"
+  }
+]

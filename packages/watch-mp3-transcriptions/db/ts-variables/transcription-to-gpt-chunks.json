@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330896103,
+  "updatedAt": 1678330896103,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330896103,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "transcriptionToGptChunks",
+  "slug": "transcription-to-gpt-chunks",
+  "operationRelativeTypescriptFilePath": "src/transcriptionToGptChunks.ts",
+  "type": {
+    "rawType": "(transcriptionAbsoluteFilePath: string, maxGptNodeTokenSize: number) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  transcriptionAbsoluteFilePath: string,\n  maxGptNodeTokenSize: number\n) => {\n  const transcription = await readJsonFile<Transcription>(\n    transcriptionAbsoluteFilePath\n  );\n  if (!transcription) {\n    return;\n  }\n\n  const chunks = transcription.translationText.split(\".\").reduce(\n    (chunks, currentSentence) => {\n      const lastChunk = chunks[chunks.length - 1];\n\n      const tokenCount =\n        calculateTokenCount(`${lastChunk}${currentSentence}.`) *\n        TOKEN_COUNT_MARGIN;\n\n      if (tokenCount > maxGptNodeTokenSize) {\n        // doesn't fit on previous chunk, make a new one\n        chunks.push(currentSentence);\n        return chunks;\n      }\n      // does fit, add to last one\n      chunks[chunks.length - 1] = `${lastChunk}${currentSentence}.`;\n      return chunks;\n    },\n    [\"\"]\n  );\n\n  return chunks;\n}",
+  "description": "Chunkify an audio transcription text\n\nLooks at the \".\" in the text and adds sentences together till a maximum token size per chunk.",
+  "id": "swugckayzoccbyihrnlvrmir"
+}

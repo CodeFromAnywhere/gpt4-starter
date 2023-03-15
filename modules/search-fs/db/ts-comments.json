@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678331598125,
+    "updatedAt": 1678331598125,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331598125,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/getExplorableFilesWithContext.ts",
+    "comment": "Gets explorable file collections...",
+    "rawStatement": "export const getExplorableFilesWithContext = async (\n  functionContext: FunctionContext,\n  query?: string\n): Promise<SearchResult[]> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return [];\n  }\n  const explorableBasePaths =\n    getExplorableBasePathsWithContext(functionContext);\n\n  const filePaths = (\n    await explore({\n      basePath: explorableBasePaths.map((x) =>\n        path.join(projectRoot, x.projectRelativePath)\n      ),\n      ignore: [\n        ...generatedFolders,\n        \"db\",\n        \"cloned\",\n        \"backups\",\n        \"bundled\",\n        \"buntest\",\n      ],\n      readmeOnTop: true,\n      search: query || undefined,\n      extension: [\"md\", \"ts\", \"tsx\"],\n    })\n  ).map((x) => x.path);\n\n  const filtered = filePaths.filter(onlyUnique2<string>(isFileCollection));\n\n  const searchResults = filtered.map((absolutePath) => {\n    const relativePath = makeRelative(absolutePath, projectRoot);\n    const result: SearchResult = {\n      title: `${relativePath}`,\n      url: `/${relativePath}`,\n      description: undefined, //Could add some summary here from frontmatter, but might be time consuming\n    };\n\n    return result;\n  });\n\n  return searchResults;\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 11,
+    "lastLine": 13,
+    "id": "jctqknoqfhthnxccgodjsakc"
+  }
+]

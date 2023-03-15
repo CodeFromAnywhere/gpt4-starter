@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331073732,
+  "updatedAt": 1678331073732,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331073732,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "calculateMessagesTokenCount",
+  "slug": "calculate-messages-token-count",
+  "operationRelativeTypescriptFilePath": "src/calculateMessagesTokenCount.ts",
+  "type": {
+    "rawType": "(messages: import(\"/Users/clarity/os/operations/tools/purpose/social-media/social-media-types/build/ChatMessage\").ChatMessage[], isDavinci?: boolean | undefined) => (import(\"/Users/clarity/os/operations/tools/purpose/social-media/social-media-types/build/ChatMessage\").ChatMessage & { tokenCount: number; })[]",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  messages: ChatMessage[],\n  isDavinci?: boolean\n): (ChatMessage & { tokenCount: number })[] => {\n  const encoding = get_encoding(isDavinci ? \"p50k_base\" : \"cl100k_base\");\n\n  const extendedMessages = messages.map((item) => ({\n    ...item,\n    tokenCount: encoding.encode(\n      `roleword ${item.groupSlug || \"\"} ${item.message}`\n    ).length,\n  }));\n  return extendedMessages;\n}",
+  "description": "NB: in this case, we could theoretically still use this with davinci.\nNB: we are making the encoding in this function isntead of using `calculateTokenCount` because it might be more efficient like this",
+  "id": "wempokrjmtbrkexeujstxsqx"
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "createdAt": 1668333702322,
+    "updatedAt": 1668333702322,
+    "deletedAt": 0,
+    "createdFirstAt": 1668333702322,
+    "name": "bareInputClass",
+    "slug": "bare-input-class",
+    "operationRelativeTypescriptFilePath": "src/general.ts",
+    "comments": [],
+    "type": "value",
+    "id": "qbmflvtlkjyrwcrlwjtuwjcd"
+  },
+  {
+    "createdAt": 1668333702323,
+    "updatedAt": 1668333702323,
+    "deletedAt": 0,
+    "createdFirstAt": 1668333702323,
+    "name": "inputClass",
+    "slug": "input-class",
+    "operationRelativeTypescriptFilePath": "src/general.ts",
+    "comments": [],
+    "type": "value",
+    "id": "msqlqiimnkyftshtytjhukjx"
+  },
+  {
+    "createdAt": 1668333702323,
+    "updatedAt": 1668333702323,
+    "deletedAt": 0,
+    "createdFirstAt": 1668333702323,
+    "name": "UI",
+    "slug": "ui",
+    "operationRelativeTypescriptFilePath": "src/general.ts",
+    "comments": [],
+    "type": "value",
+    "id": "ikgioefsodbpylfuyspaofst"
+  },
+  {
+    "createdAt": 1668333702323,
+    "updatedAt": 1668333702323,
+    "deletedAt": 0,
+    "createdFirstAt": 1668333702323,
+    "name": "bareInputClass",
+    "slug": "bare-input-class",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "ddbyfccpryelgdgegtgdedib"
+  },
+  {
+    "createdAt": 1668333702323,
+    "updatedAt": 1668333702323,
+    "deletedAt": 0,
+    "createdFirstAt": 1668333702323,
+    "name": "inputClass",
+    "slug": "input-class",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "etfnwmsutchcrjsknrrzlicb"
+  },
+  {
+    "createdAt": 1668333702323,
+    "updatedAt": 1668333702323,
+    "deletedAt": 0,
+    "createdFirstAt": 1668333702323,
+    "name": "UI",
+    "slug": "ui",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "xdzdzrxvkrczsudefvlnkkjc"
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "createdAt": 1671317702840,
+  "updatedAt": 1671317702840,
+  "deletedAt": 0,
+  "createdFirstAt": 1671317702840,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "apiStoreInitialValues",
+  "slug": "api-store-initial-values",
+  "operationRelativeTypescriptFilePath": "src/store.ts",
+  "type": {
+    "rawType": "import(\"/Users/king/King/operations/tools/user-interfaces/api/api-store/src/store\").ApiStoreType",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "api.authToken": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        },
+        "api.customUrl": {
+          "type": "string | null"
+        },
+        "api.timeoutAt": {
+          "type": "number | null"
+        }
+      },
+      "required": [
+        "api.authToken"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "api.authToken",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "api.customUrl",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "api.timeoutAt",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "{\n  \"api.authToken\": \"\",\n  \"api.customUrl\": null,\n  \"api.timeoutAt\": null,\n}",
+  "description": "",
+  "id": "ehkjwkkplllfhvsnwyqrsfma"
+}

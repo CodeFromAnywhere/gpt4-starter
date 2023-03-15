@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041404607,
+  "updatedAt": 1678041404607,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041404607,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "TextFile",
+  "slug": "text-file",
+  "operationRelativeTypescriptFilePath": "src/TextFile.tsx",
+  "type": {
+    "rawType": "(props: { item: import(\"/Users/clarity/os/operations/tools/control-fs/file-collection-util/build/FileCollectionFile\").FileCollectionFile; index: number; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: {\n  item: FileCollectionFile;\n  index: number;\n}) => {\n  const { index, item } = props;\n\n  const isMarkdown = item.name.endsWith(\".md\");\n  const isCode = codeExtensions\n    .concat([\"json\", \"JSON\"])\n    .includes(getExtension(item.projectRelativePath));\n\n  const tabs: TabType[] = [\n    {\n      emoji: \"✏️\",\n      title: \"Write\",\n      renderTab: () => {\n        //  if (isCode) {\n        // TODO: ts(x)/json files should be specially opened with the monaco editor to immediately get color highlighting and are editable. Never really interested in just viewing that one\n        //   return <Div>Coming soon (MONACO)</Div>;\n        // }\n        return (\n          <FileWriter projectRelativeFilePath={item.projectRelativePath} />\n        );\n      },\n    },\n    isMarkdown\n      ? {\n          //\n          emoji: \"📖\",\n          title: \"Read\",\n          renderTab: () =>\n            item.rawContent ? (\n              <MarkdownContent\n                config={{\n                  projectRelativeBaseFolderPath: getFolderJs(\n                    item.projectRelativePath\n                  ),\n                  projectRelativeMarkdownFilePath: item.projectRelativePath,\n                }}\n                content={item.rawContent}\n              />\n            ) : null,\n        }\n      : undefined,\n    isMarkdown\n      ? {\n          emoji: \"📽\",\n          title: \"Present\",\n          renderTab: () => {\n            const markdownParse = item.rawContent\n              ? mdToJsonParse(item.rawContent)\n              : undefined;\n            if (!markdownParse) {\n              return null;\n            }\n            return (\n              <MarkdownParsePresentation\n                markdownParse={markdownParse}\n                projectRelativeBaseFolderPath={getFolderJs(\n                  item.projectRelativePath\n                )}\n                projectRelativeMarkdownFilePath={item.projectRelativePath}\n              />\n            );\n          },\n        }\n      : undefined,\n    isMarkdown\n      ? {\n          emoji: \"❓\",\n          title: \"Prompt\",\n          renderTab: () => {\n            return (\n              <PromptViewer\n                markdown={item.rawContent}\n                contextualPromptResults={[]}\n                contextualPrompts={[]}\n                projectRelativeFilePath={item.projectRelativePath}\n              />\n            );\n          },\n        }\n      : undefined,\n  ].filter(notEmpty);\n\n  return (\n    <Details summary={item.name} isClosed={index !== 0}>\n      {\n        tabs.length > 1 ? (\n          <Tabs isSmall tabKey={`textFile.${item.name}`} tabs={tabs} />\n        ) : null\n        //  tabs[0]?.renderTab()\n      }\n    </Details>\n  );\n}",
+  "description": "TODO: Add monaco editor",
+  "id": "pgdfloffkogfngysqckmwvpf"
+}

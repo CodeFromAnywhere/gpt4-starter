@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var getFsAuthorizationSingleFile_1=require("./getFsAuthorizationSingleFile"),test=function(){(0,getFsAuthorizationSingleFile_1.getFsAuthorizationSingleFile)({projectRelativeFilePath:"",user_groupSlugs:["public"],isDebug:!0}).then(console.log)};test();
+//# sourceMappingURL=getFsAuthorizationSingleFile.test.js.map

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677586463070,
+  "updatedAt": 1677586463070,
+  "deletedAt": 0,
+  "createdFirstAt": 1677586463070,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "makePropertiesTable",
+  "slug": "make-properties-table",
+  "operationRelativeTypescriptFilePath": "src/util/makePropertiesTable.ts",
+  "type": {
+    "rawType": "(properties: import(\"/Users/clarity/os/operations/tools/types/schema-types/build/SimplifiedSchema\").SimplifiedSchemaProperty[] | undefined) => string",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  properties: SimplifiedSchemaProperty[] | undefined\n) => {\n  return properties && properties.length > 0\n    ? `Properties: \\n\\n | Name | Type | Description |\\n|---|---|---|\\n${properties\n        .map(propertyToTableRow)\n        .join(\"\\n\")}\\n`\n    : \"\";\n}",
+  "description": "",
+  "id": "krkfoblswmdofldttuljwnpj"
+}

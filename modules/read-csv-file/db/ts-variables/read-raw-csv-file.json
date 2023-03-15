@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673853212782,
+  "updatedAt": 1673853212782,
+  "deletedAt": 0,
+  "createdFirstAt": 1673853212782,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "readRawCsvFile",
+  "slug": "read-raw-csv-file",
+  "operationRelativeTypescriptFilePath": "src/readRawCsvFile.ts",
+  "type": {
+    "rawType": "(filePath: string) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (filePath: string) => {\n  // TODO: is this needed?\n  if (!fs.existsSync(filePath)) return null;\n\n  const readable = canReadSync(filePath);\n  if (!readable) return null;\n  const fileBuffer = fs.readFileSync(filePath);\n  if (!fileBuffer) return null;\n\n  const parsed = parse(fileBuffer, {\n    // relax_quotes: true,\n    relax_column_count: true,\n    // relaxQuotes: true,\n  }) as (string | number)[][];\n\n  return parsed;\n}",
+  "description": "",
+  "id": "manvpbqpyxrewxdalenrqfjo"
+}

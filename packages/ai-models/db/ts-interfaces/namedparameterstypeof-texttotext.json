@@ -1,0 +1,99 @@
+{
+  "createdAt": 1678369225074,
+  "updatedAt": 1678369225074,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369225074,
+  "id": "namedparameterstypeof-texttotext",
+  "name": "NamedParameters<typeof textToText>",
+  "slug": "namedparameterstypeof-texttotext",
+  "operationRelativeTypescriptFilePath": "src/textToText.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "config": {
+          "type": "object",
+          "properties": {
+            "personId": {
+              "type": "string"
+            },
+            "model": {
+              "$ref": "#/definitions/TextToTextModelEnum",
+              "description": "Model defaults to gpt default."
+            },
+            "isInstant": {
+              "type": "boolean",
+              "description": "By default, the query to the api is delayed to avoid the ratelimit from happening. If you want to avoid the delay, set this to true"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "text",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "config",
+          "required": false,
+          "schema": {
+            "properties": [
+              {
+                "name": "personId",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "model",
+                "required": false,
+                "schema": {
+                  "fullComment": "Model defaults to gpt default.\n\n",
+                  "properties": [],
+                  "type": "object"
+                }
+              },
+              {
+                "name": "isInstant",
+                "required": false,
+                "schema": {
+                  "fullComment": "By default, the query to the api is delayed to avoid the ratelimit from happening. If you want to avoid the delay, set this to true",
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof textToText>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

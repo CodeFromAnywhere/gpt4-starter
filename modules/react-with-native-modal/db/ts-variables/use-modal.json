@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678043833099,
+  "updatedAt": 1678043833099,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043833099,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "useModal",
+  "slug": "use-modal",
+  "operationRelativeTypescriptFilePath": "src/Modal.tsx",
+  "type": {
+    "rawType": "() => ModalType",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => useContext(ModalContext)",
+  "description": "",
+  "id": "mjtbyoqrjogegkbhielkuwdj"
+}

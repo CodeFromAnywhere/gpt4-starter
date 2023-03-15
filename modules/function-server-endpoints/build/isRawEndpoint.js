@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.isRawEndpoint=void 0;var api_types_1=require("api-types"),isRawEndpoint=function(i){return i.endsWith(api_types_1.apiConventions.rawFunctionConventionSuffix)};exports.isRawEndpoint=isRawEndpoint;
+//# sourceMappingURL=isRawEndpoint.js.map

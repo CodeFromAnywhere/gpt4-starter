@@ -1,0 +1,39 @@
+{
+  "createdAt": 1677582049859,
+  "updatedAt": 1677582049859,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582049859,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/crud/CrudTimeline.tsx",
+  "commentsInside": [],
+  "rawText": " (props: CrudViewProps) => {\n  return <Div />;\n}",
+  "name": "CrudTimeline",
+  "slug": "crud-timeline",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 48,
+    "lines": 3,
+    "bytes": 48,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 16,
+    "linesPerFile": 3,
+    "numberOfFiles": 1
+  },
+  "id": "bysoebizeekuuaxtdttdgfdy"
+}

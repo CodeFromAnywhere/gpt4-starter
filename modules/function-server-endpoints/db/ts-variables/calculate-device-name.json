@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678329817585,
+  "updatedAt": 1678329817585,
+  "deletedAt": 0,
+  "createdFirstAt": 1678329817585,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "calculateDeviceName",
+  "slug": "calculate-device-name",
+  "operationRelativeTypescriptFilePath": "src/calculateDeviceName.ts",
+  "type": {
+    "rawType": "(ipInfo: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/IPInfo\").IPInfo, userAgent: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/external/ua-parser-js\").IResult) => string",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  ipInfo: IPInfo,\n  userAgent: IResult\n): string => {\n  const deviceName: string = slugify(\n    `${userAgent.os.name}-${userAgent.browser.name}-${ipInfo.country}-${\n      ipInfo.region\n    }-${ipInfo.city}-${ipInfo.ip}-${generateRandomString(4)}`\n  );\n\n  return deviceName;\n}",
+  "description": "",
+  "id": "wbpjoszhhezzoqrtgitnudra"
+}

@@ -1,0 +1,35 @@
+{
+  "createdAt": 1677579240285,
+  "updatedAt": 1677579240285,
+  "deletedAt": 0,
+  "createdFirstAt": 1677579240285,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/cli/watchAll.cli.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const tsFunctions = await db.get(\"TsFunction\");\n  watchAll(tsFunctions);\n}",
+  "name": "watchAllCli",
+  "slug": "watch-all-cli",
+  "parameters": [],
+  "description": "Runs `watchAll`.",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 107,
+    "lines": 4,
+    "bytes": 107,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 27,
+    "linesPerFile": 4,
+    "numberOfFiles": 1
+  },
+  "id": "cjuhrgbbgvchdpkitdwgwhnm"
+}

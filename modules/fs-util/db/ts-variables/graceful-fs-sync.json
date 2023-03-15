@@ -1,0 +1,89 @@
+{
+  "createdAt": 1678041926588,
+  "updatedAt": 1678041926588,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041926588,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "gracefulFsSync",
+  "slug": "graceful-fs-sync",
+  "operationRelativeTypescriptFilePath": "src/fs.ts",
+  "type": {
+    "rawType": "{ readFileSync: typeof import(\"fs\").readFileSync; readdirSync: typeof import(\"fs\").readdirSync; writeFileSync: typeof import(\"fs\").writeFileSync; createReadStream: typeof import(\"fs\").createReadStream; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "readFileSync": {
+          "type": "object",
+          "properties": {}
+        },
+        "readdirSync": {
+          "type": "object",
+          "properties": {}
+        },
+        "writeFileSync": {
+          "type": "object",
+          "properties": {}
+        },
+        "createReadStream": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      "required": [
+        "readFileSync",
+        "readdirSync",
+        "writeFileSync",
+        "createReadStream"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "readFileSync",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "readdirSync",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "writeFileSync",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "createReadStream",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "{\n  readFileSync,\n  readdirSync,\n  writeFileSync,\n  createReadStream,\n}",
+  "description": "",
+  "id": "fxsogeksqzuuyjzrhnxwlvov"
+}

@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678330456505,
+  "updatedAt": 1678330456505,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330456505,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/getNavigationWithContext.test.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const testables = await getFsAuthorizationTestables();\n\n  const result = await Promise.all(\n    testables.map(async (item) => {\n      if (!item.functionContext) {\n        console.log(\"MISSING FUnctionContext\", item.groupSlug);\n        return;\n      }\n\n      const { projectRelativePath, groupSlug } = item;\n      const navigationResult = await getNavigationWithContext(\n        item.functionContext,\n        { queryPath: projectRelativePath }\n      );\n      return { projectRelativePath, groupSlug, navigationResult };\n    })\n  );\n\n  writeToAssets(__filename, result, \"navigation-test-result.json\");\n  //getNavigationWithContext(functionContext, {queryPath})\n}",
+  "name": "test",
+  "slug": "test",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 677,
+    "lines": 22,
+    "bytes": 677,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 31,
+    "linesPerFile": 22,
+    "numberOfFiles": 1
+  },
+  "id": "xrxcbmnhbrileklppfzayipa"
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"PaymentEvent.d.ts","sourceRoot":"","sources":["../src/PaymentEvent.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAAE,EAAE,EAAE,KAAK,EAAE,MAAM,aAAa,CAAC;AAE1D;;;;GAIG;AACH,MAAM,WAAW,YAAa,SAAQ,gBAAgB;IACpD,QAAQ,CAAC,EAAE,EAAE,CAAC;IACd,KAAK,EAAE,KAAK,CAAC;IACb,mBAAmB,CAAC,EAAE,OAAO,CAAC;IAC9B,mBAAmB,CAAC,EAAE,OAAO,CAAC;CAC/B"}

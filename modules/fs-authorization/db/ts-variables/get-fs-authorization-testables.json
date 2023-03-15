@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330544273,
+  "updatedAt": 1678330544273,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330544273,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getFsAuthorizationTestables",
+  "slug": "get-fs-authorization-testables",
+  "operationRelativeTypescriptFilePath": "src/getFsAuthorizationTestables.ts",
+  "type": {
+    "rawType": "() => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const groupSlugs = [\"admin\", \"public\", \"cfa\"];\n\n  const projectRelativePaths = [\n    ``,\n    `operations/tools/cleanup/os-web`,\n    `assets/music`,\n    `assets/images`,\n    // admin\n    `knowledge/persons/wijnand-karsens`,\n    // cfa\n    `knowledge/persons/wijnand`,\n    `knowledge/groups/admin`,\n    `knowledge/groups/cfa`,\n    `knowledge/groups/public`,\n  ];\n\n  const functionContexts = mergeObjectsArray(\n    await Promise.all(\n      groupSlugs.map(async (groupSlug) => ({\n        [groupSlug]: await getTestFunctionContext(groupSlug),\n      }))\n    )\n  );\n\n  const testableVariables = groupSlugs\n    .map((groupSlug) =>\n      projectRelativePaths.map((projectRelativePath) => ({\n        groupSlug,\n        projectRelativePath,\n        functionContext: functionContexts[groupSlug],\n      }))\n    )\n    .flat();\n\n  return testableVariables;\n}",
+  "description": "Returns an array of objects containing `groupSlug`, `projectRelativePath` and a belonging `FunctionContext`, that can be used to run tests related to the `fs-authorization`",
+  "id": "ialhspwmqrjzpaxftjbirwmz"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677580350710,
+  "updatedAt": 1677580350710,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580350710,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getTsInterface",
+  "slug": "get-ts-interface",
+  "operationRelativeTypescriptFilePath": "src/getTsInterface.ts",
+  "type": {
+    "rawType": "(interfaceName: keyof import(\"/Users/clarity/os/operations/tools/generated/sdk-db/build/sdk-db\").DbModels) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (interfaceName: keyof DbModels) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) return;\n  const tsInterfacePath = sdkInterfacePaths[interfaceName];\n  const tsInterface = await readJsonFile<Storing<TsInterface>>(\n    path.join(projectRoot, tsInterfacePath)\n  );\n\n  return tsInterface;\n}",
+  "description": "",
+  "id": "ecojpdnadgeiwzkvdsknjgen"
+}

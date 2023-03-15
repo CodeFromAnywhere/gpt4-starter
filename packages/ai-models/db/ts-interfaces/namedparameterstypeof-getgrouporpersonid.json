@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678369227624,
+  "updatedAt": 1678369227624,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369227624,
+  "id": "namedparameterstypeof-getgrouporpersonid",
+  "name": "NamedParameters<typeof getGroupOrPersonId>",
+  "slug": "namedparameterstypeof-getgrouporpersonid",
+  "operationRelativeTypescriptFilePath": "src/util/getGroupOrPersonId.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteAudioFilePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absoluteAudioFilePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteAudioFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getGroupOrPersonId>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

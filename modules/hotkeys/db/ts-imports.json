@@ -1,0 +1,34 @@
+[
+  {
+    "createdAt": 1668336703743,
+    "updatedAt": 1668336703743,
+    "deletedAt": 0,
+    "createdFirstAt": 1668336703743,
+    "name": "useHotkeys",
+    "slug": "use-hotkeys",
+    "module": "./useHotkeys",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/useHotkey.ts",
+    "classification": "internal",
+    "isAbsolute": false,
+    "isModuleFromMonorepo": false,
+    "id": "lbrzxgpqagtftscotzlkqafo"
+  },
+  {
+    "createdAt": 1668336703743,
+    "updatedAt": 1668336703743,
+    "deletedAt": 0,
+    "createdFirstAt": 1668336703743,
+    "name": "useEffect",
+    "slug": "use-effect",
+    "module": "react",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/useHotkeys.ts",
+    "classification": "react",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": false,
+    "id": "xakbtbedsbwofjmnlnbamovc"
+  }
+]

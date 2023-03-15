@@ -1,0 +1,63 @@
+{
+  "createdAt": 1673794220510,
+  "updatedAt": 1673794220510,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794220510,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getRepoNameFromRepositoryUrl.ts",
+  "commentsInside": [],
+  "rawText": " (\n  url: string\n): string | undefined => {\n  if (!url.startsWith(\"https://github.com/\")) return;\n\n  // TODO:\n  const parts = url.split(\"/\");\n\n  const lastPart = parts.pop(); // either the repoName or {repoName}.git\n\n  if (!lastPart) return;\n\n  if (lastPart.endsWith(\".git\")) {\n    return lastPart.slice(0, lastPart.length - \".git\".length);\n  }\n\n  return lastPart;\n}",
+  "name": "getRepoNameFromRepositoryUrl",
+  "slug": "get-repo-name-from-repository-url",
+  "parameters": [
+    {
+      "name": "url",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "string | undefined",
+    "typeDefinition": {
+      "optional": true,
+      "type": "string",
+      "allOf": [
+        {
+          "transform": [
+            "trim"
+          ]
+        },
+        {
+          "minLength": 1
+        }
+      ]
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "type": "string"
+    }
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 366,
+    "lines": 18,
+    "bytes": 366,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 20,
+    "linesPerFile": 18,
+    "numberOfFiles": 1
+  },
+  "id": "cpdtnybnzooekmvowucnvoye"
+}

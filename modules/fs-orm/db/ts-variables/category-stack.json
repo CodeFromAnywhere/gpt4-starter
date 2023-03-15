@@ -1,0 +1,52 @@
+{
+  "createdAt": 1677580453890,
+  "updatedAt": 1677580453890,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580453890,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "categoryStack",
+  "slug": "category-stack",
+  "operationRelativeTypescriptFilePath": "src/tests/upsertKeyValueMarkdown.test.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/types/model-types/build/keyValueMarkdown\").CategoryStack",
+    "typeDefinition": {
+      "optional": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "allOf": [
+          {
+            "transform": [
+              "trim"
+            ]
+          },
+          {
+            "minLength": 1
+          }
+        ]
+      }
+    },
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "items": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "value": "[]",
+  "description": "",
+  "id": "ixgpwwbetzvuuhgqcfcsrwlv"
+}

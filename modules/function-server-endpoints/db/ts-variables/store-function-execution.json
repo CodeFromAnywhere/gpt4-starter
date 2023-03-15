@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678329844704,
+  "updatedAt": 1678329844704,
+  "deletedAt": 0,
+  "createdFirstAt": 1678329844704,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "storeFunctionExecution",
+  "slug": "store-function-execution",
+  "operationRelativeTypescriptFilePath": "src/storeFunctionExecution.ts",
+  "type": {
+    "rawType": "(tsFunction: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/TsFunction\").TsFunction, inputParameters: any[] | undefined, output: any, performance: import(\"/Users/clarity/os/operations/tools/util/measure-performance/build/PerformanceItem\").PerformanceItem[], isResultFromCache: boolean, paymentInfo?: { cost?: number | undefined; personId?: string | undefined; groupId?: string | undefined; } | undefined) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  tsFunction: TsFunction,\n  inputParameters: any[] | undefined,\n  output: any,\n  performance: PerformanceItem[],\n  isResultFromCache: boolean,\n  paymentInfo?: { cost?: number; personId?: string; groupId?: string }\n) => {\n  // TODO: store using db (if useful)\n\n  const functionExecution: Creation<FunctionExecution> = {\n    functionName: tsFunction.name,\n    tsFunctionId: tsFunction.id,\n    inputParameters,\n    isExample: false,\n    isTest: false,\n    isResultFromCache,\n    output,\n    performance,\n    cost: paymentInfo?.cost,\n    personId: paymentInfo?.personId,\n    groupId: paymentInfo?.groupId,\n  };\n\n  //@ts-ignore\n  const result = await db.upsert(\"FunctionExecution\", functionExecution, {\n    onlyInsert: true,\n    operationName: tsFunction.operationName,\n  });\n  return;\n}",
+  "description": "wrapper function that stores execution-speed in an object with `FunctionPerformance` data-structure. Store this using `db.push` if it adds value\n.",
+  "id": "xhzntakuqucagfyuozfhfmgv"
+}

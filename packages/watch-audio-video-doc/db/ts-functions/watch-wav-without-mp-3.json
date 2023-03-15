@@ -1,0 +1,36 @@
+{
+  "createdAt": 1673852523831,
+  "updatedAt": 1673852523831,
+  "deletedAt": 0,
+  "createdFirstAt": 1673852523831,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "ProjectWatcher",
+  "operationRelativeTypescriptFilePath": "src/watchWavWithoutMp3.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  eventName,\n  absolutePath,\n  isStartup\n): Promise<string | undefined> => {\n  if (isLocked(absolutePath)) {\n    return;\n  }\n  if (!fs.existsSync(absolutePath)) {\n    return;\n  }\n  const result = await compressConvert(absolutePath, {\n    targetFormat: \"mp3\",\n    keepOriginal: true,\n  });\n\n  return result;\n}",
+  "name": "watchWavWithoutMp3",
+  "slug": "watch-wav-without-mp-3",
+  "parameters": [],
+  "description": "Find all wav everywhere without mp3, add mp3",
+  "returnType": {
+    "rawType": "Promise<string | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 361,
+    "lines": 18,
+    "bytes": 361,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 20,
+    "linesPerFile": 18,
+    "numberOfFiles": 1
+  },
+  "id": "vanezalcbsngviyosnzgxjto"
+}

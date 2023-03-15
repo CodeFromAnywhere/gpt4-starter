@@ -1,0 +1,20 @@
+[
+  {
+    "createdAt": 1669385242681,
+    "updatedAt": 1669385242681,
+    "deletedAt": 0,
+    "createdFirstAt": 1669385242681,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/Frontmatter.ts",
+    "comment": "Our version of frontmatter is a bit simpler than regular frontmatter\n\nNot sure if this is a good idea, but it keeps it simple for our OS\n\nall values parse in a similar way to csv\n\nmake sure that you use quotes if you want to store a string with commas, because commas in a parameter indicate that it is a string array\n\nNB: string arrays are comma separated values, where you can put values with special characters in between quotes",
+    "rawStatement": "export type Frontmatter = {\n  [frontMatterKey: string]: string;\n};",
+    "parameters": {},
+    "types": [
+      "nb"
+    ],
+    "firstLine": 1,
+    "lastLine": 11,
+    "id": "idpdlospkpndqenxxrjigeqf"
+  }
+]

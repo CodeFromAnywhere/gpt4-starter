@@ -1,0 +1,45 @@
+{
+  "createdAt": 1678505778941,
+  "updatedAt": 1678505778941,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505778941,
+  "id": "personindex",
+  "name": "PersonIndex",
+  "slug": "personindex",
+  "operationRelativeTypescriptFilePath": "src/insertPerson.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\nexport type PersonIndex = \"id\" | \"phoneNumber\" | \"email\" | \"slug\";",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "string",
+      "enum": [
+        "id",
+        "phoneNumber",
+        "email",
+        "slug"
+      ]
+    },
+    "simplifiedSchema": {
+      "enum": [
+        "id",
+        "phoneNumber",
+        "email",
+        "slug"
+      ],
+      "type": "string"
+    },
+    "typeCoverage": 0,
+    "rawType": "PersonIndex",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

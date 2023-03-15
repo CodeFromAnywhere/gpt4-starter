@@ -1,0 +1,61 @@
+{
+  "createdAt": 1673794224040,
+  "updatedAt": 1673794224040,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794224040,
+  "id": "namedparameterstypeof-operationgithubpull",
+  "name": "NamedParameters<typeof operationGithubPull>",
+  "slug": "namedparameterstypeof-operationgithubpull",
+  "operationRelativeTypescriptFilePath": "src/operationGithubPull.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "operationName": {
+          "type": "string"
+        },
+        "personalAccessToken": {
+          "type": "string",
+          "description": "If you don't provide it we get it from the database"
+        }
+      },
+      "required": [
+        "operationName"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "operationName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "personalAccessToken",
+          "required": false,
+          "schema": {
+            "fullComment": "If you don't provide it we get it from the database",
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof operationGithubPull>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

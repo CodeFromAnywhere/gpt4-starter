@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331161516,
+  "updatedAt": 1678331161516,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331161516,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "youtubeToMp4WithContext",
+  "slug": "youtube-to-mp4-with-context",
+  "operationRelativeTypescriptFilePath": "src/youtubeToMp4WithContext.ts",
+  "type": {
+    "rawType": "(functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext, youtubeUrl: string, projectRelativeFolderPath: string) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  youtubeUrl: string,\n  projectRelativeFolderPath: string\n): Promise<StandardResponse> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No project root found\" };\n  }\n\n  const absoluteFolderPath = path.join(projectRoot, projectRelativeFolderPath);\n\n  if (!fs.existsSync(absoluteFolderPath)) {\n    return { isSuccessful: false, message: \"This folder doesn't exist\" };\n  }\n\n  const stat = fs.statSync(absoluteFolderPath);\n  if (!stat.isDirectory()) {\n    return { isSuccessful: false, message: \"No folder\" };\n  }\n\n  const authorization = await getFsAuthorizationWithContext(\n    functionContext,\n    projectRelativeFolderPath\n  );\n  if (!authorization.canWrite) {\n    return { isSuccessful: false, message: \"You're not allowed to do this\" };\n  }\n\n  youtubeToMp4(youtubeUrl, {\n    destinationFolderPath: absoluteFolderPath,\n    isToMp3: true,\n  });\n\n  return { isSuccessful: true, message: \"Initiated yotube download\" };\n}",
+  "description": "Download youtubevideo for user. Also has action status support",
+  "id": "atgwnvnybgrwzjgfdrzvxubv"
+}

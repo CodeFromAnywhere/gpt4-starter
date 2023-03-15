@@ -1,0 +1,65 @@
+{
+  "createdAt": 1677581967376,
+  "updatedAt": 1677581967376,
+  "deletedAt": 0,
+  "createdFirstAt": 1677581967376,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/ConfirmForm.tsx",
+  "commentsInside": [],
+  "rawText": " (props: { isSignup?: boolean }) => {\n  const { isSignup } = props;\n  const router = useRouter();\n  const otp = takeFirst(router.query.otp);\n  const emailOrPhone = takeFirst(router.query.emailOrPhone);\n\n  const meQuery = queries.useGetMeWithContext();\n  return (\n    <Div className=\"flex flex-1 flex-row mx-10\">\n      <Div className=\"flex flex-1 flex-col\">\n        <P className=\"text-4xl\">Confirmation Code</P>\n        {!router.isReady ? (\n          <FancyLoader />\n        ) : isSignup ? (\n          <FunctionForm\n            tsFunction={SignupConfirm}\n            initialValues={[emailOrPhone, otp]}\n            withApiResult={(\n              result: RealApiReturnType<\"signupConfirmWithContext\">\n            ) => {\n              if (result.isSuccessful && result.result?.isSuccessful) {\n                router.push(\"/\");\n              }\n              meQuery.refetch();\n              showStandardResponse(result);\n            }}\n          />\n        ) : (\n          <FunctionForm\n            tsFunction={LoginConfirm}\n            initialValues={[emailOrPhone, otp]}\n            withApiResult={(\n              result: RealApiReturnType<\"loginConfirmWithContext\">\n            ) => {\n              if (result.isSuccessful && result.result?.isSuccessful) {\n                router.push(\"/\");\n              }\n              meQuery.refetch();\n              showStandardResponse(result);\n            }}\n          />\n        )}\n      </Div>\n    </Div>\n  );\n}",
+  "name": "ConfirmForm",
+  "slug": "confirm-form",
+  "parameters": [
+    {
+      "name": "props",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "isSignup": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "isSignup",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 8,
+  "size": {
+    "characters": 1452,
+    "lines": 46,
+    "bytes": 1452,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 32,
+    "linesPerFile": 46,
+    "numberOfFiles": 1
+  },
+  "id": "qaaqyjzlftthfaklnkylldcl"
+}

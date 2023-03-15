@@ -1,0 +1,19 @@
+[
+  {
+    "createdAt": 1672636517372,
+    "updatedAt": 1672636517372,
+    "deletedAt": 0,
+    "createdFirstAt": 1672636517372,
+    "name": "getFolderTypescriptFiles",
+    "slug": "get-folder-typescript-files",
+    "type": "value",
+    "module": "k-explore",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/folderGetUpdatedAt.ts",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "qvbkankmgcaqlexuvrhylqir"
+  }
+]

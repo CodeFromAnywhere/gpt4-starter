@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1677586465588,
+    "updatedAt": 1677586465588,
+    "deletedAt": 0,
+    "createdFirstAt": 1677586465588,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/util/noNewlines.ts",
+    "comment": "Replaces newlines with a <br />",
+    "rawStatement": "export const noNewlines = (\n  markdown: string | undefined\n): string | undefined => {\n  return markdown?.replaceAll(\"\\n\", \"<br />\");\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 1,
+    "lastLine": 3,
+    "id": "hcnmbqsmymttzzvhwurnspai"
+  }
+]

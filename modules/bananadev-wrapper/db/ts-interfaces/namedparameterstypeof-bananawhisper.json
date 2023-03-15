@@ -1,0 +1,67 @@
+{
+  "createdAt": 1678330986957,
+  "updatedAt": 1678330986957,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330986957,
+  "id": "namedparameterstypeof-bananawhisper",
+  "name": "NamedParameters<typeof bananaWhisper>",
+  "slug": "namedparameterstypeof-bananawhisper",
+  "operationRelativeTypescriptFilePath": "src/bananaWhisper.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "absoluteAudioFilePath": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "absoluteAudioFilePath"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "absoluteAudioFilePath",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof bananaWhisper>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

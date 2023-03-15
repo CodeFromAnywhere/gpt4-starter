@@ -1,0 +1,50 @@
+[
+  {
+    "createdAt": 1677580285563,
+    "updatedAt": 1677580285563,
+    "deletedAt": 0,
+    "createdFirstAt": 1677580285563,
+    "name": "readMarkdownFile",
+    "slug": "read-markdown-file",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "nsurqsnsrjrwyeueqasltmml"
+  },
+  {
+    "createdAt": 1677580285564,
+    "updatedAt": 1677580285564,
+    "deletedAt": 0,
+    "createdFirstAt": 1677580285564,
+    "name": "readMarkdownFileToModel",
+    "slug": "read-markdown-file-to-model",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "phwvozkrajcjreudkdurcrmq"
+  },
+  {
+    "createdAt": 1677580285564,
+    "updatedAt": 1677580285564,
+    "deletedAt": 0,
+    "createdFirstAt": 1677580285564,
+    "name": "readMarkdownFile",
+    "slug": "read-markdown-file",
+    "operationRelativeTypescriptFilePath": "src/readMarkdownFile.ts",
+    "comments": [],
+    "type": "value",
+    "id": "ehhggqgubayqsgargcfufkpu"
+  },
+  {
+    "createdAt": 1677580285564,
+    "updatedAt": 1677580285564,
+    "deletedAt": 0,
+    "createdFirstAt": 1677580285564,
+    "name": "readMarkdownFileToModel",
+    "slug": "read-markdown-file-to-model",
+    "operationRelativeTypescriptFilePath": "src/readMarkdownFileToModel.ts",
+    "comments": [],
+    "type": "value",
+    "id": "lxgmcdfzytqugxwsppykkzso"
+  }
+]

@@ -1,0 +1,88 @@
+{
+  "createdAt": 1678330196103,
+  "updatedAt": 1678330196103,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330196103,
+  "id": "namedparameterstypeof-getcontextualprompt",
+  "name": "NamedParameters<typeof getContextualPrompt>",
+  "slug": "namedparameterstypeof-getcontextualprompt",
+  "operationRelativeTypescriptFilePath": "src/getContextualPrompt.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "contextualPromptSlug": {
+          "type": "string"
+        },
+        "customPromptContent": {
+          "type": "string"
+        },
+        "saveNewPromptWithName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "contextType": {
+          "$ref": "#/definitions/FileType"
+        }
+      },
+      "required": [
+        "saveNewPromptWithName"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "contextualPromptSlug",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "customPromptContent",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "saveNewPromptWithName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "contextType",
+          "required": false,
+          "schema": {
+            "enum": [
+              "code",
+              "data",
+              "text"
+            ],
+            "fullComment": "",
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getContextualPrompt>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

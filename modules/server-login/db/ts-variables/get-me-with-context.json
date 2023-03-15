@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678331985196,
+  "updatedAt": 1678331985196,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331985196,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getMeWithContext",
+  "slug": "get-me-with-context",
+  "operationRelativeTypescriptFilePath": "src/getMeWithContext.ts",
+  "type": {
+    "rawType": "{ (functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext): Promise<{ authorizations?: import(\"/Users/clarity/os/operations/tools/purpose/p2p/auth-types/build/Authorization\").Authorization[] | undefined; device: Omit<TModel, import(\"/Users/clarity/os/operations/tools/types/model-types/build/generics\").ShouldNotBeStored>; groups?: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Group\").Group[] | undefined; }>; config: { isPublic: boolean; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPublic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isPublic"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext\n): Promise<{\n  authorizations?: Authorization[] | undefined;\n  device: Storing<Device>;\n  groups?: Group[] | undefined;\n}> => {\n  const {\n    tsFunction,\n    serverContext,\n    hasAuthorization,\n    authToken,\n    ...userInfo\n  } = functionContext;\n\n  // console.log({ userInfo });\n  return userInfo;\n}",
+  "description": "Get all relevant information about yourself, including all persons that are attached to you.\n\nNB: probably need to omit some fields later, but for now it's fine",
+  "id": "vjjgpwnwkpctxbwkxyiwvqlm"
+}

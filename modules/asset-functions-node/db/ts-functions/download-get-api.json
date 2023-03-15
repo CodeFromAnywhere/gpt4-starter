@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678041488528,
+  "updatedAt": 1678041488528,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041488528,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/download/downloadGetApi.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  serverContext: Context\n): Promise<{ isSuccessful: boolean; message: string } | void> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No projectroot\" };\n  }\n  const token: string | undefined = takeFirst(serverContext?.query.token);\n\n  const now = Date.now();\n\n  const download = (await db.get(\"Download\")).find((x) => {\n    const isThis = x.id === token;\n    if (!isThis) return false;\n\n    const isStillAvailable = x.availableUntilAt\n      ? x.availableUntilAt > now\n      : true;\n\n    return isStillAvailable;\n  });\n\n  if (!download) {\n    return { isSuccessful: false, message: \"Not found\" };\n  }\n\n  // download\n  const absolutePath = path.join(\n    projectRoot,\n    download.download_projectRelativePath\n  );\n\n  const exists = fs.existsSync(absolutePath);\n\n  if (download.persistence !== \"forever\" || !exists) {\n    // delete it if it wasn't for forever, or download is gone\n    await db.remove(\"Download\", (item) => item.id === download.id);\n  }\n\n  if (!exists) {\n    return {\n      isSuccessful: false,\n      message: \"Download doesn't exist anymore\",\n    };\n  }\n\n  return serverDownloadReply(absolutePath, true);\n}",
+  "name": "downloadGetApi",
+  "slug": "download-get-api",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<void | { isSuccessful: boolean; message: string; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 1194,
+    "lines": 48,
+    "bytes": 1194,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 48,
+    "numberOfFiles": 1
+  },
+  "id": "iwzatlcqqkrzyhrbirhihfns"
+}

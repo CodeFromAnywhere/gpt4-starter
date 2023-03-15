@@ -1,0 +1,79 @@
+{
+  "createdAt": 1675690237328,
+  "updatedAt": 1675690237328,
+  "deletedAt": 0,
+  "createdFirstAt": 1675690237328,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "subExtensions",
+  "slug": "sub-extensions",
+  "operationRelativeTypescriptFilePath": "src/filename-conventions.ts",
+  "type": {
+    "rawType": "{ cli: string; test: string; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "cli": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        },
+        "test": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        }
+      },
+      "required": [
+        "cli",
+        "test"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "cli",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "test",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "{\n  cli,\n  test,\n}",
+  "description": "",
+  "id": "vwseptbszyomveixxdlpnnpb"
+}

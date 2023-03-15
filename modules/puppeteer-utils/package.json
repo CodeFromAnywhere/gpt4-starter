@@ -1,0 +1,141 @@
+{
+  "createdAt": 1663736328043,
+  "updatedAt": 1663736328043,
+  "deletedAt": 0,
+  "createdFirstAt": 1663736328043,
+  "name": "puppeteer-utils",
+  "private": true,
+  "version": "1.0.2",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "license": "MIT",
+  "author": "Bhagya Sah",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/test.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "files": [
+    "build"
+  ],
+  "devDependencies": {
+    "@types/lru-cache": "^7.10.10",
+    "@types/puppeteer-core": "^5.4.0",
+    "@types/uuid": "^9.0.0"
+  },
+  "sensible": {
+    "hasGeneratedDependencies": false
+  },
+  "dependencies": {
+    "browser-types": "0.0.1",
+    "database": "0.0.1",
+    "get-path": "0.0.1",
+    "lru-cache": "^7.14.1",
+    "model-types": "0.0.1",
+    "puppeteer": "*",
+    "puppeteer-core": "^18.0.5",
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-recaptcha": "^3.6.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.1",
+    "puppeteer-utils": "1.0.2",
+    "uuid": "^9.0.0"
+  },
+  "slug": "puppeteer-utils",
+  "id": "jOxKunDQGygYBOWr",
+  "operation": {
+    "hasGeneratedDependenciesIndexed": false,
+    "buildResultIndexed": {
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/clarity/os/operations/niches/bhagya-2023-01-26/control-web/puppeteer-utils/src/setInputValue.ts. Error: TypeError: Cannot read properties of undefined (reading 'kind')"
+      ],
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": [],
+      "dependencyBuildFailed": true
+    },
+    "lastRebuildAt": 1677582404876,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 32,
+        "lines": 826,
+        "characters": 23228,
+        "bytes": 23228
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 179,
+        "characters": 4097,
+        "bytes": 4097
+      },
+      "textSize": {
+        "numberOfFiles": 4,
+        "lines": 637,
+        "characters": 11912,
+        "bytes": 11912
+      },
+      "size": {
+        "bytes": 39237,
+        "characters": 39237,
+        "lines": 1642,
+        "numberOfFiles": 38
+      }
+    },
+    "folderNameIndexed": "puppeteer-utils",
+    "relativeOperationLocationPathIndexed": "operations/niches/bhagya-2023-01-26/control-web",
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [
+      "BrowserSession",
+      "db",
+      "db",
+      "BrowserSession",
+      "db",
+      "db",
+      "getProjectRoot",
+      "getOperationPath",
+      "BrowserPage",
+      "Creation",
+      "db",
+      "db",
+      "db",
+      "db",
+      "Creation",
+      "BrowserSession",
+      "BrowserPage"
+    ],
+    "packageDependenciesIndexed": [
+      "Browser",
+      "Page",
+      "Page",
+      "Page",
+      "Page",
+      "Browser",
+      "Page",
+      "platform",
+      "Browser",
+      "Page",
+      "Browser",
+      "Page",
+      "Page",
+      "Page",
+      "CaptchaInfo",
+      "FindRecaptchasResult",
+      "fork",
+      "Browser",
+      "Browser",
+      "Page",
+      "Page",
+      "Page",
+      "Page",
+      "Page",
+      "SolveRecaptchasResult",
+      "Page",
+      "Page",
+      "Page",
+      "Page",
+      "Browser"
+    ]
+  }
+}

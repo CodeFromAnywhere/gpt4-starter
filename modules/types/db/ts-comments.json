@@ -1,0 +1,34 @@
+[
+  {
+    "createdAt": 1678331708131,
+    "updatedAt": 1678331708131,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331708131,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/TypeInfo.ts",
+    "comment": "quantification of coverage of the specified type or subtypes in our database.",
+    "rawStatement": "export type TypeCoverage = number;",
+    "parameters": {},
+    "types": [],
+    "firstLine": 3,
+    "lastLine": 5,
+    "id": "wardwtstnhddwllrbhrviyyf"
+  },
+  {
+    "createdAt": 1678331708132,
+    "updatedAt": 1678331708132,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331708132,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/TypeInfo.ts",
+    "comment": "all info that should always be collected when indexing any type interface",
+    "rawStatement": "export type TypeInfo = {\n  /** JSON schema definition of a type interface\n   *\n   *\n   * Some info about the Schema:\n   *\n   * - if the type is an object, there should be properties\n   * - if the type is an array, there should be items\n   */\n  typeDefinition: Schema | undefined;\n  simplifiedSchema?: SimplifiedSchema;\n  /** if the type is an object, this is true. false if it's an array */\n  isObject: boolean;\n  /** if the type is an array, this is true */\n  isArray: boolean;\n  /** if it's a primitive type like \"string\", \"number\", \"boolean\", \"null\" | \"undefined\" */\n  isPrimitive: boolean;\n  /** will be true for any primitive conjunction types */\n  isEnum: boolean;\n  /** will be true for string conjunction types */\n  isEnumLiteral: boolean;\n  typeCoverage: TypeCoverage;\n  /** raw type string */\n  rawType: string;\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 8,
+    "lastLine": 10,
+    "id": "cxuwzsxbxjpjijdmrdqithtd"
+  }
+]

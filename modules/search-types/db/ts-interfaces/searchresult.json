@@ -1,0 +1,72 @@
+{
+  "createdAt": 1678331623163,
+  "updatedAt": 1678331623163,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331623163,
+  "id": "searchresult",
+  "name": "SearchResult",
+  "slug": "searchresult",
+  "operationRelativeTypescriptFilePath": "src/SearchResult.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "export type SearchResult = {\n  title: string;\n  description?: string;\n  url: string;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "url"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "title",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "description",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "url",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "SearchResult",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

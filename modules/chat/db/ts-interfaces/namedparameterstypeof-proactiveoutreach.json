@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678372640289,
+  "updatedAt": 1678372640289,
+  "deletedAt": 0,
+  "createdFirstAt": 1678372640289,
+  "id": "namedparameterstypeof-proactiveoutreach",
+  "name": "NamedParameters<typeof proactiveOutreach>",
+  "slug": "namedparameterstypeof-proactiveoutreach",
+  "operationRelativeTypescriptFilePath": "src/proactiveOutreach.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof proactiveOutreach>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

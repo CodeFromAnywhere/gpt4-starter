@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677581837631,
+  "updatedAt": 1677581837631,
+  "deletedAt": 0,
+  "createdFirstAt": 1677581837631,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "chat",
+  "slug": "chat",
+  "operationRelativeTypescriptFilePath": "src/converse-extra.test.ts",
+  "type": {
+    "rawType": "() => void",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  // 1- listen\n  // 2- respond\n  chat();\n}",
+  "description": "",
+  "id": "zqgeiwegtgtotrtdujpjvjic"
+}

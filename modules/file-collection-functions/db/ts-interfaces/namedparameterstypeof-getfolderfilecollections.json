@@ -1,0 +1,82 @@
+{
+  "createdAt": 1678330452836,
+  "updatedAt": 1678330452836,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330452836,
+  "id": "namedparameterstypeof-getfolderfilecollections",
+  "name": "NamedParameters<typeof getFolderFileCollections>",
+  "slug": "namedparameterstypeof-getfolderfilecollections",
+  "operationRelativeTypescriptFilePath": "src/getFolderFileCollections.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteFolderPath": {
+          "type": "string"
+        },
+        "projectRoot": {
+          "type": "string"
+        },
+        "user_groupSlugs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "absoluteFolderPath",
+        "projectRoot",
+        "user_groupSlugs"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteFolderPath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "projectRoot",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "user_groupSlugs",
+          "required": true,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getFolderFileCollections>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

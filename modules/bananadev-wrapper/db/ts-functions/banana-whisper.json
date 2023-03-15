@@ -1,0 +1,64 @@
+{
+  "createdAt": 1678330988297,
+  "updatedAt": 1678330988297,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330988297,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/bananaWhisper.ts",
+  "commentsInside": [],
+  "rawText": " async (config: {\n  absoluteAudioFilePath: string;\n}) => {\n  const { absoluteAudioFilePath } = config;\n  const persona = await getPrimaryPersona();\n\n  const apiKey = persona.bananadevApiKey;\n\n  if (!apiKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please setup an API Key for Whisper Banana\",\n    };\n  }\n\n  const modelKey = persona.bananadevModelKeys?.whisper;\n\n  if (!modelKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please provide a correct model that you have a model key for\",\n    };\n  }\n\n  const file = await fs.readFile(absoluteAudioFilePath);\n  const mp3bytes = new Uint8Array(file);\n  const mp3BytesString = base64.fromByteArray(mp3bytes);\n\n  const modelParameters = { mp3BytesString };\n  const result = await banana.run(apiKey, modelKey, modelParameters);\n\n  console.log({ resultBanana: result });\n}",
+  "name": "bananaWhisper",
+  "slug": "banana-whisper",
+  "parameters": [
+    {
+      "name": "config",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "absoluteAudioFilePath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "absoluteAudioFilePath"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "absoluteAudioFilePath",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 844,
+    "lines": 33,
+    "bytes": 844,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 33,
+    "numberOfFiles": 1
+  },
+  "id": "hrlcrtlhtjaovtjdwywnwzyt"
+}

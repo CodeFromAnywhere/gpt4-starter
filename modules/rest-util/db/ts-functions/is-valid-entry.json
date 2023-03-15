@@ -1,0 +1,82 @@
+{
+  "createdAt": 1668717089548,
+  "updatedAt": 1668717089548,
+  "deletedAt": 0,
+  "createdFirstAt": 1668717089548,
+  "isApiExposed": true,
+  "isExported": true,
+  "groupAuthorization": {},
+  "operationRelativeTypescriptFilePath": "src/isValidEntry.ts",
+  "commentsInside": [],
+  "rawText": " ([_, value]: [key: string, value: any]) =>\n  value !== undefined && value !== \"\" && value !== null",
+  "name": "isValidEntry",
+  "slug": "is-valid-entry",
+  "parameters": [
+    {
+      "name": "[_, value]",
+      "schema": {
+        "type": "array",
+        "minItems": 2,
+        "items": [
+          {
+            "type": "string",
+            "title": "key"
+          },
+          {
+            "title": "value"
+          }
+        ],
+        "maxItems": 2
+      },
+      "simplifiedSchema": {
+        "items": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": null
+          },
+          {
+            "schema": {
+              "properties": [],
+              "type": "object"
+            },
+            "name": null
+          }
+        ],
+        "type": "array"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 99,
+    "lines": 2,
+    "bytes": 99,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 50,
+    "linesPerFile": 2,
+    "numberOfFiles": 1
+  },
+  "id": "bplhgvdyixqdruaqlvvioxrs"
+}

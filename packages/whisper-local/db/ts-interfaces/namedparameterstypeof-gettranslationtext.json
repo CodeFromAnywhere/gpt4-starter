@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678330946083,
+  "updatedAt": 1678330946083,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330946083,
+  "id": "namedparameterstypeof-gettranslationtext",
+  "name": "NamedParameters<typeof getTranslationText>",
+  "slug": "namedparameterstypeof-gettranslationtext",
+  "operationRelativeTypescriptFilePath": "src/getTranslationText.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "audioFilePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "audioFilePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "audioFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getTranslationText>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

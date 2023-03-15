@@ -1,0 +1,16 @@
+{
+  "updatedAt": 1678860911188,
+  "serverStatus": {
+    "isOffline": false,
+    "isBusy": false,
+    "isUsingBattery": true
+  },
+  "totalQueueCount": 7,
+  "queueSummary": {
+    "isInternetRequired": 0,
+    "isHeavy": 7,
+    "isBrowserRequired": 0,
+    "isDisabled": 0
+  },
+  "executableQueueCount": 0
+}

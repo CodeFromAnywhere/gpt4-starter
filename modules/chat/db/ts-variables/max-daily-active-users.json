@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678372647465,
+  "updatedAt": 1678372647465,
+  "deletedAt": 0,
+  "createdFirstAt": 1678372647465,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "maxDailyActiveUsers",
+  "slug": "max-daily-active-users",
+  "operationRelativeTypescriptFilePath": "src/sendChatAiStatsUpdate.ts",
+  "type": {
+    "rawType": "{}",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "1000",
+  "description": "",
+  "id": "xfuwbbrobktcpsyuwkplpouc"
+}

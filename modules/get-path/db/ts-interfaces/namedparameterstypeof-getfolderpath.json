@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678042054147,
+  "updatedAt": 1678042054147,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042054147,
+  "id": "namedparameterstypeof-getfolderpath",
+  "name": "NamedParameters<typeof getFolderPath>",
+  "slug": "namedparameterstypeof-getfolderpath",
+  "operationRelativeTypescriptFilePath": "src/getCommonAncestorMultiple.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "fileOrFolderPath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fileOrFolderPath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "fileOrFolderPath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getFolderPath>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

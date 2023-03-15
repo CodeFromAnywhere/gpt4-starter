@@ -1,0 +1,73 @@
+{
+  "createdAt": 1678505780692,
+  "updatedAt": 1678505780692,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505780692,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/insertPerson.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  projectRoot: string,\n  key: PersonIndex,\n  value: string\n): Promise<string | undefined> => {\n  if (key === \"slug\") {\n    return value;\n  }\n\n  // 1) get path\n  const kvObjectPath = path.join(projectRoot, \"db\", `person-${key}-index.json`);\n\n  // 2) read kv object\n  const kvObject = await readJsonFile<{ [key: string]: string }>(kvObjectPath);\n\n  if (!kvObject) {\n    return;\n  }\n  // 3) return value (slug)\n  return kvObject[value];\n}",
+  "name": "getPersonSlug",
+  "slug": "get-person-slug",
+  "parameters": [
+    {
+      "name": "projectRoot",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "key",
+      "schema": {
+        "$ref": "#/definitions/PersonIndex"
+      },
+      "simplifiedSchema": {
+        "enum": [
+          "id",
+          "phoneNumber",
+          "email",
+          "slug"
+        ],
+        "fullComment": "",
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "value",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<string | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 444,
+    "lines": 21,
+    "bytes": 444,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 21,
+    "linesPerFile": 21,
+    "numberOfFiles": 1
+  },
+  "id": "hdunxcgacuikvvutixyrvtvb"
+}

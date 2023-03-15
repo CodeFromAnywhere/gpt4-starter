@@ -1,0 +1,56 @@
+{
+  "createdAt": 1678329621484,
+  "updatedAt": 1678329621484,
+  "deletedAt": 0,
+  "createdFirstAt": 1678329621484,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/addPeerMessage.ts",
+  "commentsInside": [],
+  "rawText": " async (message: string, peerSlug: string) => {\n  // @ts-ignore\n  const upsertResult = await db.upsert(\"PeerMessage\", {\n    message,\n    peerSlug,\n  });\n\n  return upsertResult;\n}",
+  "name": "addPeerMessage",
+  "slug": "add-peer-message",
+  "parameters": [
+    {
+      "name": "message",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "peerSlug",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 178,
+    "lines": 9,
+    "bytes": 178,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 20,
+    "linesPerFile": 9,
+    "numberOfFiles": 1
+  },
+  "id": "xpdkchmohfhdbdimodcftddc"
+}

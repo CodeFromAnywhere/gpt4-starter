@@ -1,0 +1,147 @@
+{
+  "createdAt": 1668328710662,
+  "updatedAt": 1668328710662,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328710662,
+  "id": "kizrquhyzzljipgcekjjtedi",
+  "dependencies": {
+    "@popperjs/core": "2.4.4",
+    "react": "*",
+    "react-markdown": "*",
+    "react-with-native": "1.4.9",
+    "rehype-raw": "^6.1.1",
+    "rehype-highlight": "^5.0.2",
+    "remark-gfm": "^3.0.1",
+    "fs-util-js": "0.0.1",
+    "server-api-url": "0.0.1",
+    "asset-functions-js": "0.0.1",
+    "markdown-parse-js": "0.0.1",
+    "ui-util": "0.0.1",
+    "clickable-icon": "0.0.1",
+    "asset-view": "0.0.0",
+    "asset-type": "0.0.1",
+    "tooltip": "0.0.1",
+    "matter-types": "0.0.1",
+    "markdown-types": "0.0.1",
+    "augmented-word-types": "0.0.1",
+    "js-util": "0.0.1",
+    "ai-types": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.30",
+    "@types/react-dom": "^17.0.10",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "typescript": "^4.8.4"
+  },
+  "main": "./build/esm/index.js",
+  "source": "./src/index.ts",
+  "peerDependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "npx tsc-watch --onSuccess 'yarn css'",
+    "css": "tailwindcss -o css.css",
+    "css-watch": "tailwindcss -w -o css.css"
+  },
+  "version": "1.0.0",
+  "name": "markdown",
+  "language": "english",
+  "slug": "markdown",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/clarity/os/operations/tools/user-interfaces/gui/smart/markdown/src/HtmlHeader.tsx. Error: TypeError: Invalid value used as weak map key"
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "ui-esm",
+    "coreDependenciesIndexed": [
+      "useState"
+    ],
+    "folderNameIndexed": "markdown",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1677581950096,
+    "operationDependenciesIndexed": [
+      "path",
+      "apiUrl",
+      "getReferencedAssetApiUrl",
+      "getImplicitId",
+      "Div",
+      "createCodeblockMarkdown",
+      "Div",
+      "ClickableIcon",
+      "Div",
+      "AssetView",
+      "Asset",
+      "isPathRelative",
+      "Div",
+      "P",
+      "Tooltip",
+      "Span",
+      "Frontmatter",
+      "Div",
+      "P",
+      "Div",
+      "MarkdownChunk",
+      "AssetView",
+      "AugmentedWord",
+      "Asset",
+      "getFolderJs",
+      "isPathRelative",
+      "Div",
+      "P",
+      "Tooltip",
+      "makeArray",
+      "notEmpty",
+      "Div",
+      "MarkdownParse",
+      "getImplicitId",
+      "P",
+      "MappedObject",
+      "AugmentedWord",
+      "ContextualPrompt",
+      "ContextualPromptResult",
+      "isPathRelative"
+    ],
+    "packageDependenciesIndexed": [
+      "Components"
+    ],
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/gui/smart",
+    "markdown": "# markdown\n\nthis uses `react-markdown` to render markdown in the browser with react...\n\nThis is a ui-esm operation. This means it's a ui operation that builds to javascript with ESM module resolving... It was based on this example: https://prateeksurana.me/blog/react-library-with-typescript/\n",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 15,
+        "lines": 989,
+        "characters": 29270,
+        "bytes": 29270
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 172,
+        "characters": 4712,
+        "bytes": 4712
+      },
+      "textSize": {
+        "numberOfFiles": 4,
+        "lines": 315,
+        "characters": 8139,
+        "bytes": 8139
+      },
+      "size": {
+        "bytes": 42121,
+        "characters": 42121,
+        "lines": 1476,
+        "numberOfFiles": 21
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

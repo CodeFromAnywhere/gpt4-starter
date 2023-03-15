@@ -1,0 +1,57 @@
+{
+  "createdAt": 1673794233817,
+  "updatedAt": 1673794233817,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794233817,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/pushMultipleOperations.ts",
+  "commentsInside": [],
+  "rawText": " async (operationNames: string[]) => {\n  let results: PushOperationResult[] = [];\n  console.log(\"pushing multiple\");\n  console.log(\"operation list: \" + JSON.stringify(operationNames));\n  await Promise.all(\n    operationNames.map(async (operationName) => {\n      const res = await operationGithubPush(operationName);\n      results.push(res);\n    })\n  );\n  console.log(\"returning push multiple: \" + JSON.stringify(results));\n  return results;\n}",
+  "name": "pushMultipleOperations",
+  "slug": "push-multiple-operations",
+  "parameters": [
+    {
+      "name": "operationNames",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "simplifiedSchema": {
+        "items": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": null
+          }
+        ],
+        "type": "array"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 442,
+    "lines": 13,
+    "bytes": 442,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 34,
+    "linesPerFile": 13,
+    "numberOfFiles": 1
+  },
+  "id": "surscowjoucyfnqhqvspkxrx"
+}

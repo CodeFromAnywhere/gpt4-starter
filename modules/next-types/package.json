@@ -1,0 +1,62 @@
+{
+  "createdAt": 1668361036105,
+  "updatedAt": 1668361036105,
+  "deletedAt": 0,
+  "createdFirstAt": 1668361036105,
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "name": "next-types",
+  "slug": "next-types",
+  "id": "mcvrsqtxyouxgtsvczlovvss",
+  "operation": {
+    "hasGeneratedDependenciesIndexed": false,
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": []
+    },
+    "lastRebuildAt": 1671012598377,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 1,
+        "lines": 48,
+        "characters": 1180,
+        "bytes": 1180
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 100,
+        "characters": 3208,
+        "bytes": 3208
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 45,
+        "characters": 579,
+        "bytes": 579
+      },
+      "size": {
+        "bytes": 4967,
+        "characters": 4967,
+        "lines": 193,
+        "numberOfFiles": 5
+      }
+    },
+    "folderNameIndexed": "next-types",
+    "relativeOperationLocationPathIndexed": "operations/tools/purpose/codebase-introspection/reader",
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [],
+    "packageDependenciesIndexed": []
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331011379,
+  "updatedAt": 1678331011379,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331011379,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "receiveTwilioMessageWithContextRaw",
+  "slug": "receive-twilio-message-with-context-raw",
+  "operationRelativeTypescriptFilePath": "src/receiveTwilioMessageWithContextRaw.ts",
+  "type": {
+    "rawType": "(serverContext: import(\"/Users/clarity/os/operations/node_modules/@types/server/typings/common\").Context) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  serverContext: Context\n) => {\n  const webhookInput: TwilioWebhookType = serverContext.data;\n  //1) match toNumber to a `Persona` . also immediately match the twilioAcccountSid. persona must have a person connected to it (there must be a personId that matches to a person.id)\n  const toNumber = webhookInput.To;\n\n  // NB: to handle a million users, this needs to be done differently.\n  const persons = await db.get(\"Person\");\n  // NB: this is a single file, should be pretty fast, no? if it can't handle 200 reads per second, I should simply store it into memory in the db.get via a second-long cache.\n  const personas = await db.get(\"Persona\");\n\n  const persona = personas.find(\n    (item) =>\n      (`whatsapp:${item.twilioWhatsappFromPhoneNumber}` === toNumber ||\n        item.twilioFromPhoneNumber === toNumber) &&\n      item.twilioAccountSid === webhookInput.AccountSid\n  );\n\n  const twiml = new MessagingResponse();\n\n  if (!persona) {\n    // NB: return early if there is no connected persona found to the Twilio number (or the twilioAccountSid doesn't match)\n    // NB: not sure if I should send a message, as this has cost\n    // twiml.message(\"This number is not active anymore\");\n    serverContext.res.type(\"text/xml\").send(twiml.toString());\n    return;\n  }\n\n  //2) match from number to a `Person`, if any... create a new person, if not...\n  const rawFromNumber = webhookInput.From;\n  const fromNumber = rawFromNumber?.startsWith(\"whatsapp:\")\n    ? rawFromNumber.substring(\"whatsapp:\".length)\n    : rawFromNumber;\n\n  const fromName = webhookInput.ProfileName;\n  // NB: to make this more efficient, we need to create a kv-store for phone --> Person.slug\n  const personAlready = persons.find((x) => x.phoneNumber === fromNumber);\n  const isFirstMessage = !personAlready;\n  const upsertResult = personAlready\n    ? undefined\n    : await db.upsert(\"Person\", {\n        name: fromName,\n        slug: slugify(fromName),\n        phoneNumber: fromNumber,\n      });\n  const newPerson = upsertResult?.isSuccesful\n    ? (await db.get(\"Person\")).find((x) => x.phoneNumber === fromNumber)\n    : undefined;\n\n  const person = personAlready || newPerson;\n  if (!person) {\n    //NB: shouldn't happen, person should always be created here...\n    serverContext.res.type(\"text/xml\").send(twiml.toString());\n    return;\n  }\n\n  //NB: groups come later, may have different parameters I don't know about\n\n  const message = webhookInput.Body;\n\n  const result = await processMessage({\n    message,\n    persona,\n    person,\n    isFirstMessage,\n  });\n\n  if (result.responseMessage) {\n    // NB: also, add it to the twiml instance.\n    twiml.message(result.responseMessage);\n  }\n\n  // NB: respond with xml to to twilio so it knows what to send back\n  serverContext.res.type(\"text/xml\").send(twiml.toString());\n}",
+  "description": "This is where sms/whastapp messages are received via the twilio webhook.\n\nSet your twilio webhook to:\n\n`https://yourapi.com/function/receiveTwilioMessageWithContextRaw`\n\nWhat this does:\n- receives the webhook input\n- find the persona that this message is addressed to\n- find or make a person based on the phone number\n- call `generateResponse`\n\nWhat the `generateResponse` function does:\n- store the sent message into the db\n- generate a response\n- deduct credit\n- send a reply or not",
+  "id": "rkvrtxjxcfyfemalcpujguio"
+}

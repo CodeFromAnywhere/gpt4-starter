@@ -1,0 +1,46 @@
+{
+  "createdAt": 1677580495679,
+  "updatedAt": 1677580495679,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580495679,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getFileFunctions.ts",
+  "commentsInside": [],
+  "rawText": " (parameterName: string) => {\n  return parameterName.includes(\"Path\");\n}",
+  "name": "isPathParameter",
+  "slug": "is-path-parameter",
+  "parameters": [
+    {
+      "name": "parameterName",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 72,
+    "lines": 3,
+    "bytes": 72,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 24,
+    "linesPerFile": 3,
+    "numberOfFiles": 1
+  },
+  "id": "sapzvwkmubqunltdbvjdvvfz"
+}

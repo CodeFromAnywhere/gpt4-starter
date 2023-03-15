@@ -1,0 +1,52 @@
+[
+  {
+    "createdAt": 1678331664294,
+    "updatedAt": 1678331664294,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331664294,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/TsComment.ts",
+    "comment": "special line prefixes:\n\n**Developer related comments**\n\n- TODO: for developer to know what to do\n- DISCUSSION: for developer to state that discussion is needed\n- IDEA: for developer to state ideas\n- LATER: for developer to mark as thing that needs to be done later\n- NB: for developer to add a note\n\n**Form related comments**\n\n- TITLE: if available, will be used as title of form input (overwrites humanCase version of the property-name itself in that case)\n- SECTION: start a new section in the form from this point, the value behind here can be the title\n- DESCRIPTION: if available, will be used as description of the form input",
+    "rawStatement": "export type CommentType = typeof commentTypesConst[number];",
+    "parameters": {},
+    "types": [],
+    "firstLine": 19,
+    "lastLine": 36,
+    "id": "anqstystwmwmutzvmztfseot"
+  },
+  {
+    "createdAt": 1678331664294,
+    "updatedAt": 1678331664294,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331664294,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/TsComment.ts",
+    "comment": "Every `CommentType` can be a key in the `SimplifiedSchema`, if available.",
+    "rawStatement": "export type CommentTypeObject = {\n  [commentType in CommentType]?: string;\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 39,
+    "lastLine": 41,
+    "id": "qtmzjlbsrftcbptvrsllaqfy"
+  },
+  {
+    "createdAt": 1678331664294,
+    "updatedAt": 1678331664294,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331664294,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/TsComment.ts",
+    "comment": "comments are basically one-or-multi-line human content inside of typescript files, so it's a very important to do something useful with them.\n\n\nThe convention should be that single-line comments should start with that. This then becomes the type of the comment.\nYou can also put multiple prefixes at the start.\n\nExample:\n\n`// TODO: NB: this is a todo but its also important`\n\nMultiline comments can also have one or multiple types in their text, but they should not be split into multiple comments as the context could be needed some times.\n\n\n\nThere are also some other things comments can say about statements, but these should be inside the frontmatter, and are much more flexible.\n- classified[0-10] indicating level of classification. This way I can share subsets of the codebase, maybe...\n- privacy\n- ...?\n\nNB: with the current setup we can also parse `.md` files as being a TsComment, keep it that way!\n\nNB: comments are part of the code, so they should always be in English!",
+    "rawStatement": "export interface TsComment extends TsIndexModelType {\n  /**\n   * the content of the comment in markdown, without frontmatter\n   */\n  comment: Markdown;\n  /**\n   * parameters destructured from the frontmatter of the parsed markdown (if comment is not a oneliner, otherwise it'll be empty)\n   */\n  parameters: Frontmatter;\n  /**\n   * These are the type indicators that were found in this single or multiline comment. Can be multiple.\n   */\n  types: CommentType[];\n\n  /**\n   * first line of the comment\n   */\n  firstLine: number;\n  /**\n   * last line of the comment\n   */\n  lastLine: number;\n  /**\n   * statement name the comment belongs to\n   */\n  statementName?: string;\n  /**\n   * raw statement text the comment belongs to\n   */\n  rawStatement?: string;\n}",
+    "parameters": {},
+    "types": [
+      "nb"
+    ],
+    "firstLine": 45,
+    "lastLine": 68,
+    "id": "cvtbpymwrfweiajxjdtazggq"
+  }
+]

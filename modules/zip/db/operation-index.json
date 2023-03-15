@@ -1,0 +1,52 @@
+{
+  "createdAt": 1664527297305,
+  "updatedAt": 1666262656345,
+  "deletedAt": 0,
+  "createdFirstAt": 1664527297305,
+  "folderName": "zip",
+  "packageName": "zip",
+  "relativeOperationLocationPath": "operations/tools/parsing/file-conversion/compression",
+  "classification": "node",
+  "name": "zip",
+  "slug": "zip",
+  "coreDependencies": [],
+  "operationDependencies": [],
+  "packageDependencies": [
+    "execSync",
+    "spawnSync"
+  ],
+  "size": {
+    "codeSize": {
+      "numberOfFiles": 1,
+      "lines": 0,
+      "characters": 575,
+      "bytes": 575
+    },
+    "dataSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 1441,
+      "bytes": 1441
+    },
+    "textSize": {
+      "numberOfFiles": 1,
+      "lines": 0,
+      "characters": 569,
+      "bytes": 569
+    },
+    "size": {
+      "bytes": 2585,
+      "characters": 2585,
+      "lines": 0,
+      "numberOfFiles": 4
+    }
+  },
+  "buildSucceeded": true,
+  "dependenciesBuildsFailed": false,
+  "indexErrors": [],
+  "indexImportExportError": "",
+  "indexInteracesErrors": [],
+  "lintProblems": [],
+  "id": "kaqzuriojunremoomqmkshyo",
+  "language": "en"
+}

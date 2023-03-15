@@ -1,0 +1,78 @@
+{
+  "createdAt": 1668328712548,
+  "updatedAt": 1668328712548,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328712548,
+  "id": "ehhnbkdyoqiebbhkkolyvzgu",
+  "dependencies": {
+    "@popperjs/core": "*",
+    "react": "*"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "npx tsc-watch --onSuccess 'yarn css'",
+    "css": "tailwindcss -o css.css",
+    "build": "tsc"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "tooltip",
+  "language": "english",
+  "slug": "tooltip",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/king/King/operations/tools/user-interfaces/gui/dumb/tooltip/src/Tooltip.tsx. Error: Error: Unknown node \"new (props: P) => Component<P, any>\" of kind \"ConstructorType\""
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "ui-cjs",
+    "coreDependenciesIndexed": [
+      "useState",
+      "createRef"
+    ],
+    "folderNameIndexed": "tooltip",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1671318463594,
+    "operationDependenciesIndexed": [],
+    "packageDependenciesIndexed": [
+      "createPopper",
+      "Placement"
+    ],
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/gui/dumb",
+    "markdown": "# ❌ No description set yet\n\nPlease set a description for this operation in OPERATION.md\n",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 1,
+        "lines": 77,
+        "characters": 2153,
+        "bytes": 2153
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 116,
+        "characters": 3862,
+        "bytes": 3862
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 30,
+        "characters": 411,
+        "bytes": 411
+      },
+      "size": {
+        "bytes": 6426,
+        "characters": 6426,
+        "lines": 223,
+        "numberOfFiles": 5
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "createdAt": 1672636517374,
+    "updatedAt": 1672636517374,
+    "deletedAt": 0,
+    "createdFirstAt": 1672636517374,
+    "name": "folderGetUpdatedAt",
+    "slug": "folder-get-updated-at",
+    "operationRelativeTypescriptFilePath": "src/folderGetUpdatedAt.ts",
+    "comments": [],
+    "type": "value",
+    "id": "wqgxtstlwwjjxlxahshaemmm"
+  },
+  {
+    "createdAt": 1672636517374,
+    "updatedAt": 1672636517374,
+    "deletedAt": 0,
+    "createdFirstAt": 1672636517374,
+    "name": "folderGetUpdatedAt",
+    "slug": "folder-get-updated-at",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "kikrforcnfhgjsuqdzrnfxyx"
+  }
+]

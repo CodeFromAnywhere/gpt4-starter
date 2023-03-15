@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678369267930,
+    "updatedAt": 1678369267930,
+    "deletedAt": 0,
+    "createdFirstAt": 1678369267930,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/useQueryPath.ts",
+    "comment": "Returns the queryPath of your URL without everything after ? and #",
+    "rawStatement": "export const useQueryPath = () => {\n  const router = useRouter();\n  const queryPath = router.query.queryPath;\n  const realQueryPathArray = queryPath ? makeArray(queryPath) : [];\n  const realQueryPath = realQueryPathArray.join(\"/\");\n  return realQueryPath;\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 4,
+    "lastLine": 6,
+    "id": "errciepstvdddqmpivxkurgx"
+  }
+]

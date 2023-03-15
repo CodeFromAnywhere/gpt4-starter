@@ -1,0 +1,24 @@
+{
+  "createdAt": 1669055918474,
+  "updatedAt": 1669055918474,
+  "deletedAt": 0,
+  "createdFirstAt": 1669055918474,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "defaultLongitude",
+  "slug": "default-longitude",
+  "operationRelativeTypescriptFilePath": "src/map/MapInput.tsx",
+  "type": {
+    "rawType": "{}",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "4.89707",
+  "description": "",
+  "id": "enfxmuezzrofmxekmlrfugxm"
+}

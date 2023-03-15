@@ -1,0 +1,70 @@
+{
+  "createdAt": 1678041484361,
+  "updatedAt": 1678041484361,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041484361,
+  "id": "downloadconfig",
+  "name": "DownloadConfig",
+  "slug": "downloadconfig",
+  "operationRelativeTypescriptFilePath": "src/download/createDownloadWithContext.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\nexport type DownloadConfig = {\n  persistence?: Download[\"persistence\"];\n  availableUntilAt?: Download[\"availableUntilAt\"];\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "persistence": {
+          "type": "string",
+          "enum": [
+            "one-time",
+            "forever"
+          ],
+          "description": "defaults to \"one-time\""
+        },
+        "availableUntilAt": {
+          "type": "number",
+          "description": "If given, download is availablue until this date is past."
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "persistence",
+          "required": false,
+          "schema": {
+            "enum": [
+              "one-time",
+              "forever"
+            ],
+            "fullComment": "defaults to \"one-time\"",
+            "type": "string"
+          }
+        },
+        {
+          "name": "availableUntilAt",
+          "required": false,
+          "schema": {
+            "fullComment": "If given, download is availablue until this date is past.",
+            "type": "number"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "DownloadConfig",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

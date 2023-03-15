@@ -1,0 +1,184 @@
+{
+  "createdAt": 1675690237328,
+  "updatedAt": 1675690237328,
+  "deletedAt": 0,
+  "createdFirstAt": 1675690237328,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "folderNames",
+  "slug": "folder-names",
+  "operationRelativeTypescriptFilePath": "src/filename-conventions.ts",
+  "type": {
+    "rawType": "{ buildFolderName: string; databaseFolderName: string; sourceFolderName: string; nodeModulesFolderName: string; nextBuildFolderName: string; gitFolderName: string; turboFolderName: string; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "buildFolderName": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        },
+        "databaseFolderName": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        },
+        "sourceFolderName": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        },
+        "nodeModulesFolderName": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        },
+        "nextBuildFolderName": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        },
+        "gitFolderName": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        },
+        "turboFolderName": {
+          "type": "string",
+          "allOf": [
+            {
+              "transform": [
+                "trim"
+              ]
+            },
+            {
+              "minLength": 1
+            }
+          ]
+        }
+      },
+      "required": [
+        "buildFolderName",
+        "databaseFolderName",
+        "sourceFolderName",
+        "nodeModulesFolderName",
+        "nextBuildFolderName",
+        "gitFolderName",
+        "turboFolderName"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "buildFolderName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "databaseFolderName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "sourceFolderName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "nodeModulesFolderName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "nextBuildFolderName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "gitFolderName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "turboFolderName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "{\n  buildFolderName,\n  databaseFolderName,\n  sourceFolderName,\n  nodeModulesFolderName,\n  nextBuildFolderName,\n  gitFolderName,\n  turboFolderName,\n}",
+  "description": "",
+  "id": "dhyptmcgainnhulayewovfex"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677582363242,
+  "updatedAt": 1677582363242,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582363242,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "isCaptchaExist",
+  "slug": "is-captcha-exist",
+  "operationRelativeTypescriptFilePath": "src/isCaptchaExist.ts",
+  "type": {
+    "rawType": "(page: import(\"/Users/clarity/os/operations/node_modules/puppeteer/lib/types\").Page) => Promise<{ captchas: import(\"/Users/clarity/os/operations/node_modules/puppeteer-extra-plugin-recaptcha/dist/types\").CaptchaInfo[]; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  page: Page\n): Promise<{ captchas: CaptchaInfo[] }> => {\n  try {\n    let recaptchaResult = await page.findRecaptchas();\n    const { captchas } = recaptchaResult;\n    return { captchas };\n  } catch (e: Error | any) {\n    console.log(\"isCaptchaExist Error\", e?.message);\n    return { captchas: [] };\n  }\n}",
+  "description": "",
+  "id": "xoscrhetyngkjqfsllyteulz"
+}

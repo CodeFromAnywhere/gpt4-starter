@@ -1,0 +1,1 @@
+{"version":3,"file":"LlmResultFunction.d.ts","sourceRoot":"","sources":["../src/LlmResultFunction.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,sBAAsB,EAAE,MAAM,0BAA0B,CAAC;AAClE;;GAEG;AACH,MAAM,MAAM,uBAAuB,GAAG;IACpC,CAAC,aAAa,EAAE,MAAM,GAAG,IAAI,CAAC;IAC9B,MAAM,EAAE,sBAAsB,CAAC;CAChC,CAAC"}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330867701,
+  "updatedAt": 1678330867701,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330867701,
+  "id": "namedparameterstypeof-makemarkdownindexcli",
+  "name": "NamedParameters<typeof makeMarkdownIndexCli>",
+  "slug": "namedparameterstypeof-makemarkdownindexcli",
+  "operationRelativeTypescriptFilePath": "src/makeMarkdownIndex.cli.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof makeMarkdownIndexCli>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

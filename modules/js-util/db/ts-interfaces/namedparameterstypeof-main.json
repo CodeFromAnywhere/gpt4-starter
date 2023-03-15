@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678332113739,
+  "updatedAt": 1678332113739,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332113739,
+  "id": "namedparameterstypeof-main",
+  "name": "NamedParameters<typeof main>",
+  "slug": "namedparameterstypeof-main",
+  "operationRelativeTypescriptFilePath": "src/mapMany.test.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof main>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

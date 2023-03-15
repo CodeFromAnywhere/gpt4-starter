@@ -1,0 +1,84 @@
+{
+  "createdAt": 1678041504243,
+  "updatedAt": 1678041504243,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041504243,
+  "id": "namedparameterstypeof-processasset",
+  "name": "NamedParameters<typeof processAsset>",
+  "slug": "namedparameterstypeof-processasset",
+  "operationRelativeTypescriptFilePath": "src/processAsset.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "backendAsset": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/BackendAsset"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BackendAsset"
+              }
+            }
+          ],
+          "description": "The backendAsset that may need processing"
+        },
+        "config": {
+          "type": "object",
+          "properties": {
+            "customAbsoluteFolderPath": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "backendAsset",
+          "required": false,
+          "schema": {
+            "fullComment": "The backendAsset that may need processing",
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "config",
+          "required": false,
+          "schema": {
+            "properties": [
+              {
+                "name": "customAbsoluteFolderPath",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof processAsset>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

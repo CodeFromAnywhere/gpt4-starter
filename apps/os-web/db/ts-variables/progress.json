@@ -1,0 +1,31 @@
+{
+  "createdAt": 1678041737670,
+  "updatedAt": 1678041737670,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041737670,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "progress",
+  "slug": "progress",
+  "operationRelativeTypescriptFilePath": "src/pages/_app.tsx",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/node_modules/@badrap/bar-of-progress/dist/index\").default",
+    "typeDefinition": {
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "new ProgressBar()",
+  "description": "",
+  "id": "lbtiuspodfcbstwaofwrnzhl"
+}

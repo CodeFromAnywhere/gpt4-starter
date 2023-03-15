@@ -1,0 +1,59 @@
+{
+  "createdAt": 1678041486063,
+  "updatedAt": 1678041486063,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041486063,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "createDownloadWithContext",
+  "slug": "create-download-with-context",
+  "operationRelativeTypescriptFilePath": "src/download/createDownloadWithContext.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FileFunction\").FileFunction<import(\"/Users/clarity/os/operations/tools/asset/asset-functions-node/src/download/createDownloadWithContext\").DownloadConfig, import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse & { downloadId?: string | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {},
+        "isEnabled": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "isEnabled",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  /**\n   * path to file or folder\n   */\n  projectRelativePath: string,\n  config?: DownloadConfig\n) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No project root found\" };\n  }\n  const absolutePath = path.join(projectRoot, projectRelativePath);\n\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"File/folder not found\" };\n  }\n\n  const authorization = await getFsAuthorizationWithContext(\n    functionContext,\n    projectRelativePath\n  );\n\n  if (!authorization.canRead) {\n    return { isSuccessful: false, message: \"You're not allowed to do this\" };\n  }\n\n  if (\n    config?.availableUntilAt &&\n    config.availableUntilAt < Date.now() + 300000\n  ) {\n    return {\n      isSuccessful: false,\n      message:\n        \"If you set an expiry date, it must at least be 5 minutes into the future\",\n    };\n  }\n\n  // make zip for file-collections or folders, otherwise just the file itself\n  const absoluteDownloadableFilePath = await makeDownloadableFile(absolutePath);\n\n  if (!absoluteDownloadableFilePath) {\n    return { isSuccessful: false, message: \"Couldn't zip your file\" };\n  }\n\n  const projectRelativeDownloadableFilePath = makeRelative(\n    absoluteDownloadableFilePath,\n    projectRoot\n  );\n\n  // console.log({\n  //   absolutePath,\n  //   projectRelativeDownloadableFilePath,\n  //   absoluteDownloadableFilePath,\n  // });\n  // we're allowed, let's make a download possible\n  const already = await findDownload(projectRelativeDownloadableFilePath);\n\n  if (!already) {\n    const upsertResult = await db.upsert(\"Download\", {\n      download_projectRelativePath: projectRelativeDownloadableFilePath,\n      availableUntilAt: config?.availableUntilAt,\n      persistence: config?.persistence,\n    });\n    if (!upsertResult.isSuccesful) {\n      return { isSuccessful: false, message: \"Couldn't create download\" };\n    }\n  }\n\n  const download =\n    already || (await findDownload(projectRelativeDownloadableFilePath));\n\n  if (!download) {\n    return { isSuccessful: false, message: \"Something went wrong\" };\n  }\n\n  return { isSuccessful: true, message: \"YAY\", downloadId: download.id };\n}",
+  "description": "Export API:\n\n- on any folder, be able to download a zip of that folder.\n- on any file collection, to be able to download a raw content of that file.\n- if there's a .md included, also pdf.\n- if there's more than one file in the collection, zip it, otherwise no zip needed.\n- Also option to download a single file.\n\nSince we don't want unauthorized people to do this, and since the GET endpoint doesn't allow for POST parameters, it's probably best to have a `Download` model that allows me to create one-time or multiple-time downloads with unique keys, that are valid for a certain duration or only to a specific IP. This way, you can't download again after logging out, and it'd be much more secure.",
+  "id": "zkswsuytjpmfvdihuqgjrcng"
+}

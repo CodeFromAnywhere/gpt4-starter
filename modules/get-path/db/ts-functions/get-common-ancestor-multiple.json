@@ -1,0 +1,57 @@
+{
+  "createdAt": 1678042055491,
+  "updatedAt": 1678042055491,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042055491,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getCommonAncestorMultiple.ts",
+  "commentsInside": [],
+  "rawText": " async (paths: string[]) => {\n  if (paths.length <= 1) {\n    console.log(\"not enough paths, minimum 2\");\n    return;\n  }\n  const firstPath = paths[0];\n  const allFolders = getAllFoldersUntilFolder(firstPath);\n\n  const uncommonIndex = allFolders.findIndex((pathUntilFolder) => {\n    // NB: find a path that doesn't start with a chunk\n    const isUncommon = !!paths.find(\n      (p) =>\n        !p.startsWith(pathUntilFolder === \"/\" ? \"/\" : `${pathUntilFolder}/`)\n    );\n    return isUncommon;\n  });\n\n  console.log({ paths, firstPath, allFolders, uncommonIndex });\n  if (uncommonIndex === -1) {\n    return getFolderPath(firstPath);\n  }\n\n  const commonAncestor = await getFolderPath(allFolders[uncommonIndex]);\n  return commonAncestor;\n}",
+  "name": "getCommonAncestorMultiple",
+  "slug": "get-common-ancestor-multiple",
+  "parameters": [
+    {
+      "name": "paths",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "simplifiedSchema": {
+        "items": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": null
+          }
+        ],
+        "type": "array"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 732,
+    "lines": 25,
+    "bytes": 732,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 29,
+    "linesPerFile": 25,
+    "numberOfFiles": 1
+  },
+  "id": "mzjdvbwadljxvfhijeqbeotz"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678043324511,
+  "updatedAt": 1678043324511,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043324511,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "openFinder",
+  "slug": "open-finder",
+  "operationRelativeTypescriptFilePath": "src/openFinder.ts",
+  "type": {
+    "rawType": "(projectRelativePath: string) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (projectRelativePath: string) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return;\n  }\n\n  const absolutePath = path.join(projectRoot, projectRelativePath);\n  if (!fs.existsSync(absolutePath)) {\n    return;\n  }\n\n  const stats = await fs.stat(absolutePath);\n  const isFolder = stats.isDirectory();\n\n  const basePath = isFolder ? absolutePath : path.parse(absolutePath).dir;\n\n  const name = isFolder ? \".\" : path.parse(absolutePath).base;\n\n  execSync(`open -R ${name}`, { cwd: basePath, encoding: \"utf8\" });\n}",
+  "description": "Opens a file or folder in finder (admin only)",
+  "id": "vxtgjdvgnmhokgseeiinlevd"
+}

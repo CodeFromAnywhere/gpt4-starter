@@ -1,0 +1,58 @@
+{
+  "createdAt": 1678330486276,
+  "updatedAt": 1678330486276,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330486276,
+  "id": "namedparameterstypeof-getprimaryfilefromfilecollection",
+  "name": "NamedParameters<typeof getPrimaryFileFromFileCollection>",
+  "slug": "namedparameterstypeof-getprimaryfilefromfilecollection",
+  "operationRelativeTypescriptFilePath": "src/FileCollection.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "fileCollection": {
+          "$ref": "#/definitions/FileCollection"
+        }
+      },
+      "required": [
+        "fileCollection"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "fileCollection",
+          "required": true,
+          "schema": {
+            "fullComment": "I'll later probably find more things to add here, but until that time, it's simply an array of filenames, where the first one is the primary one",
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getPrimaryFileFromFileCollection>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

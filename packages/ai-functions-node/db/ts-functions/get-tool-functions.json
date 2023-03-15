@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678330263839,
+  "updatedAt": 1678330263839,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330263839,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/tool/getToolFunctions.ts",
+  "commentsInside": [],
+  "rawText": " async (): Promise<TsFunction[]> => {\n  const tsFunctions = await db.get(\"TsFunction\");\n\n  getPublicBundleConfig();\n  const toolFunctions = tsFunctions.filter((x) => {\n    const config = sdk[x.name as keyof typeof sdk]?.config as\n      | StandardFunctionConfig\n      | undefined;\n    const isTool = config && config?.domain;\n    return isTool;\n  });\n\n  return toolFunctions;\n}",
+  "name": "getToolFunctions",
+  "slug": "get-tool-functions",
+  "parameters": [],
+  "description": "Returns all tool functions to the frontend",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/TsFunction\").TsFunction[]>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 418,
+    "lines": 14,
+    "bytes": 418,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 30,
+    "linesPerFile": 14,
+    "numberOfFiles": 1
+  },
+  "id": "zxipcqdtiwbeepvvpkxxbloj"
+}

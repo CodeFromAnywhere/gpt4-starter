@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678330954841,
+  "updatedAt": 1678330954841,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330954841,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/readTranscriptionCsv.ts",
+  "commentsInside": [],
+  "rawText": " async (csvPath: string) => {\n  if (!fs.existsSync(csvPath)) return null;\n\n  const readable = canReadSync(csvPath);\n  if (!readable) return null;\n  const fileString = fs.readFileSync(csvPath, \"utf8\");\n  if (!fileString) return null;\n\n  const lines = fileString.split(\"\\n\");\n\n  const parsed = lines\n    .map((line) => {\n      if (line === \"\") {\n        return;\n      }\n      const [startAt, endAt, ...rest] = line.split(\",\");\n\n      const quoted = rest.join(\",\");\n\n      const text = quoted.trim().slice(1, quoted.length - 2);\n\n      return { startAt: Number(startAt), endAt: Number(endAt), text };\n    })\n    .filter(notEmpty);\n\n  return parsed as TranscribedText[];\n}",
+  "name": "readTranscriptionCsv",
+  "slug": "read-transcription-csv",
+  "parameters": [
+    {
+      "name": "csvPath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 668,
+    "lines": 27,
+    "bytes": 668,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 27,
+    "numberOfFiles": 1
+  },
+  "id": "ggkyydezbtjabypevsmppayd"
+}

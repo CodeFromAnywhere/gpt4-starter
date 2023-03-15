@@ -1,0 +1,88 @@
+{
+  "createdAt": 1678329618899,
+  "updatedAt": 1678329618899,
+  "deletedAt": 0,
+  "createdFirstAt": 1678329618899,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/addPeer.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  ip: string,\n  authToken: string,\n  peerName?: string,\n  /**\n   * If true, it does not validate the IP to see if it is online and it is authorized...\n   */\n  force?: boolean,\n  isMe?: boolean\n) => {\n  // get new PeerMessages after last sync\n\n  const apiResult = await apiWithConfig.ping({\n    apiUrl: `http://${ip}:${ports[\"function-server\"]}`,\n    authToken,\n    timeout: 2000,\n  });\n\n  const isConnectionEstablished =\n    apiResult?.isSuccessful &&\n    !apiResult?.isUnauthorized &&\n    apiResult.result === true;\n\n  if (!force && !isConnectionEstablished) {\n    return {\n      isSuccesful: false,\n      message:\n        \"Peer connection could not be established. Are you sure the peer is online? Use force if you want to add your peer anyway. If you have a node version lower than v17, this will also fail.\",\n    };\n  }\n}",
+  "name": "addPeer",
+  "slug": "add-peer",
+  "parameters": [
+    {
+      "name": "ip",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "authToken",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "peerName",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": false
+    },
+    {
+      "name": "force",
+      "schema": {
+        "type": "boolean",
+        "description": "If true, it does not validate the IP to see if it is online and it is authorized..."
+      },
+      "simplifiedSchema": {
+        "fullComment": "If true, it does not validate the IP to see if it is online and it is authorized...",
+        "type": "boolean"
+      },
+      "required": false
+    },
+    {
+      "name": "isMe",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    }
+  ],
+  "description": "TODO:",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 839,
+    "lines": 31,
+    "bytes": 839,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 27,
+    "linesPerFile": 31,
+    "numberOfFiles": 1
+  },
+  "id": "wahhishjyywgglqfkgomnkpt"
+}

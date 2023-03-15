@@ -1,0 +1,47 @@
+{
+  "createdAt": 1671457705017,
+  "updatedAt": 1671457705017,
+  "deletedAt": 0,
+  "createdFirstAt": 1671457705017,
+  "id": "categorystack",
+  "name": "CategoryStack",
+  "slug": "categorystack",
+  "operationRelativeTypescriptFilePath": "src/keyValueMarkdown.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\n/**\n * Taken from the location in the folder of the db-model.\n *\n * NB: Changing this value when updating/upserting, changes where the item is located!\n */\nexport type CategoryStack = string[];",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "Taken from the location in the folder of the db-model.\n\nNB: Changing this value when updating/upserting, changes where the item is located!",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Taken from the location in the folder of the db-model.\n\nNB: Changing this value when updating/upserting, changes where the item is located!"
+    },
+    "simplifiedSchema": {
+      "fullComment": "Taken from the location in the folder of the db-model.\n\nNB: Changing this value when updating/upserting, changes where the item is located!",
+      "nb": "Changing this value when updating/upserting, changes where the item is located!",
+      "items": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    },
+    "typeCoverage": 0,
+    "rawType": "CategoryStack",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

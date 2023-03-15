@@ -1,0 +1,36 @@
+{
+  "createdAt": 1671316550493,
+  "updatedAt": 1671316550493,
+  "deletedAt": 0,
+  "createdFirstAt": 1671316550493,
+  "isApiExposed": true,
+  "isExported": true,
+  "groupAuthorization": {},
+  "operationRelativeTypescriptFilePath": "src/test-operation-models.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  // const operationIndexs = await testDb.get(\"OperationIndex\");\n  // const operationConfigs = await testDb.get(\"OperationConfig\");\n  // const packageJsons = await testDb.get(\"PackageJson\");\n  const tsConfigs = await testDb.get(\"TsConfig\");\n\n  //operationConfigs, operationIndexs, packageJsons,\n  // console.dir({ tsConfigs });\n\n  return true;\n}",
+  "name": "testOperationModels",
+  "slug": "test-operation-models",
+  "parameters": [],
+  "description": "Test if it can find all `OperationIndex`, `OperationConfig`, `PackageJson`, `TsConfig`",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 446,
+    "lines": 11,
+    "bytes": 446,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 41,
+    "linesPerFile": 11,
+    "numberOfFiles": 1
+  },
+  "id": "uelqbgwvdcwyqtgeryebsnfm"
+}

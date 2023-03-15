@@ -1,0 +1,45 @@
+{
+  "createdAt": 1669055877838,
+  "updatedAt": 1669055877838,
+  "deletedAt": 0,
+  "createdFirstAt": 1669055877838,
+  "isApiExposed": false,
+  "name": "isObject",
+  "slug": "is-object",
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/general.tsx",
+  "groupAuthorization": {},
+  "commentsInside": [],
+  "description": "",
+  "parameters": [],
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "size": {
+    "characters": 116,
+    "lines": 5,
+    "bytes": 116,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 23,
+    "linesPerFile": 5,
+    "numberOfFiles": 1
+  },
+  "rawText": "\n\nexport function isObject(object: any): object is object {\n  return object != null && typeof object === \"object\";\n}",
+  "maxIndentationDepth": 1,
+  "id": "iqieemkdxutcmpdnvhvxrdxf"
+}

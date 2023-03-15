@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794231302,
+  "updatedAt": 1673794231302,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794231302,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "pullMultipleOperations",
+  "slug": "pull-multiple-operations",
+  "operationRelativeTypescriptFilePath": "src/pullMultipleOperations.ts",
+  "type": {
+    "rawType": "(operationNames: string[]) => Promise<{ isSuccessful: boolean; message: string; results?: { isSuccessful: boolean; message: string; operationName?: string | undefined; }[] | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  operationNames: string[]\n): Promise<{\n  isSuccessful: boolean;\n  message: string;\n  results?: {\n    isSuccessful: boolean;\n    message: string;\n    operationName?: string | undefined;\n  }[];\n}> => {\n  const personalAccessToken = await getGithubPersonalAccessToken();\n  if (!personalAccessToken) {\n    return {\n      isSuccessful: false,\n      message:\n        \"You don't have any persona setup with a GitHub personal access token, please update your Personas.\",\n    };\n  }\n\n  console.log(\"pulling multiple\");\n  const results = await Promise.all(\n    operationNames.map(async (operationName) =>\n      operationGithubPull(operationName, personalAccessToken)\n    )\n  );\n\n  console.log(\"returning pull multiple: \" + JSON.stringify(results));\n\n  return { isSuccessful: true, message: \"Yeah!\", results };\n}",
+  "description": "",
+  "id": "dklhyafsxuycfmlaaxnfypgl"
+}

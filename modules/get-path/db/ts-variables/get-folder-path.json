@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678042055723,
+  "updatedAt": 1678042055723,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042055723,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getFolderPath",
+  "slug": "get-folder-path",
+  "operationRelativeTypescriptFilePath": "src/getCommonAncestorMultiple.ts",
+  "type": {
+    "rawType": "(fileOrFolderPath: string) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (fileOrFolderPath: string) => {\n  if (!fs.existsSync(fileOrFolderPath)) return;\n  const stat = await fs.stat(fileOrFolderPath);\n  if (stat.isDirectory()) return fileOrFolderPath;\n  return path.parse(fileOrFolderPath).dir;\n}",
+  "description": "",
+  "id": "wmkyhnanbmtxxzxlanyckjmk"
+}

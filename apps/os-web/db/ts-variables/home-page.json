@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673641495207,
+  "updatedAt": 1673641495207,
+  "deletedAt": 0,
+  "createdFirstAt": 1673641495207,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "HomePage",
+  "slug": "home-page",
+  "operationRelativeTypescriptFilePath": "src/pages/index.tsx",
+  "type": {
+    "rawType": "(props: import(\"/Users/clarity/os/operations/tools/purpose/search/search-web/src/util/types\").QueryPageProps) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: QueryPageProps) => {\n  const alert = useAlert();\n  const meQuery = queries.useGetMeWithContext();\n  const explorableBasePathsWithContextQuery =\n    queries.useGetExplorableBasePathsWithContext();\n\n  const device: Storing<Device> | undefined = meQuery.data?.result?.device;\n  const isLoggedIn = !!device?.currentPersonCalculated;\n  const { imagePaths } = props;\n  const hour = new Date(Date.now()).getHours();\n  const quote = quotes[hour % quotes.length];\n  const imagePath = imagePaths[hour % imagePaths.length];\n\n  const [mindspace, setMindspace] = useState(mindspaces[0]);\n  useState<NodeJS.Timeout | null>(null);\n\n  return (\n    <Div className=\"flex flex-1 min-h-[90vh] items-center flex-col justify-around\">\n      {meQuery.isLoading ? (\n        <FancyLoader big />\n      ) : isLoggedIn ? (\n        <Div className=\"h-[80vh] flex flex-col\">\n          <Div>\n            <Div className=\"text-4xl text-blue-500 drop-shadow\">\n              Welcome back, {device?.currentPersonCalculated?.name}\n            </Div>\n            {explorableBasePathsWithContextQuery.data?.result?.map(\n              (basePath) => {\n                return (\n                  <ALink href={`/files/${basePath.projectRelativePath}`}>\n                    {basePath.name}\n                  </ALink>\n                );\n              }\n            )}\n            <Div className=\"italic text-black dark:text-white\">{quote}</Div>\n            <SearchBar\n              changePlaceholder={() =>\n                setMindspace(pickRandomArrayItem(mindspaces))\n              }\n              placeholder={mindspace}\n            />\n          </Div>\n          <Div className=\"max-w-xl mt-20\">\n            <AppsMenu />\n          </Div>\n          {/* \n          Get search component here\n          \n          - a search box to search files, db, functions, and google leading to `/search`\n          - a link to \"see my files\" going to `/files`\n          \n          */}\n        </Div>\n      ) : (\n        <>\n          <Div className=\"text-4xl text-blue-500 drop-shadow\">\n            Share meeting insights for free\n          </Div>\n          <FunctionForm\n            tsFunction={Index}\n            withApiResult={(\n              result: RealApiReturnType<\"summarizeMeetingWithContext\">\n            ) => {\n              console.log({ result });\n              alert?.(\"Success\", result.result?.message);\n            }}\n            projectRelativeStorageFilePath=\"assets\"\n          />\n          <p>\n            Clarity AI generates an automated summary to share with everyone and\n            to help you remember everything.\n          </p>\n          <p className=\"text-center\">\n            Please sign up with the form above to get early access.\n          </p>\n          <p>\n            We'll also send you information about events and new updates\n            (maximum once per week).\n          </p>\n        </>\n      )}\n    </Div>\n  );\n}",
+  "description": "",
+  "id": "eklvuunhtoxzkfulicpavbjc"
+}

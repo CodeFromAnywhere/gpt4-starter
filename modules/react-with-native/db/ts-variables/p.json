@@ -1,0 +1,33 @@
+{
+  "createdAt": 1668752419945,
+  "updatedAt": 1668752419945,
+  "deletedAt": 0,
+  "createdFirstAt": 1668752419945,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "P",
+  "slug": "p",
+  "operationRelativeTypescriptFilePath": "src/html/P/P.tsx",
+  "type": {
+    "rawType": "({ native, ...props }: import(\"/Users/king/King/operations/tools/user-interfaces/gui/react-with-native/react-with-native/src/html/P/P.type\").PType) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "({ native, ...props }: PType) => {\n  return <p {...props} />;\n}",
+  "description": "",
+  "id": "wtjbuqzsvjgcphikddfkesuu"
+}

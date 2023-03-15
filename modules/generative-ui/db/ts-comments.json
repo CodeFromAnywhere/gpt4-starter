@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678041418726,
+    "updatedAt": 1678041418726,
+    "deletedAt": 0,
+    "createdFirstAt": 1678041418726,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/openDownload.ts",
+    "comment": "Download a file or folder",
+    "rawStatement": "export const openDownload = async (projectRelativePath: string) => {\n  const download = await api.createDownloadWithContext(projectRelativePath);\n\n  const token = download.result?.downloadId;\n  if (!token) {\n    alert?.(\"Something went wrong\");\n    return;\n  }\n\n  const url = getGetApiUrl(apiUrl, \"downloadGetApi\", { token });\n\n  window.open(url, \"_blank\")?.focus();\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 5,
+    "lastLine": 7,
+    "id": "byimylrdqrtjdricktbaijas"
+  }
+]

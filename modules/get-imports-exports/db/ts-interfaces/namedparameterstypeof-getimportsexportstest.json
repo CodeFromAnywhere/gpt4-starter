@@ -1,0 +1,33 @@
+{
+  "createdAt": 1671116334592,
+  "updatedAt": 1671116334592,
+  "deletedAt": 0,
+  "createdFirstAt": 1671116334592,
+  "id": "namedparameterstypeof-getimportsexportstest",
+  "name": "NamedParameters<typeof getImportsExportsTest>",
+  "slug": "namedparameterstypeof-getimportsexportstest",
+  "operationRelativeTypescriptFilePath": "src/test.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getImportsExportsTest>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

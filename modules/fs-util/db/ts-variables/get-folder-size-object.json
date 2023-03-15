@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678041944962,
+  "updatedAt": 1678041944962,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041944962,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getFolderSizeObject",
+  "slug": "get-folder-size-object",
+  "operationRelativeTypescriptFilePath": "src/getFolderSizeObject.ts",
+  "type": {
+    "rawType": "{ (absoluteFolderPath: string, minimumReportSizeMb?: number, ignoreGenerated?: boolean): Promise<import(\"/Users/clarity/os/operations/tools/types/recursive-types/build/ChildObject\").ChildObject<{ size: number; name: string; }>[]>; config: { isPublic: boolean; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPublic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isPublic"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  absoluteFolderPath: string,\n  /**\n   * Folders smaller than this won't provide details\n   */\n  minimumReportSizeMb: number = 0,\n  ignoreGenerated: boolean = true\n): Promise<ChildObject<{ size: number; name: string }>[]> => {\n  const files = await fs.readdir(absoluteFolderPath, { withFileTypes: true });\n\n  const paths = (\n    await Promise.all(\n      files.map(async (file) => {\n        const newPath = path.join(absoluteFolderPath, file.name);\n\n        if (file.isDirectory()) {\n          if (\n            ignoreGenerated &&\n            [...generatedFolders, \"public\"].includes(file.name)\n          )\n            return;\n          const children = await getFolderSizeObject(newPath);\n\n          const size = sum(children.map((x) => x.size));\n          return {\n            name: file.name,\n            size,\n            /**\n             *\n             */\n            children:\n              size > minimumReportSizeMb * 1024 * 1024 ? children : undefined,\n          };\n        }\n\n        if (file.isFile()) {\n          const { size } = await fs.stat(newPath);\n\n          return {\n            size,\n            children: undefined,\n            name: file.name,\n          };\n        }\n\n        return minimumReportSizeMb\n          ? undefined\n          : { size: 0, children: undefined, name: file.name };\n      })\n    )\n  ).filter(notEmpty);\n\n  return paths;\n}",
+  "description": "returns an object with all sizes of all folders and files, recursively",
+  "id": "xbzttjhsqgvvnwmgevsgnbde"
+}

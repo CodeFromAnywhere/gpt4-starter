@@ -1,0 +1,71 @@
+{
+  "createdAt": 1678331594054,
+  "updatedAt": 1678331594054,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331594054,
+  "id": "namedparameterstypeof-getexplorabledbmodels",
+  "name": "NamedParameters<typeof getExplorableDbModels>",
+  "slug": "namedparameterstypeof-getexplorabledbmodels",
+  "operationRelativeTypescriptFilePath": "src/getExplorableDbModels.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string"
+        },
+        "groupSlugs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "query",
+        "groupSlugs"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "query",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "groupSlugs",
+          "required": true,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getExplorableDbModels>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

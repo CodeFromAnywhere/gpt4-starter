@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678043871265,
+    "updatedAt": 1678043871265,
+    "deletedAt": 0,
+    "createdFirstAt": 1678043871265,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/UserApp.tsx",
+    "comment": "Layout that includes login wrapper (able to be logged in) and default pages.",
+    "rawStatement": "export const UserApp = (props: {\n  overwriteDefaultPages?: string[];\n  NextPage?: any;\n  pageProps?: any;\n  menuProps?: MenuProps;\n  customHeader?: ReactNode;\n  customMenu?: ReactNode;\n}) => {\n  const {\n    NextPage,\n    pageProps,\n    overwriteDefaultPages,\n    customHeader,\n    customMenu,\n    menuProps,\n  } = props;\n\n  const router = useRouter();\n  const path = router.asPath.substring(1).split(\"?\")[0];\n\n  const pages: { [key: string]: (props?: any) => JSX.Element } = {\n    login: LoginForm,\n    signup: SignupForm,\n    \"signup-confirm\": () => <ConfirmForm isSignup />,\n    \"login-confirm\": () => <ConfirmForm />,\n    \"edit-profile\": UpdateMeForm,\n    profile: PublicProfile,\n  };\n\n  const DefaultPage = pages[path] ? pages[path] : undefined;\n\n  const pageContent =\n    DefaultPage && !overwriteDefaultPages?.includes(path) ? (\n      <DefaultPage />\n    ) : (\n      <NextPage {...pageProps} />\n    );\n\n  return (\n    <LoginWrapper>\n      <LayoutGrid\n        header={customHeader || <Header />}\n        menu={customMenu || <Menu {...menuProps} message={undefined} />}\n      >\n        {pageContent}\n      </LayoutGrid>\n    </LoginWrapper>\n  );\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 15,
+    "lastLine": 17,
+    "id": "rjzjuzswexnbvvbtbrcgsisz"
+  }
+]

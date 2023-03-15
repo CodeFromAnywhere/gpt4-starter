@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678332008268,
+  "updatedAt": 1678332008268,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332008268,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "signupWithEmailOrPhone",
+  "slug": "signup-with-email-or-phone",
+  "operationRelativeTypescriptFilePath": "src/signupWithEmailOrPhone.ts",
+  "type": {
+    "rawType": "{ (emailOrPhone: string, fullName?: string | undefined, pictureImage?: import(\"/Users/clarity/os/operations/tools/asset/asset-type/build/BackendAsset\").BackendAsset | undefined): Promise<{ isSuccessful: boolean; message: string; emailOrPhone?: string | undefined; }>; config: { isPublic: boolean; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPublic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isPublic"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  emailOrPhone: string,\n  fullName?: string,\n  pictureImage?: BackendAsset\n): Promise<{\n  isSuccessful: boolean;\n  message: string;\n  emailOrPhone?: string;\n}> => {\n  return signupBare({ emailOrPhone, fullName, pictureImage });\n}",
+  "description": "For now only username/pass is supported due to direct verification\n\nThis function makes an authenticationmethod for the device and then signs up by creating a person for it and attaching it to the device.",
+  "id": "hfhrhmkmojrttwiciewxyagz"
+}

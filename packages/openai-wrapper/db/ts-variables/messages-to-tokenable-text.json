@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331095190,
+  "updatedAt": 1678331095190,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331095190,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "messagesToTokenableText",
+  "slug": "messages-to-tokenable-text",
+  "operationRelativeTypescriptFilePath": "src/messagesToTokenableText.ts",
+  "type": {
+    "rawType": "(messages: import(\"/Users/clarity/os/operations/node_modules/openai/dist/api\").ChatCompletionRequestMessage[]) => string",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  messages: ChatCompletionRequestMessage[]\n): string => {\n  return messages\n    .map(\n      (item) =>\n        `${item.role} ${item.name ? `${item.name} ` : \"\"}${item.content}`\n    )\n    .join(\" \");\n}",
+  "description": "",
+  "id": "wtyhxtnkcykrqzkhlwkwbwea"
+}

@@ -1,0 +1,120 @@
+{
+  "createdAt": 1678042945997,
+  "updatedAt": 1678042945997,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042945997,
+  "id": "standardresponse",
+  "name": "StandardResponse",
+  "slug": "standardresponse",
+  "operationRelativeTypescriptFilePath": "src/StandardResponse.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "/**\nStandard response for functions. Should be used as much as possible\n*/\nexport type StandardResponse = {\n  isSuccessful: boolean;\n  message?: string;\n  /**\n   * Provide payment details in case this is a paid function.\n   */\n  payment?: {\n    priceCredit?: number;\n    priceDescription?: string;\n    personId?: string;\n    groupId?: string;\n  };\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "Standard response for functions. Should be used as much as possible",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "isSuccessful": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "payment": {
+          "type": "object",
+          "properties": {
+            "priceCredit": {
+              "type": "number"
+            },
+            "priceDescription": {
+              "type": "string"
+            },
+            "personId": {
+              "type": "string"
+            },
+            "groupId": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "description": "Provide payment details in case this is a paid function."
+        }
+      },
+      "required": [
+        "isSuccessful"
+      ],
+      "additionalProperties": false,
+      "description": "Standard response for functions. Should be used as much as possible"
+    },
+    "simplifiedSchema": {
+      "fullComment": "Standard response for functions. Should be used as much as possible",
+      "properties": [
+        {
+          "name": "isSuccessful",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "message",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "payment",
+          "required": false,
+          "schema": {
+            "fullComment": "Provide payment details in case this is a paid function.",
+            "properties": [
+              {
+                "name": "priceCredit",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "priceDescription",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "personId",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "groupId",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "StandardResponse",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

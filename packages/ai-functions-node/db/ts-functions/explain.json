@@ -1,0 +1,77 @@
+{
+  "createdAt": 1678330218743,
+  "updatedAt": 1678330218743,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330218743,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "PromptFunction",
+  "operationRelativeTypescriptFilePath": "src/prompts.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  contextContent: string,\n  selectionContent: string,\n  prompt_projectRelativePath: string,\n  isDeferred?: boolean\n) => {\n  const result = await processChatGptPrompt({\n    isDeferred,\n    contextualPromptSlug: \"explain\",\n    contextContent,\n    selectionContent,\n    prompt_projectRelativePath,\n  });\n\n  return result;\n}",
+  "name": "explain",
+  "slug": "explain",
+  "parameters": [
+    {
+      "name": "contextContent",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "selectionContent",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "prompt_projectRelativePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "isDeferred",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    }
+  ],
+  "description": "🤔 Explain",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 339,
+    "lines": 16,
+    "bytes": 341,
+    "bytesPerCharacter": 1.0058997050147493,
+    "charactersPerLine": 21,
+    "linesPerFile": 16,
+    "numberOfFiles": 1
+  },
+  "id": "bjptughofinethsnojnbuyux"
+}

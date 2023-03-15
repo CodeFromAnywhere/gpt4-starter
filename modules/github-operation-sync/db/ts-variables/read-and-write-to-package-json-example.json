@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794236170,
+  "updatedAt": 1673794236170,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794236170,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "readAndWriteToPackageJsonExample",
+  "slug": "read-and-write-to-package-json-example",
+  "operationRelativeTypescriptFilePath": "src/readAndWriteToPackageJsonExample.ts",
+  "type": {
+    "rawType": "() => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  //TODO:REFACTOR\n  const result = (\n    await db.get(\"Operation\", { operationName: \"nodejs-test\" })\n  )[0];\n\n  await db.update(\n    \"Operation\",\n    (item) => item.operationName === \"nodejs-test\",\n    (old) => {\n      if (old.repository) {\n        //\n      }\n      return { ...old, repository: \"test-repository.com\" };\n    }\n  );\n  // return result.repository;\n}",
+  "description": "",
+  "id": "auerfhygxluxmgpubeyobgkd"
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "createdAt": 1678330775589,
+    "updatedAt": 1678330775589,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330775589,
+    "name": "time",
+    "slug": "time",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "wiykcsdzonzhjokngwyoxeac"
+  },
+  {
+    "createdAt": 1678330775590,
+    "updatedAt": 1678330775590,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330775590,
+    "name": "time",
+    "slug": "time",
+    "operationRelativeTypescriptFilePath": "src/time.ts",
+    "comments": [],
+    "type": "value",
+    "id": "azoyuxhlymbgfzchwdzfajrv"
+  }
+]

@@ -1,0 +1,97 @@
+{
+  "createdAt": 1678330864109,
+  "updatedAt": 1678330864109,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330864109,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getBetterLocation.ts",
+  "commentsInside": [],
+  "rawText": " async (config: {\n  fileName: string;\n  shortDescription: string;\n  projectRelativePath: string;\n  folderStructure: string;\n}) => {\n  const { fileName, folderStructure, projectRelativePath, shortDescription } =\n    config;\n\n  const locationResult = await textToText(`Consider this file: ${fileName}.\nThis is what it contains: ${shortDescription}\nThis is the file's current location in the file system: ${projectRelativePath}\nThis is the folder structure of my file system:\n\\`\\`\\`\n${folderStructure}\n\\`\\`\\`\n\n\nIs \\`${projectRelativePath}\\` a good location? Give me your top 5 locations you think this file should be located, with a weight (0-1) for each location.`);\n\n  console.log({ locationResult });\n}",
+  "name": "getBetterLocation",
+  "slug": "get-better-location",
+  "parameters": [
+    {
+      "name": "config",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "fileName": {
+            "type": "string"
+          },
+          "shortDescription": {
+            "type": "string"
+          },
+          "projectRelativePath": {
+            "type": "string"
+          },
+          "folderStructure": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "fileName",
+          "shortDescription",
+          "projectRelativePath",
+          "folderStructure"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "fileName",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "shortDescription",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectRelativePath",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "folderStructure",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "holy grail of LLM's: data structurisation",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 743,
+    "lines": 22,
+    "bytes": 743,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 34,
+    "linesPerFile": 22,
+    "numberOfFiles": 1
+  },
+  "id": "mnihrmqsoxxgalmwhddekxts"
+}

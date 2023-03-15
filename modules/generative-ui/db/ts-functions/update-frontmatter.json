@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678041376674,
+  "updatedAt": 1678041376674,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041376674,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/FileCollectionActions.tsx",
+  "commentsInside": [],
+  "rawText": " async (\n  projectRelativePath: string | undefined,\n  newFrontmatter: { [key: string]: string },\n  refetch?: () => void\n) => {\n  if (!projectRelativePath) return;\n\n  const apiResult = await api.updateFrontmatterWithContext(\n    projectRelativePath,\n    newFrontmatter\n  );\n\n  showStandardResponse(apiResult);\n\n  if (apiResult.result?.isSuccessful) {\n    refetch?.();\n  }\n}",
+  "name": "updateFrontmatter",
+  "slug": "update-frontmatter",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 372,
+    "lines": 18,
+    "bytes": 372,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 21,
+    "linesPerFile": 18,
+    "numberOfFiles": 1
+  },
+  "id": "hvxmnxawxbcefiukvgscszlr"
+}

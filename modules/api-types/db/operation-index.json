@@ -1,0 +1,50 @@
+{
+  "createdAt": 1664526119145,
+  "updatedAt": 1668248790008,
+  "deletedAt": 0,
+  "createdFirstAt": 1664526119145,
+  "indexInteracesErrors": "[\"No schema/definitions found for /Users/king/King/operations/tools/interfaces/api/api-types/src/api-types.ts. Error: Error: Unknown node \\\" import(\\\"next\\\").GetStaticPaths<import(\\\"querystring\\\").ParsedUrlQuery>\\\" of kind \\\"LastTypeNode\\\"\"]",
+  "buildSucceeded": true,
+  "id": "kbnsusnwmcjgppatnljrubow",
+  "indexImportExportError": "",
+  "lintProblems": [],
+  "folderName": "api-types",
+  "packageName": "api-types",
+  "relativeOperationLocationPath": "operations/tools/interfaces/api",
+  "classification": "js",
+  "name": "api-types",
+  "slug": "api-types",
+  "coreDependencies": [],
+  "operationDependencies": [
+    "sdk"
+  ],
+  "packageDependencies": [
+    "UseQueryResult"
+  ],
+  "size": {
+    "codeSize": {
+      "numberOfFiles": 3,
+      "lines": 0,
+      "characters": 5797,
+      "bytes": 5797
+    },
+    "dataSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 1407,
+      "bytes": 1407
+    },
+    "textSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 176,
+      "bytes": 176
+    },
+    "size": {
+      "bytes": 7380,
+      "characters": 7380,
+      "lines": 0,
+      "numberOfFiles": 7
+    }
+  }
+}

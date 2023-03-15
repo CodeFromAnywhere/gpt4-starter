@@ -1,0 +1,19 @@
+{
+  "createdAt": 1673614887005,
+  "updatedAt": 1673614887005,
+  "deletedAt": 0,
+  "createdFirstAt": 1673614887005,
+  "name": "gpt4-starter",
+  "slug": "gpt4-starter",
+  "description": "Typescript GPT4 starter",
+  "isGitRepoPublic": true,
+  "gitRepoUrl": "https://github.com/CodeFromAnywhere/gpt4-starter",
+  "emoji": "📢",
+  "primaryColor": "#3679c5",
+  "id": "ksjdlkjflsjdlfjslkdjf",
+  "language": "en",
+  "deploymentHostname": "",
+  "categoryStack": [],
+  "operationName": null,
+  "projectRelativePath": "/db/bundle-configs/gpt4-starter.json"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331374985,
+  "updatedAt": 1678331374985,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331374985,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getAllGroupsIncludingInheritedRecursive",
+  "slug": "get-all-groups-including-inherited-recursive",
+  "operationRelativeTypescriptFilePath": "src/getAllGroupsIncludingInherited.ts",
+  "type": {
+    "rawType": "(groups: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Group\").Group[], groupSlugs: string[] | undefined) => import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Group\").Group[]",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  groups: Group[],\n  groupSlugs: string[] | undefined\n): Group[] => {\n  const allGroupSlugs = groupSlugs || [];\n\n  const filteredGroups = groups.filter((g) => allGroupSlugs.includes(g.slug));\n\n  const inheritedNotAlready = filteredGroups\n    .map((x) => x.inherited_groupSlugs)\n    .filter(notEmpty)\n    .filter((x) => x.length > 0)\n    .flat()\n    .filter((slug) => !allGroupSlugs.includes(slug));\n\n  const inheritedInherited =\n    inheritedNotAlready.length > 0\n      ? getAllGroupsIncludingInheritedRecursive(groups, inheritedNotAlready)\n      : [];\n\n  const publicGroup = groups.find((x) => x.slug === \"public\");\n  const allGroups = [...filteredGroups, ...inheritedInherited, publicGroup]\n    .filter(notEmpty)\n    .filter(uniqueSlug);\n\n  return allGroups;\n}",
+  "description": "From all `Group`s in the db, takes all groupSlugs, and recursively executes this again for all inherited groupSlugs found on the groups that are shown in the second parameter.\n\nAlso adds the special group `public`",
+  "id": "gbplwobltuykiyeoqvzramts"
+}

@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678369211126,
+  "updatedAt": 1678369211126,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369211126,
+  "id": "namedparameterstypeof-musictrackseparation",
+  "name": "NamedParameters<typeof musicTrackSeparation>",
+  "slug": "namedparameterstypeof-musictrackseparation",
+  "operationRelativeTypescriptFilePath": "src/musicTrackSeparation.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteMusicFilePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absoluteMusicFilePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteMusicFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof musicTrackSeparation>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

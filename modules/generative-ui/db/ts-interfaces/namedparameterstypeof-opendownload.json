@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678041417117,
+  "updatedAt": 1678041417117,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041417117,
+  "id": "namedparameterstypeof-opendownload",
+  "name": "NamedParameters<typeof openDownload>",
+  "slug": "namedparameterstypeof-opendownload",
+  "operationRelativeTypescriptFilePath": "src/openDownload.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "projectRelativePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "projectRelativePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "projectRelativePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof openDownload>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

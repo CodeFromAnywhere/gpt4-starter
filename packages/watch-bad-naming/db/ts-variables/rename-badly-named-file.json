@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330845069,
+  "updatedAt": 1678330845069,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330845069,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "renameBadlyNamedFile",
+  "slug": "rename-badly-named-file",
+  "operationRelativeTypescriptFilePath": "src/renameBadlyNamedFile.ts",
+  "type": {
+    "rawType": "(absoluteFilePath: string) => Promise<string | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  absoluteFilePath: string\n): Promise<string | undefined> => {\n  if (!fs.existsSync(absoluteFilePath)) {\n    return;\n  }\n  const newPath = fileSlugify(absoluteFilePath);\n  if (absoluteFilePath === newPath) {\n    // already good\n    console.log(`already good ${absoluteFilePath}`);\n    return absoluteFilePath;\n  }\n  const newFolderPath = path.parse(newPath).dir;\n  if (!fs.existsSync(newFolderPath)) {\n    await fs.mkdir(newFolderPath, { recursive: true });\n  }\n  await fs.rename(absoluteFilePath, newPath);\n  console.log(`renamed ${newPath}`);\n  return newPath;\n}",
+  "description": "",
+  "id": "ygjndlfledmzoifurmdamzto"
+}

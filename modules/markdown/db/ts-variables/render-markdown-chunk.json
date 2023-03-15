@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677581933377,
+  "updatedAt": 1677581933377,
+  "deletedAt": 0,
+  "createdFirstAt": 1677581933377,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "renderMarkdownChunk",
+  "slug": "render-markdown-chunk",
+  "operationRelativeTypescriptFilePath": "src/renderMarkdownChunk.tsx",
+  "type": {
+    "rawType": "(chunk: import(\"/Users/clarity/os/operations/tools/types/markdown-types/build/MarkdownParse\").MarkdownChunk, config: import(\"/Users/clarity/os/operations/tools/user-interfaces/gui/smart/markdown/src/types\").MarkdownParseRenderConfig) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  chunk: MarkdownChunk,\n  config: MarkdownParseRenderConfig\n) => {\n  const title = chunk.title\n    ? renderMarkdownTitle(chunk.title, chunk.level)\n    : null;\n  return (\n    <Div>\n      {title}\n      {chunk.content ? renderMarkdownContent(chunk.content, config) : null}\n      {chunk.children?.map((chunk) => renderMarkdownChunk(chunk, config))}\n    </Div>\n  );\n}",
+  "description": "renders a MarkdownChunk interface",
+  "id": "xiwxjidvzlqrwylalekewhix"
+}

@@ -1,0 +1,35 @@
+{
+  "createdAt": 1677582384834,
+  "updatedAt": 1677582384834,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582384834,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/setInputValue.ts",
+  "commentsInside": [],
+  "rawText": " async (params: SetInputValueType) => {\n  const { page, selector, inputValue } = params;\n  await page.waitForSelector(selector);\n  await page.$eval(\n    selector,\n    (elem: ElementType, args: any) => {\n      elem.value = args.value;\n    },\n    { value: inputValue }\n  );\n}",
+  "name": "setInputValue",
+  "slug": "set-input-value",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 273,
+    "lines": 11,
+    "bytes": 273,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 11,
+    "numberOfFiles": 1
+  },
+  "id": "sitbhtnfnngtvyhnyhreeieq"
+}

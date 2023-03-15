@@ -1,0 +1,20 @@
+[
+  {
+    "createdAt": 1678330847581,
+    "updatedAt": 1678330847581,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330847581,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/watchBadNaming.ts",
+    "comment": "Watcher for filenames/folders with capitalisation and spaces, to be renamed to the slugified version. ensure there is no overlap by other watchers.\n\nTODO: the other watchers should ignore files if they have capitals or spaces. Maybe this can be fundamental part of the watcher with a prop like \"isPrimary\" which means it should be executed first, and a prop like \"shouldOmitFromOtherWatchers\" which means it will not be included in other watchers if it matches here.",
+    "rawStatement": "export const watchBadNaming: ProjectWatcher = (eventName, absolutePath) => {\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"File doesn't exist (anymore)\" };\n  }\n  console.log(`Bad naming (${absolutePath}) not implemented yet`);\n  //return renameBadlyNamedFile(absolutePath);\n};",
+    "parameters": {},
+    "types": [
+      "todo"
+    ],
+    "firstLine": 7,
+    "lastLine": 12,
+    "id": "asofcrbdzrldgkkoahuwvzdd"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041398355,
+  "updatedAt": 1678041398355,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041398355,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "PromptViewer",
+  "slug": "prompt-viewer",
+  "operationRelativeTypescriptFilePath": "src/PromptViewer.tsx",
+  "type": {
+    "rawType": "(props: { markdown?: string | undefined; projectRelativeFilePath: string; contextualPromptResults?: import(\"/Users/clarity/os/operations/tools/ai/ai-types/build/ContextualPromptResult\").ContextualPromptResult[] | undefined; contextualPrompts?: import(\"/Users/clarity/os/operations/tools/ai/ai-types/build/ContextualPrompt\").ContextualPrompt[] | undefined; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: {\n  markdown?: string;\n  projectRelativeFilePath: string;\n  contextualPromptResults?: ContextualPromptResult[];\n  contextualPrompts?: ContextualPrompt[];\n}) => {\n  const {\n    projectRelativeFilePath,\n    contextualPromptResults,\n    markdown,\n    contextualPrompts,\n  } = props;\n  const [sidebarHidden, setSidebarHidden] = useState(false);\n  const router = useRouter();\n  const lastSelection = useLastSelection();\n\n  const variantResult = useVariantResult(contextualPromptResults);\n  const fileType =\n    fileTypePerExtension[\n      getExtension(\n        props.projectRelativeFilePath\n      ) as keyof typeof fileTypePerExtension\n    ] || undefined;\n\n  const variantsOnLg = sidebarHidden ? null : (\n    <Div className=\"lg:block max-lg:hidden lg:w-[280px] 2xl:w-[400px] lg:h-full lg:overflow-y-scroll\">\n      <Div className=\"flex flex-row ml-3\">\n        <ClickableIcon emoji=\"╳\" onClick={() => setSidebarHidden(true)} />\n        <P className=\"ml-2 font-bold\">File Prompt Results</P>\n      </Div>\n      {contextualPromptResults?.map((result) => {\n        if (!result.resultText) return null;\n        return (\n          <Div className=\"m-2 p-2 bg-gray-100 dark:bg-slate-800 rounded-lg\">\n            <Div className=\"w-full flex justify-between\">\n              <P className=\"font-bold\">{result.contextualPromptSlug}</P>\n              <ClickableIcon\n                emoji=\"👀\"\n                onClick={() => {\n                  const query: {\n                    queryPath: string | string[] | undefined;\n                    variant?: string;\n                  } = {\n                    queryPath: router.query.queryPath,\n                    variant: result.contextualPromptSlug,\n                  };\n\n                  router.push({ query }, undefined, { shallow: true });\n                }}\n              />\n            </Div>\n            <MarkdownContent config={{}} content={result.resultText} />\n          </Div>\n        );\n      })}\n    </Div>\n  );\n\n  return (\n    <Div>\n      {/* <Shareable  contextFile_projectRelativeFilePath={projectRelativeFilePath}> */}\n      <VariantSelector\n        projectRelativeFilePath={projectRelativeFilePath}\n        folderPath={getFolderJs(projectRelativeFilePath)}\n        isFolder={false}\n        filename={getFileOrFolderName(projectRelativeFilePath)}\n        contextualPromptResults={contextualPromptResults}\n      />\n\n      {lastSelection.selection ? (\n        <FileSpecificPrompts\n          actualProjectRelativeFilePath={projectRelativeFilePath}\n          contentString={lastSelection.selection}\n          // contextualPromptsObject={{}}\n          thePrompts={contextualPrompts}\n          isFolder={false}\n          markdown={markdown}\n        />\n      ) : null}\n\n      {variantsOnLg}\n      {/* </Shareable> */}\n    </Div>\n  );\n}",
+  "description": "Markdown files should have the ability to do prompts, like before...\n\n- Fix PromptViewer\n- Add PromptViewer to TextFile",
+  "id": "mldsyehmwwexcnqdwnawteev"
+}

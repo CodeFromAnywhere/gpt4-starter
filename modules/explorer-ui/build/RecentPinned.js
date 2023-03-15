@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.RecentPinned=void 0;var jsx_runtime_1=require("react/jsx-runtime"),react_with_native_1=require("react-with-native"),RecentPinned=function(){return(0,jsx_runtime_1.jsx)(react_with_native_1.Div,{children:"Recent and pinned files should be shown here. Just use the open files thing"})};exports.RecentPinned=RecentPinned;
+//# sourceMappingURL=RecentPinned.js.map

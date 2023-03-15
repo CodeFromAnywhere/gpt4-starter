@@ -1,0 +1,46 @@
+{
+  "createdAt": 1674033626411,
+  "updatedAt": 1674033626411,
+  "deletedAt": 0,
+  "createdFirstAt": 1674033626411,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/findJsonInMarkdown.ts",
+  "commentsInside": [],
+  "rawText": " (codeblock: string) => {\n  codeblock = codeblock.trim();\n  const trimmedQuotes =\n    codeblock.startsWith(\"`\") && codeblock.endsWith(\"`\")\n      ? codeblock.slice(1, codeblock.length - 1)\n      : codeblock;\n  return trimmedQuotes;\n}",
+  "name": "trimCodeblock",
+  "slug": "trim-codeblock",
+  "parameters": [
+    {
+      "name": "codeblock",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 232,
+    "lines": 8,
+    "bytes": 232,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 29,
+    "linesPerFile": 8,
+    "numberOfFiles": 1
+  },
+  "id": "mjgcmkeylwmwhiqxfjvkdwve"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331966209,
+  "updatedAt": 1678331966209,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331966209,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "startSearchWebIfAvailable",
+  "slug": "start-search-web-if-available",
+  "operationRelativeTypescriptFilePath": "src/startSearchWebIfAvailable.ts",
+  "type": {
+    "rawType": "(isWatching?: boolean | undefined, isRestart?: boolean | undefined) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  isWatching?: boolean,\n  isRestart?: boolean\n) => {\n  const hasSearchWeb = !!(operations as { [key: string]: string })[\"os-web\"];\n  if (!hasSearchWeb) {\n    return;\n  }\n\n  if (os.platform() === \"win32\") {\n    console.log(\"Not starting search-web on windows\");\n    return;\n  }\n\n  startApp(\"os-web\", false).then((result) => {\n    if (!result?.isSuccessful) {\n      console.log({ result });\n      log(`Something went wrong starting \"os-web\". Maybe you don't have it?`, {\n        type: \"error\",\n      });\n      return;\n    }\n\n    if (!isRestart && isWatching) {\n      // Open in browser\n      setTimeout(() => {\n        execSync(`open http://localhost:42001`);\n        log(`Opened the homepage in your browser`, { type: \"success\" });\n      }, 1000);\n    }\n  });\n}",
+  "description": "",
+  "id": "vspoudkdlxrqpwklvqobngqu"
+}

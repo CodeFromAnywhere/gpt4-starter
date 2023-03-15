@@ -1,0 +1,49 @@
+{
+  "sentences": [
+    {
+      "startAt": 0,
+      "endAt": 1440,
+      "text": "Oh, that sounds useful!"
+    }
+  ],
+  "text": " Oh, that sounds useful!\n",
+  "translationText": " Oh, that sounds useful!\n",
+  "words": [
+    {
+      "startAt": 0,
+      "endAt": 70,
+      "text": ""
+    },
+    {
+      "startAt": 70,
+      "endAt": 130,
+      "text": "Oh"
+    },
+    {
+      "startAt": 130,
+      "endAt": 260,
+      "text": ","
+    },
+    {
+      "startAt": 260,
+      "endAt": 540,
+      "text": "that"
+    },
+    {
+      "startAt": 540,
+      "endAt": 930,
+      "text": "sounds"
+    },
+    {
+      "startAt": 930,
+      "endAt": 1430,
+      "text": "useful"
+    },
+    {
+      "startAt": 1430,
+      "endAt": 1440,
+      "text": "!"
+    }
+  ],
+  "usedModelName": "small"
+}

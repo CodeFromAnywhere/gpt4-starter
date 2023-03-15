@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678041916140,
+  "updatedAt": 1678041916140,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041916140,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/files.ts",
+  "commentsInside": [],
+  "rawText": " async (fileObject: {\n  [absoluteFilePath: string]: any;\n}) => {\n  let s = 0;\n  let e = 0;\n  const writePromises = Object.keys(fileObject).map(async (filePath) => {\n    const value = fileObject[filePath];\n    const success = await writeJsonToFile(filePath, value);\n    if (success) s++;\n    if (!success) e++;\n\n    return success;\n  });\n  await Promise.all(writePromises);\n}",
+  "name": "writeToFiles",
+  "slug": "write-to-files",
+  "parameters": [],
+  "description": "writes all values in an object to the file that should be specified as key of that value",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 462,
+    "lines": 15,
+    "bytes": 462,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 31,
+    "linesPerFile": 15,
+    "numberOfFiles": 1
+  },
+  "id": "bqiwlkwratmmrgumcjwztpkz"
+}

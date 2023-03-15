@@ -1,0 +1,46 @@
+{
+  "createdAt": 1673794240000,
+  "updatedAt": 1673794240000,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794240000,
+  "id": "namedparameterstypeof-updatealloperationstatus",
+  "name": "NamedParameters<typeof updateAllOperationStatus>",
+  "slug": "namedparameterstypeof-updatealloperationstatus",
+  "operationRelativeTypescriptFilePath": "src/updateAllOperationStatus.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "dryrun": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "dryrun",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof updateAllOperationStatus>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

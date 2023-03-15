@@ -1,0 +1,20 @@
+[
+  {
+    "createdAt": 1678611472379,
+    "updatedAt": 1678611472379,
+    "deletedAt": 0,
+    "createdFirstAt": 1678611472379,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/getChatMessageAnalysis.ts",
+    "comment": "TODO: try it out and build out these pipelines. it's just diehard js horsemode, nothing difficult! see what sticks 🍝",
+    "rawStatement": "export const getChatMessageAnalysis = async (message: string) => {\n  const analysis = await jsonGpt<ChatMessageAnalysis>(message, {\n    // if this happens, run prompt to generate Dall-E prompt and api call, call Dall-E and give image...\n    isResponseVisualRequested: {\n      type: \"boolean\",\n      description: \"User requests an image\",\n    },\n\n    // if false, makes the tokensize super small (super good for efficiency)\n    isMessageHistoryRequired: {\n      type: \"boolean\",\n      description:\n        \"indicates whether or not the message history is needed for answering to this message\",\n    },\n\n    // if false, the language model normally hits a dead end. would be a great starting point for continuing with other things like automations...\n    isLanguageModelCapable: {\n      type: \"boolean\",\n      description:\n        \"Is a language model chatbot capable of fulfilling this request\",\n    },\n\n    // if this happens, we can analyse further and maybe later propose products... eCommerceGPT\n    isUserInterestedInProduct: {\n      type: \"boolean\",\n      description:\n        \"indicates whether or not the user may be interested in buying something\",\n    },\n    // if this happens, there will normally be a default ChatGPT message. Not sure how useful this is, but we can also start a different chain here because this would deepen the relation.\n    isAskingForBotInfo: {\n      type: \"boolean\",\n      description:\n        \"indicates whether or not the user needs info about the system\",\n    },\n    // may be too vague! but if it doesnt have too many false positives, we can couple the user to tools they might find useful and better than the google ad results.\n    isToolRequired: {\n      type: \"boolean\",\n      description:\n        \"indicates whether or not the user is looking for some sort of tool\",\n    },\n    // if this happens, we can provide all user state info and info on how to change things.\n    isStatusRequested: {\n      type: \"boolean\",\n      description:\n        \"'true' if the user wants to know their credits, messages left, or other account details, configuration, or changes\",\n    },\n    // if this happens, we can activate a different GPT purely for translation.\n    isTranslationRequested: { type: \"boolean\" },\n\n    // not sure if worth the tokens. Can be part of `isStatusRequested`\n    // isResetRequested: {\n    //   type: \"boolean\",\n    //   description: \"does the user request for a reset or account deletion\",\n    // },\n\n    // isConfigRequested: {\n    //   type: \"boolean\",\n    //   description:\n    //     \"does the user request for configuration or settings of the system\",\n    // },\n\n    mood: { type: \"string\", description: \"mood of the user\" },\n\n    userInterests: {\n      type: \"string[] | null\",\n      description: \"keywords of interests the user clearly states\",\n    },\n\n    userTruths: {\n      type: \"string[] | null\",\n      description:\n        \"facts or opinions the user states about himself or the world around him\",\n    },\n  });\n  return analysis;\n};",
+    "parameters": {},
+    "types": [
+      "todo"
+    ],
+    "firstLine": 4,
+    "lastLine": 6,
+    "id": "ppgsorcpbsyoilwefjfqlozb"
+  }
+]

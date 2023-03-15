@@ -1,0 +1,154 @@
+{
+  "createdAt": 1673852990258,
+  "updatedAt": 1673852990258,
+  "deletedAt": 0,
+  "createdFirstAt": 1673852990258,
+  "id": "paymentconfig",
+  "name": "PaymentConfig",
+  "slug": "paymentconfig",
+  "operationRelativeTypescriptFilePath": "src/PaymentConfig.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\n/**\n * project-wide configuration for what is possible with payments\n */\nexport type PaymentConfig = {\n  creditToEuroRatio: number;\n  creditToEuroConversionCost: number;\n  currencyConversionCost: number;\n  creditToCreditTransactionCost: number;\n  interestAmount: number;\n  interestInterval: RunEveryPeriodEnum;\n  canPersonBuyCredit: boolean;\n  canPersonCashOutCredit: boolean;\n  canPersonRequestCashOut: boolean;\n  // [key: string]: any;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "project-wide configuration for what is possible with payments",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "creditToEuroRatio": {
+          "type": "number"
+        },
+        "creditToEuroConversionCost": {
+          "type": "number"
+        },
+        "currencyConversionCost": {
+          "type": "number"
+        },
+        "creditToCreditTransactionCost": {
+          "type": "number"
+        },
+        "interestAmount": {
+          "type": "number"
+        },
+        "interestInterval": {
+          "$ref": "#/definitions/RunEveryPeriodEnum"
+        },
+        "canPersonBuyCredit": {
+          "type": "boolean"
+        },
+        "canPersonCashOutCredit": {
+          "type": "boolean"
+        },
+        "canPersonRequestCashOut": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "creditToEuroRatio",
+        "creditToEuroConversionCost",
+        "currencyConversionCost",
+        "creditToCreditTransactionCost",
+        "interestAmount",
+        "interestInterval",
+        "canPersonBuyCredit",
+        "canPersonCashOutCredit",
+        "canPersonRequestCashOut"
+      ],
+      "additionalProperties": false,
+      "description": "project-wide configuration for what is possible with payments"
+    },
+    "simplifiedSchema": {
+      "fullComment": "project-wide configuration for what is possible with payments",
+      "properties": [
+        {
+          "name": "creditToEuroRatio",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "creditToEuroConversionCost",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "currencyConversionCost",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "creditToCreditTransactionCost",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "interestAmount",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "interestInterval",
+          "required": true,
+          "schema": {
+            "enum": [
+              "minute",
+              "5-minutes",
+              "quarter-hour",
+              "hour",
+              "6-hours",
+              "midnight",
+              "week",
+              "month",
+              "3-months",
+              "year"
+            ],
+            "fullComment": "Used to specify functions that need to run every time with a specific interval\n\nAll times are at at the server timezone time\n\n- `minute`: every minute at 0 seconds\n- `5-mintues`: every 5 minutes, starting at the first minute of the hour\n- `quarter-hour`: every 15 minutes, starting at the first minute of the hour\n- `hour`: every hour, starting at the first minute of the hour\n- `6-hours`: every 6 hours, starting at midnight\n- `midnight`: every midnight (00:00:00)\n- `week`: every week at sundaynight (sunday, 1 second after 23:59:59 PM)\n- `month`: at the first second of the first day of the month (0:00:00)\n- `3-months`: every start of the quarter: january 1st (0:00:00), april 1st, july 1st, october 1st\n- `year`: every new year at january 1st at 0:00:00",
+            "type": "string"
+          }
+        },
+        {
+          "name": "canPersonBuyCredit",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "canPersonCashOutCredit",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "canPersonRequestCashOut",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "PaymentConfig",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "createdAt": 1677582102610,
+  "updatedAt": 1677582102610,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582102610,
+  "id": "pagesobjectshape",
+  "name": "PagesObjectShape",
+  "slug": "pagesobjectshape",
+  "operationRelativeTypescriptFilePath": "src/OpenFileWriterPages.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object"
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "PagesObjectShape",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

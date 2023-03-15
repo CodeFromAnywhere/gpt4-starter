@@ -1,0 +1,1 @@
+{"version":3,"file":"store.js","sourceRoot":"","sources":["../src/store.ts"],"names":[],"mappings":";;;;AAAA,mEAAsD;AAczC,QAAA,4BAA4B,GAAc;IACrD,aAAa,EAAE,EAAE;IACjB,eAAe,EAAE,EAAE;IACnB,eAAe,EAAE,IAAI;IACrB,mBAAmB,EAAE,KAAK;IAC1B,0BAA0B,EAAE,KAAK;CAClC,CAAC;AAEa,QAAA,aAAa,IAAf,KAA8B,IAAA,qCAAW,EACpD,oCAA4B,CAC7B,qBAF6B,QAAA,QAAQ,eAEpC"}

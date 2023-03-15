@@ -1,0 +1,260 @@
+{
+  "createdAt": 1675690237329,
+  "updatedAt": 1675690237329,
+  "deletedAt": 0,
+  "createdFirstAt": 1675690237329,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "fileSystemConventions",
+  "slug": "file-system-conventions",
+  "operationRelativeTypescriptFilePath": "src/filename-conventions.ts",
+  "type": {
+    "rawType": "{ folderNames: { buildFolderName: string; databaseFolderName: string; sourceFolderName: string; nodeModulesFolderName: string; nextBuildFolderName: string; gitFolderName: string; turboFolderName: string; }; subExtensions: { cli: string; test: string; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "folderNames": {
+          "type": "object",
+          "properties": {
+            "buildFolderName": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "databaseFolderName": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "sourceFolderName": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "nodeModulesFolderName": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "nextBuildFolderName": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "gitFolderName": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "turboFolderName": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            }
+          },
+          "required": [
+            "buildFolderName",
+            "databaseFolderName",
+            "sourceFolderName",
+            "nodeModulesFolderName",
+            "nextBuildFolderName",
+            "gitFolderName",
+            "turboFolderName"
+          ]
+        },
+        "subExtensions": {
+          "type": "object",
+          "properties": {
+            "cli": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            },
+            "test": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            }
+          },
+          "required": [
+            "cli",
+            "test"
+          ]
+        }
+      },
+      "required": [
+        "folderNames",
+        "subExtensions"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "folderNames",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "buildFolderName",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "databaseFolderName",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "sourceFolderName",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "nodeModulesFolderName",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "nextBuildFolderName",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "gitFolderName",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "turboFolderName",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        },
+        {
+          "name": "subExtensions",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "cli",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "test",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "{\n  folderNames,\n  subExtensions,\n}",
+  "description": "All filesystem conventions in a single object for easy access",
+  "id": "drrrksbxcjkxpesjewpxgsnh"
+}

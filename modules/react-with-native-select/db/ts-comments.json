@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1668833466895,
+    "updatedAt": 1668833466895,
+    "deletedAt": 0,
+    "createdFirstAt": 1668833466895,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/useSelectMultiple.tsx",
+    "comment": "Create a value selector in a single line of code, including its state!",
+    "rawStatement": "export const useSelectMultiple = <T extends unknown>(\n  items?: Item<T | null>[],\n  initialValue?: Item<T | null>[],\n  /**\n   * Optionally you can do other things with the value as well, like setting it to a global store\n   */\n  withValue?: (value: Item<T | null>[]) => void,\n  config?: Omit<SelectMultipleInputProps<T>, \"onChange\" | \"value\" | \"options\">\n): [\n  Component: () => JSX.Element,\n  value: Item<T | null>[],\n  setValue: (value: Item<T | null>[]) => void\n] => {\n  const realItems = items || [];\n  const [value, setValue] = useState<Item<T | null>[]>(initialValue || []);\n\n  const realOnChange = (v: Item<T | null>[]) => {\n    setValue(v);\n\n    if (v) {\n      withValue?.(v);\n    }\n  };\n\n  const Component = () => (\n    <SelectMultipleInput\n      {...config}\n      onChange={realOnChange}\n      value={value}\n      options={realItems}\n    />\n  );\n  return [Component, value, realOnChange];\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 8,
+    "lastLine": 10,
+    "id": "asdnouymrxztverblltfgmjp"
+  }
+]

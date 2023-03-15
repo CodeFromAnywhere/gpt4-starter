@@ -1,0 +1,49 @@
+{
+  "createdAt": 1677586454013,
+  "updatedAt": 1677586454013,
+  "deletedAt": 0,
+  "createdFirstAt": 1677586454013,
+  "id": "namedparameterstypeof-tsfunctionnametomarkdownstring",
+  "name": "NamedParameters<typeof tsFunctionNameToMarkdownString>",
+  "slug": "namedparameterstypeof-tsfunctionnametomarkdownstring",
+  "operationRelativeTypescriptFilePath": "src/tsFuntionNameToMarkdownString.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "name",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof tsFunctionNameToMarkdownString>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

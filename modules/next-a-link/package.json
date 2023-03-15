@@ -1,0 +1,81 @@
+{
+  "createdAt": 1668328704945,
+  "updatedAt": 1668328704945,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328704945,
+  "id": "eYjXWFLCrqXdeneP",
+  "dependencies": {
+    "react-with-native": "1.4.9",
+    "next": "*"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "next-a-link",
+  "language": "english",
+  "slug": "next-a-link",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/king/King/operations/tools/user-interfaces/gui/react-with-native/next/next-a-link/src/ALink.tsx. Error: TypeError: Cannot read properties of undefined (reading 'kind')"
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "ui-cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "next-a-link",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1671012793735,
+    "operationDependenciesIndexed": [
+      "A",
+      "A",
+      "AType",
+      "AType"
+    ],
+    "packageDependenciesIndexed": [
+      "LinkProps",
+      "LinkProps"
+    ],
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/gui/react-with-native/next",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 3,
+        "lines": 47,
+        "characters": 968,
+        "bytes": 968
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 123,
+        "characters": 2911,
+        "bytes": 2911
+      },
+      "textSize": {
+        "numberOfFiles": 1,
+        "lines": 29,
+        "characters": 458,
+        "bytes": 458
+      },
+      "size": {
+        "bytes": 4337,
+        "characters": 4337,
+        "lines": 199,
+        "numberOfFiles": 6
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

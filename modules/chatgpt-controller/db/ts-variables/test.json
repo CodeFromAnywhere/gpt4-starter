@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677582278402,
+  "updatedAt": 1677582278402,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582278402,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "test",
+  "slug": "test",
+  "operationRelativeTypescriptFilePath": "src/test.ts",
+  "type": {
+    "rawType": "() => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const { isSuccessful, message, result } = await openAIChat({\n    prompt: `explain apple?`,\n  });\n  console.log({ isSuccessful, message, result });\n  // const result2 = await openAIChat({\n  //   prompt: \"what is apple?\",\n  //   thread: result?.thread,\n  // });\n  // console.log({ result2 });\n  // const result3 = await openAIChat({\n  //   prompt: \"explain quantum computing\",\n  // });\n  // console.log({ result3 });\n}",
+  "description": "",
+  "id": "jvygsrouksibuixomrofmack"
+}

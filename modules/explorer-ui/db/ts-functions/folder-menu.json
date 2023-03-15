@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678331539113,
+  "updatedAt": 1678331539113,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331539113,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/FolderMenu.tsx",
+  "commentsInside": [],
+  "rawText": " () => {\n  const [isMobileMenuEnabled, setIsMobileMenuEnabled] = useStore(\n    \"menu.isMobileMenuEnabled\"\n  );\n  const queryPath = useQueryPath();\n  const { customProjectRelativeBaseFolderPath } =\n    useCustomProjectRelativeBaseFolderPath();\n  const navigationQuery = queries.useGetNavigationWithContext({\n    queryPath,\n    customProjectRelativeBaseFolderPath,\n  });\n\n  const {\n    projectRelativeFilePath,\n    projectRelativeFolderPath,\n    queryIsFolder,\n    navigation,\n    isSuccessful,\n    message,\n    canRead,\n    canWrite,\n  } = destructureOptionalObject(navigationQuery.data?.result);\n\n  const filename = queryIsFolder\n    ? undefined\n    : getFileOrFolderName(projectRelativeFilePath);\n\n  const basePathsQuery = queries.useGetExplorableBasePathsWithContext();\n  const explorableBasePaths = basePathsQuery.data?.result;\n\n  const explorableBasePathsActive = explorableBasePaths?.map(\n    (explorableBasePath) => {\n      const href = `/${explorableBasePath.projectRelativePath}`;\n      const isActive = queryPath.startsWith(\n        explorableBasePath.projectRelativePath\n      );\n\n      return { ...explorableBasePath, href, isActive };\n    }\n  );\n\n  /**\n   * On top, render the explorable base paths, with the one you're in as active\n   */\n  const renderExplorableBasePaths = explorableBasePathsActive?.map(\n    (explorableBasePath) => {\n      const { href, isActive, name } = explorableBasePath;\n      return (\n        <NavButton\n          key={`explorable${name}`}\n          href={href}\n          title={name}\n          isActive={isActive}\n        />\n      );\n    }\n  );\n\n  const renderThisFolder =\n    isSuccessful === false ? (\n      <P>{message}</P>\n    ) : (\n      navigation?.map((navItem) => {\n        // if it's a file, we need to remove the name\n\n        const hrefChunks = [projectRelativeFolderPath, navItem.name].filter(\n          notEmpty\n        );\n        const hrefUrl = \"/\" + path.join(...hrefChunks);\n        const href = hrefUrl.startsWith(\"/\") ? hrefUrl : `/${hrefUrl}`;\n\n        const extraIcons = [\n          navItem.isDraft ? \"🧪\" : undefined,\n          navItem.isPrivate ? \"🔑\" : undefined,\n          navItem.isSecret ? \"🔒\" : undefined,\n          // navItem.authorizedGroup === \"premium\"\n          //   ? \"🏛\"\n          //   : navItem.authorizedGroup === \"enterprise\"\n          //   ? \"🚀\"\n          //   : undefined,\n        ]\n          .filter(notEmpty)\n          .join(\"\");\n\n        const extension = navItem.name.split(\".\").pop()!;\n        const extensionIcons = {\n          ts: \"⌘\",\n          tsx: \"⌘\",\n          json: \"💿\",\n          md: \"📄\",\n        };\n        const icon = navItem.isFileCollection\n          ? \"🗞\"\n          : navItem.type === \"file\"\n          ? Object.keys(extensionIcons).includes(extension)\n            ? extensionIcons[extension as keyof typeof extensionIcons]\n            : \"📄\"\n          : \"📂\";\n\n        const name = navItem.isFileCollection\n          ? withoutSubExtensions(navItem.name)\n          : navItem.name;\n\n        return (\n          <NavButton\n            onClick={() => {\n              if (navItem.type === \"folder\") {\n                return;\n              }\n              setIsMobileMenuEnabled(false);\n            }}\n            isActive={filename === navItem.name}\n            href={href}\n            id={href}\n            title={`${icon} ${name} ${extraIcons}`}\n          />\n        );\n      })\n    );\n\n  /**\n   * Render everything\n   *\n   */\n  return (\n    <Div className=\"w-full lg:h-full lg:overflow-y-scroll\">\n      <div className=\"flex flex-col w-full\">\n        {navigationQuery.isLoading ? <FancyLoader /> : null}\n        {/* root */}\n        {renderExplorableBasePaths}\n        {/* Add favorite folders here */}\n        <FoldersPiece\n          queryPath={projectRelativeFilePath || queryPath}\n          explorableBasePathsActive={explorableBasePathsActive}\n          filename={filename}\n          isFolder={queryIsFolder}\n        />\n        {renderThisFolder}\n      </div>\n    </Div>\n  );\n}",
+  "name": "FolderMenu",
+  "slug": "folder-menu",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 8,
+  "size": {
+    "characters": 3982,
+    "lines": 142,
+    "bytes": 4006,
+    "bytesPerCharacter": 1.0060271220492214,
+    "charactersPerLine": 28,
+    "linesPerFile": 142,
+    "numberOfFiles": 1
+  },
+  "id": "pbiedrcwwdwkkttkwozkpgmk"
+}

@@ -1,0 +1,110 @@
+{
+  "createdAt": 1678042844776,
+  "updatedAt": 1678042844776,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042844776,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/zip.ts",
+  "commentsInside": [],
+  "rawText": " (config: {\n  baseFolderPath: string;\n  folderName: string;\n  zipName: string;\n  debug?: boolean;\n  requirePassword?: boolean;\n}): string => {\n  const { baseFolderPath, folderName, zipName, debug, requirePassword } =\n    config;\n  const command = requirePassword ? \"zip -er\" : \"zip -r\";\n  const fullCommand = `${command} ${zipName} ${folderName}`;\n\n  console.log({ fullCommand, baseFolderPath });\n  execSync(fullCommand, {\n    cwd: baseFolderPath,\n    stdio: debug || requirePassword ? \"inherit\" : \"ignore\",\n  });\n\n  const finalPath = path.join(baseFolderPath, `${zipName}.zip`);\n  return finalPath;\n}",
+  "name": "zip",
+  "slug": "zip",
+  "parameters": [
+    {
+      "name": "config",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "baseFolderPath": {
+            "type": "string"
+          },
+          "folderName": {
+            "type": "string"
+          },
+          "zipName": {
+            "type": "string"
+          },
+          "debug": {
+            "type": "boolean"
+          },
+          "requirePassword": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "baseFolderPath",
+          "folderName",
+          "zipName"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "baseFolderPath",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "folderName",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zipName",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "debug",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "requirePassword",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "creates zip of folder",
+  "returnType": {
+    "rawType": "String",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/String"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 622,
+    "lines": 21,
+    "bytes": 622,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 30,
+    "linesPerFile": 21,
+    "numberOfFiles": 1
+  },
+  "id": "qqtewujniamxzfsfrwaqjuet"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794218484,
+  "updatedAt": 1673794218484,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794218484,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getGithubRepoLastCommitInfo",
+  "slug": "get-github-repo-last-commit-info",
+  "operationRelativeTypescriptFilePath": "src/getGithubRepoLastCommitInfo.ts",
+  "type": {
+    "rawType": "(repoName: string, personalAccessToken: string) => Promise<{ isSuccessful: boolean; message: string; lastCommit?: import(\"/Users/clarity/os/operations/tools/types/code-types/build/CommitInfo\").CommitInfo | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  repoName: string,\n  personalAccessToken: string\n): Promise<{\n  isSuccessful: boolean;\n  message: string;\n  lastCommit?: CommitInfo;\n}> => {\n  try {\n    const octokit = new Octokit({\n      auth: personalAccessToken,\n    });\n\n    const repos = await octokit.rest.repos.listForAuthenticatedUser({\n      affiliation: \"owner,collaborator,organization_member\",\n      per_page: 100, //The number of results per page (max 100).\n      //page: 1 //Page number of the results to fetch.\n    });\n\n    const found = repos.data.find((repo: any) => repo.name === repoName);\n\n    if (!found) {\n      return {\n        isSuccessful: false,\n        message:\n          \"The repo owner WAS NOT FOUND !! \" +\n          \"repo list: \" +\n          JSON.stringify(repos.data.map((repo: any) => repo.name)),\n      };\n    }\n    /**\n      if the repo is found, get owner name, and get a list of commits.\n     */\n    const { data: arrayCommits } = await octokit.rest.repos.listCommits({\n      owner: found.owner.login,\n      repo: repoName,\n    });\n\n    const lastCommitAtDateString = arrayCommits[0].commit.author?.date;\n\n    const committedAt = lastCommitAtDateString\n      ? new Date(lastCommitAtDateString).valueOf()\n      : undefined;\n\n    const commitMessage = arrayCommits[0].commit.message;\n\n    return {\n      isSuccessful: true,\n      message: \"Checked Status Successfully.\",\n      lastCommit: {\n        commitSha: arrayCommits[0].sha,\n        committedAt,\n        commitMessage,\n      },\n    };\n  } catch (err: any) {\n    return {\n      isSuccessful: false,\n      message: JSON.stringify(err),\n    };\n  }\n}",
+  "description": "- see last commit datetime\n- see if it's after `lastPullTime` yes or no?\n- compare dates: `Operation.lastPullTime`, last file change in src, remote last commit time",
+  "id": "ysxucjodahvuxggcrlsahjuo"
+}

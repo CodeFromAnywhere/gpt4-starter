@@ -1,0 +1,51 @@
+{
+  "createdAt": 1678331534387,
+  "updatedAt": 1678331534387,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331534387,
+  "id": "namedparameterstypeof-explorer",
+  "name": "NamedParameters<typeof Explorer>",
+  "slug": "namedparameterstypeof-explorer",
+  "operationRelativeTypescriptFilePath": "src/Explorer.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "props": {
+          "type": "object",
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "props"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "props",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof Explorer>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.isIndexableFileId=void 0;var filename_conventions_1=require("./filename-conventions"),hasSubExtension_1=require("./hasSubExtension"),isIndexableFileId=function(e){var n=(0,hasSubExtension_1.hasSubExtension)(e,filename_conventions_1.operationUnindexableNamesOrSubExtensions,!0),i=(0,hasSubExtension_1.hasSubExtension)(e,filename_conventions_1.frontendOptionalFileSubExtensions,!1);return!("index"===e)&&!i&&!n};exports.isIndexableFileId=isIndexableFileId;
+//# sourceMappingURL=isIndexableFileId.js.map

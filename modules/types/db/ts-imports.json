@@ -1,0 +1,35 @@
+[
+  {
+    "createdAt": 1678331700684,
+    "updatedAt": 1678331700684,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331700684,
+    "name": "Schema",
+    "slug": "schema",
+    "module": "ts-json-schema-generator",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/TypeInfo.ts",
+    "classification": "package",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": false,
+    "id": "itsqvzolayczpflxltyjaoin"
+  },
+  {
+    "createdAt": 1678331700684,
+    "updatedAt": 1678331700684,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331700684,
+    "name": "SimplifiedSchema",
+    "slug": "simplified-schema",
+    "type": "value",
+    "module": "schema-types",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/TypeInfo.ts",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "exodnsghsjpmavedjqxckgfv"
+  }
+]

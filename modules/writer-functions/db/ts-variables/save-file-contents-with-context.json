@@ -1,0 +1,59 @@
+{
+  "createdAt": 1678043332455,
+  "updatedAt": 1678043332455,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043332455,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "saveFileContentsWithContext",
+  "slug": "save-file-contents-with-context",
+  "operationRelativeTypescriptFilePath": "src/saveFileContentsWithContext.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FileFunction\").FileFunction<string, import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {},
+        "isEnabled": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "isEnabled",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  projectRelativeFilePath: string,\n  newContent\n): Promise<{ isSuccessful: boolean; message: string }> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No project root found\" };\n  }\n  if (newContent === undefined) {\n    return { isSuccessful: false, message: \"No new content provided\" };\n  }\n\n  const absolutePath = path.join(projectRoot, projectRelativeFilePath);\n\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"This file does not exist\" };\n  }\n\n  const authorization = await getFsAuthorizationWithContext(\n    functionContext,\n    projectRelativeFilePath\n  );\n  if (!authorization.canWrite) {\n    return { isSuccessful: false, message: \"You're not allowed to do this\" };\n  }\n\n  await fs.writeFile(absolutePath, newContent, { encoding: \"utf8\" });\n\n  return {\n    isSuccessful: true,\n    message: \"Saved\",\n  };\n}",
+  "description": "",
+  "id": "zemmzbmiiqbwgzavcnoxadaf"
+}

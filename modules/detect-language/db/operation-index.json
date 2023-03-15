@@ -1,0 +1,49 @@
+{
+  "createdAt": 1664527036110,
+  "updatedAt": 1666262088138,
+  "deletedAt": 0,
+  "createdFirstAt": 1664527036110,
+  "folderName": "detect-language",
+  "packageName": "detect-language",
+  "relativeOperationLocationPath": "operations/tools/language",
+  "classification": "node",
+  "name": "detect-language",
+  "slug": "detect-language",
+  "coreDependencies": [],
+  "operationDependencies": [],
+  "packageDependencies": [],
+  "size": {
+    "codeSize": {
+      "numberOfFiles": 1,
+      "lines": 0,
+      "characters": 1541,
+      "bytes": 1541
+    },
+    "dataSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 1423,
+      "bytes": 1423
+    },
+    "textSize": {
+      "numberOfFiles": 1,
+      "lines": 0,
+      "characters": 672,
+      "bytes": 672
+    },
+    "size": {
+      "bytes": 3636,
+      "characters": 3636,
+      "lines": 0,
+      "numberOfFiles": 4
+    }
+  },
+  "buildSucceeded": true,
+  "dependenciesBuildsFailed": false,
+  "indexErrors": [],
+  "indexImportExportError": "",
+  "indexInteracesErrors": [],
+  "lintProblems": [],
+  "id": "ipduhzwbhmdmxxzzlcblgcgm",
+  "language": "en"
+}

@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678041491044,
+  "updatedAt": 1678041491044,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041491044,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/download/findDownload.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  projectRelativePath: string\n): Promise<Download | undefined> => {\n  const already = (await db.get(\"Download\")).find((x) => {\n    const stillAvailable = x.availableUntilAt\n      ? x.availableUntilAt > Date.now()\n      : true;\n\n    const samePath = x.download_projectRelativePath === projectRelativePath;\n\n    return samePath && stillAvailable;\n  });\n\n  return already;\n}",
+  "name": "findDownload",
+  "slug": "find-download",
+  "parameters": [
+    {
+      "name": "projectRelativePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/asset/asset-type/build/Download\").Download | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 380,
+    "lines": 15,
+    "bytes": 380,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 15,
+    "numberOfFiles": 1
+  },
+  "id": "qpetcjlqpwhgfyxtlfbpcydl"
+}

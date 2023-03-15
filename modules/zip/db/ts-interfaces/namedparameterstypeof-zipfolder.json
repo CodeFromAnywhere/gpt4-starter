@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678042848083,
+  "updatedAt": 1678042848083,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042848083,
+  "id": "namedparameterstypeof-zipfolder",
+  "name": "NamedParameters<typeof zipFolder>",
+  "slug": "namedparameterstypeof-zipfolder",
+  "operationRelativeTypescriptFilePath": "src/zipFolder.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteFolderPath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absoluteFolderPath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteFolderPath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof zipFolder>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

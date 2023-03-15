@@ -1,0 +1,26 @@
+[
+  {
+    "createdAt": 1678364090680,
+    "updatedAt": 1678364090680,
+    "deletedAt": 0,
+    "createdFirstAt": 1678364090680,
+    "name": "getPersona",
+    "slug": "get-persona",
+    "operationRelativeTypescriptFilePath": "src/getPersona.ts",
+    "comments": [],
+    "type": "value",
+    "id": "zktspouwbmyjbybuovrvvdxa"
+  },
+  {
+    "createdAt": 1678364090681,
+    "updatedAt": 1678364090681,
+    "deletedAt": 0,
+    "createdFirstAt": 1678364090681,
+    "name": "getPersona",
+    "slug": "get-persona",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "tlgeatljygraycsrmanmpexv"
+  }
+]

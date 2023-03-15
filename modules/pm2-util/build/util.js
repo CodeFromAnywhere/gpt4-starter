@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.logTableObject=void 0;var logTableObject=function(e){if(e)return Object.keys(e).map((function(t){return{property:t,value:e[t]}}))};exports.logTableObject=logTableObject;
+//# sourceMappingURL=util.js.map

@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678331420824,
+    "updatedAt": 1678331420824,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331420824,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/stripReadmeFromFolder.ts",
+    "comment": "To get the queryPath, we need to strip the readme.md so we get the folder as URL instead of the attached readme.md",
+    "rawStatement": "export const stripReadmeFromFolder = (filePath: string): string => {\n  const suffix = \"/readme.md\";\n\n  if (filePath.toLowerCase().endsWith(suffix)) {\n    const strippedPath = filePath.slice(0, filePath.length - suffix.length);\n\n    return strippedPath;\n  }\n\n  return filePath;\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 1,
+    "lastLine": 3,
+    "id": "zmcduxqeeeycfmrrgblsszml"
+  }
+]

@@ -1,0 +1,198 @@
+{
+  "createdAt": 1677582189637,
+  "updatedAt": 1677582189637,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582189637,
+  "id": "referencedmodeldataitem",
+  "name": "ReferencedModelDataItem",
+  "slug": "referencedmodeldataitem",
+  "operationRelativeTypescriptFilePath": "src/getReferencedModelDataItem.tsx",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\nexport type ReferencedModelDataItem = ReferenceParameterInfo &\n  ReferenceItemsObject;",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ReferenceItem"
+          }
+        },
+        "isLoading": {
+          "type": "boolean"
+        },
+        "parameterName": {
+          "type": "string"
+        },
+        "dataParameterName": {
+          "type": "string",
+          "description": "If the parameterName is a reference parameter, this will contain the parameterName that should contain the referenced data, should there be one."
+        },
+        "descriptor": {
+          "type": "string"
+        },
+        "keyInModel": {
+          "type": "string"
+        },
+        "interfaceName": {
+          "type": "string"
+        },
+        "isReferenceMultipleParameter": {
+          "type": "boolean"
+        },
+        "isReferenceSingleParameter": {
+          "type": "boolean"
+        },
+        "isReferenceParameter": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "isReferenceMultipleParameter",
+        "isReferenceParameter",
+        "isReferenceSingleParameter",
+        "parameterName"
+      ]
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "data",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "",
+                  "properties": [
+                    {
+                      "name": "id",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "slug",
+                      "required": false,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "name",
+                      "required": false,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "categoryStack",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Taken from the location in the folder of the db-model.\n\nNB: Changing this value when updating/upserting, changes where the item is located!",
+                        "nb": "Changing this value when updating/upserting, changes where the item is located!",
+                        "items": [
+                          {
+                            "schema": {
+                              "type": "string"
+                            },
+                            "name": null
+                          }
+                        ],
+                        "type": "array"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                },
+                "name": "ReferenceItem"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "isLoading",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "parameterName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "dataParameterName",
+          "required": false,
+          "schema": {
+            "fullComment": "If the parameterName is a reference parameter, this will contain the parameterName that should contain the referenced data, should there be one.",
+            "type": "string"
+          }
+        },
+        {
+          "name": "descriptor",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "keyInModel",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "interfaceName",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isReferenceMultipleParameter",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isReferenceSingleParameter",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "isReferenceParameter",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "ReferencedModelDataItem",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

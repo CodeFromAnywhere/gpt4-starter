@@ -1,0 +1,90 @@
+{
+  "createdAt": 1678331565844,
+  "updatedAt": 1678331565844,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331565844,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "explorerSearchTypes",
+  "slug": "explorer-search-types",
+  "operationRelativeTypescriptFilePath": "src/store.ts",
+  "type": {
+    "rawType": "{ label: string; value: string; }[]",
+    "typeDefinition": {
+      "optional": false,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "allOf": [
+              {
+                "transform": [
+                  "trim"
+                ]
+              },
+              {
+                "minLength": 1
+              }
+            ]
+          },
+          "value": {
+            "type": "string",
+            "allOf": [
+              {
+                "transform": [
+                  "trim"
+                ]
+              },
+              {
+                "minLength": 1
+              }
+            ]
+          }
+        },
+        "required": [
+          "label",
+          "value"
+        ]
+      }
+    },
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "items": [
+        {
+          "schema": {
+            "properties": [
+              {
+                "name": "label",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "value": "[\n  { label: \"🔎 Path Search\", value: \"path\" },\n  {\n    label: \"📖 Content Search\",\n    value: \"content\",\n  },\n  {\n    label: \"🗞 Index Search\",\n    value: \"index\",\n  },\n  {\n    label: \"🧠 Brain Search\",\n    value: \"llm\",\n  },\n]",
+  "description": "",
+  "id": "nvzxqcfwztglwweywqqgsyqb"
+}

@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678331565844,
+  "updatedAt": 1678331565844,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331565844,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "{ StoreProvider, useStore }",
+  "slug": "store-provider-use-store",
+  "operationRelativeTypescriptFilePath": "src/store.ts",
+  "type": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "createStore({\n  ...apiStoreInitialValues,\n  ...nestedMenuStoreInitialValues,\n  ...explorerInitialValues,\n  ...tabsStoreInitialValues,\n})",
+  "description": "TODO: Remove some of all of these things, not needed so much",
+  "id": "lqgpnknydlbyhkcofudkboxx"
+}

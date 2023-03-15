@@ -1,0 +1,71 @@
+{
+  "createdAt": 1678330652521,
+  "updatedAt": 1678330652521,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330652521,
+  "id": "namedparameterstypeof-getassetdirectlyapiurl",
+  "name": "NamedParameters<typeof getAssetDirectlyApiUrl>",
+  "slug": "namedparameterstypeof-getassetdirectlyapiurl",
+  "operationRelativeTypescriptFilePath": "src/getAssetDirectlyApiUrl.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "apiUrl": {
+          "type": "string"
+        },
+        "projectRelativeAssetPath": {
+          "type": "string"
+        },
+        "isDownload": {
+          "type": "boolean",
+          "description": "If true, asset will be returned as download"
+        }
+      },
+      "required": [
+        "projectRelativeAssetPath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "apiUrl",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "projectRelativeAssetPath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isDownload",
+          "required": false,
+          "schema": {
+            "fullComment": "If true, asset will be returned as download",
+            "type": "boolean"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getAssetDirectlyApiUrl>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

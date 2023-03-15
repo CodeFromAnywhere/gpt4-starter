@@ -1,0 +1,78 @@
+{
+  "createdAt": 1668328728155,
+  "updatedAt": 1668328728155,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328728155,
+  "id": "ooSLOVvBfJIKPyNI",
+  "dependencies": {
+    "model-types": "0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "bundle-types",
+  "language": "english",
+  "slug": "bundle-types",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [],
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "bundle-types",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1670063944423,
+    "operationDependenciesIndexed": [
+      "SlugModelType",
+      "Json",
+      "Slug",
+      "Slug",
+      "SlugModelType"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/types",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 9,
+        "lines": 388,
+        "characters": 12185,
+        "bytes": 12185
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 118,
+        "characters": 2661,
+        "bytes": 2661
+      },
+      "textSize": {
+        "numberOfFiles": 1,
+        "lines": 345,
+        "characters": 8588,
+        "bytes": 8588
+      },
+      "size": {
+        "bytes": 23434,
+        "characters": 23434,
+        "lines": 851,
+        "numberOfFiles": 12
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

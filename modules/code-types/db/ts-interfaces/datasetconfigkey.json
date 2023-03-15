@@ -1,0 +1,51 @@
+{
+  "createdAt": 1676841838029,
+  "updatedAt": 1676841838029,
+  "deletedAt": 0,
+  "createdFirstAt": 1676841838029,
+  "id": "datasetconfigkey",
+  "name": "DatasetConfigKey",
+  "slug": "datasetconfigkey",
+  "operationRelativeTypescriptFilePath": "src/Dataset.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\nexport type DatasetConfigKey = typeof datasetConfigKeys[number];",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "string",
+      "enum": [
+        "filter",
+        "sort",
+        "maxRows",
+        "startFromIndex",
+        "objectParameterKeys",
+        "ignoreObjectParameterKeys",
+        "view"
+      ]
+    },
+    "simplifiedSchema": {
+      "enum": [
+        "filter",
+        "sort",
+        "maxRows",
+        "startFromIndex",
+        "objectParameterKeys",
+        "ignoreObjectParameterKeys",
+        "view"
+      ],
+      "type": "string"
+    },
+    "typeCoverage": 0,
+    "rawType": "DatasetConfigKey",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

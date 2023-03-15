@@ -1,0 +1,53 @@
+{
+  "createdAt": 1664527854817,
+  "updatedAt": 1668150303707,
+  "deletedAt": 0,
+  "createdFirstAt": 1664527854817,
+  "folderName": "model-types",
+  "packageName": "model-types",
+  "relativeOperationLocationPath": "operations/tools/types",
+  "classification": "js",
+  "name": "model-types",
+  "slug": "model-types",
+  "coreDependencies": [],
+  "operationDependencies": [
+    "Frontmatter",
+    "Frontmatter",
+    "frontmatterParseToString"
+  ],
+  "packageDependencies": [],
+  "size": {
+    "codeSize": {
+      "numberOfFiles": 12,
+      "lines": 0,
+      "characters": 18167,
+      "bytes": 18167
+    },
+    "dataSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 1192,
+      "bytes": 1192
+    },
+    "textSize": {
+      "numberOfFiles": 3,
+      "lines": 0,
+      "characters": 13499,
+      "bytes": 13499
+    },
+    "size": {
+      "bytes": 32858,
+      "characters": 32858,
+      "lines": 0,
+      "numberOfFiles": 17
+    }
+  },
+  "buildSucceeded": true,
+  "dependenciesBuildsFailed": false,
+  "indexErrors": [],
+  "indexImportExportError": "",
+  "indexInteracesErrors": [],
+  "lintProblems": [],
+  "id": "aavlvyqdvgfddpcfldsugmip",
+  "language": "en"
+}

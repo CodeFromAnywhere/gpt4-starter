@@ -1,0 +1,52 @@
+{
+  "createdAt": 1678331535686,
+  "updatedAt": 1678331535686,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331535686,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/Explorer.tsx",
+  "commentsInside": [],
+  "rawText": " (props: {}) => {\n  const [searchType] = useStore(\"explorer.searchType\");\n  return (\n    <Div>\n      <SearchBar />\n      <Tabs\n        tabKey=\"menu\"\n        isSmall\n        tabs={[\n          { emoji: \"📁\", title: \"Explorer\", renderTab: () => <FolderMenu /> },\n          {\n            emoji: \"📌\",\n            title: \"Recent & Pinned\",\n            renderTab: () => <RecentPinned />,\n          },\n          {\n            emoji: searchType.label.slice(0, 2),\n            title: \"Search\",\n            renderTab: () => {\n              if (searchType.value === \"path\") return <PathSearch />;\n              if (searchType.value === \"llm\") return <SearchResultPage />;\n              return <ContentSearch />;\n            },\n          },\n        ]}\n      />\n    </Div>\n  );\n}",
+  "name": "Explorer",
+  "slug": "explorer",
+  "parameters": [
+    {
+      "name": "props",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "Explorer with 5 different modes",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 7,
+  "size": {
+    "characters": 797,
+    "lines": 29,
+    "bytes": 801,
+    "bytesPerCharacter": 1.0050188205771644,
+    "charactersPerLine": 27,
+    "linesPerFile": 29,
+    "numberOfFiles": 1
+  },
+  "id": "gxuxtyapooumymdcuevetdyr"
+}

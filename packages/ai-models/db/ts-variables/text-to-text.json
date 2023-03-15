@@ -1,0 +1,86 @@
+{
+  "createdAt": 1678369226604,
+  "updatedAt": 1678369226604,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369226604,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "textToText",
+  "slug": "text-to-text",
+  "operationRelativeTypescriptFilePath": "src/textToText.ts",
+  "type": {
+    "rawType": "{ (text: string, config?: { personId?: string | undefined; model?: any; isInstant?: boolean | undefined; } | undefined): Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse & { result?: string | undefined; }>; config: { isPaid: boolean; priceDescription: string; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPaid": {
+              "type": "boolean"
+            },
+            "priceDescription": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            }
+          },
+          "required": [
+            "isPaid",
+            "priceDescription"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPaid",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "priceDescription",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  text: string,\n  config?: {\n    personId?: string;\n    /**\n     * Model defaults to gpt default.\n     */\n    model?: TextToTextModelEnum;\n    /**\n     * By default, the query to the api is delayed to avoid the ratelimit from happening. If you want to avoid the delay, set this to true\n     */\n    isInstant?: boolean;\n  }\n): Promise<\n  StandardResponse & {\n    result?: string | undefined;\n  }\n> => {\n  if (!config?.model || openAiTextCompletionModels.includes(config?.model)) {\n    const gpt3result = await gpt3(text, {\n      model: config?.model as OpenAiTextCompletionModelEnum | undefined,\n    });\n\n    const pagesCount = Math.ceil(calculateTokenCount(text) / 500);\n    const priceCredit = pagesCount * 0.1;\n    return {\n      ...gpt3result,\n      payment: {\n        personId: config?.personId,\n        priceCredit,\n        priceDescription: `Estimated ${pagesCount} pages`,\n      },\n    };\n  }\n  const message = `${config?.model} not implemented yet`;\n  console.log(message);\n  return { isSuccessful: false, message };\n}",
+  "description": "TODO: improve gpt3 api with good token calculation, aggresive exponential backoff, and preventing ratelimit at all times, to maximise stability. can I have gpt3 as fallback to browser automated ChatGPT?\n\n\nFor now it's `string -> string`\n\nThere are simply too many options to make this file -> file, it wouldn't be useful.\n\nNB: use oneByOne for this if you don't want to hit the limit\n\n`textToText` needs to have a warning for context size (or dynamically choose a LLM with a bigger context size, or warn and split it up based on sentence endings, paragraphs, and newlines. It always needs to work!)\n\nFix errors:\n\n- ratelimit reached\n- too many tokens used (more than 4k)",
+  "id": "vbtlgipxsjlfzisxwyhmsjzj"
+}

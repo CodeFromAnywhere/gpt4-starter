@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041959171,
+  "updatedAt": 1678041959171,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041959171,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "test",
+  "slug": "test",
+  "operationRelativeTypescriptFilePath": "src/readFrontmatter.test.ts",
+  "type": {
+    "rawType": "() => void",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  // 1) create the files in /assets\n  // 2) use one by one, use `readFrontmatter` for every file, while measuring time\n}",
+  "description": "test cases, measure performance:\n\n- big file (1mb) without frontmatter\n- big file (1mb) with correct frontmatter\n- big file (1mb) with frontmatter with syntax error\n- same with small files\n\nTODO:\n\nImplement test\n\nIf this works, I can also do many performance improvements for fs-orm, for both read but also for updates. Ideas:\n\n- reading JSON arrays item per item, closing early if a condition is met\n- mapping JSON arrays item per item, closing early if a condition is met\n- updating/reading kvmd storage\n- updating frontmatter\n- crud csv\n\nResearch more first, thinks like a JSONStream could greatly simplify implementation for this, as well as understanding such code.",
+  "id": "vtwmpqjctxuppjbrsemomemg"
+}

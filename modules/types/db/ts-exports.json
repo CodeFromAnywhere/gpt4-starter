@@ -1,0 +1,98 @@
+[
+  {
+    "createdAt": 1678331700686,
+    "updatedAt": 1678331700686,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331700686,
+    "name": "SizeSummary",
+    "slug": "size-summary",
+    "operationRelativeTypescriptFilePath": "src/FolderSummary.ts",
+    "comments": [],
+    "type": "value",
+    "id": "qjgnvnbanelccbhruohcjqzl"
+  },
+  {
+    "createdAt": 1678331700686,
+    "updatedAt": 1678331700686,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331700686,
+    "name": "FolderSummary",
+    "slug": "folder-summary",
+    "operationRelativeTypescriptFilePath": "src/FolderSummary.ts",
+    "comments": [],
+    "type": "value",
+    "id": "wtymwlifnlkraoqdrdnylqfm"
+  },
+  {
+    "createdAt": 1678331700686,
+    "updatedAt": 1678331700686,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331700686,
+    "name": "SizeSummary",
+    "slug": "size-summary",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "yzkgbwijoffqgshogmtzrrsz"
+  },
+  {
+    "createdAt": 1678331700686,
+    "updatedAt": 1678331700686,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331700686,
+    "name": "FolderSummary",
+    "slug": "folder-summary",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "tzihqpdvvpsdiocdvrwhnqfg"
+  },
+  {
+    "createdAt": 1678331700686,
+    "updatedAt": 1678331700686,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331700686,
+    "name": "TypeCoverage",
+    "slug": "type-coverage",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "lrfxqnsayasqroiblvdsffec"
+  },
+  {
+    "createdAt": 1678331700686,
+    "updatedAt": 1678331700686,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331700686,
+    "name": "TypeInfo",
+    "slug": "type-info",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "rssjamhxewhdysziantbqgks"
+  },
+  {
+    "createdAt": 1678331700686,
+    "updatedAt": 1678331700686,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331700686,
+    "name": "TypeCoverage",
+    "slug": "type-coverage",
+    "operationRelativeTypescriptFilePath": "src/TypeInfo.ts",
+    "comments": [],
+    "type": "value",
+    "id": "cjkstguftkesmsdqhneaince"
+  },
+  {
+    "createdAt": 1678331700686,
+    "updatedAt": 1678331700686,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331700686,
+    "name": "TypeInfo",
+    "slug": "type-info",
+    "operationRelativeTypescriptFilePath": "src/TypeInfo.ts",
+    "comments": [],
+    "type": "value",
+    "id": "gmimhgvmnumzmordvlwovofi"
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "createdAt": 1678330499845,
+  "updatedAt": 1678330499845,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330499845,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/isFileCollection.ts",
+  "commentsInside": [],
+  "rawText": "\n  (absoluteFolderPath: string) =>\n  (dirent: Dirent, index: number, self: Dirent[]) =>\n    onlyUnique2<Dirent>((a, b) => {\n      // if (a.isDirectory() || b.isDirectory()) {\n      //   // NB: directories are always unique, so should return false for the isEqualFunction\n      // NB: not working! :S\n      //   return false;\n      // }\n\n      return isFileCollection(\n        path.join(absoluteFolderPath, a.name),\n        path.join(absoluteFolderPath, b.name)\n      );\n    })(dirent, index, self)",
+  "name": "getOnlyUniqueFileCollectionsFromDirentsFilter",
+  "slug": "get-only-unique-file-collections-from-dirents-filter",
+  "parameters": [
+    {
+      "name": "absoluteFolderPath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Returns a filter function\n\nUsage:\n\n```ts\ndirents.filter(getOnlyUniqueFileCollectionsFromDirentsFilter(absolutePath))\n```",
+  "returnType": {
+    "rawType": "(dirent: import(\"fs\").Dirent, index: number, self: import(\"fs\").Dirent[]) => boolean",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 617,
+    "lines": 21,
+    "bytes": 617,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 29,
+    "linesPerFile": 21,
+    "numberOfFiles": 1
+  },
+  "id": "haylxzwbmbenxewiqptwaeht"
+}

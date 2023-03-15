@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678330493879,
+  "updatedAt": 1678330493879,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330493879,
+  "id": "namedparameterstypeof-getmarkdownindex",
+  "name": "NamedParameters<typeof getMarkdownIndex>",
+  "slug": "namedparameterstypeof-getmarkdownindex",
+  "operationRelativeTypescriptFilePath": "src/getMarkdownIndex.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "projectRelativePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "projectRelativePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "projectRelativePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getMarkdownIndex>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

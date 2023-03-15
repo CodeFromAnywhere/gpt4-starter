@@ -1,0 +1,89 @@
+{
+  "sentences": [
+    {
+      "startAt": 0,
+      "endAt": 2360,
+      "text": "Huh, see him, what about bolt on the telekicks?"
+    }
+  ],
+  "text": " Huh, see him, what about bolt on the telekicks?\n",
+  "translationText": " Huh, see him, what about bolt on the telekicks?\n",
+  "words": [
+    {
+      "startAt": 0,
+      "endAt": 50,
+      "text": ""
+    },
+    {
+      "startAt": 50,
+      "endAt": 160,
+      "text": "Huh"
+    },
+    {
+      "startAt": 160,
+      "endAt": 330,
+      "text": ","
+    },
+    {
+      "startAt": 330,
+      "endAt": 420,
+      "text": "see"
+    },
+    {
+      "startAt": 420,
+      "endAt": 580,
+      "text": "him"
+    },
+    {
+      "startAt": 580,
+      "endAt": 680,
+      "text": ","
+    },
+    {
+      "startAt": 680,
+      "endAt": 890,
+      "text": "what"
+    },
+    {
+      "startAt": 890,
+      "endAt": 1160,
+      "text": "about"
+    },
+    {
+      "startAt": 1160,
+      "endAt": 1370,
+      "text": "bolt"
+    },
+    {
+      "startAt": 1370,
+      "endAt": 1520,
+      "text": "on"
+    },
+    {
+      "startAt": 1520,
+      "endAt": 1640,
+      "text": "the"
+    },
+    {
+      "startAt": 1640,
+      "endAt": 1860,
+      "text": "tele"
+    },
+    {
+      "startAt": 1860,
+      "endAt": 1900,
+      "text": "k"
+    },
+    {
+      "startAt": 1900,
+      "endAt": 2110,
+      "text": "icks"
+    },
+    {
+      "startAt": 2110,
+      "endAt": 2360,
+      "text": "?"
+    }
+  ],
+  "usedModelName": "small"
+}

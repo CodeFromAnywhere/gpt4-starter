@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330871499,
+  "updatedAt": 1678330871499,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330871499,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "makeMarkdownIndex",
+  "slug": "make-markdown-index",
+  "operationRelativeTypescriptFilePath": "src/makeMarkdownIndex.ts",
+  "type": {
+    "rawType": "(absoluteMarkdownFilePath: string) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (absoluteMarkdownFilePath: string) => {\n  if (isLocked(absoluteMarkdownFilePath)) {\n    return;\n  }\n\n  await lock(\n    absoluteMarkdownFilePath,\n    \"making markdown index\",\n    \"makeMarkdownIndex\",\n    [absoluteMarkdownFilePath]\n  );\n\n  const pathParse = path.parse(absoluteMarkdownFilePath);\n  const markdownParse = await readMarkdownFile(absoluteMarkdownFilePath);\n  if (!markdownParse) {\n    await lockError(\n      absoluteMarkdownFilePath,\n      \"Can't find file\",\n      undefined,\n      \"makeMarkdownIndex\",\n      [absoluteMarkdownFilePath]\n    );\n    return;\n  }\n\n  const contents = markdownParse.raw;\n\n  if (calculateTokenCount(contents) > 1024) {\n    console.log(\"FILE TOO LONG, FOR NOW.\");\n    lockError(\n      absoluteMarkdownFilePath,\n      \"file too long, for now\",\n      undefined,\n      \"makeMarkdownIndex\",\n      [absoluteMarkdownFilePath]\n    );\n\n    return;\n  }\n  const title = (\n    await textToText(`Please describe the contents of this file in just a few words:\n    \n  \\`\\`\\`\n  ${contents}\n  \\`\\`\\``)\n  )?.result;\n\n  const seoTitle = (\n    await textToText(`Can you come up with a good SEO title for this webpage?\n    \n  \\`\\`\\`\n  ${contents}\n  \\`\\`\\``)\n  )?.result;\n\n  const keywords = (\n    await textToText(`Can you come up with some keywords for this file?\n    \n  \\`\\`\\`\n  ${contents}\n  \\`\\`\\``)\n  )?.result?.split(\",\");\n\n  const seoKeywords = (\n    await textToText(`Can you come up with some SEO keywords for this webpage?\n    \n  \\`\\`\\`\n  ${contents}\n  \\`\\`\\``)\n  )?.result\n    ?.split(\",\")\n    .map((x) => x.trim());\n\n  const imagePromptDescriptions = (\n    await textToText(`Can you come up with a list of visual descriptions for images that would present this content well?\n      \n    \\`\\`\\`\n    ${contents}\n    \\`\\`\\``)\n  )?.result?.split(\"\\n\");\n  const socialMediaPost = (\n    await textToText(`What would be a good social media post about this information?\n      \n    \\`\\`\\`\n    ${contents}\n    \\`\\`\\``)\n  )?.result;\n\n  const socialMediaPosts = socialMediaPost ? [socialMediaPost] : [];\n\n  const summary = (\n    await textToText(`Summarize this piece of text:\n    \n  \\`\\`\\`\n  ${contents}\n  \\`\\`\\``)\n  )?.result;\n\n  const takeAways = (\n    await textToText(`What are the main take-aways from this text?\n      \n    \\`\\`\\`\n    ${contents}\n    \\`\\`\\``)\n  )?.result?.split(\"\\n\");\n\n  const statements = (\n    await textToText(`Can you list the most important statements made in this piece of text?\n      \n    \\`\\`\\`\n    ${contents}\n    \\`\\`\\``)\n  )?.result?.split(\"\\n\");\n  /*\n\n  const snippet = (\n    await textToText(`Can you provide me a snippet of this file that would be a good standalone piece of content? If there is none, no problem.\n    \n  \\`\\`\\`\n  ${contents}\n  \\`\\`\\``)\n  )?.result;\n\n  const snippets = [\n    snippet\n      ? {\n          firstLine: snippet.split(\"\\n\")[0],\n          lastLine: snippet.split(\"\\n\").pop()!,\n        }\n      : undefined,\n  ].filter(notEmpty);\n*/\n\n  const isPrivate = (await getIsPrivate(contents))?.isPrivate;\n  /**\n   * TODO: make much more here. super important\n   */\n  const markdownIndex: MarkdownIndex = omitUndefinedValues({\n    ...getUpdatedTimeObject(),\n    isSource: false,\n    isPrivate,\n    source: \"makeMarkdownIndex v1\",\n    createdAt: Date.now(),\n    title,\n    keywords,\n    imagePromptDescriptions,\n    seoKeywords,\n    seoTitle,\n    socialMediaPosts,\n    summary,\n    takeAways,\n    statements,\n    // later\n    suggestedLocation: undefined,\n  });\n\n  const indexPath = path.join(\n    pathParse.dir,\n    `${pathParse.name}.MarkdownIndex.json`\n  );\n\n  const isSuccessful = await writeJsonToFile(indexPath, markdownIndex);\n\n  await unlock(absoluteMarkdownFilePath);\n}",
+  "description": "Creates `MarkdownIndex` using GPT and other things.",
+  "id": "tqqvbnhakvusxjdmgdarauzn"
+}

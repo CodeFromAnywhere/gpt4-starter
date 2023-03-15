@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678041967741,
+  "updatedAt": 1678041967741,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041967741,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/returnReadmePathFromFolder.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  absoluteFolderPath: string\n): Promise<string | undefined> => {\n  const dirents = await fs.readdir(absoluteFolderPath, {\n    withFileTypes: true,\n    encoding: \"utf8\",\n  });\n\n  const readmeDirent = dirents.find(\n    (x) => x.isFile() && x.name.toLowerCase() === \"readme.md\"\n  );\n  if (!readmeDirent) return;\n  const absoluteReadmeFilePath = path.join(\n    absoluteFolderPath,\n    readmeDirent.name\n  );\n  return absoluteReadmeFilePath;\n}",
+  "name": "returnReadmePathFromFolder",
+  "slug": "return-readme-path-from-folder",
+  "parameters": [
+    {
+      "name": "absoluteFolderPath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "returns a readme path from folder, if it's there, regardless of the exact  capitilisation",
+  "returnType": {
+    "rawType": "Promise<string | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 536,
+    "lines": 18,
+    "bytes": 536,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 30,
+    "linesPerFile": 18,
+    "numberOfFiles": 1
+  },
+  "id": "bmfznyvyemkwqgyyhdefjele"
+}

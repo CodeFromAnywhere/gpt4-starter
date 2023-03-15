@@ -1,0 +1,46 @@
+{
+  "createdAt": 1664530381005,
+  "updatedAt": 1668236528642,
+  "deletedAt": 0,
+  "createdFirstAt": 1664530381005,
+  "indexInteracesErrors": "[\"No schema/definitions found for /Users/king/King/operations/tools/util/js-util/src/pickRandomArrayItem.ts. Error: TypeError: Cannot read properties of undefined (reading 'getId')\"]",
+  "buildSucceeded": true,
+  "id": "gqkosrsvzgplefxmozdwuxdu",
+  "indexImportExportError": "",
+  "lintProblems": [],
+  "folderName": "js-util",
+  "packageName": "js-util",
+  "relativeOperationLocationPath": "operations/tools/util",
+  "classification": "js",
+  "name": "js-util",
+  "slug": "js-util",
+  "coreDependencies": [],
+  "operationDependencies": [],
+  "packageDependencies": [],
+  "size": {
+    "codeSize": {
+      "numberOfFiles": 16,
+      "lines": 0,
+      "characters": 23224,
+      "bytes": 23224
+    },
+    "dataSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 1454,
+      "bytes": 1454
+    },
+    "textSize": {
+      "numberOfFiles": 1,
+      "lines": 0,
+      "characters": 21008,
+      "bytes": 21008
+    },
+    "size": {
+      "bytes": 45686,
+      "characters": 45686,
+      "lines": 0,
+      "numberOfFiles": 19
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "createdAt": 1667582700990,
+  "updatedAt": 1668149323780,
+  "deletedAt": 0,
+  "createdFirstAt": 1667582700990,
+  "folderName": "markdown",
+  "packageName": "markdown",
+  "relativeOperationLocationPath": "operations/tools/interfaces/vui/vui-elements",
+  "classification": "ui-esm",
+  "name": "markdown",
+  "slug": "markdown",
+  "coreDependencies": [
+    "useState"
+  ],
+  "operationDependencies": [
+    "path",
+    "apiUrl",
+    "getReferencedAssetApiUrl",
+    "createCodeblockMarkdown",
+    "Div",
+    "ClickableIcon",
+    "Frontmatter",
+    "Div",
+    "P",
+    "Div",
+    "MarkdownChunk",
+    "AugmentedWord",
+    "Div",
+    "Span",
+    "getFolderJs",
+    "getImplicitId",
+    "Div",
+    "MarkdownParse",
+    "getImplicitId",
+    "P",
+    "MappedObject",
+    "AugmentedWord",
+    "isPathRelative"
+  ],
+  "packageDependencies": [
+    "Components",
+    "createPopper"
+  ],
+  "size": {
+    "codeSize": {
+      "numberOfFiles": 10,
+      "lines": 0,
+      "characters": 16631,
+      "bytes": 16631
+    },
+    "dataSize": {
+      "numberOfFiles": 2,
+      "lines": 0,
+      "characters": 1764,
+      "bytes": 1764
+    },
+    "textSize": {
+      "numberOfFiles": 4,
+      "lines": 0,
+      "characters": 6139,
+      "bytes": 6139
+    },
+    "size": {
+      "bytes": 24534,
+      "characters": 24534,
+      "lines": 0,
+      "numberOfFiles": 16
+    }
+  },
+  "buildSucceeded": true,
+  "dependenciesBuildsFailed": false,
+  "indexErrors": [],
+  "indexImportExportError": "",
+  "indexInteracesErrors": "[\"No schema/definitions found for /Users/king/King/operations/tools/interfaces/vui/vui-elements/markdown/src/renderMarkdownContent.tsx. Error: TypeError: Invalid value used as weak map key\"]",
+  "lintProblems": [],
+  "id": "nlhxvmoxwvtamprssjalxiis",
+  "language": "en"
+}

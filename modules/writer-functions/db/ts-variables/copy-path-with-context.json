@@ -1,0 +1,59 @@
+{
+  "createdAt": 1678043299240,
+  "updatedAt": 1678043299240,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043299240,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "copyPathWithContext",
+  "slug": "copy-path-with-context",
+  "operationRelativeTypescriptFilePath": "src/copyPathWithContext.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FileFunction\").FileFunction<undefined, import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {},
+        "isEnabled": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "isEnabled",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  projectRelativePath: string\n) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No project root found\" };\n  }\n\n  const authorization = await getFsAuthorizationWithContext(\n    functionContext,\n    projectRelativePath\n  );\n  if (!authorization.canWrite) {\n    return { isSuccessful: false, message: \"You're not allowed to do this\" };\n  }\n\n  const absolutePath = path.join(projectRoot, projectRelativePath);\n\n  if (!fs.existsSync(absolutePath)) {\n    console.log({ absolutePath });\n    return {\n      isSuccessful: false,\n      message: \"This file or folder doesn't exist\",\n    };\n  }\n\n  const parsedPath = path.parse(absolutePath);\n  const copiedPath = path.join(\n    parsedPath.dir,\n    `${parsedPath.name}-copy${parsedPath.ext}`\n  );\n\n  if (fs.existsSync(copiedPath)) {\n    return {\n      isSuccessful: false,\n      message:\n        \"There is already a copy for this file/folder under the anticipated name.\",\n    };\n  }\n\n  await fs.cpAsync(absolutePath, copiedPath, { recursive: true });\n\n  return { isSuccessful: true, message: \"Copied\" };\n}",
+  "description": "Creates a copy of a file",
+  "id": "utzziwzmrwfjydeoopuaqzqf"
+}

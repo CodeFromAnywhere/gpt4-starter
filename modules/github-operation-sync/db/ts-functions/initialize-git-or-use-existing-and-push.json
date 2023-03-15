@@ -1,0 +1,66 @@
+{
+  "createdAt": 1673794227922,
+  "updatedAt": 1673794227922,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794227922,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/operationGithubPush.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  dir: string,\n  remoteUrl: string,\n  commitMessage: string\n) => {\n  /** create simplegit options */\n  const options: Partial<SimpleGitOptions> = {\n    baseDir: dir,\n    binary: \"git\",\n    maxConcurrentProcesses: 6,\n    trimmed: false,\n  };\n  const gitBackupFolder = path.resolve(dir, \".git.backup\");\n  /** if the git.backup folder exists */\n  if (fs.existsSync(gitBackupFolder)) {\n    console.log(\"renaming\");\n    /** rename it to .git */\n    fs.renameSync(path.resolve(dir, \".git.backup\"), path.resolve(dir, \".git\"));\n    /** then add everything, commit and force push */\n    const git: SimpleGit = simpleGit(options);\n    await git.add(\".\");\n    await git.commit(commitMessage);\n    await git.push(\"origin\", \"main\", [\"--force\"]);\n  } else {\n    console.log(\"deleting\");\n    /** if backup folder doesn't exist */\n    const gitFolder = path.resolve(dir, \".git\");\n    if (fs.existsSync(gitFolder)) {\n      fs.rmSync(gitFolder, { recursive: true, force: true });\n    }\n    const git: SimpleGit = simpleGit(options);\n    await git\n      .init({ \"--initial-branch\": \"main\" })\n      .addRemote(\"origin\", remoteUrl);\n    await git.add(\".\");\n    await git.commit(commitMessage);\n    await git.push(\"origin\", \"main\", [\"--force\"]);\n  }\n}",
+  "name": "initializeGitOrUseExistingAndPush",
+  "slug": "initialize-git-or-use-existing-and-push",
+  "parameters": [
+    {
+      "name": "dir",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "remoteUrl",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "commitMessage",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 1238,
+    "lines": 39,
+    "bytes": 1238,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 32,
+    "linesPerFile": 39,
+    "numberOfFiles": 1
+  },
+  "id": "ulndmonlclzjxtskgmfdpude"
+}

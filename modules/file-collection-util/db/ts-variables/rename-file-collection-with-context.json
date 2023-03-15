@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330507751,
+  "updatedAt": 1678330507751,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330507751,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "renameFileCollectionWithContext",
+  "slug": "rename-file-collection-with-context",
+  "operationRelativeTypescriptFilePath": "src/renameFileCollectionWithContext.ts",
+  "type": {
+    "rawType": "(functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext, projectRelativeFilePath: string, newBaseName: string, config?: { isDryrun?: boolean | undefined; } | undefined) => void",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  functionContext: FunctionContext,\n  projectRelativeFilePath: string,\n  newBaseName: string,\n  config?: { isDryrun?: boolean }\n) => {\n  // auth\n\n  // authed?\n\n  renameFileCollection(projectRelativeFilePath, newBaseName, config);\n}",
+  "description": "",
+  "id": "amsqvekdlpmosawexywzmsqu"
+}

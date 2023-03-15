@@ -1,0 +1,36 @@
+{
+  "createdAt": 1678330900708,
+  "updatedAt": 1678330900708,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330900708,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "ProjectWatcher",
+  "operationRelativeTypescriptFilePath": "src/watchMp3Transcriptions.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  _,\n  absolutePath\n): Promise<string | undefined> => {\n  if (!fs.existsSync(absolutePath)) {\n    console.log(`${absolutePath} doesn't exist`);\n    return;\n  }\n\n  const oldTranscription = await readJsonFile<Transcription>(absolutePath);\n  if (!oldTranscription) {\n    return;\n  }\n  if (isLocked(absolutePath)) {\n    console.log(`${absolutePath} locked`);\n\n    return;\n  }\n  const chunks = await transcriptionToGptChunks(absolutePath, CHUNK_TOKEN_SIZE);\n\n  if (!chunks || chunks.length === 0) {\n    console.log(`${absolutePath} no chunks`);\n    return;\n  }\n\n  await lock(absolutePath, \"busy\", \"watchMp3Transcriptions\", [\n    undefined,\n    absolutePath,\n  ]);\n  // turn speech into clean text\n  const finalCleanedupResultString = (\n    await oneByOne(chunks, async (chunk, index) => {\n      await lock(\n        absolutePath,\n        `chunk ${index + 1}/${chunks.length}`,\n        \"watchMp3Transcriptions\",\n        [undefined, absolutePath]\n      );\n\n      const result =\n        await textToText(`Consider this transcription and please make it cleaner (remove speaking errors and transform it into alineas)\n\n\\`\\`\\`\n${chunk}\n\\`\\`\\`\n`);\n      return result.result;\n    })\n  )\n    .filter(notEmpty)\n    .join(\"\\n\\n\");\n\n  const parsedPath = path.parse(absolutePath);\n  const totalExtension = \".transcription.json\";\n  const baseName = parsedPath.base.slice(\n    0,\n    parsedPath.base.length - totalExtension.length\n  );\n  const cleanFilePath = path.join(parsedPath.dir, `${baseName}.md`);\n\n  if (finalCleanedupResultString === \"\") {\n    console.log(\"No result transcribing\", finalCleanedupResultString);\n    await lockError(\n      absolutePath,\n      \"No result transcribing\",\n      undefined,\n      \"watchMp3Transcriptions\",\n      [undefined, absolutePath]\n    );\n    return;\n  }\n\n  const recordingType = await getRecordingType(absolutePath);\n\n  const newTranscription: Transcription = {\n    ...oldTranscription,\n    ...getUpdatedTimeObject(),\n    recordingType,\n  };\n\n  await writeJsonToFile(absolutePath, newTranscription);\n  // TODO: just put this in .transcription.json file\n  const fullMd = `---\nisSource: false\nsource: ./${path.parse(absolutePath).base}\ncreatedAt: ${Date.now()}\n---\n\n${finalCleanedupResultString}`;\n\n  await fs.writeFile(cleanFilePath, fullMd, \"utf8\");\n\n  await unlock(absolutePath);\n  return cleanFilePath;\n}",
+  "name": "watchMp3Transcriptions",
+  "slug": "watch-mp3-transcriptions",
+  "parameters": [],
+  "description": "Add an automation (watcher that queues or does) to act on any `.mp3.txt` (which indicates a whisper is done) that doesn't have a `.clean.md`\n\nThere are many other things we can do with the spoken text transcription of an audio file, but these will be applied on any md file (which is much more general purpose)\n\nPromises the path of the resulting converted cleaned-up file",
+  "returnType": {
+    "rawType": "Promise<string | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 2709,
+    "lines": 99,
+    "bytes": 2709,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 27,
+    "linesPerFile": 99,
+    "numberOfFiles": 1
+  },
+  "id": "pparyiypkvnzeedkezkbwkai"
+}

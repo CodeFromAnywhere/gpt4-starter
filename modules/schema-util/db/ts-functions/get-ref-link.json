@@ -1,0 +1,47 @@
+{
+  "createdAt": 1668836010870,
+  "updatedAt": 1668836010870,
+  "deletedAt": 0,
+  "createdFirstAt": 1668836010870,
+  "isApiExposed": true,
+  "isExported": true,
+  "groupAuthorization": {},
+  "operationRelativeTypescriptFilePath": "src/getRefLink.ts",
+  "commentsInside": [],
+  "rawText": " (ref?: string) => {\n  const refLink = ref\n    ?.split(\"/\")\n    .pop()\n    ?.replaceAll(\"%3C\", \"<\")\n    .replaceAll(\"%3E\", \">\");\n\n  return refLink;\n}",
+  "name": "getRefLink",
+  "slug": "get-ref-link",
+  "parameters": [
+    {
+      "name": "ref",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": false
+    }
+  ],
+  "description": "gets the $ref from a schema and parses the interface name from it",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 214,
+    "lines": 9,
+    "bytes": 214,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 24,
+    "linesPerFile": 9,
+    "numberOfFiles": 1
+  },
+  "id": "qijmmlxmudjepzdegghlousp"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331559766,
+  "updatedAt": 1678331559766,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331559766,
+  "id": "namedparameterstypeof-queuestatuscomponent",
+  "name": "NamedParameters<typeof QueueStatusComponent>",
+  "slug": "namedparameterstypeof-queuestatuscomponent",
+  "operationRelativeTypescriptFilePath": "src/SettingsPage.tsx",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof QueueStatusComponent>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

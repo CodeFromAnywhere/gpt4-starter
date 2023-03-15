@@ -1,0 +1,55 @@
+{
+  "createdAt": 1678330963686,
+  "updatedAt": 1678330963686,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330963686,
+  "id": "whispermodelname",
+  "name": "WhisperModelName",
+  "slug": "whispermodelname",
+  "operationRelativeTypescriptFilePath": "src/whisperLocalCpp.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "string",
+      "enum": [
+        "tiny",
+        "tiny.en",
+        "base",
+        "base.en",
+        "small",
+        "small.en",
+        "medium",
+        "medium.en",
+        "large-v1",
+        "large"
+      ]
+    },
+    "simplifiedSchema": {
+      "enum": [
+        "tiny",
+        "tiny.en",
+        "base",
+        "base.en",
+        "small",
+        "small.en",
+        "medium",
+        "medium.en",
+        "large-v1",
+        "large"
+      ],
+      "type": "string"
+    },
+    "typeCoverage": 0,
+    "rawType": "WhisperModelName",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

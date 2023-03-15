@@ -1,0 +1,49 @@
+{
+  "createdAt": 1677586407723,
+  "updatedAt": 1677586407723,
+  "deletedAt": 0,
+  "createdFirstAt": 1677586407723,
+  "id": "namedparameterstypeof-getmergedmarkdownoutlineurl",
+  "name": "NamedParameters<typeof getMergedMarkdownOutlineUrl>",
+  "slug": "namedparameterstypeof-getmergedmarkdownoutlineurl",
+  "operationRelativeTypescriptFilePath": "src/getMergedMarkdownOutlineUrl.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "title",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getMergedMarkdownOutlineUrl>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

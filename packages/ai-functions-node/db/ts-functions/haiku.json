@@ -1,0 +1,67 @@
+{
+  "createdAt": 1678330218742,
+  "updatedAt": 1678330218742,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330218742,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "PromptFunction",
+  "operationRelativeTypescriptFilePath": "src/prompts.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  anyContext: string,\n  prompt_projectRelativePath: string,\n  isDeferred?: boolean\n) => {\n  const result = await processChatGptPrompt({\n    isDeferred,\n    contextualPromptSlug: \"haiku\",\n    anyContext,\n    prompt_projectRelativePath,\n  });\n\n  return result;\n}",
+  "name": "haiku",
+  "slug": "haiku",
+  "parameters": [
+    {
+      "name": "anyContext",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "prompt_projectRelativePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "isDeferred",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    }
+  ],
+  "description": "Write a Haiku",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 282,
+    "lines": 14,
+    "bytes": 282,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 20,
+    "linesPerFile": 14,
+    "numberOfFiles": 1
+  },
+  "id": "uphkdlnulgpuhlsssvnbvksa"
+}

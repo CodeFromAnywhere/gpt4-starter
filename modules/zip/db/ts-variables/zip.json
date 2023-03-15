@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678042844927,
+  "updatedAt": 1678042844927,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042844927,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "zip",
+  "slug": "zip",
+  "operationRelativeTypescriptFilePath": "src/zip.ts",
+  "type": {
+    "rawType": "(config: { baseFolderPath: string; folderName: string; zipName: string; debug?: boolean | undefined; requirePassword?: boolean | undefined; }) => string",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(config: {\n  baseFolderPath: string;\n  folderName: string;\n  zipName: string;\n  debug?: boolean;\n  requirePassword?: boolean;\n}): string => {\n  const { baseFolderPath, folderName, zipName, debug, requirePassword } =\n    config;\n  const command = requirePassword ? \"zip -er\" : \"zip -r\";\n  const fullCommand = `${command} ${zipName} ${folderName}`;\n\n  console.log({ fullCommand, baseFolderPath });\n  execSync(fullCommand, {\n    cwd: baseFolderPath,\n    stdio: debug || requirePassword ? \"inherit\" : \"ignore\",\n  });\n\n  const finalPath = path.join(baseFolderPath, `${zipName}.zip`);\n  return finalPath;\n}",
+  "description": "creates zip of folder",
+  "id": "sdupbaoshkuvwaepkaluceos"
+}

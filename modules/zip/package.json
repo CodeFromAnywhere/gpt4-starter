@@ -1,0 +1,98 @@
+{
+  "createdAt": 1668328720283,
+  "updatedAt": 1668328720283,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328720283,
+  "id": "leAoYiHfTSkcBhbj",
+  "bin": {
+    "zip": "build/cli.js"
+  },
+  "dependencies": {
+    "fs-util": "1.0.5",
+    "fs-util-js": "0.0.1",
+    "function-types": "0.0.1",
+    "get-path": "0.0.1",
+    "js-util": "0.0.1",
+    "model-types": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.2"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "zip",
+  "language": "english",
+  "slug": "zip",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [],
+      "lintProblems": []
+    },
+    "classificationIndexed": "node-cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "zip",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1678042856122,
+    "operationDependenciesIndexed": [
+      "path",
+      "fs",
+      "getAllFoldersUntilFolder",
+      "path",
+      "makeRelative",
+      "StandardResponse",
+      "getCommonAncestorMultiple",
+      "getProjectRoot",
+      "isAllTrue",
+      "generateId",
+      "fs",
+      "path",
+      "getFileOrFolderName"
+    ],
+    "packageDependenciesIndexed": [
+      "execSync",
+      "spawnSync"
+    ],
+    "relativeOperationLocationPathIndexed": "operations/tools/parsing/file-conversion/compression",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 3,
+        "lines": 127,
+        "characters": 3709,
+        "bytes": 3709
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 138,
+        "characters": 3083,
+        "bytes": 3083
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 60,
+        "characters": 1206,
+        "bytes": 1206
+      },
+      "size": {
+        "bytes": 7998,
+        "characters": 7998,
+        "lines": 325,
+        "numberOfFiles": 7
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

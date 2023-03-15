@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678042927293,
+  "updatedAt": 1678042927293,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042927293,
+  "id": "namedparameterstypeof-getfunctionexersize",
+  "name": "NamedParameters<typeof getFunctionExersize>",
+  "slug": "namedparameterstypeof-getfunctionexersize",
+  "operationRelativeTypescriptFilePath": "src/FunctionExecution.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "functionId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "functionId"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "functionId",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getFunctionExersize>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

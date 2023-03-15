@@ -1,0 +1,92 @@
+{
+  "createdAt": 1678331093515,
+  "updatedAt": 1678331093515,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331093515,
+  "id": "namedparameterstypeof-messagestotokenabletext",
+  "name": "NamedParameters<typeof messagesToTokenableText>",
+  "slug": "namedparameterstypeof-messagestotokenabletext",
+  "operationRelativeTypescriptFilePath": "src/messagesToTokenableText.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChatCompletionRequestMessage"
+          }
+        }
+      },
+      "required": [
+        "messages"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "messages",
+          "required": true,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "",
+                  "properties": [
+                    {
+                      "name": "role",
+                      "required": true,
+                      "schema": {
+                        "enum": [
+                          "system",
+                          "user",
+                          "assistant"
+                        ],
+                        "fullComment": "The role of the author of this message.\n\n",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "content",
+                      "required": true,
+                      "schema": {
+                        "fullComment": "The contents of the message",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "name",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "The name of the user in a multi-user chat",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                },
+                "name": "ChatCompletionRequestMessage"
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof messagesToTokenableText>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "createdAt": 1671457694099,
+  "updatedAt": 1671457694099,
+  "deletedAt": 0,
+  "createdFirstAt": 1671457694099,
+  "isApiExposed": false,
+  "name": "isEmail",
+  "slug": "is-email",
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/common.ts",
+  "groupAuthorization": {},
+  "commentsInside": [],
+  "description": "",
+  "parameters": [
+    {
+      "name": "email",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "size": {
+    "characters": 261,
+    "lines": 7,
+    "bytes": 261,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 37,
+    "linesPerFile": 7,
+    "numberOfFiles": 1
+  },
+  "rawText": "\n\nexport function isEmail(email: string) {\n  var re =\n    /^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$/;\n  return re.test(String(email).toLowerCase());\n}",
+  "maxIndentationDepth": 2,
+  "id": "oyiwenfeeqoswmtkxabrnwxt"
+}

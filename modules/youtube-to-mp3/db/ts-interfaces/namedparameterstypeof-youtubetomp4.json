@@ -1,0 +1,95 @@
+{
+  "createdAt": 1678331157011,
+  "updatedAt": 1678331157011,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331157011,
+  "id": "namedparameterstypeof-youtubetomp4",
+  "name": "NamedParameters<typeof youtubeToMp4>",
+  "slug": "namedparameterstypeof-youtubetomp4",
+  "operationRelativeTypescriptFilePath": "src/youtubeToMp4.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "link": {
+          "type": "string"
+        },
+        "config": {
+          "type": "object",
+          "properties": {
+            "isToMp3": {
+              "type": "boolean"
+            },
+            "destinationFolderPath": {
+              "type": "string"
+            },
+            "quality": {
+              "type": "string",
+              "const": "low"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "link"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "link",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "config",
+          "required": false,
+          "schema": {
+            "properties": [
+              {
+                "name": "isToMp3",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "destinationFolderPath",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "quality",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof youtubeToMp4>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "createdAt": 1678331162530,
+  "updatedAt": 1678331162530,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331162530,
+  "id": "namedparameterstypeof-youtubetomp4-old",
+  "name": "NamedParameters<typeof youtubeToMp4_old>",
+  "slug": "namedparameterstypeof-youtubetomp4-old",
+  "operationRelativeTypescriptFilePath": "src/youtubeToMp4_old.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "youtubeUrl": {
+          "type": "string"
+        },
+        "absoluteFolderPath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "youtubeUrl",
+        "absoluteFolderPath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "youtubeUrl",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "absoluteFolderPath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof youtubeToMp4_old>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

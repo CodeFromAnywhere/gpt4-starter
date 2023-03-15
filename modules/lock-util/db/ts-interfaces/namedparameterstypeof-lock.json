@@ -1,0 +1,90 @@
+{
+  "createdAt": 1678331279055,
+  "updatedAt": 1678331279055,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331279055,
+  "id": "namedparameterstypeof-lock",
+  "name": "NamedParameters<typeof lock>",
+  "slug": "namedparameterstypeof-lock",
+  "operationRelativeTypescriptFilePath": "src/lock.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "aboluteLockableFilePath": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "functionName": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "aboluteLockableFilePath",
+        "message"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "aboluteLockableFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "message",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "functionName",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "parameters",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof lock>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

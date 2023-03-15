@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678041937623,
+  "updatedAt": 1678041937623,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041937623,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getFirstFile.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  fullPath: string\n): Promise<string | undefined> => {\n  const content = await fs.readdir(fullPath, {\n    encoding: \"utf8\",\n    withFileTypes: true,\n  });\n  const files = content.filter((x) => x.isFile());\n  const readme = files.find((x) => x.name.toLowerCase() === \"readme.md\")?.name;\n  const index = files.find((x) => x.name.startsWith(\"index.\"))?.name;\n  const firstFile = readme || index || files[0]?.name || undefined;\n  return firstFile;\n}",
+  "name": "getFirstFile",
+  "slug": "get-first-file",
+  "parameters": [
+    {
+      "name": "fullPath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Gets the first file in a directory:\n\nEither readme or index, or the first file it finds.\n\nReturns filename including extension",
+  "returnType": {
+    "rawType": "Promise<string | undefined>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 580,
+    "lines": 17,
+    "bytes": 580,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 34,
+    "linesPerFile": 17,
+    "numberOfFiles": 1
+  },
+  "id": "esyzsxvmhdnvuhbsazuyqfby"
+}

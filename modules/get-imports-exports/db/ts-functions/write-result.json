@@ -1,0 +1,97 @@
+{
+  "createdAt": 1671116343054,
+  "updatedAt": 1671116343054,
+  "deletedAt": 0,
+  "createdFirstAt": 1671116343054,
+  "isApiExposed": true,
+  "isExported": true,
+  "groupAuthorization": {},
+  "operationRelativeTypescriptFilePath": "src/writeResult.ts",
+  "commentsInside": [],
+  "rawText": " async (options: {\n  operationName: string;\n  success: boolean;\n  message: string;\n  manualProjectRoot?: string;\n}) => {\n  const { message, operationName, success, manualProjectRoot } = options;\n\n  if (!success) {\n    log(`Couldn't write imports/exports.`);\n\n    await db.update(\n      \"Operation\",\n      () => true,\n      (old) =>\n        mergeNestedObject(old, {\n          operation: {\n            buildResultIndexed: { indexImportExportError: message },\n          },\n        }),\n      { operationName, manualProjectRoot }\n    );\n\n    return false;\n  }\n}",
+  "name": "writeResult",
+  "slug": "write-result",
+  "parameters": [
+    {
+      "name": "options",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "operationName": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "manualProjectRoot": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "operationName",
+          "success",
+          "message"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "operationName",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "success",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "message",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "manualProjectRoot",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 6,
+  "size": {
+    "characters": 556,
+    "lines": 26,
+    "bytes": 556,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 21,
+    "linesPerFile": 26,
+    "numberOfFiles": 1
+  },
+  "id": "rdxtzauuidvpbyrvypfdvtkq"
+}

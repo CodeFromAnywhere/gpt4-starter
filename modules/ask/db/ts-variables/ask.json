@@ -1,0 +1,33 @@
+{
+  "createdAt": 1668333193625,
+  "updatedAt": 1668333193625,
+  "deletedAt": 0,
+  "createdFirstAt": 1668333193625,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "ask",
+  "slug": "ask",
+  "operationRelativeTypescriptFilePath": "src/general.ts",
+  "type": {
+    "rawType": "(question: string) => Promise<string>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(question: string): Promise<string> => {\n  const rl = readline.createInterface({\n    input: process.stdin,\n    output: process.stdout,\n    terminal: false,\n  });\n\n  return new Promise((resolve) => {\n    rl.question(question, (input) => {\n      resolve(input);\n      rl.close();\n    });\n  });\n}",
+  "description": "",
+  "id": "ljekdqjgecbyjmlcjicexbdd"
+}

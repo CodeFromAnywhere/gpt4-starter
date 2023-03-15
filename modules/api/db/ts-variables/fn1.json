@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677677282546,
+  "updatedAt": 1677677282546,
+  "deletedAt": 0,
+  "createdFirstAt": 1677677282546,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "fn1",
+  "slug": "fn1",
+  "operationRelativeTypescriptFilePath": "src/sdkExample.ts",
+  "type": {
+    "rawType": "(a: string, b: number) => boolean",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(a: string, b: number) => {\n  return true;\n}",
+  "description": "There is probably some doc-comments available for the function, maybe we can fix this with proxies to pass those comments... that would be insane.",
+  "id": "yuttuzcznxnjlomyzzykoflh"
+}

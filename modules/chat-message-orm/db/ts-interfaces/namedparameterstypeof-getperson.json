@@ -1,0 +1,67 @@
+{
+  "createdAt": 1678505778942,
+  "updatedAt": 1678505778942,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505778942,
+  "id": "namedparameterstypeof-getperson",
+  "name": "NamedParameters<typeof getPerson>",
+  "slug": "namedparameterstypeof-getperson",
+  "operationRelativeTypescriptFilePath": "src/insertPerson.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "$ref": "#/definitions/PersonIndex"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "key",
+          "required": true,
+          "schema": {
+            "enum": [
+              "id",
+              "phoneNumber",
+              "email",
+              "slug"
+            ],
+            "fullComment": "",
+            "type": "string"
+          }
+        },
+        {
+          "name": "value",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getPerson>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

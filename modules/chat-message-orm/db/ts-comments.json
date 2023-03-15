@@ -1,0 +1,36 @@
+[
+  {
+    "createdAt": 1678505781837,
+    "updatedAt": 1678505781837,
+    "deletedAt": 0,
+    "createdFirstAt": 1678505781837,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/insertPerson.ts",
+    "comment": "",
+    "rawStatement": "export const setPerson = async (person: Creation<Person>) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false };\n  }\n\n  const fullItem = addDefaultValues(person);\n  const storingItem = makeStoringItem(fullItem) as Person;\n\n  const isSuccessful = await writeJsonToFile(\n    getPersonPath(projectRoot, person.slug),\n    storingItem\n  );\n  return { isSuccessful };\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 10,
+    "lastLine": 11,
+    "id": "uvelckziswfikuplkkmqfswz"
+  },
+  {
+    "createdAt": 1678505781838,
+    "updatedAt": 1678505781838,
+    "deletedAt": 0,
+    "createdFirstAt": 1678505781838,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/insertPerson.ts",
+    "comment": "More performant way to find a person\n\nTODO: if we're going to use this, it's super important to ensure we can replace all current queries with this.",
+    "rawStatement": "export const getPerson = async (\n  key: PersonIndex,\n  value: string\n): Promise<Person | null> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return null;\n  }\n\n  // step 1: get the keyValue store for the key if it's not already slug\n  const slug = await getPersonSlug(projectRoot, key, value);\n  if (!slug) {\n    return null;\n  }\n  // step 2: with the gained slug, return the person via the right path\n  const person = await readJsonFile<Person>(getPersonPath(projectRoot, slug));\n\n  return person;\n};",
+    "parameters": {},
+    "types": [
+      "todo"
+    ],
+    "firstLine": 53,
+    "lastLine": 58,
+    "id": "xksjavwmeuitoarllbzwtbtz"
+  }
+]

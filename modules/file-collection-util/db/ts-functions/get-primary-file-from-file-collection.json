@@ -1,0 +1,72 @@
+{
+  "createdAt": 1678330487980,
+  "updatedAt": 1678330487980,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330487980,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/FileCollection.ts",
+  "commentsInside": [],
+  "rawText": " (\n  fileCollection: FileCollection\n): string | undefined => fileCollection[0]",
+  "name": "getPrimaryFileFromFileCollection",
+  "slug": "get-primary-file-from-file-collection",
+  "parameters": [
+    {
+      "name": "fileCollection",
+      "schema": {
+        "$ref": "#/definitions/FileCollection"
+      },
+      "simplifiedSchema": {
+        "fullComment": "I'll later probably find more things to add here, but until that time, it's simply an array of filenames, where the first one is the primary one",
+        "items": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": null
+          }
+        ],
+        "type": "array"
+      },
+      "required": true
+    }
+  ],
+  "description": "For now, the first one is the primary one. May later change.",
+  "returnType": {
+    "rawType": "string | undefined",
+    "typeDefinition": {
+      "optional": true,
+      "type": "string",
+      "allOf": [
+        {
+          "transform": [
+            "trim"
+          ]
+        },
+        {
+          "minLength": 1
+        }
+      ]
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "type": "string"
+    }
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 138,
+    "lines": 3,
+    "bytes": 138,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 46,
+    "linesPerFile": 3,
+    "numberOfFiles": 1
+  },
+  "id": "ljreorjawegngvldkraoaslw"
+}

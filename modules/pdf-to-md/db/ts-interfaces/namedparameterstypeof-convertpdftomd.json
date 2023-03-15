@@ -1,0 +1,79 @@
+{
+  "createdAt": 1678331353022,
+  "updatedAt": 1678331353022,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331353022,
+  "id": "namedparameterstypeof-convertpdftomd",
+  "name": "NamedParameters<typeof convertPdfToMd>",
+  "slug": "namedparameterstypeof-convertpdftomd",
+  "operationRelativeTypescriptFilePath": "src/convertPdfToMd.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "inputPdfFilePath": {
+              "type": "string"
+            },
+            "outputMdFilePath": {
+              "type": "string",
+              "description": "if not given, will save it in the same place with the same name"
+            }
+          },
+          "required": [
+            "inputPdfFilePath"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "inputPdfFilePath",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "outputMdFilePath",
+                "required": false,
+                "schema": {
+                  "fullComment": "if not given, will save it in the same place with the same name",
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof convertPdfToMd>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

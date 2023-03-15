@@ -1,0 +1,49 @@
+{
+  "createdAt": 1669467062451,
+  "updatedAt": 1669467062451,
+  "deletedAt": 0,
+  "createdFirstAt": 1669467062451,
+  "id": "namedparameterstypeof-removeheaderprefix",
+  "name": "NamedParameters<typeof removeHeaderPrefix>",
+  "slug": "namedparameterstypeof-removeheaderprefix",
+  "operationRelativeTypescriptFilePath": "src/removeHeaderPrefix.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "string": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "string"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "string",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof removeHeaderPrefix>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

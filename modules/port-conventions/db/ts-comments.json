@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1669883699308,
+    "updatedAt": 1669883699308,
+    "deletedAt": 0,
+    "createdFirstAt": 1669883699308,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/port-conventions.ts",
+    "comment": "See https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers for available ports\n\nRange 42000-42080 seems to have no ports. There are many more ranges\n\nWhen creating a new app, ensure you not only define the port here, but also in",
+    "rawStatement": "export const ports = {\n  \"function-server\": 42000,\n} as const;",
+    "parameters": {},
+    "types": [],
+    "firstLine": 1,
+    "lastLine": 7,
+    "id": "jsiqjdsdiszgodxomagdubhr"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041956931,
+  "updatedAt": 1678041956931,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041956931,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "readFilePerLine",
+  "slug": "read-file-per-line",
+  "operationRelativeTypescriptFilePath": "src/readFilePerLine.ts",
+  "type": {
+    "rawType": "(absoluteFilePath: string, withLine: (line: string, close: () => void) => void) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  absoluteFilePath: string,\n  withLine: (line: string, close: () => void) => void\n) => {\n  if (!fs.existsSync(absoluteFilePath)) return;\n  const readStream = fs.createReadStream(absoluteFilePath, \"utf8\");\n  const lineInterface = readlinePromises.createInterface(readStream);\n\n  await new Promise<void>((resolve) => {\n    const close = () => {\n      lineInterface.close();\n    };\n\n    lineInterface.addListener(\"close\", () => {\n      // NB: this calls when you call close, as well as whenever\n      resolve();\n    });\n\n    // TODO: how can I give the line number somehow?\n    lineInterface.addListener(\"line\", (line) => withLine(line, close));\n  });\n\n  lineInterface.removeAllListeners();\n}",
+  "description": "Function to read any file per line.\n\nResolves when close is called or at the end of the file.",
+  "id": "xrlpscldfoeckszzbmpeopop"
+}

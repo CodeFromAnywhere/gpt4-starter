@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.calculateDeviceName=void 0;var convert_case_1=require("convert-case"),model_types_1=require("model-types"),calculateDeviceName=function(e,c){return(0,convert_case_1.slugify)("".concat(c.os.name,"-").concat(c.browser.name,"-").concat(e.country,"-").concat(e.region,"-").concat(e.city,"-").concat(e.ip,"-").concat((0,model_types_1.generateRandomString)(4)))};exports.calculateDeviceName=calculateDeviceName;
+//# sourceMappingURL=calculateDeviceName.js.map

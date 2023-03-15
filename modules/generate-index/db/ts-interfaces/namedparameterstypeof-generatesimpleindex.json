@@ -1,0 +1,79 @@
+{
+  "createdAt": 1677581212207,
+  "updatedAt": 1677581212207,
+  "deletedAt": 0,
+  "createdFirstAt": 1677581212207,
+  "id": "namedparameterstypeof-generatesimpleindex",
+  "name": "NamedParameters<typeof generateSimpleIndex>",
+  "slug": "namedparameterstypeof-generatesimpleindex",
+  "operationRelativeTypescriptFilePath": "src/generateSimpleIndex.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "operationName": {
+              "type": "string",
+              "description": "if given, just exports * from those"
+            },
+            "manualProjectRoot": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "operationName"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "operationName",
+                "required": true,
+                "schema": {
+                  "fullComment": "if given, just exports * from those",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "manualProjectRoot",
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof generateSimpleIndex>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

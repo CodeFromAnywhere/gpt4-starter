@@ -1,0 +1,52 @@
+{
+  "createdAt": 1678330798697,
+  "updatedAt": 1678330798697,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330798697,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "videoFileExtensions",
+  "slug": "video-file-extensions",
+  "operationRelativeTypescriptFilePath": "src/extensions.ts",
+  "type": {
+    "rawType": "string[]",
+    "typeDefinition": {
+      "optional": false,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "allOf": [
+          {
+            "transform": [
+              "trim"
+            ]
+          },
+          {
+            "minLength": 1
+          }
+        ]
+      }
+    },
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "items": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "value": "[\n  //mp4,\n  \".avi\",\n  \".mkv\",\n  \".wmv\",\n  \".mov\",\n  \".flv\",\n  \".mpeg\",\n  \".mpg\",\n  \".m4v\",\n  \".webm\",\n]",
+  "description": "",
+  "id": "edtyflwbhbmcszquwleujbfl"
+}

@@ -1,0 +1,72 @@
+{
+  "createdAt": 1678330503805,
+  "updatedAt": 1678330503805,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330503805,
+  "id": "renameresult",
+  "name": "RenameResult",
+  "slug": "renameresult",
+  "operationRelativeTypescriptFilePath": "src/renameFileCollection.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\nexport type RenameResult = {\n  absolutePath: string;\n  status: string;\n  newAbsolutePath?: string;\n};",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absolutePath": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "newAbsolutePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absolutePath",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absolutePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "status",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "newAbsolutePath",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "RenameResult",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

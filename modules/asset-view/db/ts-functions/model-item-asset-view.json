@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678041649942,
+  "updatedAt": 1678041649942,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041649942,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/ModelItemAssetView.tsx",
+  "commentsInside": [],
+  "rawText": " <T extends AugmentedAnyModelType>(props: {\n  item: T;\n  backendAsset?: BackendAsset;\n  hideDownloadLink?: boolean;\n  className?: string;\n}) => {\n  const { backendAsset, item, hideDownloadLink, className } = props;\n\n  return backendAsset ? (\n    <AssetView\n      asset={backendAsset}\n      projectRelativeReferencingFilePath={item.projectRelativePath}\n      hideDownloadLink={hideDownloadLink}\n      className={className}\n    />\n  ) : null;\n}",
+  "name": "ModelItemAssetView",
+  "slug": "model-item-asset-view",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element | null",
+    "typeDefinition": {
+      "optional": true,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 442,
+    "lines": 17,
+    "bytes": 442,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 17,
+    "numberOfFiles": 1
+  },
+  "id": "nerieddgejueohwdrjwzfygr"
+}

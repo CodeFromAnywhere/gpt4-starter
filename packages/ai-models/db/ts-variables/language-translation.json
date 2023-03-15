@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678369210190,
+  "updatedAt": 1678369210190,
+  "deletedAt": 0,
+  "createdFirstAt": 1678369210190,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "languageTranslation",
+  "slug": "language-translation",
+  "operationRelativeTypescriptFilePath": "src/languageTranslation.ts",
+  "type": {
+    "rawType": "(text: string, targetLanguage: string) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  text: string,\n  targetLanguage: string\n) => {\n  return textToText(`Please translate the following text into ${targetLanguage}:\n  \n${text}`);\n}",
+  "description": "Might very well be using a LLM Prompt, but there are more niche models that might do a better job, more efficiently, more cheaply, more performantly.",
+  "id": "ipmritltatrazldzbcsjthua"
+}

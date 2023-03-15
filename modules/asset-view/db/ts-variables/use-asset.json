@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041655513,
+  "updatedAt": 1678041655513,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041655513,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "useAsset",
+  "slug": "use-asset",
+  "operationRelativeTypescriptFilePath": "src/useAsset.ts",
+  "type": {
+    "rawType": "(asset: import(\"/Users/clarity/os/operations/tools/asset/asset-type/build/Asset\").Asset | undefined, projectRelativeReferencingFilePath?: string | null | undefined, isNextStaticProductionBuild?: boolean | undefined) => { rawText: string | null; type: import(\"/Users/clarity/os/operations/tools/asset/asset-type/build/Asset\").AssetType | undefined; downloadUrl: string | undefined; src: string | undefined; extension: string | undefined; } | undefined",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  asset: Asset | undefined,\n  projectRelativeReferencingFilePath?: string | null,\n  isNextStaticProductionBuild?: boolean\n) => {\n  if (!asset || !projectRelativeReferencingFilePath) return;\n\n  const { src, downloadUrl } = getSrc(\n    asset,\n    projectRelativeReferencingFilePath,\n    isNextStaticProductionBuild\n  );\n\n  const extension = getExtensionFromAsset(asset);\n\n  const assetInfo = useAssetInfo(src, asset.originalFilename);\n\n  const rawText = assetInfo?.rawText || null;\n  const type = asset.type || assetInfo?.type;\n\n  return { rawText, type, downloadUrl, src, extension };\n}",
+  "description": "",
+  "id": "nzktiquhhgmslqwkzfqqdugm"
+}

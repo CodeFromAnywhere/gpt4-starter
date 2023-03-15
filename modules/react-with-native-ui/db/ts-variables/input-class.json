@@ -1,0 +1,41 @@
+{
+  "createdAt": 1668333705054,
+  "updatedAt": 1668333705054,
+  "deletedAt": 0,
+  "createdFirstAt": 1668333705054,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "inputClass",
+  "slug": "input-class",
+  "operationRelativeTypescriptFilePath": "src/general.ts",
+  "type": {
+    "rawType": "String",
+    "typeDefinition": {
+      "optional": false,
+      "type": "string",
+      "allOf": [
+        {
+          "transform": [
+            "trim"
+          ]
+        },
+        {
+          "minLength": 1
+        }
+      ]
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": true,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "type": "string"
+    }
+  },
+  "value": "`w-full ${bareInputClass}`",
+  "description": "",
+  "id": "ycljmmnauwwluiugeigzucpk"
+}

@@ -1,0 +1,65 @@
+{
+  "createdAt": 1678331597957,
+  "updatedAt": 1678331597957,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331597957,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getExplorableFilesWithContext",
+  "slug": "get-explorable-files-with-context",
+  "operationRelativeTypescriptFilePath": "src/getExplorableFilesWithContext.ts",
+  "type": {
+    "rawType": "{ (functionContext: import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/FunctionContext\").FunctionContext, query?: string | undefined): Promise<import(\"/Users/clarity/os/operations/tools/purpose/search/search-types/build/SearchResult\").SearchResult[]>; config: { isPublic: boolean; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "isPublic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "isPublic"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  functionContext: FunctionContext,\n  query?: string\n): Promise<SearchResult[]> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return [];\n  }\n  const explorableBasePaths =\n    getExplorableBasePathsWithContext(functionContext);\n\n  const filePaths = (\n    await explore({\n      basePath: explorableBasePaths.map((x) =>\n        path.join(projectRoot, x.projectRelativePath)\n      ),\n      ignore: [\n        ...generatedFolders,\n        \"db\",\n        \"cloned\",\n        \"backups\",\n        \"bundled\",\n        \"buntest\",\n      ],\n      readmeOnTop: true,\n      search: query || undefined,\n      extension: [\"md\", \"ts\", \"tsx\"],\n    })\n  ).map((x) => x.path);\n\n  const filtered = filePaths.filter(onlyUnique2<string>(isFileCollection));\n\n  const searchResults = filtered.map((absolutePath) => {\n    const relativePath = makeRelative(absolutePath, projectRoot);\n    const result: SearchResult = {\n      title: `${relativePath}`,\n      url: `/${relativePath}`,\n      description: undefined, //Could add some summary here from frontmatter, but might be time consuming\n    };\n\n    return result;\n  });\n\n  return searchResults;\n}",
+  "description": "Gets explorable file collections...",
+  "id": "pieinpjyhwfvhopbimqkzaav"
+}

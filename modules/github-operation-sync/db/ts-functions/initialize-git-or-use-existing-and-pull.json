@@ -1,0 +1,56 @@
+{
+  "createdAt": 1673794222638,
+  "updatedAt": 1673794222638,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794222638,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/initializeGitOrUseExistingAndPull.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  dir: string,\n  remoteUrl: string\n) => {\n  /** create simplegit options */\n  const options: Partial<SimpleGitOptions> = {\n    baseDir: dir,\n    binary: \"git\",\n    maxConcurrentProcesses: 6,\n    trimmed: false,\n  };\n  const gitBackupFolder = path.resolve(dir, \".git.backup\");\n  /** if the git.backup folder exists */\n  if (fs.existsSync(gitBackupFolder)) {\n    /** rename it to .git */\n    fs.renameSync(path.resolve(dir, \".git.backup\"), path.resolve(dir, \".git\"));\n    /** then add everything, commit and force pull */\n    const git: SimpleGit = simpleGit(options);\n    await git.pull(\"origin\", \"main\", [\"--force\"]);\n  } else {\n    /** if backup folder doesn't exist */\n    const gitFolder = path.resolve(dir, \".git\");\n    if (fs.existsSync(gitFolder)) {\n      fs.rmSync(gitFolder, { recursive: true, force: true });\n    }\n    const git: SimpleGit = simpleGit(options);\n    await git.init().addRemote(\"origin\", remoteUrl);\n    await git.pull(\"origin\", \"main\", [\"--force\"]);\n  }\n}",
+  "name": "initializeGitOrUseExistingAndPull",
+  "slug": "initialize-git-or-use-existing-and-pull",
+  "parameters": [
+    {
+      "name": "dir",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    },
+    {
+      "name": "remoteUrl",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 989,
+    "lines": 30,
+    "bytes": 989,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 33,
+    "linesPerFile": 30,
+    "numberOfFiles": 1
+  },
+  "id": "qsrzvijvnidirlpvckydezno"
+}

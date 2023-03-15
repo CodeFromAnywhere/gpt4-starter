@@ -1,0 +1,24 @@
+{
+  "createdAt": 1668336485313,
+  "updatedAt": 1668336485313,
+  "deletedAt": 0,
+  "createdFirstAt": 1668336485313,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "resetString",
+  "slug": "reset-string",
+  "operationRelativeTypescriptFilePath": "src/general.ts",
+  "type": {
+    "rawType": "String",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "\"\\x1b[0m\"",
+  "description": "",
+  "id": "nlkfxatmkoekvizjudgmcepn"
+}

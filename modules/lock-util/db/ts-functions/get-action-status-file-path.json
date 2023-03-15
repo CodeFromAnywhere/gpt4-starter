@@ -1,0 +1,50 @@
+{
+  "createdAt": 1678331275795,
+  "updatedAt": 1678331275795,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331275795,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getActionStatusFilePath.ts",
+  "commentsInside": [],
+  "rawText": " (absoluteFilePath: string) => {\n  const parsedPath = path.parse(absoluteFilePath);\n  const filePath = path.join(\n    parsedPath.dir,\n    `${parsedPath.name}${lockfileSuffix}`\n  );\n  return filePath;\n}",
+  "name": "getActionStatusFilePath",
+  "slug": "get-action-status-file-path",
+  "parameters": [
+    {
+      "name": "absoluteFilePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "String",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/String"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 201,
+    "lines": 8,
+    "bytes": 201,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 8,
+    "numberOfFiles": 1
+  },
+  "id": "olaqzucptluhxmhhmszcgpwi"
+}

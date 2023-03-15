@@ -1,0 +1,43 @@
+{
+  "createdAt": 1678331030997,
+  "updatedAt": 1678331030997,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331030997,
+  "id": "messagingchannel",
+  "name": "MessagingChannel",
+  "slug": "messagingchannel",
+  "operationRelativeTypescriptFilePath": "src/types.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\nexport type MessagingChannel = typeof availableMessagingChannels[number];",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "string",
+      "enum": [
+        "whatsapp",
+        "email",
+        "sms"
+      ]
+    },
+    "simplifiedSchema": {
+      "enum": [
+        "whatsapp",
+        "email",
+        "sms"
+      ],
+      "type": "string"
+    },
+    "typeCoverage": 0,
+    "rawType": "MessagingChannel",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

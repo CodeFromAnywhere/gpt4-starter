@@ -1,0 +1,33 @@
+{
+  "createdAt": 1674033626628,
+  "updatedAt": 1674033626628,
+  "deletedAt": 0,
+  "createdFirstAt": 1674033626628,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "findJsonInMarkdown",
+  "slug": "find-json-in-markdown",
+  "operationRelativeTypescriptFilePath": "src/findJsonInMarkdown.ts",
+  "type": {
+    "rawType": "<T>(text?: string | undefined) => T | undefined",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "<T>(text?: string): T | undefined => {\n  if (!text) return;\n  const trimmed = text.trim();\n\n  const jsonFirstTry = tryParseJson<T>(trimmed);\n\n  if (jsonFirstTry) {\n    return jsonFirstTry;\n  }\n\n  // find first codeblock (```code```)\n  const codeblocks = findCodeblocks(trimmed);\n\n  const firstCodeblock = codeblocks[0]\n    ? trimCodeblock(codeblocks[0])\n    : undefined;\n\n  const secondTryJson = firstCodeblock\n    ? tryParseJson<T>(firstCodeblock)\n    : undefined;\n\n  if (secondTryJson) {\n    return secondTryJson;\n  }\n  // if no codeblocks were found, find codespans\n  const codespans = findCodespans(trimmed);\n\n  const codespan = codespans[0]?.trim().replaceAll(\"&quot;\", '\"');\n  const thirdTryJson = tryParseJson<T>(codespan);\n\n  if (thirdTryJson) {\n    return thirdTryJson;\n  }\n  const jsonRegex = /\\{(?:[^{}]|(?:\\{[^{}]*\\}))*\\}/;\n  const matches = trimmed.match(jsonRegex);\n  const firstMatch = matches?.[0];\n\n  const fourthTryJson = firstMatch ? tryParseJson<T>(firstMatch) : undefined;\n\n  if (fourthTryJson) {\n    return fourthTryJson;\n  }\n\n  return;\n}",
+  "description": "For good accuracy, try to get a markdown with a single JSON, preferably without any other codespans.",
+  "id": "mvlozmpmygmgvjalvhtttsff"
+}

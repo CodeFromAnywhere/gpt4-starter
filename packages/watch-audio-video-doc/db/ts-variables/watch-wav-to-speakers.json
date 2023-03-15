@@ -1,0 +1,88 @@
+{
+  "createdAt": 1678330809092,
+  "updatedAt": 1678330809092,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330809092,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "watchWavToSpeakers",
+  "slug": "watch-wav-to-speakers",
+  "operationRelativeTypescriptFilePath": "src/watchWavToSpeakers.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/ProjectWatcher\").ProjectWatcher<any>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "startupStrategy": {
+          "enum": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "x-enumNames": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "type": "string"
+        },
+        "filter": {
+          "type": "object",
+          "properties": {}
+        },
+        "config": {}
+      },
+      "required": [
+        "filter",
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "startupStrategy",
+          "required": false,
+          "schema": {
+            "enum": [
+              "ignore",
+              "sync",
+              "async",
+              "queue"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "filter",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  eventName,\n  absolutePath,\n  isStartup\n) => {\n  if (isLocked(absolutePath)) {\n    return false;\n  }\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"File doesn't exist (anymore)\" };\n  }\n  const speakerSeparationResult = await speakerSeparation(absolutePath);\n  console.log({ speakerSeparationResult });\n}",
+  "description": "Watch wav files anywhere and add speaker separation output if that isn't there yet",
+  "id": "bgopmqeuqbckmaslfrffocde"
+}

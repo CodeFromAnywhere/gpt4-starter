@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678331383110,
+    "updatedAt": 1678331383110,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331383110,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/personAttachInheritedGroups.ts",
+    "comment": "This special map function attaches all groups (including public and inherited) for a person, on top of just the ones that are found int `Person.groupSlugs` (if any)",
+    "rawStatement": "export const personAttachInheritedGroups = (\n  person: Person,\n  groups: Group[]\n): Person => {\n  const allGroups = getAllGroupsIncludingInheritedRecursive(\n    groups,\n    person.groupSlugs\n  );\n\n  return {\n    ...person,\n    groupSlugs: allGroups.map((x) => x.slug),\n    groups: allGroups,\n  };\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 4,
+    "lastLine": 6,
+    "id": "lnvxznmctwrgbipffhddhffd"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041926587,
+  "updatedAt": 1678041926587,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041926587,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "readdir",
+  "slug": "readdir",
+  "operationRelativeTypescriptFilePath": "src/fs.ts",
+  "type": {
+    "rawType": "typeof import(\"fs\").readdir.__promisify__",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "promisify(gracefulFs.readdir)",
+  "description": "",
+  "id": "ccuabgwnmjfbmoqvhavvvnkb"
+}

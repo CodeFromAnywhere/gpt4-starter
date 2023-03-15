@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041644607,
+  "updatedAt": 1678041644607,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041644607,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "AssetView",
+  "slug": "asset-view",
+  "operationRelativeTypescriptFilePath": "src/AssetView.tsx",
+  "type": {
+    "rawType": "(props: { transcription?: import(\"/Users/clarity/os/operations/tools/ai/ai-types/build/Transcription\").Transcription | undefined; asset: import(\"/Users/clarity/os/operations/tools/asset/asset-type/build/Asset\").Asset; className?: string | undefined; projectRelativeReferencingFilePath?: string | undefined; hideDownloadLink?: boolean | undefined; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: {\n  transcription?: Transcription;\n  asset: Asset;\n  className?: string;\n  /**\n   * Must be provided for relative assets to know the location\n   *\n   * Must also be provided for assets with absolute URL, even though it's then unused.\n   */\n  projectRelativeReferencingFilePath?: string;\n  hideDownloadLink?: boolean;\n}) => {\n  const {\n    asset,\n    className,\n    projectRelativeReferencingFilePath,\n    hideDownloadLink,\n    transcription,\n  } = props;\n\n  const videoRef = useRef<HTMLVideoElement>(null);\n  const audioRef = useRef<HTMLAudioElement>(null);\n\n  // NB: time in seconds\n  const [time, setTime] = useState(0);\n  const result = useAsset(asset, projectRelativeReferencingFilePath, !isDev);\n  const { downloadUrl, rawText, src, type, extension } =\n    destructureOptionalObject(result);\n\n  // console.log({ src });\n  const correctRef =\n    type === \"video\" ? videoRef : type === \"audio\" ? audioRef : undefined;\n\n  const sizeText =\n    asset.sizeBytes !== undefined\n      ? `(${readableSize(asset.sizeBytes)})`\n      : undefined;\n\n  const downloadText = \" ⬇️ Download\";\n\n  const onTimeUpdate = useCallback(() => {\n    if (!correctRef) return;\n    const currentTime = correctRef.current?.currentTime;\n    if (!currentTime) return;\n    console.log(\"time update\", { currentTime });\n    setTime(currentTime);\n  }, [correctRef?.current?.id]);\n\n  const currentSentence = transcription?.sentences.find(\n    (item) => item.startAt < time * 1000 && item.endAt > time * 1000\n  )?.text;\n  const currentWord = transcription?.words.find(\n    (item) => item.startAt < time * 1000 && item.endAt > time * 1000\n  )?.text;\n  // console.log({ result, time, type, src, correctRef });\n\n  return (\n    <Span style={{ position: \"relative\" }}>\n      <Div>\n        {downloadUrl && !hideDownloadLink ? (\n          <Div style={{ padding: \"5px\" }}>\n            <A target=\"_blank\" href={downloadUrl}>\n              {downloadText} {sizeText}\n            </A>\n          </Div>\n        ) : null}\n\n        {type === \"image\" && src && (\n          <img\n            src={src}\n            className={className || \"w-40\"}\n            style={{ aspectRatio: \"auto\" }}\n          />\n        )}\n\n        {currentWord ? (\n          <P style={{ color: \"lightgreen\", fontSize: 40 }}>{currentWord}</P>\n        ) : null}\n        {currentSentence ? (\n          <P style={{ color: \"lightgreen\" }}>{currentSentence}</P>\n        ) : null}\n\n        {type === \"audio\" && src && (\n          <audio\n            id=\"audiothingy\"\n            ref={audioRef}\n            controls\n            preload=\"auto\"\n            src={src}\n            onTimeUpdate={onTimeUpdate}\n          />\n        )}\n        {type === \"video\" && src && (\n          <video\n            id=\"videothingy\"\n            ref={videoRef}\n            preload=\"auto\"\n            onTimeUpdate={onTimeUpdate}\n            style={{ aspectRatio: \"auto\" }}\n            className={className || \"w-40\"}\n            // not always available, should I check first somehow?\n            //poster={src.replace(\".mp4\", \".placeholder.jpeg\")}\n            controls\n            src={src}\n          />\n        )}\n\n        {type === \"text\" && rawText ? (\n          <MarkdownCodeblock text={rawText} extension={extension} />\n        ) : null}\n\n        {/* LATER: render PDF renderer here */}\n        {type === \"other\" && extension === \"pdf\" ? null : null}\n\n        {src === undefined ? <P>Asset src not found</P> : null}\n      </Div>\n\n      {transcription ? (\n        <Div>\n          {transcription.sentences.map((sentence, index) => (\n            <TranscriptionSentence\n              sentence={sentence}\n              time={time}\n              correctRef={correctRef}\n              transcription={transcription}\n              key={`sentence-${index}`}\n            />\n          ))}\n        </Div>\n      ) : null}\n    </Span>\n  );\n}",
+  "description": "Views an asset in the proper way.\n\nIf you also provide a Transcription, then:\n\n- gets the play time from the player and match it with the sentence and word (hook audio time to the component, preferably 10fps minimum)\n- highlights both the sentence and word in the text\n- makes every word clickable, going to the right place in the video",
+  "id": "rngzcnnsnruxbnjzmwtjgkio"
+}

@@ -1,0 +1,47 @@
+{
+  "createdAt": 1678330218742,
+  "updatedAt": 1678330218742,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330218742,
+  "isApiExposed": false,
+  "isExported": true,
+  "explicitTypeName": "PromptFunction",
+  "operationRelativeTypescriptFilePath": "src/prompts.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  isDeferred?: boolean\n) => {\n  const result = await processChatGptPrompt({\n    isDeferred,\n    contextualPromptSlug: \"outline-to-investor-pitch\",\n  });\n\n  return result;\n}",
+  "name": "outlineToInvestorPitch",
+  "slug": "outline-to-investor-pitch",
+  "parameters": [
+    {
+      "name": "isDeferred",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 181,
+    "lines": 10,
+    "bytes": 181,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 18,
+    "linesPerFile": 10,
+    "numberOfFiles": 1
+  },
+  "id": "lrmxxriturbyghpeujspwvvi"
+}

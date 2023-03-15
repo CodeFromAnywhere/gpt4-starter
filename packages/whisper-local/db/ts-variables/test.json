@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330962717,
+  "updatedAt": 1678330962717,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330962717,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "test",
+  "slug": "test",
+  "operationRelativeTypescriptFilePath": "src/whisperLocalCpp.test.ts",
+  "type": {
+    "rawType": "() => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const audioFilePath1 = path.join(__dirname, \"..\", \"assets\", \"nick.m4a\");\n  const audioFilePath2 = path.join(\n    __dirname,\n    \"..\",\n    \"assets\",\n    \"knowledge-base.m4a\"\n  );\n  const result1 = await compressConvert(audioFilePath1, {\n    is16bitWav: true,\n    targetFormat: \"wav\",\n  });\n  const result2 = await compressConvert(audioFilePath2, {\n    is16bitWav: true,\n    targetFormat: \"wav\",\n  });\n\n  if (result1) {\n    await whisperLocalCpp({ audioFilePath: result1 });\n  }\n  if (result2) {\n    await whisperLocalCpp({ audioFilePath: result2 });\n  }\n}",
+  "description": "",
+  "id": "hgbouwjnletcxcxytrpdsqng"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331092289,
+  "updatedAt": 1678331092289,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331092289,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "gpt3",
+  "slug": "gpt3",
+  "operationRelativeTypescriptFilePath": "src/gpt3.ts",
+  "type": {
+    "rawType": "(input: string, config?: { model?: any; isInstant?: boolean | undefined; } | undefined) => Promise<{ isSuccessful: boolean; message?: string | undefined; result?: string | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  input: string,\n\n  config?: {\n    /**\n     * Defaults to the first in the list of text-models\n     */\n    model?: OpenAiTextCompletionModelEnum;\n    isInstant?: boolean;\n  }\n): Promise<{ isSuccessful: boolean; message?: string; result?: string }> => {\n  const tokensAmount = calculateTokenCount(input);\n  // NB: can differ per model!\n  const modelMaxTokens = 2048;\n\n  if (tokensAmount > modelMaxTokens) {\n    const message = `GPT3: Too long: ${tokensAmount} tokens`;\n    console.log(message);\n    return { isSuccessful: false, message };\n  }\n\n  const { openai, isSuccessful, message } = await getOpenaiInstance();\n\n  if (!openai) {\n    return { isSuccessful, message };\n  }\n\n  const maxTokens = 4097 - tokensAmount;\n  // it's hard to estimate the amount of tokens used in the response, but it'd be good to take into account that the response takes some tokens too\n  const expectedTokens = Math.round(tokensAmount * 1.5);\n\n  // By default, create a delay depending on the tokens expected\n  if (!config?.isInstant) {\n    // NB: maybe limit differs per model\n    const tokenLimitPerMinute = 250000;\n    const expectedRoundtripMs = 500;\n    const factorOfMinuteTokens = expectedTokens / tokenLimitPerMinute;\n    // wait the amount to never hit the limit, on average.\n    const msToWait =\n      Math.round(60000 * factorOfMinuteTokens) - expectedRoundtripMs;\n    /*\n    console.log({\n      tokensAmount,\n      expectedTokens,\n      tokenLimitPerMinute,\n      expectedRoundtripMs,\n      factorOfMinuteTokens,\n      msToWait,\n      msExplanation: `Math.round(60000 * factorOfMinuteTokens) - expectedRoundtripMs`,\n    });*/\n    if (msToWait > 0) {\n      await new Promise<void>((resolve) =>\n        setTimeout(() => resolve(), msToWait)\n      );\n    }\n  }\n  const executionId = generateUniqueId();\n  const performance: (PerformanceItem | undefined)[] = [];\n  getNewPerformance(\"start\", executionId, true);\n\n  const response = await openai\n    .createCompletion({\n      model: config?.model || openAiTextCompletionModels[0],\n      prompt: input,\n      max_tokens: maxTokens,\n    })\n    .catch((e) => {\n      // TODO: APPLY EXPONENTIAL BACKOFF HERE\n\n      console.log({\n        status: e.response?.status,\n        statusText: e.response?.statusText,\n        data: e.response?.data,\n      });\n    });\n\n  performance.push(getNewPerformance(\"openai-api\", executionId));\n  cleanupTimer(executionId);\n  console.log({ performance });\n\n  //console.log({ usage: response?.data?.usage });\n  const result = response?.data?.choices?.[0]?.text;\n  return { result, isSuccessful: true };\n}",
+  "description": "Simplified api for gpt3 from open AI\n\nRate limit reached for default-text-davinci-003 in organization org-Z2Wq1CTmyzHDI6SApqk5gBLs on tokens per min. Limit: 250000.000000 / min. Current: 275070.000000 / min. Contact support@openai.com if you continue to have issues.\n\nTODO: log all api calls",
+  "id": "ocqglabtzvcyyqtmrnictclp"
+}

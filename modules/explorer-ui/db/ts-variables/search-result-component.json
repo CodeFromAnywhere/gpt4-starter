@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331554421,
+  "updatedAt": 1678331554421,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331554421,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "SearchResultComponent",
+  "slug": "search-result-component",
+  "operationRelativeTypescriptFilePath": "src/SearchResultComponent.tsx",
+  "type": {
+    "rawType": "(props: { searchResult: import(\"/Users/clarity/os/operations/tools/purpose/search/search-types/build/SearchResult\").SearchResult; index: number; }) => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(props: {\n  searchResult: SearchResult;\n  index: number;\n}) => {\n  const { index, searchResult } = props;\n  return (\n    <Div key={`index${index}`}>\n      <ALink href={searchResult.url}>{searchResult.title}</ALink>\n\n      {/* {searchResult.description ? (\n        <Div>{renderMarkdownContent(searchResult.description, {})}</Div>\n      ) : null} */}\n    </Div>\n  );\n}",
+  "description": "If you click on a site that up and running, it should startup via pm2 before being redirected there",
+  "id": "anhtcsgaurllnwywvifdrcye"
+}

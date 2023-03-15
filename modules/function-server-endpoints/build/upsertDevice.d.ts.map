@@ -1,0 +1,1 @@
+{"version":3,"file":"upsertDevice.d.ts","sourceRoot":"","sources":["../src/upsertDevice.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,uBAAuB,CAAC;AAChD;;;;GAIG;AAEH,OAAO,EAAE,OAAO,EAAE,MAAM,aAAa,CAAC;AACtC,OAAO,EAAE,MAAM,EAAmB,MAAM,YAAY,CAAC;AAcrD;;;;;;;;;;GAUG;AACH,eAAO,MAAM,YAAY,kBACR,OAAO,KACrB,QAAQ,QAAQ,MAAM,CAAC,GAAG,SAAS,CA6FrC,CAAC"}

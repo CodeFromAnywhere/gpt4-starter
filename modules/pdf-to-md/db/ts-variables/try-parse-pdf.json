@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331354733,
+  "updatedAt": 1678331354733,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331354733,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "tryParsePdf",
+  "slug": "try-parse-pdf",
+  "operationRelativeTypescriptFilePath": "src/convertPdfToMd.ts",
+  "type": {
+    "rawType": "(inputPdfFilePath: string) => Promise<import(\"/Users/clarity/os/operations/node_modules/@types/pdf-parse/index\").Result | undefined>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  inputPdfFilePath: string\n): Promise<parsePdf.Result | undefined> => {\n  try {\n    await lock(inputPdfFilePath, \"busy\", \"tryParsePdf\", [inputPdfFilePath]);\n    let dataBuffer = await fs.readFile(inputPdfFilePath);\n    const result = await parsePdf(dataBuffer);\n    await unlock(inputPdfFilePath);\n    return result;\n  } catch (e) {\n    console.log(`couldn't parse pdf`, { e });\n    await unlock(inputPdfFilePath);\n\n    return;\n  }\n}",
+  "description": "",
+  "id": "uisjarqdkpigkhiupuapiqem"
+}

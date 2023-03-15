@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673794211361,
+  "updatedAt": 1673794211361,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794211361,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getAllOperations",
+  "slug": "get-all-operations",
+  "operationRelativeTypescriptFilePath": "src/getAllOperations.ts",
+  "type": {
+    "rawType": "() => Promise<import(\"/Users/clarity/os/operations/tools/types/code-types/build/Operation\").Operation[]>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (): Promise<Operation[]> => {\n  const operations = await db.get(\"Operation\");\n  return operations;\n}",
+  "description": "",
+  "id": "didxkvqyxjwdfcdepjdreyao"
+}

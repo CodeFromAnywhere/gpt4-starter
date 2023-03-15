@@ -1,0 +1,43 @@
+{
+  "createdAt": 1678505780692,
+  "updatedAt": 1678505780692,
+  "deletedAt": 0,
+  "createdFirstAt": 1678505780692,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/insertPerson.ts",
+  "commentsInside": [],
+  "rawText": " async (person: Creation<Person>) => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false };\n  }\n\n  const fullItem = addDefaultValues(person);\n  const storingItem = makeStoringItem(fullItem) as Person;\n\n  const isSuccessful = await writeJsonToFile(\n    getPersonPath(projectRoot, person.slug),\n    storingItem\n  );\n  return { isSuccessful };\n}",
+  "name": "setPerson",
+  "slug": "set-person",
+  "parameters": [
+    {
+      "name": "person",
+      "schema": {
+        "$ref": "#/definitions/Creation%3CPerson%3E"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 387,
+    "lines": 15,
+    "bytes": 387,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 15,
+    "numberOfFiles": 1
+  },
+  "id": "roskkcvrgztoshjlfsuucasa"
+}

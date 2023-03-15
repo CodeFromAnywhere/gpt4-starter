@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678331561091,
+  "updatedAt": 1678331561091,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331561091,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/SettingsPage.tsx",
+  "commentsInside": [],
+  "rawText": " () => {\n  const queueStatusQuery = queries.useGetQueueStatus();\n  const queueStatus = queueStatusQuery?.data?.result;\n\n  const [time, setTime] = useState(Date.now());\n  const secondsAgo = queueStatus\n    ? Math.round((time - queueStatus.updatedAt) / 1000)\n    : 0;\n  const minuteAgo = secondsAgo >= 60;\n  // NB: refetch every minute\n  useEffect(() => {\n    if (minuteAgo) {\n      queueStatusQuery.refetch();\n    }\n  }, [minuteAgo]);\n\n  useEffect(() => {\n    const intervalId = setInterval(() => {\n      setTime(Date.now());\n    }, 1000);\n\n    return () => clearInterval(intervalId);\n  }, []);\n\n  return queueStatus ? (\n    <Div>\n      <P className=\"font-bold\">\n        Queue (last checked: {secondsAgo} seconds ago)\n      </P>\n      <pre>{JSON.stringify(queueStatus, undefined, 2)}</pre>\n    </Div>\n  ) : null;\n}",
+  "name": "QueueStatusComponent",
+  "slug": "queue-status-component",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element | null",
+    "typeDefinition": {
+      "optional": true,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 813,
+    "lines": 33,
+    "bytes": 813,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 25,
+    "linesPerFile": 33,
+    "numberOfFiles": 1
+  },
+  "id": "aqbhnauaqvnbdzaorrjbeydr"
+}

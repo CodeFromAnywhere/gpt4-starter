@@ -1,0 +1,18 @@
+[
+  {
+    "createdAt": 1678330814281,
+    "updatedAt": 1678330814281,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330814281,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/watchWavWithoutMp3.ts",
+    "comment": "Find all wav everywhere without mp3, add mp3",
+    "rawStatement": "export const watchWavWithoutMp3: ProjectWatcher = async (\n  eventName,\n  absolutePath,\n  isStartup\n): Promise<string | undefined> => {\n  if (isLocked(absolutePath)) {\n    return;\n  }\n  if (!fs.existsSync(absolutePath)) {\n    return;\n  }\n  const result = await compressConvert(absolutePath, {\n    targetFormat: \"mp3\",\n    keepOriginal: true,\n  });\n\n  return result;\n};",
+    "parameters": {},
+    "types": [],
+    "firstLine": 7,
+    "lastLine": 9,
+    "id": "inyyddrslcpzdxgeyrzxckbq"
+  }
+]

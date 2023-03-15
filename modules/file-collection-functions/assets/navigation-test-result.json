@@ -1,0 +1,2917 @@
+[
+  {
+    "projectRelativePath": "",
+    "groupSlug": "admin",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [
+        {
+          "type": "folder",
+          "name": "assets",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "assets"
+        },
+        {
+          "type": "folder",
+          "name": "backups",
+          "firstFile": "README.md",
+          "canRead": true,
+          "projectRelativePath": "backups"
+        },
+        {
+          "type": "folder",
+          "name": "bundled",
+          "firstFile": "README.md",
+          "canRead": true,
+          "projectRelativePath": "bundled"
+        },
+        {
+          "type": "folder",
+          "name": "cloned",
+          "firstFile": ".DS_Store",
+          "canRead": true,
+          "projectRelativePath": "cloned"
+        },
+        {
+          "type": "folder",
+          "name": "db",
+          "firstFile": "README.md",
+          "canRead": true,
+          "projectRelativePath": "db"
+        },
+        {
+          "type": "folder",
+          "name": "hosts-util",
+          "firstFile": "OPERATION.md",
+          "canRead": true,
+          "projectRelativePath": "hosts-util"
+        },
+        {
+          "type": "folder",
+          "name": "installation",
+          "firstFile": "README.md",
+          "canRead": true,
+          "projectRelativePath": "installation"
+        },
+        {
+          "type": "folder",
+          "name": "knowledge",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge"
+        },
+        {
+          "type": "folder",
+          "name": "node_modules",
+          "firstFile": ".yarn-integrity",
+          "canRead": true,
+          "projectRelativePath": "node_modules"
+        },
+        {
+          "type": "folder",
+          "name": "operations",
+          "firstFile": ".DS_Store",
+          "canRead": true,
+          "projectRelativePath": "operations"
+        },
+        {
+          "type": "folder",
+          "name": "schemas",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "schemas"
+        },
+        {
+          "type": "file",
+          "name": "hosts.md",
+          "canRead": true,
+          "projectRelativePath": "hosts.md"
+        },
+        {
+          "type": "file",
+          "name": "project-root.code-workspace",
+          "canRead": true,
+          "projectRelativePath": "project-root.code-workspace"
+        },
+        {
+          "type": "file",
+          "name": "public-bundle-config.json",
+          "canRead": true,
+          "projectRelativePath": "public-bundle-config.json"
+        },
+        {
+          "type": "file",
+          "name": "yarn.lock",
+          "canRead": true,
+          "projectRelativePath": "yarn.lock"
+        }
+      ],
+      "actualProjectRelativeFilePath": ""
+    }
+  },
+  {
+    "projectRelativePath": "operations/tools/cleanup/os-web",
+    "groupSlug": "admin",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [
+        {
+          "type": "folder",
+          "name": ".next",
+          "firstFile": "build-manifest.json",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/.next"
+        },
+        {
+          "type": "folder",
+          "name": "db",
+          "firstFile": "operation-index.json",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/db"
+        },
+        {
+          "type": "folder",
+          "name": "docs",
+          "firstFile": "db-web.md",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/docs"
+        },
+        {
+          "type": "folder",
+          "name": "node_modules",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/node_modules"
+        },
+        {
+          "type": "folder",
+          "name": "public",
+          "firstFile": ".DS_Store",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/public"
+        },
+        {
+          "type": "folder",
+          "name": "src",
+          "firstFile": "index.ts",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/src"
+        },
+        {
+          "type": "folder",
+          "name": "todo",
+          "firstFile": "fix-save-password.md",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/todo"
+        },
+        {
+          "type": "file",
+          "name": "env.local",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/env.local"
+        },
+        {
+          "type": "file",
+          "name": "next-env.d.ts",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/next-env.d.ts"
+        },
+        {
+          "type": "file",
+          "name": "next.config.js",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/next.config.js"
+        },
+        {
+          "type": "file",
+          "name": "operation.md",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/operation.md"
+        },
+        {
+          "type": "file",
+          "name": "package.json",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/package.json"
+        },
+        {
+          "type": "file",
+          "name": "postcss.config.js",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/postcss.config.js"
+        },
+        {
+          "type": "file",
+          "name": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/readme.md"
+        },
+        {
+          "type": "file",
+          "name": "tailwind.config.js",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/tailwind.config.js"
+        },
+        {
+          "type": "file",
+          "name": "tsconfig.json",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/tsconfig.json"
+        },
+        {
+          "type": "file",
+          "name": "yarn-error.log",
+          "canRead": true,
+          "projectRelativePath": "operations/tools/cleanup/os-web/yarn-error.log"
+        }
+      ],
+      "actualProjectRelativeFilePath": "operations/tools/cleanup/os-web"
+    }
+  },
+  {
+    "projectRelativePath": "assets/music",
+    "groupSlug": "admin",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [
+        {
+          "type": "folder",
+          "name": "bob100",
+          "firstFile": "01-is-this-love.mp3",
+          "canRead": true,
+          "projectRelativePath": "assets/music/bob100"
+        },
+        {
+          "type": "folder",
+          "name": "bohmer",
+          "firstFile": "bohmer-mix-1.mp3",
+          "canRead": true,
+          "projectRelativePath": "assets/music/bohmer"
+        },
+        {
+          "type": "folder",
+          "name": "pop",
+          "firstFile": "001-the-black-eyed-peas-i-gotta-feeling.mp3",
+          "canRead": true,
+          "projectRelativePath": "assets/music/pop"
+        },
+        {
+          "type": "folder",
+          "name": "tropical",
+          "firstFile": "01-michael-calfan-treasured-soul.mp3",
+          "canRead": true,
+          "projectRelativePath": "assets/music/tropical"
+        },
+        {
+          "type": "file",
+          "name": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "assets/music/readme.md",
+          "isPublic": true
+        }
+      ],
+      "actualProjectRelativeFilePath": "assets/music"
+    }
+  },
+  {
+    "projectRelativePath": "assets/images",
+    "groupSlug": "admin",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [
+        {
+          "type": "folder",
+          "name": "1920x2160",
+          "firstFile": "1389621044382.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/1920x2160"
+        },
+        {
+          "type": "folder",
+          "name": "ark",
+          "firstFile": "2017-01-11-05-36-32-4.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/ark"
+        },
+        {
+          "type": "folder",
+          "name": "coworksurf",
+          "firstFile": ".DS_Store",
+          "canRead": true,
+          "projectRelativePath": "assets/images/coworksurf"
+        },
+        {
+          "type": "folder",
+          "name": "designs",
+          "firstFile": ".DS_Store",
+          "canRead": true,
+          "projectRelativePath": "assets/images/designs"
+        },
+        {
+          "type": "folder",
+          "name": "fb",
+          "firstFile": "alex.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/fb"
+        },
+        {
+          "type": "folder",
+          "name": "giphy",
+          "firstFile": "distraction.gif",
+          "canRead": true,
+          "projectRelativePath": "assets/images/giphy"
+        },
+        {
+          "type": "folder",
+          "name": "haircorner-newlook",
+          "firstFile": "2017-01-11-05-37-04-1.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/haircorner-newlook"
+        },
+        {
+          "type": "folder",
+          "name": "logos",
+          "firstFile": "flying-heron.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/logos"
+        },
+        {
+          "type": "folder",
+          "name": "me-pics",
+          "firstFile": "harmen-small.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/me-pics"
+        },
+        {
+          "type": "folder",
+          "name": "nepal-october-2022",
+          "firstFile": ".DS_Store",
+          "canRead": true,
+          "projectRelativePath": "assets/images/nepal-october-2022"
+        },
+        {
+          "type": "folder",
+          "name": "new-folder-2",
+          "canRead": true,
+          "projectRelativePath": "assets/images/new-folder-2"
+        },
+        {
+          "type": "folder",
+          "name": "snowboard",
+          "firstFile": "snowboarder-1.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/snowboard"
+        },
+        {
+          "type": "folder",
+          "name": "travel",
+          "firstFile": "nicole.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/travel"
+        },
+        {
+          "type": "folder",
+          "name": "wallpaper",
+          "firstFile": "captura-de-pantalla-2017-10-27-a-las-19-45-23.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/wallpaper"
+        },
+        {
+          "type": "folder",
+          "name": "wijnand-clean-up-your-room",
+          "firstFile": "img-0043.JPG",
+          "canRead": true,
+          "projectRelativePath": "assets/images/wijnand-clean-up-your-room"
+        },
+        {
+          "type": "file",
+          "name": "1.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/1.jpg"
+        },
+        {
+          "type": "file",
+          "name": "12990842-10204671730428294-7475672997644347430-n.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/12990842-10204671730428294-7475672997644347430-n.jpg"
+        },
+        {
+          "type": "file",
+          "name": "2017-01-11-05-36-34-12.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/2017-01-11-05-36-34-12.jpg"
+        },
+        {
+          "type": "file",
+          "name": "2017-01-11-05-36-34-13.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/2017-01-11-05-36-34-13.jpg"
+        },
+        {
+          "type": "file",
+          "name": "2017-01-11-05-36-34-14.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/2017-01-11-05-36-34-14.jpg"
+        },
+        {
+          "type": "file",
+          "name": "2017-01-11-05-36-34-15.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/2017-01-11-05-36-34-15.jpg"
+        },
+        {
+          "type": "file",
+          "name": "223348-hermann-hesse-quote-i-can-think-i-can-wait-i-can-fast.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/223348-hermann-hesse-quote-i-can-think-i-can-wait-i-can-fast.jpg"
+        },
+        {
+          "type": "file",
+          "name": "378250-200.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/378250-200.png"
+        },
+        {
+          "type": "file",
+          "name": "5-lies-people-say-about-group-travel.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/5-lies-people-say-about-group-travel.jpg"
+        },
+        {
+          "type": "file",
+          "name": "559600.gif",
+          "canRead": true,
+          "projectRelativePath": "assets/images/559600.gif"
+        },
+        {
+          "type": "file",
+          "name": "ajaja.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/ajaja.jpg"
+        },
+        {
+          "type": "file",
+          "name": "ajajaj.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/ajajaj.jpg"
+        },
+        {
+          "type": "file",
+          "name": "alps.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/alps.jpg"
+        },
+        {
+          "type": "file",
+          "name": "amsterdam.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/amsterdam.jpg"
+        },
+        {
+          "type": "file",
+          "name": "annapurna-circuit-altitude-profile.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/annapurna-circuit-altitude-profile.png"
+        },
+        {
+          "type": "file",
+          "name": "annapurna.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/annapurna.jpg"
+        },
+        {
+          "type": "file",
+          "name": "app-store-badge-d0558d91.svg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/app-store-badge-d0558d91.svg"
+        },
+        {
+          "type": "file",
+          "name": "app-store-badge-svg.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/app-store-badge-svg.png"
+        },
+        {
+          "type": "file",
+          "name": "apple-iphone-package.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/apple-iphone-package.jpg"
+        },
+        {
+          "type": "file",
+          "name": "apps.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/apps.jpg"
+        },
+        {
+          "type": "file",
+          "name": "appstorebadge.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/appstorebadge.png"
+        },
+        {
+          "type": "file",
+          "name": "are-you-married-to-your-cell-phone-1040x326.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/are-you-married-to-your-cell-phone-1040x326.jpg"
+        },
+        {
+          "type": "file",
+          "name": "arnoudsceditcard.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/arnoudsceditcard.png"
+        },
+        {
+          "type": "file",
+          "name": "attention.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/attention.jpg"
+        },
+        {
+          "type": "file",
+          "name": "attentionspan.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/attentionspan.jpg"
+        },
+        {
+          "type": "file",
+          "name": "attentionspan2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/attentionspan2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "attentionspan3.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/attentionspan3.jpg"
+        },
+        {
+          "type": "file",
+          "name": "attentionspan4.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/attentionspan4.jpg"
+        },
+        {
+          "type": "file",
+          "name": "attentionspan5.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/attentionspan5.jpg"
+        },
+        {
+          "type": "file",
+          "name": "attentionspan6.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/attentionspan6.jpg"
+        },
+        {
+          "type": "file",
+          "name": "audience.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/audience.jpg"
+        },
+        {
+          "type": "file",
+          "name": "average-carbon-dioxide-emissions-grams-per-passenger-mile-usa-2008.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/average-carbon-dioxide-emissions-grams-per-passenger-mile-usa-2008.png"
+        },
+        {
+          "type": "file",
+          "name": "b8afa904-a9c9-45c3-9775-89266b20fa45.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/b8afa904-a9c9-45c3-9775-89266b20fa45.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bangalore.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bangalore.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bansko-dev-in-mountains.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bansko-dev-in-mountains.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bansko.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bansko.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bansko2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bansko2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bansko3.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bansko3.jpg"
+        },
+        {
+          "type": "file",
+          "name": "becks.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/becks.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bee-hive-hamburg.mp3",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bee-hive-hamburg.mp3"
+        },
+        {
+          "type": "file",
+          "name": "beehive.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/beehive.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bell.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bell.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "bender.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bender.jpg"
+        },
+        {
+          "type": "file",
+          "name": "berlin.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/berlin.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bigstock-aggressive-businessman-screami-69918049-613x358.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bigstock-aggressive-businessman-screami-69918049-613x358.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bike.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bike.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bike1.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bike1.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bike2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bike2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "birthdaycakeinface.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/birthdaycakeinface.jpg"
+        },
+        {
+          "type": "file",
+          "name": "blog.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/blog.jpg"
+        },
+        {
+          "type": "file",
+          "name": "blown.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/blown.jpg"
+        },
+        {
+          "type": "file",
+          "name": "blue-sunset-1440.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/blue-sunset-1440.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bogeskov-denmark.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bogeskov-denmark.jpg"
+        },
+        {
+          "type": "file",
+          "name": "budapest.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/budapest.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bugsbunn2-1.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bugsbunn2-1.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bugsbunn2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bugsbunn2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "bugsbunny.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/bugsbunny.jpg"
+        },
+        {
+          "type": "file",
+          "name": "casper.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/casper.png"
+        },
+        {
+          "type": "file",
+          "name": "cat.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/cat.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "cfa-flag.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/cfa-flag.png"
+        },
+        {
+          "type": "file",
+          "name": "change.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/change.jpg"
+        },
+        {
+          "type": "file",
+          "name": "chiangmai-old-city-l.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/chiangmai-old-city-l.jpg"
+        },
+        {
+          "type": "file",
+          "name": "clock.gif",
+          "canRead": true,
+          "projectRelativePath": "assets/images/clock.gif"
+        },
+        {
+          "type": "file",
+          "name": "code-from-himalaya.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/code-from-himalaya.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "code.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/code.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "coding.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/coding.jpg"
+        },
+        {
+          "type": "file",
+          "name": "codingsmall.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/codingsmall.png"
+        },
+        {
+          "type": "file",
+          "name": "codingsquare.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/codingsquare.png"
+        },
+        {
+          "type": "file",
+          "name": "communication-1.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/communication-1.jpg"
+        },
+        {
+          "type": "file",
+          "name": "communication.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/communication.jpg"
+        },
+        {
+          "type": "file",
+          "name": "community.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/community.jpg"
+        },
+        {
+          "type": "file",
+          "name": "connectedworld.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/connectedworld.jpg"
+        },
+        {
+          "type": "file",
+          "name": "couple-headphones.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/couple-headphones.jpg"
+        },
+        {
+          "type": "file",
+          "name": "cowork.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/cowork.jpg"
+        },
+        {
+          "type": "file",
+          "name": "coworking-bigbuilding.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/coworking-bigbuilding.jpg"
+        },
+        {
+          "type": "file",
+          "name": "coworking-depijp.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/coworking-depijp.jpg"
+        },
+        {
+          "type": "file",
+          "name": "coworking-deuurwerker.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/coworking-deuurwerker.jpg"
+        },
+        {
+          "type": "file",
+          "name": "coworking-launchcafe.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/coworking-launchcafe.jpg"
+        },
+        {
+          "type": "file",
+          "name": "creation-centric.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/creation-centric.png"
+        },
+        {
+          "type": "file",
+          "name": "creation-centric1.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/creation-centric1.png"
+        },
+        {
+          "type": "file",
+          "name": "creation-vs-learning.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/creation-vs-learning.png"
+        },
+        {
+          "type": "file",
+          "name": "creation-vs-learning1.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/creation-vs-learning1.png"
+        },
+        {
+          "type": "file",
+          "name": "cropped-community-group.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/cropped-community-group.jpg"
+        },
+        {
+          "type": "file",
+          "name": "cropped-coolfactsbro-icon.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/cropped-coolfactsbro-icon.png"
+        },
+        {
+          "type": "file",
+          "name": "crowd.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/crowd.jpg"
+        },
+        {
+          "type": "file",
+          "name": "cyborgs.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/cyborgs.jpg"
+        },
+        {
+          "type": "file",
+          "name": "cycle-groningen.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/cycle-groningen.png"
+        },
+        {
+          "type": "file",
+          "name": "cycling-through-your-life-4.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/cycling-through-your-life-4.jpg"
+        },
+        {
+          "type": "file",
+          "name": "damnson.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/damnson.png"
+        },
+        {
+          "type": "file",
+          "name": "ddoorsturen.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/ddoorsturen.jpg"
+        },
+        {
+          "type": "file",
+          "name": "deep-fractal1.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/deep-fractal1.jpg"
+        },
+        {
+          "type": "file",
+          "name": "deepfractal2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/deepfractal2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "denmak.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/denmak.jpg"
+        },
+        {
+          "type": "file",
+          "name": "deshit.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/deshit.jpg"
+        },
+        {
+          "type": "file",
+          "name": "devops-toolchain.svg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/devops-toolchain.svg"
+        },
+        {
+          "type": "file",
+          "name": "devops.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/devops.png"
+        },
+        {
+          "type": "file",
+          "name": "dice.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/dice.jpg"
+        },
+        {
+          "type": "file",
+          "name": "digital-addiction-singapore-1.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/digital-addiction-singapore-1.jpg"
+        },
+        {
+          "type": "file",
+          "name": "digital-addiction-singapore.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/digital-addiction-singapore.jpg"
+        },
+        {
+          "type": "file",
+          "name": "distraction.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/distraction.jpg"
+        },
+        {
+          "type": "file",
+          "name": "dit-is-de-shit.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/dit-is-de-shit.png"
+        },
+        {
+          "type": "file",
+          "name": "download.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/download.png"
+        },
+        {
+          "type": "file",
+          "name": "drawing.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/drawing.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "dresden.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/dresden.jpg"
+        },
+        {
+          "type": "file",
+          "name": "ds-logo.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/ds-logo.png"
+        },
+        {
+          "type": "file",
+          "name": "e45405f0-0faf-4a96-bfe2-036f4c5884e5.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/e45405f0-0faf-4a96-bfe2-036f4c5884e5.jpg"
+        },
+        {
+          "type": "file",
+          "name": "earth-jpg.crdownload",
+          "canRead": true,
+          "projectRelativePath": "assets/images/earth-jpg.crdownload"
+        },
+        {
+          "type": "file",
+          "name": "earth-porn.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/earth-porn.jpg"
+        },
+        {
+          "type": "file",
+          "name": "earth.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/earth.jpg"
+        },
+        {
+          "type": "file",
+          "name": "earth1920x1080-1.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/earth1920x1080-1.jpg"
+        },
+        {
+          "type": "file",
+          "name": "earth1920x1080.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/earth1920x1080.jpg"
+        },
+        {
+          "type": "file",
+          "name": "easy-app-makers.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/easy-app-makers.png"
+        },
+        {
+          "type": "file",
+          "name": "edge.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/edge.jpg"
+        },
+        {
+          "type": "file",
+          "name": "edge2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/edge2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "edge3.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/edge3.jpg"
+        },
+        {
+          "type": "file",
+          "name": "edgy.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/edgy.jpg"
+        },
+        {
+          "type": "file",
+          "name": "edinburgh-in-one-picture.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/edinburgh-in-one-picture.jpg"
+        },
+        {
+          "type": "file",
+          "name": "einstein-rainbow.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/einstein-rainbow.jpg"
+        },
+        {
+          "type": "file",
+          "name": "einstein.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/einstein.jpg"
+        },
+        {
+          "type": "file",
+          "name": "entrepreneur.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/entrepreneur.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "epic-cycle-budapest.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/epic-cycle-budapest.jpg"
+        },
+        {
+          "type": "file",
+          "name": "epic-staring-contest.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/epic-staring-contest.jpg"
+        },
+        {
+          "type": "file",
+          "name": "estados-brasil.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/estados-brasil.jpg"
+        },
+        {
+          "type": "file",
+          "name": "europe.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/europe.png"
+        },
+        {
+          "type": "file",
+          "name": "facebook-addict3.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/facebook-addict3.jpg"
+        },
+        {
+          "type": "file",
+          "name": "facebookaddict.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/facebookaddict.jpg"
+        },
+        {
+          "type": "file",
+          "name": "fayenorway.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/fayenorway.jpg"
+        },
+        {
+          "type": "file",
+          "name": "fayenorwaytway.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/fayenorwaytway.jpg"
+        },
+        {
+          "type": "file",
+          "name": "flight.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/flight.jpg"
+        },
+        {
+          "type": "file",
+          "name": "flight1320x742.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/flight1320x742.jpg"
+        },
+        {
+          "type": "file",
+          "name": "flow.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/flow.jpg"
+        },
+        {
+          "type": "file",
+          "name": "flying-heron.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/flying-heron.png"
+        },
+        {
+          "type": "file",
+          "name": "food.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/food.jpg"
+        },
+        {
+          "type": "file",
+          "name": "forest.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/forest.jpg"
+        },
+        {
+          "type": "file",
+          "name": "fractal1.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/fractal1.jpg"
+        },
+        {
+          "type": "file",
+          "name": "fractal2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/fractal2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "fractal3.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/fractal3.jpg"
+        },
+        {
+          "type": "file",
+          "name": "fractal4.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/fractal4.jpg"
+        },
+        {
+          "type": "file",
+          "name": "frankfurt.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/frankfurt.jpg"
+        },
+        {
+          "type": "file",
+          "name": "fuck-yea-guy.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/fuck-yea-guy.jpg"
+        },
+        {
+          "type": "file",
+          "name": "fuckyeah.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/fuckyeah.jpg"
+        },
+        {
+          "type": "file",
+          "name": "future-of-connected-world.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/future-of-connected-world.jpg"
+        },
+        {
+          "type": "file",
+          "name": "g-nlyxshd.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/g-nlyxshd.png"
+        },
+        {
+          "type": "file",
+          "name": "ganesh-pooja.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/ganesh-pooja.jpg"
+        },
+        {
+          "type": "file",
+          "name": "ganesh.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/ganesh.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "gezell.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/gezell.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "give.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/give.jpg"
+        },
+        {
+          "type": "file",
+          "name": "goa.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/goa.jpg"
+        },
+        {
+          "type": "file",
+          "name": "goa2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/goa2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "goals.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/goals.jpg"
+        },
+        {
+          "type": "file",
+          "name": "goals1.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/goals1.png"
+        },
+        {
+          "type": "file",
+          "name": "google-play-badge-cfea2442.svg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/google-play-badge-cfea2442.svg"
+        },
+        {
+          "type": "file",
+          "name": "google-play-badge-svg.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/google-play-badge-svg.png"
+        },
+        {
+          "type": "file",
+          "name": "greece.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/greece.jpg"
+        },
+        {
+          "type": "file",
+          "name": "groningen-header.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/groningen-header.jpg"
+        },
+        {
+          "type": "file",
+          "name": "groningen.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/groningen.jpg"
+        },
+        {
+          "type": "file",
+          "name": "groningen2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/groningen2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "groningenkaart.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/groningenkaart.png"
+        },
+        {
+          "type": "file",
+          "name": "groningenwinter.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/groningenwinter.jpg"
+        },
+        {
+          "type": "file",
+          "name": "haircorner-newlook.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/haircorner-newlook.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "haircornerlogo.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/haircornerlogo.jpg"
+        },
+        {
+          "type": "file",
+          "name": "hamburg.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/hamburg.jpg"
+        },
+        {
+          "type": "file",
+          "name": "hammock.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/hammock.png"
+        },
+        {
+          "type": "file",
+          "name": "hangmattie.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/hangmattie.jpg"
+        },
+        {
+          "type": "file",
+          "name": "hanze-groningen-night.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/hanze-groningen-night.jpg"
+        },
+        {
+          "type": "file",
+          "name": "happiness.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/happiness.jpg"
+        },
+        {
+          "type": "file",
+          "name": "happy100-1-1024x562-1.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/happy100-1-1024x562-1.png"
+        },
+        {
+          "type": "file",
+          "name": "happy100-1-1024x562.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/happy100-1-1024x562.png"
+        },
+        {
+          "type": "file",
+          "name": "happy100.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/happy100.png"
+        },
+        {
+          "type": "file",
+          "name": "happysmall.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/happysmall.png"
+        },
+        {
+          "type": "file",
+          "name": "hawk.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/hawk.jpg"
+        },
+        {
+          "type": "file",
+          "name": "header.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/header.jpg"
+        },
+        {
+          "type": "file",
+          "name": "headstand.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/headstand.jpg"
+        },
+        {
+          "type": "file",
+          "name": "heron1.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/heron1.png"
+        },
+        {
+          "type": "file",
+          "name": "home1.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/home1.jpg"
+        },
+        {
+          "type": "file",
+          "name": "homeheart.gif",
+          "canRead": true,
+          "projectRelativePath": "assets/images/homeheart.gif"
+        },
+        {
+          "type": "file",
+          "name": "hooters.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/hooters.jpg"
+        },
+        {
+          "type": "file",
+          "name": "how-elon-musk-thinks.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/how-elon-musk-thinks.jpg"
+        },
+        {
+          "type": "file",
+          "name": "hulk-390x285.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/hulk-390x285.jpg"
+        },
+        {
+          "type": "file",
+          "name": "hulk2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/hulk2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "i5uoz.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/i5uoz.jpg"
+        },
+        {
+          "type": "file",
+          "name": "ikigai.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/ikigai.jpg"
+        },
+        {
+          "type": "file",
+          "name": "img-0663.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/img-0663.jpg"
+        },
+        {
+          "type": "file",
+          "name": "img-20160919-160815.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/img-20160919-160815.jpg"
+        },
+        {
+          "type": "file",
+          "name": "img-20160920-211013.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/img-20160920-211013.jpg"
+        },
+        {
+          "type": "file",
+          "name": "img-20160922-152745.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/img-20160922-152745.jpg"
+        },
+        {
+          "type": "file",
+          "name": "img-20161012-090429.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/img-20161012-090429.jpg"
+        },
+        {
+          "type": "file",
+          "name": "indistrualage.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/indistrualage.jpg"
+        },
+        {
+          "type": "file",
+          "name": "industrialrevolution.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/industrialrevolution.jpg"
+        },
+        {
+          "type": "file",
+          "name": "instantsleep.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/instantsleep.jpg"
+        },
+        {
+          "type": "file",
+          "name": "interstellar.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/interstellar.jpg"
+        },
+        {
+          "type": "file",
+          "name": "iphonebox-warning.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/iphonebox-warning.jpg"
+        },
+        {
+          "type": "file",
+          "name": "iphonebox.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/iphonebox.jpg"
+        },
+        {
+          "type": "file",
+          "name": "italy.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/italy.jpg"
+        },
+        {
+          "type": "file",
+          "name": "itinerary.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/itinerary.png"
+        },
+        {
+          "type": "file",
+          "name": "javascript.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/javascript.png"
+        },
+        {
+          "type": "file",
+          "name": "jenga.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/jenga.jpg"
+        },
+        {
+          "type": "file",
+          "name": "js-stack.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/js-stack.png"
+        },
+        {
+          "type": "file",
+          "name": "js.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/js.png"
+        },
+        {
+          "type": "file",
+          "name": "justdoit.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/justdoit.png"
+        },
+        {
+          "type": "file",
+          "name": "kalpitiya.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/kalpitiya.jpg"
+        },
+        {
+          "type": "file",
+          "name": "kathmandoe.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/kathmandoe.jpg"
+        },
+        {
+          "type": "file",
+          "name": "keepcalmandmoveon.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/keepcalmandmoveon.png"
+        },
+        {
+          "type": "file",
+          "name": "kevin-kitesurf.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/kevin-kitesurf.jpg"
+        },
+        {
+          "type": "file",
+          "name": "kite.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/kite.jpg"
+        },
+        {
+          "type": "file",
+          "name": "kitesurf-map.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/kitesurf-map.jpg"
+        },
+        {
+          "type": "file",
+          "name": "kitesurf-wallpaper.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/kitesurf-wallpaper.jpg"
+        },
+        {
+          "type": "file",
+          "name": "knowledge-translation-exchange-fr-global-health-dot-ie.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/knowledge-translation-exchange-fr-global-health-dot-ie.png"
+        },
+        {
+          "type": "file",
+          "name": "koln.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/koln.jpg"
+        },
+        {
+          "type": "file",
+          "name": "lacocotera.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/lacocotera.jpg"
+        },
+        {
+          "type": "file",
+          "name": "language-image-1.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/language-image-1.jpg"
+        },
+        {
+          "type": "file",
+          "name": "language-image.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/language-image.jpg"
+        },
+        {
+          "type": "file",
+          "name": "languages-bg.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/languages-bg.jpg"
+        },
+        {
+          "type": "file",
+          "name": "launch-cafe-850x350.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/launch-cafe-850x350.jpg"
+        },
+        {
+          "type": "file",
+          "name": "learncreatetalkshare.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/learncreatetalkshare.png"
+        },
+        {
+          "type": "file",
+          "name": "limitless.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/limitless.jpg"
+        },
+        {
+          "type": "file",
+          "name": "lion.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/lion.png"
+        },
+        {
+          "type": "file",
+          "name": "lissabon.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/lissabon.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "logo.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/logo.png"
+        },
+        {
+          "type": "file",
+          "name": "manang.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/manang.jpg"
+        },
+        {
+          "type": "file",
+          "name": "manyfaces.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/manyfaces.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "marrakech.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/marrakech.jpg"
+        },
+        {
+          "type": "file",
+          "name": "mastercycle.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/mastercycle.jpg"
+        },
+        {
+          "type": "file",
+          "name": "mastermind.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/mastermind.jpg"
+        },
+        {
+          "type": "file",
+          "name": "matrix.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/matrix.jpg"
+        },
+        {
+          "type": "file",
+          "name": "matrix2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/matrix2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "me-on-pc.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/me-on-pc.jpg"
+        },
+        {
+          "type": "file",
+          "name": "me-on-pc1024.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/me-on-pc1024.png"
+        },
+        {
+          "type": "file",
+          "name": "medellin.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/medellin.jpg"
+        },
+        {
+          "type": "file",
+          "name": "meingroningen.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/meingroningen.jpg"
+        },
+        {
+          "type": "file",
+          "name": "mindfulness.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/mindfulness.jpg"
+        },
+        {
+          "type": "file",
+          "name": "mountains-head-cropped-1200x288.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/mountains-head-cropped-1200x288.jpg"
+        },
+        {
+          "type": "file",
+          "name": "mui-ne-2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/mui-ne-2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "munchen-jpg.crdownload",
+          "canRead": true,
+          "projectRelativePath": "assets/images/munchen-jpg.crdownload"
+        },
+        {
+          "type": "file",
+          "name": "munchen.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/munchen.jpg"
+        },
+        {
+          "type": "file",
+          "name": "nature-view.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/nature-view.jpg"
+        },
+        {
+          "type": "file",
+          "name": "nepal-background-tlm.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/nepal-background-tlm.jpg"
+        },
+        {
+          "type": "file",
+          "name": "netflix-br.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/netflix-br.png"
+        },
+        {
+          "type": "file",
+          "name": "netflix-language.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/netflix-language.png"
+        },
+        {
+          "type": "file",
+          "name": "nyepi-cover.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/nyepi-cover.jpg"
+        },
+        {
+          "type": "file",
+          "name": "o2o.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/o2o.jpg"
+        },
+        {
+          "type": "file",
+          "name": "pai-thailand-4.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/pai-thailand-4.jpg"
+        },
+        {
+          "type": "file",
+          "name": "palawan-island-philippines-791657.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/palawan-island-philippines-791657.jpg"
+        },
+        {
+          "type": "file",
+          "name": "parasiet.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/parasiet.jpg"
+        },
+        {
+          "type": "file",
+          "name": "pasfoto-klein.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/pasfoto-klein.png"
+        },
+        {
+          "type": "file",
+          "name": "pasfoto-kleinst.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/pasfoto-kleinst.png"
+        },
+        {
+          "type": "file",
+          "name": "pasfoto.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/pasfoto.png"
+        },
+        {
+          "type": "file",
+          "name": "patrick-star.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/patrick-star.jpg"
+        },
+        {
+          "type": "file",
+          "name": "phone-slave.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/phone-slave.jpg"
+        },
+        {
+          "type": "file",
+          "name": "phone.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/phone.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "phone2.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/phone2.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "phonezombie.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/phonezombie.jpg"
+        },
+        {
+          "type": "file",
+          "name": "pivot1.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/pivot1.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "pivot2.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/pivot2.png"
+        },
+        {
+          "type": "file",
+          "name": "pivot3.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/pivot3.png"
+        },
+        {
+          "type": "file",
+          "name": "pivot4.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/pivot4.png"
+        },
+        {
+          "type": "file",
+          "name": "pivot5.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/pivot5.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "pivot6.gif",
+          "canRead": true,
+          "projectRelativePath": "assets/images/pivot6.gif"
+        },
+        {
+          "type": "file",
+          "name": "pivot7.gif",
+          "canRead": true,
+          "projectRelativePath": "assets/images/pivot7.gif"
+        },
+        {
+          "type": "file",
+          "name": "playstorebadge.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/playstorebadge.png"
+        },
+        {
+          "type": "file",
+          "name": "pokemon-go-zombie.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/pokemon-go-zombie.jpg"
+        },
+        {
+          "type": "file",
+          "name": "portugal.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/portugal.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "prague-hero.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/prague-hero.jpg"
+        },
+        {
+          "type": "file",
+          "name": "proammer.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/proammer.jpg"
+        },
+        {
+          "type": "file",
+          "name": "productive-october.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/productive-october.jpg"
+        },
+        {
+          "type": "file",
+          "name": "productive.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/productive.jpg"
+        },
+        {
+          "type": "file",
+          "name": "productivity.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/productivity.png"
+        },
+        {
+          "type": "file",
+          "name": "productivity1.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/productivity1.png"
+        },
+        {
+          "type": "file",
+          "name": "progen.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/progen.jpg"
+        },
+        {
+          "type": "file",
+          "name": "purpose.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/purpose.jpg"
+        },
+        {
+          "type": "file",
+          "name": "rainbowgoogle.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/rainbowgoogle.jpg"
+        },
+        {
+          "type": "file",
+          "name": "reactnative.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/reactnative.png"
+        },
+        {
+          "type": "file",
+          "name": "redux.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/redux.jpg"
+        },
+        {
+          "type": "file",
+          "name": "rv.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/rv.png"
+        },
+        {
+          "type": "file",
+          "name": "schuur.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/schuur.jpg"
+        },
+        {
+          "type": "file",
+          "name": "science-fiction.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/science-fiction.jpg"
+        },
+        {
+          "type": "file",
+          "name": "screenshot-20170128-092211.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/screenshot-20170128-092211.png"
+        },
+        {
+          "type": "file",
+          "name": "screenshot-tlu-tab.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/screenshot-tlu-tab.png"
+        },
+        {
+          "type": "file",
+          "name": "screenshot-tlu.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/screenshot-tlu.png"
+        },
+        {
+          "type": "file",
+          "name": "sharing-economy-forum-image.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/sharing-economy-forum-image.jpg"
+        },
+        {
+          "type": "file",
+          "name": "skynet-wallpaper-by-headlight-d67gnsu.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/skynet-wallpaper-by-headlight-d67gnsu.png"
+        },
+        {
+          "type": "file",
+          "name": "snowboard-wallpaper.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/snowboard-wallpaper.jpg"
+        },
+        {
+          "type": "file",
+          "name": "softwaredev.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/softwaredev.jpg"
+        },
+        {
+          "type": "file",
+          "name": "spain.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/spain.jpg"
+        },
+        {
+          "type": "file",
+          "name": "spock.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/spock.jpg"
+        },
+        {
+          "type": "file",
+          "name": "status-para-instagram-1-810x400.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/status-para-instagram-1-810x400.png"
+        },
+        {
+          "type": "file",
+          "name": "steve.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/steve.jpg"
+        },
+        {
+          "type": "file",
+          "name": "stpatricksday2017.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/stpatricksday2017.jpg"
+        },
+        {
+          "type": "file",
+          "name": "stuttgart.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/stuttgart.jpg"
+        },
+        {
+          "type": "file",
+          "name": "sundesk.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/sundesk.jpg"
+        },
+        {
+          "type": "file",
+          "name": "sustainable-world-1000x516.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/sustainable-world-1000x516.jpg"
+        },
+        {
+          "type": "file",
+          "name": "tarifa-spain.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/tarifa-spain.jpg"
+        },
+        {
+          "type": "file",
+          "name": "tarifa.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/tarifa.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "team-travel-life.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/team-travel-life.jpg"
+        },
+        {
+          "type": "file",
+          "name": "tesla-model-s-2016-wide.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/tesla-model-s-2016-wide.jpg"
+        },
+        {
+          "type": "file",
+          "name": "tesla.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/tesla.jpg"
+        },
+        {
+          "type": "file",
+          "name": "teslagal.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/teslagal.jpg"
+        },
+        {
+          "type": "file",
+          "name": "test-copy.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/test-copy.jpg"
+        },
+        {
+          "type": "file",
+          "name": "thesims.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/thesims.jpg"
+        },
+        {
+          "type": "file",
+          "name": "time.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/time.jpg"
+        },
+        {
+          "type": "file",
+          "name": "tlm.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/tlm.jpg"
+        },
+        {
+          "type": "file",
+          "name": "tomas-laurinavicius-right-now.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/tomas-laurinavicius-right-now.jpg"
+        },
+        {
+          "type": "file",
+          "name": "tomas-laurinavicius-ubud-2017.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/tomas-laurinavicius-ubud-2017.jpg"
+        },
+        {
+          "type": "file",
+          "name": "tomaslau2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/tomaslau2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "travellife.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/travellife.jpg"
+        },
+        {
+          "type": "file",
+          "name": "trilliondollarmindset.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/trilliondollarmindset.jpg"
+        },
+        {
+          "type": "file",
+          "name": "ubud.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/ubud.jpg"
+        },
+        {
+          "type": "file",
+          "name": "ucycle.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/ucycle.jpg"
+        },
+        {
+          "type": "file",
+          "name": "uni-groningen.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/uni-groningen.png"
+        },
+        {
+          "type": "file",
+          "name": "unicorn.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/unicorn.png"
+        },
+        {
+          "type": "file",
+          "name": "uprising-fist.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/uprising-fist.jpg"
+        },
+        {
+          "type": "file",
+          "name": "vague.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/vague.png"
+        },
+        {
+          "type": "file",
+          "name": "virus.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/virus.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "wadapartja.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/wadapartja.jpg"
+        },
+        {
+          "type": "file",
+          "name": "watch-netflix2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/watch-netflix2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "what-are-zombies-1.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/what-are-zombies-1.jpg"
+        },
+        {
+          "type": "file",
+          "name": "what-are-zombies.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/what-are-zombies.jpg"
+        },
+        {
+          "type": "file",
+          "name": "whatisee.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/whatisee.png"
+        },
+        {
+          "type": "file",
+          "name": "whiterabbit.gif",
+          "canRead": true,
+          "projectRelativePath": "assets/images/whiterabbit.gif"
+        },
+        {
+          "type": "file",
+          "name": "who-is-working.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/who-is-working.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "wijnand-51df6957.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/wijnand-51df6957.jpg"
+        },
+        {
+          "type": "file",
+          "name": "wijnands-drinks-water-from-fall.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/wijnands-drinks-water-from-fall.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "will-smith.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/will-smith.jpg"
+        },
+        {
+          "type": "file",
+          "name": "wintersport.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/wintersport.jpg"
+        },
+        {
+          "type": "file",
+          "name": "wiz.jpeg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/wiz.jpeg"
+        },
+        {
+          "type": "file",
+          "name": "woman-entrepreneur.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/woman-entrepreneur.jpg"
+        },
+        {
+          "type": "file",
+          "name": "worlds-most-important-graph-2017-f.png",
+          "canRead": true,
+          "projectRelativePath": "assets/images/worlds-most-important-graph-2017-f.png"
+        },
+        {
+          "type": "file",
+          "name": "wow-earth.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/wow-earth.jpg"
+        },
+        {
+          "type": "file",
+          "name": "wowpc.JPG",
+          "canRead": true,
+          "projectRelativePath": "assets/images/wowpc.JPG"
+        },
+        {
+          "type": "file",
+          "name": "wowsomanydrunkpeople.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/wowsomanydrunkpeople.jpg"
+        },
+        {
+          "type": "file",
+          "name": "zombie.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/zombie.jpg"
+        },
+        {
+          "type": "file",
+          "name": "zombie2.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/zombie2.jpg"
+        },
+        {
+          "type": "file",
+          "name": "zombie3.jpg",
+          "canRead": true,
+          "projectRelativePath": "assets/images/zombie3.jpg"
+        }
+      ],
+      "actualProjectRelativeFilePath": "assets/images"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/users/wijnand-karsens",
+    "groupSlug": "admin",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [
+        {
+          "type": "folder",
+          "name": "focus",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/focus"
+        },
+        {
+          "type": "folder",
+          "name": "function",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/function"
+        },
+        {
+          "type": "folder",
+          "name": "groups",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups"
+        },
+        {
+          "type": "folder",
+          "name": "humans",
+          "firstFile": ".DS_Store",
+          "canRead": true,
+          "projectRelativePath": "knowledge/humans"
+        },
+        {
+          "type": "folder",
+          "name": "purpose",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/purpose"
+        },
+        {
+          "type": "folder",
+          "name": "recordings",
+          "firstFile": ".DS_Store",
+          "canRead": true,
+          "projectRelativePath": "knowledge/recordings"
+        },
+        {
+          "type": "folder",
+          "name": "space",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/space"
+        },
+        {
+          "type": "folder",
+          "name": "text",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/text"
+        },
+        {
+          "type": "folder",
+          "name": "time",
+          "firstFile": ".DS_Store",
+          "canRead": true,
+          "projectRelativePath": "knowledge/time"
+        },
+        {
+          "type": "file",
+          "name": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/readme.md"
+        }
+      ],
+      "actualProjectRelativeFilePath": "knowledge"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/users/wijnand",
+    "groupSlug": "admin",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [
+        {
+          "type": "folder",
+          "name": "focus",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/focus"
+        },
+        {
+          "type": "folder",
+          "name": "function",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/function"
+        },
+        {
+          "type": "folder",
+          "name": "groups",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups"
+        },
+        {
+          "type": "folder",
+          "name": "humans",
+          "firstFile": ".DS_Store",
+          "canRead": true,
+          "projectRelativePath": "knowledge/humans"
+        },
+        {
+          "type": "folder",
+          "name": "purpose",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/purpose"
+        },
+        {
+          "type": "folder",
+          "name": "recordings",
+          "firstFile": ".DS_Store",
+          "canRead": true,
+          "projectRelativePath": "knowledge/recordings"
+        },
+        {
+          "type": "folder",
+          "name": "space",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/space"
+        },
+        {
+          "type": "folder",
+          "name": "text",
+          "firstFile": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/text"
+        },
+        {
+          "type": "folder",
+          "name": "time",
+          "firstFile": ".DS_Store",
+          "canRead": true,
+          "projectRelativePath": "knowledge/time"
+        },
+        {
+          "type": "file",
+          "name": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/readme.md"
+        }
+      ],
+      "actualProjectRelativeFilePath": "knowledge"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/groups/admin",
+    "groupSlug": "admin",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [],
+      "actualProjectRelativeFilePath": "knowledge/groups/admin"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/groups/cfa",
+    "groupSlug": "admin",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [
+        {
+          "type": "folder",
+          "name": "cfba",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/cfa/cfba"
+        },
+        {
+          "type": "folder",
+          "name": "cfbr",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/cfa/cfbr"
+        },
+        {
+          "type": "folder",
+          "name": "cfng",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/cfa/cfng"
+        },
+        {
+          "type": "folder",
+          "name": "cfnl",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/cfa/cfnl"
+        },
+        {
+          "type": "folder",
+          "name": "cfnp",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/cfa/cfnp"
+        },
+        {
+          "type": "file",
+          "name": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/cfa/readme.md"
+        }
+      ],
+      "actualProjectRelativeFilePath": "knowledge/groups/cfa"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/groups/public",
+    "groupSlug": "admin",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [
+        {
+          "type": "file",
+          "name": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/public/readme.md"
+        }
+      ],
+      "actualProjectRelativeFilePath": "knowledge/groups/public"
+    }
+  },
+  {
+    "projectRelativePath": "",
+    "groupSlug": "public",
+    "navigationResult": {
+      "isSuccessful": false,
+      "message": "You have no access"
+    }
+  },
+  {
+    "projectRelativePath": "operations/tools/cleanup/os-web",
+    "groupSlug": "public",
+    "navigationResult": {
+      "isSuccessful": false,
+      "message": "You have no access"
+    }
+  },
+  {
+    "projectRelativePath": "assets/music",
+    "groupSlug": "public",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [
+        {
+          "type": "folder",
+          "name": "bob100",
+          "firstFile": "01-is-this-love.mp3",
+          "canRead": true,
+          "projectRelativePath": "assets/music/bob100"
+        },
+        {
+          "type": "folder",
+          "name": "bohmer",
+          "firstFile": "bohmer-mix-1.mp3",
+          "canRead": true,
+          "projectRelativePath": "assets/music/bohmer"
+        },
+        {
+          "type": "folder",
+          "name": "pop",
+          "firstFile": "001-the-black-eyed-peas-i-gotta-feeling.mp3",
+          "canRead": true,
+          "projectRelativePath": "assets/music/pop"
+        },
+        {
+          "type": "folder",
+          "name": "tropical",
+          "firstFile": "01-michael-calfan-treasured-soul.mp3",
+          "canRead": true,
+          "projectRelativePath": "assets/music/tropical"
+        },
+        {
+          "type": "file",
+          "name": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "assets/music/readme.md",
+          "isPublic": true
+        }
+      ],
+      "actualProjectRelativeFilePath": "assets/music"
+    }
+  },
+  {
+    "projectRelativePath": "assets/images",
+    "groupSlug": "public",
+    "navigationResult": {
+      "isSuccessful": false,
+      "message": "You have no access"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/users/wijnand-karsens",
+    "groupSlug": "public",
+    "navigationResult": {
+      "isSuccessful": false,
+      "message": "You have no access"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/users/wijnand",
+    "groupSlug": "public",
+    "navigationResult": {
+      "isSuccessful": false,
+      "message": "You have no access"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/groups/admin",
+    "groupSlug": "public",
+    "navigationResult": {
+      "isSuccessful": false,
+      "message": "You have no access"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/groups/cfa",
+    "groupSlug": "public",
+    "navigationResult": {
+      "isSuccessful": false,
+      "message": "You have no access"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/groups/public",
+    "groupSlug": "public",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [
+        {
+          "type": "file",
+          "name": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/public/readme.md"
+        }
+      ],
+      "actualProjectRelativeFilePath": "knowledge/groups/public"
+    }
+  },
+  {
+    "projectRelativePath": "",
+    "groupSlug": "cfa",
+    "navigationResult": {
+      "isSuccessful": false,
+      "message": "You have no access"
+    }
+  },
+  {
+    "projectRelativePath": "operations/tools/cleanup/os-web",
+    "groupSlug": "cfa",
+    "navigationResult": {
+      "isSuccessful": false,
+      "message": "You have no access"
+    }
+  },
+  {
+    "projectRelativePath": "assets/music",
+    "groupSlug": "cfa",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [
+        {
+          "type": "folder",
+          "name": "bob100",
+          "firstFile": "01-is-this-love.mp3",
+          "canRead": true,
+          "projectRelativePath": "assets/music/bob100"
+        },
+        {
+          "type": "folder",
+          "name": "bohmer",
+          "firstFile": "bohmer-mix-1.mp3",
+          "canRead": true,
+          "projectRelativePath": "assets/music/bohmer"
+        },
+        {
+          "type": "folder",
+          "name": "pop",
+          "firstFile": "001-the-black-eyed-peas-i-gotta-feeling.mp3",
+          "canRead": true,
+          "projectRelativePath": "assets/music/pop"
+        },
+        {
+          "type": "folder",
+          "name": "tropical",
+          "firstFile": "01-michael-calfan-treasured-soul.mp3",
+          "canRead": true,
+          "projectRelativePath": "assets/music/tropical"
+        },
+        {
+          "type": "file",
+          "name": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "assets/music/readme.md",
+          "isPublic": true
+        }
+      ],
+      "actualProjectRelativeFilePath": "assets/music"
+    }
+  },
+  {
+    "projectRelativePath": "assets/images",
+    "groupSlug": "cfa",
+    "navigationResult": {
+      "isSuccessful": false,
+      "message": "You have no access"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/users/wijnand-karsens",
+    "groupSlug": "cfa",
+    "navigationResult": {
+      "isSuccessful": false,
+      "message": "You have no access"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/users/wijnand",
+    "groupSlug": "cfa",
+    "navigationResult": {
+      "isSuccessful": false,
+      "message": "You have no access"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/groups/admin",
+    "groupSlug": "cfa",
+    "navigationResult": {
+      "isSuccessful": false,
+      "message": "You have no access"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/groups/cfa",
+    "groupSlug": "cfa",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [
+        {
+          "type": "folder",
+          "name": "cfba",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/cfa/cfba"
+        },
+        {
+          "type": "folder",
+          "name": "cfbr",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/cfa/cfbr"
+        },
+        {
+          "type": "folder",
+          "name": "cfng",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/cfa/cfng"
+        },
+        {
+          "type": "folder",
+          "name": "cfnl",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/cfa/cfnl"
+        },
+        {
+          "type": "folder",
+          "name": "cfnp",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/cfa/cfnp"
+        },
+        {
+          "type": "file",
+          "name": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/cfa/readme.md"
+        }
+      ],
+      "actualProjectRelativeFilePath": "knowledge/groups/cfa"
+    }
+  },
+  {
+    "projectRelativePath": "knowledge/groups/public",
+    "groupSlug": "cfa",
+    "navigationResult": {
+      "isSuccessful": true,
+      "message": "Found folder",
+      "isFolder": true,
+      "navigation": [
+        {
+          "type": "file",
+          "name": "readme.md",
+          "canRead": true,
+          "projectRelativePath": "knowledge/groups/public/readme.md"
+        }
+      ],
+      "actualProjectRelativeFilePath": "knowledge/groups/public"
+    }
+  }
+]

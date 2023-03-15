@@ -1,0 +1,129 @@
+{
+  "createdAt": 1668603506322,
+  "updatedAt": 1668603506322,
+  "deletedAt": 0,
+  "createdFirstAt": 1668603506322,
+  "version": "0.0.0",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "npx tsc-watch --onSuccess 'yarn css'",
+    "css": "tailwindcss -o css.css",
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "sensible": {
+    "hasGeneratedDependencies": false
+  },
+  "dependencies": {
+    "react-with-native": "1.4.9",
+    "menu": "0.0.0",
+    "next-a-link": "0.0.1",
+    "bundle-types": "0.0.1",
+    "authentication": "0.0.1",
+    "react-with-native-router": "1.0.14",
+    "augmented-word-types": "0.0.1",
+    "api": "0.0.1",
+    "clickable-icon": "0.0.1",
+    "nested-menu": "0.0.1",
+    "react-with-native-store": "2.0.40",
+    "share": "1.0.0",
+    "react": "*",
+    "js-util": "0.0.1",
+    "hotkeys": "0.0.0"
+  },
+  "name": "layout",
+  "operation": {
+    "indirectDependencies": [
+      "function-functions-node"
+    ],
+    "hasGeneratedDependenciesIndexed": false,
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": [],
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/clarity/os/operations/tools/user-interfaces/gui/wise/layout/src/UserApp.tsx. Error: Error: Unknown type \"function\""
+      ]
+    },
+    "lastRebuildAt": 1678043883164,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 8,
+        "lines": 395,
+        "characters": 11239,
+        "bytes": 11239
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 165,
+        "characters": 4778,
+        "bytes": 4778
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 168,
+        "characters": 4000,
+        "bytes": 4000
+      },
+      "size": {
+        "bytes": 20017,
+        "characters": 20017,
+        "lines": 728,
+        "numberOfFiles": 12
+      }
+    },
+    "folderNameIndexed": "layout",
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/gui/wise",
+    "classificationIndexed": "ui-cjs",
+    "coreDependenciesIndexed": [
+      "useState",
+      "useEffect",
+      "useState",
+      "ReactNode"
+    ],
+    "operationDependenciesIndexed": [
+      "useHotkey",
+      "isAltB",
+      "isAltF",
+      "MenuProps",
+      "MeAuthenticationInfo",
+      "ClickableIcon",
+      "ALink",
+      "Div",
+      "P",
+      "queries",
+      "destructureOptionalObject",
+      "ClickableIcon",
+      "Div",
+      "P",
+      "ALink",
+      "Div",
+      "pickRandomArrayItem",
+      "Div",
+      "Form",
+      "Input",
+      "useRouter",
+      "nestedMenuStoreInitialValues",
+      "createStore",
+      "API_NO_RESPONSE_TIME_KEY",
+      "queries",
+      "getItem",
+      "ConfirmForm",
+      "LoginForm",
+      "LoginWrapper",
+      "PublicProfile",
+      "SignupForm",
+      "UpdateMeForm",
+      "Menu",
+      "MenuProps",
+      "useRouter"
+    ],
+    "packageDependenciesIndexed": []
+  },
+  "slug": "layout",
+  "id": "wawdrsmykhqbtpmblsexbxiq"
+}

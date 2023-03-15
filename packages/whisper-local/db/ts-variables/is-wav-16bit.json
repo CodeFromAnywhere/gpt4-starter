@@ -1,0 +1,33 @@
+{
+  "createdAt": 1673963764743,
+  "updatedAt": 1673963764743,
+  "deletedAt": 0,
+  "createdFirstAt": 1673963764743,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "isWav16bit",
+  "slug": "is-wav-16bit",
+  "operationRelativeTypescriptFilePath": "src/isWav16bit.ts",
+  "type": {
+    "rawType": "(absolutePath: string) => Promise<boolean>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (absolutePath: string): Promise<boolean> => {\n  console.log(\"checking\");\n  const is16bit = await new Promise<boolean>((resolve) => {\n    ffmpeg(absolutePath).ffprobe((err, data) => {\n      console.log({ err, data });\n\n      const bitRate = data?.format?.bit_rate;\n\n      console.log({ bitRate });\n\n      if (bitRate === 16) {\n        return true;\n      }\n      return false;\n    });\n  });\n\n  return is16bit;\n}",
+  "description": "",
+  "id": "qrrbeixonzrolikadwlpifzp"
+}

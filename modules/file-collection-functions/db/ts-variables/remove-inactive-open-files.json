@@ -1,0 +1,75 @@
+{
+  "createdAt": 1678330466542,
+  "updatedAt": 1678330466542,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330466542,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "removeInactiveOpenFiles",
+  "slug": "remove-inactive-open-files",
+  "operationRelativeTypescriptFilePath": "src/removeInactiveOpenFiles.ts",
+  "type": {
+    "rawType": "{ (): any; config: { runEveryPeriod: string; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "runEveryPeriod": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            }
+          },
+          "required": [
+            "runEveryPeriod"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "runEveryPeriod",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const removeResult = await db.remove(\"OpenFile\", (item) => {\n    const isNotRecent = Date.now() - item.openedAt > 86400000;\n    return !item.isPinned && !item.isOpen && isNotRecent;\n  });\n}",
+  "description": "Cleans up the open files by removing the ones that aren't \"pinned\" or \"open\" and also haven't been opened for over a day. This means they don't need to appear in the search results anymore",
+  "id": "gozdvbhfzuedtpmuskbevtxw"
+}

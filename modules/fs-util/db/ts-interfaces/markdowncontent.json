@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041968803,
+  "updatedAt": 1678041968803,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041968803,
+  "id": "markdowncontent",
+  "name": "MarkdownContent",
+  "slug": "markdowncontent",
+  "operationRelativeTypescriptFilePath": "src/types.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\nexport type MarkdownContent = string;",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "string"
+    },
+    "simplifiedSchema": {
+      "type": "string"
+    },
+    "typeCoverage": 0,
+    "rawType": "MarkdownContent",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

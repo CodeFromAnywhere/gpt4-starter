@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678042872939,
+  "updatedAt": 1678042872939,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042872939,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "runTests",
+  "slug": "run-tests",
+  "operationRelativeTypescriptFilePath": "src/docxToMd.test.ts",
+  "type": {
+    "rawType": "() => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async () => {\n  const { isSuccessful } = await docxToMd(\"../assets/sample1.docx\");\n  if (isSuccessful) {\n    console.log(\"success converting docx to md ! \");\n  } else {\n    console.log(\"failed covnerting docx to md.\");\n  }\n}",
+  "description": "",
+  "id": "eggoqvqmpaimyajcfefrhzhn"
+}

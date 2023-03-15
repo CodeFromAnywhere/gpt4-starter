@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330464050,
+  "updatedAt": 1678330464050,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330464050,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getQueryInfo",
+  "slug": "get-query-info",
+  "operationRelativeTypescriptFilePath": "src/getQueryInfo.ts",
+  "type": {
+    "rawType": "(config: { customProjectRelativeBaseFolderPath?: string | undefined; queryPath: string; }) => Promise<import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/StandardResponse\").StandardResponse & { result?: { projectRelativeFilePath: string | undefined; projectRelativeFolderPath: string; queryIsFolder: boolean; } | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: {\n  /**\n   * If defined, queryPath should be relative to this one. Should only be allowed for admin.\n   */\n  customProjectRelativeBaseFolderPath?: string;\n  /**\n   * QueryPath as in the URL, should be a relative path from the projectRoot (or to `customAbsoluteBaseFolderPath`, if defined)\n   */\n  queryPath: string;\n}): Promise<\n  StandardResponse & {\n    result?: {\n      projectRelativeFilePath: string | undefined;\n      projectRelativeFolderPath: string;\n      queryIsFolder: boolean;\n    };\n  }\n> => {\n  const projectRoot = getProjectRoot();\n\n  //NB: Hide .DS_Store and other dotfiles as the default file-collection for a folder. Instead, search for a readme or index and show that one (or first file). Basically, never show nothing, unless the folder is empty.\n\n  if (!projectRoot) {\n    return {\n      isSuccessful: false,\n      message: \"No project root\",\n    };\n  }\n\n  const { queryPath, customProjectRelativeBaseFolderPath } = config;\n\n  const absoluteBaseFolderPath = customProjectRelativeBaseFolderPath\n    ? path.join(projectRoot, customProjectRelativeBaseFolderPath)\n    : projectRoot;\n\n  if (!absoluteBaseFolderPath || !fs.existsSync(absoluteBaseFolderPath)) {\n    return {\n      isSuccessful: false,\n      message: \"No valid root\",\n    };\n  }\n\n  const expectedAbsolutePath = path.join(absoluteBaseFolderPath, queryPath);\n  const exists = fs.existsSync(expectedAbsolutePath);\n  const finalAbsolutePath = !exists\n    ? await findClosestAbsolutePath(expectedAbsolutePath)\n    : expectedAbsolutePath;\n\n  if (!finalAbsolutePath) {\n    // invalid path\n    return {\n      isSuccessful: false,\n      message: \"Couldn't find path\",\n    };\n  }\n\n  const stats = await fs.stat(finalAbsolutePath);\n  const isFile = stats.isFile();\n  const isFolder = stats.isDirectory();\n  const parsedPath = path.parse(finalAbsolutePath);\n\n  // NB: Now we have the folder path to be explored\n  const finalAbsoluteFolderPath = isFile ? parsedPath.dir : finalAbsolutePath;\n\n  const firstFileName = isFolder\n    ? await getFirstFile(finalAbsolutePath)\n    : undefined;\n\n  const absoluteFilePath = firstFileName\n    ? path.join(finalAbsolutePath, firstFileName)\n    : isFile\n    ? finalAbsolutePath\n    : undefined;\n\n  const projectRelativeFolderPath = makeRelative(\n    finalAbsoluteFolderPath,\n    projectRoot\n  );\n\n  const projectRelativeFilePath = absoluteFilePath\n    ? makeRelative(absoluteFilePath, projectRoot)\n    : undefined;\n\n  return {\n    isSuccessful: true,\n    result: {\n      projectRelativeFilePath,\n      projectRelativeFolderPath,\n      queryIsFolder: isFolder,\n    },\n  };\n}",
+  "description": "General purpose function to go from a queryPath to an actual file and/or folder-path.",
+  "id": "gtjfxuzwmxccjdufxprjcqcd"
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "createdAt": 1678330581700,
+    "updatedAt": 1678330581700,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330581700,
+    "name": "getBatteryLevelPercentage",
+    "slug": "get-battery-level-percentage",
+    "operationRelativeTypescriptFilePath": "src/getBatteryLevelPercentage.ts",
+    "comments": [],
+    "type": "value",
+    "id": "jyrrbekckhsruhngembvabkk"
+  },
+  {
+    "createdAt": 1678330581701,
+    "updatedAt": 1678330581701,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330581701,
+    "name": "getBatteryLevelPercentage",
+    "slug": "get-battery-level-percentage",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "usrkbltjwfbvzijdwywalgvu"
+  },
+  {
+    "createdAt": 1678330581701,
+    "updatedAt": 1678330581701,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330581701,
+    "name": "isSystemUsingBattery",
+    "slug": "is-system-using-battery",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "xgmzfbgismfawaoticbqhxep"
+  },
+  {
+    "createdAt": 1678330581701,
+    "updatedAt": 1678330581701,
+    "deletedAt": 0,
+    "createdFirstAt": 1678330581701,
+    "name": "isSystemUsingBattery",
+    "slug": "is-system-using-battery",
+    "operationRelativeTypescriptFilePath": "src/isSystemUsingBattery.ts",
+    "comments": [],
+    "type": "value",
+    "id": "hepgkfuaikysrqizxoozbitr"
+  }
+]

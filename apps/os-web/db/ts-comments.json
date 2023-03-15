@@ -1,0 +1,20 @@
+[
+  {
+    "createdAt": 1678041756507,
+    "updatedAt": 1678041756507,
+    "deletedAt": 0,
+    "createdFirstAt": 1678041756507,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/util/searchGetStaticProps.ts",
+    "comment": "NB: Does not include the search results themselves since they are user-dependent.",
+    "rawStatement": "export const searchGetStaticProps: GetStaticProps<QueryPageProps> = async (\n  context\n) => {\n  const query = takeFirst(context.params?.query) || null;\n  const projectRoot = getProjectRoot();\n  const searchWebPath = operations[\"os-web\"];\n  const headersPath =\n    projectRoot && searchWebPath\n      ? path.join(projectRoot, searchWebPath, \"public\", \"headers\")\n      : undefined;\n\n  const imagePaths = headersPath ? await fs.readdir(headersPath) : [];\n\n  const timelineItems: {\n    comment: string;\n    filePath: string | undefined;\n    line: number;\n  }[] = []; // = await getTimelineItems();\n\n  const props: QueryPageProps = {\n    query,\n    imagePaths,\n    timelineItems,\n  };\n\n  return {\n    props,\n  };\n};",
+    "parameters": {},
+    "types": [
+      "nb"
+    ],
+    "firstLine": 8,
+    "lastLine": 10,
+    "id": "larlbczgxrmjivpmoiawsktc"
+  }
+]

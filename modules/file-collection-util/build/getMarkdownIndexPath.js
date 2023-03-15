@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getMarkdownIndexPath=void 0;var fs_util_1=require("fs-util"),fs_util_js_1=require("fs-util-js"),getMarkdownIndexPath=function(t,e){var s=fs_util_1.path.parse(t),r=s.dir,i=(0,fs_util_js_1.withoutSubExtensions)(s.base),n=fs_util_1.path.join(r,"".concat(i,".MarkdownIndex.json"));if(fs_util_1.fs.existsSync(n)||!e)return n};exports.getMarkdownIndexPath=getMarkdownIndexPath;
+//# sourceMappingURL=getMarkdownIndexPath.js.map

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041423136,
+  "updatedAt": 1678041423136,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041423136,
+  "id": "namedparameterstypeof-useonfocus",
+  "name": "NamedParameters<typeof useOnFocus>",
+  "slug": "namedparameterstypeof-useonfocus",
+  "operationRelativeTypescriptFilePath": "src/useOnFocus.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof useOnFocus>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

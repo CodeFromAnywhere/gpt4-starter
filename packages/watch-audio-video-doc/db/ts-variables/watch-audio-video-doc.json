@@ -1,0 +1,88 @@
+{
+  "createdAt": 1678330801654,
+  "updatedAt": 1678330801654,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330801654,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "watchAudioVideoDoc",
+  "slug": "watch-audio-video-doc",
+  "operationRelativeTypescriptFilePath": "src/watchAudioVideoDoc.ts",
+  "type": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/purpose/codebase-introspection/functions/function-types/build/ProjectWatcher\").ProjectWatcher<any>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "startupStrategy": {
+          "enum": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "x-enumNames": [
+            "ignore",
+            "sync",
+            "async",
+            "queue"
+          ],
+          "type": "string"
+        },
+        "filter": {
+          "type": "object",
+          "properties": {}
+        },
+        "config": {}
+      },
+      "required": [
+        "filter",
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "startupStrategy",
+          "required": false,
+          "schema": {
+            "enum": [
+              "ignore",
+              "sync",
+              "async",
+              "queue"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "filter",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  eventName,\n  absolutePath,\n  isStartup\n): Promise<{ isSuccessful: boolean; message?: string }> => {\n  if (!fs.existsSync(absolutePath)) {\n    return { isSuccessful: false, message: \"File doesn't exist (anymore)\" };\n  }\n\n  if (isLocked(absolutePath)) {\n    return { isSuccessful: false, message: \"Locked\" };\n  }\n\n  if (absolutePath.endsWith(\".doc\")) {\n    return docToMd(absolutePath, true);\n  }\n\n  if (absolutePath.endsWith(\".docx\")) {\n    return docxToMd(absolutePath, true);\n  }\n\n  if (absolutePath.endsWith(\".pdf\")) {\n    const pathParse = path.parse(absolutePath);\n\n    const mdPathToBe = path.join(pathParse.dir, `${pathParse.name}.md`);\n    if (fs.existsSync(mdPathToBe)) {\n      return {\n        isSuccessful: false,\n        message: \"Markdown already exists, not overwriting from pdf (for now)\",\n      };\n    }\n    if (!absolutePath) {\n      return { isSuccessful: false, message: \"Doesn't exist\" };\n    }\n    const result = await convertPdfToMd({ inputPdfFilePath: absolutePath });\n    return result;\n  }\n\n  const parsedPath = path.parse(absolutePath);\n  const extension = parsedPath.ext;\n\n  const targetFormat = audioFileExtensions.includes(extension)\n    ? \"wav\"\n    : videoFileExtensions.includes(extension)\n    ? \"mp4\"\n    : // : imageFileExtensions.includes(extension)\n      // ? \"png\"\n      undefined;\n\n  if (!targetFormat) {\n    return { isSuccessful: false, message: \"File isn't audio/video/image\" };\n  }\n\n  const result = await compressConvert(absolutePath, {\n    targetFormat,\n    is16bitWav: targetFormat === \"wav\",\n    keepOriginal: false,\n    // NB: 10fps isn't nice to watch for movies. Let's finetune this\n    // fps: targetFormat === \"mp4\" ? 10 : undefined,\n    sizeWidthPx: targetFormat === \"mp4\" ? 768 : undefined, //targetFormat === \"png\" ? 1920 :\n  });\n\n  return { isSuccessful: !!result };\n}",
+  "description": "Watch all video file formats except mp4, and convert them all into a compressed .mp4 (10fps 480p) (remove original)\n\nFind all audiofile formats in project except mp3 and wav, convert into 16 bit wav (remove original)\n\nFind all image file formats in the project except png, convert to png, compress size if it seems to be able to be done without much loss.\n\nWatch all doc formats (docx, rtf, pdf, what else?) and convert them into .md (keeping original)",
+  "id": "egnnxkyieterweyiwgydmehl"
+}

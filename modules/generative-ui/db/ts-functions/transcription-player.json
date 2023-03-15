@@ -1,0 +1,39 @@
+{
+  "createdAt": 1678041409859,
+  "updatedAt": 1678041409859,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041409859,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/TranscriptionPlayer.tsx",
+  "commentsInside": [],
+  "rawText": " () => {\n  const queryPath = useQueryPath();\n  const fileCollectionQuery =\n    queries.useGetFileCollectionWithContext(queryPath);\n\n  const files = fileCollectionQuery.data?.result?.files;\n\n  const transcriptionFileContent = files?.find((x) =>\n    x.name.endsWith(\".transcription.json\")\n  )?.rawContent;\n  const transcription = transcriptionFileContent\n    ? tryParseJson<Transcription>(transcriptionFileContent) || undefined\n    : undefined;\n\n  const videoFile = files?.find((x) => x.type === \"video\");\n  const audioFile = files?.find((x) => x.type === \"audio\");\n  const preferredPlayerFile = videoFile || audioFile;\n  const absoluteUrl = preferredPlayerFile?.projectRelativePath\n    ? getAssetDirectlyApiUrl(apiUrl, preferredPlayerFile?.projectRelativePath)\n    : undefined;\n\n  console.log(\"render transcriptionplayer\", { absoluteUrl });\n  //\n  return (\n    <Div>\n      {absoluteUrl ? (\n        <AssetView\n          className=\"max-h-screen max-w-screen\"\n          projectRelativeReferencingFilePath={\n            preferredPlayerFile?.projectRelativePath\n          }\n          asset={{ absoluteUrl }}\n          transcription={transcription}\n        />\n      ) : null}\n    </Div>\n  );\n}",
+  "name": "TranscriptionPlayer",
+  "slug": "transcription-player",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "JSX.Element",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/JSX.Element"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 6,
+  "size": {
+    "characters": 1186,
+    "lines": 38,
+    "bytes": 1186,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 31,
+    "linesPerFile": 38,
+    "numberOfFiles": 1
+  },
+  "id": "globijmcueyxelzbfwtwqeug"
+}

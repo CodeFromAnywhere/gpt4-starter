@@ -1,0 +1,6 @@
+"use strict";var _a,__assign=this&&this.__assign||function(){return __assign=Object.assign||function(e){for(var r,t=1,a=arguments.length;t<a;t++)for(var s in r=arguments[t])Object.prototype.hasOwnProperty.call(r,s)&&(e[s]=r[s]);return e},__assign.apply(this,arguments)};Object.defineProperty(exports,"__esModule",{value:!0}),exports.useStore=exports.StoreProvider=exports.explorerInitialValues=exports.explorerSearchTypes=void 0;var react_with_native_store_1=require("react-with-native-store"),api_store_1=require("api-store"),tabs_1=require("tabs"),nested_menu_1=require("nested-menu");exports.explorerSearchTypes=[{label:"🔎 Path Search",value:"path"},{label:"📖 Content Search",value:"content"},{label:"🗞 Index Search",value:"index"},{label:"🧠 Brain Search",value:"llm"}],exports.explorerInitialValues={"explorer.searchType":exports.explorerSearchTypes[0],"explorer.config":{}},
+/**
+ * TODO: Remove some of all of these things, not needed so much
+ */
+exports.StoreProvider=(_a=(0,react_with_native_store_1.createStore)(__assign(__assign(__assign(__assign({},api_store_1.apiStoreInitialValues),nested_menu_1.nestedMenuStoreInitialValues),exports.explorerInitialValues),tabs_1.tabsStoreInitialValues))).StoreProvider,exports.useStore=_a.useStore;
+//# sourceMappingURL=store.js.map

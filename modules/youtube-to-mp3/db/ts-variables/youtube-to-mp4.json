@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331158779,
+  "updatedAt": 1678331158779,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331158779,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "youtubeToMp4",
+  "slug": "youtube-to-mp4",
+  "operationRelativeTypescriptFilePath": "src/youtubeToMp4.ts",
+  "type": {
+    "rawType": "(link: string, config?: { isToMp3?: boolean | undefined; destinationFolderPath?: string | undefined; quality?: \"low\" | undefined; } | undefined) => Promise<{ isSuccessful: boolean; message?: string | undefined; mp3FilePath?: string | undefined; mp4FilePath?: string | undefined; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  link: string,\n  config?: {\n    isToMp3?: boolean;\n    destinationFolderPath?: string;\n    quality?: \"low\";\n  }\n): Promise<{\n  isSuccessful: boolean;\n  message?: string;\n  mp3FilePath?: string;\n  mp4FilePath?: string;\n}> => {\n  try {\n    console.log(`Going to download ${link}`);\n    // getting video basic info to get title of video for file name\n    const info = await getBasicInfo(link);\n    const title = info.videoDetails.title;\n    // creating promises to download video\n    const downloadYoutubeAudioResult = await new Promise<{\n      isSuccessful: boolean;\n      absoluteSaveFilePath?: string;\n      message?: string;\n    }>((resolve, reject) => {\n      // creating youtube video stream\n      const stream = ytdl(link, {\n        quality: config?.quality === \"low\" ? \"lowestaudio\" : \"highestaudio\",\n        filter: config?.isToMp3 ? \"audioonly\" : undefined,\n      });\n\n      let totalTime = 1;\n\n      const destinationFolderPath =\n        config?.destinationFolderPath || path.join(__dirname, \"..\", \"data\");\n\n      const absoluteSaveFilePath = path.join(\n        destinationFolderPath,\n        `${slugify(kebabCase(title))}.mp4`\n      );\n\n      lock(absoluteSaveFilePath, `Progress: 0%`, \"youtubeToMp4\", [link]);\n\n      //  console.log({ absoluteSaveFilePath });\n      // passing that stream to ffmpeg for mp3 conversion\n      const process = ffmpeg({ source: stream });\n      process\n        .toFormat(\"mp4\") // setting file format\n        .saveToFile(absoluteSaveFilePath) // setting path and file name of output\n        .on(\"codecData\", (data) => {\n          // HERE YOU GET THE TOTAL TIME\n          totalTime = parseInt(data.duration.replace(/:/g, \"\"));\n          // console.log(\"Downloading Start...\");\n        })\n        .on(\"progress\", (progress) => {\n          // HERE IS THE CURRENT TIME\n          const time = parseInt(progress.timemark.replace(/:/g, \"\"));\n          // AND HERE IS THE CALCULATION\n          const percent = Math.floor((time / totalTime) * 100);\n          // console.log(`${percent}%`);\n          lock(absoluteSaveFilePath, `Progress: ${percent}%`, \"youtubeToMp4\", [\n            link,\n          ]);\n        })\n        .on(\"end\", () => {\n          unlock(absoluteSaveFilePath);\n          resolve({\n            isSuccessful: true,\n            absoluteSaveFilePath,\n            message: \"Youtube to Audo downloaded successfully\",\n          });\n        })\n        .on(\"error\", (e: Error) => {\n          lockError(\n            absoluteSaveFilePath,\n            e.message,\n            undefined,\n            \"youtubeToMp4\",\n            [link]\n          );\n          resolve({ isSuccessful: false, message: e.message });\n        });\n    });\n\n    if (!downloadYoutubeAudioResult?.absoluteSaveFilePath) {\n      return {\n        isSuccessful: false,\n        message: downloadYoutubeAudioResult.message,\n      };\n    }\n\n    if (!config?.isToMp3) {\n      return {\n        isSuccessful: true,\n        message: \"Done\",\n        mp4FilePath: downloadYoutubeAudioResult.absoluteSaveFilePath,\n      };\n    }\n\n    console.log(\"Converting to mp3\");\n\n    const parsedFile = path.parse(\n      downloadYoutubeAudioResult.absoluteSaveFilePath\n    );\n    const mp3FilePath = await convertToMp3(\n      downloadYoutubeAudioResult.absoluteSaveFilePath,\n      path.join(parsedFile.dir, `${parsedFile.name}.mp3`)\n    );\n\n    if (!mp3FilePath) {\n      return {\n        isSuccessful: false,\n        message: \"Conversion failed\",\n        mp4FilePath: downloadYoutubeAudioResult.absoluteSaveFilePath,\n      };\n    }\n\n    // remove mp4\n    await fs.rm(downloadYoutubeAudioResult.absoluteSaveFilePath, {});\n\n    return {\n      isSuccessful: true,\n      message: \"Got mp3, deleted mp4\",\n      mp3FilePath,\n    };\n  } catch (e: any) {\n    console.log(\"errorrrr\", e);\n    return { isSuccessful: false, message: JSON.stringify(e) };\n  }\n}",
+  "description": "In order to download the youtube video into mp3 format ffmpeg packages must be install in your computer\nfor mac please try [brew install ffmpeg] to install ffmpeg",
+  "id": "binulvhsjocjjgymgnrdfrya"
+}

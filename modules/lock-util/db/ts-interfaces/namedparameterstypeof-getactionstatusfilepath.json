@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678331274504,
+  "updatedAt": 1678331274504,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331274504,
+  "id": "namedparameterstypeof-getactionstatusfilepath",
+  "name": "NamedParameters<typeof getActionStatusFilePath>",
+  "slug": "namedparameterstypeof-getactionstatusfilepath",
+  "operationRelativeTypescriptFilePath": "src/getActionStatusFilePath.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteFilePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absoluteFilePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof getActionStatusFilePath>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

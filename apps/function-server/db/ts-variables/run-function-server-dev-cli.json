@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678331945081,
+  "updatedAt": 1678331945081,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331945081,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "runFunctionServerDevCli",
+  "slug": "run-function-server-dev-cli",
+  "operationRelativeTypescriptFilePath": "src/cli/runFunctionServerDev.cli.ts",
+  "type": {
+    "rawType": "() => void",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  runFunctionServerDev();\n}",
+  "description": "",
+  "id": "xkravssvkhcuetmtncglbtxi"
+}

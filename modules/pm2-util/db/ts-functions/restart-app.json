@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678330235722,
+  "updatedAt": 1678330235722,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330235722,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/restartApp.ts",
+  "commentsInside": [],
+  "rawText": " async (operationName: string) => {\n  return pm2ConnectDisconnect((resolve) => {\n    restart(`${appPrefix}${operationName}`, (error, proc) => {\n      resolve({ isSuccessful: !error, proc, error });\n    });\n  });\n}",
+  "name": "restartApp",
+  "slug": "restart-app",
+  "parameters": [
+    {
+      "name": "operationName",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Restarts an app with pm2",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 237,
+    "lines": 7,
+    "bytes": 237,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 34,
+    "linesPerFile": 7,
+    "numberOfFiles": 1
+  },
+  "id": "pcorryatcdtliknscczpwxus"
+}

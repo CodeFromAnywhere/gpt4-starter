@@ -1,0 +1,259 @@
+{
+  "sentences": [
+    {
+      "startAt": 0,
+      "endAt": 1000,
+      "text": "Yeah!"
+    },
+    {
+      "startAt": 1000,
+      "endAt": 3680,
+      "text": "It's pretty handy, but you know what's even better?"
+    },
+    {
+      "startAt": 3680,
+      "endAt": 4680,
+      "text": "Type the script!"
+    },
+    {
+      "startAt": 4680,
+      "endAt": 6320,
+      "text": "That's right, Morty!"
+    },
+    {
+      "startAt": 6320,
+      "endAt": 7760,
+      "text": "Type the script is the best!"
+    },
+    {
+      "startAt": 7760,
+      "endAt": 9360,
+      "text": "It's like you have a script, but better!"
+    }
+  ],
+  "text": " Yeah!\n It's pretty handy, but you know what's even better?\n Type the script!\n That's right, Morty!\n Type the script is the best!\n It's like you have a script, but better!\n",
+  "translationText": " Yeah!\n It's pretty handy, but you know what's even better?\n Type the script!\n That's right, Morty!\n Type the script is the best!\n It's like you have a script, but better!\n",
+  "words": [
+    {
+      "startAt": 0,
+      "endAt": 90,
+      "text": ""
+    },
+    {
+      "startAt": 90,
+      "endAt": 1000,
+      "text": "Yeah"
+    },
+    {
+      "startAt": 1000,
+      "endAt": 1000,
+      "text": "!"
+    },
+    {
+      "startAt": 1000,
+      "endAt": 1200,
+      "text": "It"
+    },
+    {
+      "startAt": 1200,
+      "endAt": 1260,
+      "text": "'s"
+    },
+    {
+      "startAt": 1260,
+      "endAt": 1650,
+      "text": "pretty"
+    },
+    {
+      "startAt": 1650,
+      "endAt": 2000,
+      "text": "handy"
+    },
+    {
+      "startAt": 2000,
+      "endAt": 2330,
+      "text": ","
+    },
+    {
+      "startAt": 2330,
+      "endAt": 2350,
+      "text": "but"
+    },
+    {
+      "startAt": 2350,
+      "endAt": 2500,
+      "text": "you"
+    },
+    {
+      "startAt": 2500,
+      "endAt": 2710,
+      "text": "know"
+    },
+    {
+      "startAt": 2710,
+      "endAt": 2920,
+      "text": "what"
+    },
+    {
+      "startAt": 2920,
+      "endAt": 3020,
+      "text": "'s"
+    },
+    {
+      "startAt": 3020,
+      "endAt": 3230,
+      "text": "even"
+    },
+    {
+      "startAt": 3230,
+      "endAt": 3660,
+      "text": "better"
+    },
+    {
+      "startAt": 3660,
+      "endAt": 3680,
+      "text": "?"
+    },
+    {
+      "startAt": 3680,
+      "endAt": 3980,
+      "text": "Type"
+    },
+    {
+      "startAt": 3980,
+      "endAt": 4210,
+      "text": "the"
+    },
+    {
+      "startAt": 4210,
+      "endAt": 4680,
+      "text": "script"
+    },
+    {
+      "startAt": 4680,
+      "endAt": 4680,
+      "text": "!"
+    },
+    {
+      "startAt": 4680,
+      "endAt": 5000,
+      "text": "That"
+    },
+    {
+      "startAt": 5000,
+      "endAt": 5140,
+      "text": "'s"
+    },
+    {
+      "startAt": 5140,
+      "endAt": 5610,
+      "text": "right"
+    },
+    {
+      "startAt": 5610,
+      "endAt": 5680,
+      "text": ","
+    },
+    {
+      "startAt": 5680,
+      "endAt": 6270,
+      "text": "Morty"
+    },
+    {
+      "startAt": 6270,
+      "endAt": 6320,
+      "text": "!"
+    },
+    {
+      "startAt": 6320,
+      "endAt": 6550,
+      "text": "Type"
+    },
+    {
+      "startAt": 6550,
+      "endAt": 6720,
+      "text": "the"
+    },
+    {
+      "startAt": 6720,
+      "endAt": 7060,
+      "text": "script"
+    },
+    {
+      "startAt": 7060,
+      "endAt": 7170,
+      "text": "is"
+    },
+    {
+      "startAt": 7170,
+      "endAt": 7330,
+      "text": "the"
+    },
+    {
+      "startAt": 7330,
+      "endAt": 7710,
+      "text": "best"
+    },
+    {
+      "startAt": 7710,
+      "endAt": 7760,
+      "text": "!"
+    },
+    {
+      "startAt": 7760,
+      "endAt": 7840,
+      "text": "It"
+    },
+    {
+      "startAt": 7840,
+      "endAt": 7920,
+      "text": "'s"
+    },
+    {
+      "startAt": 7920,
+      "endAt": 8090,
+      "text": "like"
+    },
+    {
+      "startAt": 8090,
+      "endAt": 8240,
+      "text": "you"
+    },
+    {
+      "startAt": 8240,
+      "endAt": 8390,
+      "text": "have"
+    },
+    {
+      "startAt": 8390,
+      "endAt": 8480,
+      "text": "a"
+    },
+    {
+      "startAt": 8480,
+      "endAt": 8770,
+      "text": "script"
+    },
+    {
+      "startAt": 8770,
+      "endAt": 8830,
+      "text": ","
+    },
+    {
+      "startAt": 8830,
+      "endAt": 8990,
+      "text": "but"
+    },
+    {
+      "startAt": 8990,
+      "endAt": 9160,
+      "text": "better"
+    },
+    {
+      "startAt": 9160,
+      "endAt": 9360,
+      "text": "!"
+    }
+  ],
+  "usedModelName": "small"
+}

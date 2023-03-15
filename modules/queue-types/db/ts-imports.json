@@ -1,0 +1,19 @@
+[
+  {
+    "createdAt": 1678369294175,
+    "updatedAt": 1678369294175,
+    "deletedAt": 0,
+    "createdFirstAt": 1678369294175,
+    "name": "DefaultModelType",
+    "slug": "default-model-type",
+    "type": "value",
+    "module": "model-types",
+    "isModuleResolved": true,
+    "comments": [],
+    "operationRelativeTypescriptFilePath": "src/Queue.ts",
+    "classification": "operation",
+    "isAbsolute": true,
+    "isModuleFromMonorepo": true,
+    "id": "zergqythqggrdoczznjwzrca"
+  }
+]

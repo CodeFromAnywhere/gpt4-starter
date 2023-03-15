@@ -1,0 +1,89 @@
+{
+  "createdAt": 1668328814519,
+  "updatedAt": 1668328814519,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328814519,
+  "id": "pytnclcnhwrwajqwucxoadrl",
+  "dependencies": {
+    "js-util": "0.0.1",
+    "name-conventions": "0.0.1",
+    "api-js": "0.0.1",
+    "asset-type": "0.0.1",
+    "fs-util-js": "0.0.1",
+    "text-or-binary": "0.0.1",
+    "model-types": "0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "asset-functions-js",
+  "language": "english",
+  "slug": "asset-functions-js",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [],
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "asset-functions-js",
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1678330712601,
+    "operationDependenciesIndexed": [
+      "notEmpty",
+      "AssetInputType",
+      "getAssetInputType",
+      "getGetApiUrl",
+      "Asset",
+      "getExtension",
+      "withoutExtension",
+      "getGetApiUrl",
+      "AssetType",
+      "getExtension",
+      "isText",
+      "generateRandomString"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/asset",
+    "markdown": "# ❌ No description set yet\n\nPlease set a description for this operation in OPERATION.md\n\nThis is a js operation. This means you cannot use any react or node, it's pure typescript, compiled to javascript, and can be used anywhere.\n",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 14,
+        "lines": 323,
+        "characters": 8725,
+        "bytes": 8725
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 127,
+        "characters": 4130,
+        "bytes": 4130
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 257,
+        "characters": 5956,
+        "bytes": 5956
+      },
+      "size": {
+        "bytes": 18811,
+        "characters": 18811,
+        "lines": 707,
+        "numberOfFiles": 18
+      }
+    },
+    "hasGeneratedDependenciesIndexed": false,
+    "hasGeneratedImportsIndexed": false
+  }
+}

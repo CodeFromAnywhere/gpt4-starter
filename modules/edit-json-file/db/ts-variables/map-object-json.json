@@ -1,0 +1,33 @@
+{
+  "createdAt": 1668149807464,
+  "updatedAt": 1668149807464,
+  "deletedAt": 0,
+  "createdFirstAt": 1668149807464,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "mapObjectJson",
+  "slug": "map-object-json",
+  "operationRelativeTypescriptFilePath": "src/mapObjectJson.ts",
+  "type": {
+    "rawType": "<T, U>(absolutePath: string, mapFunction: (item: T) => U) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async <T, U>(\n  absolutePath: string,\n  mapFunction: (item: T) => U\n) => {\n  if (!absolutePath) return;\n  const json = await readJsonFile<T>(absolutePath);\n\n  if (!json) return;\n  const newJson = mapFunction(json);\n\n  const isSuccessful = await writeJsonToFile(absolutePath, newJson);\n\n  return isSuccessful;\n}",
+  "description": "Takes an absolute path to a json and a type generic and provides a map function with which you can alter that JSON (read, map, save)",
+  "id": "gvhytzjfkyhyobaufmvznpcd"
+}

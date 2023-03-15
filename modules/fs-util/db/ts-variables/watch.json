@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041926587,
+  "updatedAt": 1678041926587,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041926587,
+  "classification": "const",
+  "comments": [],
+  "isExported": false,
+  "name": "watch",
+  "slug": "watch",
+  "operationRelativeTypescriptFilePath": "src/fs.ts",
+  "type": {
+    "rawType": "(arg1: import(\"fs\").PathLike) => Promise<TResult>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "promisify(gracefulFs.watch)",
+  "description": "",
+  "id": "zflinrouhrqyoyzpovsoovxz"
+}

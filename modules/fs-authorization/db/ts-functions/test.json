@@ -1,0 +1,35 @@
+{
+  "createdAt": 1678330546498,
+  "updatedAt": 1678330546498,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330546498,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/getFsAuthorizationWithContext.test.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const testables = await getFsAuthorizationTestables();\n\n  const results = await Promise.all(\n    testables.map(async (testable) => {\n      const { functionContext, groupSlug, projectRelativePath } = testable;\n      if (!functionContext) return;\n\n      const result = await getFsAuthorizationWithContext(\n        functionContext,\n        projectRelativePath,\n        true\n      );\n\n      return { groupSlug, result, projectRelativePath };\n    })\n  );\n\n  writeToAssets(__filename, results, \"getFsAuthorizationWithContext.test.json\");\n}",
+  "name": "test",
+  "slug": "test",
+  "parameters": [],
+  "description": "Test to ensure that the fs authorization works as expected.\n\nVariables:\n\n- role\n- fs location\n\nTests\n- all roles have access to different places as expected\n- all `AuthorizationProperties` work as expected and map to the correct r/w\n- both `.MarkdownIndex.json` as well as frontmatter works as expected (separate function, separate test)",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 887,
+    "lines": 30,
+    "bytes": 887,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 30,
+    "linesPerFile": 30,
+    "numberOfFiles": 1
+  },
+  "id": "qkmahocsyndqhmsanczxkott"
+}

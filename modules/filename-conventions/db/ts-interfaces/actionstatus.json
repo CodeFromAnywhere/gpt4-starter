@@ -1,0 +1,156 @@
+{
+  "createdAt": 1675690230290,
+  "updatedAt": 1675690230290,
+  "deletedAt": 0,
+  "createdFirstAt": 1675690230290,
+  "id": "actionstatus",
+  "name": "ActionStatus",
+  "slug": "actionstatus",
+  "operationRelativeTypescriptFilePath": "src/ActionStatus.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "/**\nShould replace `LockInfo`\n\nJSON that shows status of something that is in progress or that affects something. For example, if a conversion is happening, it can contain something like this:\n\n```json\n{ \"status\": \"busy\", \"updatedAt\": 123456789 }\n```\n\nThe file can then be locked. If an error has occured, and the file should be locked because you don't want to try infinitely, you can set it to something like this:\n\n```json\n{\n  \"status\": \"error\",\n  \"updatedAt\": 123456789,\n  \"functionName\": \"xyz\",\n  \"parameters\": [\"parameterOneValue\", \"parameterTwoValue\"]\n}\n```\n */\nexport interface ActionStatus {\n  /**\n   * Status of the action\n   */\n  status: \"busy\" | \"error\";\n  /**\n   * Markdown indicating more info about the status\n   */\n  message: string;\n  /**\n   * Function initiating the action\n   */\n  functionName: string;\n  /**\n   * Parameters that went into the function (optional)\n   */\n  parameters?: any[];\n\n  updatedAt: number;\n  updatedTime: string;\n  updatedDate: string;\n\n  /**\n   * Unix timestamp when this status should be removed due to it being irrelevant (not required)\n   */\n  cleanupAt?: number;\n}",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "Should replace `LockInfo`\n\nJSON that shows status of something that is in progress or that affects something. For example, if a conversion is happening, it can contain something like this:\n\n```json\n{ \"status\": \"busy\", \"updatedAt\": 123456789 }\n```\n\nThe file can then be locked. If an error has occured, and the file should be locked because you don't want to try infinitely, you can set it to something like this:\n\n```json\n{\n\"status\": \"error\",\n\"updatedAt\": 123456789,\n\"functionName\": \"xyz\",\n\"parameters\": [\"parameterOneValue\", \"parameterTwoValue\"]\n}\n```",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "busy",
+            "error"
+          ],
+          "description": "Status of the action"
+        },
+        "message": {
+          "type": "string",
+          "description": "Markdown indicating more info about the status"
+        },
+        "functionName": {
+          "type": "string",
+          "description": "Function initiating the action"
+        },
+        "parameters": {
+          "type": "array",
+          "items": {},
+          "description": "Parameters that went into the function (optional)"
+        },
+        "updatedAt": {
+          "type": "number"
+        },
+        "updatedTime": {
+          "type": "string"
+        },
+        "updatedDate": {
+          "type": "string"
+        },
+        "cleanupAt": {
+          "type": "number",
+          "description": "Unix timestamp when this status should be removed due to it being irrelevant (not required)"
+        }
+      },
+      "required": [
+        "status",
+        "message",
+        "functionName",
+        "updatedAt",
+        "updatedTime",
+        "updatedDate"
+      ],
+      "additionalProperties": false,
+      "description": "Should replace `LockInfo`\n\nJSON that shows status of something that is in progress or that affects something. For example, if a conversion is happening, it can contain something like this:\n\n```json { \"status\": \"busy\", \"updatedAt\": 123456789 } ```\n\nThe file can then be locked. If an error has occured, and the file should be locked because you don't want to try infinitely, you can set it to something like this:\n\n```json { \"status\": \"error\", \"updatedAt\": 123456789, \"functionName\": \"xyz\", \"parameters\": [\"parameterOneValue\", \"parameterTwoValue\"] } ```"
+    },
+    "simplifiedSchema": {
+      "fullComment": "Should replace `LockInfo`\n\nJSON that shows status of something that is in progress or that affects something. For example, if a conversion is happening, it can contain something like this:\n\n```json { \"status\": \"busy\", \"updatedAt\": 123456789 } ```\n\nThe file can then be locked. If an error has occured, and the file should be locked because you don't want to try infinitely, you can set it to something like this:\n\n```json { \"status\": \"error\", \"updatedAt\": 123456789, \"functionName\": \"xyz\", \"parameters\": [\"parameterOneValue\", \"parameterTwoValue\"] } ```",
+      "properties": [
+        {
+          "name": "status",
+          "required": true,
+          "schema": {
+            "enum": [
+              "busy",
+              "error"
+            ],
+            "fullComment": "Status of the action",
+            "type": "string"
+          }
+        },
+        {
+          "name": "message",
+          "required": true,
+          "schema": {
+            "fullComment": "Markdown indicating more info about the status",
+            "type": "string"
+          }
+        },
+        {
+          "name": "functionName",
+          "required": true,
+          "schema": {
+            "fullComment": "Function initiating the action",
+            "type": "string"
+          }
+        },
+        {
+          "name": "parameters",
+          "required": false,
+          "schema": {
+            "fullComment": "Parameters that went into the function (optional)",
+            "items": [
+              {
+                "schema": {
+                  "properties": [],
+                  "type": "object"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "updatedAt",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "updatedTime",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "updatedDate",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "cleanupAt",
+          "required": false,
+          "schema": {
+            "fullComment": "Unix timestamp when this status should be removed due to it being irrelevant (not required)",
+            "type": "number"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "ActionStatus",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

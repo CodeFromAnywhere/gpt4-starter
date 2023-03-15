@@ -1,0 +1,35 @@
+{
+  "createdAt": 1673794238646,
+  "updatedAt": 1673794238646,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794238646,
+  "isApiExposed": false,
+  "isExported": false,
+  "operationRelativeTypescriptFilePath": "src/updateAllOperationStatus.test.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  const result = await updateAllOperationStatus(true);\n}",
+  "name": "updateAllOperationStatusTest",
+  "slug": "update-all-operation-status-test",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 71,
+    "lines": 3,
+    "bytes": 71,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 24,
+    "linesPerFile": 3,
+    "numberOfFiles": 1
+  },
+  "id": "quthnnnqppnkglesplyiuwqw"
+}

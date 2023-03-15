@@ -1,0 +1,52 @@
+{
+  "createdAt": 1678332097834,
+  "updatedAt": 1678332097834,
+  "deletedAt": 0,
+  "createdFirstAt": 1678332097834,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/getObjectKeysArray.ts",
+  "commentsInside": [],
+  "rawText": " <TObject extends { [key: string]: any }>(\n  object: TObject\n) => {\n  return Object.keys(object) as Extract<keyof TObject, string>[];\n}",
+  "name": "getObjectKeysArray",
+  "slug": "get-object-keys-array",
+  "parameters": [],
+  "description": "Handy function to get the keys of an object, but typed.\n\nNB: The only difference from Object.keys is that this returns the keys in a typesafe manner",
+  "returnType": {
+    "rawType": "Extract<keyof TObject, string>[]",
+    "typeDefinition": {
+      "optional": false,
+      "type": "array",
+      "items": {}
+    },
+    "typeCoverage": 0,
+    "isArray": true,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "items": [
+        {
+          "schema": {
+            "properties": [],
+            "type": "object"
+          },
+          "name": null
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 283,
+    "lines": 7,
+    "bytes": 283,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 40,
+    "linesPerFile": 7,
+    "numberOfFiles": 1
+  },
+  "id": "xaludurdebetzlytmiegaaqz"
+}

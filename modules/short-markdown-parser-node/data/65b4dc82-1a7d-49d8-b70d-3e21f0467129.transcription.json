@@ -1,0 +1,164 @@
+{
+  "sentences": [
+    {
+      "startAt": 0,
+      "endAt": 2320,
+      "text": "There's a way to write documents, Morty."
+    },
+    {
+      "startAt": 2320,
+      "endAt": 6240,
+      "text": "You have a file with an extension and you can use some syntax rules to style things."
+    }
+  ],
+  "text": " There's a way to write documents, Morty.\n You have a file with an extension and you can use some syntax rules to style things.\n",
+  "translationText": " There's a way to write documents, Morty.\n You have a file with an extension and you can use some syntax rules to style things.\n",
+  "words": [
+    {
+      "startAt": 0,
+      "endAt": 80,
+      "text": ""
+    },
+    {
+      "startAt": 80,
+      "endAt": 270,
+      "text": "There"
+    },
+    {
+      "startAt": 270,
+      "endAt": 380,
+      "text": "'s"
+    },
+    {
+      "startAt": 380,
+      "endAt": 430,
+      "text": "a"
+    },
+    {
+      "startAt": 430,
+      "endAt": 590,
+      "text": "way"
+    },
+    {
+      "startAt": 590,
+      "endAt": 740,
+      "text": "to"
+    },
+    {
+      "startAt": 740,
+      "endAt": 980,
+      "text": "write"
+    },
+    {
+      "startAt": 980,
+      "endAt": 1680,
+      "text": "documents"
+    },
+    {
+      "startAt": 1680,
+      "endAt": 1730,
+      "text": ","
+    },
+    {
+      "startAt": 1730,
+      "endAt": 2320,
+      "text": "Morty"
+    },
+    {
+      "startAt": 2320,
+      "endAt": 2320,
+      "text": "."
+    },
+    {
+      "startAt": 2320,
+      "endAt": 2490,
+      "text": "You"
+    },
+    {
+      "startAt": 2490,
+      "endAt": 2760,
+      "text": "have"
+    },
+    {
+      "startAt": 2760,
+      "endAt": 2770,
+      "text": "a"
+    },
+    {
+      "startAt": 2770,
+      "endAt": 3000,
+      "text": "file"
+    },
+    {
+      "startAt": 3000,
+      "endAt": 3230,
+      "text": "with"
+    },
+    {
+      "startAt": 3230,
+      "endAt": 3340,
+      "text": "an"
+    },
+    {
+      "startAt": 3340,
+      "endAt": 3920,
+      "text": "extension"
+    },
+    {
+      "startAt": 3920,
+      "endAt": 4000,
+      "text": "and"
+    },
+    {
+      "startAt": 4000,
+      "endAt": 4120,
+      "text": "you"
+    },
+    {
+      "startAt": 4120,
+      "endAt": 4260,
+      "text": "can"
+    },
+    {
+      "startAt": 4260,
+      "endAt": 4400,
+      "text": "use"
+    },
+    {
+      "startAt": 4400,
+      "endAt": 4630,
+      "text": "some"
+    },
+    {
+      "startAt": 4630,
+      "endAt": 4980,
+      "text": "syntax"
+    },
+    {
+      "startAt": 4980,
+      "endAt": 5310,
+      "text": "rules"
+    },
+    {
+      "startAt": 5310,
+      "endAt": 5380,
+      "text": "to"
+    },
+    {
+      "startAt": 5380,
+      "endAt": 5670,
+      "text": "style"
+    },
+    {
+      "startAt": 5670,
+      "endAt": 6020,
+      "text": "things"
+    },
+    {
+      "startAt": 6020,
+      "endAt": 6240,
+      "text": "."
+    }
+  ],
+  "usedModelName": "small"
+}

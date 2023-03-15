@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.isLocked=void 0;var fs_util_1=require("fs-util"),read_json_file_1=require("read-json-file"),getActionStatusFilePath_1=require("./getActionStatusFilePath"),isLocked=function(e){var t=(0,getActionStatusFilePath_1.getActionStatusFilePath)(e);if(fs_util_1.fs.existsSync(t)){var i=(0,read_json_file_1.readJsonFileSync)(t);return!!i&&(i.cleanupAt&&Date.now()>=i.cleanupAt?(fs_util_1.fs.rm(t),!1):!!i.updatedAt)}return!1};exports.isLocked=isLocked;
+//# sourceMappingURL=isLocked.js.map

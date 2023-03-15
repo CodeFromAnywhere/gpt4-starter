@@ -1,0 +1,57 @@
+{
+  "createdAt": 1678428299788,
+  "updatedAt": 1678428299788,
+  "deletedAt": 0,
+  "createdFirstAt": 1678428299788,
+  "id": "publicpersonkeys",
+  "name": "PublicPersonKeys",
+  "slug": "publicpersonkeys",
+  "operationRelativeTypescriptFilePath": "src/person/Person.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\nexport type PublicPersonKeys = typeof publicPersonKeys[number];",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "string",
+      "enum": [
+        "name",
+        "slug",
+        "id",
+        "pictureImage",
+        "interestSlugs",
+        "media",
+        "preferred_mediaChannelId",
+        "groupSlugs",
+        "operationName",
+        "projectRelativePath"
+      ]
+    },
+    "simplifiedSchema": {
+      "enum": [
+        "name",
+        "slug",
+        "id",
+        "pictureImage",
+        "interestSlugs",
+        "media",
+        "preferred_mediaChannelId",
+        "groupSlugs",
+        "operationName",
+        "projectRelativePath"
+      ],
+      "type": "string"
+    },
+    "typeCoverage": 0,
+    "rawType": "PublicPersonKeys",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

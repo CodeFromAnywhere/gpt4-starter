@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678041488730,
+  "updatedAt": 1678041488730,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041488730,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "downloadGetApi",
+  "slug": "download-get-api",
+  "operationRelativeTypescriptFilePath": "src/download/downloadGetApi.ts",
+  "type": {
+    "rawType": "(serverContext: import(\"/Users/clarity/os/operations/node_modules/@types/server/typings/common\").Context) => Promise<void | { isSuccessful: boolean; message: string; }>",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  serverContext: Context\n): Promise<{ isSuccessful: boolean; message: string } | void> => {\n  const projectRoot = getProjectRoot();\n  if (!projectRoot) {\n    return { isSuccessful: false, message: \"No projectroot\" };\n  }\n  const token: string | undefined = takeFirst(serverContext?.query.token);\n\n  const now = Date.now();\n\n  const download = (await db.get(\"Download\")).find((x) => {\n    const isThis = x.id === token;\n    if (!isThis) return false;\n\n    const isStillAvailable = x.availableUntilAt\n      ? x.availableUntilAt > now\n      : true;\n\n    return isStillAvailable;\n  });\n\n  if (!download) {\n    return { isSuccessful: false, message: \"Not found\" };\n  }\n\n  // download\n  const absolutePath = path.join(\n    projectRoot,\n    download.download_projectRelativePath\n  );\n\n  const exists = fs.existsSync(absolutePath);\n\n  if (download.persistence !== \"forever\" || !exists) {\n    // delete it if it wasn't for forever, or download is gone\n    await db.remove(\"Download\", (item) => item.id === download.id);\n  }\n\n  if (!exists) {\n    return {\n      isSuccessful: false,\n      message: \"Download doesn't exist anymore\",\n    };\n  }\n\n  return serverDownloadReply(absolutePath, true);\n}",
+  "description": "",
+  "id": "oqmbtmusrqyaneidxgdbijvk"
+}

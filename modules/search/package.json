@@ -1,0 +1,74 @@
+{
+  "createdAt": 1668328725317,
+  "updatedAt": 1668328725317,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328725317,
+  "id": "enaZdzaIcJtxsuCc",
+  "dependencies": {
+    "convert-case": "0.0.1",
+    "make-test": "0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "search",
+  "language": "english",
+  "slug": "search",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "indexInteracesErrors": "[\"No schema/definitions found for /Users/king/King/operations/tools/parsing/search/src/searchRecursiveObject.ts. Error: Error: Unknown type \\\"function\\\"\"]",
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "search",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1668335101903,
+    "operationDependenciesIndexed": [
+      "lowerCaseArray",
+      "makeTest"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/parsing",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 2,
+        "lines": 173,
+        "characters": 4162,
+        "bytes": 4162
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 114,
+        "characters": 2697,
+        "bytes": 2697
+      },
+      "textSize": {
+        "numberOfFiles": 3,
+        "lines": 145,
+        "characters": 5688,
+        "bytes": 5688
+      },
+      "size": {
+        "bytes": 12547,
+        "characters": 12547,
+        "lines": 432,
+        "numberOfFiles": 7
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

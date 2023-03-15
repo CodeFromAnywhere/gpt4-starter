@@ -1,0 +1,75 @@
+{
+  "createdAt": 1678372641778,
+  "updatedAt": 1678372641778,
+  "deletedAt": 0,
+  "createdFirstAt": 1678372641778,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "proactiveOutreach",
+  "slug": "proactive-outreach",
+  "operationRelativeTypescriptFilePath": "src/proactiveOutreach.ts",
+  "type": {
+    "rawType": "{ (): void; config: { runEveryPeriod: string; }; }",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "runEveryPeriod": {
+              "type": "string",
+              "allOf": [
+                {
+                  "transform": [
+                    "trim"
+                  ]
+                },
+                {
+                  "minLength": 1
+                }
+              ]
+            }
+          },
+          "required": [
+            "runEveryPeriod"
+          ]
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "config",
+          "required": true,
+          "schema": {
+            "properties": [
+              {
+                "name": "runEveryPeriod",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  // 1) go over every ChatMessage channel, one by one\n  // 2) for every channel, react if it's been a while, or if you havent had the chance to reply yet.\n}",
+  "description": "",
+  "id": "ytsmfzindsecvhjrnscmxoif"
+}

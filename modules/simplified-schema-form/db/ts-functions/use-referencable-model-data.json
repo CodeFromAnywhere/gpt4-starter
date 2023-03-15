@@ -1,0 +1,44 @@
+{
+  "createdAt": 1677582199849,
+  "updatedAt": 1677582199849,
+  "deletedAt": 0,
+  "createdFirstAt": 1677582199849,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/useReferencableModelData.ts",
+  "commentsInside": [],
+  "rawText": " (\n  simplifiedSchema: SimplifiedSchema\n): ReferencableModelData | undefined => {\n  const referencableModelNames = getReferencableModels(simplifiedSchema)\n    ?.map((x) => x.interfaceName)\n    .filter(notEmpty);\n\n  if (!referencableModelNames) return;\n\n  /**\n   * NB: here we just get the referencable model data for the referencable model names in this form. But since they are decoupled, useQuery is caching them, across forms!\n   */\n  const referencableModelDataArray = referencableModelNames\n    .map((dbModelName) => {\n      const realDbModelName = dbModelName as keyof DbModels;\n      const { data: apiResult, isLoading } =\n        queries.useGetReferencableModelDataWithContext(realDbModelName);\n\n      const data = apiResult?.result;\n\n      return { [dbModelName]: { data, isLoading } };\n    })\n    .filter(notEmpty);\n\n  const referencableModelData: ReferencableModelData | undefined =\n    referencableModelDataArray\n      ? mergeObjectsArray(referencableModelDataArray)\n      : undefined;\n\n  return referencableModelData;\n}",
+  "name": "useReferencableModelData",
+  "slug": "use-referencable-model-data",
+  "parameters": [],
+  "description": "Hook to retreive `ReferencableModelData` to supply to `SimplifiedSchemaForm`.\n\nUnderwater, this calculates all referencableModelNames for a schema, and then it fetches the `ReferencableItem`[] for every one of those models, using `react-query` `useQuery` hooks\n\nNB: be careful, not to change the simplifiedSchema after using this hook for the first time. This will change the amount of hooks and this can break react!\n\n(it will give `Error: Rendered more hooks than during the previous render`)",
+  "returnType": {
+    "rawType": "import(\"/Users/clarity/os/operations/tools/user-interfaces/gui/wise/simplified-schema-form/src/types\").ReferencableModelData | undefined",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": true
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 1526,
+    "lines": 37,
+    "bytes": 1526,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 41,
+    "linesPerFile": 37,
+    "numberOfFiles": 1
+  },
+  "id": "kmkkpqyjfrgmgvmrexhcrzdw"
+}

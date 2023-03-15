@@ -1,0 +1,85 @@
+{
+  "createdAt": 1668328711281,
+  "updatedAt": 1668328711281,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328711281,
+  "id": "eXOcmzdxLiHCsOky",
+  "author": "Wijnand Karsens",
+  "dependencies": {
+    "react": "17.0.2"
+  },
+  "description": "Simple localStorage/asyncStorage-based and fully typed redux replacement with global persisted storage by default for react and react-native apps.",
+  "devDependencies": {
+    "@react-native-async-storage/async-storage": "*",
+    "@types/react": "17.0.30",
+    "react": "^17.0.2",
+    "tailwindcss": "^3.0.24"
+  },
+  "homepage": "https://github.com/Code-From-Anywhere/react-with-native#readme",
+  "main": "build/index.js",
+  "peerDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Code-From-Anywhere/react-with-native.git"
+  },
+  "scripts": {
+    "pub": "npm version patch --force && npm publish",
+    "build": "tsc",
+    "dev": "npx tsc-watch --onSuccess 'yarn dev:tw'",
+    "dev:tw": "tailwindcss -o css.css"
+  },
+  "source": "src/index.tsx",
+  "version": "2.0.40",
+  "name": "react-with-native-store",
+  "language": "english",
+  "slug": "react-with-native-store",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/king/King/operations/tools/user-interfaces/gui/dumb/react-with-native-store/src/general.tsx. Error: Error: Unknown node \"new (props: P) => Component<P, any>\" of kind \"ConstructorType\""
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "ui-cjs",
+    "coreDependenciesIndexed": [
+      "useEffect",
+      "useState"
+    ],
+    "folderNameIndexed": "react-with-native-store",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1671116756095,
+    "operationDependenciesIndexed": [],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/user-interfaces/gui/dumb",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 3,
+        "lines": 302,
+        "characters": 7796,
+        "bytes": 7796
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 127,
+        "characters": 3428,
+        "bytes": 3428
+      },
+      "textSize": {
+        "numberOfFiles": 4,
+        "lines": 252,
+        "characters": 6247,
+        "bytes": 6247
+      },
+      "size": {
+        "bytes": 17471,
+        "characters": 17471,
+        "lines": 681,
+        "numberOfFiles": 9
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

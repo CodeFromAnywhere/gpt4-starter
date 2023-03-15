@@ -1,0 +1,33 @@
+{
+  "createdAt": 1675690232369,
+  "updatedAt": 1675690232369,
+  "deletedAt": 0,
+  "createdFirstAt": 1675690232369,
+  "id": "markdownextension",
+  "name": "MarkdownExtension",
+  "slug": "markdownextension",
+  "operationRelativeTypescriptFilePath": "src/extensions.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\nexport type MarkdownExtension = typeof markdownExtensions[number];",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "string"
+    },
+    "simplifiedSchema": {
+      "type": "string"
+    },
+    "typeCoverage": 0,
+    "rawType": "MarkdownExtension",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "createdAt": 1668328816458,
+  "updatedAt": 1668328816458,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328816458,
+  "id": "IPFeFRXDRUiclwih",
+  "author": "",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "js-util": "0.0.1",
+    "log": "0.0.1",
+    "graceful-fs": "*",
+    "recursive-types": "0.0.1",
+    "filename-conventions": "0.0.1",
+    "write-to-assets": "0.0.1",
+    "read-json-file": "0.0.1",
+    "code-types": "0.0.1",
+    "fs-util-js": "0.0.1",
+    "matter-types": "0.0.1",
+    "function-types": "0.0.1"
+  },
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "initpub": "npm publish --access public",
+    "pub": "npm version patch --force && npm publish",
+    "build": "tsc",
+    "dev": "tsc -w"
+  },
+  "source": "src/index.ts",
+  "version": "1.0.5",
+  "name": "fs-util",
+  "language": "english",
+  "slug": "fs-util",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "indexInteracesErrors": [
+        "No schema/definitions found for /Users/clarity/os/operations/tools/control-fs/fs-util/src/readFilePerLine.ts. Error: Error: Unknown type \"function\""
+      ],
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "fs-util",
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1678042021721,
+    "operationDependenciesIndexed": [
+      "log",
+      "getFolderJs",
+      "trimSlashes",
+      "ChildObject",
+      "generatedFolders",
+      "notEmpty",
+      "sum",
+      "StandardFunctionConfig",
+      "makeArray",
+      "notEmpty",
+      "Frontmatter"
+    ],
+    "packageDependenciesIndexed": [
+      "constants",
+      "rmSync",
+      "existsSync",
+      "accessSync",
+      "cpSync",
+      "promisify",
+      "cp",
+      "PathLike",
+      "Dir",
+      "Dirent",
+      "Stats",
+      "parse",
+      "basename",
+      "delimiter",
+      "dirname",
+      "extname",
+      "format",
+      "isAbsolute",
+      "join",
+      "normalize",
+      "resolve",
+      "sep",
+      "relative"
+    ],
+    "relativeOperationLocationPathIndexed": "operations/tools/control-fs",
+    "markdown": "General purpose wrapper around `node:fs` and `node:path` that should be used instead of those, because it removes some of its painpoints, removes unneeded stuff, and adds some other useful functions.\n",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 24,
+        "lines": 934,
+        "characters": 24464,
+        "bytes": 24464
+      },
+      "dataSize": {
+        "numberOfFiles": 3,
+        "lines": 31572,
+        "characters": 900968,
+        "bytes": 900968
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 823,
+        "characters": 16680,
+        "bytes": 16680
+      },
+      "size": {
+        "bytes": 942112,
+        "characters": 942112,
+        "lines": 33329,
+        "numberOfFiles": 29
+      }
+    },
+    "hasGeneratedDependenciesIndexed": false,
+    "hasGeneratedImportsIndexed": false
+  }
+}

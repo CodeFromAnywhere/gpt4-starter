@@ -1,0 +1,50 @@
+{
+  "createdAt": 1678330499845,
+  "updatedAt": 1678330499845,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330499845,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/isFileCollection.ts",
+  "commentsInside": [],
+  "rawText": " (absolutePath: string) =>\n  withoutSubExtensions(path.parse(absolutePath).base)",
+  "name": "getFileCollectionBasename",
+  "slug": "get-file-collection-basename",
+  "parameters": [
+    {
+      "name": "absolutePath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "String",
+    "typeDefinition": {
+      "optional": false,
+      "$ref": "#/definitions/String"
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 80,
+    "lines": 2,
+    "bytes": 80,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 40,
+    "linesPerFile": 2,
+    "numberOfFiles": 1
+  },
+  "id": "gtmozashtzzjpgdrsirxoknr"
+}

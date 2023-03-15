@@ -1,0 +1,49 @@
+{
+  "createdAt": 1678330843648,
+  "updatedAt": 1678330843648,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330843648,
+  "id": "namedparameterstypeof-renamebadlynamedfile",
+  "name": "NamedParameters<typeof renameBadlyNamedFile>",
+  "slug": "namedparameterstypeof-renamebadlynamedfile",
+  "operationRelativeTypescriptFilePath": "src/renameBadlyNamedFile.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "absoluteFilePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "absoluteFilePath"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "absoluteFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof renameBadlyNamedFile>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

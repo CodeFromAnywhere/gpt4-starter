@@ -1,0 +1,24 @@
+{
+  "createdAt": 1678330893572,
+  "updatedAt": 1678330893572,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330893572,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "CHUNK_TOKEN_SIZE",
+  "slug": "chunk-token-size",
+  "operationRelativeTypescriptFilePath": "src/getRecordingType.ts",
+  "type": {
+    "rawType": "{}",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "value": "2048",
+  "description": "",
+  "id": "rypfzkqtiwdwicecdtoxczvl"
+}

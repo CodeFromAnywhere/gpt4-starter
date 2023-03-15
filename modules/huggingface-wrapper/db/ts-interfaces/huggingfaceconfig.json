@@ -1,0 +1,94 @@
+{
+  "createdAt": 1678331050444,
+  "updatedAt": 1678331050444,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331050444,
+  "id": "huggingfaceconfig",
+  "name": "HuggingfaceConfig",
+  "slug": "huggingfaceconfig",
+  "operationRelativeTypescriptFilePath": "src/huggingFaceInference.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\nexport interface HuggingfaceConfig {\n  text?: string;\n  /**\n   * If this is given, will be used instead of text\n   */\n  contentAbsoluteFilePath?: string;\n  isAudio?: boolean;\n  apiKey: string;\n  model: string;\n}",
+  "extensions": [],
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "contentAbsoluteFilePath": {
+          "type": "string",
+          "description": "If this is given, will be used instead of text"
+        },
+        "isAudio": {
+          "type": "boolean"
+        },
+        "apiKey": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "apiKey",
+        "model"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "text",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "contentAbsoluteFilePath",
+          "required": false,
+          "schema": {
+            "fullComment": "If this is given, will be used instead of text",
+            "type": "string"
+          }
+        },
+        {
+          "name": "isAudio",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "apiKey",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "model",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "HuggingfaceConfig",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

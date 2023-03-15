@@ -1,0 +1,46 @@
+{
+  "createdAt": 1678330502759,
+  "updatedAt": 1678330502759,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330502759,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/readFolderFileCollections.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  absoluteBaseFolderPath: string\n): Promise<FileCollectionObject> => {\n  const dirents = await fs.readdir(absoluteBaseFolderPath, {\n    withFileTypes: true,\n    encoding: \"utf8\",\n  });\n\n  // for every file, calculate the root filename and put it in the collection object under that key\n  const fileCollectionObject: FileCollectionObject = {};\n  dirents.map((dirent) => {\n    const rootName = withoutSubExtensions(dirent.name);\n    const collectionNow = fileCollectionObject[rootName] || [];\n    fileCollectionObject[rootName] = collectionNow.concat(dirent.name);\n  });\n\n  return fileCollectionObject;\n}",
+  "name": "readFolderFileCollections",
+  "slug": "read-folder-file-collections",
+  "parameters": [
+    {
+      "name": "absoluteBaseFolderPath",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "Returns an array of `FileCollection`s\n\nimportant for ui as well as renaming as well as many other things!",
+  "returnType": {
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/control-fs/file-collection-util/src/FileCollection\").FileCollectionObject>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 716,
+    "lines": 20,
+    "bytes": 716,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 36,
+    "linesPerFile": 20,
+    "numberOfFiles": 1
+  },
+  "id": "beceytfjreamnqipuzkmauwv"
+}

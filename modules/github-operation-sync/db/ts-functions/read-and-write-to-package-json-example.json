@@ -1,0 +1,35 @@
+{
+  "createdAt": 1673794236008,
+  "updatedAt": 1673794236008,
+  "deletedAt": 0,
+  "createdFirstAt": 1673794236008,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/readAndWriteToPackageJsonExample.ts",
+  "commentsInside": [],
+  "rawText": " async () => {\n  //TODO:REFACTOR\n  const result = (\n    await db.get(\"Operation\", { operationName: \"nodejs-test\" })\n  )[0];\n\n  await db.update(\n    \"Operation\",\n    (item) => item.operationName === \"nodejs-test\",\n    (old) => {\n      if (old.repository) {\n        //\n      }\n      return { ...old, repository: \"test-repository.com\" };\n    }\n  );\n  // return result.repository;\n}",
+  "name": "readAndWriteToPackageJsonExample",
+  "slug": "read-and-write-to-package-json-example",
+  "parameters": [],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 378,
+    "lines": 18,
+    "bytes": 378,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 21,
+    "linesPerFile": 18,
+    "numberOfFiles": 1
+  },
+  "id": "xdzlxqzcfaouhcmpltokjbng"
+}

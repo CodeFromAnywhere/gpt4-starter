@@ -1,0 +1,72 @@
+{
+  "createdAt": 1677580412359,
+  "updatedAt": 1677580412359,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580412359,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/alter/upsertKeyValueMarkdown.ts",
+  "commentsInside": [],
+  "rawText": " (\n  arrayItem: Storing<KeyValueMarkdownModelType>,\n  newCategoryStack: CategoryStack\n) => {\n  const categoryStackWithItself = arrayItem.categoryStack.concat(\n    arrayItem.slug\n  );\n  const locationString = categoryStackWithItself.join(\",\");\n  const newItemLocationString = newCategoryStack.join(\",\");\n  const isSameLocation = locationString === newItemLocationString;\n\n  return isSameLocation;\n}",
+  "name": "findParent",
+  "slug": "find-parent",
+  "parameters": [
+    {
+      "name": "arrayItem",
+      "schema": {
+        "$ref": "#/definitions/Storing%3CKeyValueMarkdownModelType%3E"
+      },
+      "required": true
+    },
+    {
+      "name": "newCategoryStack",
+      "schema": {
+        "$ref": "#/definitions/CategoryStack"
+      },
+      "simplifiedSchema": {
+        "fullComment": "Taken from the location in the folder of the db-model.\n\nNB: Changing this value when updating/upserting, changes where the item is located!",
+        "nb": "Changing this value when updating/upserting, changes where the item is located!",
+        "items": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": null
+          }
+        ],
+        "type": "array"
+      },
+      "required": true
+    }
+  ],
+  "description": "this location matches any category that equals the categorystack",
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 461,
+    "lines": 13,
+    "bytes": 461,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 35,
+    "linesPerFile": 13,
+    "numberOfFiles": 1
+  },
+  "id": "gdskxvnireyxdtslqzqbonss"
+}

@@ -1,0 +1,61 @@
+{
+  "createdAt": 1678330986010,
+  "updatedAt": 1678330986010,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330986010,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/bananaStableDiffusion.ts",
+  "commentsInside": [],
+  "rawText": " async (config: {\n  text?: string;\n}): Promise<{\n  isSuccessful: boolean;\n  message: string;\n  result?: object;\n}> => {\n  const { text } = config;\n  const persona = await getPrimaryPersona();\n\n  const apiKey = persona.bananadevApiKey;\n\n  if (!apiKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please setup an API Key for Banana.dev\",\n    };\n  }\n\n  const modelKey = persona.bananadevModelKeys?.stableDiffusion;\n\n  if (!modelKey) {\n    return {\n      isSuccessful: false,\n      message: \"Please provide a correct model that you have a model key for\",\n    };\n  }\n\n  const modelParameters = {\n    prompt: text,\n    num_inference_steps: 50,\n    guidance_scale: 9,\n    height: 512,\n    width: 512,\n    seed: 3242,\n  };\n\n  const result = await banana.run(apiKey, modelKey, modelParameters);\n  console.log({ resultBanana: result });\n\n  return {\n    isSuccessful: true,\n    message: \"Ran successfully\",\n    result,\n  };\n}",
+  "name": "bananaStableDiffusion",
+  "slug": "banana-stable-diffusion",
+  "parameters": [
+    {
+      "name": "config",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "Promise<{ isSuccessful: boolean; message: string; result?: object | undefined; }>",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 3,
+  "size": {
+    "characters": 928,
+    "lines": 46,
+    "bytes": 928,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 20,
+    "linesPerFile": 46,
+    "numberOfFiles": 1
+  },
+  "id": "pgjejdiqkrkthbliuyzdmwps"
+}

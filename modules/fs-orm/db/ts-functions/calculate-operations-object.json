@@ -1,0 +1,46 @@
+{
+  "createdAt": 1677580417450,
+  "updatedAt": 1677580417450,
+  "deletedAt": 0,
+  "createdFirstAt": 1677580417450,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/convention/calculateOperationsObject.ts",
+  "commentsInside": [],
+  "rawText": " async (manualProjectRoot: string) => {\n  const operationBasePaths = await exploreOperationFolders({\n    basePath: getPathsWithOperations({ manualProjectRoot }),\n  });\n\n  const operationsObject = mergeObjectsArray(\n    operationBasePaths.map((operationBasePath) => {\n      return {\n        [getLastFolder(operationBasePath)]: makeRelative(\n          operationBasePath,\n          manualProjectRoot\n        ),\n      };\n    })\n  );\n\n  return operationsObject;\n}",
+  "name": "calculateOperationsObject",
+  "slug": "calculate-operations-object",
+  "parameters": [
+    {
+      "name": "manualProjectRoot",
+      "schema": {
+        "type": "string"
+      },
+      "simplifiedSchema": {
+        "type": "string"
+      },
+      "required": true
+    }
+  ],
+  "description": "relative\n\nNeeded in case of manual project root, otherwise use SDK!\n\nReturns project relative operation base paths",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 5,
+  "size": {
+    "characters": 572,
+    "lines": 22,
+    "bytes": 572,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 26,
+    "linesPerFile": 22,
+    "numberOfFiles": 1
+  },
+  "id": "uevnrgtibnwffgcvgyvduakj"
+}

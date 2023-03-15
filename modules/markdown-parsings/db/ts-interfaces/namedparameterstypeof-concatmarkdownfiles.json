@@ -1,0 +1,33 @@
+{
+  "createdAt": 1677586377097,
+  "updatedAt": 1677586377097,
+  "deletedAt": 0,
+  "createdFirstAt": 1677586377097,
+  "id": "namedparameterstypeof-concatmarkdownfiles",
+  "name": "NamedParameters<typeof concatMarkdownFiles>",
+  "slug": "namedparameterstypeof-concatmarkdownfiles",
+  "operationRelativeTypescriptFilePath": "src/concatMarkdownFiles.test.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof concatMarkdownFiles>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

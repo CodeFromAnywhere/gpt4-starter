@@ -1,0 +1,26 @@
+[
+  {
+    "createdAt": 1669885228528,
+    "updatedAt": 1669885228528,
+    "deletedAt": 0,
+    "createdFirstAt": 1669885228528,
+    "name": "AppsMenu",
+    "slug": "apps-menu",
+    "operationRelativeTypescriptFilePath": "src/AppsMenu.tsx",
+    "comments": [],
+    "type": "value",
+    "id": "eidjzknlovnbvtdytrjzuttk"
+  },
+  {
+    "createdAt": 1669885228528,
+    "updatedAt": 1669885228528,
+    "deletedAt": 0,
+    "createdFirstAt": 1669885228528,
+    "name": "AppsMenu",
+    "slug": "apps-menu",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "hbmnsiyovkwbgdbcqabcdufw"
+  }
+]

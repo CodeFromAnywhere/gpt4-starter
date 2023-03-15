@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678042871525,
+  "updatedAt": 1678042871525,
+  "deletedAt": 0,
+  "createdFirstAt": 1678042871525,
+  "id": "namedparameterstypeof-runtests",
+  "name": "NamedParameters<typeof runTests>",
+  "slug": "namedparameterstypeof-runtests",
+  "operationRelativeTypescriptFilePath": "src/docxToMd.test.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof runTests>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

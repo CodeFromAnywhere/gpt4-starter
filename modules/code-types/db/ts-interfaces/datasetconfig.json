@@ -1,0 +1,256 @@
+{
+  "createdAt": 1676841838027,
+  "updatedAt": 1676841838027,
+  "deletedAt": 0,
+  "createdFirstAt": 1676841838027,
+  "id": "datasetconfig",
+  "name": "DatasetConfig",
+  "slug": "datasetconfig",
+  "operationRelativeTypescriptFilePath": "src/Dataset.ts",
+  "hasGeneric": false,
+  "isExported": true,
+  "rawText": "\n\n/**\n * The part of dataset that can be used in certain functions\n */\nexport interface DatasetConfig extends DatasetConfigShape {\n  /**\n   * Filters are applied after each other\n   */\n  filter?: DatasetFilter[];\n\n  /**\n   *\n   */\n  sort?: DatasetSort[];\n\n  /**\n   * Specify a max amount of items n\n   */\n  maxRows?: number;\n\n  /**\n   * If specified, slices the sorted array to omit the first n items;\n   */\n  startFromIndex?: number;\n\n  /**\n   * If specified, will only include these parameter keys of the model object. Otherwise all keys will be taken\n   */\n  objectParameterKeys?: string[];\n\n  /**\n   * If specified, will omit these keys when creating the dataset\n   */\n  ignoreObjectParameterKeys?: string[];\n\n  authorizations?: GroupAuthorizationObject;\n}",
+  "extensions": [
+    "DatasetConfigShape"
+  ],
+  "isOperationIndex": false,
+  "description": "The part of dataset that can be used in certain functions",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DatasetFilter"
+          },
+          "description": "Filters are applied after each other"
+        },
+        "sort": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DatasetSort"
+          }
+        },
+        "maxRows": {
+          "type": "number",
+          "description": "Specify a max amount of items n"
+        },
+        "startFromIndex": {
+          "type": "number",
+          "description": "If specified, slices the sorted array to omit the first n items;"
+        },
+        "objectParameterKeys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "If specified, will only include these parameter keys of the model object. Otherwise all keys will be taken"
+        },
+        "ignoreObjectParameterKeys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "If specified, will omit these keys when creating the dataset"
+        },
+        "view": {},
+        "authorizations": {
+          "$ref": "#/definitions/GroupAuthorizationObject"
+        }
+      },
+      "additionalProperties": false,
+      "description": "The part of dataset that can be used in certain functions"
+    },
+    "simplifiedSchema": {
+      "fullComment": "The part of dataset that can be used in certain functions",
+      "properties": [
+        {
+          "name": "filter",
+          "required": false,
+          "schema": {
+            "fullComment": "Filters are applied after each other",
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "Can be better, see https://www.w3schools.com/js/js_comparisons.asp",
+                  "properties": [
+                    {
+                      "name": "objectParameterKey",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "value",
+                      "required": true,
+                      "schema": {
+                        "fullComment": "This will sometines need to be casted",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "operator",
+                      "required": true,
+                      "schema": {
+                        "enum": [
+                          "includesLetters",
+                          "includes",
+                          "startsWith",
+                          "endsWith",
+                          "equal",
+                          "notEqual",
+                          "greaterThan",
+                          "greaterThanOrEqual",
+                          "lessThan",
+                          "lessThanOrEqual"
+                        ],
+                        "fullComment": "Uses type equality\n\n",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "filterFunctionName",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "TODO: Maybe add possibility to use a sort function from the SDK",
+                        "todo": "Maybe add possibility to use a sort function from the SDK",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                },
+                "name": "DatasetFilter"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "sort",
+          "required": false,
+          "schema": {
+            "items": [
+              {
+                "schema": {
+                  "fullComment": "Sort by comparing the two values using the `Array.sort` method and Greater than and Less than operators.",
+                  "properties": [
+                    {
+                      "name": "objectParameterKey",
+                      "required": true,
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "sortDirection",
+                      "required": false,
+                      "schema": {
+                        "enum": [
+                          "ascending",
+                          "descending"
+                        ],
+                        "fullComment": "sort normally or in reverse order",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "sortFunctionName",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "TODO:",
+                        "todo": "",
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "type": "object"
+                },
+                "name": "DatasetSort"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "maxRows",
+          "required": false,
+          "schema": {
+            "fullComment": "Specify a max amount of items n",
+            "type": "number"
+          }
+        },
+        {
+          "name": "startFromIndex",
+          "required": false,
+          "schema": {
+            "fullComment": "If specified, slices the sorted array to omit the first n items;",
+            "type": "number"
+          }
+        },
+        {
+          "name": "objectParameterKeys",
+          "required": false,
+          "schema": {
+            "fullComment": "If specified, will only include these parameter keys of the model object. Otherwise all keys will be taken",
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "ignoreObjectParameterKeys",
+          "required": false,
+          "schema": {
+            "fullComment": "If specified, will omit these keys when creating the dataset",
+            "items": [
+              {
+                "schema": {
+                  "type": "string"
+                },
+                "name": null
+              }
+            ],
+            "type": "array"
+          }
+        },
+        {
+          "name": "view",
+          "required": false,
+          "schema": {
+            "properties": [],
+            "type": "object"
+          }
+        },
+        {
+          "name": "authorizations",
+          "required": false,
+          "schema": {
+            "fullComment": "The key, groupName, is a slug of a group, or a wildcard (*) for all groups\n\nThe value should be a concatenation of all operations permitted in this dataset.\n\n- C for create\n- R for read\n- U for update\n- D for delete\n\nExample: `{ \"cfa\": \"CRUD\" }` would say that this dataset can be fully altered and read by the \"cfa\" group\n\nFor `Dataset`s this should be applied through the database.\n\nFor database models, this should be applied in frontmatter, like this:\n\n```\n--- authorizations: cfa:crud, public:r\n--- ```\n\nThe above applies on the database. For functions, you can do the following:\n\n- X for execute\n- I for reading info about the function (docs etc)\n- R for reading the code (same like CRUD)\n- U for updating the code (same like CRUD)\n\nFor knowledge (text), you can apply authorizations in frontmatter of the markdown, in the same way as you can for data (canRead/canWrite are the only ones needed).\n\nNB: In a later stage we may add more permissions like \"isSearchable (S)\"",
+            "nb": "In a later stage we may add more permissions like \"isSearchable (S)\"",
+            "properties": [],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "DatasetConfig",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

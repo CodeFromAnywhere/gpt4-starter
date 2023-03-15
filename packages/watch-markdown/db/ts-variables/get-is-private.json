@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330866815,
+  "updatedAt": 1678330866815,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330866815,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getIsPrivate",
+  "slug": "get-is-private",
+  "operationRelativeTypescriptFilePath": "src/getIsPrivate.ts",
+  "type": {
+    "rawType": "(contents: string) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (contents: string) => {\n  const isPrivateConventionPath = path.join(\n    __dirname,\n    \"..\",\n    \"src\",\n    \"is-private-convention.md\"\n  );\n\n  const conventionText = await fs.readFile(isPrivateConventionPath, \"utf8\");\n  const tttResult = await textToText(`Consider the following text:\n  \n---\n${contents}\n---\n\nShould we mark this file private? Please respond in JSON, in this format: \\`{ isPrivate: boolean }\\`.\n\n${conventionText}`);\n\n  if (!tttResult.isSuccessful) {\n    return { isSuccessful: false, message: tttResult.message };\n  }\n\n  const json = findJsonInMarkdown<{ isPrivate: boolean }>(tttResult.result);\n  const isPrivate = json?.isPrivate;\n\n  return { isSuccessful: true, message: tttResult.message, isPrivate };\n}",
+  "description": "",
+  "id": "wcpcszflxuugboxcxmbcidoa"
+}

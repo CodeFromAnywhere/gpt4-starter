@@ -1,0 +1,89 @@
+{
+  "createdAt": 1668328727206,
+  "updatedAt": 1668328727206,
+  "deletedAt": 0,
+  "createdFirstAt": 1668328727206,
+  "id": "SZLSdBVDzaXWYAEI",
+  "dependencies": {
+    "model-types": "0.0.1",
+    "geo-types": "0.0.1",
+    "asset-type": "0.0.1",
+    "code-types": "0.0.1",
+    "bundle-types": "0.0.1"
+  },
+  "description": "I want a type interface collection that is able to collect all data from all social networks and put them together.",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test": "node ./build/cli.js",
+    "up": "npm version patch -f",
+    "pub": "yarn up && npm publish"
+  },
+  "source": "src/index.ts",
+  "version": "0.0.1",
+  "name": "social-media-types",
+  "language": "english",
+  "slug": "social-media-types",
+  "operation": {
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "dependenciesBuildsFailed": false,
+      "indexErrors": [],
+      "indexImportExportError": "",
+      "indexInteracesErrors": [],
+      "lintProblems": []
+    },
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "folderNameIndexed": "social-media-types",
+    "hasGeneratedDependenciesIndexed": false,
+    "lastPullTimeAtIndexed": 0,
+    "lastRebuildAt": 1678599224944,
+    "operationDependenciesIndexed": [
+      "DefaultModelType",
+      "KeyValueMarkdownModelType",
+      "Slug",
+      "DefaultModelType",
+      "Id",
+      "Language",
+      "Slug",
+      "Location",
+      "DefaultModelType",
+      "BackendAsset",
+      "MarkdownModelType"
+    ],
+    "packageDependenciesIndexed": [],
+    "relativeOperationLocationPathIndexed": "operations/tools/purpose/social-media",
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 7,
+        "lines": 227,
+        "characters": 6181,
+        "bytes": 6181
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 129,
+        "characters": 3087,
+        "bytes": 3087
+      },
+      "textSize": {
+        "numberOfFiles": 1,
+        "lines": 228,
+        "characters": 4582,
+        "bytes": 4582
+      },
+      "size": {
+        "bytes": 13850,
+        "characters": 13850,
+        "lines": 584,
+        "numberOfFiles": 10
+      }
+    },
+    "hasGeneratedImportsIndexed": false
+  }
+}

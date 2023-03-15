@@ -1,0 +1,77 @@
+{
+  "createdAt": 1669107621202,
+  "updatedAt": 1669107621202,
+  "deletedAt": 0,
+  "createdFirstAt": 1669107621202,
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "name": "payment-types",
+  "operation": {
+    "hasGeneratedDependenciesIndexed": false,
+    "buildResultIndexed": {
+      "buildSucceeded": true,
+      "indexImportExportError": "",
+      "lintProblems": []
+    },
+    "lastRebuildAt": 1676841264841,
+    "sizeIndexed": {
+      "codeSize": {
+        "numberOfFiles": 3,
+        "lines": 159,
+        "characters": 3892,
+        "bytes": 3892
+      },
+      "dataSize": {
+        "numberOfFiles": 2,
+        "lines": 115,
+        "characters": 3503,
+        "bytes": 3503
+      },
+      "textSize": {
+        "numberOfFiles": 2,
+        "lines": 245,
+        "characters": 4779,
+        "bytes": 4779
+      },
+      "size": {
+        "bytes": 12174,
+        "characters": 12174,
+        "lines": 519,
+        "numberOfFiles": 7
+      }
+    },
+    "folderNameIndexed": "payment-types",
+    "relativeOperationLocationPathIndexed": "operations/tools/monetisation",
+    "classificationIndexed": "cjs",
+    "coreDependenciesIndexed": [],
+    "operationDependenciesIndexed": [
+      "RunEveryPeriodEnum",
+      "DefaultModelType",
+      "Id",
+      "MarkdownModelType",
+      "Price",
+      "Slug",
+      "Credit",
+      "RunEveryPeriodEnum",
+      "DefaultModelType",
+      "Id",
+      "Price"
+    ],
+    "packageDependenciesIndexed": []
+  },
+  "dependencies": {
+    "code-types": "0.0.1",
+    "model-types": "0.0.1"
+  },
+  "slug": "payment-types",
+  "id": "ufzfnqnekmocuojvqheleods"
+}

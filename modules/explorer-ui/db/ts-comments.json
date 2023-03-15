@@ -1,0 +1,20 @@
+[
+  {
+    "createdAt": 1678331566176,
+    "updatedAt": 1678331566176,
+    "deletedAt": 0,
+    "createdFirstAt": 1678331566176,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/store.ts",
+    "comment": "TODO: Remove some of all of these things, not needed so much",
+    "rawStatement": "export const { StoreProvider, useStore } = createStore({\n  ...apiStoreInitialValues,\n  ...nestedMenuStoreInitialValues,\n  ...explorerInitialValues,\n  ...tabsStoreInitialValues,\n});",
+    "parameters": {},
+    "types": [
+      "todo"
+    ],
+    "firstLine": 39,
+    "lastLine": 41,
+    "id": "ecmtrrlamsfvetxamtvtlezv"
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "createdAt": 1678331966043,
+  "updatedAt": 1678331966043,
+  "deletedAt": 0,
+  "createdFirstAt": 1678331966043,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/startSearchWebIfAvailable.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  isWatching?: boolean,\n  isRestart?: boolean\n) => {\n  const hasSearchWeb = !!(operations as { [key: string]: string })[\"os-web\"];\n  if (!hasSearchWeb) {\n    return;\n  }\n\n  if (os.platform() === \"win32\") {\n    console.log(\"Not starting search-web on windows\");\n    return;\n  }\n\n  startApp(\"os-web\", false).then((result) => {\n    if (!result?.isSuccessful) {\n      console.log({ result });\n      log(`Something went wrong starting \"os-web\". Maybe you don't have it?`, {\n        type: \"error\",\n      });\n      return;\n    }\n\n    if (!isRestart && isWatching) {\n      // Open in browser\n      setTimeout(() => {\n        execSync(`open http://localhost:42001`);\n        log(`Opened the homepage in your browser`, { type: \"success\" });\n      }, 1000);\n    }\n  });\n}",
+  "name": "startSearchWebIfAvailable",
+  "slug": "start-search-web-if-available",
+  "parameters": [
+    {
+      "name": "isWatching",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    },
+    {
+      "name": "isRestart",
+      "schema": {
+        "type": "boolean"
+      },
+      "simplifiedSchema": {
+        "type": "boolean"
+      },
+      "required": false
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "any",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 4,
+  "size": {
+    "characters": 769,
+    "lines": 32,
+    "bytes": 769,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 24,
+    "linesPerFile": 32,
+    "numberOfFiles": 1
+  },
+  "id": "imtaeorjrcsykadqbpyikrlx"
+}

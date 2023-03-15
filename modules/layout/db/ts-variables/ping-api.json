@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678043865353,
+  "updatedAt": 1678043865353,
+  "deletedAt": 0,
+  "createdFirstAt": 1678043865353,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "PingApi",
+  "slug": "ping-api",
+  "operationRelativeTypescriptFilePath": "src/PingApi.tsx",
+  "type": {
+    "rawType": "() => JSX.Element",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "() => {\n  const { isOffline } = usePing();\n\n  return (\n    <Div>\n      <ALink href=\"/settings\">\n        {isOffline === undefined ? \"🟠\" : isOffline === true ? \"❌\" : \"✅\"}{\" \"}\n        {isOffline === true ? \"down\" : isOffline === undefined ? \"\" : \"up\"}\n      </ALink>\n    </Div>\n  );\n}",
+  "description": "",
+  "id": "dbhoosfromrvwbvipbxwoywa"
+}

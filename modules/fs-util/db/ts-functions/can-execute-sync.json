@@ -1,0 +1,44 @@
+{
+  "createdAt": 1678041916141,
+  "updatedAt": 1678041916141,
+  "deletedAt": 0,
+  "createdFirstAt": 1678041916141,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/files.ts",
+  "commentsInside": [],
+  "rawText": " (p: PathLike) =>\n  canAccessSync(p, fs.constants.X_OK)",
+  "name": "canExecuteSync",
+  "slug": "can-execute-sync",
+  "parameters": [],
+  "description": "File is executable to the calling process",
+  "returnType": {
+    "rawType": "{}",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "maxIndentationDepth": 1,
+  "size": {
+    "characters": 96,
+    "lines": 2,
+    "bytes": 96,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 48,
+    "linesPerFile": 2,
+    "numberOfFiles": 1
+  },
+  "id": "yxruxqkgmntttbcsqammddfc"
+}

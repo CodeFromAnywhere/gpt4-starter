@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678330669703,
+  "updatedAt": 1678330669703,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330669703,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getReferencedAssetApiUrl",
+  "slug": "get-referenced-asset-api-url",
+  "operationRelativeTypescriptFilePath": "src/getReferencedAssetApiUrl.ts",
+  "type": {
+    "rawType": "(apiUrl: string | undefined, projectRelativeReferencingFilePath: string, referencingFileRelativeAssetPath: string, isDownload?: boolean | undefined) => string | undefined",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  apiUrl: string | undefined,\n  projectRelativeReferencingFilePath: string,\n  referencingFileRelativeAssetPath: string,\n  /**\n   * If true, asset will be returned as download\n   */\n  isDownload?: boolean\n): string | undefined => {\n  if (!apiUrl) return undefined;\n  return getGetApiUrl(apiUrl, \"getReferencedAssetGetApi\", {\n    projectRelativeReferencingFilePath,\n    referencingFileRelativeAssetPath,\n    isDownload: isDownload ? \"1\" : undefined,\n  });\n}",
+  "description": "",
+  "id": "nqaewmveubdshpchtgpduizh"
+}

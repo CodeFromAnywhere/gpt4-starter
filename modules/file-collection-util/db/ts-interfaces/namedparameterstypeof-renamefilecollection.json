@@ -1,0 +1,85 @@
+{
+  "createdAt": 1678330503805,
+  "updatedAt": 1678330503805,
+  "deletedAt": 0,
+  "createdFirstAt": 1678330503805,
+  "id": "namedparameterstypeof-renamefilecollection",
+  "name": "NamedParameters<typeof renameFileCollection>",
+  "slug": "namedparameterstypeof-renamefilecollection",
+  "operationRelativeTypescriptFilePath": "src/renameFileCollection.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "projectRelativeFilePath": {
+          "type": "string"
+        },
+        "newBaseName": {
+          "type": "string"
+        },
+        "config": {
+          "type": "object",
+          "properties": {
+            "isDryrun": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "projectRelativeFilePath",
+        "newBaseName"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "projectRelativeFilePath",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "newBaseName",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "config",
+          "required": false,
+          "schema": {
+            "properties": [
+              {
+                "name": "isDryrun",
+                "required": false,
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "type": "object"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "NamedParameters<typeof renameFileCollection>",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}
