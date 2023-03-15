@@ -3,6 +3,7 @@ export declare const operations: {
     "os-web": string;
     "ai-functions-node": string;
     "ai-models": string;
+    "ai-types": string;
     "collect-static-assets": string;
     "communication-wrapper": string;
     "openai-wrapper": string;
@@ -13,7 +14,6 @@ export declare const operations: {
     "watch-mp3-transcriptions": string;
     "watch-system-recordings": string;
     "whisper-local": string;
-    "ai-types": string;
     all: string;
     api: string;
     "api-js": string;
