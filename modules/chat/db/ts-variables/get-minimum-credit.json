@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678611465861,
-  "updatedAt": 1678611465861,
+  "createdAt": 1678862239115,
+  "updatedAt": 1678862239115,
   "deletedAt": 0,
-  "createdFirstAt": 1678611465861,
+  "createdFirstAt": 1678862239115,
   "classification": "const",
   "comments": [],
   "isExported": true,
@@ -29,5 +29,5 @@
   },
   "value": "(\n  persona: Persona,\n  freeMessagesAmount: number\n) =>\n  -1 *\n  (persona.assistantState?.costPerMessageCredit ||\n    defaultCostPerMessageCredit) *\n  freeMessagesAmount",
   "description": "",
-  "id": "nnmojqhaojzmdfyafltbwlkr"
+  "id": "lhmzszzckuclquamzfgleqqk"
 }

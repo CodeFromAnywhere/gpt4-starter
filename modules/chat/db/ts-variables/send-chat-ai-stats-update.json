@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678372647465,
-  "updatedAt": 1678372647465,
+  "createdAt": 1678862270078,
+  "updatedAt": 1678862270078,
   "deletedAt": 0,
-  "createdFirstAt": 1678372647465,
+  "createdFirstAt": 1678862270078,
   "classification": "const",
   "comments": [],
   "isExported": true,
@@ -10,7 +10,7 @@
   "slug": "send-chat-ai-stats-update",
   "operationRelativeTypescriptFilePath": "src/sendChatAiStatsUpdate.ts",
   "type": {
-    "rawType": "{ (): any; config: { runEveryPeriod: string; }; }",
+    "rawType": "{ (): any; config: { runEveryPeriod: string; isPublic: boolean; }; }",
     "typeDefinition": {
       "type": "object",
       "properties": {
@@ -29,10 +29,14 @@
                   "minLength": 1
                 }
               ]
+            },
+            "isPublic": {
+              "type": "boolean"
             }
           },
           "required": [
-            "runEveryPeriod"
+            "runEveryPeriod",
+            "isPublic"
           ]
         }
       },
@@ -60,6 +64,13 @@
                 "schema": {
                   "type": "string"
                 }
+              },
+              {
+                "name": "isPublic",
+                "required": true,
+                "schema": {
+                  "type": "boolean"
+                }
               }
             ],
             "type": "object"
@@ -69,7 +80,7 @@
       "type": "object"
     }
   },
-  "value": "async () => {\n  const stats = await getPersonaStatistics();\n\n  const message = `\nTotal users: ${stats.totalPersons}\nDaily active users (DAU): ${stats.activePersonsAmount}\nNew users: ${stats.newPersonsAmount}\nReturning users: ${stats.returningPersonsAmount}\nMessages sent today: ${stats.messagesTodayAmount}\n\nStatistics per Chat AI:\n\n${Object.values(stats.personaStatistics)\n  .map((item) => {\n    return `- **${item.name}**: ${item.activeUsersTodayAmount} DAU, of which ${item.newUsersTodayAmount} new, sent ${item.newMessagesTodayAmount} messages`;\n  })\n  .join(\"\\n\")}\n`;\n\n  const staff = (await db.get(\"Person\")).filter((x) =>\n    x.groupSlugs?.includes(\"cfa-freelancers\")\n  );\n\n  const res = staff.map((person) =>\n    sendMessage(person, message, {\n      emailConfig: { subject: `Daily stats (${getCurrentDate()})` },\n    })\n  );\n}",
+  "value": "async () => {\n  const stats = await getPersonaStatistics();\n\n  const message = `\nTotal users: ${stats.totalPersons}\nDaily active users (DAU): ${stats.activePersonsAmount}\nNew users: ${stats.newPersonsAmount}\nReturning users: ${stats.returningPersonsAmount}\nMessages sent today: ${stats.messagesTodayAmount}\n\nStatistics per Chat AI:\n\n${Object.values(stats.personaStatistics)\n  .map((item) => {\n    return `- **${item.name}**: ${item.activeUsersTodayAmount} DAU, of which ${item.newUsersTodayAmount} new, sent ${item.newMessagesTodayAmount} messages`;\n  })\n  .join(\"\\n\")}\n`;\n\n  const staff = (await db.get(\"Person\")).filter((x) =>\n    x.groupSlugs?.includes(\"cfa-freelancers\")\n  );\n  const subject = `Daily stats (${getCurrentDate()})`;\n\n  await sendMail({ to: \"wijnandworld@hotmail.com\", text: message, subject });\n\n  const res = staff.map((person) =>\n    sendMessage(person, message, {\n      emailConfig: { subject },\n    })\n  );\n}",
   "description": "",
-  "id": "dtzpoaycnkebhwxofobrjraa"
+  "id": "yblnqevlpmqhkltzpeedwpdw"
 }

@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678372650430,
-  "updatedAt": 1678372650430,
+  "createdAt": 1678862273113,
+  "updatedAt": 1678862273113,
   "deletedAt": 0,
-  "createdFirstAt": 1678372650430,
+  "createdFirstAt": 1678862273113,
   "classification": "const",
   "comments": [],
   "isExported": true,
@@ -71,5 +71,5 @@
   },
   "value": "async () => {\n  const now = time().myTimeDate;\n  if (now.getHours() !== 8) {\n    // only 8 pm\n    return;\n  }\n\n  const persona = await getPersona();\n  if (!persona) return;\n\n  sendTwilioMessage(persona.phone, \"Wake up!\");\n}",
   "description": "",
-  "id": "skxhnbutibvrsypnktcvknuo"
+  "id": "lvdfwosvbngrrzsmwypetxua"
 }

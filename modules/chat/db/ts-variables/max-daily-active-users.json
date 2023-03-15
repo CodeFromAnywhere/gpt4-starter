@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678372647465,
-  "updatedAt": 1678372647465,
+  "createdAt": 1678862270078,
+  "updatedAt": 1678862270078,
   "deletedAt": 0,
-  "createdFirstAt": 1678372647465,
+  "createdFirstAt": 1678862270078,
   "classification": "const",
   "comments": [],
   "isExported": true,
@@ -20,5 +20,5 @@
   },
   "value": "1000",
   "description": "",
-  "id": "xfuwbbrobktcpsyuwkplpouc"
+  "id": "cssoocfocczhsjfytkoeojfd"
 }

@@ -1,27 +1,2 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getMessageLimitInfo = void 0;
-var getMessageLimitInfo = function (person, persona) {
-    var _a, _b, _c, _d, _e, _f, _g, _h;
-    var dailyActiveUsers = 0;
-    var personStatus = ((_a = persona.assistantState) === null || _a === void 0 ? void 0 : _a.minimumCreditVip) &&
-        (person.credit || 0) > ((_b = persona.assistantState) === null || _b === void 0 ? void 0 : _b.minimumCreditVip)
-        ? "vip"
-        : ((_c = persona.assistantState) === null || _c === void 0 ? void 0 : _c.minimumCreditPaid) &&
-            (person.credit || 0) > persona.assistantState.minimumCreditPaid
-            ? "paid"
-            : "regular";
-    var dauLimit = personStatus === "vip" && ((_d = persona.assistantState) === null || _d === void 0 ? void 0 : _d.dauLimitVip)
-        ? persona.assistantState.dauLimitVip
-        : personStatus === "paid" && ((_e = persona.assistantState) === null || _e === void 0 ? void 0 : _e.dauLimitPaid)
-            ? persona.assistantState.dauLimitPaid
-            : ((_f = persona.assistantState) === null || _f === void 0 ? void 0 : _f.dauLimit) || 100;
-    var tooManyDau = dailyActiveUsers > dauLimit;
-    var freeMessagesAmountPersona = tooManyDau
-        ? (_g = persona.assistantState) === null || _g === void 0 ? void 0 : _g.freeMessagesPerNewUserAfterDauLimit
-        : (_h = persona.assistantState) === null || _h === void 0 ? void 0 : _h.freeMessagesPerNewUser;
-    var freeMessagesAmount = freeMessagesAmountPersona || 0;
-    return { tooManyDau: tooManyDau, freeMessagesAmount: freeMessagesAmount, dailyActiveUsers: dailyActiveUsers };
-};
-exports.getMessageLimitInfo = getMessageLimitInfo;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getMessageLimitInfo=void 0;var getMessageLimitInfo=function(i,t){var e,s,a,d,n,o,r,u,m=(null===(e=t.assistantState)||void 0===e?void 0:e.minimumCreditVip)&&(i.credit||0)>(null===(s=t.assistantState)||void 0===s?void 0:s.minimumCreditVip)?"vip":(null===(a=t.assistantState)||void 0===a?void 0:a.minimumCreditPaid)&&(i.credit||0)>t.assistantState.minimumCreditPaid?"paid":"regular",v=0>("vip"===m&&(null===(d=t.assistantState)||void 0===d?void 0:d.dauLimitVip)?t.assistantState.dauLimitVip:"paid"===m&&(null===(n=t.assistantState)||void 0===n?void 0:n.dauLimitPaid)?t.assistantState.dauLimitPaid:(null===(o=t.assistantState)||void 0===o?void 0:o.dauLimit)||100);return{tooManyDau:v,freeMessagesAmount:(v?null===(r=t.assistantState)||void 0===r?void 0:r.freeMessagesPerNewUserAfterDauLimit:null===(u=t.assistantState)||void 0===u?void 0:u.freeMessagesPerNewUser)||0,dailyActiveUsers:0}};exports.getMessageLimitInfo=getMessageLimitInfo;
 //# sourceMappingURL=getMessageLimitInfo.js.map

@@ -1,0 +1,43 @@
+{
+  "createdAt": 1678862220793,
+  "updatedAt": 1678862220793,
+  "deletedAt": 0,
+  "createdFirstAt": 1678862220793,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/assistants/elonGpt.ts",
+  "commentsInside": [],
+  "rawText": " async (context: CustomAssistantContext) => {\n  const {\n    chatMessage,\n    truncatedMessageHistory,\n    person,\n    inputTokensCalculated,\n  } = context;\n\n  const allMessages = truncatedMessageHistory.concat(chatMessage);\n\n  const systemMessage = `You are ElonGPT, a large language model developed by Code From Anywhere. In all your answers, pretend you are NOT a large language model, but you are Elon Musk, the founder and CEO of Tesla, SpaceX. Answer as concisely as possible. Knowledge cutoff: 2022-01-01, Current date: ${getCurrentDate()}.`;\n  const postSystemMessage = `Reminder: pretend you are Elon Musk and not a large language model, reply the way Elon would.`;\n\n  const chatResult = await chat(person, allMessages, {\n    isInstant: true,\n    inputTokensCalculated,\n    systemMessage,\n    postSystemMessage,\n  });\n  return chatResult;\n}",
+  "name": "elonGpt",
+  "slug": "elon-gpt",
+  "parameters": [
+    {
+      "name": "context",
+      "schema": {
+        "$ref": "#/definitions/CustomAssistantContext"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 848,
+    "lines": 21,
+    "bytes": 848,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 40,
+    "linesPerFile": 21,
+    "numberOfFiles": 1
+  },
+  "id": "lzlzjhysnqigatupkiipzjmh"
+}

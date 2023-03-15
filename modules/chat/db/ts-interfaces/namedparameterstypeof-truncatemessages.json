@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678372651285,
-  "updatedAt": 1678372651285,
+  "createdAt": 1678862281637,
+  "updatedAt": 1678862281637,
   "deletedAt": 0,
-  "createdFirstAt": 1678372651285,
+  "createdFirstAt": 1678862281637,
   "id": "namedparameterstypeof-truncatemessages",
   "name": "NamedParameters<typeof truncateMessages>",
   "slug": "namedparameterstypeof-truncatemessages",
@@ -162,6 +162,29 @@
                       "required": true,
                       "schema": {
                         "type": "string"
+                      }
+                    },
+                    {
+                      "name": "usedTokensAmount",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "Used tokens by open ai (cost: 2$ per 1M tokens)",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "isFree",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "If set to true, this means that this was sent by a user with less than 0 credit, indicating the user didn't pay for it.",
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "name": "isPaywallMessage",
+                      "required": false,
+                      "schema": {
+                        "type": "boolean"
                       }
                     }
                   ],

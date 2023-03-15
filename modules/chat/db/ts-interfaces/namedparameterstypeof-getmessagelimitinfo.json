@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678611473160,
-  "updatedAt": 1678611473160,
+  "createdAt": 1678862247622,
+  "updatedAt": 1678862247622,
   "deletedAt": 0,
-  "createdFirstAt": 1678611473160,
+  "createdFirstAt": 1678862247622,
   "id": "namedparameterstypeof-getmessagelimitinfo",
   "name": "NamedParameters<typeof getMessageLimitInfo>",
   "slug": "namedparameterstypeof-getmessagelimitinfo",
@@ -21,7 +21,7 @@
           "$ref": "#/definitions/Person"
         },
         "persona": {
-          "$ref": "#/definitions/Persona"
+          "$ref": "#/definitions/FinalAssistantPersona"
         }
       },
       "required": [
@@ -1080,6 +1080,14 @@
                 }
               },
               {
+                "name": "custom_personaSlug",
+                "required": false,
+                "schema": {
+                  "fullComment": "for chat assistants",
+                  "type": "string"
+                }
+              },
+              {
                 "name": "paymentAuthToken",
                 "required": false,
                 "schema": {
@@ -1118,6 +1126,54 @@
                   "fullComment": "Number 0-1 to indicate my trust towards this person",
                   "type": "number"
                 }
+              },
+              {
+                "name": "mood",
+                "required": false,
+                "schema": {
+                  "fullComment": "To be determined by the assistants",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "profession",
+                "required": false,
+                "schema": {
+                  "fullComment": "To be used as Assistant Context",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "homeLocation",
+                "required": false,
+                "schema": {
+                  "fullComment": "To be used as Assistant Context",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "workLocation",
+                "required": false,
+                "schema": {
+                  "fullComment": "To be used as Assistant Context",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "lastLocation",
+                "required": false,
+                "schema": {
+                  "fullComment": "To be used as Assistant Context",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "lastLocationAt",
+                "required": false,
+                "schema": {
+                  "fullComment": "To be used as Assistant Context",
+                  "type": "string"
+                }
               }
             ],
             "type": "object"
@@ -1127,8 +1183,7 @@
           "name": "persona",
           "required": true,
           "schema": {
-            "fullComment": "Highly private model.\n\nConfiguration for a person identity that you say that is you.\n\nAs a OS user you can have multiple personas between which you can easily switch.\n\nThe difference from `Person` is that `Person` stores other people, whereas `Persona` stores different identities you give to yourself.\n\nEvery persona is admin by default\n\nNB: brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...\n\n> Persona: A persona, depending on the context, is the public image of one's personality, the social role that one adopts, or simply a fictional character. The word derives from Latin, where it originally referred to a theatrical mask. On the social web, users develop virtual personas as online identities. (Wikipedia)",
-            "nb": "brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...",
+            "fullComment": "",
             "properties": [
               {
                 "name": "slug",
@@ -1829,251 +1884,12 @@
                 }
               },
               {
-                "name": "assistantState",
+                "name": "assistantStateSlug",
                 "required": false,
                 "schema": {
-                  "fullComment": "If the persona has a chatbot, provide the (initial or permanent) assistant configuration here.\n\nState for an \"assistant\" role in the chat completions api of openai, given by the \"system\" role.\n\nSome states might be able to be dynamicly altered by certain behavior of the user.\n\nTODO: Add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
-                  "todo": "Add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
-                  "properties": [
-                    {
-                      "name": "freeMessagesPerNewUser",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "free messages per new user",
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "freeMessagesPerNewUserAfterDauLimit",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "free messages per new user after dau limit",
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "maximumNewUsersPerDay",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "amount of new users allowed (per day)",
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "giftsPerDay",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "amount of gifts to inactive users (per day)",
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "giftFreeMessages",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "free messages in a gift",
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "dauLimit",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "dau limit (defaults to 100)",
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "dauLimitPaid",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "paid dau limit ($5+)",
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "dauLimitVip",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "vip dau limit ($50+)",
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "minimumCreditPaid",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "minimum credit required to be \"paid\", defaults to 0",
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "minimumCreditVip",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "minimum credit required to be \"deluxe\", omitted if not set",
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "freeMessagesForReferral",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "reward free messages for referal use",
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "freeMessagesForReferralPay",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "reward for referal pay",
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "costPerMessageCredit",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "Defaults to 0.05",
-                        "type": "number"
-                      }
-                    },
-                    {
-                      "name": "personality",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "e.g. Elon Musk",
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "etnicity",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "E.g. \"caucasian\" | \"black\" | \"asian\";",
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "profession",
-                      "required": false,
-                      "schema": {
-                        "fullComment": "e.g. rapper, programmer",
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "creator",
-                      "required": false,
-                      "schema": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "mood",
-                      "required": false,
-                      "schema": {
-                        "enum": [
-                          "happy",
-                          "sad",
-                          "horny",
-                          "grumpy",
-                          "nervous",
-                          "mad",
-                          "angry",
-                          "loving",
-                          "annoyed",
-                          "sleepy"
-                        ],
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "name": "characteristics",
-                      "required": false,
-                      "schema": {
-                        "items": [
-                          {
-                            "schema": {
-                              "enum": [
-                                "egoistic",
-                                "narsicistic",
-                                "depressed",
-                                "anxious",
-                                "loves user",
-                                "into user"
-                              ],
-                              "type": "string"
-                            },
-                            "name": null
-                          }
-                        ],
-                        "type": "array"
-                      }
-                    },
-                    {
-                      "name": "humorStyle",
-                      "required": false,
-                      "schema": {
-                        "items": [
-                          {
-                            "schema": {
-                              "enum": [
-                                "saddistic",
-                                "sarcastic",
-                                "witty",
-                                "crazy",
-                                "nihilistic",
-                                "none"
-                              ],
-                              "type": "string"
-                            },
-                            "name": null
-                          }
-                        ],
-                        "type": "array"
-                      }
-                    },
-                    {
-                      "name": "rhymeAbility",
-                      "required": false,
-                      "schema": {
-                        "type": "boolean"
-                      }
-                    },
-                    {
-                      "name": "goals",
-                      "required": false,
-                      "schema": {
-                        "items": [
-                          {
-                            "schema": {
-                              "type": "string"
-                            },
-                            "name": null
-                          }
-                        ],
-                        "type": "array"
-                      }
-                    },
-                    {
-                      "name": "rules",
-                      "required": false,
-                      "schema": {
-                        "items": [
-                          {
-                            "schema": {
-                              "type": "string"
-                            },
-                            "name": null
-                          }
-                        ],
-                        "type": "array"
-                      }
-                    }
-                  ],
-                  "type": "object"
+                  "fullComment": "If the persona has a chatbot, provide the slug here\n\nTODO: Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+                  "todo": "Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+                  "type": "string"
                 }
               },
               {

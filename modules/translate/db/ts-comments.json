@@ -1,0 +1,20 @@
+[
+  {
+    "createdAt": 1678861920510,
+    "updatedAt": 1678861920510,
+    "deletedAt": 0,
+    "createdFirstAt": 1678861920510,
+    "name": "Comment",
+    "slug": "comment",
+    "operationRelativeTypescriptFilePath": "src/translate.ts",
+    "comment": "Simple function for translations, that inputs a string (coming from your translation object and a variable object `{[key:string]:string}` that can hold other strings to be inserted. Translate tries to match every key to $keyName, and replaces it by its value.\n\nNB: I purposefully dont create a `t` function like many i18n libraries do, because the type safety is useful, as it can, with a proper doc-comment, show which variables need to be inserted.",
+    "rawStatement": "export const translate = (\n  text: string,\n  variables?: { [key: string]: string | number }\n) => {\n  if (!variables) {\n    return text;\n  }\n\n  const finalText = Object.keys(variables).reduce((previousText, key) => {\n    // NB: replace all occurences\n    return previousText.replaceAll(`$\\{${key}\\}`, String(variables[key]));\n  }, text);\n\n  return finalText;\n};",
+    "parameters": {},
+    "types": [
+      "nb"
+    ],
+    "firstLine": 1,
+    "lastLine": 5,
+    "id": "fgxcafwdjilfcskexieapvvq"
+  }
+]

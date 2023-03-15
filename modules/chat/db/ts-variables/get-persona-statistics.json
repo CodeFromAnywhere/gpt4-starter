@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678611479796,
-  "updatedAt": 1678611479796,
+  "createdAt": 1678862254939,
+  "updatedAt": 1678862254939,
   "deletedAt": 0,
-  "createdFirstAt": 1678611479796,
+  "createdFirstAt": 1678862254939,
   "classification": "const",
   "comments": [],
   "isExported": true,
@@ -29,5 +29,5 @@
   },
   "value": "async () => {\n  const persons = await db.get(\"Person\");\n  // NB: TODO: this doesn't work now due to new chatmessage functionality!\n  const messages = await db.get(\"ChatMessage\");\n  const personas = await db.get(\"Persona\");\n\n  const newMessages = messages.filter(\n    (x) => x.createdAt && x.createdAt > Date.now() - 86400000\n  );\n\n  const activePersons = persons.filter(\n    (x) => x.lastActivityAt && x.lastActivityAt > Date.now() - 86400000\n  );\n  const activePersonsAmount = activePersons.length;\n  const newPersons = persons.filter(\n    (x) => x.createdAt && x.createdAt > Date.now() - 86400000\n  );\n  const newPersonsAmount = newPersons.length;\n\n  const returningPersonsAmount = activePersons.length - newPersons.length;\n\n  const personaMessageCounts: { [key: string]: number } = {};\n\n  // count the persona for every message\n  newMessages.map((message) => {\n    if (!message.personaId) return;\n    personaMessageCounts[message.personaId] =\n      (personaMessageCounts[message.personaId] || 0) + 1;\n  });\n\n  const personaStatistics = mergeObjectsArray(\n    Object.keys(personaMessageCounts).map((personaId) => {\n      const activeUsersToday = newMessages\n        .filter((x) => x.personaId === personaId)\n        .map((x) => x.personId)\n        .filter(onlyUnique2())\n        .filter(notEmpty);\n\n      const newUsersTodayAmount = newPersons.filter((x) =>\n        activeUsersToday.includes(x.id)\n      ).length;\n\n      const newMessagesTodayAmount = personaMessageCounts[personaId];\n\n      const activeUsersTodayAmount = activeUsersToday.length;\n\n      const statistics: PersonaStatistics = {\n        name: personas.find((x) => x.id === personaId)?.name,\n        activeUsersTodayAmount,\n        newUsersTodayAmount,\n        newMessagesTodayAmount,\n      };\n\n      return { [personaId]: statistics };\n    })\n  );\n\n  const totalPersons = persons.length;\n\n  return {\n    totalPersons,\n    activePersonsAmount,\n    newPersonsAmount,\n    returningPersonsAmount,\n    messagesTodayAmount: newMessages.length,\n    personaStatistics,\n  };\n}",
   "description": "",
-  "id": "wefcffiptfmrghyojhearktj"
+  "id": "tdfgdjhwpwwwnbfwctrgkrxq"
 }

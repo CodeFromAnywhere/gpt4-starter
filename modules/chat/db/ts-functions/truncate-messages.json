@@ -1,13 +1,13 @@
 {
-  "createdAt": 1678372652609,
-  "updatedAt": 1678372652609,
+  "createdAt": 1678862283189,
+  "updatedAt": 1678862283189,
   "deletedAt": 0,
-  "createdFirstAt": 1678372652609,
+  "createdFirstAt": 1678862283189,
   "isApiExposed": false,
   "isExported": true,
   "operationRelativeTypescriptFilePath": "src/truncateMessages.ts",
   "commentsInside": [],
-  "rawText": " (chatMessages: ChatMessage[]) => {\n  const messagesWithTokenCount = calculateMessagesTokenCount(chatMessages);\n\n  // newest first\n  const reversed = messagesWithTokenCount.reverse();\n\n  // remove old stuff\n\n  const filteredOld = reversed.filter((item, index) => {\n    if (index <= 9) {\n      // keep 10 newest always\n      return true;\n    }\n    const isNew = Date.now() - item.createdAt < 86400000;\n    if (isNew) {\n      return true;\n    }\n    return false;\n  });\n\n  // remove everything before last 3000 tokens\n  const index = filteredOld.findIndex((item, index, array) => {\n    const totalTokens = sum(array.slice(0, index).map((x) => x.tokenCount));\n    if (totalTokens > 3000) return true;\n  });\n  const sliced = index === -1 ? filteredOld : filteredOld.slice(0, index);\n  const truncatedMessages: ChatMessage[] = sliced\n    .reverse()\n    .map(({ tokenCount, ...item }) => item);\n\n  const inputTokensCalculated = sum(sliced.map((x) => x.tokenCount));\n\n  return { truncatedMessages, inputTokensCalculated };\n}",
+  "rawText": " (chatMessages: ChatMessage[]) => {\n  const messagesWithTokenCount = calculateMessagesTokenCount(chatMessages);\n\n  // newest first\n  const reversed = messagesWithTokenCount.reverse();\n\n  // remove old stuff\n\n  const filteredOld = reversed.filter((item, index) => {\n    if (index <= 9) {\n      // keep 10 newest always\n      return true;\n    }\n    const isNew = Date.now() - item.createdAt < 86400000;\n    if (isNew) {\n      return true;\n    }\n    return false;\n  });\n\n  // remove everything before last 3000 tokens\n  const index = filteredOld.findIndex((item, index, array) => {\n    const totalTokens = sum(array.slice(0, index).map((x) => x.tokenCount));\n    if (totalTokens > 3000) return true;\n  });\n  const sliced = index === -1 ? filteredOld : filteredOld.slice(0, index);\n  const truncatedMessageHistory: ChatMessage[] = sliced\n    .reverse()\n    .map(({ tokenCount, ...item }) => item);\n\n  const inputTokensCalculated = sum(sliced.map((x) => x.tokenCount));\n\n  return { truncatedMessageHistory, inputTokensCalculated };\n}",
   "name": "truncateMessages",
   "slug": "truncate-messages",
   "parameters": [
@@ -148,6 +148,29 @@
                   "schema": {
                     "type": "string"
                   }
+                },
+                {
+                  "name": "usedTokensAmount",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "Used tokens by open ai (cost: 2$ per 1M tokens)",
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "isFree",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "If set to true, this means that this was sent by a user with less than 0 credit, indicating the user didn't pay for it.",
+                    "type": "number"
+                  }
+                },
+                {
+                  "name": "isPaywallMessage",
+                  "required": false,
+                  "schema": {
+                    "type": "boolean"
+                  }
                 }
               ],
               "type": "object"
@@ -162,11 +185,11 @@
   ],
   "description": "Simple algo to truncate chat messages.\n\n- omit everything from more than 24h ago except for the last 10 messages\n- also everything that makes our input larger than 3000 tokens.\n\nCan later be improved by analysing the messages, but this seems good enough for now to stay under the 3000 tokens...",
   "returnType": {
-    "rawType": "{ truncatedMessages: import(\"/Users/clarity/os/operations/tools/purpose/social-media/social-media-types/build/ChatMessage\").ChatMessage[]; inputTokensCalculated: number; }",
+    "rawType": "{ truncatedMessageHistory: import(\"/Users/clarity/os/operations/tools/purpose/social-media/social-media-types/build/ChatMessage\").ChatMessage[]; inputTokensCalculated: number; }",
     "typeDefinition": {
       "type": "object",
       "properties": {
-        "truncatedMessages": {
+        "truncatedMessageHistory": {
           "type": "array",
           "items": {}
         },
@@ -175,7 +198,7 @@
         }
       },
       "required": [
-        "truncatedMessages",
+        "truncatedMessageHistory",
         "inputTokensCalculated"
       ],
       "optional": false
@@ -189,7 +212,7 @@
     "simplifiedSchema": {
       "properties": [
         {
-          "name": "truncatedMessages",
+          "name": "truncatedMessageHistory",
           "required": true,
           "schema": {
             "items": [
@@ -217,13 +240,13 @@
   },
   "maxIndentationDepth": 3,
   "size": {
-    "characters": 1310,
+    "characters": 1322,
     "lines": 39,
-    "bytes": 1310,
+    "bytes": 1322,
     "bytesPerCharacter": 1,
     "charactersPerLine": 34,
     "linesPerFile": 39,
     "numberOfFiles": 1
   },
-  "id": "irkggqenuygfgfqzuwfvkpre"
+  "id": "nfgctltlkkbasaidzbnikbcg"
 }

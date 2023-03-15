@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678611463325,
-  "updatedAt": 1678611463325,
+  "createdAt": 1678862236334,
+  "updatedAt": 1678862236334,
   "deletedAt": 0,
-  "createdFirstAt": 1678611463325,
+  "createdFirstAt": 1678862236334,
   "id": "namedparameterstypeof-getcredit",
   "name": "NamedParameters<typeof getCredit>",
   "slug": "namedparameterstypeof-getcredit",

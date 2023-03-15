@@ -1,13 +1,13 @@
 {
-  "createdAt": 1678611474590,
-  "updatedAt": 1678611474590,
+  "createdAt": 1678862249176,
+  "updatedAt": 1678862249176,
   "deletedAt": 0,
-  "createdFirstAt": 1678611474590,
+  "createdFirstAt": 1678862249176,
   "isApiExposed": false,
   "isExported": true,
   "operationRelativeTypescriptFilePath": "src/getMessageLimitInfo.ts",
   "commentsInside": [],
-  "rawText": " (person: Person, persona: Persona) => {\n  const dailyActiveUsers = 0;\n\n  const personStatus =\n    persona.assistantState?.minimumCreditVip &&\n    (person.credit || 0) > persona.assistantState?.minimumCreditVip\n      ? \"vip\"\n      : persona.assistantState?.minimumCreditPaid &&\n        (person.credit || 0) > persona.assistantState.minimumCreditPaid\n      ? \"paid\"\n      : \"regular\";\n\n  const dauLimit =\n    personStatus === \"vip\" && persona.assistantState?.dauLimitVip\n      ? persona.assistantState.dauLimitVip\n      : personStatus === \"paid\" && persona.assistantState?.dauLimitPaid\n      ? persona.assistantState.dauLimitPaid\n      : persona.assistantState?.dauLimit || 100;\n\n  const tooManyDau = dailyActiveUsers > dauLimit;\n\n  const freeMessagesAmountPersona = tooManyDau\n    ? persona.assistantState?.freeMessagesPerNewUserAfterDauLimit\n    : persona.assistantState?.freeMessagesPerNewUser;\n\n  const freeMessagesAmount = freeMessagesAmountPersona || 0;\n\n  return { tooManyDau, freeMessagesAmount, dailyActiveUsers };\n}",
+  "rawText": " (\n  person: Person,\n  persona: FinalAssistantPersona\n) => {\n  const dailyActiveUsers = 0;\n\n  const personStatus =\n    persona.assistantState?.minimumCreditVip &&\n    (person.credit || 0) > persona.assistantState?.minimumCreditVip\n      ? \"vip\"\n      : persona.assistantState?.minimumCreditPaid &&\n        (person.credit || 0) > persona.assistantState.minimumCreditPaid\n      ? \"paid\"\n      : \"regular\";\n\n  const dauLimit =\n    personStatus === \"vip\" && persona.assistantState?.dauLimitVip\n      ? persona.assistantState.dauLimitVip\n      : personStatus === \"paid\" && persona.assistantState?.dauLimitPaid\n      ? persona.assistantState.dauLimitPaid\n      : persona.assistantState?.dauLimit || 100;\n\n  const tooManyDau = dailyActiveUsers > dauLimit;\n\n  const freeMessagesAmountPersona = tooManyDau\n    ? persona.assistantState?.freeMessagesPerNewUserAfterDauLimit\n    : persona.assistantState?.freeMessagesPerNewUser;\n\n  const freeMessagesAmount = freeMessagesAmountPersona || 0;\n\n  return { tooManyDau, freeMessagesAmount, dailyActiveUsers };\n}",
   "name": "getMessageLimitInfo",
   "slug": "get-message-limit-info",
   "parameters": [
@@ -1061,6 +1061,14 @@
             }
           },
           {
+            "name": "custom_personaSlug",
+            "required": false,
+            "schema": {
+              "fullComment": "for chat assistants",
+              "type": "string"
+            }
+          },
+          {
             "name": "paymentAuthToken",
             "required": false,
             "schema": {
@@ -1099,6 +1107,54 @@
               "fullComment": "Number 0-1 to indicate my trust towards this person",
               "type": "number"
             }
+          },
+          {
+            "name": "mood",
+            "required": false,
+            "schema": {
+              "fullComment": "To be determined by the assistants",
+              "type": "string"
+            }
+          },
+          {
+            "name": "profession",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "homeLocation",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "workLocation",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastLocation",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastLocationAt",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
           }
         ],
         "type": "object"
@@ -1108,11 +1164,10 @@
     {
       "name": "persona",
       "schema": {
-        "$ref": "#/definitions/Persona"
+        "$ref": "#/definitions/FinalAssistantPersona"
       },
       "simplifiedSchema": {
-        "fullComment": "Highly private model.\n\nConfiguration for a person identity that you say that is you.\n\nAs a OS user you can have multiple personas between which you can easily switch.\n\nThe difference from `Person` is that `Person` stores other people, whereas `Persona` stores different identities you give to yourself.\n\nEvery persona is admin by default\n\nNB: brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...\n\n> Persona: A persona, depending on the context, is the public image of one's personality, the social role that one adopts, or simply a fictional character. The word derives from Latin, where it originally referred to a theatrical mask. On the social web, users develop virtual personas as online identities. (Wikipedia)",
-        "nb": "brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...",
+        "fullComment": "",
         "properties": [
           {
             "name": "slug",
@@ -1813,161 +1868,12 @@
             }
           },
           {
-            "name": "assistantState",
+            "name": "assistantStateSlug",
             "required": false,
             "schema": {
-              "fullComment": "If the persona has a chatbot, provide the (initial or permanent) assistant configuration here.\n\nstate for an \"assistant\" role in the chat completions api of openai, given by the \"system\" role.\n\nSome states might be able to be dynamicly altered by certain behavior of the user.\n\nTODO: add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
-              "todo": "add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
-              "properties": [
-                {
-                  "name": "premium",
-                  "required": false,
-                  "schema": {
-                    "enum": [
-                      "default",
-                      "light",
-                      "silver",
-                      "gold"
-                    ],
-                    "fullComment": "Activate more expensive stuff with different levels\n\ndefault = 2 cents per message light = 0.4 cents per message silver = 5 cents per message gold = 20 cents per message",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "personality",
-                  "required": false,
-                  "schema": {
-                    "fullComment": "e.g. Elon Musk",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "etnicity",
-                  "required": false,
-                  "schema": {
-                    "fullComment": "E.g. \"caucasian\" | \"black\" | \"asian\";",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "profession",
-                  "required": false,
-                  "schema": {
-                    "fullComment": "e.g. rapper, programmer",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "creator",
-                  "required": false,
-                  "schema": {
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "mood",
-                  "required": false,
-                  "schema": {
-                    "enum": [
-                      "happy",
-                      "sad",
-                      "horny",
-                      "grumpy",
-                      "nervous",
-                      "mad",
-                      "angry",
-                      "loving",
-                      "annoyed",
-                      "sleepy"
-                    ],
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "characteristics",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "enum": [
-                            "egoistic",
-                            "narsicistic",
-                            "depressed",
-                            "anxious",
-                            "loves user",
-                            "into user"
-                          ],
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                },
-                {
-                  "name": "humorStyle",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "enum": [
-                            "saddistic",
-                            "sarcastic",
-                            "witty",
-                            "crazy",
-                            "nihilistic",
-                            "none"
-                          ],
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                },
-                {
-                  "name": "rhymeAbility",
-                  "required": false,
-                  "schema": {
-                    "type": "boolean"
-                  }
-                },
-                {
-                  "name": "goals",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                },
-                {
-                  "name": "rules",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                }
-              ],
-              "type": "object"
+              "fullComment": "If the persona has a chatbot, provide the slug here\n\nTODO: Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+              "todo": "Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+              "type": "string"
             }
           },
           {
@@ -2048,13 +1954,13 @@
   },
   "maxIndentationDepth": 4,
   "size": {
-    "characters": 1024,
-    "lines": 29,
-    "bytes": 1024,
+    "characters": 1044,
+    "lines": 32,
+    "bytes": 1044,
     "bytesPerCharacter": 1,
-    "charactersPerLine": 35,
-    "linesPerFile": 29,
+    "charactersPerLine": 33,
+    "linesPerFile": 32,
     "numberOfFiles": 1
   },
-  "id": "rgyzaojweqclkvtglxhtmoaw"
+  "id": "oasjrvakfkrxotxhsixkcmoz"
 }

@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678372642780,
-  "updatedAt": 1678372642780,
+  "createdAt": 1678862259022,
+  "updatedAt": 1678862259022,
   "deletedAt": 0,
-  "createdFirstAt": 1678372642780,
+  "createdFirstAt": 1678862259022,
   "id": "namedparameterstypeof-processmessage",
   "name": "NamedParameters<typeof processMessage>",
   "slug": "namedparameterstypeof-processmessage",
@@ -20,11 +20,14 @@
         "config": {
           "type": "object",
           "properties": {
+            "newUsersAmount": {
+              "type": "number"
+            },
             "person": {
               "$ref": "#/definitions/Person"
             },
-            "persona": {
-              "$ref": "#/definitions/Persona"
+            "finalAssistantPersona": {
+              "$ref": "#/definitions/FinalAssistantPersona"
             },
             "message": {
               "type": "string"
@@ -32,13 +35,15 @@
             "isFirstMessage": {
               "type": "boolean",
               "description": "Should be true if the person didn't exist before."
+            },
+            "isFreeMessage": {
+              "type": "boolean"
             }
           },
           "required": [
             "person",
-            "persona",
-            "message",
-            "isFirstMessage"
+            "finalAssistantPersona",
+            "message"
           ],
           "additionalProperties": false
         }
@@ -55,6 +60,13 @@
           "required": true,
           "schema": {
             "properties": [
+              {
+                "name": "newUsersAmount",
+                "required": false,
+                "schema": {
+                  "type": "number"
+                }
+              },
               {
                 "name": "person",
                 "required": true,
@@ -161,6 +173,32 @@
                       "name": "preferredLanguage",
                       "required": false,
                       "schema": {
+                        "enum": [
+                          "english",
+                          "dutch",
+                          "nepali",
+                          "portuguese",
+                          "brazilian",
+                          "german",
+                          "french",
+                          "spanish",
+                          "italian",
+                          "norwegian",
+                          "swedish",
+                          "danish",
+                          "vietnamese",
+                          "indonesian",
+                          "southAfrican",
+                          "tokiPona",
+                          "hindi",
+                          "mandarin",
+                          "arabic",
+                          "bengali",
+                          "urdu",
+                          "japanese",
+                          "swahili"
+                        ],
+                        "fullComment": "all currently supported languages",
                         "type": "string"
                       }
                     },
@@ -1077,6 +1115,14 @@
                       }
                     },
                     {
+                      "name": "custom_personaSlug",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "for chat assistants",
+                        "type": "string"
+                      }
+                    },
+                    {
                       "name": "paymentAuthToken",
                       "required": false,
                       "schema": {
@@ -1115,17 +1161,64 @@
                         "fullComment": "Number 0-1 to indicate my trust towards this person",
                         "type": "number"
                       }
+                    },
+                    {
+                      "name": "mood",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "To be determined by the assistants",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "profession",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "To be used as Assistant Context",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "homeLocation",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "To be used as Assistant Context",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "workLocation",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "To be used as Assistant Context",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "lastLocation",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "To be used as Assistant Context",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "lastLocationAt",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "To be used as Assistant Context",
+                        "type": "string"
+                      }
                     }
                   ],
                   "type": "object"
                 }
               },
               {
-                "name": "persona",
+                "name": "finalAssistantPersona",
                 "required": true,
                 "schema": {
-                  "fullComment": "Highly private model.\n\nConfiguration for a person identity that you say that is you.\n\nAs a OS user you can have multiple personas between which you can easily switch.\n\nThe difference from `Person` is that `Person` stores other people, whereas `Persona` stores different identities you give to yourself.\n\nEvery persona is admin by default\n\nNB: brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...\n\n> Persona: A persona, depending on the context, is the public image of one's personality, the social role that one adopts, or simply a fictional character. The word derives from Latin, where it originally referred to a theatrical mask. On the social web, users develop virtual personas as online identities. (Wikipedia)",
-                  "nb": "brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...",
+                  "fullComment": "",
                   "properties": [
                     {
                       "name": "slug",
@@ -1509,7 +1602,7 @@
                     },
                     {
                       "name": "spokenLanguages",
-                      "required": true,
+                      "required": false,
                       "schema": {
                         "fullComment": "Languages that this persona can speak\n\nCan be matched against a channel to be the recommended persona",
                         "items": [
@@ -1826,6 +1919,15 @@
                       }
                     },
                     {
+                      "name": "assistantStateSlug",
+                      "required": false,
+                      "schema": {
+                        "fullComment": "If the persona has a chatbot, provide the slug here\n\nTODO: Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+                        "todo": "Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+                        "type": "string"
+                      }
+                    },
+                    {
                       "name": "email",
                       "required": true,
                       "schema": {
@@ -1852,9 +1954,16 @@
               },
               {
                 "name": "isFirstMessage",
-                "required": true,
+                "required": false,
                 "schema": {
                   "fullComment": "Should be true if the person didn't exist before.",
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "isFreeMessage",
+                "required": false,
+                "schema": {
                   "type": "boolean"
                 }
               }

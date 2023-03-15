@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678862264239,
+  "updatedAt": 1678862264239,
+  "deletedAt": 0,
+  "createdFirstAt": 1678862264239,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "processMessageAfterChat",
+  "slug": "process-message-after-chat",
+  "operationRelativeTypescriptFilePath": "src/processMessageAfterChat.ts",
+  "type": {
+    "rawType": "(config: { isTimedOut: boolean; instantResponse: import(\"/Users/clarity/os/operations/tools/control-web/openai-wrapper/build/chat\").ChatReturnType; person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person; persona: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/Persona\").Persona; chatMessage: any; isFreeMessage?: boolean | undefined; }) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: {\n  isTimedOut: boolean;\n  instantResponse: ChatReturnType;\n  person: Person;\n  persona: Persona;\n  chatMessage: Creation<ChatMessage>;\n  isFreeMessage?: boolean;\n}) => {\n  const {\n    chatMessage,\n    instantResponse,\n    person,\n    persona,\n    isFreeMessage,\n    isTimedOut,\n  } = config;\n  if (!instantResponse.chatResponse || !person.phoneNumber) {\n    // no response...insert sent only\n    await insertChatMessages(person.slug, persona.slug, [chatMessage]);\n\n    return { isSuccessful: false, message: \"Couldn't send response\" };\n  }\n\n  if (isTimedOut) {\n    const chunk1 = instantResponse.chatResponse.substring(0, 1599);\n    sendTwilioMessage(person.phoneNumber, chunk1, {\n      channel: \"whatsapp\",\n      persona,\n    });\n  }\n\n  // NB: if there's a message in the result, add it to the db\n  const responseChatMessage: Creation<ChatMessage> = {\n    personId: person.id,\n    personaId: persona.id,\n    direction: \"sent\",\n    createdAt: Date.now(),\n    message: instantResponse.chatResponse,\n    isPaywallMessage: instantResponse.isPaywallHit,\n  };\n\n  // Insert both\n  insertChatMessages(person.slug, persona.slug, [\n    chatMessage,\n    responseChatMessage,\n  ]);\n\n  if (!instantResponse.isPaywallHit && !isFreeMessage) {\n    // If there's a response, we're paying the api... Let's deduct credit. Unless it's the paywall message.\n    const updateResult = await db.update(\n      \"Person\",\n      (item) => item.id === person.id,\n      (item) => {\n        const credit =\n          Math.round(\n            ((item.credit || 0) - getCostPerMessageCredit(persona)) * 100\n          ) / 100;\n\n        return {\n          ...item,\n          credit,\n          lastActivityAt: Date.now(),\n        };\n      }\n    );\n  }\n\n  return { isSuccessful: true, message: \"Processed\" };\n}",
+  "description": "To be executed after chat. Needs to be separate because we need to return something within a 15s timeout",
+  "id": "mobctayrfiayufycvloiwuwj"
+}

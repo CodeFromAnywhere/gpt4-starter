@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678372648780,
-  "updatedAt": 1678372648780,
+  "createdAt": 1678862271423,
+  "updatedAt": 1678862271423,
   "deletedAt": 0,
-  "createdFirstAt": 1678372648780,
+  "createdFirstAt": 1678862271423,
   "id": "namedparameterstypeof-senddailyalarmsms",
   "name": "NamedParameters<typeof sendDailyAlarmSms>",
   "slug": "namedparameterstypeof-senddailyalarmsms",

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678862235428,
+  "updatedAt": 1678862235428,
+  "deletedAt": 0,
+  "createdFirstAt": 1678862235428,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "commandResult",
+  "slug": "command-result",
+  "operationRelativeTypescriptFilePath": "src/commandResult.ts",
+  "type": {
+    "rawType": "(chatMessage: any, person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person, persona: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/Persona\").FinalAssistantPersona) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (\n  chatMessage: Creation<ChatMessage>,\n  person: Person,\n  persona: FinalAssistantPersona\n) => {\n  const t = persona.assistantState.translations;\n\n  const words = chatMessage.message.split(\" \");\n  const command = words.length <= 3 ? words[0].toLowerCase() : \"__NO_COMMAND__\";\n\n  const isUseEnabled = process.env.NODE_ENV === \"production\";\n\n  const commands = {\n    /**\n     * Command `donate [phonenumber] [number]` to send credit to someone else\n     */\n    donate: async () => {\n      const phoneNumber = words[1]?.toLowerCase();\n      const creditString = words[2]?.toLowerCase();\n      const creditAmount =\n        creditString && !isNaN(Number(creditString))\n          ? Number(creditString)\n          : undefined;\n\n      const found = (await db.get(\"Person\")).find(\n        (x) => x.phoneNumber === phoneNumber\n      );\n\n      if (!found) {\n        return translate(t.phoneNumberNotFound, { phoneNumber });\n      }\n\n      if (!creditAmount) {\n        return translate(t.invalidCreditAmount);\n      }\n\n      if ((person.credit || 0) < creditAmount) {\n        return translate(t.notEnoughCredit, {\n          personCredit: String(person.credit || 0),\n        });\n      }\n\n      return translate(t.sendCreditComingSoon, {\n        phoneNumber,\n        creditAmount: String(creditAmount),\n      });\n      // enough to send. Deduct and add to other person, and send message to that other person as well.\n    },\n\n    \"opt-out\": async () => {\n      const result = await db.update(\n        \"Person\",\n        (item) => item.id === person.id,\n        (item) => ({ ...item, isEmailOptOut: true })\n      );\n      return translate(t.optedOutMessage);\n    },\n    help: () => {\n      return translate(t.helpMessage, { name: persona.name });\n    },\n    profile: () => {\n      return translate(t.profileInfo, {\n        name: person.name,\n        phoneNumber: person.phoneNumber || \"-\",\n        credit: String(person.credit || 0),\n      });\n    },\n    invite: () => {\n      return translate(t.inviteMessage);\n    },\n    reset: () => {\n      return translate(t.resetMessage);\n    },\n    delete: () => {\n      return translate(t.deleteMessage);\n    },\n\n    use: async () => {\n      if (isUseEnabled) {\n        // in prod, just continue...\n        return null;\n      }\n      const slug = words[1]?.toLowerCase();\n      const persona = await getPersona((item) => item.slug === slug);\n      if (!persona) {\n        const botList = (await db.get(\"Persona\"))\n          .filter((x) => x.spokenLanguages || x.assistantState)\n          .map((x) => `- ${x.slug}`)\n          .join(\"\\n\");\n\n        return translate(t.botNotFound, { botList });\n      }\n\n      const result = await db.update(\n        \"Person\",\n        (item) => item.id === person.id,\n        (item) => ({ ...item, custom_personaSlug: slug })\n      );\n\n      return translate(t.useBotSuccess, { slug });\n    },\n  };\n\n  const isCommand = Object.keys(commands).includes(command);\n  if (!isCommand) {\n    return;\n  }\n\n  const thisCommand = commands[command as keyof typeof commands];\n\n  const chatResponse = await thisCommand();\n\n  if (chatResponse === null) {\n    return;\n  }\n\n  return chatResponse;\n}",
+  "description": "",
+  "id": "hbftysypxcdpiszzqusyynnw"
+}

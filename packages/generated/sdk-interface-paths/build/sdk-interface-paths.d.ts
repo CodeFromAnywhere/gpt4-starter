@@ -295,9 +295,17 @@ export declare const sdkInterfacePaths: {
     "NamedParameters<typeof getBundleSummary>": string;
     "NamedParameters<typeof getDbModelsForBundle>": string;
     ChatMessageAnalysis: string;
+    ChatReturnType: string;
+    FinalAssistantPersona: string;
     Language: string;
+    "NamedParameters<typeof bahasaTeacher>": string;
+    "NamedParameters<typeof commandResult>": string;
+    "NamedParameters<typeof defaultAssistant>": string;
+    "NamedParameters<typeof elonGpt>": string;
+    "NamedParameters<typeof englishTeacher>": string;
     "NamedParameters<typeof generateInstantResponseMessage>": string;
     "NamedParameters<typeof getChatMessageAnalysis>": string;
+    "NamedParameters<typeof getChatResult>": string;
     "NamedParameters<typeof getCostPerMessageCredit>": string;
     "NamedParameters<typeof getCredit>": string;
     "NamedParameters<typeof getMessageLimitInfo>": string;
@@ -309,8 +317,10 @@ export declare const sdkInterfacePaths: {
     "NamedParameters<typeof getSystemMessage>": string;
     "NamedParameters<typeof getSystemMessageOtherLanguage>": string;
     "NamedParameters<typeof jsonGpt>": string;
+    "NamedParameters<typeof languageTeacher>": string;
     "NamedParameters<typeof proactiveOutreach>": string;
     "NamedParameters<typeof processMessage>": string;
+    "NamedParameters<typeof processMessageAfterChat>": string;
     "NamedParameters<typeof sendChatAiStatsUpdate>": string;
     "NamedParameters<typeof sendDailyAlarmSms>": string;
     "NamedParameters<typeof truncateMessages>": string;
@@ -1337,6 +1347,7 @@ export declare const sdkInterfacePaths: {
     TodoOffer: string;
     TodoOfferStatus: string;
     TodoPriority: string;
+    "NamedParameters<typeof translate>": string;
     "NamedParameters<typeof tryParseJson>": string;
     "NamedParameters<typeof getAllTsMorphSourceFiles>": string;
     "NamedParameters<typeof getTsMorphProject>": string;

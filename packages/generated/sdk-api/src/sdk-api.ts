@@ -159,8 +159,14 @@ import { getBatteryLevelPercentage } from "battery";
 import { isSystemUsingBattery } from "battery";
 import { getBundleSummary } from "bundle-util";
 import { getDbModelsForBundle } from "bundle-util";
+import { bahasaTeacher } from "chat";
+import { commandResult } from "chat";
+import { defaultAssistant } from "chat";
+import { elonGpt } from "chat";
+import { englishTeacher } from "chat";
 import { generateInstantResponseMessage } from "chat";
 import { getChatMessageAnalysis } from "chat";
+import { getChatResult } from "chat";
 import { getCostPerMessageCredit } from "chat";
 import { getCredit } from "chat";
 import { getMessageLimitInfo } from "chat";
@@ -172,7 +178,9 @@ import { getPersonaStatistics } from "chat";
 import { getSystemMessageOtherLanguage } from "chat";
 import { getSystemMessage } from "chat";
 import { jsonGpt } from "chat";
+import { languageTeacher } from "chat";
 import { proactiveOutreach } from "chat";
+import { processMessageAfterChat } from "chat";
 import { processMessage } from "chat";
 import { sendChatAiStatsUpdate } from "chat";
 import { sendDailyAlarmSms } from "chat";
@@ -596,6 +604,7 @@ import { createNewStripePayment } from "stripe-wrapper";
 import { receivePaymentUpdateWithContextRaw } from "stripe-wrapper";
 import { getTestFunctionContext } from "test-util";
 import { time } from "time";
+import { translate } from "translate";
 import { getAllTsMorphSourceFiles } from "ts-morph-util";
 import { getHasGeneric } from "ts-morph-util";
 import { getTsMorphProject } from "ts-morph-util";
@@ -1105,8 +1114,14 @@ getBatteryLevelPercentage,
 isSystemUsingBattery,
 getBundleSummary,
 getDbModelsForBundle,
+bahasaTeacher,
+commandResult,
+defaultAssistant,
+elonGpt,
+englishTeacher,
 generateInstantResponseMessage,
 getChatMessageAnalysis,
+getChatResult,
 getCostPerMessageCredit,
 getCredit,
 getMessageLimitInfo,
@@ -1118,7 +1133,9 @@ getPersonaStatistics,
 getSystemMessageOtherLanguage,
 getSystemMessage,
 jsonGpt,
+languageTeacher,
 proactiveOutreach,
+processMessageAfterChat,
 processMessage,
 sendChatAiStatsUpdate,
 sendDailyAlarmSms,
@@ -1542,6 +1559,7 @@ createNewStripePayment,
 receivePaymentUpdateWithContextRaw,
 getTestFunctionContext,
 time,
+translate,
 getAllTsMorphSourceFiles,
 getHasGeneric,
 getTsMorphProject,

@@ -1,13 +1,13 @@
 {
-  "createdAt": 1678372644217,
-  "updatedAt": 1678372644217,
+  "createdAt": 1678862260654,
+  "updatedAt": 1678862260654,
   "deletedAt": 0,
-  "createdFirstAt": 1678372644217,
+  "createdFirstAt": 1678862260654,
   "isApiExposed": false,
   "isExported": true,
   "operationRelativeTypescriptFilePath": "src/processMessage.ts",
   "commentsInside": [],
-  "rawText": " async (config: {\n  person: Person;\n  persona: Persona;\n  message: string;\n  /**\n   * Should be true if the person didn't exist before.\n   */\n  isFirstMessage: boolean;\n}): Promise<{\n  isSuccessful: boolean;\n  responseMessage?: string;\n  message?: string;\n}> => {\n  const { message, person, persona, isFirstMessage } = config;\n\n  //4) store message in db\n  const chatMessage: Creation<ChatMessage> = {\n    personId: person.id,\n    personaId: persona.id,\n    direction: \"received\",\n    // groupSlug?: string;\n    createdAt: Date.now(),\n    message,\n  };\n  // NB: needs to be stored in person folder...\n  const chatUpsertResult = await db.upsert(\"ChatMessage\", chatMessage);\n\n  // respond immedately, if needed\n  // TODO: if it's timing out (more than 15s) we should not send it directly. instead, we should cancel it and just respond with nothing, and send manually instead... not sure how to do this nicely.\n  const instantResponse = await generateInstantResponseMessage(\n    chatMessage,\n    person,\n    { isFirstMessage }\n  );\n  console.log({ instantResponse });\n\n  if (instantResponse.chatResponse) {\n    // NB: if there's a message in the result, add it to the db\n    const responseChatMessage: Creation<ChatMessage> = {\n      personId: person.id,\n      personaId: persona.id,\n      direction: \"sent\",\n      createdAt: Date.now(),\n      message: instantResponse.chatResponse,\n    };\n    const chatUpsertResult = await db.upsert(\n      \"ChatMessage\",\n      responseChatMessage\n    );\n\n    // If there's a response, we're paying the api... Let's deduct credit.\n    const updateResult = await db.update(\n      \"Person\",\n      (item) => item.id === person.id,\n      (item) => ({\n        ...item,\n        credit: (item.credit || 0) - 0.02,\n        lastActivityAt: Date.now(),\n      })\n    );\n    console.log({ updateResult });\n  }\n\n  return {\n    isSuccessful: true,\n    message: \"Processed\",\n    responseMessage: instantResponse.chatResponse,\n  };\n}",
+  "rawText": " async (config: {\n  newUsersAmount?: number;\n  person: Person;\n  finalAssistantPersona: FinalAssistantPersona;\n  message: string;\n  /**\n   * Should be true if the person didn't exist before.\n   */\n  isFirstMessage?: boolean;\n  isFreeMessage?: boolean;\n}): Promise<{\n  isSuccessful: boolean;\n  message?: string;\n  responseMessage?: string;\n}> => {\n  const {\n    message,\n    person,\n    finalAssistantPersona,\n    isFirstMessage,\n    newUsersAmount,\n  } = config;\n\n  //4) store message in db\n  const chatMessage: Creation<ChatMessage> = {\n    personId: person.id,\n    personaId: finalAssistantPersona.id,\n    direction: \"received\",\n    // groupSlug?: string;\n    createdAt: Date.now(),\n    message,\n  };\n\n  // NB: this function takes maximum 10 seconds to return, but still executesthe after function afterwards.\n  const { isTimedOut, result } = await runFunctionWithTimeout<ChatReturnType>(\n    () =>\n      generateInstantResponseMessage(\n        chatMessage,\n        person,\n        finalAssistantPersona,\n        {\n          isFirstMessage,\n          newUsersAmount,\n        }\n      ),\n    10000,\n    (result, isTimedOut) =>\n      processMessageAfterChat({\n        isTimedOut,\n        instantResponse: result,\n        person,\n        persona: finalAssistantPersona,\n        chatMessage,\n        isFreeMessage: config.isFreeMessage,\n      })\n  );\n\n  if (isTimedOut) {\n    return { isSuccessful: true, message: \"No response because it timed out\" };\n  }\n\n  if (!result) {\n    return {\n      isSuccessful: false,\n      message: \"No timeout, yet no result. Shouldn't happen!\",\n    };\n  }\n\n  return {\n    responseMessage: result.chatResponse,\n    isSuccessful: true,\n    message: \"Processed and reply gathered\",\n  };\n}",
   "name": "processMessage",
   "slug": "process-message",
   "parameters": [
@@ -16,11 +16,14 @@
       "schema": {
         "type": "object",
         "properties": {
+          "newUsersAmount": {
+            "type": "number"
+          },
           "person": {
             "$ref": "#/definitions/Person"
           },
-          "persona": {
-            "$ref": "#/definitions/Persona"
+          "finalAssistantPersona": {
+            "$ref": "#/definitions/FinalAssistantPersona"
           },
           "message": {
             "type": "string"
@@ -28,18 +31,27 @@
           "isFirstMessage": {
             "type": "boolean",
             "description": "Should be true if the person didn't exist before."
+          },
+          "isFreeMessage": {
+            "type": "boolean"
           }
         },
         "required": [
           "person",
-          "persona",
-          "message",
-          "isFirstMessage"
+          "finalAssistantPersona",
+          "message"
         ],
         "additionalProperties": false
       },
       "simplifiedSchema": {
         "properties": [
+          {
+            "name": "newUsersAmount",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
           {
             "name": "person",
             "required": true,
@@ -146,6 +158,32 @@
                   "name": "preferredLanguage",
                   "required": false,
                   "schema": {
+                    "enum": [
+                      "english",
+                      "dutch",
+                      "nepali",
+                      "portuguese",
+                      "brazilian",
+                      "german",
+                      "french",
+                      "spanish",
+                      "italian",
+                      "norwegian",
+                      "swedish",
+                      "danish",
+                      "vietnamese",
+                      "indonesian",
+                      "southAfrican",
+                      "tokiPona",
+                      "hindi",
+                      "mandarin",
+                      "arabic",
+                      "bengali",
+                      "urdu",
+                      "japanese",
+                      "swahili"
+                    ],
+                    "fullComment": "all currently supported languages",
                     "type": "string"
                   }
                 },
@@ -1062,6 +1100,14 @@
                   }
                 },
                 {
+                  "name": "custom_personaSlug",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "for chat assistants",
+                    "type": "string"
+                  }
+                },
+                {
                   "name": "paymentAuthToken",
                   "required": false,
                   "schema": {
@@ -1100,17 +1146,64 @@
                     "fullComment": "Number 0-1 to indicate my trust towards this person",
                     "type": "number"
                   }
+                },
+                {
+                  "name": "mood",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "To be determined by the assistants",
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "profession",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "To be used as Assistant Context",
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "homeLocation",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "To be used as Assistant Context",
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "workLocation",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "To be used as Assistant Context",
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "lastLocation",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "To be used as Assistant Context",
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "lastLocationAt",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "To be used as Assistant Context",
+                    "type": "string"
+                  }
                 }
               ],
               "type": "object"
             }
           },
           {
-            "name": "persona",
+            "name": "finalAssistantPersona",
             "required": true,
             "schema": {
-              "fullComment": "Highly private model.\n\nConfiguration for a person identity that you say that is you.\n\nAs a OS user you can have multiple personas between which you can easily switch.\n\nThe difference from `Person` is that `Person` stores other people, whereas `Persona` stores different identities you give to yourself.\n\nEvery persona is admin by default\n\nNB: brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...\n\n> Persona: A persona, depending on the context, is the public image of one's personality, the social role that one adopts, or simply a fictional character. The word derives from Latin, where it originally referred to a theatrical mask. On the social web, users develop virtual personas as online identities. (Wikipedia)",
-              "nb": "brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...",
+              "fullComment": "",
               "properties": [
                 {
                   "name": "slug",
@@ -1494,7 +1587,7 @@
                 },
                 {
                   "name": "spokenLanguages",
-                  "required": true,
+                  "required": false,
                   "schema": {
                     "fullComment": "Languages that this persona can speak\n\nCan be matched against a channel to be the recommended persona",
                     "items": [
@@ -1811,6 +1904,15 @@
                   }
                 },
                 {
+                  "name": "assistantStateSlug",
+                  "required": false,
+                  "schema": {
+                    "fullComment": "If the persona has a chatbot, provide the slug here\n\nTODO: Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+                    "todo": "Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+                    "type": "string"
+                  }
+                },
+                {
                   "name": "email",
                   "required": true,
                   "schema": {
@@ -1837,9 +1939,16 @@
           },
           {
             "name": "isFirstMessage",
-            "required": true,
+            "required": false,
             "schema": {
               "fullComment": "Should be true if the person didn't exist before.",
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "isFreeMessage",
+            "required": false,
+            "schema": {
               "type": "boolean"
             }
           }
@@ -1851,7 +1960,7 @@
   ],
   "description": "All logic to process a general purpose message. This can be antying like a WhatsApp message, an email, an SMS, literally any form of communication between you (persona) and a person.",
   "returnType": {
-    "rawType": "Promise<{ isSuccessful: boolean; responseMessage?: string | undefined; message?: string | undefined; }>",
+    "rawType": "Promise<{ isSuccessful: boolean; message?: string | undefined; responseMessage?: string | undefined; }>",
     "typeCoverage": 0,
     "isArray": false,
     "isEnum": false,
@@ -1859,15 +1968,15 @@
     "isPrimitive": false,
     "isEnumLiteral": false
   },
-  "maxIndentationDepth": 4,
+  "maxIndentationDepth": 5,
   "size": {
-    "characters": 2131,
-    "lines": 69,
-    "bytes": 2131,
+    "characters": 1896,
+    "lines": 74,
+    "bytes": 1896,
     "bytesPerCharacter": 1,
-    "charactersPerLine": 31,
-    "linesPerFile": 69,
+    "charactersPerLine": 26,
+    "linesPerFile": 74,
     "numberOfFiles": 1
   },
-  "id": "tsffenqmbxawjmidzsezpuzc"
+  "id": "qvvxgpykkqvikjlphffmdhrz"
 }

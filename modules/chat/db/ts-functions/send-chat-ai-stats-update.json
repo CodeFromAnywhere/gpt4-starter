@@ -1,13 +1,13 @@
 {
-  "createdAt": 1678372647302,
-  "updatedAt": 1678372647302,
+  "createdAt": 1678862269894,
+  "updatedAt": 1678862269894,
   "deletedAt": 0,
-  "createdFirstAt": 1678372647302,
+  "createdFirstAt": 1678862269894,
   "isApiExposed": false,
   "isExported": true,
   "operationRelativeTypescriptFilePath": "src/sendChatAiStatsUpdate.ts",
   "commentsInside": [],
-  "rawText": " async () => {\n  const stats = await getPersonaStatistics();\n\n  const message = `\nTotal users: ${stats.totalPersons}\nDaily active users (DAU): ${stats.activePersonsAmount}\nNew users: ${stats.newPersonsAmount}\nReturning users: ${stats.returningPersonsAmount}\nMessages sent today: ${stats.messagesTodayAmount}\n\nStatistics per Chat AI:\n\n${Object.values(stats.personaStatistics)\n  .map((item) => {\n    return `- **${item.name}**: ${item.activeUsersTodayAmount} DAU, of which ${item.newUsersTodayAmount} new, sent ${item.newMessagesTodayAmount} messages`;\n  })\n  .join(\"\\n\")}\n`;\n\n  const staff = (await db.get(\"Person\")).filter((x) =>\n    x.groupSlugs?.includes(\"cfa-freelancers\")\n  );\n\n  const res = staff.map((person) =>\n    sendMessage(person, message, {\n      emailConfig: { subject: `Daily stats (${getCurrentDate()})` },\n    })\n  );\n}",
+  "rawText": " async () => {\n  const stats = await getPersonaStatistics();\n\n  const message = `\nTotal users: ${stats.totalPersons}\nDaily active users (DAU): ${stats.activePersonsAmount}\nNew users: ${stats.newPersonsAmount}\nReturning users: ${stats.returningPersonsAmount}\nMessages sent today: ${stats.messagesTodayAmount}\n\nStatistics per Chat AI:\n\n${Object.values(stats.personaStatistics)\n  .map((item) => {\n    return `- **${item.name}**: ${item.activeUsersTodayAmount} DAU, of which ${item.newUsersTodayAmount} new, sent ${item.newMessagesTodayAmount} messages`;\n  })\n  .join(\"\\n\")}\n`;\n\n  const staff = (await db.get(\"Person\")).filter((x) =>\n    x.groupSlugs?.includes(\"cfa-freelancers\")\n  );\n  const subject = `Daily stats (${getCurrentDate()})`;\n\n  await sendMail({ to: \"wijnandworld@hotmail.com\", text: message, subject });\n\n  const res = staff.map((person) =>\n    sendMessage(person, message, {\n      emailConfig: { subject },\n    })\n  );\n}",
   "name": "sendChatAiStatsUpdate",
   "slug": "send-chat-ai-stats-update",
   "parameters": [],
@@ -23,13 +23,13 @@
   },
   "maxIndentationDepth": 3,
   "size": {
-    "characters": 835,
-    "lines": 29,
-    "bytes": 835,
+    "characters": 932,
+    "lines": 32,
+    "bytes": 932,
     "bytesPerCharacter": 1,
     "charactersPerLine": 29,
-    "linesPerFile": 29,
+    "linesPerFile": 32,
     "numberOfFiles": 1
   },
-  "id": "ydajghswjvdwjpeplzcrxtpb"
+  "id": "herivprbovpiukggfhzqnzyt"
 }

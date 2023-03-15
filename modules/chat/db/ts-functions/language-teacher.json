@@ -1,0 +1,94 @@
+{
+  "createdAt": 1678862223674,
+  "updatedAt": 1678862223674,
+  "deletedAt": 0,
+  "createdFirstAt": 1678862223674,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/assistants/englishTeacher.ts",
+  "commentsInside": [],
+  "rawText": " async (\n  context: CustomAssistantContext,\n  config: {\n    /**\n     * Language level\n     */\n    level: \"beginner\" | \"intermediate\" | \"advanced\";\n    targetLanguage: string;\n  }\n) => {\n  const {\n    chatMessage,\n    truncatedMessageHistory,\n    person,\n    inputTokensCalculated,\n  } = context;\n  const { level, targetLanguage } = config;\n  const allMessages = truncatedMessageHistory.concat(chatMessage);\n\n  const regularChatPromise = chat(person, allMessages, {\n    inputTokensCalculated,\n    isInstant: true,\n    systemMessage: \"You are ChatGPT, reply as consise as possible.\",\n    postSystemMessage: undefined,\n  });\n\n  const analysisChatPromise = chatCompletion(\n    [\n      {\n        role: \"system\",\n        content:\n          \"You are a Language Teacher GPT. You are observing the user to find mistakes in his writing.\",\n      },\n      { role: \"user\", content: chatMessage.message },\n      {\n        role: \"user\",\n        content:\n          \"Please give me grammar, spelling and vocabulary improvements about the above message (if any). Otherwise, reply with a compliment.\",\n      },\n    ],\n    { isInstant: true, inputTokensCalculated }\n  );\n\n  const [analysisChat, regularChat] = await Promise.all([\n    analysisChatPromise,\n    regularChatPromise,\n  ]);\n\n  if (!regularChat.chatResponse) {\n    return {\n      isSuccessful: false,\n      message: \"No chatresponse\",\n    } satisfies ChatReturnType;\n  }\n\n  const language = detectLanguage(regularChat.chatResponse);\n  const otherLanguage = language === \"english\" ? targetLanguage : \"english\";\n  const thisLanguage = language === \"english\" ? \"english\" : targetLanguage;\n\n  const translatedRegularChat = await chatCompletion(\n    [\n      {\n        role: \"user\",\n        content: `You are Translator GPT, consider this text:\n\n\\`\\`\\`\n${regularChat.chatResponse}\n\\`\\`\\`\n\nThe level of the student is ${config.level}. Rewrite the text, translate the ${config.level}-friendly words into ${otherLanguage} while keeping the rest in ${thisLanguage}. Use asterix around the translated words.\n\nFor example, for english-bahasa:\n- before: \"Hello, the house is nearby\"\n- after: \"*Halo*, the house is *dekat*`,\n      },\n    ],\n    { isInstant: true, inputTokensCalculated }\n  );\n\n  const fullResponse = `\n ${regularChat.chatResponse}\n\n ----\n\n ${translatedRegularChat.chatResponse}\n\n ----\n \n ${analysisChat.chatResponse}`;\n\n  const tokensUsed =\n    (regularChat.tokensUsed || 0) +\n    (translatedRegularChat.tokensUsed || 0) +\n    (analysisChat.tokensUsed || 0);\n  return {\n    isSuccessful: true,\n    chatResponse: fullResponse,\n    isPaywallHit: false,\n    tokensUsed,\n  } satisfies ChatReturnType;\n}",
+  "name": "languageTeacher",
+  "slug": "language-teacher",
+  "parameters": [
+    {
+      "name": "context",
+      "schema": {
+        "$ref": "#/definitions/CustomAssistantContext"
+      },
+      "required": true
+    },
+    {
+      "name": "config",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "type": "string",
+            "enum": [
+              "beginner",
+              "intermediate",
+              "advanced"
+            ],
+            "description": "Language level"
+          },
+          "targetLanguage": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "level",
+          "targetLanguage"
+        ],
+        "additionalProperties": false
+      },
+      "simplifiedSchema": {
+        "properties": [
+          {
+            "name": "level",
+            "required": true,
+            "schema": {
+              "enum": [
+                "beginner",
+                "intermediate",
+                "advanced"
+              ],
+              "fullComment": "Language level",
+              "type": "string"
+            }
+          },
+          {
+            "name": "targetLanguage",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "required": true
+    }
+  ],
+  "description": "Any language teacher could use a dualprompt where one of the prompts has a chained additional prompt. Time to repsonse doubles, llm cost triples, but it will be far more useful:\n\n- analyses your message, and gives tips on how to improve grammar, spelling, and vocabulary.\n- responds to your message in whatever language you sent it in\n- after that: translates the response into your language if it was the target language, and vice versa.\n\nAfter all results are in, they are combined into a response and sent back to whatsapp.\n\nAdditionally, a voice wrapper would be amazing for this! Whisper + Say would be enough. If we do this though, we need to ensure the server load stays low for scalability.\n\n# *UPDATE*\n\nDoesn't work so well! I think it's better with my own word matrix. Let's add some settings, the way I had it in the UI would be perfect.\n\nIt'd be great to have:\n\n- known words in target language\n- target language\n- spoken language (detect)\n- base language (should be english)\n\nThen, we can do different prompts based on what is said\n\n- if the spoken language is not target or base, reply with an error message\n- if the spoken language is target language\n- analyse what the user is trying to say (target to base, GPT)\n- reply to that (base to base, GPT)\n- wordmatrix step\n- if the spoken language is english\n- figure out if it's a question about language (JSON GPT)\n- if it's a question about language, assume it's about target language, and explain about grammar, spelling, and vocabulary with lots of examples\n- if not provide in multiple parts\n- provide 3 sentences in the target language that would accomplish the same goal in the format \"base sentence = target sentence\" (base to target, GPT)\n- reply to it (base to base, GPT)\n- wordmatrix step\n\n# Wordmatrix step:\n\nInput base language text. Based on the level and settings, translate some words into target language, with or without the original word in parenthesis (word matrix)",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 5,
+  "size": {
+    "characters": 4587,
+    "lines": 139,
+    "bytes": 4587,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 33,
+    "linesPerFile": 139,
+    "numberOfFiles": 1
+  },
+  "id": "smqwywpwxuozzoeolnkfsxls"
+}

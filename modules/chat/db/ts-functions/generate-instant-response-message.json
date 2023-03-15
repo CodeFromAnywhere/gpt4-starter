@@ -1,13 +1,13 @@
 {
-  "createdAt": 1678611469606,
-  "updatedAt": 1678611469606,
+  "createdAt": 1678862243430,
+  "updatedAt": 1678862243430,
   "deletedAt": 0,
-  "createdFirstAt": 1678611469606,
+  "createdFirstAt": 1678862243430,
   "isApiExposed": false,
   "isExported": true,
   "operationRelativeTypescriptFilePath": "src/generateInstantResponseMessage.ts",
   "commentsInside": [],
-  "rawText": " async (\n  chatMessage: Creation<ChatMessage>,\n  person: Person,\n  persona: Persona,\n  config: { isFirstMessage?: boolean; newUsersAmount?: number }\n): Promise<ReturnType<typeof chat>> => {\n  const words = chatMessage.message.split(\" \");\n  const command = words.length <= 2 ? words[0].toLowerCase() : \"__NO_COMMAND__\";\n\n  const commands = {\n    \"opt-out\": async () => {\n      const result = await db.update(\n        \"Person\",\n        (item) => item.id === person.id,\n        (item) => ({ ...item, isEmailOptOut: true })\n      );\n      return \"You've opted out. You won't receive email communication from us. You can opt-in \";\n    },\n    use: async () => {\n      if (process.env.NODE_ENV === \"production\") {\n        // in prod, just continue...\n        return null;\n      }\n      const slug = words[1]?.toLowerCase();\n      const persona = await getPersona((item) => item.slug === slug);\n      if (!persona) {\n        return \"Couldn't find that bot.\";\n      }\n\n      const result = await db.update(\n        \"Person\",\n        (item) => item.id === person.id,\n        (item) => ({ ...item, customPersonaSlug: slug })\n      );\n\n      return `Success. You're now chatting with ${slug}`;\n    },\n  };\n\n  if (Object.keys(commands).includes(command)) {\n    const thisCommand = commands[command as keyof typeof commands];\n\n    const result = await thisCommand();\n\n    if (result !== null) {\n      return {\n        isSuccessful: true,\n        tokensUsed: 0,\n        isPaywallHit: false,\n        chatResponse: result,\n        message: \"Command result\",\n      };\n    }\n  }\n\n  // get all history, including the new message\n  const history = await getChatMessages(\n    person.slug,\n    persona.slug,\n    Date.now() - 86400000\n  );\n\n  const paywallResult = await getPaywallResult(\n    chatMessage,\n    history,\n    person,\n    persona,\n    config\n  );\n  if (paywallResult.isPaywallHit) {\n    return paywallResult;\n  }\n\n  console.log(`historical messages found: ${history.length}`);\n\n  // const analysis = await getChatMessageAnalysis(chatMessage.message);\n  // console.log({ analysis: analysis.chatResponse });\n  // TODO: this part should be its own function... shares code with `proactiveOutreach`...\n  // generateResponse(history)?\n  const { truncatedMessages, inputTokensCalculated } =\n    truncateMessages(history);\n\n  const assistantState = persona.assistantState;\n\n  const systemMessage = getSystemMessage(person, persona);\n\n  const allMessages: Creation<ChatMessage>[] = (\n    truncatedMessages as Creation<ChatMessage>[]\n  ).concat(chatMessage);\n\n  console.log({ systemMessage });\n\n  const chatResult = await chat(person, allMessages, {\n    isInstant: true,\n    inputTokensCalculated,\n    systemMessage,\n  });\n\n  if (config.isFirstMessage) {\n    // TODO: translate\n    const initialTermsMessage = `Hi there, this is ${persona.name} speaking!\n\nYou can send me ${\n      getMessageLimitInfo(person, persona).freeMessagesAmount\n    } free messages. After that, you'll be prompted to buy new messages for ${\n      getCostPerMessageCredit(persona) * 100\n    } cents per message.\n\nIf you continue to talk with me, you are agreeing with our privacy policy and terms of use, which can be found here:\n\nhttps://codefromanywhere.com/privacy-policy\n`;\n    chatResult.chatResponse = chatResult.chatResponse\n      ? `\n${initialTermsMessage}\n---\nTo answer your first message:\n\n${chatResult.chatResponse}`\n      : initialTermsMessage;\n  }\n\n  if (!chatResult.isSuccessful) {\n    console.log({ chatResult });\n  }\n  return chatResult;\n}",
+  "rawText": " async (\n  chatMessage: Creation<ChatMessage>,\n  person: Person,\n  persona: FinalAssistantPersona,\n  config: { isFirstMessage?: boolean; newUsersAmount?: number }\n): Promise<ChatReturnType> => {\n  const t = persona.assistantState.translations;\n\n  // PART 1: commands (assistant-agnostic)\n  const commandMessage = await commandResult(chatMessage, person, persona);\n  if (commandMessage) {\n    return {\n      isSuccessful: true,\n      chatResponse: commandMessage,\n      tokensUsed: 0,\n    };\n  }\n\n  // get all history, including the new message\n  const fullMessageHistory = await getChatMessages(\n    person.slug,\n    persona.slug,\n    Date.now() - 86400000\n  );\n\n  console.log(`Historical messages found: ${fullMessageHistory.length}`);\n\n  // PART 2: paywall (assistant-agnostic)\n  const paywallResult = await getPaywallResult(\n    chatMessage,\n    fullMessageHistory,\n    person,\n    persona,\n    config\n  );\n\n  if (paywallResult.isPaywallHit) {\n    return paywallResult;\n  }\n\n  // const analysis = await getChatMessageAnalysis(chatMessage.message);\n  // console.log({ analysis: analysis.chatResponse });\n  // TODO: this part should be its own function... shares code with `proactiveOutreach`...\n  // generateResponse(history)?\n\n  // PART 3: truncation. assistant-agnostic, for now.\n  const { truncatedMessageHistory, inputTokensCalculated } =\n    truncateMessages(fullMessageHistory);\n\n  // PART 4: assistant-specific part!\n\n  const chatResult = await getChatResult({\n    person,\n    persona,\n    truncatedMessageHistory,\n    fullMessageHistory,\n    inputTokensCalculated,\n    chatMessage,\n  });\n\n  // PART 5: message addition (assistant-agnostic)\n\n  if (config.isFirstMessage) {\n    const initialTermsMessage = translate(t.firstMessage, {\n      personaName: persona.name,\n      freeMessagesAmount: String(\n        getMessageLimitInfo(person, persona).freeMessagesAmount\n      ),\n      pricePerMessage: `${getCostPerMessageCredit(persona) * 100} cents`,\n    });\n\n    chatResult.chatResponse = chatResult.chatResponse\n      ? `\n${initialTermsMessage}\n---\n${translate(t.firstMessagePrefix)}\n${chatResult.chatResponse}`\n      : initialTermsMessage;\n  }\n\n  if (!chatResult.isSuccessful) {\n    console.log({ chatResult });\n  }\n\n  return chatResult;\n}",
   "name": "generateInstantResponseMessage",
   "slug": "generate-instant-response-message",
   "parameters": [
@@ -1068,6 +1068,14 @@
             }
           },
           {
+            "name": "custom_personaSlug",
+            "required": false,
+            "schema": {
+              "fullComment": "for chat assistants",
+              "type": "string"
+            }
+          },
+          {
             "name": "paymentAuthToken",
             "required": false,
             "schema": {
@@ -1106,6 +1114,54 @@
               "fullComment": "Number 0-1 to indicate my trust towards this person",
               "type": "number"
             }
+          },
+          {
+            "name": "mood",
+            "required": false,
+            "schema": {
+              "fullComment": "To be determined by the assistants",
+              "type": "string"
+            }
+          },
+          {
+            "name": "profession",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "homeLocation",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "workLocation",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastLocation",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastLocationAt",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
           }
         ],
         "type": "object"
@@ -1115,11 +1171,10 @@
     {
       "name": "persona",
       "schema": {
-        "$ref": "#/definitions/Persona"
+        "$ref": "#/definitions/FinalAssistantPersona"
       },
       "simplifiedSchema": {
-        "fullComment": "Highly private model.\n\nConfiguration for a person identity that you say that is you.\n\nAs a OS user you can have multiple personas between which you can easily switch.\n\nThe difference from `Person` is that `Person` stores other people, whereas `Persona` stores different identities you give to yourself.\n\nEvery persona is admin by default\n\nNB: brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...\n\n> Persona: A persona, depending on the context, is the public image of one's personality, the social role that one adopts, or simply a fictional character. The word derives from Latin, where it originally referred to a theatrical mask. On the social web, users develop virtual personas as online identities. (Wikipedia)",
-        "nb": "brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...",
+        "fullComment": "",
         "properties": [
           {
             "name": "slug",
@@ -1820,161 +1875,12 @@
             }
           },
           {
-            "name": "assistantState",
+            "name": "assistantStateSlug",
             "required": false,
             "schema": {
-              "fullComment": "If the persona has a chatbot, provide the (initial or permanent) assistant configuration here.\n\nstate for an \"assistant\" role in the chat completions api of openai, given by the \"system\" role.\n\nSome states might be able to be dynamicly altered by certain behavior of the user.\n\nTODO: add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
-              "todo": "add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
-              "properties": [
-                {
-                  "name": "premium",
-                  "required": false,
-                  "schema": {
-                    "enum": [
-                      "default",
-                      "light",
-                      "silver",
-                      "gold"
-                    ],
-                    "fullComment": "Activate more expensive stuff with different levels\n\ndefault = 2 cents per message light = 0.4 cents per message silver = 5 cents per message gold = 20 cents per message",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "personality",
-                  "required": false,
-                  "schema": {
-                    "fullComment": "e.g. Elon Musk",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "etnicity",
-                  "required": false,
-                  "schema": {
-                    "fullComment": "E.g. \"caucasian\" | \"black\" | \"asian\";",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "profession",
-                  "required": false,
-                  "schema": {
-                    "fullComment": "e.g. rapper, programmer",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "creator",
-                  "required": false,
-                  "schema": {
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "mood",
-                  "required": false,
-                  "schema": {
-                    "enum": [
-                      "happy",
-                      "sad",
-                      "horny",
-                      "grumpy",
-                      "nervous",
-                      "mad",
-                      "angry",
-                      "loving",
-                      "annoyed",
-                      "sleepy"
-                    ],
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "characteristics",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "enum": [
-                            "egoistic",
-                            "narsicistic",
-                            "depressed",
-                            "anxious",
-                            "loves user",
-                            "into user"
-                          ],
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                },
-                {
-                  "name": "humorStyle",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "enum": [
-                            "saddistic",
-                            "sarcastic",
-                            "witty",
-                            "crazy",
-                            "nihilistic",
-                            "none"
-                          ],
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                },
-                {
-                  "name": "rhymeAbility",
-                  "required": false,
-                  "schema": {
-                    "type": "boolean"
-                  }
-                },
-                {
-                  "name": "goals",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                },
-                {
-                  "name": "rules",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                }
-              ],
-              "type": "object"
+              "fullComment": "If the persona has a chatbot, provide the slug here\n\nTODO: Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+              "todo": "Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+              "type": "string"
             }
           },
           {
@@ -2034,7 +1940,7 @@
   ],
   "description": "Based on a new incoming message and the found model instances, an instant response can be sent back.\n\nIf not, just return undefined.",
   "returnType": {
-    "rawType": "Promise<ReturnType<(person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person, allMessages: any[], config?: ({ systemMessage?: string | null | undefined; } & import(\"/Users/clarity/os/operations/tools/control-web/openai-wrapper/build/types\").ChatCompletionConfig) | undefined) => Promise<{ isSuccessful: boolean; message?: string | undefined; chatResponse?: string | undefined; isPaywallHit?: boolean | undefined; tokensUsed?: number | undefined; }>>>",
+    "rawType": "Promise<import(\"/Users/clarity/os/operations/tools/control-web/openai-wrapper/build/chat\").ChatReturnType>",
     "typeCoverage": 0,
     "isArray": false,
     "isEnum": false,
@@ -2044,13 +1950,13 @@
   },
   "maxIndentationDepth": 4,
   "size": {
-    "characters": 3640,
-    "lines": 129,
-    "bytes": 3640,
+    "characters": 2379,
+    "lines": 88,
+    "bytes": 2379,
     "bytesPerCharacter": 1,
-    "charactersPerLine": 28,
-    "linesPerFile": 129,
+    "charactersPerLine": 27,
+    "linesPerFile": 88,
     "numberOfFiles": 1
   },
-  "id": "iqmzahbhnjvflomwqdkzkycx"
+  "id": "lkarksxopmhkkqfjntibbeyq"
 }

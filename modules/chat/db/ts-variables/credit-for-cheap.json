@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678611465861,
-  "updatedAt": 1678611465861,
+  "createdAt": 1678862239115,
+  "updatedAt": 1678862239115,
   "deletedAt": 0,
-  "createdFirstAt": 1678611465861,
+  "createdFirstAt": 1678862239115,
   "classification": "const",
   "comments": [],
   "isExported": true,
@@ -27,5 +27,5 @@
   },
   "value": "getCredit(cheapPayment)",
   "description": "",
-  "id": "bappxiyeoitynkmrvlyfeoyd"
+  "id": "onqpadlkboilorqclfghomkp"
 }

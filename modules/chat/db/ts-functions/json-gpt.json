@@ -1,11 +1,11 @@
 {
-  "createdAt": 1678372639188,
-  "updatedAt": 1678372639188,
+  "createdAt": 1678862280441,
+  "updatedAt": 1678862280441,
   "deletedAt": 0,
-  "createdFirstAt": 1678372639188,
+  "createdFirstAt": 1678862280441,
   "isApiExposed": false,
   "isExported": true,
-  "operationRelativeTypescriptFilePath": "src/jsonGpt.ts",
+  "operationRelativeTypescriptFilePath": "src/tasks/jsonGpt.ts",
   "commentsInside": [],
   "rawText": " async <T extends { [key: string]: any }>(\n  message: string,\n  schema: { [key: string]: { type: string; description?: string } }\n): Promise<\n  StandardResponse & {\n    tokensUsed?: number | undefined;\n    chatResponse?: string | undefined;\n    jsonResponse?: T;\n  }\n> => {\n  const keys = Object.keys(schema);\n\n  const jsonFormat = keys\n    .map((key) => {\n      const value = schema[key];\n      return `${key}: ${value.type}${\n        value.description ? ` (${value.description})` : \"\"\n      }`;\n    })\n    .join(\"\\n\");\n\n  const analysis = await chatCompletion([\n    {\n      role: \"system\",\n      content: `You are JSON-bot, a large language model trained by OpenAI. You always reply with a JSON object. Your purpose is to analyse the users message. Required return format:\n    ---\n    ${jsonFormat}`,\n    },\n    { role: \"user\", content: message },\n  ]);\n\n  return analysis;\n}",
   "name": "jsonGpt",
@@ -68,5 +68,5 @@
     "linesPerFile": 33,
     "numberOfFiles": 1
   },
-  "id": "oktwicevtolkufyddbalrqmg"
+  "id": "rkpmbzmbnsgfzbwocounrhla"
 }

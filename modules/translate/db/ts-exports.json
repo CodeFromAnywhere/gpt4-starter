@@ -1,0 +1,26 @@
+[
+  {
+    "createdAt": 1678861916355,
+    "updatedAt": 1678861916355,
+    "deletedAt": 0,
+    "createdFirstAt": 1678861916355,
+    "name": "translate",
+    "slug": "translate",
+    "operationRelativeTypescriptFilePath": "src/index.ts",
+    "comments": [],
+    "type": "value",
+    "id": "pwisaomsligswjegcaiiidkk"
+  },
+  {
+    "createdAt": 1678861916356,
+    "updatedAt": 1678861916356,
+    "deletedAt": 0,
+    "createdFirstAt": 1678861916356,
+    "name": "translate",
+    "slug": "translate",
+    "operationRelativeTypescriptFilePath": "src/translate.ts",
+    "comments": [],
+    "type": "value",
+    "id": "paimrtruxmzcxfncwstcvund"
+  }
+]

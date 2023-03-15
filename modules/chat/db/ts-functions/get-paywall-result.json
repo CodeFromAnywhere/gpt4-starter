@@ -1,13 +1,13 @@
 {
-  "createdAt": 1678611477173,
-  "updatedAt": 1678611477173,
+  "createdAt": 1678862251992,
+  "updatedAt": 1678862251992,
   "deletedAt": 0,
-  "createdFirstAt": 1678611477173,
+  "createdFirstAt": 1678862251992,
   "isApiExposed": false,
   "isExported": true,
   "operationRelativeTypescriptFilePath": "src/getPaywallResult.ts",
   "commentsInside": [],
-  "rawText": " async (\n  chatMessage: Creation<ChatMessage>,\n  history: ChatMessage[],\n  person: Person,\n\n  persona: Persona,\n  config: { isFirstMessage?: boolean; newUsersAmount?: number }\n): Promise<{\n  isSuccessful: boolean;\n  message?: string;\n  isPaywallHit: boolean;\n  tokensUsed?: number;\n  chatResponse?: string;\n}> => {\n  //if you ask for \"credit\"\n  const askForCredit = chatMessage.message.toLowerCase() === \"credit\";\n\n  const { freeMessagesAmount, tooManyDau, dailyActiveUsers } =\n    getMessageLimitInfo(person, persona);\n\n  // If credit is lower than `-1` when messages comes in,\n  const insufficientCredit =\n    (person.credit || 0) <= getMinimumCredit(persona, freeMessagesAmount);\n\n  const tooManyDauMessage = `Due to lots of active users, we are not able to respond to your request right now. Our current limits:\n\nCurrent active users: ${dailyActiveUsers}\n\n${\n  persona.assistantState?.dauLimitVip && persona.assistantState.minimumCreditVip\n    ? `VIP users allowed (deposit minimum: €${persona.assistantState?.minimumCreditVip}): ${persona.assistantState?.dauLimitVip} users`\n    : \"\"\n}\n${\n  persona.assistantState?.dauLimitPaid\n    ? `Paid users allowed: ${persona.assistantState?.dauLimitPaid} users`\n    : \"\"\n}\n${\n  persona.assistantState?.dauLimit\n    ? `Free users allowed: ${persona.assistantState?.dauLimit} users`\n    : \"\"\n}\n\nWe ask you to deposit some credit before starting with this bot, so you'll be first in line to use it.`;\n\n  const newUserLimit =\n    config.newUsersAmount &&\n    persona.assistantState?.maximumNewUsersPerDay &&\n    config.isFirstMessage\n      ? persona.assistantState.maximumNewUsersPerDay > config.newUsersAmount\n      : false;\n\n  if (!newUserLimit && !askForCredit && !insufficientCredit && !tooManyDau) {\n    return {\n      isSuccessful: true,\n      isPaywallHit: false,\n    };\n  }\n\n  const lastSentMessage = [...history]\n    .reverse()\n    .find((x) => x.direction === \"sent\");\n\n  const paywallMessageCreatedAt = lastSentMessage?.isPaywallMessage\n    ? lastSentMessage.createdAt\n    : undefined;\n\n  const tooSoonPaywallMessage = paywallMessageCreatedAt\n    ? Date.now() - paywallMessageCreatedAt < 86400000\n    : false;\n\n  if (tooSoonPaywallMessage) {\n    return {\n      isSuccessful: false,\n      isPaywallHit: true,\n      message: \"You already hit the paywall less than a day ago\",\n    };\n  }\n\n  const paymentReason: PaymentMetadata[\"paymentReason\"] = newUserLimit\n    ? \"whatsapp-new-user-limit\"\n    : askForCredit\n    ? \"whatsapp-ask-for-credit\"\n    : tooManyDau\n    ? \"whatsapp-too-many-dau\"\n    : \"whatsapp-insufficient-credit\";\n\n  const customSuccessMessage =\n    \"Yay! You've got $messages new messages to send. Enjoy!\";\n\n  const [cheapPaymentUrl, expensivePaymentUrl] = await Promise.all([\n    createNewStripePayment({\n      personId: person.id,\n      persona,\n      paymentReason,\n      customSuccessMessage,\n    }),\n    createNewStripePayment({\n      personId: person.id,\n      persona,\n      productName: \"Clarity Credit\",\n      defaultQuantity: 10,\n      isQuantityEditable: true,\n      paymentReason,\n      customSuccessMessage,\n    }),\n  ]);\n\n  if (!cheapPaymentUrl || !expensivePaymentUrl) {\n    return {\n      isSuccessful: false,\n      isPaywallHit: true,\n      message: \"Generating payment links went wrong\",\n    };\n  }\n\n  const messagesAmountCheap = getMessagesAmountCheap(persona);\n  const messagesAmountMore = getMessagesAmountMore(persona);\n\n  const cheaperFactor =\n    Math.round(\n      (messagesAmountMore /\n        messagesAmountCheap /\n        (expensivePayment / cheapPayment)) *\n        100\n    ) / 100;\n\n  const insufficientMessage = `You're out of messages. Please buy new messages if you wish to keep talking with me.`;\n\n  const newUserLimitMessage = `We're at capacity and aren't onboarding any new users at this point. To enter, please buy messages, and you'll be first in line.`;\n\n  const creditMessage = `Your credit is ${person.credit || 0}`;\n\n  const reasonMessage = insufficientCredit\n    ? insufficientMessage\n    : tooManyDau\n    ? tooManyDauMessage\n    : newUserLimit\n    ? newUserLimitMessage\n    : creditMessage;\n\n  const chatResponse = `Hi, ${person.name}.\n      \n${reasonMessage}\n\nClick here to buy ${messagesAmountCheap} messages for 21 cent (plus 29 cent transaction cost):\n\n${cheapPaymentUrl}\n\nClick here to buy ${messagesAmountMore} messages for 5 euros (${cheaperFactor}x cheaper) or choose your own amount:\n\n${expensivePaymentUrl}\n\nCheck my website to find more chatbots and other AI. We're also offering custom chatbots for your company:\n\nhttps://chat.findclarity.ai\n    `;\n\n  return {\n    isPaywallHit: true,\n    isSuccessful: true,\n    tokensUsed: 0,\n    message: \"Credit deposit required\",\n    chatResponse,\n  };\n}",
+  "rawText": " async (\n  chatMessage: Creation<ChatMessage>,\n  history: ChatMessage[],\n  person: Person,\n  persona: FinalAssistantPersona,\n  config: { isFirstMessage?: boolean; newUsersAmount?: number }\n): Promise<{\n  isSuccessful: boolean;\n  message?: string;\n  isPaywallHit: boolean;\n  tokensUsed?: number;\n  chatResponse?: string;\n}> => {\n  const t = persona.assistantState.translations;\n  //if you ask for \"credit\"\n  const askForCredit = chatMessage.message.toLowerCase() === \"credit\";\n\n  const { freeMessagesAmount, tooManyDau, dailyActiveUsers } =\n    getMessageLimitInfo(person, persona);\n\n  // If credit is lower than `-1` when messages comes in,\n  const insufficientCredit =\n    (person.credit || 0) <= getMinimumCredit(persona, freeMessagesAmount);\n\n  // TODO: add these translations too\n\n  const tooManyDauMaxVips =\n    persona.assistantState?.dauLimitVip &&\n    persona.assistantState.minimumCreditVip\n      ? `VIP users allowed (deposit minimum: €${persona.assistantState?.minimumCreditVip}): ${persona.assistantState?.dauLimitVip} users`\n      : \"\";\n\n  const tooManyDauMaxPaid = persona.assistantState?.dauLimitPaid\n    ? `Paid users allowed: ${persona.assistantState?.dauLimitPaid} users`\n    : \"\";\n\n  const tooManyDauMaxFree = persona.assistantState?.dauLimit\n    ? `Free users allowed: ${persona.assistantState?.dauLimit} users`\n    : \"\";\n\n  const tooManyDauMessage = translate(t.tooManyDau, {\n    dailyActiveUsers: String(dailyActiveUsers),\n    tooManyDauMaxVips,\n    tooManyDauMaxPaid,\n    tooManyDauMaxFree,\n  });\n\n  const isNewUserLimit =\n    config.newUsersAmount &&\n    persona.assistantState?.maximumNewUsersPerDay &&\n    config.isFirstMessage\n      ? config.newUsersAmount > persona.assistantState.maximumNewUsersPerDay\n      : false;\n\n  if (!isNewUserLimit && !askForCredit && !insufficientCredit && !tooManyDau) {\n    return {\n      isSuccessful: true,\n      isPaywallHit: false,\n    };\n  }\n\n  const lastSentMessage = [...history]\n    .reverse()\n    .find((x) => x.direction === \"sent\");\n\n  const paywallMessageCreatedAt = lastSentMessage?.isPaywallMessage\n    ? lastSentMessage.createdAt\n    : undefined;\n\n  const tooSoonPaywallMessage = paywallMessageCreatedAt\n    ? Date.now() - paywallMessageCreatedAt < 86400000\n    : false;\n\n  if (tooSoonPaywallMessage) {\n    return {\n      isSuccessful: false,\n      isPaywallHit: true,\n      message: \"You already hit the paywall less than a day ago\",\n    };\n  }\n\n  const paymentReason: PaymentMetadata[\"paymentReason\"] = isNewUserLimit\n    ? \"whatsapp-new-user-limit\"\n    : askForCredit\n    ? \"whatsapp-ask-for-credit\"\n    : tooManyDau\n    ? \"whatsapp-too-many-dau\"\n    : \"whatsapp-insufficient-credit\";\n\n  const customSuccessMessage = translate(t.paymentSuccessMessage);\n\n  const [cheapPaymentUrl, expensivePaymentUrl] = await Promise.all([\n    createNewStripePayment({\n      person,\n      persona,\n      paymentReason,\n      customSuccessMessage,\n    }),\n\n    createNewStripePayment({\n      person,\n      persona,\n      productName: \"Clarity Credit\",\n      defaultQuantity: 10,\n      isQuantityEditable: true,\n      paymentReason,\n      customSuccessMessage,\n    }),\n  ]);\n\n  if (!cheapPaymentUrl || !expensivePaymentUrl) {\n    return {\n      isSuccessful: false,\n      isPaywallHit: true,\n      message: \"Generating payment links went wrong\",\n    };\n  }\n\n  const messagesAmountCheap = getMessagesAmountCheap(persona);\n  const messagesAmountMore = getMessagesAmountMore(persona);\n\n  const cheaperFactor =\n    Math.round(\n      (messagesAmountMore /\n        messagesAmountCheap /\n        (expensivePayment / cheapPayment)) *\n        100\n    ) / 100;\n\n  const insufficientMessage = translate(t.paywallInsufficientMessage);\n\n  const newUserLimitMessage = translate(t.paywallNewUserLimitMessage);\n\n  const creditMessage = translate(t.paywallCreditStatus, {\n    credit: String(person.credit || 0),\n  });\n\n  const reasonMessage = insufficientCredit\n    ? insufficientMessage\n    : tooManyDau\n    ? tooManyDauMessage\n    : isNewUserLimit\n    ? newUserLimitMessage\n    : creditMessage;\n\n  const localPrice = `€5,00`;\n\n  const websiteUrl = \"https://chat.findclarity.ai\";\n\n  const chatResponse = translate(t.paywallMessage, {\n    name: person.name,\n    reasonMessage,\n    messagesAmountMore,\n    localPrice,\n    expensivePaymentUrl,\n    messagesAmountCheap,\n    cheaperFactor,\n    cheapPaymentUrl,\n    websiteUrl,\n  });\n\n  return {\n    isPaywallHit: true,\n    isSuccessful: true,\n    tokensUsed: 0,\n    message: \"Credit deposit required\",\n    chatResponse,\n  };\n}",
   "name": "getPaywallResult",
   "slug": "get-paywall-result",
   "parameters": [
@@ -1239,6 +1239,14 @@
             }
           },
           {
+            "name": "custom_personaSlug",
+            "required": false,
+            "schema": {
+              "fullComment": "for chat assistants",
+              "type": "string"
+            }
+          },
+          {
             "name": "paymentAuthToken",
             "required": false,
             "schema": {
@@ -1277,6 +1285,54 @@
               "fullComment": "Number 0-1 to indicate my trust towards this person",
               "type": "number"
             }
+          },
+          {
+            "name": "mood",
+            "required": false,
+            "schema": {
+              "fullComment": "To be determined by the assistants",
+              "type": "string"
+            }
+          },
+          {
+            "name": "profession",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "homeLocation",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "workLocation",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastLocation",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastLocationAt",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
           }
         ],
         "type": "object"
@@ -1286,11 +1342,10 @@
     {
       "name": "persona",
       "schema": {
-        "$ref": "#/definitions/Persona"
+        "$ref": "#/definitions/FinalAssistantPersona"
       },
       "simplifiedSchema": {
-        "fullComment": "Highly private model.\n\nConfiguration for a person identity that you say that is you.\n\nAs a OS user you can have multiple personas between which you can easily switch.\n\nThe difference from `Person` is that `Person` stores other people, whereas `Persona` stores different identities you give to yourself.\n\nEvery persona is admin by default\n\nNB: brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...\n\n> Persona: A persona, depending on the context, is the public image of one's personality, the social role that one adopts, or simply a fictional character. The word derives from Latin, where it originally referred to a theatrical mask. On the social web, users develop virtual personas as online identities. (Wikipedia)",
-        "nb": "brands should also be able to be personas, and since some brands are shared between people, you should be able to share Persona's with other `Person`s into their OS...",
+        "fullComment": "",
         "properties": [
           {
             "name": "slug",
@@ -1991,161 +2046,12 @@
             }
           },
           {
-            "name": "assistantState",
+            "name": "assistantStateSlug",
             "required": false,
             "schema": {
-              "fullComment": "If the persona has a chatbot, provide the (initial or permanent) assistant configuration here.\n\nstate for an \"assistant\" role in the chat completions api of openai, given by the \"system\" role.\n\nSome states might be able to be dynamicly altered by certain behavior of the user.\n\nTODO: add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
-              "todo": "add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
-              "properties": [
-                {
-                  "name": "premium",
-                  "required": false,
-                  "schema": {
-                    "enum": [
-                      "default",
-                      "light",
-                      "silver",
-                      "gold"
-                    ],
-                    "fullComment": "Activate more expensive stuff with different levels\n\ndefault = 2 cents per message light = 0.4 cents per message silver = 5 cents per message gold = 20 cents per message",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "personality",
-                  "required": false,
-                  "schema": {
-                    "fullComment": "e.g. Elon Musk",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "etnicity",
-                  "required": false,
-                  "schema": {
-                    "fullComment": "E.g. \"caucasian\" | \"black\" | \"asian\";",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "profession",
-                  "required": false,
-                  "schema": {
-                    "fullComment": "e.g. rapper, programmer",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "creator",
-                  "required": false,
-                  "schema": {
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "mood",
-                  "required": false,
-                  "schema": {
-                    "enum": [
-                      "happy",
-                      "sad",
-                      "horny",
-                      "grumpy",
-                      "nervous",
-                      "mad",
-                      "angry",
-                      "loving",
-                      "annoyed",
-                      "sleepy"
-                    ],
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "characteristics",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "enum": [
-                            "egoistic",
-                            "narsicistic",
-                            "depressed",
-                            "anxious",
-                            "loves user",
-                            "into user"
-                          ],
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                },
-                {
-                  "name": "humorStyle",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "enum": [
-                            "saddistic",
-                            "sarcastic",
-                            "witty",
-                            "crazy",
-                            "nihilistic",
-                            "none"
-                          ],
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                },
-                {
-                  "name": "rhymeAbility",
-                  "required": false,
-                  "schema": {
-                    "type": "boolean"
-                  }
-                },
-                {
-                  "name": "goals",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                },
-                {
-                  "name": "rules",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                }
-              ],
-              "type": "object"
+              "fullComment": "If the persona has a chatbot, provide the slug here\n\nTODO: Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+              "todo": "Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+              "type": "string"
             }
           },
           {
@@ -2215,13 +2121,13 @@
   },
   "maxIndentationDepth": 4,
   "size": {
-    "characters": 4712,
-    "lines": 167,
-    "bytes": 4714,
-    "bytesPerCharacter": 1.0004244482173175,
-    "charactersPerLine": 28,
-    "linesPerFile": 167,
+    "characters": 4511,
+    "lines": 169,
+    "bytes": 4515,
+    "bytesPerCharacter": 1.0008867213478165,
+    "charactersPerLine": 27,
+    "linesPerFile": 169,
     "numberOfFiles": 1
   },
-  "id": "lhlgfaopxaqdtgydaktidsrc"
+  "id": "tytgfwhrgbhdwoitznlxwlcq"
 }

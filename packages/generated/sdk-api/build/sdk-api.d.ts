@@ -468,6 +468,35 @@ export declare const sdk: {
     isSystemUsingBattery: () => Promise<boolean>;
     getBundleSummary: (bundleConfig: import("bundle-types").BundleConfig) => import("bundle-util").BundleSummary;
     getDbModelsForBundle: (bundleConfig: import("bundle-types").BundleConfig) => Promise<import("code-types").TsInterface[]>;
+    bahasaTeacher: (context: import("chat").CustomAssistantContext) => Promise<{
+        isSuccessful: false;
+        message: string;
+        chatResponse?: undefined;
+        isPaywallHit?: undefined;
+        tokensUsed?: undefined;
+    } | {
+        isSuccessful: true;
+        chatResponse: string;
+        isPaywallHit: false;
+        tokensUsed: number;
+        message?: undefined;
+    }>;
+    commandResult: (chatMessage: import("model-types").Creation<import("social-media-types").ChatMessage>, person: import("peer-types").Person, persona: import("peer-types").FinalAssistantPersona) => Promise<string | undefined>;
+    defaultAssistant: (context: import("chat").CustomAssistantContext) => Promise<import("openai-wrapper").ChatReturnType>;
+    elonGpt: (context: import("chat").CustomAssistantContext) => Promise<import("openai-wrapper").ChatReturnType>;
+    englishTeacher: (context: import("chat").CustomAssistantContext) => Promise<{
+        isSuccessful: false;
+        message: string;
+        chatResponse?: undefined;
+        isPaywallHit?: undefined;
+        tokensUsed?: undefined;
+    } | {
+        isSuccessful: true;
+        chatResponse: string;
+        isPaywallHit: false;
+        tokensUsed: number;
+        message?: undefined;
+    }>;
     generateInstantResponseMessage: (chatMessage: import("model-types").Creation<import("social-media-types").ChatMessage>, person: import("peer-types").Person, persona: import("peer-types").FinalAssistantPersona, config: {
         isFirstMessage?: boolean | undefined;
         newUsersAmount?: number | undefined;
@@ -477,6 +506,14 @@ export declare const sdk: {
         chatResponse?: string | undefined;
         jsonResponse?: import("chat").ChatMessageAnalysis | undefined;
     }>;
+    getChatResult: (config: {
+        person: import("peer-types").Person;
+        persona: import("peer-types").FinalAssistantPersona;
+        truncatedMessageHistory: import("model-types").Creation<import("social-media-types").ChatMessage>[];
+        fullMessageHistory: import("model-types").Creation<import("social-media-types").ChatMessage>[];
+        inputTokensCalculated: number;
+        chatMessage: import("model-types").Creation<import("social-media-types").ChatMessage>;
+    }) => Promise<import("openai-wrapper").ChatReturnType>;
     getCostPerMessageCredit: (persona: import("peer-types").Persona) => number;
     getCredit: (totalPaymentEuros: number) => number;
     getMessageLimitInfo: (person: import("peer-types").Person, persona: import("peer-types").FinalAssistantPersona) => {
@@ -521,12 +558,39 @@ export declare const sdk: {
         chatResponse?: string | undefined;
         jsonResponse?: T | undefined;
     }>;
+    languageTeacher: (context: import("chat").CustomAssistantContext, config: {
+        level: "beginner" | "intermediate" | "advanced";
+        targetLanguage: string;
+    }) => Promise<{
+        isSuccessful: false;
+        message: string;
+        chatResponse?: undefined;
+        isPaywallHit?: undefined;
+        tokensUsed?: undefined;
+    } | {
+        isSuccessful: true;
+        chatResponse: string;
+        isPaywallHit: false;
+        tokensUsed: number;
+        message?: undefined;
+    }>;
     proactiveOutreach: {
         (): void;
         config: {
             runEveryPeriod: "quarter-hour";
         };
     };
+    processMessageAfterChat: (config: {
+        isTimedOut: boolean;
+        instantResponse: import("openai-wrapper").ChatReturnType;
+        person: import("peer-types").Person;
+        persona: import("peer-types").Persona;
+        chatMessage: import("model-types").Creation<import("social-media-types").ChatMessage>;
+        isFreeMessage?: boolean | undefined;
+    }) => Promise<{
+        isSuccessful: boolean;
+        message: string;
+    }>;
     processMessage: (config: {
         newUsersAmount?: number | undefined;
         person: import("peer-types").Person;
@@ -1697,6 +1761,9 @@ export declare const sdk: {
         myTimeDate: Date;
         myTimeMs: number;
     };
+    translate: (text: string, variables?: {
+        [key: string]: string | number;
+    } | undefined) => string;
     getAllTsMorphSourceFiles: (operationBasePath: string) => Promise<import("ts-morph").SourceFile[] | undefined>;
     getHasGeneric: (type: import("ts-morph").TypeAliasDeclaration | import("ts-morph").InterfaceDeclaration) => boolean;
     getTsMorphProject: (operationFolderPath: string) => import("ts-morph").Project | undefined;

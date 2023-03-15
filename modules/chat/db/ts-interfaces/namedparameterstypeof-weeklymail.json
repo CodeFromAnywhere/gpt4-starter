@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678372656668,
-  "updatedAt": 1678372656668,
+  "createdAt": 1678862287618,
+  "updatedAt": 1678862287618,
   "deletedAt": 0,
-  "createdFirstAt": 1678372656668,
+  "createdFirstAt": 1678862287618,
   "id": "namedparameterstypeof-weeklymail",
   "name": "NamedParameters<typeof weeklyMail>",
   "slug": "namedparameterstypeof-weeklymail",

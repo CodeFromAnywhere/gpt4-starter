@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678861920341,
+  "updatedAt": 1678861920341,
+  "deletedAt": 0,
+  "createdFirstAt": 1678861920341,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "translate",
+  "slug": "translate",
+  "operationRelativeTypescriptFilePath": "src/translate.ts",
+  "type": {
+    "rawType": "(text: string, variables?: { [key: string]: string | number; } | undefined) => any",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(\n  text: string,\n  variables?: { [key: string]: string | number }\n) => {\n  if (!variables) {\n    return text;\n  }\n\n  const finalText = Object.keys(variables).reduce((previousText, key) => {\n    // NB: replace all occurences\n    return previousText.replaceAll(`$\\{${key}\\}`, String(variables[key]));\n  }, text);\n\n  return finalText;\n}",
+  "description": "Simple function for translations, that inputs a string (coming from your translation object and a variable object `{[key:string]:string}` that can hold other strings to be inserted. Translate tries to match every key to $keyName, and replaces it by its value.\n\nNB: I purposefully dont create a `t` function like many i18n libraries do, because the type safety is useful, as it can, with a proper doc-comment, show which variables need to be inserted.",
+  "id": "rmdybnfukltqhqlbxrxqefud"
+}

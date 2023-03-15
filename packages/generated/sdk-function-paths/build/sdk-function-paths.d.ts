@@ -244,8 +244,14 @@ export declare const sdkFunctionPaths: {
     renderBreadCrumbs: string;
     getBundleSummary: string;
     getDbModelsForBundle: string;
+    bahasaTeacher: string;
+    commandResult: string;
+    defaultAssistant: string;
+    elonGpt: string;
+    englishTeacher: string;
     generateInstantResponseMessage: string;
     getChatMessageAnalysis: string;
+    getChatResult: string;
     getCostPerMessageCredit: string;
     getCredit: string;
     getMessageLimitInfo: string;
@@ -257,7 +263,9 @@ export declare const sdkFunctionPaths: {
     getSystemMessageOtherLanguage: string;
     getSystemMessage: string;
     jsonGpt: string;
+    languageTeacher: string;
     proactiveOutreach: string;
+    processMessageAfterChat: string;
     processMessage: string;
     sendChatAiStatsUpdate: string;
     sendDailyAlarmSms: string;
@@ -1261,6 +1269,7 @@ export declare const sdkFunctionPaths: {
     isText: string;
     time: string;
     Tooltip: string;
+    translate: string;
     tryParseJson: string;
     getAllTsMorphSourceFiles: string;
     getHasGeneric: string;

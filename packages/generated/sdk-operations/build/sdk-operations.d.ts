@@ -193,6 +193,7 @@ export declare const operations: {
     time: string;
     "todo-types": string;
     tooltip: string;
+    translate: string;
     "try-parse-json": string;
     "ts-morph-util": string;
     types: string;

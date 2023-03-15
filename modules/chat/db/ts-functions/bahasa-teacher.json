@@ -1,0 +1,43 @@
+{
+  "createdAt": 1678862223674,
+  "updatedAt": 1678862223674,
+  "deletedAt": 0,
+  "createdFirstAt": 1678862223674,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/assistants/englishTeacher.ts",
+  "commentsInside": [],
+  "rawText": " (context: CustomAssistantContext) => {\n  return languageTeacher(context, {\n    targetLanguage: \"bahasa\",\n    level: \"beginner\",\n  });\n}",
+  "name": "bahasaTeacher",
+  "slug": "bahasa-teacher",
+  "parameters": [
+    {
+      "name": "context",
+      "schema": {
+        "$ref": "#/definitions/CustomAssistantContext"
+      },
+      "required": true
+    }
+  ],
+  "description": "",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 136,
+    "lines": 6,
+    "bytes": 136,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 23,
+    "linesPerFile": 6,
+    "numberOfFiles": 1
+  },
+  "id": "jhnsvpaetinfmvatdshuqaat"
+}

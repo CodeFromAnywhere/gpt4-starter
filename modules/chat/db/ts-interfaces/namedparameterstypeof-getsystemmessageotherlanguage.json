@@ -1,12 +1,12 @@
 {
-  "createdAt": 1678611480601,
-  "updatedAt": 1678611480601,
+  "createdAt": 1678862225416,
+  "updatedAt": 1678862225416,
   "deletedAt": 0,
-  "createdFirstAt": 1678611480601,
+  "createdFirstAt": 1678862225416,
   "id": "namedparameterstypeof-getsystemmessageotherlanguage",
   "name": "NamedParameters<typeof getSystemMessageOtherLanguage>",
   "slug": "namedparameterstypeof-getsystemmessageotherlanguage",
-  "operationRelativeTypescriptFilePath": "src/getSystemMessage.ts",
+  "operationRelativeTypescriptFilePath": "src/assistants/getSystemMessage.ts",
   "hasGeneric": false,
   "isExported": false,
   "isOperationIndex": false,
@@ -1076,6 +1076,14 @@
                 }
               },
               {
+                "name": "custom_personaSlug",
+                "required": false,
+                "schema": {
+                  "fullComment": "for chat assistants",
+                  "type": "string"
+                }
+              },
+              {
                 "name": "paymentAuthToken",
                 "required": false,
                 "schema": {
@@ -1113,6 +1121,54 @@
                 "schema": {
                   "fullComment": "Number 0-1 to indicate my trust towards this person",
                   "type": "number"
+                }
+              },
+              {
+                "name": "mood",
+                "required": false,
+                "schema": {
+                  "fullComment": "To be determined by the assistants",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "profession",
+                "required": false,
+                "schema": {
+                  "fullComment": "To be used as Assistant Context",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "homeLocation",
+                "required": false,
+                "schema": {
+                  "fullComment": "To be used as Assistant Context",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "workLocation",
+                "required": false,
+                "schema": {
+                  "fullComment": "To be used as Assistant Context",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "lastLocation",
+                "required": false,
+                "schema": {
+                  "fullComment": "To be used as Assistant Context",
+                  "type": "string"
+                }
+              },
+              {
+                "name": "lastLocationAt",
+                "required": false,
+                "schema": {
+                  "fullComment": "To be used as Assistant Context",
+                  "type": "string"
                 }
               }
             ],

@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678611474756,
-  "updatedAt": 1678611474756,
+  "createdAt": 1678862249399,
+  "updatedAt": 1678862249399,
   "deletedAt": 0,
-  "createdFirstAt": 1678611474756,
+  "createdFirstAt": 1678862249399,
   "classification": "const",
   "comments": [],
   "isExported": true,
@@ -10,7 +10,7 @@
   "slug": "get-message-limit-info",
   "operationRelativeTypescriptFilePath": "src/getMessageLimitInfo.ts",
   "type": {
-    "rawType": "(person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person, persona: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/Persona\").Persona) => { tooManyDau: boolean; freeMessagesAmount: number; dailyActiveUsers: number; }",
+    "rawType": "(person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person, persona: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/Persona\").FinalAssistantPersona) => { tooManyDau: boolean; freeMessagesAmount: number; dailyActiveUsers: number; }",
     "typeDefinition": {
       "type": "object",
       "properties": {},
@@ -27,7 +27,7 @@
       "type": "object"
     }
   },
-  "value": "(person: Person, persona: Persona) => {\n  const dailyActiveUsers = 0;\n\n  const personStatus =\n    persona.assistantState?.minimumCreditVip &&\n    (person.credit || 0) > persona.assistantState?.minimumCreditVip\n      ? \"vip\"\n      : persona.assistantState?.minimumCreditPaid &&\n        (person.credit || 0) > persona.assistantState.minimumCreditPaid\n      ? \"paid\"\n      : \"regular\";\n\n  const dauLimit =\n    personStatus === \"vip\" && persona.assistantState?.dauLimitVip\n      ? persona.assistantState.dauLimitVip\n      : personStatus === \"paid\" && persona.assistantState?.dauLimitPaid\n      ? persona.assistantState.dauLimitPaid\n      : persona.assistantState?.dauLimit || 100;\n\n  const tooManyDau = dailyActiveUsers > dauLimit;\n\n  const freeMessagesAmountPersona = tooManyDau\n    ? persona.assistantState?.freeMessagesPerNewUserAfterDauLimit\n    : persona.assistantState?.freeMessagesPerNewUser;\n\n  const freeMessagesAmount = freeMessagesAmountPersona || 0;\n\n  return { tooManyDau, freeMessagesAmount, dailyActiveUsers };\n}",
+  "value": "(\n  person: Person,\n  persona: FinalAssistantPersona\n) => {\n  const dailyActiveUsers = 0;\n\n  const personStatus =\n    persona.assistantState?.minimumCreditVip &&\n    (person.credit || 0) > persona.assistantState?.minimumCreditVip\n      ? \"vip\"\n      : persona.assistantState?.minimumCreditPaid &&\n        (person.credit || 0) > persona.assistantState.minimumCreditPaid\n      ? \"paid\"\n      : \"regular\";\n\n  const dauLimit =\n    personStatus === \"vip\" && persona.assistantState?.dauLimitVip\n      ? persona.assistantState.dauLimitVip\n      : personStatus === \"paid\" && persona.assistantState?.dauLimitPaid\n      ? persona.assistantState.dauLimitPaid\n      : persona.assistantState?.dauLimit || 100;\n\n  const tooManyDau = dailyActiveUsers > dauLimit;\n\n  const freeMessagesAmountPersona = tooManyDau\n    ? persona.assistantState?.freeMessagesPerNewUserAfterDauLimit\n    : persona.assistantState?.freeMessagesPerNewUser;\n\n  const freeMessagesAmount = freeMessagesAmountPersona || 0;\n\n  return { tooManyDau, freeMessagesAmount, dailyActiveUsers };\n}",
   "description": "",
-  "id": "jurbnsfclqvbpuchfkluxsmi"
+  "id": "xxmyddhdbndwlttvxcuozwqf"
 }

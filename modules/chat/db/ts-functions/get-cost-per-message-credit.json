@@ -1,8 +1,8 @@
 {
-  "createdAt": 1678611465371,
-  "updatedAt": 1678611465371,
+  "createdAt": 1678862238510,
+  "updatedAt": 1678862238510,
   "deletedAt": 0,
-  "createdFirstAt": 1678611465371,
+  "createdFirstAt": 1678862238510,
   "isApiExposed": false,
   "isExported": true,
   "operationRelativeTypescriptFilePath": "src/constants.ts",
@@ -719,161 +719,12 @@
             }
           },
           {
-            "name": "assistantState",
+            "name": "assistantStateSlug",
             "required": false,
             "schema": {
-              "fullComment": "If the persona has a chatbot, provide the (initial or permanent) assistant configuration here.\n\nstate for an \"assistant\" role in the chat completions api of openai, given by the \"system\" role.\n\nSome states might be able to be dynamicly altered by certain behavior of the user.\n\nTODO: add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
-              "todo": "add interests, statements, beliefs, favorite words, grammar, ticks, etc.etc.",
-              "properties": [
-                {
-                  "name": "premium",
-                  "required": false,
-                  "schema": {
-                    "enum": [
-                      "default",
-                      "light",
-                      "silver",
-                      "gold"
-                    ],
-                    "fullComment": "Activate more expensive stuff with different levels\n\ndefault = 2 cents per message light = 0.4 cents per message silver = 5 cents per message gold = 20 cents per message",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "personality",
-                  "required": false,
-                  "schema": {
-                    "fullComment": "e.g. Elon Musk",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "etnicity",
-                  "required": false,
-                  "schema": {
-                    "fullComment": "E.g. \"caucasian\" | \"black\" | \"asian\";",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "profession",
-                  "required": false,
-                  "schema": {
-                    "fullComment": "e.g. rapper, programmer",
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "creator",
-                  "required": false,
-                  "schema": {
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "mood",
-                  "required": false,
-                  "schema": {
-                    "enum": [
-                      "happy",
-                      "sad",
-                      "horny",
-                      "grumpy",
-                      "nervous",
-                      "mad",
-                      "angry",
-                      "loving",
-                      "annoyed",
-                      "sleepy"
-                    ],
-                    "type": "string"
-                  }
-                },
-                {
-                  "name": "characteristics",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "enum": [
-                            "egoistic",
-                            "narsicistic",
-                            "depressed",
-                            "anxious",
-                            "loves user",
-                            "into user"
-                          ],
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                },
-                {
-                  "name": "humorStyle",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "enum": [
-                            "saddistic",
-                            "sarcastic",
-                            "witty",
-                            "crazy",
-                            "nihilistic",
-                            "none"
-                          ],
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                },
-                {
-                  "name": "rhymeAbility",
-                  "required": false,
-                  "schema": {
-                    "type": "boolean"
-                  }
-                },
-                {
-                  "name": "goals",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                },
-                {
-                  "name": "rules",
-                  "required": false,
-                  "schema": {
-                    "items": [
-                      {
-                        "schema": {
-                          "type": "string"
-                        },
-                        "name": null
-                      }
-                    ],
-                    "type": "array"
-                  }
-                }
-              ],
-              "type": "object"
+              "fullComment": "If the persona has a chatbot, provide the slug here\n\nTODO: Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+              "todo": "Since some personas should be able to have multiple assistants, or since we want to have an assistant a user can create, for example, they can later be decoupled.",
+              "type": "string"
             }
           },
           {
@@ -925,5 +776,5 @@
     "linesPerFile": 2,
     "numberOfFiles": 1
   },
-  "id": "ifmlllavcaejsujnupevrhdt"
+  "id": "avomccscacvfbjrbpsxmkzke"
 }

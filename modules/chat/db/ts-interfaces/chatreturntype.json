@@ -1,0 +1,92 @@
+{
+  "createdAt": 1678862262310,
+  "updatedAt": 1678862262310,
+  "deletedAt": 0,
+  "createdFirstAt": 1678862262310,
+  "id": "chatreturntype",
+  "name": "ChatReturnType",
+  "slug": "chatreturntype",
+  "operationRelativeTypescriptFilePath": "src/processMessageAfterChat.ts",
+  "hasGeneric": false,
+  "isExported": false,
+  "isOperationIndex": false,
+  "description": "",
+  "isDbModel": false,
+  "commentsInside": [],
+  "type": {
+    "typeDefinition": {
+      "type": "object",
+      "properties": {
+        "isSuccessful": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "chatResponse": {
+          "type": "string"
+        },
+        "isPaywallHit": {
+          "type": "boolean",
+          "description": "Total tokens used (and paid for).\n\nNB: current cost is 2$ per 1000000 tokens."
+        },
+        "tokensUsed": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "isSuccessful"
+      ],
+      "additionalProperties": false
+    },
+    "simplifiedSchema": {
+      "properties": [
+        {
+          "name": "isSuccessful",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "message",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "chatResponse",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isPaywallHit",
+          "required": false,
+          "schema": {
+            "fullComment": "Total tokens used (and paid for).\n\nNB: current cost is 2$ per 1000000 tokens.",
+            "nb": "current cost is 2$ per 1000000 tokens.",
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "tokensUsed",
+          "required": false,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "type": "object"
+    },
+    "typeCoverage": 0,
+    "rawType": "ChatReturnType",
+    "isArray": false,
+    "isEnum": false,
+    "isEnumLiteral": false,
+    "isObject": false,
+    "isPrimitive": false
+  }
+}

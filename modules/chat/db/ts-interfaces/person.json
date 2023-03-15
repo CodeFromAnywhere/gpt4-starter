@@ -1,12 +1,12 @@
 {
-  "createdAt": 1678611480601,
-  "updatedAt": 1678611480601,
+  "createdAt": 1678862262310,
+  "updatedAt": 1678862262310,
   "deletedAt": 0,
-  "createdFirstAt": 1678611480601,
+  "createdFirstAt": 1678862262310,
   "id": "person",
   "name": "Person",
   "slug": "person",
-  "operationRelativeTypescriptFilePath": "src/getSystemMessage.ts",
+  "operationRelativeTypescriptFilePath": "src/processMessageAfterChat.ts",
   "hasGeneric": false,
   "isExported": false,
   "isOperationIndex": false,
@@ -174,6 +174,10 @@
             "$ref": "#/definitions/Group"
           }
         },
+        "custom_personaSlug": {
+          "type": "string",
+          "description": "for chat assistants"
+        },
         "paymentAuthToken": {
           "type": "string",
           "description": "For now this can be a stripe token, stored for this \"customer\". Handy to connect the customer to the Person. Later this can become an array of multiple credentials, for example if you want to add multiple creditcards."
@@ -193,6 +197,30 @@
         "trust": {
           "type": "number",
           "description": "Number 0-1 to indicate my trust towards this person"
+        },
+        "mood": {
+          "type": "string",
+          "description": "To be determined by the assistants"
+        },
+        "profession": {
+          "type": "string",
+          "description": "To be used as Assistant Context"
+        },
+        "homeLocation": {
+          "type": "string",
+          "description": "To be used as Assistant Context"
+        },
+        "workLocation": {
+          "type": "string",
+          "description": "To be used as Assistant Context"
+        },
+        "lastLocation": {
+          "type": "string",
+          "description": "To be used as Assistant Context"
+        },
+        "lastLocationAt": {
+          "type": "string",
+          "description": "To be used as Assistant Context"
         }
       },
       "required": [
@@ -1254,6 +1282,14 @@
           }
         },
         {
+          "name": "custom_personaSlug",
+          "required": false,
+          "schema": {
+            "fullComment": "for chat assistants",
+            "type": "string"
+          }
+        },
+        {
           "name": "paymentAuthToken",
           "required": false,
           "schema": {
@@ -1291,6 +1327,54 @@
           "schema": {
             "fullComment": "Number 0-1 to indicate my trust towards this person",
             "type": "number"
+          }
+        },
+        {
+          "name": "mood",
+          "required": false,
+          "schema": {
+            "fullComment": "To be determined by the assistants",
+            "type": "string"
+          }
+        },
+        {
+          "name": "profession",
+          "required": false,
+          "schema": {
+            "fullComment": "To be used as Assistant Context",
+            "type": "string"
+          }
+        },
+        {
+          "name": "homeLocation",
+          "required": false,
+          "schema": {
+            "fullComment": "To be used as Assistant Context",
+            "type": "string"
+          }
+        },
+        {
+          "name": "workLocation",
+          "required": false,
+          "schema": {
+            "fullComment": "To be used as Assistant Context",
+            "type": "string"
+          }
+        },
+        {
+          "name": "lastLocation",
+          "required": false,
+          "schema": {
+            "fullComment": "To be used as Assistant Context",
+            "type": "string"
+          }
+        },
+        {
+          "name": "lastLocationAt",
+          "required": false,
+          "schema": {
+            "fullComment": "To be used as Assistant Context",
+            "type": "string"
           }
         }
       ],

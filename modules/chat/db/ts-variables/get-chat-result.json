@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678862246615,
+  "updatedAt": 1678862246615,
+  "deletedAt": 0,
+  "createdFirstAt": 1678862246615,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "getChatResult",
+  "slug": "get-chat-result",
+  "operationRelativeTypescriptFilePath": "src/getChatResult.ts",
+  "type": {
+    "rawType": "(config: { person: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/person/Person\").Person; persona: import(\"/Users/clarity/os/operations/tools/purpose/p2p/peer-types/build/Persona\").FinalAssistantPersona; truncatedMessageHistory: any[]; fullMessageHistory: any[]; inputTokensCalculated: number; chatMessage: any; }) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (config: {\n  person: Person;\n  persona: FinalAssistantPersona;\n  /**\n   * In fact this is ChatMessage, but need to concat the new one...\n   */\n  truncatedMessageHistory: Creation<ChatMessage>[];\n  fullMessageHistory: Creation<ChatMessage>[];\n  inputTokensCalculated: number;\n  chatMessage: Creation<ChatMessage>;\n}) => {\n  const {\n    chatMessage,\n    inputTokensCalculated,\n    person,\n    persona,\n    truncatedMessageHistory,\n    fullMessageHistory,\n  } = config;\n\n  const customAssistantsFunctionName = camelCase(persona.slug);\n\n  const isCustomAssistant = Object.keys(customAssistants).includes(\n    customAssistantsFunctionName\n  );\n\n  const assistantFunction = isCustomAssistant\n    ? customAssistants[customAssistantsFunctionName]\n    : defaultAssistant;\n\n  const chatResult = await assistantFunction({\n    chatMessage,\n    fullMessageHistory,\n    person,\n    persona,\n    truncatedMessageHistory,\n    inputTokensCalculated,\n  });\n\n  return chatResult;\n}",
+  "description": "Assistant-specific chat result",
+  "id": "thojptjjshfkevteklcgcbjm"
+}

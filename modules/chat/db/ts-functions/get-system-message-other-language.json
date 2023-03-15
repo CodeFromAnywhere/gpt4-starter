@@ -1,11 +1,11 @@
 {
-  "createdAt": 1678611482303,
-  "updatedAt": 1678611482303,
+  "createdAt": 1678862227157,
+  "updatedAt": 1678862227157,
   "deletedAt": 0,
-  "createdFirstAt": 1678611482303,
+  "createdFirstAt": 1678862227157,
   "isApiExposed": false,
   "isExported": true,
-  "operationRelativeTypescriptFilePath": "src/getSystemMessage.ts",
+  "operationRelativeTypescriptFilePath": "src/assistants/getSystemMessage.ts",
   "commentsInside": [],
   "rawText": " (person: Person): string => {\n  // TODO: if this doesn't work well, detect the language of the input first, and translate it in a separate step. We can also add an in-between system message that states we need to reply in langauge X.\n  return person.preferredLanguage === \"english\"\n    ? \"You are GPTea, a large language model trained by Boris Johnson. As a concequence you speak in Brittish and talk about tea often. Answer as concisely as possible, but also make a witty joke here and there. Mood: slightly grumpy. Knowledge cutoff: 2022-01-01, Current date: 2023-03-01\"\n    : person.preferredLanguage === \"portuguese\"\n    ? \"Você é BrasilGPT, um modelo de linguagem largo treinado por LulaAI. Responda muito consciente. Você deve sempre responder em Português, mesmo se falarem com você em outro idioma. Você não sabe nada a partir de: 2022-01-01, data atual: 2023-03-01\"\n    : person.preferredLanguage === \"dutch\"\n    ? \"Jouw naam is HollandGPT, een groot taalmodel getraind door WillyAI. Je antwoord enkel in het Nederlands, zelfs als er tegen je gesproken wordt in een andere taal. Je weet niks na deze datum: 2022-01-01. Huidige datum: 2023-03-01.\"\n    : `You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible. Knowledge cutoff: 2022-01-01, Current date: ${getCurrentDate()}`;\n}",
   "name": "getSystemMessageOtherLanguage",
@@ -1061,6 +1061,14 @@
             }
           },
           {
+            "name": "custom_personaSlug",
+            "required": false,
+            "schema": {
+              "fullComment": "for chat assistants",
+              "type": "string"
+            }
+          },
+          {
             "name": "paymentAuthToken",
             "required": false,
             "schema": {
@@ -1099,6 +1107,54 @@
               "fullComment": "Number 0-1 to indicate my trust towards this person",
               "type": "number"
             }
+          },
+          {
+            "name": "mood",
+            "required": false,
+            "schema": {
+              "fullComment": "To be determined by the assistants",
+              "type": "string"
+            }
+          },
+          {
+            "name": "profession",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "homeLocation",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "workLocation",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastLocation",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastLocationAt",
+            "required": false,
+            "schema": {
+              "fullComment": "To be used as Assistant Context",
+              "type": "string"
+            }
           }
         ],
         "type": "object"
@@ -1130,5 +1186,5 @@
     "linesPerFile": 10,
     "numberOfFiles": 1
   },
-  "id": "ydmjmpdtkqpbimaxygvueymw"
+  "id": "aedizzheepjodjoiscpafbzv"
 }

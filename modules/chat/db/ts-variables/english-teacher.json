@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678862224064,
+  "updatedAt": 1678862224064,
+  "deletedAt": 0,
+  "createdFirstAt": 1678862224064,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "englishTeacher",
+  "slug": "english-teacher",
+  "operationRelativeTypescriptFilePath": "src/assistants/englishTeacher.ts",
+  "type": {
+    "rawType": "(context: import(\"/Users/clarity/os/operations/tools/chat/src/assistants/types\").CustomAssistantContext) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "(context: CustomAssistantContext) => {\n  return languageTeacher(context, {\n    targetLanguage: \"english\",\n    level: \"beginner\",\n  });\n}",
+  "description": "",
+  "id": "qnchjkntwpnpbtaluvquaawo"
+}

@@ -1,0 +1,33 @@
+{
+  "createdAt": 1678862218179,
+  "updatedAt": 1678862218179,
+  "deletedAt": 0,
+  "createdFirstAt": 1678862218179,
+  "classification": "const",
+  "comments": [],
+  "isExported": true,
+  "name": "defaultAssistant",
+  "slug": "default-assistant",
+  "operationRelativeTypescriptFilePath": "src/assistants/defaultAssistant.ts",
+  "type": {
+    "rawType": "(context: import(\"/Users/clarity/os/operations/tools/chat/src/assistants/types\").CustomAssistantContext) => unknown",
+    "typeDefinition": {
+      "type": "object",
+      "properties": {},
+      "optional": false
+    },
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": true,
+    "isPrimitive": false,
+    "isEnumLiteral": false,
+    "simplifiedSchema": {
+      "properties": [],
+      "type": "object"
+    }
+  },
+  "value": "async (context: CustomAssistantContext) => {\n  const {\n    chatMessage,\n    truncatedMessageHistory,\n    person,\n    persona,\n    inputTokensCalculated,\n  } = context;\n\n  const systemMessage = getSystemMessage(person, persona);\n\n  const allMessages = truncatedMessageHistory.concat(chatMessage);\n\n  const postSystemMessage = persona.spokenLanguages\n    ? `Reminder: Please reply in ${persona.spokenLanguages?.join(\" or \")}`\n    : \"\";\n\n  const chatResult = await chat(person, allMessages, {\n    isInstant: true,\n    inputTokensCalculated,\n    systemMessage,\n    postSystemMessage,\n  });\n\n  return chatResult;\n}",
+  "description": "Default assistants. Still mixes some stuff. Later to be ported to all custom assistants, for higher customisability and less chaos",
+  "id": "csovggrzagsuythgrvugiqon"
+}

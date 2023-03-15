@@ -1,0 +1,43 @@
+{
+  "createdAt": 1678862217962,
+  "updatedAt": 1678862217962,
+  "deletedAt": 0,
+  "createdFirstAt": 1678862217962,
+  "isApiExposed": false,
+  "isExported": true,
+  "operationRelativeTypescriptFilePath": "src/assistants/defaultAssistant.ts",
+  "commentsInside": [],
+  "rawText": " async (context: CustomAssistantContext) => {\n  const {\n    chatMessage,\n    truncatedMessageHistory,\n    person,\n    persona,\n    inputTokensCalculated,\n  } = context;\n\n  const systemMessage = getSystemMessage(person, persona);\n\n  const allMessages = truncatedMessageHistory.concat(chatMessage);\n\n  const postSystemMessage = persona.spokenLanguages\n    ? `Reminder: Please reply in ${persona.spokenLanguages?.join(\" or \")}`\n    : \"\";\n\n  const chatResult = await chat(person, allMessages, {\n    isInstant: true,\n    inputTokensCalculated,\n    systemMessage,\n    postSystemMessage,\n  });\n\n  return chatResult;\n}",
+  "name": "defaultAssistant",
+  "slug": "default-assistant",
+  "parameters": [
+    {
+      "name": "context",
+      "schema": {
+        "$ref": "#/definitions/CustomAssistantContext"
+      },
+      "required": true
+    }
+  ],
+  "description": "Default assistants. Still mixes some stuff. Later to be ported to all custom assistants, for higher customisability and less chaos",
+  "returnType": {
+    "rawType": "unknown",
+    "typeCoverage": 0,
+    "isArray": false,
+    "isEnum": false,
+    "isObject": false,
+    "isPrimitive": false,
+    "isEnumLiteral": false
+  },
+  "maxIndentationDepth": 2,
+  "size": {
+    "characters": 740,
+    "lines": 26,
+    "bytes": 740,
+    "bytesPerCharacter": 1,
+    "charactersPerLine": 28,
+    "linesPerFile": 26,
+    "numberOfFiles": 1
+  },
+  "id": "pfhugzxbxedrnafevziafitn"
+}
